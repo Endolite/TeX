@@ -1,0 +1,36 @@
+\documentclass[12pt, letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Assignments from Fall 2017}
+\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+	\part{} 
+		\chapter{A.1}
+			\section{A.1.1	A curious proposition}
+            	\begin{flushleft}
+            		\begin{enumerate}
+						\item
+							$
+								\begin{array}{c|c|c|c|c}
+									P & Q & P \to Q & (P \to Q) \to P & ((P \to Q) \to P) \to Q \\\hline
+									0 & 0 & 1 & 0 & 1\\
+									0 & 1 & 1 & 0 & 1\\ 
+									1 & 0 & 0 & 1 & 0\\
+									1 & 1 & 1 & 1 & 1\\
+								\end{array}
+							$
+						\item		
+							\begin{align*}
+								((P\to Q)\to P)\to Q &\equiv \lnot(\lnot(\lnot P\lor Q)\lor P)\lor Q \\
+									&\equiv(\lnot(P\land\lnot Q)\land\lnot P)\lor Q \\
+									&\equiv((\lnot P\lor Q)\land\lnot P)\lor Q \\
+									&\equiv((\lnot P\land\lnot P)\lor(Q\land\lnot P))\lor Q \\
+									&\equiv\lnot P\lor Q\lor (Q\land\lnot P) \\
+									&\equiv\lnot P\lor Q\lor\lnot(\lnot Q\lor P)
+							\end{align*}
+					\end{enumerate}
+            	\end{flushleft}
+\end{document}

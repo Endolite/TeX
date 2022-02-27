@@ -1,0 +1,82 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\newcommand{\pbet}[5]
+{
+	\begin{tikzpicture}[yscale = 8.125]
+		\draw[<->] (-3.75, 0) -- (3.75, 0);
+			\draw[domain = -3.75:3.75, smooth, variable = \x] plot ({\x}, {(e^(-0.5 * \x * \x))/sqrt(2 * pi)});
+			\draw[dashed] (#1, 0) -- (#1, #2);
+			\draw[dashed] (#3, 0) -- (#3, #4);
+			\fill[lightgray, domain = #1:#3, variable = \x] (#1, 0) -- plot ({\x}, {(e^(-0.5 * \x * \x))/sqrt(2 * pi)}) -- (#3, 0);
+			node[below]{x}
+	\end{tikzpicture}
+}
+\newcommand{\zleq}[2]
+{
+	\begin{center}
+		\begin{tikzpicture}
+				\begin{axis}[xmin = -3.75, xmax = 3.5, ymin = 0, ymax = 0.4, xtick, ytick, axis y line = center, axis line style = {draw = none}]
+				\addplot[samples = 100, name path = A]{exp(0.5 * -x^2)/sqrt(2 * pi)};
+				\addplot[draw = none, name path = B, domain = -3.75:#1]{0};
+				\addplot+[black, fill opacity = 0.4] fill between[of = A and B, soft clip = {domain = -3.75:#1}];
+				\draw[-] (-3.75, 0) -- (3.75, 0);
+				\draw[dashed] (#1, 0) -- (#1, #2);
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+}
+\newcommand{\zgeq}[2]
+{
+	\begin{center}
+		\begin{tikzpicture}
+				\begin{axis}[xmin = -3.75, xmax = 3.5, ymin = 0, ymax = 0.4, xtick, ytick, axis y line = center, axis line style = {draw = none}]
+				\addplot[samples = 100, name path = A]{exp(0.5 * -x^2)/sqrt(2 * pi)};
+				\addplot[draw = none, name path = B, domain = #1:3.75]{0};
+				\addplot+[black, fill opacity = 0.4] fill between[of = A and B, soft clip = {domain = #1:3.75}];
+				\draw[-] (-3.75, 0) -- (3.75, 0);
+				\draw[dashed] (#1, 0) -- (#1, #2);
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+}
+\newcommand{\zbet}[4]
+{
+	\begin{center}
+		\begin{tikzpicture}
+				\begin{axis}[xmin = -3.75, xmax = 3.5, ymin = 0, ymax = 0.4, xtick, ytick, axis y line = center, axis line style = {draw = none}]
+				\addplot[samples = 100, name path = A]{exp(0.5 * -x^2)/sqrt(2 * pi)};
+				\addplot[draw = none, name path = B, domain = #1:#3]{0};
+				\addplot+[black, fill opacity = 0.4] fill between[of = A and B, soft clip = {domain = #1:#3}];
+				\draw[-] (-3.75, 0) -- (3.75, 0);
+				\draw[dashed] (#1, 0) -- (#1, #2);
+				\draw[dashed] (#3, 0) -- (#3, #4);
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+}
+\newcommand{\zswith}[2]
+{
+	\begin{center}
+		\begin{tikzpicture}
+				\begin{axis}[xmin = -3.75, xmax = 3.5, ymin = 0, ymax = 0.4, xtick, ytick, axis y line = center, axis line style = {draw = none}]
+				\addplot[samples = 100, name path = A]{exp(0.5 * -x^2)/sqrt(2 * pi)};
+				\addplot[draw = none, name path = B, domain = -#1:#1]{0};
+				\addplot+[black, fill opacity = 0.4] fill between[of = A and B, soft clip = {domain = -#1:#1}];
+				\draw[-] (-3.75, 0) -- (3.75, 0);
+				\draw[dashed] (-#1, 0) -- (-#1, #2);
+				\draw[dashed] (#1, 0) -- (#1, #2);
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+}
+
+\begin{document}
+	\begin{tikzpicture}[yscale = 8.125]
+		\draw[<->] (-3.75, 0) -- (3.75, 0);
+			\draw[domain = -3.75:3.75, smooth, variable = \x] plot ({\x}, {(e^(-0.5 * \x * \x))/sqrt(2 * pi)});
+			\draw[dashed] (0.5, 0) -- (0.5, 0.352);
+			\draw[dashed] (-0.5, 0) -- (-0.5, 0.352);
+			\fill[lightgray, domain = -0.5:0.5, variable = \x] (-0.5, 0) -- plot ({\x}, {(e^(-0.5 * \x * \x))/sqrt(2 * pi)}) -- (0.5, 0);
+	\end{tikzpicture}
+	\pbet{-0.5}{0.352}{0.5}{0.352}{0.399}
+\end{document}
