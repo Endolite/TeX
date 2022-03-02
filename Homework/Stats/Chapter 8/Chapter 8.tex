@@ -4,10 +4,6 @@
 \usepackage{amssymb}
 \usepackage[margin=0.75in]{geometry}
 \usepackage[shortlabels]{enumitem}
-\usepackage{pgfplots}
-\usepackage{tkz-euclide}
-\pgfplotsset{width = 9cm, height = 5cm, compat = 1.15}
-\usepgfplotslibrary{fillbetween}
 
 \DeclareMathOperator{\invNorm}{invNorm}
 \DeclareMathOperator{\normalcdf}{normalcdf}
@@ -211,4 +207,7 @@
 			C\% is most about 0.823, so the confidence level is about 82, so the answer is \textbf{a}.
 	\subsection{Estimating a Difference in Proportions}
 		\paragraph{61. Don't drink the water!}
+			The randomness condition is not met, as the the populations in their entirety are used.
+			The 10\% condition does not apply, as no sampling took place.
+			The Large Counts condition is not met, as there were only 3 successes from the West side.
 \end{document}
