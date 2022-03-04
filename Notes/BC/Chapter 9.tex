@@ -1,0 +1,24 @@
+\documentclass[12pt, A4]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[shortlabels]{enumitem}
+
+\title{Chapter 9 Examples}
+
+\begin{document}
+	\setcounter{section}{9}
+	\setcounter{subsection}{2}
+	\subsection{}
+	\paragraph{Integral Test}
+		\begin{align*}
+			\sum_{n = 1}^\infty\left[\frac{1}{n^2 + 1}\right] \tag{is always positive, continuous, and decreases as \(n\) grows} \\
+			\int_1^\infty\left[\frac{1}{x^2 = 1}\right]dx &= \lim_{a\to\infty}[\arctan{x}]_1^a = \lim_{a\to\infty}[\arctan{a} - \arctan{1}] = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4} \therefore \sum_{n = 1}^\infty\left[\frac{1}{n^2 + 1}\right]
+		\end{align*}
+	\paragraph{$p$-series}
+		\begin{align*}
+			\sum_{n = 1}^\infty\frac{1}{\sqrt{n}} &\text{ diverges} \tag{\(p = \frac{1}{2}\ \le 1 \therefore \) diverges} \\
+			\sum_{n = 1}^\infty\frac{1}{n} &\text{ diverges} \tag{\(p = 1 \le 1 \therefore\) diverges}
+		\end{align*}
+\end{document}
