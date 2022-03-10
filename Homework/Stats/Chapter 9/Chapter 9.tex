@@ -1,0 +1,133 @@
+\documentclass[12pt, A4]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\invNorm}{invNorm}
+\DeclareMathOperator{\normalcdf}{normalcdf}
+
+\newcommand{\comment}[1]{}
+\newcommand{\invNormal}[4]{\invNorm\left(\mathrm{area}:#1, \mu: #2, \sigma: #3, \mathrm{Tail: #4}\right)}
+\newcommand{\normalCDF}[4]{\normalcdf\left(\mathrm{lower}: #1, \mathrm{upper}: #2, \mu: #3, \sigma: #4\right)}
+\newcommand{\propse}[2]{\sqrt{\frac{#1\left(1 - #1\right)}{#2}}}
+\newcommand{\propsed}[4]{\sqrt{\frac{#1\left(1 - #1\right)}{#2} + \frac{#3\left(1 - #3\right)}{#4}}}
+\newcommand{\nint}[1]{\mathrm{nint}\left(#1\right)}
+\newcommand{\z}[3]{\frac{#1 - #2}{#3}}
+\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+
+\title{Chapter 9 Homework}
+\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+	\setcounter{section}{9}
+	\subsection{Significance Tests: The Basics}
+		\paragraph{1. No homework?}
+			$H_0:p = 0.75$ and $H_a:p <  0.75$ where $p$ is the true proportion of students at Mr.Tabor's school that completed their math homework last night.
+		\paragraph{3. How about juice?}
+			$H_0:\mu = 180$ ml and $H_a:\mu\ne 180$ ml where $\mu$ is the true mean amount of liquid in a bottle (dispensed by the machine) in milliliters.
+		\paragraph{4. Attitudes}
+			$H_0:\mu = 115$ and $H_a:\mu > 115$ where $\mu$ is the true mean score on the SSHA for students at the teacher's college that are over the age of 30.
+		\paragraph{5. Cold cabin?}
+			$H_0:\sigma = 3^\circ$F and $H_a:\sigma > 3^\circ$F where $\sigma$ is the true standard deviation of the temperature allowed by the thermostat in degrees Fahrenheit.
+		\paragraph{7. Stating hypotheses}
+			\begin{enumerate}[a.]
+				\item
+					The null hypothesis must be a statement of equality while the alternative hypothesis must be an inequality; $H_0:p = 0.37$; $H_a:p > 0.37$.
+				\item
+					Hypotheses must always make predictions regarding a population parameter rather than a sample statistic; $H_0:\mu = 3000$ grams; $H_a:\mu < 3000$ grams.		
+			\end{enumerate}
+		\paragraph{9. No homework?}
+			\begin{enumerate}[a.]
+				\item
+					If $H_0:p = 0.75$ is true, then 75\% of all students at Mr.Tabor's school completed their math homework last night.
+				\item
+					Assuming that $H_0:p = 0.75$ is true, the probability that $\hat{p} \le 0.68$ for a random sample is 12.65\%.
+			\end{enumerate}
+		\paragraph{10. Attitudes}
+			\begin{enumerate}[a.]
+				\item
+					If $H_0:\mu = 115$ is true, then the true mean score on the SSHA for students at the teacher's college that are over the age of 30 is 115.
+				\item
+					Assuming that $H_0:p = 115$ is true, then the probability that $\hat{p} \ge 125.7$ due to sheer random chance, as is the case in this sample, is 1.01\%.
+			\end{enumerate}
+		\paragraph{13. Interpreting a $P$-value}
+			The interpretation did not include the assumption that $H_0:\mu = 100$ is true or the inequality $\mu > 100$.
+		\paragraph{15. No homework}
+			At a confidence level of $\alpha = 0.05$, there is not satisfactory evidence supporting $H_a:p < 0.75$, as the $P$-level of 0.1265 is greater than $\alpha$, so the null hypothesis $H_0:p = 0.75$ cannot be disregarded.
+		\paragraph{16. Attitudes}
+			At a confidence level of $\alpha = 0.05$, there is satisfactory evidence supporting the claim that the average SSHA score for students above the age of 30 is higher, as the $P$-level of 0.0101 is less than $\alpha$, and the null hypothesis $H_0: p = 115$ can be disregarded.
+		\paragraph{19. Making conclusions}
+			It was not specified that the $P$-value was greater than the $\alpha$, simply that it was large. Additionally, a $P$-value greater than the significance level does not support $H_0$, instead not supporting $H_a$.
+		\paragraph{21. Heavy bread?}
+			\begin{enumerate}[a.]
+				\item 
+					$\mu = $ true mean weight of a loaf of bread produced at the bakery (in pounds); $H_0:\mu = 1$; $H_a:\mu < 1$.
+				\item
+					The sample mean is less than that predicted by the $H_0$, which would support $H_a$.
+				\item
+					Assuming that $H_0$ is true, there is an 8.06\% chance of this sample's outcome occurring in a random sample.
+				\item
+					Because the $P$-level of $H_0$ against $H_a$ is greater than the $\alpha = 0.01$ significance level, the data does not provide convincing evidence for the hypothesis that the true mean weight of a loaf of bread produced at the bakery is less than $1\,$lbs, and $H_0$ cannot be rejected.
+			\end{enumerate}
+		\paragraph{23. Opening a restaurant}
+			A Type \Roman{1} error would be finding convincing evidence for the true mean income of those living near the potential location being greater than \$85,000 when such is not the case. This would result in the restaurant being opened in a place where the people in the vicinity are unable to afford to eat there, meaning that the restaurant would have to either reduce its prices (by cutting either margins or costs) or close and relocate. \\
+			A Type \Roman{2} error would be failing to find convincing evidence of the true mean income of those living close to the potential location being at least \$85,000. This would result in the location being passed up despite being suitable.
+		\paragraph{25. Awful accidents}
+			\begin{enumerate}[a.]
+				\item
+					A Type \Roman{1} error would occur if convincing evidence of the true proportion of calls involving life-threatening injuries over this 6-month period for which emergency personnel took over 8 minutes to arrive being less than 0.22 was found despite this hypothesis being false. \\
+					A Type \Roman{2} error would occur if convincing evidence of the true proportion of calls involving life-threatening injuries over this timeframe for which it took an excess of 8 minutes for emergency personnel to arrive being less than 0.22 was not found despite this hypothesis being true.
+				\item
+					In this case, a Type \Roman{1} error would be more harmful, as it would make it seem as though there was less room for improvement than there really actually is, which will likely result in a reduced drive to improve, potentially resulting in the proportion staying the same or even increasing, resulting in more deaths due to wasted time.
+				\item
+					As the probability of a Type \Roman{1} error occurring is equal to $\alpha$ and that a Type \Roman{1} error would be more serious than a Type \Roman{2} one, the significance level should be lower than $\alpha = 0.05$.
+			\end{enumerate}
+		\paragraph{27. More lefties?}
+			\begin{enumerate}[a.]
+				\item 
+					$p =$ the true proportion of students at Simon's school that are left-handed; $H_0:p = 0.1$; $H_a:p > 0.1$.
+				\item
+					The $P$-value of $H_0$ against the result of the sample is $24/200$, equal to 12\%. This means that the probability of receiving the observed results due to sheer chance assuming, that $H_0$ is true.
+				\item
+					The $P$-value is greater than the the assumed confidence level of $\alpha = 0.05$, so the data provided by the survey is not enough to warrant disregarding $H_0$ and convincingly support the conclusion that the true proportion of students at Simon's school that are left-handed is greater than 0.1.
+			\end{enumerate}
+		\subsection{Tests About a Population Proportion}
+			\paragraph{35. Home computers}
+				The randomness condition is met, as there are Jason's school is large, so there are likely over 600 students at school making the sample size $n$ of 60 less than a tenth of the population, so independence can be assumed, and the sample itself is random.
+				The Large Counts condition is also met, as $np_0$ and $n(1 - p_0)$ are both greater than 10, at 48 and 12 respectively. A Normal distribution can therefore be used to approximate the sampling distribution of $\hat{p}$.
+			\paragraph{37. The chips project}
+				\begin{enumerate}[a.]
+					\item
+						There are 400 students in the population, so the sample size $n$ of 50 is over 10\% of the population, so independence cannot be assumed.
+					\item
+						As $np_0$ and $n(1 - p_0)$ are both 25, which is greater than 10, the Large Counts condition is met, so the sampling distribution of $\hat{p}$ is approximately Normal.
+				\end{enumerate}
+			\paragraph{39. Home computers}
+				\begin{enumerate}[a.]
+					\item
+						The sample proportion is $41/60$, which is about 0.6833, which is less than 0.8.
+					\item
+						\begin{align*}
+							z &= \z{\hat{p}}{p_0}{\propse{p_0}{n}} = \z{\frac{41}{60}}{0.8}{\propse{0.8}{60}} \approx -2.27 \\
+							P\text{-value} &= \normalCDF{-\infty}{z \approx -2.27}{0}{1} \approx 0.0116
+						\end{align*}
+					\item
+						As the $P$-value is less than $\alpha$, $H_0$ can be rejected, as there is convincing evidence that the true proportion of all students at Jason's school that own computers is less than 0.8.
+				\end{enumerate}
+			\paragraph{41. Significance tests}
+				\begin{enumerate}[a.]
+					\item
+						$$P\text{-value} = \normalCDF{z \approx 2.19}{\infty}{0}{1} \approx 0.0143$$ \\
+						Assuming that $H_0:p = 0.5$ is true, there is about a 1.43\% chance of having received this result from a random sample.
+					\item
+						The $P$-level of 0.0143 is greater than $\alpha$, so $H_0$ cannot be rejected, as there is not convincing evidence of the true proportion of being greater than 0.5.
+					\item
+						\begin{align*}
+							z &= \frac{\hat{p} - p_0}{\propse{p_0}{n}} \\
+							\hat{p} &= p_0 + z\propse{p_0}{n} = 0.5 + 2.19\propse{0.5}{200} \approx 0.5774
+						\end{align*}
+				\end{enumerate}
+\end{document}

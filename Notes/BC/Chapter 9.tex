@@ -11,14 +11,53 @@
 	\setcounter{section}{9}
 	\setcounter{subsection}{2}
 	\subsection{}
-	\paragraph{Integral Test}
+	\subsubsection*{Integral Test}
 		\begin{align*}
 			\sum_{n = 1}^\infty\left[\frac{1}{n^2 + 1}\right] \tag{is always positive, continuous, and decreases as \(n\) grows} \\
 			\int_1^\infty\left[\frac{1}{x^2 = 1}\right]dx &= \lim_{a\to\infty}[\arctan{x}]_1^a = \lim_{a\to\infty}[\arctan{a} - \arctan{1}] = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4} \therefore \sum_{n = 1}^\infty\left[\frac{1}{n^2 + 1}\right]
 		\end{align*}
-	\paragraph{$p$-series}
+	\subsubsection*{$p$-series}
 		\begin{align*}
 			\sum_{n = 1}^\infty\frac{1}{\sqrt{n}} &\text{ diverges} \tag{\(p = \frac{1}{2}\ \le 1 \therefore \) diverges} \\
 			\sum_{n = 1}^\infty\frac{1}{n} &\text{ diverges} \tag{\(p = 1 \le 1 \therefore\) diverges}
 		\end{align*}
+	\subsection{Comparison Tests}
+		\paragraph{Direct Comparison Test}
+			\begin{align*}
+				\sum_{n = 1}^\infty\left[\frac{1}{2 + 3^n}\right] && \sum_{n = 1}^\infty\left[\frac{1}{3^n}\right] = \sum_{n = 1}^\infty\left[\frac{1}{3}\right]^n \tag{converges} \\ 
+				\frac{1}{2 + 3^n} \le \frac{1}{3^n} \tag{is always true \(\land\) larger series diverges \(\therefore\) original converges} \\
+				\sum_{n = 1}^\infty\left[\frac{1}{10 + \sqrt{n}}\right] && \sum_{n = 1}^\infty\left[\frac{1}{\sqrt{n}}\right] \tag{diverges} \\
+				\frac{1}{\sqrt{n}} \le \frac{1}{10 + \sqrt{n}} \tag{false} \\
+				\sum_{n = 1}^\infty\left[\frac{1}{n}\right] \tag{diverges} \\
+				\frac{1}{n} \le \frac{1}{10 + \sqrt{n}} &\hspace{3cm}
+					\begin{array}{ccccc} n & 1 & 9 & 16 & 25 \\ \frac{1}{n} & 1 & \frac{1}{9} & \frac{1}{16} & \frac{1}{25}  \\ \frac{1}{10 + \sqrt{n}} & \frac{1}{11} & \frac{1}{13} & \frac{1}{14} & \frac{1}{15} \\ \frac{1}{n} \le \frac{1}{10 + \sqrt{n}} & \rm{False} & \rm{False} & \rm{True} & \rm{True} \end{array} \\
+				&\text{\(\frac{1}{n} \le \frac{1}{10 + \sqrt{n}}\) as \(n\) grows larger \(\land\, \frac{1}{n}\) diverges \(\therefore \frac{1}{10 + \sqrt{n}}\) diverges}
+			\end{align*}
+	\subsection{}
+		\paragraph{Alternating Series Test}
+			\begin{align*}
+				\sum_{n = 1}^\infty\left[\frac{n}{(-2)^{n - 1}}\right] &= \sum_{n = 1}^\infty\left[\frac{n}{(-1 \times 2)^{n - 1}}\right] \\
+					&= \sum_{n = 1}^\infty\left[\frac{1}{(-1)^{n - 1}} \times \frac{n}{2^{n - 1}}\right] \\
+				\lim_{n\to\infty}\left[\frac{n}{2^{n - 1}}\right] &= \mathrm{\frac{slow}{fast}} = 0 \\
+				a_{n + 1} &\le a_n \\ \frac{n + 1}{2^n} &\le \frac{n}{2^{n - 1}} \tag{larger denominator \(\therefore\) true \(\therefore\) converges}
+			\end{align*}
+	\subsection{}
+		\paragraph{Ratio Test}
+			\begin{align*}
+				\sum_{n = 1}^\infty\left[\frac{2^n}{n!}\right] \\
+				\lim_{n\to\infty}\left|\frac{2^{n+1}}{(n+1)!} \times \frac{n!}{2^n}\right| &= \lim_{n\to\infty}\left|\frac{2}{n + 1}\right| = 0 < 1 \therefore \text{converges}
+			\end{align*}
+		\subparagraph{Factorials}
+			\begin{align*}
+				(n + 1)! &= n!(n + 1) \\
+				(3n + 4)! &= (3n)!(3n + 4)(3n + 3)(3n + 2)(3n + 1) \\
+				(an + b)! &= (an)!(an + b)(an + b - 1)(an + b - 2) \cdots = (an)!\prod_{i = 0}^{b - 1}(an + b - i) = (an)!\prod_{i = 1}^b(an + i)\\
+				(0 + 1)! &= 0!(0 + 1) \\
+				1! &= 0!(1) \\
+				1 &= 0!
+			\end{align*}
+		\paragraph{Root Test}
+			\begin{align*}
+				\sum_{n = 1}^\infty\left[\frac{e^{2n}}{n^n}\right] \\ \lim_{n\to\infty}\left(\frac{e^{2n}}{n^n}\right)^{1/n} &= \lim_{n\to\infty}\left(\frac{e^2}{n}\right) = 0 < 1 \therefore\text{converges}
+			\end{align*}
 \end{document}

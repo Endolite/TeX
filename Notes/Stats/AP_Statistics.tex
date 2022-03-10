@@ -1,11 +1,24 @@
 \documentclass[12pt, A4]{report}
-\usepackage[utf8]{inputenc}
+
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
 \usetikzlibrary{calc}
-\usepackage[margin=0.75in]{geometry}
 
+\DeclareMathOperator{\invNorm}{invNorm}
+\DeclareMathOperator{\nint}{nint}
+\DeclareMathOperator{\normalcdf}{normalcdf}
+
+\newcommand{\comment}[1]{}
+\newcommand{\invNormal}[4]{\invNorm\left(\mathrm{area}:#1, \mu: #2, \sigma: #3, \mathrm{Tail: #4}\right)}
+\newcommand{\normalCDF}[4]{\normalcdf\left(\mathrm{lower}: #1, \mathrm{upper}: #2, \mu: #3, \sigma: #4\right)}
+\newcommand{\propse}[2]{\sqrt{\frac{#1\left(1 - #1\right)}{#2}}}
+\newcommand{\propsed}[4]{\sqrt{\frac{#1\left(1 - #1\right)}{#2} + \frac{#3\left(1 - #3\right)}{#4}}}
+\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+\newcommand{\z}[3]{\frac{#1 - #2}{#3}}
 \newcommand{\zleq}[2]
 {
 	\begin{center}
@@ -14,20 +27,6 @@
 				\addplot[samples = 100, name path = A]{exp(0.5 * -x^2)/sqrt(2 * pi)};
 				\addplot[draw = none, name path = B, domain = -3.75:#1]{0};
 				\addplot+[black, fill opacity = 0.4] fill between[of = A and B, soft clip = {domain = -3.75:#1}];
-				\draw[-] (-3.75, 0) -- (3.75, 0);
-				\draw[dashed] (#1, 0) -- (#1, #2);
-			\end{axis}
-		\end{tikzpicture}
-	\end{center}
-}
-\newcommand{\zgeq}[2]
-{
-	\begin{center}
-		\begin{tikzpicture}
-				\begin{axis}[xmin = -3.75, xmax = 3.5, ymin = 0, ymax = 0.4, xtick, ytick, axis y line = center, axis line style = {draw = none}]
-				\addplot[samples = 100, name path = A]{exp(0.5 * -x^2)/sqrt(2 * pi)};
-				\addplot[draw = none, name path = B, domain = #1:3.75]{0};
-				\addplot+[black, fill opacity = 0.4] fill between[of = A and B, soft clip = {domain = #1:3.75}];
 				\draw[-] (-3.75, 0) -- (3.75, 0);
 				\draw[dashed] (#1, 0) -- (#1, #2);
 			\end{axis}
@@ -49,6 +48,21 @@
 		\end{tikzpicture}
 	\end{center}
 }
+\newcommand{\zgeq}[2]
+{
+	\begin{center}
+		\begin{tikzpicture}
+				\begin{axis}[xmin = -3.75, xmax = 3.5, ymin = 0, ymax = 0.4, xtick, ytick, axis y line = center, axis line style = {draw = none}]
+				\addplot[samples = 100, name path = A]{exp(0.5 * -x^2)/sqrt(2 * pi)};
+				\addplot[draw = none, name path = B, domain = #1:3.75]{0};
+				\addplot+[black, fill opacity = 0.4] fill between[of = A and B, soft clip = {domain = #1:3.75}];
+				\draw[-] (-3.75, 0) -- (3.75, 0);
+				\draw[dashed] (#1, 0) -- (#1, #2);
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+}
+
 \newcommand{\zswith}[2]
 {
 	\begin{center}
@@ -66,6 +80,7 @@
 }
 
 
+
 \usepackage{blindtext}
 \usepackage{subfiles}
 
@@ -75,18 +90,18 @@
 \begin{document}
 	\maketitle
 	\tableofcontents
-	\chapter{Exploring One-Variable Data}
+	\part{Exploring One-Variable Data}
 		\subfile{units/1}
-	\chapter{Exploring Two-Variable Data}
+	\part{Exploring Two-Variable Data}
 		\subfile{units/2}
-	\chapter{Collecting Data}
+	\part{Collecting Data}
 		\subfile{units/3}
-	\chapter{Probability, Random Variables, and Probability Distributions}
+	\part{Probability, Random Variables, and Probability Distributions}
 		\subfile{units/4}
-	\chapter{Sampling Distributions}
+	\part{Sampling Distributions}
 		\subfile{units/5}
-	\chapter{Inference}
-		\section{Categorical Data}
-			\subsubsection{Proportions}
+	\part{Inference}
+		\chapter{Categorical Data}
+			\section{Proportions}
 				\subfile{units/6}
 \end{document}
