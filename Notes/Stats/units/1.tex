@@ -14,7 +14,7 @@
 			\textbf{Histograms} show bars that are assigned equal intervals. To find the length of each interval, the range can be divided by the number of classes and the result rounded up. Each bar's height shows the number of individuals within the class. \\
 			\textbf{Time plots} measure a variable over time. \\
 			A \textbf{Cumulative frequency curve} (OGIVE) is a line graph that shows the cumulative relative frequency, the sum of all lower classes (inclusive). Rather than each class being represented as a range, they are labeled by their medians.
-			\subsubsection{Graphically Describing Distributions}
+			\subsection*{Graphically Describing Distributions}
 				A distribution can be described by its shape, outliers, center, and spread (SOCS).
 				\paragraph{Shape}
 					In order for a distribution to be symmetric, values that are equidistant from the mode must have the same frequencies. \\
@@ -74,7 +74,8 @@
 			$$y_i = ax_i + b$$
 			It should be noted that the measures of center are changed by both $a$ and $b$, but only the former alters the measures of spread.
 		\section{Density Curves}
-			A \textbf{density curve}, typically denoted $f$, displays the relative frequencies of every possible value of its variable, making it effectively continuous. As such, the total area under the curve must be exactly 1 and its values must always be positive. \\ 
+			A \textbf{density curve}, typically denoted $f$, displays the relative frequencies of every possible value of its variable. As such, the total area under the curve must be exactly 1 and its values must always be positive. \\ 
+			A density curve is a \textbf{continuous} distribution, so the probability of $X$ being any particular value is zero. The function's actual values can be disregarded. \\
 			Because a density curve is effectively an idealized distribution curve, representing a population rather than a sample, different variables are used. \\ 
 			$$\begin{array}{|c|c|c|}\hline
 				\rm{Value} & \text{Sample Data} & \text{Population Value} \\\hline
@@ -102,7 +103,7 @@
 			To justify the normality of a data set, a modified box plot can be created and symmetry and a lack of variance shown. \\
 			Percentile can be found using the \textbf{cumulative normal distribution function} $\Phi$.\footnote{The cumulative normal distribution function is defined as such, where $\erf$ is the error function: $$\Phi(x) = \int_{-\infty}^x\varphi(t)\,dt = \frac{1}{2}\left[1 + \erf\left(\frac{x}{\sqrt{2}}\right)\right]$$Percentile can be evaluated on a calculator (for a standard or nonstandard normal distribution) using the \texttt{normalcdf} (\texttt{2nd/distr/2}) function:$$P(X < x)\normalCDF{-\infty}{x}{\mu}{\sigma}$$The probability of $X$ falling within a specific range can be found with this function as well:$$P(x_1 < X < x_2) = \normalCDF{x_1}{x_2}{\mu}{\sigma}$$}
 			$$\Phi(x) = P(X < x)$$
-			The \textbf{inverse normal function} $\Phi^{-1}$ takes a percentile as an input and returns a value.\footnote{A percentile's corresponding $x$ value can be found using the \texttt{invNorm} (\texttt{2nd/distr/3})function:$$x = \Phi(P(X < x) = \invNormal{P(X < x)}{\mu}{\sigma}{LEFT}$$}
+			The \textbf{inverse normal function} $\Phi^{-1}$ takes a percentile as an input and returns a value.\footnote{A percentile's corresponding $x$ value can be found using the \texttt{invNorm} (\texttt{2nd/distr/3})function:$$x = \Phi(P(X < x)) = \invNormal{P(X < x)}{\mu}{\sigma}{LEFT}$$}
 			$$\Phi^{-1}(P(X < x)) = x$$
 			The normal distribution follows the \textbf{empirical rule}, which states the following:
 			$$\footnotesize\begin{array}{|c|ccc|cccc|}\hline
