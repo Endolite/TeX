@@ -2,21 +2,29 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{csquotes}
 \usepackage[hang,flushmargin]{footmisc} 
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
+\usepackage{tikz}
 \usetikzlibrary{calc}
 
-\DeclareMathOperator{\invNorm}{invNorm}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\invNorm}{\texttt{invNorm}}
 \DeclareMathOperator{\nint}{nint}
-\DeclareMathOperator{\normalcdf}{normalcdf}
+\DeclareMathOperator{\normalcdf}{\texttt{normalcdf}}
+\DeclareMathOperator{\randomnorm}{\texttt{randomnorm}}
 
+\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 \newcommand{\comment}[1]{}
 \newcommand{\invNormal}[4]{\invNorm\left(\mathrm{area}:#1, \mu: #2, \sigma: #3, \mathrm{Tail: #4}\right)}
+\newcommand{\maxval}[1]{#1_{\mathrm{max}}}
+\newcommand{\minval}[1]{#1_{\mathrm{min}}}
 \newcommand{\normalCDF}[4]{\normalcdf\left(\mathrm{lower}: #1, \mathrm{upper}: #2, \mu: #3, \sigma: #4\right)}
 \newcommand{\propse}[2]{\sqrt{\frac{#1\left(1 - #1\right)}{#2}}}
 \newcommand{\propsed}[4]{\sqrt{\frac{#1\left(1 - #1\right)}{#2} + \frac{#3\left(1 - #3\right)}{#4}}}
+\newcommand{\randnorm}[3]{\randomnorm\left(\mu: #1, \sigma: #2, n: #3\right)}
 \renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
 \newcommand{\z}[3]{\frac{#1 - #2}{#3}}
 \newcommand{\zleq}[2]
@@ -79,9 +87,6 @@
 	\end{center}
 }
 
-
-
-\usepackage{blindtext}
 \usepackage{subfiles}
 
 \title{AP Statistics}
@@ -90,9 +95,9 @@
 \begin{document}
 	\maketitle
 	\tableofcontents
-	\part{Exploring One-Variable Data}
+	\part{One-Variable Data}
 		\subfile{units/1}
-	\part{Exploring Two-Variable Data}
+	\part{Two-Variable Data}
 		\subfile{units/2}
 	\part{Collecting Data}
 		\subfile{units/3}
@@ -101,7 +106,7 @@
 	\part{Sampling Distributions}
 		\subfile{units/5}
 	\part{Inference}
-		\chapter{Categorical Data}
+		\chapter{Inference for Categorical Data}
 			\section{Proportions}
 				\subfile{units/6}
 \end{document}
