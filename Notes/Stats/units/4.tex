@@ -12,7 +12,7 @@
 		The \textbf{complement rule} states that the probability of some event not occurring, denoted by the superscript $C$ above the event, is equal to 1 minus its probability of occurring. \\
 		$$P\left(A^C\right) = 1 - P(A)$$
 		It is quite clear that the converse of the complement rule also holds true, which means that a complement's complement is nothing but the original event.
-		\callout{17}{The complements of binary operators should be noted:\begin{align*}(A < B)^C &= A \ge B & (A > B)^C &= A \le B & (A = B)^C &= a \ne B\end{align*}}
+		\callout{17}{The complements of binary operators should be noted:\begin{align*}(A < B)^C &= A \ge B & (A > B)^C &= A \le B & (A = B)^C &= A \ne B\end{align*}}
 		$$P\left(\left(A^C\right)^C\right) = P(A)$$
 		In order for two events to be \textbf{mutually exclusive} (\textbf{disjoint}), it must be impossible for both of them to occur.
 		The \textbf{intersection} of two events, denoted by a $\cap$ between them, occurs when both events occur. It follows the commutative property
@@ -21,7 +21,22 @@
 		$$P(A\cup B) = P(B\cup A)$$
 		The \textbf{general addition rule} states that the probability of exactly one of two events occurring is equal to their sums of their probabilities of occurring by themselves minus the that of both occurring.
 		$$P(A\cup B) = P(A) + P(B) - P(A\cap B)$$
-		Complements apply to the complements of the unions and intersections of two events.\footnote{The way that complements affect unions and intersections follows De Morgan's law:\begin{align*}\lnot(A\lor B) &= \lnot A\land\lnot B & \lnot(A\land B) &= \lnot A\lor\lnot B\end{align*}This is disguised by the fact that \enquote{union} in statistics means \enquote{symmetric difference} in logic.}
+		Complements can be applied to the unions and intersections of two events.\footnote{
+			The way that complements affect unions and intersections follows De Morgan's law:\begin{align*}\lnot(A\lor B) &= \lnot A\land\lnot B & \lnot(A\land B) &= \lnot A\lor\lnot B\end{align*}This truth is disguised by the fact that \enquote{union} in statistics means \enquote{symmetric difference} in logic.
+			\begin{align*}
+				a &:= x\in A \land b:= x\in B \\
+				(A\triangle B)^C &\equiv \lnot(x\in A\oplus x\in B) & (A\cap B)^C &\equiv \lnot(x\in A \land x\in B)\\
+				&\equiv \lnot(a \oplus b) &&\equiv \lnot(a \land b)\\ 
+				&\equiv \lnot((a\land\lnot b)\lor(b\land\lnot a)) &&\equiv a\lor b\\
+				&\equiv \lnot(a\land\lnot b)\land\lnot(b\lor\lnot a) &&\equiv \\
+				&\equiv (\lnot a \lor b)\land(\lnot b\lor a) \\
+				&\equiv (\lnot a \land(\lnot b\lor a)) \lor (b\land(\lnot b\lor a)) \\
+				&\equiv ((\lnot a \land \lnot b)\lor (\lnot a \land a)) \lor ((b \land \lnot b) \lor(b\land a)) \\
+				&\equiv (\lnot a \land \lnot b) \lor 0 \lor 0 \lor (b\land a) \\
+				&\equiv (x\notin A \land x\notin B)\lor(x\in B \land x\in A) \\
+				&\equiv (A^C\cap B^C)\cup(A\cap B)
+			\end{align*}
+		}
 		\begin{align*}
 			P(A\cup B)^C &= P(A\cap B) + P\left(A^C\cap B^C\right)	& P(A\cap B)^C = P(A\cup B) + P\left(A^C \cap B^C\right)
 			\end{align*}
