@@ -9,6 +9,40 @@
 		A \textbf{probability model} is a description of a random process. It is comprised of a sample space and a list of each outcome's corresponding probability. \\
 		An \textbf{event} is any collection of outcomes. \\
 		For a probability model to be valid, any individual event's probability must be within $[0, 1]$ and the sum of the probabilities of all outcomes must be equal to zero. \\
-		The \textbf{complement rule} states that the probability of some event not occurring, denoted by the superscript $C$ above  is equal to 1 minus its probability of occurring. \\
+		The \textbf{complement rule} states that the probability of some event not occurring, denoted by the superscript $C$ above the event, is equal to 1 minus its probability of occurring. \\
+		$$P\left(A^C\right) = 1 - P(A)$$
+		It is quite clear that the converse of the complement rule also holds true, which means that a complement's complement is nothing but the original event.
+		\callout{17}{The complements of binary operators should be noted:\begin{align*}(A < B)^C &= A \ge B & (A > B)^C &= A \le B & (A = B)^C &= a \ne B\end{align*}}
+		$$P\left(\left(A^C\right)^C\right) = P(A)$$
+		In order for two events to be \textbf{mutually exclusive} (\textbf{disjoint}), it must be impossible for both of them to occur.
+		The \textbf{intersection} of two events, denoted by a $\cap$ between them, occurs when both events occur. It follows the commutative property
+		$$P(A\cap B) = P(B\cap A)$$
+		The \textbf{union} of two events occurs when exactly one of the two events occurs. This is also commutative. \\
+		$$P(A\cup B) = P(B\cup A)$$
+		The \textbf{general addition rule} states that the probability of exactly one of two events occurring is equal to their sums of their probabilities of occurring by themselves minus the that of both occurring.
+		$$P(A\cup B) = P(A) + P(B) - P(A\cap B)$$
+		Complements apply to the complements of the unions and intersections of two events.\footnote{The way that complements affect unions and intersections follows De Morgan's law:\begin{align*}\lnot(A\lor B) &= \lnot A\land\lnot B & \lnot(A\land B) &= \lnot A\lor\lnot B\end{align*}This is disguised by the fact that \enquote{union} in statistics means \enquote{symmetric difference} in logic.}
+		\begin{align*}
+			P(A\cup B)^C &= P(A\cap B) + P\left(A^C\cap B^C\right)	& P(A\cap B)^C = P(A\cup B) + P\left(A^C \cap B^C\right)
+			\end{align*}
+		The probability of one event occurring and another not is equal to the difference between the probabilities of event occurring and both occurring.
+		$$P\left(A\cap B^C\right) = P(A) - P(A\cap B)$$
+		For two events to be \textbf{mutually exclusive} or \textbf{disjoint}, it must be impossible for both to occur.
+		$$P(A\cap B) = 0$$
+		Mutually exclusive events follow the \textbf{addition rule for mutually exclusive events}, which states that the probability of their intersection is equal to their sum.
+		$$P(A\cup B) = P(A) + P(B) + P(A\cap B) = P(A) + P(B)$$
+		The probability of one event occurring given that another has already occurred is a \textbf{conditional probability}. It is equal to the probability of both events occurring divided by that of the given event.\footnote{On a two-way table, $P(A|B)$ is the intersection of $A$ and $B$ divided by the total of $B$.}
+		$$P(A|B) = \frac{P(A\cap B)}{P(B)}$$
+		This allows probability of the intersection of two events to be calculated.
+		$$P(A\cap B) = P(A) \times P(B|A) = P(B) \times P(A|B)$$
+		The commutative property is not always followed by conditional probabilities.
+		$$\lnot\square[P(A|B) = P(B|A)]$$
+		Two events are \textbf{independent} if the one occurring does not affect the probability of the other occurring.
+		$$P(A|B) = P(A) \land P(B|A) = P(B)$$
+		\callout{17}{Mutually exclusive events have no common outcomes while independent events are not affected by one of the events occurring.}
+		The probability of the intersection of two independent events is simply the product of their probabilities.
+		$$P(A\cap B) = P(A|B) \times P(B) = P(A) \times P(B)$$
+		If two events are not independent, they are \textbf{dependent}.
+		\section*{Simulation}
 	\chapter{Random Variables and Probability Distributions}
 \end{document}
