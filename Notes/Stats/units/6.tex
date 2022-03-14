@@ -3,6 +3,23 @@
 \begin{document}
 	\chapter{Confidence Intervals}
 	\chapter{Significance Tests}
-	\chapter{Chi-Square Tests}
+		A \textbf{significance test} is a procedure that uses observed data to test between two claims, often made regarding parameters, about hypotheses. \\
+		The \textbf{null hypothesis} ($\pmb{H_0}$) claims that the parameter is equal to a \textbf{null value}, what it was previously assumed to be, denoted by a subscript $0$ on the parameter. It is often a statement of no change or difference.
+		$$H_0:\rm{parameter} < \text{null value}$$
+		The claim that is attempting to be supported is the \textbf{alternative hypothesis} ($\pmb{H_a}$. It can either be \textbf{one-sided}, claiming that the parameter is greater or less than the null value, or \textbf{two-sided}, claiming simply that the parameter is not equal to the null value.
+		$$H_a:\rm{parameter} \gtrless \textbf{null value} \lor \rm{parameter} \ne \textbf{null value}$$
+		A test's $\pmb{P}$\textbf{-value} is the probability of evidence being found for $H_a$ that is at least as strong as it would be assuming that $H_0$ is true.
+		$$P\text{-value} = P(\text{statistic supports } H_a \mid H_0)$$ \\
+		The smaller the $P$-value, the lower the chances of receiving evidence of the alternative. A small $P$-value therefore supports the $H_a$. \\
+		If the $P$-value is less than the \textbf{significance level} $\pmb{\alpha}$, $H_0$ can be rejected and it can be concluded that there is convincing evidence for $H_a$. If the $P$-value is greater than or equal to $\alpha$, $H_0$ cannot be rejected, and it can be concluded that there is not convincing evidence for $H_a$.
+		\callout{11.74}{Claims should never be made regarding support of $H_0$, only of $H_a$.}
+		When performing significance tests, two types of errors may occur. A \textbf{Type \Roman{1} error} occurs when $H_0$ is rejected despite being true; the data provided convincing evidence for $H_a$ despite $H_0$ being correct. A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the did not provide convincing evidence for $H_a$ despite it being correct. \\
+		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
+		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases.
+		\section{Significance Tests about Proportion}
+			In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$.
+			$$$$
+		\section{Significance Tests about Means}
+		\chapter{Chi-Square Tests}
 	\chapter{Slopes}
 \end{document}

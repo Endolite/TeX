@@ -98,14 +98,14 @@
 					\draw[dashed] (0,0) -- (0, 0.399);
 				\end{tikzpicture}
 			\end{center}
-			The \textbf{normal} distribution (typically denoted $\varphi$) is a density curve that is bell-shaped and symmetrical with inflection points one standard deviation from the mean.\footnote{The normal distribution is defined as such: $$\varphi(x) = \frac{e^{-x^2/2}}{\sqrt{2\pi}}$$} Its mean and standard deviation are 0 and 1 respectively.\\
-			For a curve to be normal, it must be some transformation\footnote{Changing the mean shifts the graph of the normal distribution horizontally while changing the standard deviation stretches or shrinks it vertically (the larger, the flatter, and the more data in the \enquote{tails}).} of the normal distribution curve. A normal curve with parameters $\mu$ and $\sigma$ is denoted $\mathcal{N}(\mu, \sigma)$, and its application to a variable $X$ is denoted $X\sim\mathcal{N}(\mu,\sigma)$.\footnote{A normal distribution of $X$ with parameters $\mu$ and $\sigma$can also be denoted as such:$$f(x\mid\mu,\sigma^2) = \frac{1}{\sigma}\varphi\left(\frac{x - \mu}{\sigma}\right)$$} \\
-			To justify the normality of a data set, a modified box plot can be created and symmetry and a lack of variance shown. \\
-			Percentile can be found using the \textbf{cumulative normal distribution function} $\Phi$.\footnote{The cumulative normal distribution function is defined as such, where $\erf$ is the error function: $$\Phi(x) = \int_{-\infty}^x\varphi(t)\,dt = \frac{1}{2}\left[1 + \erf\left(\frac{x}{\sqrt{2}}\right)\right]$$Percentile can be evaluated on a calculator (for a standard or nonstandard normal distribution) using the \texttt{normalcdf} (\texttt{2nd/distr/2}) function:$$P(X < x) = \normalCDF{-\infty}{x}{\mu}{\sigma}$$The probability of $X$ falling within a specific range can be found with this function as well:$$P(x_1 < X < x_2) = \normalCDF{x_1}{x_2}{\mu}{\sigma}$$}
+			The \textbf{Normal} distribution (typically denoted $\varphi$) is a density curve that is bell-shaped and symmetrical with inflection points one standard deviation from the mean.\footnote{The Normal distribution is defined as such: $$\varphi(x) = \frac{e^{-x^2/2}}{\sqrt{2\pi}}$$} Its mean and standard deviation are 0 and 1 respectively.\\
+			For a curve to be Normal, it must be some transformation\footnote{Changing the mean shifts the graph of the Normal distribution horizontally while changing the standard deviation stretches or shrinks it vertically (the larger, the flatter, and the more data in the \enquote{tails}).} of the Normal distribution curve. A Normal curve with parameters $\mu$ and $\sigma$ is denoted $\mathcal{N}(\mu, \sigma)$, and its application to a variable $X$ is denoted $X\sim\mathcal{N}(\mu,\sigma)$.\footnote{A Normal distribution of $X$ with parameters $\mu$ and $\sigma$can also be denoted as such:$$f(x\mid\mu,\sigma^2) = \frac{1}{\sigma}\varphi\left(\frac{x - \mu}{\sigma}\right)$$} \\
+			To justify the Normality of a data set, a modified box plot can be created and symmetry and a lack of variance shown. \\
+			Percentile can be found using the \textbf{cumulative Normal distribution function} $\Phi$.\footnote{The cumulative Normal distribution function is defined as such, where $\erf$ is the error function: $$\Phi(x) = \int_{-\infty}^x\varphi(t)\,dt = \frac{1}{2}\left[1 + \erf\left(\frac{x}{\sqrt{2}}\right)\right]$$Percentile can be evaluated on a calculator (for a standard or nonstandard Normal distribution) using the \texttt{normalcdf} (\texttt{2nd/distr/2}) function:$$P(X < x) = \normalCDF{-\infty}{x}{\mu}{\sigma}$$The probability of $X$ falling within a specific range can be found with this function as well:$$P(x_1 < X < x_2) = \normalCDF{x_1}{x_2}{\mu}{\sigma}$$}
 			$$\Phi(x) = P(X < x)$$
-			The \textbf{inverse normal function} $\Phi^{-1}$ takes a percentile as an input and returns a value.\footnote{A percentile's corresponding $x$ value can be found using the \texttt{invNorm} (\texttt{2nd/distr/3})function:$$x = \Phi(P(X < x)) = \invNormal{P(X < x)}{\mu}{\sigma}{LEFT}$$}
+			The \textbf{inverse Normal function} $\Phi^{-1}$ takes a percentile as an input and returns a value.\footnote{A percentile's corresponding $x$ value can be found using the \texttt{invNorm} (\texttt{2nd/distr/3})function:$$x = \Phi(P(X < x)) = \invNormal{P(X < x)}{\mu}{\sigma}{LEFT}$$}
 			$$\Phi^{-1}(P(X < x)) = x$$
-			The normal distribution follows the \textbf{empirical rule}, which states the following:
+			The Normal distribution follows the \textbf{empirical rule}, which states the following:
 			$$\footnotesize\begin{array}{|c|ccc|cccc|}\hline
 				\rm{Range} & \mu \pm \sigma & \mu \pm 2\sigma & \mu \pm 3\sigma & (\mu, \mu + \sigma) & (\mu + \sigma, \mu + 2\sigma) & (\mu + 2\sigma, \mu + 3\sigma) & (\mu + 3\sigma, \infty)\\\hline
 				\text{Proportion of Data} & 60\% & 95\% & 99.7\% & 34\% & 13.5\% & 2.35\% & 0.15\% \\\hline
@@ -132,26 +132,26 @@
 					\node[] at (0, -0.1) {$\sigma$ from $\mu$};
 				\end{tikzpicture}
 			\end{center}
-			To simulate a situation that shows normality, random numbers can be generated following a normal distribution.\footnote{To generate $n$ random numbers following a normal distribution, the $\randomnorm$ (\texttt{math/PROB/6}) function can be used as such:$$\randnorm{\mu}{\sigma}{n} = \{x_1, x_2 , \ldots, x_n\}$$This list can then be stored using $\texttt{sto}\to\texttt{L}_n$}
+			To simulate a situation that shows Normality, random numbers can be generated following a Normal distribution.\footnote{To generate $n$ random numbers following a Normal distribution, the $\randomnorm$ (\texttt{math/PROB/6}) function can be used as such:$$\randnorm{\mu}{\sigma}{n} = \{x_1, x_2 , \ldots, x_n\}$$This list can then be stored using $\texttt{sto}\to\texttt{L}_n$}
 			\subsection*{Standardization and $z$-Scores}
 				The $\pmb{z}$\textbf{-score} is the number of standard deviations away from the mean.\footnote{$z$-scores follow the same conventions as variables, $Z$ being used for any value, $z$ for any particular value, and $z_i$ for a defined particular value. The subscript may also denote the variable that it is the $z$-score of, though, in case the cases would correspond, as in $Z_X$, $z_x$, and $z_{x,i}$}
 				$$z = \z{x}{\mu}{\sigma}$$
-				$z$-scores allow the standard normal distribution to always be used\footnote{$z$ should be used in place of $x$ when working with $\varphi$ and $\Phi$.}, as it turns $x$ into $z$, $\mu$ into 0 (as the numerator becomes zero), and $\sigma$ into 1 (as $z$ is measured in units of $\sigma$).
+				$z$-scores allow the standard Normal distribution to always be used\footnote{$z$ should be used in place of $x$ when working with $\varphi$ and $\Phi$.}, as it turns $x$ into $z$, $\mu$ into 0 (as the numerator becomes zero), and $\sigma$ into 1 (as $z$ is measured in units of $\sigma$).
 				\begin{align*}
 					f(x) &= \varphi(z) & F(x) &= \Phi(z)
 				\end{align*}
-				\callout{17}{$z$-scores can always be calculated, but normality must be confirmed in order for percentile to be calculable.}
+				\callout{17}{$z$-scores can always be calculated, but Normality must be confirmed in order for percentile to be calculable.}
 				When answering a question involving calculating the value with a corresponding percentile, the following should be done:
 				\begin{enumerate}
-					\item Define the variable its distribution, using the given parameters (and justifying normality).
+					\item Define the variable its distribution, using the given parameters (and justifying Normality).
 					\begin{enumerate}
-						\item To show normality, the situation can be quoted, a modified box plot can be used, or a \textbf{normal probability plot}, which shows $x$ vs $z$, can be created, and its straightness verified.
+						\item To show Normality, the situation can be quoted, a modified box plot can be used, or a \textbf{Normal probability plot}, which shows $x$ vs $z$, can be created, and its straightness verified.
 						\item If a graph is not given, draw the distribution, labeling the mean, given/desired particular value(s), and given/desired percentiles.
 					\end{enumerate}
 					\item Calculate/denote the $z$-scores of any particular values.
 					\begin{enumerate}
 						\item Use the definition of $z$-score as the number of standard deviations from the mean if given particular values.
-						\item Use the inverse normal function if given percentiles.
+						\item Use the inverse Normal function if given percentiles.
 					\end{enumerate}
 					\item Use the formula for $z$-score to calculate the desired variable.
 						\begin{align*}
