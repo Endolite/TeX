@@ -17,8 +17,26 @@
 		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases.
 		\section{Significance Tests about Proportions}
-			In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$.
-			$$$$
+			In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$, so Large Counts and the 10\% condition must be satisfied and interpreted.
+			To perform the significance test, the \textbf{standardized test statistic} $z$ must be calculated. \\
+			$$z = \frac{\hat{p} - \mu_{\hat{p}0}}{\sigma_{\hat{p}0}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
+			The $P$-value is the probability of $p$ not satisfying $H_0$ in the way that $H_a$ predicts, which can be calculated using the cumulative probability function.
+			$$
+				P\text{-value} = P(H_a) = \begin{cases}
+ 					P(p < p_0) = P(Z < z) & H_a:p < p_0 \\
+ 					P(p > p_0) = P(Z > z) & H_a:p > p_0 \\
+ 					P(|p| < |p_0|) = P(Z < -|z|) + P(Z > |z|) & H_a:p \ne p_0
+				\end{cases}
+			$$
+			A confidence interval can be used in tandem with a sample proportion to provide a set of plausible values for $p$, should the alternative hypothesis be convincingly supported. \\
+			A two-sided test of of $H_0:p = p_0$ at significance level $\alpha$ usually provides the same conclusion as a confidence level of the complement of $\alpha$. \\
+			A test's \textbf{power} is the probability of a Type \Roman{2} error being avoided.
+			$$\mathrm{Power} = P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})$$
+			Power can be increased by increasing the sample size or significance level or by increasing the \textbf{effect size}, the minimum difference between the null and alternative parameter values. Improving data collection by doing things such as controlling other variables and blocking in experiments or performing a stratified random sample, can also increase the power. \\
+			The factors that influence the necessary sample size for a statistical test are the significance level, effect size, and desired power.
+			\subsection*{Significance Tests about Differences in Proportions}
+				A significance can be performed to compare the proportions for two populations is based on the difference between sample proportions. \\
+				The null hypothesis for
 		\section{Significance Tests about Means}
 		\chapter{Chi-Square Tests}
 	\chapter{Slopes}

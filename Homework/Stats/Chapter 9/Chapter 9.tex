@@ -89,7 +89,7 @@
 		\paragraph{27. More lefties?}
 			\begin{enumerate}[a.]
 				\item 
-					$p =$ the true proportion of students at Simon's school that are left-handed; $H_0:p = 0.1$; $H_a:p > 0.1$.
+					$p = 0$ the true proportion of students at Simon's school that are left-handed; $H_0:p = 0.1$; $H_a:p > 0.1$.
 				\item
 					The $P$-value of $H_0$ against the result of the sample is $24/200$, equal to 12\%. This means that the probability of receiving the observed results due to sheer chance assuming, that $H_0$ is true.
 				\item
@@ -126,9 +126,21 @@
 					\item
 						The $P$-level of 0.0143 is greater than $\alpha$, so $H_0$ cannot be rejected, as there is not convincing evidence of the true proportion of being greater than 0.5.
 					\item
-						\begin{align*}
-							z &= \frac{\hat{p} - p_0}{\propse{p_0}{n}} \\
-							\hat{p} &= p_0 + z\propse{p_0}{n} = 0.5 + 2.19\propse{0.5}{200} \approx 0.5774
-						\end{align*}
+						$$\hat{p} = p_0 + z\propse{p_0}{n} = 0.5 + 2.19\propse{0.5}{200} \approx 0.5774$$
+				\end{enumerate}
+			\paragraph{43. Bullies in middle school}
+				\begin{align*}
+					z &= \z{\hat{p}}{p_0}{\propse{p_0}{n}} = \z{\frac{445}{558}}{0.75}{\propse{0.75}{558}} \approx 2.591 \\ 
+					P\text{-value} &= \normalCDF{z \approx 2.591}{\infty}{0}{1} \approx 0.005
+				\end{align*}
+				The probability of evidence of the sample proportion of middle school students that engage in bullying being at least $445/558$ is about 0.005 for a random sample assuming that the true population proportion $p$ is equal to 0.75, which is less than the significance level $\alpha = 0.05$, so there this data provides convincing evidence that $p$ is greater than 0.75.
+			\paragraph{59. Potato chips}
+				There is a 23.5\% chance of convincing evidence for $H_a$ not being found when $p = 0.11$.
+			\paragraph{61. Powerful potatoes}
+				\begin{enumerate}[a.]
+					\item
+						Increasing the significance level also increases the probability of a Type \Roman{1} error occurring, which means that the probability of a Type \Roman{2} error occurring decreases, which means that the power of the test increases.
+					\item
+						Decreasing the sample size
 				\end{enumerate}
 \end{document}

@@ -11,9 +11,9 @@
 		For a probability model to be valid, any individual event's probability must be within $[0, 1]$ and the sum of the probabilities of all outcomes must be equal to zero. \\
 		The \textbf{complement rule} states that the probability of some event not occurring, denoted by the superscript $C$ above the event, is equal to 1 minus its probability of occurring. \\
 		$$P\left(A^C\right) = 1 - P(A)$$
-		It is quite clear that the converse of the complement rule also holds true, which means that a complement's complement is nothing but the original event.
+		It is quite clear that the converse of the complement rule also holds true, which means that a complement's complement is nothing but the original event. 
 		$$P\left(\left(A^C\right)^C\right) = P(A)$$
-		\callout{17}{The complements of binary operators should be noted:\begin{align*}(A < B)^C &= A \ge B & (A > B)^C &= A \le B & (A = B)^C &= A \ne B\end{align*}}
+		\callout{17}{The complements of binary relations should be noted:\small\begin{align*}(A < B)^C &= A \ge B & (A > B)^C &= A \le B & (A = B)^C &= A \ne B & (A < B < C)^C &= (B\le A)\lor (B\ge C)\end{align*}}
 		In order for two events to be \textbf{mutually exclusive} (\textbf{disjoint}), it must be impossible for both of them to occur.
 		The \textbf{intersection} of two events, denoted by a $\cap$ between them, occurs when both events occur. It follows the commutative property
 		$$P(A\cap B) = P(B\cap A)$$
@@ -63,6 +63,11 @@
 		\section*{Simulation}
 	\chapter{Random Variables and Probability Distributions}
 		\section{Random Variables}
+			\textbf{Random variables} take numerical values that describe the outcomes of some chance process. \\
+			A \textbf{probability distribution} describes all possible outcomes and their probabilities. \\
+			\section{Discrete and Continuous Random Variables}
+				\subsection*{Discrete Random Variables}
+					\textbf{Discrete random variables} have a fixed finite set of possible values with gaps between them.
 		\section{Probability Distributions}
 			\subsection{Binomial Distributions}
 			\subsection{Geometric Distributions}
