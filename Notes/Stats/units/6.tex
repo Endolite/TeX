@@ -41,7 +41,7 @@
 					\item Increasing the size of the difference that needs to be detected makes that difference more likely to be detected, as larger differences are easier to detect.
 				\end{itemize}
 		\end{enumerate}
-		\section{Significance Tests about Proportions}
+		\section*{Significance Tests about Proportions}
 			\callout{17}{In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$ and that the standard error can be calculated, so Large Counts and the 10\% condition must be satisfied and interpreted for Normality and independence respectively.}
 			To perform a significance test about a proportion, the \textbf{standardized test statistic} $z$ must be calculated. \\
 			$$z = \frac{\hat{p} - \mu_{\hat{p}0}}{\sigma_{\hat{p}0}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
@@ -66,11 +66,11 @@
 				The \textbf{combined sample proportion} is denoted $\hat{p}_C$ and is equal to the total successes divided by the total sample size, making it effectively a weighted average.
 				$$\hat{p}_C = \frac{x_1 + x_2}{n_1 + n_2} = \frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1 + n_2}$$
 				The Large Counts condition uses $\hat{p}_C$.
-				$$n_1\hat{p}_C, n_1(1 - \hat{p}_C), n_2\hat{p}_C, n_2(1 - \hat{p}_C \ge 10$$
+				$$n_1\hat{p}_C, n_1(1 - \hat{p}_C), n_2\hat{p}_C, n_2(1 - \hat{p}_C) \ge 10$$
 				\callout{17}{For a significance test to be run about a difference of proportions, the randomness, independence (10\%) (for each proportion), and Large Counts conditions must be met.}
 				The standardized test statistic is the $z$ score, using the difference in proportions, assuming the mean to be 0 ($H_0$ to be true), and the standard error of $\hat{p}_C$.
 				$$z = \z{\hat{p}_1 - \hat{p}_2}{\mu_{\hat{p}}}{s_{\hat{p}_1 - \hat{p}_2}} = \z{\hat{p}_1 - \hat{p}_2}{0}{\propsed{\hat{p}_C}{n_1}{\hat{p}_C}{n_2}} = \z{\hat{p}_1}{\hat{p}_2}{\propsee{\hat{p}_C}{n_1}{n_1}}$$
-		\section{Significance Tests about Means}
+		\section*{Significance Tests about Means}
 	\chapter{Chi-Square Tests}
 	\chapter{Slopes}
 \end{document}

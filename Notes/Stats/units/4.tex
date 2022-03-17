@@ -65,9 +65,19 @@
 		\section{Random Variables}
 			\textbf{Random variables} take numerical values that describe the outcomes of some chance process. \\
 			A \textbf{probability distribution} describes all possible outcomes and their probabilities. \\
-			\section{Discrete and Continuous Random Variables}
-				\subsection*{Discrete Random Variables}
-					\textbf{Discrete random variables} have a fixed finite set of possible values with gaps between them.
+			For a probability distribution to be valid, the sum of all probabilities must be one and all individual probabilities be within $[0,1]$. \\
+			The probability of $X$ being equal to $x_i$ can be denoted as either $P(x_i)$ or as $p_i$.
+			$$P(X = x_i) = P(x_i) = p_i$$
+			The \textbf{mean} or \textbf{expected value} (denoted $E(X)$)
+			\subsection*{Discrete Random Variables}
+				A \textbf{discrete random variables} have a fixed finite set of possible values with gaps between them.
+				The \textbf{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.
+				$$\mu_X = \sum x_ip_i$$
+				\callout{17}{The mean of a discrete random variable need not be one of its possible values.}
+				The \textbf{variance} $\sigma^2$ of a discrete random variable is the sum of the products of the square of the distance from the mean multiplied by frequency.
+				$$\sigma_X^2 = \sum(x_i - \mu_X)^2p_i$$
+				The \textbf{standard deviation} of a discrete random variable is the square root of its variance.
+				$$\sigma_X = \sigma_X^2$$
 		\section{Probability Distributions}
 			\subsection{Binomial Distributions}
 			\subsection{Geometric Distributions}
