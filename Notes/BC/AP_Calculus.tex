@@ -1,0 +1,26 @@
+\documentclass[12pt, A4]{report}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[margin=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{moresize}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+
+\author{Arnav Patri}
+\title{AP Calculus}
+\usepackage{subfiles}
+
+\begin{document}
+	\maketitle
+		\tableofcontents
+			\setcounter{part}{9}
+			\part{Infinite Sequences Series}
+				\subfile{units/10}
+\end{document}

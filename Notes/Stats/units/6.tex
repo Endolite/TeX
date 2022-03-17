@@ -13,12 +13,37 @@
 		The smaller the $P$-value, the lower the chances of receiving evidence of the alternative. A small $P$-value therefore supports the $H_a$. \\
 		If the $P$-value is less than the \textbf{significance level} $\pmb{\alpha}$, $H_0$ can be rejected and it can be concluded that there is convincing evidence for $H_a$. If the $P$-value is greater than or equal to $\alpha$, $H_0$ cannot be rejected, and it can be concluded that there is not convincing evidence for $H_a$.
 		\callout{11.74}{Claims should never be made regarding support of $H_0$, only of $H_a$.}
-		When performing significance tests, two types of errors may occur. A \textbf{Type \Roman{1} error} occurs when $H_0$ is rejected despite being true; the data provided convincing evidence for $H_a$ despite $H_0$ being correct. A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the did not provide convincing evidence for $H_a$ despite it being correct. \\
+		When performing significance tests, two types of errors may occur:
+		\begin{itemize}
+			\item
+				A \textbf{Type \Roman{1} error} occurs when $H_0$ is rejected despite being true; the data provided convincing evidence for $H_a$ despite $H_0$ being correct. 
+			\item
+			A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the did not provide convincing evidence for $H_a$ despite it being correct.
+		\end{itemize}
 		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases.
+		A confidence interval can be used in tandem with a sample proportion to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
+		A two-sided test of of $H_0$ at significance level $\alpha$ usually provides the same conclusion as a confidence level of the complement of $\alpha$. \\
+		A test's \textbf{power} is the probability of convincing evidence being found that convincingly supports $H_a$ given a value for the parameter being tested. This is also is equal to the probability of avoiding a Type \Roman{2} error. 
+		$$\mathrm{power} = 1 - P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})$$
+		Power can be increased in three ways:
+		\begin{enumerate}
+			\item Increasing the sample size
+				\begin{itemize}
+					\item A large sample means that more data is collected and more information is given regarding the true population parameter. This also increases $n$, which decreases $\sigma_{\hat{p}0}$
+				\end{itemize}
+			\item Increasing the significance level
+				\begin{itemize}
+					\item Increasing the significance level increases the probability of $H_0$ being rejected when $H_a$ is true.
+				\end{itemize}
+			\item Increasing the \textbf{effect size}, the minimum difference between the null parameter value and the alternative parameter value for the change to matter
+				\begin{itemize}
+					\item Increasing the size of the difference that needs to be detected makes that difference more likely to be detected, as larger differences are easier to detect.
+				\end{itemize}
+		\end{enumerate}
 		\section{Significance Tests about Proportions}
-			In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$, so Large Counts and the 10\% condition must be satisfied and interpreted.
-			To perform the significance test, the \textbf{standardized test statistic} $z$ must be calculated. \\
+			\callout{17}{In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$ and that the standard error can be calculated, so Large Counts and the 10\% condition must be satisfied and interpreted for Normality and independence respectively.}
+			To perform a significance test about a proportion, the \textbf{standardized test statistic} $z$ must be calculated. \\
 			$$z = \frac{\hat{p} - \mu_{\hat{p}0}}{\sigma_{\hat{p}0}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
 			The $P$-value is the probability of $p$ not satisfying $H_0$ in the way that $H_a$ predicts, which can be calculated using the cumulative probability function.
 			$$
@@ -28,16 +53,24 @@
  					P(|p| < |p_0|) = P(Z < -|z|) + P(Z > |z|) & H_a:p \ne p_0
 				\end{cases}
 			$$
-			A confidence interval can be used in tandem with a sample proportion to provide a set of plausible values for $p$, should the alternative hypothesis be convincingly supported. \\
-			A two-sided test of of $H_0:p = p_0$ at significance level $\alpha$ usually provides the same conclusion as a confidence level of the complement of $\alpha$. \\
-			A test's \textbf{power} is the probability of a Type \Roman{2} error being avoided.
-			$$\mathrm{Power} = P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})$$
-			Power can be increased by increasing the sample size or significance level or by increasing the \textbf{effect size}, the minimum difference between the null and alternative parameter values. Improving data collection by doing things such as controlling other variables and blocking in experiments or performing a stratified random sample, can also increase the power. \\
-			The factors that influence the necessary sample size for a statistical test are the significance level, effect size, and desired power.
 			\subsection*{Significance Tests about Differences in Proportions}
-				A significance can be performed to compare the proportions for two populations is based on the difference between sample proportions. \\
-				The null hypothesis for
+				A significance can be performed to compare the proportions for two populations is based on the difference between sample proportions.
+				\begin{align*}
+					H_0:p_1 - p_2 = p_0 && H_a: p_1 - p_2 \gtrless p_0 && H_a:p_1 - p_2 \ne p_0
+				\end{align*}
+				Typically, $p_0$ is 0, so these hypotheses can be rewritten.
+				\begin{align*}
+					H_0:p_1 = p_2 && H_a:p_1 \gtrless p_2 && H_a:p_1 \ne p_2
+				\end{align*}
+				A significance test first assumes that the null hypothesis $H_0:p_1 = p_2$ is true. This common value is referred to as $p$. \\
+				The \textbf{combined sample proportion} is denoted $\hat{p}_C$ and is equal to the total successes divided by the total sample size, making it effectively a weighted average.
+				$$\hat{p}_C = \frac{x_1 + x_2}{n_1 + n_2} = \frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1 + n_2}$$
+				The Large Counts condition uses $\hat{p}_C$.
+				$$n_1\hat{p}_C, n_1(1 - \hat{p}_C), n_2\hat{p}_C, n_2(1 - \hat{p}_C > 10$$
+				\callout{17}{For a significance test to be run about a difference of proportions, the randomness, independence (10\%) (for each proportion), and Large Counts conditions must be met.}
+				The standardized test statistic is the $z$ score, using the difference in proportions, assuming the mean to be 0 ($H_0$ to be true), and the standard error of $\hat{p}_C$.
+				$$z = \z{\hat{p}_1 - \hat{p}_2}{\mu_{\hat{p}}}{s_{\hat{p}_1 - \hat{p}_2}} = \z{\hat{p}_1 - \hat{p}_2}{0}{\propsed{\hat{p}_C}{n_1}{\hat{p}_C}{n_2}} = \z{\hat{p}_1}{\hat{p}_2}{\propsee{\hat{p}_C}{n_1}{n_1}}$$
 		\section{Significance Tests about Means}
-		\chapter{Chi-Square Tests}
+	\chapter{Chi-Square Tests}
 	\chapter{Slopes}
 \end{document}

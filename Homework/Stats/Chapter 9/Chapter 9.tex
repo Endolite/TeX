@@ -14,6 +14,7 @@
 \newcommand{\normalCDF}[4]{\normalcdf\left(\mathrm{lower}: #1, \mathrm{upper}: #2, \mu: #3, \sigma: #4\right)}
 \newcommand{\propse}[2]{\sqrt{\frac{#1\left(1 - #1\right)}{#2}}}
 \newcommand{\propsed}[4]{\sqrt{\frac{#1\left(1 - #1\right)}{#2} + \frac{#3\left(1 - #3\right)}{#4}}}
+\newcommand{\propsee}[3]{\sqrt{#1\left(1 - #1\right)\left(\frac{1}{#2} - \frac{1}{#3}\right)}}
 \newcommand{\Nint}[1]{\nint\left(#1\right)}
 \newcommand{\z}[3]{\frac{#1 - #2}{#3}}
 \renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
@@ -135,12 +136,82 @@
 				\end{align*}
 				The probability of evidence of the sample proportion of middle school students that engage in bullying being at least $445/558$ is about 0.005 for a random sample assuming that the true population proportion $p$ is equal to 0.75, which is less than the significance level $\alpha = 0.05$, so there this data provides convincing evidence that $p$ is greater than 0.75.
 			\paragraph{59. Potato chips}
-				There is a 23.5\% chance of convincing evidence for $H_a$ not being found when $p = 0.11$.
+				If the true proportion $p$ of potatoes with blemishes in a shipment is 0.11, there is a 76.5\% chance of convincing evidence being found for $H_a: p > 0.08$.
+			\paragraph{60. Upscale Restaurant}
+				If the true mean income of people living near the location 
 			\paragraph{61. Powerful potatoes}
 				\begin{enumerate}[a.]
 					\item
-						Increasing the significance level also increases the probability of a Type \Roman{1} error occurring, which means that the probability of a Type \Roman{2} error occurring decreases, which means that the power of the test increases.
+						Increasing the significance level also increases the test's power.
 					\item
-						Decreasing the sample size
+						Decreasing the sample size also decreases the test's power.
+					\item
+						Decreasing the difference between $p_a$ and $p$, the effect size, decreases makes it less likely that a significant difference will be detected, decreasing the power.
 				\end{enumerate}
+			\paragraph{62. Restaurant power}
+				\begin{enumerate}[a.]
+					\item
+						Decreasing the sample size decreases the standard deviation, decreasing the range within which values are significant, making it harder to reject $H_0$, increasing the chances of a Type \Roman{2} error occurring, reducing the power.
+					\item
+						Reducing the effect size makes a difference in the parameter more difficult to detect, increasing the chances of a Type \Roman{2} error occurring, reducing the power.
+					\item
+						Increasing the significance level makes it easier to reject $H_0$, decreasing the chances of a Type \Roman{2} error, increasing the power.
+				\end{enumerate}
+			\paragraph{63. Potato power problems}
+				\begin{enumerate}[a.]
+					\item
+						Using a higher significance level increases the chance of the null hypothesis being rejected despite the alternative hypothesis being false.
+					\item 
+						Increasing the sample size makes the study more costly to perform.
+				\end{enumerate}
+			\paragraph{64. Restaurant power problems}
+				\begin{enumerate}[a.]
+					\item
+						Increasing the significance level also increases the probability of a Type \Roman{1} error.
+					\item
+						Increasing the sample size makes the study more expensive to carry out.
+				\end{enumerate}
+			\paragraph{65. Better parking}
+				\begin{enumerate}[a.]
+					\item At a significance level of $\alpha = 0.05$, there is a 75\% chance of convincing evidence for more than 37\% of students at the school approving of the provided parking being found by a random sample if the true population proportion is 0.45.
+					\item
+						\begin{align*}
+							P(\text{Type \Roman{1} Error}) &= \alpha = 0.05 & P(\text{Type \Roman{2} Error}) = 1 - \mathrm{power} = 1 - 0.75 = 0.25
+						\end{align*}
+					\item Power can be increased by increasing $\alpha$ or the sample size.
+				\end{enumerate}
+			\paragraph{67. Error probabilities and power}
+				\begin{enumerate}[a.]
+					\item 
+						The power of the test is one minus the probability of making a Type \Roman{2}, making it 0.86.
+					\item 
+						The probability of making a Type \Roman{1} error is equal to the significance level, so it is 0.05.
+				\end{enumerate}
+			\paragraph{70.}
+				$$z = \z{\frac{64}{100}}{0.5}{\propse{\frac{64}{100}}{100}} = \z{0.64}{0.5}{\propse{0.64}{0.36}{100}}$$
+				The answer is therefore \textbf{a}.
+			\paragraph{71.}
+				A significance test requires randomness, Large Counts (for approximate Normality), and the 10\% condition (for independence), so the answer is \textbf{e}.
+			\paragraph{72.}
+				$$P\text{-value} = 1 - \normalCDF{-2.43}{2.43}{0}{1} \approx 0.015$$
+				As the $P$-value is between 0.01 and 0.05, the answer is \textbf{b}.
+			\paragraph{73.}
+				The only interval that doesn't contain 0.3 is $(0,19, 0.27)$, so the answer is \textbf{a}.
+			\paragraph{74.}
+				$$P(\text{Type \Roman{2} Error}) = 1 - \mathrm{power} = 1 - 0.9 = 0.1$$
+				The probability of a Type \Roman{2} error is 0.1, so the answer is \textbf{b}.
+			\paragraph{93. Texting and driving}
+				\begin{enumerate}[a.]
+					\item
+						$p_A$ = proportion of people that received version A that answered "Yes"; $p_B$ = proportion of people that received version B that answered "Yes"; $H_0: p_A - p_B = 0$; $H_a: p_A - p_B > 0$.
+					\item
+						\begin{align*}
+							\hat{p}_C &= \frac{x_A + x_B}{n_A + n_B} = \frac{18 + 14}{25 + 25} = 0.64 \\
+							n_A(1 - \hat{p}_C) = 9 < 10
+						\end{align*}
+						The Large Counts condition is not met, so standard error cannot be calculated, so the $P$-value cannot be calculated.
+					\item
+						$$P\text{-value} =  $$
+				\end{enumerate}
+			60, 62, 64, 70-74, 93, 85, 87, 89, 95-98
 \end{document}
