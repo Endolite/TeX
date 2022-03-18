@@ -5,10 +5,10 @@
 	\chapter{Significance Tests}
 		A \textbf{significance test} is a procedure that uses observed data to test between two claims, often made regarding parameters, about hypotheses. \\
 		The \textbf{null hypothesis} ($\pmb{H_0}$) claims that the parameter is equal to a \textbf{null value}, what it was previously assumed to be, denoted by a subscript $0$ on the parameter. It is often a statement of no change or difference.
-		$$H_0:\rm{parameter} < \text{null value}$$
+		$$H_0:\rm{parameter} = \text{null value}$$
 		The claim that is attempting to be supported is the \textbf{alternative hypothesis} ($\pmb{H_a}$). It can either be \textbf{one-sided}, claiming that the parameter is greater or less than the null value, or \textbf{two-sided}, claiming simply that the parameter is not equal to the null value.
 		$$H_a:\rm{parameter} \gtrless \text{null value} \lor \rm{parameter} \ne \text{null value}$$
-		A test's $\pmb{P}$\textbf{-value} is the probability of evidence being found for $H_a$ that is at least as strong as it would be assuming that $H_0$ is true.
+		A test's $\pmb{P}$\textbf{-value} is the probability of evidence being found for $H_a$ when $H_0$ is true that is at least as strong as that observed.
 		$$P\text{-value} = P(\text{statistic supports } H_a \mid H_0)$$ \\
 		The smaller the $P$-value, the lower the chances of receiving evidence of the alternative. A small $P$-value therefore supports the $H_a$. \\
 		If the $P$-value is less than the \textbf{significance level} $\pmb{\alpha}$, $H_0$ can be rejected and it can be concluded that there is convincing evidence for $H_a$. If the $P$-value is greater than or equal to $\alpha$, $H_0$ cannot be rejected, and it can be concluded that there is not convincing evidence for $H_a$. \\
@@ -29,6 +29,14 @@
 			\item
 			A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the data did not provide convincing evidence for $H_a$ despite it being correct.
 		\end{itemize}
+		$$\begin{array}{cc}
+			&\begin{array}{cc} H_a\text{ false} &\hspace{2cm} H_a\text{ true}\end{array} \\
+			\begin{array}{r}H_0\text{ rejected} \\ H_0\text{ not rejected}\end{array} &
+			\begin{array}{|c|c|}\hline
+				\text{Type \Roman{1} error} & \text{Correct conclusion} \\\hline
+				\text{Correct conclusion} & \text{Type \Roman{2} error} \\\hline
+			\end{array}
+		\end{array}$$
 		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases. \\
 		A confidence interval can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
@@ -38,17 +46,23 @@
 		$$\mathrm{power} = 1 - P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})$$
 		Power can be increased in three ways:
 		\begin{enumerate}
-			\item Increasing the sample size
+			\item 
+				Increasing the sample size
 				\begin{itemize}
-					\item A large sample means that more data is collected and more information is given regarding the true population parameter. This also increases $n$, which decreases $s$, reducing $z$ and therefore the $P$-value, making it more likely to fall below $\alpha$.
+					\item 
+						A large sample means that more data is collected and more information is given regarding the true population parameter. This also increases $n$, which decreases $s$, reducing $z$ and therefore the $P$-value, making it more likely to fall below $\alpha$.
 				\end{itemize}
-			\item Increasing the significance level
+			\item 
+				Increasing the significance level
 				\begin{itemize}
-					\item Increasing the significance level increases the probability of $H_0$ being rejected when $H_a$ is true, as the maximum $P$-value for $H_0$ to be rejected increases.
+					\item 
+						Increasing the significance level increases the probability of $H_0$ being rejected when $H_a$ is true, as the maximum $P$-value for $H_0$ to be rejected increases.
 				\end{itemize}
-			\item Increasing the \textbf{effect size}, the minimum difference between the null parameter value and the alternative parameter value for the change to matter
+			\item 
+				Increasing the \textbf{effect size}, the minimum difference between the null parameter value and the alternative parameter value for the change to matter
 				\begin{itemize}
-					\item Increasing the size of the difference that needs to be detected makes that difference more likely to be detected, as larger differences are easier to detect.
+					\item 
+						Increasing the size of the difference that needs to be detected makes that difference more likely to be detected, as larger differences are easier to detect.
 				\end{itemize}
 		\end{enumerate}
 		\section*{Significance Tests about Proportions}
@@ -62,6 +76,17 @@
  					P(|p| < |p_0|) = P(Z < -|z|) + P(Z > |z|) & H_a:p \ne p_0
 				\end{cases}
 			$$
+			\callout{17}{
+				When answering a question regarding a significance test about a proportion, a four step process can be used:
+				\paragraph{1. State} 
+					State the hypotheses to be tested and the significance level and define any parameters.
+				\paragraph{2. Plan}
+					Identify the appropriate methods of inference and verify its conditions.
+				\paragraph{3. Do}
+					State the sample statistic(s), calculate the standardized test statistic(s), and calculate the $P$-value.
+				\paragraph{4. Conclude}
+					Make a conclusion regarding the hypotheses within the problem's context.
+			}
 			\subsection*{Significance Tests about Differences in Proportions}
 				A significance can be performed to compare the proportions for two populations is based on the difference between sample proportions.
 				\begin{align*}
