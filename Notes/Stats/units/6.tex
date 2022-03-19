@@ -39,7 +39,7 @@
 		\end{array}$$
 		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases. \\
-		A confidence interval can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
+		A confidence interval for $\hat{p}$ (using $s_{\hat{p}}$) can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
 		A two-sided test of of $H_0$ at significance level $\alpha$ usually provides the same conclusion as a confidence level of the complement of $\alpha$.
 		$$[P(Z < z) < \alpha] \approxident [\text{null parameter} \in (\text{statistic} \pm ME)]$$
 		A test's \textbf{power} is the probability of convincing evidence being found that convincingly supports $H_a$ given a value for the parameter being tested. This is also is equal to the probability of avoiding a Type \Roman{2} error. 
@@ -67,8 +67,8 @@
 		\end{enumerate}
 		\section*{Significance Tests about Proportions}
 			\callout{17}{In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$ and that the standard error can be calculated, so Large Counts and the 10\% condition (not for experiments) must be satisfied and interpreted for Normality and independence respectively.}
-			To perform a significance test about a proportion $z$ must be calculated. \\
-			$$z = \frac{\hat{p} - \mu_{\hat{p}_0}}{s_{p_0}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
+			To perform \textbf{1 proportion} $\pmb{z}$\textbf{-test}, a significance test about one proportion, $z$ must be calculated. \\
+			$$z = \frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
 			The $P$-value is the probability of $p$ satisfying $H_a$ when $H_0$ is true, which can be calculated using the cumulative probability function.
 			$$
 				P\text{-value} = P(H_a) = \begin{cases}
@@ -88,7 +88,7 @@
 					Make a conclusion regarding the hypotheses within the problem's context.
 			}
 			\subsection*{Significance Tests about Differences in Proportions}
-				A significance can be performed to compare the proportions for two populations is based on the difference between sample proportions.
+				A \textbf{2 proportion} $\pmb{z}$\textbf{-test} can be performed to compare the proportions for two populations is based on the difference between sample proportions.
 				\begin{align*}
 					H_0:p_1 - p_2 = p_0 && H_a: p_1 - p_2 \gtrless p_0 && H_a:p_1 - p_2 \ne p_0
 				\end{align*}
