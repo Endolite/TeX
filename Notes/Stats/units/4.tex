@@ -62,23 +62,46 @@
 		If two events are not independent, they are \textbf{dependent}.
 		\section*{Simulation}
 	\chapter{Random Variables and Probability Distributions}
-		\section{Random Variables}
-			\textbf{Random variables} take numerical values that describe the outcomes of some chance process. \\
-			A \textbf{probability distribution} describes all possible outcomes and their probabilities. \\
-			For a probability distribution to be valid, the sum of all probabilities must be one and all individual probabilities be within $[0,1]$. \\
-			The probability of $X$ being equal to $x_i$ can be denoted as either $P(x_i)$ or as $p_i$.
-			$$P(X = x_i) = P(x_i) = p_i$$
-			The \textbf{mean} or \textbf{expected value} (denoted $E(X)$)
-			\subsection*{Discrete Random Variables}
-				A \textbf{discrete random variables} have a fixed finite set of possible values with gaps between them.
-				The \textbf{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.
-				$$\mu_X = \sum x_ip_i$$
-				\callout{17}{The mean of a discrete random variable need not be one of its possible values.}
-				The \textbf{variance} $\sigma^2$ of a discrete random variable is the sum of the products of the square of the distance from the mean multiplied by frequency.
-				$$\sigma_X^2 = \sum(x_i - \mu_X)^2p_i$$
-				The \textbf{standard deviation} of a discrete random variable is the square root of its variance.
-				$$\sigma_X = \sigma_X^2$$
-		\section{Probability Distributions}
-			\subsection*{Binomial Distributions}
-			\subsection*{Geometric Distributions}
+		\textbf{Random variables} take numerical values that describe the outcomes of some chance process. \\
+		A \textbf{probability distribution} describes all possible outcomes and their probabilities. \\
+		For a probability distribution to be valid, the sum of all probabilities must be one and all individual probabilities be within $[0,1]$. \\
+		The probability of $X$ being equal to $x_i$ can be denoted as either $P(x_i)$ or as $p_i$.
+		$$P(X = x_i) = P(x_i) = p_i$$
+		The \textbf{mean} or \textbf{expected value} (denoted $E(X)$) is a weighted average of all possible values of $X$.
+		\section{Discrete Random Variables}
+			A \textbf{discrete random variables} have a fixed finite set of possible values with gaps between them.
+			The \textbf{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.\footnote{A random variable's sample space can be input into two lists, one corresponding to its values and the other to their frequencies. From there, \texttt{1-Var Stats} can be run the the former input as the \texttt{List} and the latter as the \texttt{FreqList}. This provides the values of $\mu_X$, $\sigma_X$, and $\sigma_X^2$.}
+			$$\mu_X = \sum x_ip_i$$
+			\callout{17}{The mean of a discrete random variable need not be one of its possible values.}
+			The \textbf{variance} $\sigma^2$ of a discrete random variable is the sum of the products of the square of the distance from the mean multiplied by frequency.
+			$$\sigma_X^2 = \sum(x_i - \mu_X)^2p_i$$
+			The \textbf{standard deviation} of a discrete random variable is the square root of its variance.
+			$$\sigma_X = \sqrt{\sigma_X^2}$$
+			\subsection*{Probability Distributions}
+				\subsubsection{Binomial Distributions}
+				\subsubsection{Geometric Distributions}
+		\section{Continuous Random Variables}
+			A \textbf{continuous random variable} can take on any value within an interval (potentially unbounded). \\
+			The probability of $X$ falling within an interval (represented as a binary relation) is equal to the area under the variable's \textbf{density curve}\footnote{See section 1.3 for more on density curves} between the bounds of the region.\footnote{The probability of a continuous variable is, of course, an integral.$$P(a < X < b) = \int_a^bf_X(x)\,dx$$} \\
+			As the number of values that a continuous variable may adopt is uncountably infinite, the probability of $X$ being any particular value is always equal to 0.
+			$$P(X = x) = 0$$
+			As such, the inclusivity of the bounds of the interval is irrelevant.
+			$$P(x_1 \le X \le x_2) = P(X = x_1) + P(x_1 < X < x_2) + P(X = x_2) = P(x_1 < X < x_2)$$
+			A density curve's \textbf{mean} is the value of at which it would be balanced.\footnote{The mean and variance of a continuous variable are defined just like that of a discrete one, only using integrals in place of sums and $f_X(x)$ rather than $p_i$.\begin{align*}\mu_X = \sum x_ip_i = \int_Dxf_X(x)\,dx && \sigma_X^2 = \sum(x_i - \mu_X)^2p_i = \int_D(x - \mu_X)^2f_X(x)\,dx \end{align*}} \\
+		\section{Combinations and Linear Transformations of Random Variables}
+			Two \textbf{independent} variables can be combined by using all possibilities for the sum or difference of $x_i$ and $y_i$ and the set of possible values for a new variable $Z$. The probability of $Z$ being a particular value $z_i$ is simply the product of the corresponding probabilities of $x_i$ and $y_i$.\footnote{A variable $Z$ and its corresponding sample space can be defined as a combination of $X$ and $Y$ as such:\begin{align*}Z = \{x\pm y\mid(x, y) \in X \times Y\} && S_Z = \{(x \pm y, p(x) \times p(y)) \mid (x, y) \in X \times Y\}\end{align*}} \\
+			When adding or subtracting two independent random variables, the means are added or subtracted from each other and the variances are always added.\footnote{Means can be added or subtracted correspondingly with a combination of random variables regardless of independence.} \\
+			\begin{align*}
+				\mu_{X \pm Y} = \mu_X \pm \mu_Y && \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2
+			\end{align*}
+			\callout{13.958}{
+				It should be noted that standard deviation must must be derived from variance.
+				$$\sigma_{X \pm Y} \ne \sigma_X \pm \sigma_Y$$
+			}
+			A \textbf{linear transformation} takes the form of a constant added to the product of a constant and a variable.
+			$$Y = a + bX$$
+			The mean can simply be plugged in to this formula to find the new mean while the standard deviation is only multiplied.
+			\begin{align*}
+				\mu_Y = a + b\mu_X && \sigma_Y = b\sigma_X
+			\end{align*}
 \end{document}

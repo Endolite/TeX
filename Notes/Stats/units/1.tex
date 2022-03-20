@@ -13,7 +13,7 @@
 			\textbf{Stem (and leaf) plots} can only display quantities. The stem (vertical axis) corresponds to the first digit while the leaf (horizontal axis) corresponds to the remaining digits. The stem is always on the left, and the leaves should always be ordered from least to greatest. A key is required to denote the magnitudes displayed. \\
 			\textbf{Histograms} show bars that are assigned equal intervals. To find the length of each interval, the range can be divided by the number of classes and the result rounded up. Each bar's height shows the number of individuals within the class. \\
 			\textbf{Time plots} measure a variable over time. \\
-			A \textbf{cumulative frequency curve} (OGIVE) is a line graph that shows the cumulative relative frequency, the sum of all lower classes (inclusive). Rather than each class being represented as a range, they are labeled by their medians.
+			A \textbf{cumulative frequency curve} (OGIVE) is a line graph that shows the cumulative relative frequency, the sum of all lower classes' \textbf{relative frequencies}, the percentages of data contained within each class, (inclusive). Rather than each class being represented as a range, they are labeled by their medians.
 			\subsection*{Graphically Describing Distributions}
 				A distribution can be described by its shape, outliers, center, and spread (SOCS).
 				\paragraph{Shape}
@@ -70,12 +70,13 @@
 			$$s_x = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}$$
 			\callout{17}{It is crucial to note that the mean and standard deviation are only to be used when there are no outliers\footnote{An \textbf{outlier} is any value that varies from the middle 50\% by over 1.5 multiplied by the interquartile range. $$(|Q_1 - x_i| \lor |x_i - Q_3|) > 1.5IQR \implies x_i \text{ is an outlier}$$} due to their sensitivity.}
 			The \textbf{variance} is the square of the standard deviation and is accordingly denoted by $s^2$ with the appropriate subscript. \footnote{The values of $n$, $\sum x_i$, $\bar{x}$, $Q_1$, $Q_2$, $Q_3$,  range, $IQR$, $s_x$, and $s_x^2$ are all calculable automatically given a data set. The data can be entered into $\texttt{L}n$ ($\texttt{Stat/EDIT/1}$), and $\texttt{1-Var Stats}$ ($\texttt{Stat/CALC/1}$) can be performed with $\texttt{L}n$ ($\texttt{ALPHA/}n$) as its parameter.} \\
-			A \textbf{linear transformation} shifts all values by the same amount $b$ and/or proportionally to their values (with constant of proportionality $a$), resulting in a new variable. 
-			$$y_i = ax_i + b$$
+			A \textbf{linear transformation} shifts all values by the same amount $a$ and/or proportionally to their values (with constant of proportionality $b$), resulting in a new variable. 
+			$$y_i = a + bx_i$$
 			It should be noted that the measures of center are changed by both $a$ and $b$, but only the former alters the measures of spread.
 		\section{Density Curves}
-			A \textbf{density curve}, typically denoted $f$, displays the relative frequencies of every possible value of its variable. As such, the total area under the curve must be exactly 1 and its values must always be positive. \\ 
-			A density curve is a \textbf{continuous} distribution, so the probability of $X$ being any particular value is zero. The function's actual values can be disregarded. \\
+			A \textbf{density curve}, typically denoted $f$, displays the \enquote{relative frequencies} of every possible value of its variable. As such, the total area under the curve must be exactly 1 and its values must always be positive. \\ 
+			A density curve is a \textbf{continuous} distribution, so the probability of $X$ being any particular value is 0.\footnote{Probability is equal to the integral over the desired interval, so when both bounds are the same, it will be equal to zero.$$\int_x^xf(t)\,dt = F(x) - F(x) = 0$$}
+			\callout{17}{Because the probability of $X$ being any particular value is 0, the function's output values do not actually represent anything, though they can be compared to the relative frequencies of distribution curves.}
 			Because a density curve is effectively an idealized distribution curve, representing a population rather than a sample, different variables are used. \\ 
 			$$\begin{array}{|c|c|c|}\hline
 				\rm{Value} & \text{Sample Data} & \text{Population Value} \\\hline
@@ -89,7 +90,7 @@
 			\begin{align*}
 				(x_1 < X < x_2) &= P(X < x_2) - P(X < x_1) && P(X > x) = 1 - P(X < x)
 			\end{align*}
-			The median of a density curve is the point that splits the curve into two regions of equal area\footnote{$P(X < x) = P(X > x) = 0.5$, as the areas are equal and the total area must be equal to 1. This is also consistent with the its prior definition.} while its mean is the point at which the entire curve would be balanced\footnote{The mean of the curve is the $x$-value of the centroid of $f(x)$ over its entire domain. $$\mu = \frac{\int_{\minval{x}}^{\maxval{x}}xf(x)\,dx}{\int_{\minval{x}}^{\maxval{x}}f(x)\,dx}$$}.
+			The median of a density curve is the point that splits the curve into two regions of equal area\footnote{$P(X < x) = P(X > x) = 0.5$, as the areas are equal and the total area must be equal to 1. This is also consistent with the its prior definition.} while its mean is the point at which the entire curve would be balanced\footnote{The mean of the curve is the $x$-value of the centroid of $f(x)$ over its entire domain, though as its total area is always equal to 1 by definition, this can be simplified.$$\mu = \frac{\int_Dxf(x)\,dx}{\int_Df(x)\,dx} = \int_{D}xf(x)\,dx$$This is consistent with the definition of the mean for a sample.$$\mu = \frac{\sum x_i}{n} = \sum\left[\frac{x_i}{n}\right] = \sum x_iP(X = x_i) = \int_Dxf(x)\,dx$$}.
 		\section{The Normal Distribution}
 			\begin{center}
 				\begin{tikzpicture}[yscale = 6]
