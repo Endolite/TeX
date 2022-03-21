@@ -3,16 +3,24 @@
 \begin{document}
 	\chapter{Infinite Series}
 		\section*{Tests for Convergence/Divergence}
-		\section*{Power Series}
+		\section{Power Series}
 			A \textbf{power} series is an infinite series that produces a polynomial. \\
 			The \textbf{interval of convergence} is the interval that contains all values of $x$ for which the series converges. This can be found by using the ratio test to find the criterion for convergence as an inequality. From there, the values of the bounds can be plugged into the series, and any test can be used to verify convergence, and the bounds' inclusivity appropriately adjusted. \\
 			The value subtracted from $x$ within the series is the location of the \textbf{center}. It should always be equidistant from the bounds of the interval of convergence. The \textbf{radius of convergence} is the difference between either of the bounds and the center. \\
 			If the limit test produces $\infty$, the series only converges at its center, and its radius is 0. \\
 			If the limit test produces $0$, the series converges for all $x$ values, its radius is $\infty$.
-		\subsection*{Taylor and Maclaurin Polynomials}
+		\section{Taylor and Maclaurin Polynomials}
 			If $f$ has $n$ derivatives at $x = c$, then the following polynomial is the $\pmb{n^{th}}$ \textbf{Taylor polynomial} of $f$ and can be used to approximate $f$ centered at $c$.
 			$$P_n(x) = f(c) + f'(c)(x - c) + \frac{f''(c)(x - c)^2}{2!} + \frac{f'''(c)(x - c)^3}{3!} + \ldots + \frac{f^{(n)}(c)(x - c)^n}{n!} = \sum_{i = 0}^{n}\left[\frac{f^{(i)}(c)(x - c)^i}{i!}\right]$$
 			The more terms in the series, the more accurate the approximation. \\
 			If $c = 0$, it is a Maclaurin polynomial.
 			$$P_n(x) = f(0) + f'(0)x + \frac{f''(0)x^2}{2!} + \frac{f'''(0)x^3}{3!} + \ldots + \frac{f^{(i)}(0)x^n}{n!} = \sum_{i = 0}^{n}\left[\frac{f^{(i)}(0)x^i}{i!}\right]$$
+		\subsection*{Manipulating Known Maclaurin Polynomials}
+			There are five Maclaurin series that are assumedly known.
+			$$\begin{array}{|l|l|l|}\hline
+			e^x & 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots & \sum_{n = 0}^\infty\left[\frac{x^n}{n!}\right] \\\hline
+			
+			\end{array}$$
+			Maclaurin series can be derived from these five basic series via a substitution into the known series. \\
+			Power series can be directly manipulated for monomials.
 \end{document}

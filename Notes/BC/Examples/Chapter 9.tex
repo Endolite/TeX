@@ -83,7 +83,7 @@
 		\end{align*}
 		\begin{align*}
 			y &= \ln(2 + x) \\ 
-			\begin{array}{c|c}
+			\begin{array}{l|l}
 				f(x) = \ln(2 + x) & \ln(1) = 0 \\
 				f'(x) = (2 + x)^{-1} & (1)^{-1} = 1 \\
 				f''(x) = -1(2 + x)^{-2} & -1(-1)^{2} = -1 \\
@@ -95,4 +95,12 @@
 				&= \sum_{i = 1}^4\left[\frac{(-1)^{n + 1}(x + 1)^n}{n}\right] \\
 			y &= \sum_{n = 1}^\infty\left[\frac{(-1)^{n + 1}(x + 1)^n}{n}\right]
 		\end{align*}
+		\subsection{Manipulating Known Maclaurin Polynomials}
+			\begin{align*}
+				\frac{x^2}{1 + x^2} &= x^2\sum_{n = 0}^\infty\left(-x^2\right)^n = \sum_{n = 0}^\infty\left(-1\right)^nx^{2n + 1} \\
+				\tan x &= \frac{\sin x}{\cos x} \approx \frac{P_2(\sin x)}{P_2\cos(x)} = \frac{x - \frac{x^3}{3!} + \frac{x^5}{5!}}{1 - \frac{x^2}{2!} + \frac{x^4}{4!}} = \frac{x - \frac{x^3}{6} + \frac{x^5}{120}}{1 - \frac{x^2}{2} + \frac{x^4}{24}} = x \\
+				P_3(\arctan x) &= P_3\left(\int\left[\frac{1}{1 + x^2}\right]dx\right) = \int\left[1 - x^2 + x^4 - x^6\right] = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} \\
+				P_2\left(e^{-x^2}\arctan{x}\right) &= \left(1 - x^2 + \frac{x^4}{2}\right)\left(x - \frac{x^3}{3} + \frac{x^5}{5}\right) \\
+					&= x - \frac{x^3}{3} + \frac{x^5}{5} - x^3 + \frac{x^5}{3} - \frac{x^7}{5} + \frac{x^5}{3} - \frac{x^7}{6} + \frac{x^9}{10} = x - \frac{4x^3}{3} + \frac{31x^5}{30}
+			\end{align*}
 \end{document}

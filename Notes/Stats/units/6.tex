@@ -2,8 +2,31 @@
 
 \begin{document}
 	\chapter{Confidence Intervals}
+		A statistic is a \textbf{point estimator} used to estimate an unknown population parameter. A \textbf{point estimate} is a statistic's value, and is referred to as such because it is a single point. As such, it is almost never accurate. \\
+		A point estimate can be made made more reliable by either increasing the sample size or using a more accurate sampling procedure. \\
+		The \textbf{standard error} $\pmb{s}$ (with the appropriate subscript denoting its statistic) of a statistic is the point estimate of the standard deviation of the sampling distribution.
+		A \textbf{confidence interval} provides an interval of plausible values for an unknown parameter based on sample data. It is equal to the point estimate plus or minus the \textbf{margin of error} ($\pmb{ME}$).
+		$$\text{point estimate} \pm \text{margin of error}$$
+		The probability that a confidence interval contains the true parameter value is the confidence interval's \textbf{confidence level} ($\pmb{C}$).
+		The margin of error describes the maximum deviation of the estimate from the parameter. It is the product of the \textbf{critical value} $\pmb{z}^*$ and the standard error of the statistic.
+		$$ME = z^*s$$
+		$z^*$ is equal to the absolute value of the $z$-score for which the probability of $Z$ being within $\pm z^*$ of 0 is $C$.\footnote{This can be calculated using $\invNorm$:$$$$}
+		$$P(-z < Z < z) = C$$
 		\section{Confidence Intervals about Proportions}
 		\section{Confidence Intervals about Means}
+			In order for Normality to be verified, the \textbf{central limit theorem} can be used, so $n$ must be at least 30.
+			When the standard deviation of $X$ (not of the sampling distribution of $\bar{x}$) is known, a confidence interval about $\bar{x}$ can be constructed using the templates for confidence intervals and margin of error, simply using the sampling distribution's standard deviation rather than the statistic's standard error.
+			$$\bar{x} = z^*\frac{\sigma}{\sqrt{n}}$$
+			This is a \textbf{one-sample $\pmb{z}$-interval for a population mean}.
+			When $\sigma$ is not known, the standard deviation can be replaced by the standard error to calculate the \textbf{standard error of $\pmb{\bar{x}}$}.
+			$$s_{\bar{x}} = \frac{s_x}{\sqrt{n}}$$
+			The margin of error is changed as such:
+			$$ME = z^*\frac{s_x}{\sqrt{n}}$$
+			This results in the intervals being too small, though, and the confidence level decreases from what would be expected given $z^*$. The critical value can also change, though, becoming $t^*$ rather than $z^*$, making the intervals longer and making the confidence level representative. The reason that $t$ is used is that a $\pmb{t}$\textbf{ distribution} is used rather than a Normal one. ($t^*$ can still be interpreted in the same way as $z^*$, though (the number of standard errors from the point estimate).) \\
+			The specific $t$ distribution used is specified by \textbf{degrees of freedom} ($\pmb{\df}$, which is 1 less than the sample size. \\
+			$$\df = n - 1$$
+			As $\df$ approaches infinity, the $t$ distribution approaches a normal curve, the peak approaching 1 and the tails approaching 0 more quickly. This is because a greater sample size means that $s_x$ will be closer to $\sigma$.
+			The confidence interval constructed about $\bar{x}$ using $t^*$ and $s_x$ is a \textbf{one-sample $\pmb{t}$ interval for a population mean.}
 		\section{Confidence Intervals about Differences in Parameters}
 			\subsection{Confidence Intervals about Differences in Proportions}
 			\subsection{Confidence Intervals about Differences in Means}
@@ -32,7 +55,7 @@
 			\item
 				A \textbf{Type \Roman{1} error} occurs when $H_0$ is rejected despite $H_a$ being false; the data provided convincing evidence for $H_a$ despite it being incorrect. 
 			\item
-			A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the data did not provide convincing evidence for $H_a$ despite it being correct.
+				A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the data did not provide convincing evidence for $H_a$ despite it being correct.
 		\end{itemize}
 		$$\begin{array}{cc}
 			&\begin{array}{cc} H_a\text{ false} &\hspace{2cm} H_a\text{ true}\end{array} \\
@@ -92,9 +115,7 @@
 				\paragraph{4. Conclude}
 					Make a conclusion regarding the hypotheses within the problem's context.
 			}
-		\section{Significance Tests about Means}
-		\section{Significance Tests about Differences in Parameters}
-			\subsection{Significance Tests about Differences in Proportions}
+			\subsection*{Significance Tests about Differences in Proportions}
 				A \textbf{2 proportion} $\pmb{z}$\textbf{-test} can be performed to compare the proportions for two populations is based on the difference between sample proportions.
 				\begin{align*}
 					H_0:p_1 - p_2 = p_0 && H_a: p_1 - p_2 \gtrless p_0 && H_a:p_1 - p_2 \ne p_0
@@ -111,7 +132,8 @@
 				\callout{17}{For a significance test to be run about a difference of proportions, the randomness, independence (10\%) (for each proportion), and Large Counts conditions must be met.}
 				The standardized test statistic is the $z$ score, using the difference in proportions and its standard error assuming the mean to be 0 ($H_0$ to be true).
 				$$z = \z{\hat{p}_1 - \hat{p}_2}{\mu_{\hat{p}_1 - \hat{p}_2}}{s_{\hat{p}_1 - \hat{p}_2}} = \z{\hat{p}_1 - \hat{p}_2}{0}{\propsed{\hat{p}_C}{n_1}{\hat{p}_C}{n_2}} = \z{\hat{p}_1}{\hat{p}_2}{\propsee{\hat{p}_C}{n_1}{n_2}}$$
-			\subsection{Significance Tests about Differences in Means}
+		\section{Significance Tests about Means}
+			\subsection*{Significance Tests about Differences in Means}
 	\chapter{Chi-Square Tests}
 	\chapter{Slopes}
 \end{document} 
