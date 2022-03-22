@@ -6,50 +6,55 @@
 		A point estimate can be made made more reliable by either increasing the sample size or using a more accurate sampling procedure. \\
 		The \textbf{standard error} $\pmb{s}$ (with the appropriate subscript denoting its statistic) of a statistic is the point estimate of the standard deviation of the sampling distribution. \\
 		A \textbf{confidence interval} provides an interval of plausible values for an unknown parameter based on sample data. It is equal to the point estimate plus or minus the \textbf{margin of error} ($\pmb{ME}$).
-		$$\text{confidence interval} = \text{point estimate} \pm \text{margin of error}$$
+		\[\text{confidence interval} = \text{point estimate} \pm \text{margin of error}\]
 		The probability that a confidence interval contains the true parameter value is the confidence interval's \textbf{confidence level} ($\pmb{C}$).
-		The margin of error describes the maximum deviation of the estimate from the parameter. It is the product of the \textbf{critical value} and the standard error of the statistic.
-		$$ME = \text{critical value} \times \text{standard error}$$
-		The critical value is equal to the the number of standard deviations from the mean within which the probability of a random variable falling is equal to $C$.
-		$$P(-\text{critical value} < \text{standardized test statistic} < \text{critical value}) = C$$
+		The margin of error describes the maximum deviation of the estimate from the parameter. It is the product of the critical value and the standard error of the statistic.
+		\[ME = \text{critical value} \times \text{standard error}\]
+		The \textbf{critical value} is equal to the the number of standard deviations from the mean within which the probability of a random variable falling is equal to $C$.
+		\[P(-\text{critical value} < \text{standardized test statistic} < \text{critical value}) = C\]
 		\section{Confidence Intervals about Proportions}
+			%TODO Confidence Intervals about Proportions
+			\subsection*{Confidence Intervals about Differences in Proportions}
 		\section{Confidence Intervals about Means}
 			In order for Normality to be verified, the \textbf{central limit theorem} can be used, so $n$ must be at least 30.
 			When the standard deviation of $X$ (not of the sampling distribution of $\bar{x}$) is known, a confidence interval about $\bar{x}$ can be constructed using the templates for confidence intervals and margin of error, simply using the sampling distribution's standard deviation rather than the statistic's standard error.
-			$$\bar{x} = z^*\frac{\sigma}{\sqrt{n}}$$
+			\[\bar{x} = z^*\frac{\sigma}{\sqrt{n}}\]
 			This is a \textbf{one-sample $\pmb{z}$-interval for a population mean}.
 			When $\sigma$ is not known, the standard deviation can be replaced by the standard error to calculate the \textbf{standard error of $\pmb{\bar{x}}$}.
-			$$s_{\bar{x}} = \frac{s_x}{\sqrt{n}}$$
+			\[s_{\bar{x}} = \frac{s_x}{\sqrt{n}}\]
 			The margin of error is changed as such:
-			$$ME = z^*\frac{s_x}{\sqrt{n}}$$
+			\[ME = z^*\frac{s_x}{\sqrt{n}}\]
 			This results in the intervals being too small, though, and the confidence level decreases from what would be expected given $z^*$. The critical value can also change, though, becoming $t^*$ rather than $z^*$, making the intervals longer and making the confidence level representative. The reason that $t$ is used is that a $\pmb{t}$\textbf{ distribution} is used rather than a Normal one. ($t^*$ can still be interpreted in the same way as $z^*$, though (the number of standard errors from the point estimate).) \\
-			The specific $t$ distribution used is specified by \textbf{degrees of freedom} ($\pmb{\df}$), which  is 1 less than the sample size.\footnote{The density curve of a $t$ distribution with degrees of freedom $\nu$ is defined (using the gamma function $\Gamma$ or the beta function $\B$) as such:$$f(x) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}} = \frac{1}{\sqrt{\nu}\B\left(\frac{1}{2},\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}$$} \\
-			$$\df = n - 1$$
-			As $\df$ approaches infinity, the $t$ distribution approaches a normal curve, the peak approaching 1 and the tails approaching 0 more quickly. This is because a greater sample size means that $s_x$ will be closer to $\sigma$.
+			The specific $t$ distribution used is specified by \textbf{degrees of freedom} ($\pmb{\df}$), which  is 1 less than the sample size.\footnote{The density curve of a $t$ distribution with degrees of freedom $\nu$ is defined (using the gamma function $\Gamma$ or the beta function $\B$) as such:\[f(x) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}} = \frac{1}{\sqrt{\nu}\B\left(\frac{1}{2},\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}\]} \\
+			\[\df = n - 1\]
+			As $\df$ approaches infinity, the $t$ distribution approaches a normal curve (the tails approaching 0 more quickly), so $t^*$ approaches $z^*$. This is because a greater sample size means that $s_x$ will be closer to $\sigma$.
 			The confidence interval constructed about $\bar{x}$ using $t^*$ and $s_x$ is a \textbf{one-sample $\pmb{t}$ interval for a population mean}.
-			$$ME = t^*\frac{s_x}{\sqrt{n}}$$
-		\section{Confidence Intervals about Differences in Parameters}
-			\subsection{Confidence Intervals about Differences in Proportions}
-			\subsection{Confidence Intervals about Differences in Means}
+			\[ME = t^*\frac{s_x}{\sqrt{n}}\]
+			Because $t^*$ is dependent on $\df$, which is 1 less than the sample size, and $s_x$ is dependent on the data, which has not been produced, so the sample size cannot be solved for given a confidence level and the margin of error\footnote{}, so $z^*$ and $\sigma$, a value of $s_x$ from a previous study are instead used.
+			\begin{align*}
+				ME &\ge z^*\frac{\sigma}{\sqrt{n}} \\
+				n &\ge \left(\frac{ME}{z^*}\right)^2
+			\end{align*}
+			\subsection*{Confidence Intervals about Differences in Means}
 	\chapter{Significance Tests}
 		A \textbf{significance test} is a procedure that uses observed data to test between two claims, often made regarding parameters, about hypotheses. \\
 		The \textbf{null hypothesis} ($\pmb{H_0}$) claims that the parameter is equal to a \textbf{null value}, what it was previously assumed to be, denoted by a subscript $0$ on the parameter. It is often a statement of no change or difference.
-		$$H_0:\rm{parameter} = \text{null value}$$
+		\[H_0:\rm{parameter} = \text{null value}\]
 		The claim that is attempting to be supported is the \textbf{alternative hypothesis} ($\pmb{H_a}$). It can either be \textbf{one-sided}, claiming that the parameter is greater or less than the null value, or \textbf{two-sided}, claiming simply that the parameter is not equal to the null value.
-		$$H_a:\rm{parameter} \gtrless \text{null value} \lor \rm{parameter} \ne \text{null value}$$
+		\[H_a:\rm{parameter} \gtrless \text{null value} \lor \rm{parameter} \ne \text{null value}\]
 		A test's $\pmb{P}$\textbf{-value} is the probability of evidence being found for $H_a$ when $H_0$ is true that is at least as strong as that observed.
-		$$P\text{-value} = P(\text{statistic supports } H_a \mid H_0)$$ \\
+		\[P\text{-value} = P(\text{statistic supports } H_a \mid H_0)\] \\
 		The smaller the $P$-value, the lower the chances of receiving evidence of the alternative. A small $P$-value therefore supports the $H_a$. \\
 		If the $P$-value is less than the \textbf{significance level} $\pmb{\alpha}$, $H_0$ can be rejected and it can be concluded that there is convincing evidence for $H_a$. If the $P$-value is greater than or equal to $\alpha$, $H_0$ cannot be rejected, and it can be concluded that there is not convincing evidence for $H_a$. \\
 		The $P$-value is calculated using the \textbf{standardized test statistic} $z$, which is equal to the $z$ score of the the sample statistic assuming the null hypothesis is true.
-		$$z = \z{\text{statistic}}{\text{null parameter}}{\text{standard error of statistic from null parameter}}$$
+		\[z = \z{\text{statistic}}{\text{null parameter}}{\text{standard error of statistic from null parameter}}\]
 		The $P$-value is equal to the probability of $z$ satisfying the $H_a$ assuming that $H_0$ is true. It can therefore be calculated as such, so long as Normality and independence are justified.
-		$$\small
+		\[\small
 			P\text{-value} = \begin{cases}
 				P(\text{parameter} \gtrless \text{null parameter}) = P(Z \gtrless z) & H_a:\text{parameter} \gtrless \text{null parameter} \\
 				P(|\text{parameter}| < |\text{null parameter}|) = P(Z < -|z|) + P(Z > |z|) & H_a:\text{parameter} \ne \text{null parameter}
 			\end{cases}
-		$$
+		\]
 		\callout{17}{Conclusions should only ever be made regarding the rejection of $H_0$ and the convincing support of $H_a$. $H_0$ should never be supported and $H_a$ should never be rejected.}
 		When performing significance tests, two types of errors may occur:
 		\begin{itemize}
@@ -58,21 +63,21 @@
 			\item
 				A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the data did not provide convincing evidence for $H_a$ despite it being correct.
 		\end{itemize}
-		$$\begin{array}{cc}
+		\[\begin{array}{cc}
 			&\begin{array}{cc} H_a\text{ false} &\hspace{2cm} H_a\text{ true}\end{array} \\
 			\begin{array}{r}H_0\text{ rejected} \\ H_0\text{ not rejected}\end{array} &
 			\begin{array}{|c|c|}\hline
 				\text{Type \Roman{1} error} & \text{Correct conclusion} \\\hline
 				\text{Correct conclusion} & \text{Type \Roman{2} error} \\\hline
 			\end{array}
-		\end{array}$$
+		\end{array}\]
 		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases. \\
 		A confidence interval for $\hat{p}$ (using $s_{\hat{p}}$) can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
 		A two-sided test of of $H_0$ at significance level $\alpha$ usually provides the same conclusion as a confidence level of the complement of $\alpha$.
-		$$[P(Z < z) < \alpha] \approxident [\text{null parameter} \in (\text{statistic} \pm ME)]$$
+		\[[P(Z < z) < \alpha] \approxident [\text{null parameter} \in (\text{statistic} \pm ME)]\]
 		A test's \textbf{power} is the probability of convincing evidence being found that convincingly supports $H_a$ given a value for the parameter being tested. This is also is equal to the probability of avoiding a Type \Roman{2} error. 
-		$$\mathrm{power} = 1 - P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})$$
+		\[\mathrm{power} = 1 - P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})\]
 		Power can be increased in three ways:
 		\begin{enumerate}
 			\item 
@@ -97,14 +102,14 @@
 		\section{Significance Tests about Proportions}
 			\callout{17}{In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$ and that the standard error can be calculated, so Large Counts and the 10\% condition (not for experiments) must be satisfied and interpreted for Normality and independence respectively.}
 			To perform \textbf{1 proportion} $\pmb{z}$\textbf{-test}, a significance test about one proportion, $z$ must be calculated. \\
-			$$z = \frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
+			\[z = \frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\]
 			The $P$-value is the probability of $p$ satisfying $H_a$ when $H_0$ is true, which can be calculated using the cumulative probability function.
-			$$
+			\[
 				P\text{-value} = P(H_a) = \begin{cases}
  					P(p \gtrless p_0) = P(Z \gtrless z) & H_a:p \gtrless p_0 \\
  					P(|p| < |p_0|) = P(Z < -|z|) + P(Z > |z|) & H_a:p \ne p_0
 				\end{cases}
-			$$
+			\]
 			\callout{17}{
 				When answering a question regarding a significance test about a proportion, a four step process can be used:
 				\paragraph{1. State} 
@@ -127,12 +132,12 @@
 				\end{align*}
 				A significance test first assumes that the null hypothesis $H_0:p_1 = p_2$ is true. This common value is referred to as $p$. \\
 				The \textbf{combined sample proportion} is denoted $\hat{p}_C$ and is equal to the total successes divided by the total sample size, making it effectively a weighted average. It is the sample proportion that assumes that the parameter values are equal.
-				$$\hat{p}_C = \frac{x_1 + x_2}{n_1 + n_2} = \frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1 + n_2}$$
+				\[\hat{p}_C = \frac{x_1 + x_2}{n_1 + n_2} = \frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1 + n_2}\]
 				The Large Counts condition must be met with $\hat{p}_C$.
-				$$n_1\hat{p}_C, n_1(1 - \hat{p}_C), n_2\hat{p}_C, n_2(1 - \hat{p}_C) \ge 10$$
+				\[n_1\hat{p}_C, n_1(1 - \hat{p}_C), n_2\hat{p}_C, n_2(1 - \hat{p}_C) \ge 10\]
 				\callout{17}{For a significance test to be run about a difference of proportions, the randomness, independence (10\%) (for each proportion), and Large Counts conditions must be met.}
-				The standardized test statistic is the $z$ score, using the difference in proportions and its standard error assuming the mean to be 0 ($H_0$ to be true).
-				$$z = \z{\hat{p}_1 - \hat{p}_2}{\mu_{\hat{p}_1 - \hat{p}_2}}{s_{\hat{p}_1 - \hat{p}_2}} = \z{\hat{p}_1 - \hat{p}_2}{0}{\propsed{\hat{p}_C}{n_1}{\hat{p}_C}{n_2}} = \z{\hat{p}_1}{\hat{p}_2}{\propsee{\hat{p}_C}{n_1}{n_2}}$$
+				The standardized test statistic is the $z$-score calculated using the difference in proportions and its standard error assuming the mean to be 0 ($H_0$ to be true).
+				\[z = \z{\hat{p}_1 - \hat{p}_2}{\mu_{\hat{p}_1 - \hat{p}_2}}{s_{\hat{p}_1 - \hat{p}_2}} = \z{\hat{p}_1 - \hat{p}_2}{0}{\propsed{\hat{p}_C}{n_1}{\hat{p}_C}{n_2}} = \z{\hat{p}_1}{\hat{p}_2}{\propsee{\hat{p}_C}{n_1}{n_2}}\]
 		\section{Significance Tests about Means}
 			\subsection*{Significance Tests about Differences in Means}
 	\chapter{Chi-Square Tests}
