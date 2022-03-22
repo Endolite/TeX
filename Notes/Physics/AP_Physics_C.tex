@@ -1,0 +1,35 @@
+\documentclass[12pt, A4]{report}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[margin=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{moresize}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\DeclareMathOperator{\rad}{\mathrm{rad}}
+
+\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+\newcommand{\com}[1]{#1_{\mathrm{com}}}
+\newcommand{\comment}[1]{}
+\newcommand{\U}{\hspace{0.7mm}}
+\newcommand{\g}[1]{\U\mathrm{#1g}}
+\newcommand{\J}[1]{\U\mathrm{#1J}}
+\newcommand{\m}[1]{\U\mathrm{#1m}}
+\newcommand{\N}[1]{\U\mathrm{#1N}}
+
+\title{AP Physics C}
+\author{Arnav Patri}
+
+\usepackage{subfiles}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\part{Mechanics}
+		\chapter{Rotations}
+			\subfile{mech/5}
+\end{document}
