@@ -103,4 +103,25 @@
 				P_2\left(e^{-x^2}\arctan{x}\right) &= \left(1 - x^2 + \frac{x^4}{2}\right)\left(x - \frac{x^3}{3} + \frac{x^5}{5}\right) \\
 					&= x - \frac{x^3}{3} + \frac{x^5}{5} - x^3 + \frac{x^5}{3} - \frac{x^7}{5} + \frac{x^5}{3} - \frac{x^7}{6} + \frac{x^9}{10} = x - \frac{4x^3}{3} + \frac{31x^5}{30}
 			\end{align*}
+		\subsection{Error}
+			\subsubsection*{Actual Error} 
+				Find the error when using the first 5 terms of the maclaurin polynomial to find $f(0.2)$.
+				\begin{align*}
+					f(x) &= \frac{1}{1 - x} \approx 1 + x + x^2 + x^3 + x^4 = P_4(x)\\
+					f(0.2) - P_4(0.2)  &\approx 1.25 - 1.2496 = 0.0004
+				\end{align*}
+			\subsubsection*{Alternating Series Error}
+				Approximate the sum of the series using the first 6 terms and find the error bound.
+				\begin{align*}
+					\sum_{n = 1}^\infty\left[(-1)^{n + 1}\left(\frac{1}{n!}\right)\right] \\
+					\lim_{n\to\infty}\left[\frac{1}{n!}\right] &= 0 \\
+					\frac{1}{(n + 1)!} &\le \frac{1}{n!} \\
+					\sum_{n = 1}^6 &= 1 - \frac{1}{2!} + \frac{1}{3!} - \frac{1}{4!} + \frac{1}{5!} - \frac{1}{6!} \\
+					\sum_{n = 1}^\infty\left[\frac{(1)^{n + 1}}{n!}\right] &= 1 -
+				\end{align*}
+				\begin{align*}
+					\sum_{n = 1}^\infty\left[\frac{(-1)^{n + 1}}{2n^3}\right] \\
+					\lim_{n\to\infty}\left[\frac{1}{2n^3}\right] &= 0 \\
+					\frac{1}{(2n + 1)^3} &\le \frac{1}{2n^3} \\
+				\end{align*}
 \end{document}

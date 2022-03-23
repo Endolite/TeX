@@ -16,7 +16,7 @@
 			%TODO Confidence Intervals about Proportions
 			\subsection*{Confidence Intervals about Differences in Proportions}
 		\section{Confidence Intervals about Means}
-			In order for Normality to be verified, the \textbf{central limit theorem} can be used, so $n$ must be at least 30.
+			In order for Normality to be verified, the central limit theorem can be used, necessitating that $n$ be at least 30, or a modified box plot can be created with the data and observed to be symmetrical without outliers. \\
 			When the standard deviation of $X$ (not of the sampling distribution of $\bar{x}$) is known, a confidence interval about $\bar{x}$ can be constructed using the templates for confidence intervals and margin of error, simply using the sampling distribution's standard deviation rather than the statistic's standard error.
 			\[\bar{x} = z^*\frac{\sigma}{\sqrt{n}}\]
 			This is a \textbf{one-sample $\pmb{z}$-interval for a population mean}.
@@ -30,12 +30,19 @@
 			As $\df$ approaches infinity, the $t$ distribution approaches a normal curve (the tails approaching 0 more quickly), so $t^*$ approaches $z^*$. This is because a greater sample size means that $s_x$ will be closer to $\sigma$.
 			The confidence interval constructed about $\bar{x}$ using $t^*$ and $s_x$ is a \textbf{one-sample $\pmb{t}$ interval for a population mean}.
 			\[ME = t^*\frac{s_x}{\sqrt{n}}\]
-			Because $t^*$ is dependent on $\df$, which is 1 less than the sample size, and $s_x$ is dependent on the data, which has not been produced, so the sample size cannot be solved for given a confidence level and the margin of error\footnote{}, so $z^*$ and $\sigma$, a value of $s_x$ from a previous study are instead used.
+			Because $t^*$ is dependent on $\df$, which is 1 less than the sample size, and $s_x$ is dependent on the data, which has not been produced, so the sample size cannot be solved for given a confidence level and the margin of error, so $z^*$ and $\sigma$, a value of $s_x$ from a previous study are instead used.
 			\begin{align*}
 				ME &\ge z^*\frac{\sigma}{\sqrt{n}} \\
 				n &\ge \left(\frac{ME}{z^*}\right)^2
 			\end{align*}
 			\subsection*{Confidence Intervals about Differences in Means}
+				A confidence interval about a difference in means is a \textbf{one-sample/paired $\pmb{t}$ interval for a mean difference}. In order for it be constructed about, Normality and independence must be justified and both samples must be independent. \\
+				The center of the confidence interval is the difference between the sample means, denoted by a subscript \textbf{diff}, while its standard error is simply the square root of the sum of the variances of the standard errors of the individual statistics.
+				\[\diff{\bar{x}} \pm s_{\bar{x}_1 - \bar{x}_2} = (\bar{x}_1 - \bar{x}_2) \pm t^*\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]
+				If both standard deviations are known, they are used along with $z^*$.
+				\[(\bar{x}_1 - \bar{x}_2) \pm z^*\sqrt{\frac{\sigma_1^2}{n_1} +\frac{\sigma_2^2}{n_2}}\]
+				The degrees of freedom of a difference of means is the equal to the estimated variance divided by the sum of the estimated variances of each statistic divided by 1 less than their sample sizes.
+				\[\df = \frac{s_{\bar{x}_1 - \bar{x}_2}^4}{\frac{s_{\bar{x}_1}^4}{n_1 - 1} + \frac{s_{\bar{x}_2}^4}{n_2 - 1}} = \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{\left(s_1^2/n_1\right)^2}{n_1 - 1} + \frac{\left(s_2^2/n_2\right)^2}{n_2 - 1}}\]
 	\chapter{Significance Tests}
 		A \textbf{significance test} is a procedure that uses observed data to test between two claims, often made regarding parameters, about hypotheses. \\
 		The \textbf{null hypothesis} ($\pmb{H_0}$) claims that the parameter is equal to a \textbf{null value}, what it was previously assumed to be, denoted by a subscript $0$ on the parameter. It is often a statement of no change or difference.

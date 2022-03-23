@@ -15,12 +15,20 @@
 			The more terms in the series, the more accurate the approximation. \\
 			If $c = 0$, it is a Maclaurin polynomial.
 			$$P_n(x) = f(0) + f'(0)x + \frac{f''(0)x^2}{2!} + \frac{f'''(0)x^3}{3!} + \ldots + \frac{f^{(i)}(0)x^n}{n!} = \sum_{i = 0}^{n}\left[\frac{f^{(i)}(0)x^i}{i!}\right]$$
-		\subsection*{Manipulating Known Maclaurin Polynomials}
-			There are five Maclaurin series that are assumedly known.
-			$$\begin{array}{|l|l|l|}\hline
-			e^x & 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots & \sum_{n = 0}^\infty\left[\frac{x^n}{n!}\right] \\\hline
-			
-			\end{array}$$
-			Maclaurin series can be derived from these five basic series via a substitution into the known series. \\
-			Power series can be directly manipulated for monomials.
+			\subsection*{Manipulating Known Maclaurin Polynomials}
+				There are five Maclaurin series that are assumedly known.
+				$$\begin{array}{|l|l|l|}\hline
+				e^x & 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots & \sum_{n = 0}^\infty\left[\frac{x^n}{n!}\right] \\\hline
+				
+				\end{array}$$
+				Maclaurin series can be derived from these five basic series via a substitution into the known series. \\
+				Power series can be directly manipulated for monomials.
+		\section{Error}
+			\subsection{Actual Error}
+				The \textbf{actual error} at $c$ is the difference between a function's actual value at $c$ and that of its $n^{\mathrm{th}}$ Taylor/Maclaurin polynomial.
+				\[\mathrm{error} = f(c) - P_n(c)\]
+			\subsection{Alternating Series Error}
+				The error for a convergent alternating series's first $n$ terms cannot exceed the first unused term.
+				\[\left.\mathrm{error} \le \left|(-1)^{c + 1}a_c\right|\, \middle|\, \sum_{n = 1}^\infty\left[(-1)^na_n\right] \text{ converges}\right.\]
+			\subsection{Lagrange Error}
 \end{document}

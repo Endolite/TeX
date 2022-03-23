@@ -12,7 +12,7 @@
 		\textbf{Association direction} describes how the explanatory
 		\section{Correlation}
 			The \textbf{correlation coefficient} $\pmb{r}$ is equal to the sum of the products of the $z$-scores of each variable for each individual divided by one less than the number of individuals.
-			$$r = \frac{1}{n - 1}\sum\left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right) = \frac{\sum z_{xi}z_{yi}}{n - 1}$$
+			\[r = \frac{1}{n - 1}\sum\left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right) = \frac{\sum z_{xi}z_{yi}}{n - 1}\]
 			The magnitude of $r$ corresponds to strength while its sign indicates the \textbf{association direction}. \\
 			\callout{17}{
 				The following should be noted regarding $r$:
@@ -35,13 +35,13 @@
 			Due to the fact that it uses a sum of every point's values, the LSRL is not resistant to \textbf{influential observations}. Influential observations are often outliers in the $y$ direction, especially in smaller data sets. To identify whether a point is an outlier, a modified box plot can be created. A point is influential if removing it markedly changes $r$. \\
 			The predicted value for the explanatory variable is denoted by putting a \enquote{hat} over the variable.
 			The LSRL can be described as a linear transformation that maps $x$ onto $y$:		
-			$$\hat{y} = a + bx$$
+			\[\hat{y} = a + bx\]
 			\textbf{Outliers} are points with large residuals.\\
 			Predictions made within the data are \textbf{interpolations} while those made outside the bounds of the data are \textbf{extrapolations}.
 			\callout{15.85}{Extrapolation should be avoided, as it is more likely not to be accurate than interpolation.}
 			$a$ and $b$ can be calculated as such:\footnote{
 				$a$ and $b$ can be derived by differentiating the sum of the squares of the residuals.
-				$$E = \sum(y_i - \hat{y})^2 = \sum(y - a - bx_i)$$
+				\[E = \sum(y_i - \hat{y})^2 = \sum(y - a - bx_i)\]
 				Because the error is being minimized, its derivatives are equal to 0.
 				\begin{align*}
 					\frac{\partial E}{\partial a} &= \frac{\partial}{\partial a}\sum(y_i - a - bx_i)^2 & \frac{\partial E}{\partial b} &= \frac{\partial}{\partial b}\sum(y_i - a - bx_i)^2\\
@@ -57,20 +57,20 @@
 				a &= \bar{y} - bx & b &= r\frac{s_y}{s_x}
 			\end{align*}
 			The definition of $a$ makes it clear that the LSRL always passes through $(\bar{x}, \bar{y})$.\\
-			The \textbf{coefficient of determination} $\pmb{r^2}$ is the percentage of the change/variation in the response variable that can be explained by the LSRL relating the response variable to the explanatory variable. It is maximized by the LSRL.\footnote{Give no information regarding $x$, the predicted value of $y$ is simply $\bar{y}$, so the residual will be the difference between $y$ and $\bar{y}$. The sum of all residuals must therefore be 0: $$\sum e_i = \sum(y_i - \bar{y}) = \sum y_i - \sum \bar{y} = \sum y_i - n\bar{y} = \sum y_i - \frac{n\sum 
-			y_i}{n} = - \sum y_i - \sum y_i = 0$$Because the sum of the residuals is 0, the sum of the squares of the residuals can instead be used to compare errors between approximations. $r^2$ is equal to the percentage of error removed by using the LSRL rather than $\hat{y} = \bar{y}$.} \\
+			The \textbf{coefficient of determination} $\pmb{r^2}$ is the percentage of the change/variation in the response variable that can be explained by the LSRL relating the response variable to the explanatory variable. It is maximized by the LSRL.\footnote{Give no information regarding $x$, the predicted value of $y$ is simply $\bar{y}$, so the residual will be the difference between $y$ and $\bar{y}$. The sum of all residuals must therefore be 0:\[\sum e_i = \sum(y_i - \bar{y}) = \sum y_i - \sum \bar{y} = \sum y_i - n\bar{y} = \sum y_i - \frac{n\sum 
+			y_i}{n} = - \sum y_i - \sum y_i = 0\]Because the sum of the residuals is 0, the sum of the squares of the residuals can instead be used to compare errors between approximations. $r^2$ is equal to the percentage of error removed by using the LSRL rather than $\hat{y} = \bar{y}$.} \\
 			\textbf{Clusters} are groups of points that are similar. \\
 			To add a categorical variable, the data can be displayed using different symbols for each group. \\
 		\section{Transformations to Achieve Linearity}
 			The form of a relationships is not always linear, but the LSRL calculates a linear line of best fit. To resolve this, $x$ and/or $y$ can be transformed using powers, roots, or logarithms. This process is known as \textbf{linearization}. \\
 			The axes of the scatterplot are changed in accordance with the linearization. \\
 			An \textbf{exponential model} takes the form of an exponential function.
-			$$\hat{y} = ab^x$$
+			\[\hat{y} = ab^x\]
 			A \textbf{logarithmic model} takes the form of a natural logarithmic function.
-			$$\hat{y} = a + b\ln x$$
+			\[\hat{y} = a + b\ln x\]
 			\callout{16.23}{Exponentiating one variable and taking the logarithm of the other are equivalent operations.}
 			A \textbf{power model} takes the form of a polynomial with direct variation.
-			$$\hat{y} = ax^b$$
+			\[\hat{y} = ax^b\]
 			Taking the logarithm of both sides simply results in a power model after it is re-expressed.
 			\begin{align*}
 				\ln \hat{y} &= a + b\ln x \\

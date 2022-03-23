@@ -7,9 +7,24 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{moresize}
+\usepackage{multirow}
 \usepackage{pgfplots}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+
+\DeclareMathOperator{\rad}{\mathrm{rad}}
+
+\newcommand{\avg}[1]{#1_{\mathrm{avg}}}
+\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+\newcommand{\com}[1]{#1_{\mathrm{com}}}
+\newcommand{\comd}[2]{#1_{\mathrm{com}#2}}
+\newcommand{\comment}[1]{}
+\newcommand{\U}{\hspace{0.7mm}}
+\newcommand{\g}[1]{\U\mathrm{#1g}}
+\newcommand{\J}[1]{\U\mathrm{#1J}}
+\newcommand{\m}[1]{\U\mathrm{#1m}}
+\newcommand{\N}[1]{\U\mathrm{#1N}}
+\newcommand{\s}[1]{\U\mathrm{#1s}}
 
 \title{Inertia Wheel Lab Report}
 \author{Arnav Patri}
@@ -18,7 +33,25 @@
 	\maketitle
 	
 	\subsection*{Data}
-		$$\begin{array}
-			
-		\end{array}$$
+		\[\begin{array}{c|c|c|c|c|c}
+			\text{mass (g)} & \text{time (s)} & \text{distance (m)} & \avg{a} & \avg{\alpha} & \sum\tau \\\hline
+			20 & 
+				{\begin{align*}
+					&\begin{array}{r|l}
+						9 & 61, 61, 7, 91, 96 \\
+						10 & 0, 16 
+						\end{array} \\
+					&\hspace{7.2mm}\begin{array}{c} 
+						\boxed{1|1 = 1.1} \\ 
+						\hspace{1.1mm}\avg{t} = 9.85 
+					\end{array}
+				\end{align*}} &
+				\multirow{5}{*}{1} &
+				{\begin{align*}
+					\avg{a} &= m\avg{\omega}^2r \\
+					&= m\left(\frac{\Delta\theta}{\Delta t}\right)^2r
+				\end{align*}} &
+				\avg{\alpha} &
+				\tau = I\alpha
+		\end{array}\]
 \end{document}
