@@ -155,10 +155,11 @@
 				\node[below] at (0.5, 0) {0.5};
 				\node[left] at (0, 0.005) {0.005};
 				\node[] at (5.7, 0.0225){$\net{\tau} \approx 0.00174015 + 0.0101685\alpha$};
+				\node[] at (5.7, 0.02){$r^2 \approx 0.998$};
 			\end{tikzpicture}
 		\end{center}
 		\begin{align*}
-			\net{\tau} &= \netexp{I}\alpha \\ \netexp{I} &= \frac{I}{\alpha} \approx 0.01 \\
+			\netexp{I} \approx 0.01 \\
 			\%\text{ error} &= \left|\frac{\netth{I} - \netexp{I}}{\netexp{I}}\right| \approx 1.25\%
 		\end{align*}
 		The reason that the least-squares regression line relating $\net{\tau}$ to $\alpha$ does not display direct variation is that a lack of angular acceleration may occur when torque is not great enough to overcome friction.
