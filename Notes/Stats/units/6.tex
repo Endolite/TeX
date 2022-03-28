@@ -53,7 +53,8 @@
 		\[P\text{-value} = P(\text{statistic supports } H_a \mid H_0)\] \\
 		The smaller the $P$-value, the lower the chances of receiving evidence of the alternative. A small $P$-value therefore supports the $H_a$. \\
 		If the $P$-value is less than the \textbf{significance level} $\pmb{\alpha}$, $H_0$ can be rejected and it can be concluded that there is convincing evidence for $H_a$. If the $P$-value is greater than or equal to $\alpha$, $H_0$ cannot be rejected, and it can be concluded that there is not convincing evidence for $H_a$. \\
-		The $P$-value is calculated using the \textbf{standardized test statistic} $z$, which is equal to the $z$ score of the the sample statistic assuming the null hypothesis is true.
+		The $P$-value is calculated using the \textbf{standardized test statistic} $z$, which is equal to the $z$ score of the the sample statistic assuming the null hypothesis is true. \\
+		For a null hypothesis to be significant is for a significance test to provide a $P$-value less than the significance level.
 		\[z = \z{\text{statistic}}{\text{null parameter}}{\text{standard error of statistic from null parameter}}\]
 		The $P$-value is equal to the probability of $z$ satisfying the $H_a$ assuming that $H_0$ is true. It can therefore be calculated as such, so long as Normality and independence are justified.
 		\[\small
@@ -70,14 +71,12 @@
 			\item
 				A \textbf{Type \Roman{2} error} occurs when $H_0$ is not rejected despite $H_a$ being true; the data did not provide convincing evidence for $H_a$ despite it being correct.
 		\end{itemize}
-		\[\begin{array}{cc}
-			&\begin{array}{cc} H_a\text{ false} &\hspace{2cm} H_a\text{ true}\end{array} \\
-			\begin{array}{r}H_0\text{ rejected} \\ H_0\text{ not rejected}\end{array} &
-			\begin{array}{|c|c|}\hline
-				\text{Type \Roman{1} error} & \text{Correct conclusion} \\\hline
-				\text{Correct conclusion} & \text{Type \Roman{2} error} \\\hline
-			\end{array}
-		\end{array}\]
+		\begin{center}
+			\begin{tabular}{cc}
+			&\begin{tabular}{cc}$H_a$ is false&\hspace{1.6cm}$H_a$ is true\end{tabular} \\
+			\begin{tabular}{r}$H_0$ is rejected\\$H_0$ is not rejected\end{tabular} & \begin{tabular}{|c|c|}\hline Type \Roman{1} error&Correct conclusion\\\hline Correct conclusion&Type \Roman{2} error\\\hline\end{tabular}
+		\end{tabular}
+		\end{center}
 		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases. \\
 		A confidence interval for $\hat{p}$ (using $s_{\hat{p}}$) can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\

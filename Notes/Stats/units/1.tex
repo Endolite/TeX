@@ -2,22 +2,23 @@
 
 \begin{document}
 	\chapter{One-Variable Quantitative Data}
-		Statistics is the science of collecting and analyzing data. \\
+		\textbf{Statistics}\index{statistics} is the science of collecting and analyzing data\index{data}. \\
 		A data set is a collection of data on several \textbf{individuals}. These individuals can be anything. \\
-		Data provides values for \textbf{variables}, which describe some characteristic of an individual. \\
-		A variable's \textbf{distribution} describes the frequency with which a variable takes on its possible values.
+		Data provides values for \textbf{variables}\index{variables}, which describe some characteristic of an \emph{individual}\index{individual}. \\
+		\textbf{Quantitative variables}\index{variables!quantitative} provide numerical values that describe or measure some characteristic while \textbf{categorical variables}\index{variables!categorical} assign labels that place each individual into one of several groups. \\
+		A variable's \textbf{distribution}\index{distribution} describes the \emph{frequency}\index{frequency} with which a variable takes on its possible values.
 		\section{Graphically Displaying Distributions}
-			Quantitative variables can either be \textbf{discrete}, having some countable set of possible values, or \textbf{continuous}, having an uncountable set of possible values.
+			Quantitative variables can either be \textbf{discrete}\index{variable!discrete}, having some countable set of possible values, or \textbf{continuous}\index{variable!continuous}, having an uncountable set of possible values.
 			\callout{17}{The quantitative variable being described must always be defined, typically as a capital letter. An arbitrary particular value is denoted with a lowercase letter and a superscript is added to denote a defined value.}
-			\textbf{Dot plots} assign the horizontal axis to the variable and show each value's frequency with a number of dots above, each corresponding to an individual. \\
-			\textbf{Stem (and leaf) plots} can only display quantities. The stem (vertical axis) corresponds to the first digit while the leaf (horizontal axis) corresponds to the remaining digits. The stem is always on the left, and the leaves should always be ordered from least to greatest. A key is required to denote the magnitudes displayed. \\
+			\textbf{Dot plots}\index{plot!dot} assign the horizontal axis to the variable and show each value's frequency with a number of dots above, each corresponding to an individual. \\
+			\textbf{Stem (and leaf) plots}\index{plot!stem (and leaf)} can only display quantities. The stem (vertical axis) corresponds to the first digit while the leaf (horizontal axis) corresponds to the remaining digits. The stem is always on the left, and the leaves should always be ordered from least to greatest. A key is required to denote the magnitudes displayed. \\
 			\textbf{Histograms} show bars that are assigned equal intervals. To find the length of each interval, the range can be divided by the number of classes and the result rounded up. Each bar's height shows the number of individuals within the class. \\
 			\textbf{Time plots} measure a variable over time. \\
-			A \textbf{cumulative frequency curve} (OGIVE) is a line graph that shows the cumulative relative frequency, the sum of all lower classes' \textbf{relative frequencies}, the percentages of data contained within each class, (inclusive). Rather than each class being represented as a range, they are labeled by their medians.
+			A \textbf{cumulative frequency curve}\index{cumulative!frequency curve} (OGIVE)\index{OGIVE} is a line graph that shows the cumulative relative frequency, the sum of all lower classes' \textbf{relative frequencies}\index{frequency!relative}, the percentages of data contained within each class, (inclusive). Rather than each class being represented as a range, they are labeled by their \emph{medians}\index{median}.
 			\subsection*{Graphically Describing Distributions}
-				A distribution can be described by its shape, outliers, center, and spread (SOCS).
+				A distribution can be described by its \emph{shape}\index{shape}, \emph{outliers}\index{outlier}, \emph{center}\index{measure of!center}, and \emph{spread}\index{measure of!spread} (SOCS).
 				\paragraph{Shape}
-					In order for a distribution to be symmetric, values that are equidistant from the mode must have the same frequencies. \\
+					In order for a distribution to be \emph{symmetric}\index{distribution!symmetric}, values that are equidistant from the mode must have the same frequencies. \\
 					\begin{center}
 						\begin{tikzpicture}[xscale = 0.7, yscale = 3.64]
 							\draw[<->] (-3.75, 0) -- node[below]{Symmetric} ++ (7.5, 0);
@@ -28,7 +29,7 @@
 							\draw[dashed] (-1, 0.242) -- (1, 0.242);
 						\end{tikzpicture}
 					\end{center} 
-					\textbf{Skew} is dependent on whether the tail is on the direction of the tail.
+					\textbf{Skew}\index{skew!left}\index{skew!right} is dependent on the direction of the tail\index{tail}.
 					\begin{align*}
 						\begin{tikzpicture}[yscale = 2]
 							\draw[<->] (-3.75, 0) -- node[below] {Skew Left} ++ (4.278, 0); 
@@ -50,70 +51,74 @@
 						\end{tikzpicture}
 					\end{align*}
 				\paragraph{Outliers}
-					An \textbf{outlier} is a point that does not fit the general trend of the data. It is marked as an asterisk on a modified box plot. \\
+					An \textbf{outlier}\index{outlier} is a point that does not fit the general trend of the data\index{data}. It is marked as an asterisk on a modified box plot\index{plot!box!modified}. \\
 				\paragraph{Center}
-					The mean ($\bar{x}$), median ($Q_2$), and mode are measures of center. The relationship between these quantities is related to the skew.
-					\[\begin{array}{|c|ccc|}\hline
+					The \emph{mean}\index{mean} ($\bar{x}$), \emph{median}\index{median} ($Q_2$), and \emph{mode}\index{mode} are \text{measures of center}\index{measure of!center}, meaning that they measure where the data is centered. The relationship between these quantities is related to the skew.
+					\[\begin{array}{|c|c:c:c|}\hline
 						\rm{Skew} & \rm{Left} & \rm{Center} & \rm{Right} \\\hline
 						\rm{Relationship} & \bar{x} < Q_2 < \rm{mode} & \bar{x} = Q_2 = \rm{mode} & \bar{x} > Q_2 > \rm{mode} \\\hline
 					\end{array}\]
 				\paragraph{Spread}
-					The standard deviation, range, and interquartile range are measures of spread, The greater they are, the more variability there is in the data.
+					The \emph{standard deviation}\index{standard deviation}, \emph{range}\index{range}, and \emph{interquartile range}\index{range!interquartile} are measures of \textbf{spread}\index{spread}, meaning that they measure how spread apart the data is. The greater they are, the more variability there is in the data\index{data}.
 		\section{Numerically Describing Distributions}
-			The \textbf{mean} is the sum of each value (not necessarily unique) in the distribution divided by the total number of values. It is also referred to as the average or expected value of its variable. For a sample, it is denoted using a bar over the lowercase form of its variable ($X$ becoming $\bar{x}$).
+			The \textbf{mean}\index{mean} is the sum of each value (not necessarily unique) in the distribution\index{distribution} divided by the total number of values. It is also referred to as the \emph{average}\index{average} or \emph{expected value}\index{expected value} of its variable\index{variable}. For a sample, it is denoted using a bar over the lowercase form of its variable ($X$ becoming $\pmb{\bar{x}}$).
 			\[\bar{x} = \frac{\sum x_i}{n}\]
-			The first, second, and third \textbf{quartiles}, denoted $Q_1$, $Q_2$, and $Q_3$, are the values with 25\%, 50\%, and 75\% of the data below them respectively.\footnote{The probability of $X$ falling below each quartile is equal to its number multiplied by 25\%. \begin{align*} P(X < Q_1) &= 0.25 & P(X < Q_2) &= 0.5 & P(X < Q_3) &= 0.75\end{align*}} The second quartile is the \textbf{median}. \\
-			The \textbf{mode} is the value that appears with the greatest frequency. It is, along with the mean and median, a measure of center. \\
-			The \textbf{range} is the difference between the highest and lowest values of a data set. \\
-			The \textbf{interquartile range}, denoted $IQR$, is the difference between the values of the third and first quartiles.\footnote{A box plot shows the interquartile range as the box and the median as the line within it.} It therefore shows the \enquote{middle half} of the distribution.
+			The first, second, and third \textbf{quartiles}\index{quartiles}, denoted $\pmb{Q_1}$, $\pmb{Q_2}$, and $\pmb{Q_3}$, are the values with 25\%, 50\%, and 75\% of the data below them respectively.\footnote{The probability\index{probability} of $X$ falling below each quartile is equal to its number multiplied by 25\%. \begin{align*} P(X < Q_1) &= 0.25 & P(X < Q_2) &= 0.5 & P(X < Q_3) &= 0.75\end{align*}} The second quartile is the \textbf{median}. \\
+			The \textbf{mode} is the value that appear with the greatest frequency\index{frequency}. It is, along with the mean and median, a measure of center.
+			\callout{12.45}{If multiple values have the same greatest frequency, they are all modes.}
+			The \textbf{range} is the difference between the highest and lowest values of a data set\index{data!set}. \\
+			The \textbf{interquartile range}, denoted $\pmb{IQR}$, is the difference between the values of the third and first quartiles.\footnote{A box plot shows the interquartile range as the box and the median as the line within it.} It therefore shows the \enquote{middle half} of the distribution.
 			\[IQR = Q_3 - Q_1\]
-			The \textbf{standard deviation} is the average distance from the mean. It is denoted by $s$  with the subscript of its variable's lowercase form (for a sample). Along with the range and interquartile range, it is a measure of spread/variability.
+			The \textbf{standard deviation}\index{standard deviation} is the average distance from the mean\index{mean}. It is denoted by $\pmb{s}$  with the subscript of its variable's lowercase form (for a sample). Along with the range and interquartile range, it is a measure of spread/variability.
 			\[s_x = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\]
-			\callout{17}{It is crucial to note that the mean and standard deviation are only to be used when there are no outliers\footnote{An \textbf{outlier} is any value that varies from the middle 50\% by over 1.5 multiplied by the interquartile range. \[(|Q_1 - x_i| \lor |x_i - Q_3|) > 1.5IQR \implies x_i \text{ is an outlier}\]} due to their sensitivity.}
-			The \textbf{variance} is the square of the standard deviation and is accordingly denoted by $s^2$ with the appropriate subscript. \footnote{The values of $n$, $\sum x_i$, $\bar{x}$, $Q_1$, $Q_2$, $Q_3$,  range, $IQR$, $s_x$, and $s_x^2$ are all calculable automatically given a data set. The data can be entered into $\texttt{L}n$ ($\texttt{Stat/EDIT/1}$), and $\texttt{1-Var Stats}$ ($\texttt{Stat/CALC/1}$) can be performed with $\texttt{L}n$ ($\texttt{ALPHA/}n$) as its parameter.} \\
-			A \textbf{linear transformation} shifts all values by the same amount $a$ and/or proportionally to their values (with constant of proportionality $b$), resulting in a new variable. 
+			The \textbf{variance}\index{variance} is the square of the standard deviation and is accordingly denoted by $\pmb{s^2}$ with the appropriate subscript. \footnote{The values of $n$, $\sum x_i$, $\bar{x}$, $Q_1$, $Q_2$, $Q_3$,  range, $IQR$, $s_x$, and $s_x^2$ are all calculable automatically given a data set. The data can be entered into $\texttt{L}n$ ($\texttt{Stat/EDIT/1}$), and $\texttt{1-Var Stats}$ ($\texttt{Stat/CALC/1}$) can be performed with $\texttt{L}n$ ($\texttt{ALPHA/}n$) as its parameter.} \\
+			An \emph{outlier}\index{outlier} is defined as a point that is more than 1.5 times the interquartile range from the \enquote{middle half} of the data.
+			\[x_i\notin (Q_1 - 1.5IQR, Q_2 + 1.5IQR) \implies x_i \text{ is an outlier}\]
+			\callout{17}{It is crucial to note that the mean, standard deviation, variance, and range are only to be used when there are no outliers, as outliers disproportionately affect them. The median, mode, and interquartile range can always be used, though, as they are \textbf{resistant}\index{resistant}.}
+			A value's \textbf{percentile}\index{percentile} is the percentage of all values that are at less than or equal to it. This is simply the probability\index{probability} of the variable being at most the value. \\
+			A \textbf{linear transformation}\index{transformation!linear} shifts all values by the same amount $a$ and/or proportionally to their values (with constant of proportionality $b$), resulting in a new variable. 
+			\[\mathrm{percentile} = P(X \le x)\]
 			\[y_i = a + bx_i\]
-			It should be noted that the measures of center are changed by both $a$ and $b$, but only the former alters the measures of spread.
+			It should be noted that the measures of \emph{center} are changed by both $a$ and $b$, but only the former alters the measures of \emph{spread}. \\
 		\section{Density Curves}
-			A \textbf{density curve}, typically denoted $f$, displays the \enquote{relative frequencies} of every possible value of its variable. As such, the total area under the curve must be exactly 1 and its values must always be positive. \\ 
-			A density curve is a \textbf{continuous} distribution, so the probability of $X$ being any particular value is 0.\footnote{Probability is equal to the integral over the desired interval, so when both bounds are the same, it will be equal to zero.\[\int_x^xf(t)\,dt = F(x) - F(x) = 0\]}
-			\callout{17}{Because the probability of $X$ being any particular value is 0, the function's output values do not actually represent anything, though they can be compared to the relative frequencies of distribution curves.}
+			A \textbf{density curve}\index{density curve}, typically denoted $\pmb{f}$, displays the \enquote{\emph{relative frequencies}}\index{relative frequencies} of every possible value of its variable\index{variable}. As such, the total area under the curve must be exactly 1 and its values must always be positive. \\ 
+			A density curve is a \emph{continuous}\index{continuous} distribution, so the probability of $X$ being any particular value is 0.\footnote{Probability is equal to the integral over the desired interval, so when both bounds are the same, it will be equal to zero.\[\int_x^xf(t)\d t = F(x) - F(x) = 0\]}
+			\callout{18.4}{Because the probability of $X$ being any particular value is 0, the function's output values do not actually represent anything, though they can be likened to the relative frequencies of distribution curves.}
 			Because a density curve is effectively an idealized distribution curve, representing a population rather than a sample, different variables are used. \\ 
 			\[\begin{array}{|c|c|c|}\hline
 				\rm{Value} & \text{Sample Data} & \text{Population Value} \\\hline
 				\rm{Mean} & \bar{x} & \mu \\
 				\text{Standard Deviation} & s & \sigma \\\hline
 			\end{array}\]
-			The area under the density curve from its leftmost value to any given value is that value's \textbf{percentile}. It is the percentage of the data that that particular value exceeds, which means that it is also equal to the probability of the value being below it, and can be found using a cumulative distribution function, generally notated $F$.\footnote{The cumulative distribution function is the area under $f$ from $-infty$ to the desired $x$ value. It is thusly defined as the following integral:\[F(x) = \int_{-\infty}^xf(t)\,dt\]}
-			\[\mathrm{Percentile} = P(X < x)\]
-			\callout{17}{As a density curve is categorically continuous, the inclusivity of the binary relation of the probability statement is irrelevant to the value of the percentile.\footnote{The lack of regard for inclusivity with percentile, as well as other probability statements made regarding continuous distributions, is due to the area being $\int_{-\infty}^xf(t)\,dt$. As $dt$ is a differential, it is infinitesimal, so adding or subtracting $f(x)\,dt$ to or from the integral has no tangible impact on its value.}}
+			The area under the density curve from its leftmost value to any given value is that value's \emph{percentile}. It can be found using a \textbf{cumulative distribution function}, generally notated $\pmb{F}$.\footnote{The cumulative distribution function is the area under $f$ from its minimum value to the desired $x$ value. It is thusly defined as the following integral:\[F(x) = \int_{-\infty}^xf(t)\d t\](As the density function is equal to 0 outside of the domain of $x$, an infinity can be used as the lower bound.}
+			\[P(X \le x) = F(x)\]
+			\callout{17}{As a density curve is categorically continuous, the inclusivity of the binary relation of the probability statement is irrelevant to the value of the percentile.\footnote{The lack of regard for inclusivity with percentile, as well as other probability statements made regarding continuous distributions, is due to the area being $\int_{-\infty}^xf(t)\d t$. As $\mathrm{d}t$ is a differential, it is infinitesimal, so adding or subtracting $f(x)\d t$ to or from the integral has no tangible impact on its value.}}
 			The probability of $X$ falling within two values is equal to the difference of their percentiles and the chance of $X$ falling above a value is 1 minus its percentile.
 			\begin{align*}
-				(x_1 < X < x_2) &= P(X < x_2) - P(X < x_1) && P(X > x) = 1 - P(X < x)
+				(x_1 < X < x_2) &= P(X \le x_2) - P(X \le x_1) && P(X > x) = 1 - P(X \le x)
 			\end{align*}
-			The median of a density curve is the point that splits the curve into two regions of equal area\footnote{$P(X < x) = P(X > x) = 0.5$, as the areas are equal and the total area must be equal to 1. This is also consistent with the its prior definition.} while its mean is the point at which the entire curve would be balanced\footnote{The mean of the curve is the $x$-value of the centroid of $f(x)$ over its entire domain, though as its total area is always equal to 1 by definition, this can be simplified.\[\mu = \frac{\int_{-\infty}^\infty xf(x)\,dx}{\int_{-\infty}^\infty f(x)\,dx} = \int_{-\infty}^\infty xf(x)\,dx\]This is consistent with the definition of the mean for a sample.\[\mu = \frac{\sum x_i}{n} = \sum\left[\frac{x_i}{n}\right] = \sum x_iP(X = x_i) = \int_Dxf(x)\,dx\]}.
+			The \emph{median} of a density curve is the point that splits the curve into two regions of equal area\footnote{$P(X < x) = P(X > x) = 0.5$, as the areas are equal and the total area must be equal to 1. This is also consistent with the its prior definition.} while its \emph{mean} is the point at which the entire curve would be balanced\footnote{The mean of the curve is the $x$-value of the centroid of $f(x)$ over its entire domain, though as its total area is always equal to 1 by definition, this can be simplified.\[\mu = \frac{\int_{-\infty}^\infty xf(x)\d x}{\int_{-\infty}^\infty f(x)\d x} = \int_{-\infty}^\infty xf(x)\d x\](The bounds of the integral being infinities does not affect its value, as a distribution curve is 0 outside of its domain.)\\This is consistent with the definition of the mean for a sample.\[\mu = \frac{\sum x_i}{n} = \sum\left[\frac{x_i}{n}\right] = \sum x_iP(X = x_i) = \int_{-\infty}^\infty xf(x)\d x\]}. Its \emph{mode} its its absolute maximum.
 		\section{The Normal Distribution}
 			\begin{center}
-				\begin{tikzpicture}[yscale = 6]
+				\begin{tikzpicture}[y = 6 cm]
 					\draw[<->] (-3.75, 0) -- node[below] {The Normal Distribution} ++ (7.5, 0);
-					\draw[domain = -3.75:3.75, smooth, variable = \x] plot({\x}, {(e^(-0.5 * \x * \x))/sqrt(2 * pi)});
-					\draw[dashed] (0,0) -- (0, 0.399);
+					\draw[<->, domain = -3.75:3.75, smooth, variable = \x] plot({\x}, {(e^(-0.5 * \x * \x))/sqrt(2 * pi)});
 				\end{tikzpicture}
 			\end{center}
-			The \textbf{Normal} distribution (typically denoted $\varphi$) is a density curve that is bell-shaped and symmetrical with inflection points one standard deviation from the mean.\footnote{The Normal distribution is defined as such: \[\varphi(x) = \frac{e^{-x^2/2}}{\sqrt{2\pi}}\]} Its mean and standard deviation are 0 and 1 respectively.\\
-			For a curve to be Normal, it must be some transformation\footnote{Changing the mean shifts the graph of the Normal distribution horizontally while changing the standard deviation stretches or shrinks it vertically (the larger, the flatter, and the more data in the \enquote{tails}).} of the Normal distribution curve. A Normal curve with parameters $\mu$ and $\sigma$ is denoted $\mathcal{N}(\mu, \sigma)$, and its application to a variable $X$ is denoted $X\sim\mathcal{N}(\mu,\sigma)$.\footnote{A Normal distribution of $X$ with parameters $\mu$ and $\sigma$can also be denoted as such:\[f(x\mid\mu,\sigma^2) = \frac{1}{\sigma}\varphi\left(\frac{x - \mu}{\sigma}\right)\]} \\
+			The \textbf{Normal distribution} $\pmb{\varphi}$ is a density curve that is \emph{bell-shaped} and \emph{symmetrical} with \emph{inflection points} one standard deviation from the mean.\footnote{The Normal distribution is defined as such: \[\varphi(x) = \frac{e^{-x^2/2}}{\sqrt{2\pi}}\]} Its \emph{mean}, \emph{median} and \emph{mode} 0 while its \emph{standard deviation} is 1. \\
+			For a curve to be \textbf{Normal}, displaying \textbf{Normality}, it must be some transformation\footnote{Changing the mean shifts the graph of the Normal distribution horizontally while changing the standard deviation stretches or shrinks it vertically (the larger, the flatter, and the more data in the \enquote{tails}).} of the Normal distribution curve. A Normal curve with parameters $\mu$ and $\sigma$ is denoted $\mathcal{N}(\mu, \sigma)$, and its application to a variable $X$ is denoted $X\sim\mathcal{N}(\mu,\sigma)$.\footnote{A Normal distribution of $X$ with parameters $\mu$ and $\sigma$ can also be denoted as such:\[f(x\mid\mu,\sigma^2) = \frac{1}{\sigma}\varphi\left(\frac{x - \mu}{\sigma}\right)\]} \\
 			To justify the Normality of a data set, a modified box plot can be created and symmetry and a lack of variance shown. \\
-			Percentile can be found using the \textbf{cumulative Normal distribution function} $\Phi$.\footnote{The cumulative Normal distribution function is defined as such, where $\erf$ is the error function:\[\Phi(x) = \int_{-\infty}^x\varphi(t)\,dt = \frac{1}{2}\left[1 + \erf\left(\frac{x}{\sqrt{2}}\right)\right]\]Percentile can be evaluated on a calculator (for a standard or nonstandard Normal distribution) using the \texttt{normalcdf} (\texttt{2nd/distr/2}) function:\[P(X < x) = \normalCDF{-\infty}{x}{\mu}{\sigma}\]The probability of $X$ falling within a specific range can be found with this function as well:\[P(x_1 < X < x_2) = \normalCDF{x_1}{x_2}{\mu}{\sigma}\]}
+			Percentile can be found using the \textbf{cumulative Normal distribution function} $\Phi$.\footnote{The cumulative Normal distribution function is defined as such, where $\erf$ is the error function:\[\Phi(x) = \int_{-\infty}^x\varphi(t)\d t = \frac{1}{2}\left[1 + \erf\left(\frac{x}{\sqrt{2}}\right)\right]\]Percentile can be evaluated on a calculator (for a standard or nonstandard Normal distribution) using the \texttt{normalcdf} (\texttt{2nd/distr/2}) function:\[P(X < x) = \normalCDF{-\infty}{x}{\mu}{\sigma}\]The probability of $X$ falling within a specific range can be found with this function as well:\[P(x_1 < X < x_2) = \normalCDF{x_1}{x_2}{\mu}{\sigma}\]}
 			\[\Phi(x) = P(X < x)\]
-			The \textbf{inverse Normal function} $\Phi^{-1}$ takes a percentile as an input and returns a value.\footnote{A percentile's corresponding $x$ value can be found using the \texttt{invNorm} (\texttt{2nd/distr/3})function:\[x = \Phi(P(X < x)) = \invNormal{P(X < x)}{\mu}{\sigma}{LEFT}\]}
+			The \textbf{inverse Normal function} $\pmb{\Phi^{-1}}$ takes a percentile as an input and returns a value.\footnote{A percentile's corresponding $x$ value can be found using the \texttt{invNorm} (\texttt{2nd/distr/3})function:\[x = \Phi^{-1}(P(X < x)) = \invNormal{P(X < x)}{\mu}{\sigma}{LEFT}\]}
 			\[\Phi^{-1}(P(X < x)) = x\]
 			The Normal distribution follows the \textbf{empirical rule}, which states the following:
 			\[\footnotesize\begin{array}{|c|ccc|cccc|}\hline
 				\rm{Range} & \mu \pm \sigma & \mu \pm 2\sigma & \mu \pm 3\sigma & (\mu, \mu + \sigma) & (\mu + \sigma, \mu + 2\sigma) & (\mu + 2\sigma, \mu + 3\sigma) & (\mu + 3\sigma, \infty)\\\hline
-				\text{Proportion of Data} & 60\% & 95\% & 99.7\% & 34\% & 13.5\% & 2.35\% & 0.15\% \\\hline
+				\text{Proportion\index{proportion} of Data} & 60\% & 95\% & 99.7\% & 34\% & 13.5\% & 2.35\% & 0.15\% \\\hline
 			\end{array}\]
 			\begin{center}
-				\begin{tikzpicture}[yscale = 7]
+				\begin{tikzpicture}[y = 7 cm]
 					\draw[<->] (-3.75, 0) -- (3.75, 0);
 					\draw[domain = -3.75:3.75, smooth, variable = \x] plot({\x}, {e^(-0.5 * \x * \x)/sqrt(2 * pi)});
 					\draw[dashed] (0, 0) node[below]{0} -- (0, 0.399);
@@ -143,6 +148,7 @@
 					f(x) &= \varphi(z) & F(x) &= \Phi(z)
 				\end{align*}
 				\callout{17}{$z$-scores can always be calculated, but Normality must be confirmed in order for percentile to be calculable.}
+				The process of converting a value to its $z$-score is called \textbf{standardization}.
 				When answering a question involving calculating the value with a corresponding percentile, the following should be done:
 				\begin{enumerate}
 					\item Define the variable and its distribution, using the given parameters (and justifying Normality).
@@ -161,8 +167,7 @@
 						\end{align*}
 				\end{enumerate}
 	\chapter{One-Variable Categorical Data}
-		\textbf{Categorical variables} assign labels that place each individual into one of several groups, while \textbf{quantitative variables} provide values that describe or measure some characteristic. \\
 		A \textbf{frequency table} shows the number of individuals that have a certain value while a \textbf{relative frequency table} shows the percentage of all individuals in the data set that have that particular value. \\
 		\textbf{Bar graphs} show each category as a bar, the height of which corresponds to its frequency. \\
-		\textbf{Pie charts} show each category as some section of a circle that is bounded by two radii. The areas of each slice is proportional to the frequency. \\
+		\textbf{Pie charts} show each category as some section of a circle that is bounded by two radii. The areas of each slice is proportional to the frequency. 
 \end{document}

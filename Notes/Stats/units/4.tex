@@ -64,28 +64,26 @@
 			%TODO Probability/Simulation
 	\chapter{Random Variables}
 		\textbf{Random variables} take numerical values that describe the outcomes of some chance process. \\
-		A \textbf{probability distribution} describes all possible outcomes and their probabilities. \\
+		A \emph{probability distribution} describes all possible outcomes and their probabilities. \\
 		For a probability distribution to be valid, the sum of all probabilities must be one and all individual probabilities be within $[0,1]$. \\
 		The probability of $X$ being equal to $x_i$ can be denoted as either $P(x_i)$ or as $p_i$.
 		\[P(X = x_i) = P(x_i) = p_i\]
-		The \textbf{mean} or \textbf{expected value} (denoted $E(X)$) is a weighted average of all possible values of $X$.
+		The \emph{mean} or \textbf{expected value} (denoted $E(X)$) is a weighted average of all possible values of $X$.
 		\section{Discrete Random Variables}
-			A \textbf{discrete random variables} have a fixed finite set of possible values with gaps between them.
-			The \textbf{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.\footnote{A random variable's sample space can be input into two lists, one corresponding to its values and the other to their frequencies. From there, \texttt{1-Var Stats} can be run the the former input as the \texttt{List} and the latter as the \texttt{FreqList}. This provides the values of $\mu_X$, $\sigma_X$, and $\sigma_X^2$.}
+			A \textbf{discrete random variables} have a fixed finite set of possible values with gaps between them. \\
+			The \emph{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.\footnote{A random variable's sample space can be input into two lists, one corresponding to its values and the other to their frequencies. From there, \texttt{1-Var Stats} can be run the the former input as the \texttt{List} and the latter as the \texttt{FreqList}. This provides the values of $\mu_X$, $\sigma_X$, and $\sigma_X^2$.}
 			\[\mu_X = \sum x_ip_i\]
-			\callout{17}{The mean of a discrete random variable need not be one of its possible values.}
-			The \textbf{variance} $\sigma^2$ of a discrete random variable is the sum of the products of the square of the distance from the mean multiplied by frequency.
+			\callout{13.605}{The mean of a discrete random variable need not be one of its possible values.}
+			The \emph{variance} $\sigma^2$ of a discrete random variable is the sum of the products of the square of the distance from the mean multiplied by frequency.
 			\[\sigma_X^2 = \sum(x_i - \mu_X)^2p_i\]
-			The \textbf{standard deviation} of a discrete random variable is the square root of its variance.
-			\[\sigma_X = \sqrt{\sigma_X^2}\]
 		\section{Continuous Random Variables}
 			A \textbf{continuous random variable} can take on any value within an interval (potentially unbounded). \\
-			The probability of $X$ falling within an interval (represented as a binary relation) is equal to the area under the variable's \textbf{density curve}\footnote{See section 1.3 for more on density curves} between the bounds of the region.\footnote{The probability of a continuous variable is, of course, an integral.\[P(a < X < b) = \int_a^bf_X(x)\,dx\]} \\
+			The probability of $X$ falling within an interval (represented as a binary relation) is equal to the area under the variable's \emph{density curve}\footnote{See section 1.3 for more on density curves} between the bounds of the region.\footnote{The probability of a continuous variable is, of course, an integral.\[P(a < X < b) = \int_a^bf_X(x)\d x\]} \\
 			As the number of values that a continuous variable may adopt is uncountably infinite, the probability of $X$ being any particular value is always equal to 0.
 			\[P(X = x) = 0\]
 			As such, the inclusivity of the bounds of the interval is irrelevant.
 			\[P(x_1 \le X \le x_2) = P(X = x_1) + P(x_1 < X < x_2) + P(X = x_2) = P(x_1 < X < x_2)\]
-			A density curve's \textbf{mean} is the value of at which it would be balanced.\footnote{The mean and variance of a continuous variable are defined just like that of a discrete one, only using integrals in place of sums and $f_X(x)$ rather than $p_i$.\begin{align*}\mu_X = \sum x_ip_i = \int_{-\infty}^\infty xf_X(x)\,dx && \sigma_X^2 = \sum(x_i - \mu_X)^2p_i = \int_{-\infty}^\infty (x - \mu_X)^2f_X(x)\,dx \end{align*}} \\
+			A density curve's \emph{mean} is the value of at which it would be balanced.\footnote{The mean and variance of a continuous variable are defined just like that of a discrete one, only using integrals in place of sums and $f_X(x)$ rather than $p_i$.\begin{align*}\mu_X = \sum x_ip_i = \int_{-\infty}^\infty xf_X(x)\d x && \sigma_X^2 = \sum(x_i - \mu_X)^2p_i = \int_{-\infty}^\infty (x - \mu_X)^2f_X(x)\d x \end{align*}} \\
 		\section{Combinations and Linear Transformations of Random Variables}
 			Two \emph{independent} variables can be combined by using all possibilities for the sum or difference of $x_i$ and $y_i$ and the set of possible values for a new variable $Z$. The probability of $Z$ being a particular value $z_i$ is simply the product of the corresponding probabilities of $x_i$ and $y_i$.\footnote{A variable $Z$ and its corresponding sample space can be defined as a combination of $X$ and $Y$ as such:\begin{align*}Z = \{x\pm y\mid(x, y) \in X \times Y\} && S_Z = \{(x \pm y, p(x) \times p(y)) \mid (x, y) \in X \times Y\}\end{align*}} \\
 			When adding or subtracting two independent random variables, the means are added or subtracted from each other and the variances are always added.\footnote{Means can be added or subtracted correspondingly with a combination of random variables regardless of independence.} \\
@@ -93,14 +91,14 @@
 				\mu_{X \pm Y} = \mu_X \pm \mu_Y && \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2
 			\end{align*}
 			\callout{13.958}{
-				It should be noted that standard deviation must must be derived from variance.
+				It should be noted that \emph{standard deviation} must must be derived from variance.
 				\[\sigma_{X \pm Y} \ne \sigma_X \pm \sigma_Y\]
 			}
 			A \textbf{linear transformation} takes the form of a constant added to the product of a constant and a variable.
 			\[Y = a + bX\]
 			The mean can simply be plugged in to this formula to find the new mean while the standard deviation is only multiplied.
 			\begin{align*}
-				\mu_Y = a + b\mu_X && \sigma_Y = b\sigma_X
+				\mu_Y &= a + b\mu_X & \sigma_Y &= b\sigma_X
 			\end{align*}
 	\chapter{Probability Distributions}
 		\section{Binomial Distributions}
@@ -109,21 +107,22 @@
 				\item
 					The possible outcomes of each trial must be \textbf{binary}, meaning that each trial can either be a success or a failure.
 				\item
-					Each trial must be independent.
+					Each trial must be \emph{independent}.
 				\item
 					The number of trials must be fixed in advance.
 				\item
 					The probability of success must be constant between trials.
 			\end{enumerate}
-			A binomial with parameters $n$ trials and probability $p$ of any given trial being successes can be denoted $B(n, p)$.
-			The probability of $x$ successes in $n$ trials, each with a probability $p$ of being successful, is defined as such:\footnote{The equation for $P(x)$ makes use of the binomial $\binom{n}{x}$, which is defined as such:\[\binom{n}{x} = \frac{n!}{(n - x)!}\]}\footnote{The probability of $x$ successes and at most $x$ successes can be found using $\binompdf$ and $\binomcdf$ respectively:\begin{align*}P(x) = \binomPDF{n}{p}{x} && P(X < x) = \binomCDF{n}{p}{x}\end{align*}}
+			A binomial distribution with parameters $n$ trials and probability $p$ of any given trial being successes can be denoted $B(n, p)$. \\
+			The probability of $x$ successes in $n$ trials, each with a probability $p$ of being successful, is defined as such:\footnote{The binomial $\binom{n}{x}$ is defined as such:\[\binom{n}{x} = \frac{n!}{(n - x)!}\]}
 			\[P(x) = \binom{n}{x}p^x(1 - p)^{n - x}\]
-			This is the product of the probability of $x$ successes, that of $n - x$ failures (necessitated by the definition of a binomial), and the total number of possibilities in which there are $x$ successes.
+			This is the product of the probability of $x$ successes, that of $n - x$ failures (necessitated by the definition of a binomial), and the total number of possibilities in which there are $x$ successes.\footnote{The probability of exactly and at most $x$ successes can be found using $\binompdf$ and $\binomcdf$ respectively:\begin{align*}P(x) = \binomPDF{n}{p}{x} && P(X < x) = \binomCDF{n}{p}{x}\end{align*}} \\
 			The \textbf{sample space} of a binomial variable can be derived as each term of a binomial expansion\footnote{The binomial expansion of $a + b$ raised to power $n$ is the following:\[(a + b)^n = \sum_{n = 0}^n\binom{n}{k}a^{n - k}b^k\]} of the conjugate of $p$ added to $p$ itself.
 			\[S_{B(n, p)} = ((1 - p) + p)^n = \sum_{x = 0}^n\binom{n}{x}(a - p)^{n - x}p^x\]
-			A binomial distribution's expected value (mean) is equal to the product of the number of trials and the probability of success while its standard deviation is 
-			%TODO Mean/Variance/Skew of Binomial
-			\[\mu = np\]
+			A binomial variable's expected value (mean) is equal to the product of the number of trials and the probability of success while its standard deviation is the product of the probability of success and the number of trials.\footnote{The probability is simply the long-run relative frequency, so the expected number of successes for a binomial distribution is simply the expected relative frequency of successes multiplied by the total number of trials.}
+			\[\mu_X = np\]
+			The variance of a binomial variable is the product of the number of trials and the probability of success and its conjugate.{}
+			\[\sigma_X^2 = np(1 - p)\]
 		\section{Geometric Distributions}
 			%TODO Geometric Distributions
 \end{document}

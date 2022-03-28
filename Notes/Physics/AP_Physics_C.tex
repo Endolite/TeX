@@ -11,19 +11,24 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
-\DeclareMathOperator{\rad}{\mathrm{rad}}
-
 \newcommand{\avg}[1]{#1_{\mathrm{avg}}}
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 \newcommand{\com}[1]{#1_{\mathrm{com}}}
 \newcommand{\comd}[2]{#1_{\mathrm{com}#2}}
 \newcommand{\comment}[1]{}
+\newcommand{\tsn}[1]{
+	\draw[-] (0, 0) -- (1.732 * #1, 0); 
+	\draw[-] (0, 1 * #1) -- (1.732 * #1, 0);
+	\draw[-] (0, 0) -- (0, 1 * #1)}
+
 \newcommand{\U}{\hspace{0.7mm}}
-\newcommand{\g}[1]{\U\mathrm{#1g}}
-\newcommand{\J}[1]{\U\mathrm{#1J}}
-\newcommand{\m}[1]{\U\mathrm{#1m}}
-\newcommand{\N}[1]{\U\mathrm{#1N}}
-\newcommand{\s}[1]{\U\mathrm{#1s}}
+	\newcommand{\g}[1]{\U\mathrm{#1g}}
+	\newcommand{\J}[1]{\U\mathrm{#1J}}
+	\newcommand{\m}[1]{\U\mathrm{#1m}}
+	\newcommand{\N}[1]{\U\mathrm{#1N}}
+	\newcommand{\net}[1]{#1_{\mathrm{net}}}
+	\newcommand{\rad}{\U\mathrm{rad}}
+	\newcommand{\s}[1]{\U\mathrm{#1s}}
 
 \title{AP Physics C}
 \author{Arnav Patri}

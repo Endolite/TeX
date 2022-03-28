@@ -2,14 +2,18 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{arydshln}
 \usepackage{csquotes}
 \usepackage[hang,flushmargin]{footmisc} 
 \usepackage[margin=0.5in]{geometry}
 \usepackage[utf8]{inputenc}
+\usepackage{imakeidx}
 \usepackage{moresize}
 \usepackage{pgfplots}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+
+\indexsetup{level = \chapter, toclevel = chapter}
 
 \DeclareMathOperator{\B}{\mathrm{B}}
 \DeclareMathOperator{\binomcdf}{\texttt{binomcdf}}
@@ -26,6 +30,7 @@
 \newcommand{\binomPDF}[3]{\binompdf\left(n:#1, p:#2, x:#3\right)}
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 \newcommand{\comment}[1]{}
+\renewcommand{\d}{\,\mathrm{d}}
 \newcommand{\diff}[1]{#1_{\mathrm{diff}}}
 \newcommand{\invNormal}[4]{\invNorm\left(\mathrm{area}:#1, \mu: #2, \sigma: #3, \mathrm{Tail: #4}\right)}
 \newcommand{\normalCDF}[4]{\normalcdf\left(\mathrm{lower}: #1, \mathrm{upper}: #2, \mu: #3, \sigma: #4\right)}
@@ -36,6 +41,7 @@
 \renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
 \newcommand{\z}[3]{\frac{#1 - #2}{#3}}
 
+\makeindex
 \usepackage{subfiles}
 
 \title{AP Statistics}
@@ -56,4 +62,6 @@
 		\subfile{units/5}
 	\part{Inference}
 		\subfile{units/6}
+	\part{Back Matter}
+		\printindex
 \end{document}
