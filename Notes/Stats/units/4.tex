@@ -2,26 +2,25 @@
 
 \begin{document}
 	\chapter{Probability}
-		\textbf{Probability} is the long-run relative frequency. It must be between 0 and 1 (inclusive). \\
+		\textbf{Probability}\index{probability} is the long-run relative frequency\index{frequency!relative}. It must be between 0 and 1 (inclusive). \\
 		The short-term is unpredictable, but the long-term is predictable. \\
-		The \textbf{law of large numbers} states that as the number of trials approaches infinity, the \textbf{experimental} (observed) probability will converge to the \textbf{theoretical} (calculated) probability. \\
-		A \textbf{sample space} $S$ is a list of all possible outcomes. It can be used in calculating theoretical probabilities when each outcome is equally likely.
-		A \textbf{probability model} is a description of a random process. It is comprised of a sample space and a list of each outcome's corresponding probability. \\
-		An \textbf{event} is any collection of outcomes. \\
+		The \textbf{law of large numbers}\index{law!of large numbers} states that as the number of trials approaches infinity, the \textbf{experimental} (observed) probability\index{probability!experimental} will converge to the \textbf{theoretical} (calculated) probability\index{probability!theoretical}. \\
+		A \textbf{sample space}\index{sample!space} $S$ is a list of all possible outcomes. It can be used in calculating theoretical probabilities when each outcome is equally likely.
+		A \textbf{probability model}\index{probability!model} is a description of a random process. It is comprised of a sample space and a list of each outcome's corresponding probability. \\
+		An \textbfi{event} is any collection of outcomes. \\
 		For a probability model to be valid, any individual event's probability must be within $[0, 1]$ and the sum of the probabilities of all outcomes must be equal to zero. \\
-		The \textbf{complement rule} states that the probability of some event not occurring, denoted by the superscript $C$ above the event, is equal to 1 minus its probability of occurring. \\
+		The \textbf{complement rule}\index{rule!complement} states that the probability of some event not occurring, denoted by the superscript $C$ above the event, is equal to 1 minus its probability of occurring. \\
 		\[P\left(A^C\right) = 1 - P(A)\]
 		It is quite clear that the converse of the complement rule also holds true, which means that a complement's complement is nothing but the original event. 
 		\[P\left(\left(A^C\right)^C\right) = P(A)\]
 		\callout{17}{The complements of binary relations should be noted:\footnotesize\begin{align*}(A < B)^C &= A \ge B & (A > B)^C &= A \le B & (A = B)^C &= A \ne B & (A < B < C)^C &= (B\le A)\lor (B\ge C)\end{align*}}
-		In order for two events to be \textbf{mutually exclusive} (\textbf{disjoint}), it must be impossible for both of them to occur.
-		The \textbf{intersection} of two events, denoted by a $\cap$ between them, occurs when both events occur. It follows the commutative property
+		The \textbfi{intersection} of two events, denoted by a $\cap$ between them, occurs when both events occur. It follows the commutative property
 		\[P(A\cap B) = P(B\cap A)\]
-		The \textbf{union} of two events occurs when exactly one of the two events occurs. This is also commutative. \\
+		The \textbfi{union} of two events occurs when exactly one of the two events occurs. This is also commutative. \\
 		\[P(A\cup B) = P(B\cup A)\]
-		The \textbf{general addition rule} states that the probability of exactly one of two events occurring is equal to their sums of their probabilities of occurring by themselves minus the that of both occurring.
+		The \textbf{general addition rule}\index{rule!addition!general} states that the probability of exactly one of two events occurring is equal to their sums of their probabilities of occurring by themselves minus the that of both occurring.
 		\[P(A\cup B) = P(A) + P(B) - P(A\cap B)\]
-		Complements can be applied to the unions and intersections of two events.\footnote{
+		Complements\index{complement} can be applied to the unions\index{union} and intersections\index{intersection} of two events\index{event}.\footnote{
 			The way that complements affect unions and intersections follows De Morgan's law:\begin{align*}\lnot(A\lor B) &= \lnot A\land\lnot B & \lnot(A\land B) &= \lnot A\lor\lnot B\end{align*}This truth is disguised by the fact that \enquote{union} in statistics means \enquote{symmetric difference} in logic.\ssmall
 			\begin{align*}
 				a &:= x\in A \land b:= x\in B \\
@@ -42,35 +41,35 @@
 		\begin{align*}
 			P(A\cup B)^C &= P(A\cap B) + P\left(A^C\cap B^C\right)	& P(A\cap B)^C = P(A\cup B) + P\left(A^C \cap B^C\right)
 			\end{align*}
-		The probability of one event occurring and another not is equal to the difference between the probabilities of event occurring and both occurring.
+		The \pindex{probability} of one event occurring and another not is equal to the difference between the probabilities of the first event occurring and both occurring.
 		\[P\left(A\cap B^C\right) = P(A) - P(A\cap B)\]
-		For two events to be \textbf{mutually exclusive} or \textbf{disjoint}, it must be impossible for both to occur.
+		For two events to be \textbfi{mutually exclusive} or \textbfi{disjoint}, it must be impossible for both to occur.
 		\[P(A\cap B) = 0\]
-		Mutually exclusive events follow the \textbf{addition rule for mutually exclusive events}, which states that the probability of their intersection is equal to their sum.
+		Mutually exclusive events follow the \textbf{addition rule for mutually exclusive events}\index{rule!addition!for mutually exclusive events}, which states that the probability of their intersection is equal to their sum.
 		\[P(A\cup B) = P(A) + P(B) + P(A\cap B) = P(A) + P(B)\]
-		The probability of one event occurring given that another has already occurred is a \textbf{conditional probability}. It is equal to the probability of both events occurring divided by that of the given event.\footnote{On a two-way table, $P(A|B)$ is the intersection of $A$ and $B$ divided by the total of $B$.}
+		The probability of one event occurring given that another has already occurred is a \textbf{conditional probability}\index{probability!conditional}. It is equal to the probability of both events occurring divided by that of the given event.\footnote{On a two-way table\index{table!two-way}, $P(A|B)$ is the intersection of $A$ and $B$ divided by the total of $B$.}
 		\[P(A|B) = \frac{P(A\cap B)}{P(B)}\]
 		This allows probability of the intersection of two events to be calculated.
 		\[P(A\cap B) = P(A) \times P(B|A) = P(B) \times P(A|B)\]
 		The commutative property is not always followed by conditional probabilities.
 		\[\lnot\square[P(A|B) = P(B|A)]\]
-		Two events are \textbf{independent} if the one occurring does not affect the probability of the other occurring.
+		Two events are \textbfi{independent} if the one occurring does not affect the probability of the other occurring.
 		\[P(A|B) = P(A) \land P(B|A) = P(B)\]
-		\callout{17}{Mutually exclusive events have no common outcomes while independent events are not affected by one of the events occurring.}
+		\callout{17}{\emph{Mutually exclusive} events have no common outcomes while \emph{independent} events are not affected by one of the events occurring.}
 		The probability of the intersection of two independent events is simply the product of their probabilities.
 		\[P(A\cap B) = P(A|B) \times P(B) = P(A) \times P(B)\]
 		If two events are not independent, they are \textbf{dependent}.
 		\section*{Simulation}
 			%TODO Probability/Simulation
 	\chapter{Random Variables}
-		\textbf{Random variables} take numerical values that describe the outcomes of some chance process. \\
-		A \emph{probability distribution} describes all possible outcomes and their probabilities. \\
+		\textbf{Random variables}\index{variable!random} take numerical values that describe the outcomes of some \pindex{chance} process. \\
+		A \emph{probability distribution}\index{distribution!probability} describes all possible outcomes and their probabilities. \\
 		For a probability distribution to be valid, the sum of all probabilities must be one and all individual probabilities be within $[0,1]$. \\
 		The probability of $X$ being equal to $x_i$ can be denoted as either $P(x_i)$ or as $p_i$.
 		\[P(X = x_i) = P(x_i) = p_i\]
-		The \emph{mean} or \textbf{expected value} (denoted $E(X)$) is a weighted average of all possible values of $X$.
+		The \emphi{mean} or \textbfi{expected value} (denoted $E(X)$) is a weighted average of all possible values of $X$.
 		\section{Discrete Random Variables}
-			A \textbf{discrete random variables} have a fixed finite set of possible values with gaps between them. \\
+			A \textbf{discrete random variables}\index{variable!discrete!random} have a fixed finite set of possible values with gaps between them. \\
 			The \emph{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.\footnote{A random variable's sample space can be input into two lists, one corresponding to its values and the other to their frequencies. From there, \texttt{1-Var Stats} can be run the the former input as the \texttt{List} and the latter as the \texttt{FreqList}. This provides the values of $\mu_X$, $\sigma_X$, and $\sigma_X^2$.}
 			\[\mu_X = \sum x_ip_i\]
 			\callout{13.605}{The mean of a discrete random variable need not be one of its possible values.}

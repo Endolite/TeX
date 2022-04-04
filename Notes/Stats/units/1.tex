@@ -4,8 +4,8 @@
 	\chapter{One-Variable Quantitative Data}
 		\textbf{Statistics}\index{statistics} is the science of collecting and analyzing data\index{data}. \\
 		A data set\index{data!set} is a collection of data on several \textbfi{individuals}. These individuals can be anything. \\
-		Data provides values for \textbf{variables}\index{variables}, which describe some \emphi{characteristic} of an \emphi{individual}. \\
-		\textbf{Quantitative variables}\index{variables!quantitative} provide numerical values that describe or measure some characteristic while \textbf{categorical variables}\index{variables!categorical} assign labels that place each individual into one of several groups. \\
+		Data provides values for \textbf{variables}\index{variable}, which describe some \emphi{characteristic} of an \emphi{individual}. \\
+		\textbf{Quantitative variables}\index{variable!quantitative} provide numerical values that describe or measure some characteristic while \textbf{categorical variables}\index{variable!categorical} assign labels that place each individual into one of several groups. \\
 		A variable's \textbfi{distribution} describes the \emphi{frequency} with which a variable takes on its possible values.
 		\section{Graphically Displaying Distributions}
 			Quantitative variables can either be \textbf{discrete}\index{variable!discrete}, having some countable set of possible values, or \textbf{continuous}\index{variable!continuous}, having an uncountable set of possible values.
@@ -94,7 +94,7 @@
 			The area under the density curve\index{curve!density} from its leftmost value to any given value is that value's \emphi{percentile}. It can be found using a \textbf{cumulative distribution function}\index{function!distribution!cumulative}, generally notated $\pmb{F}$.\footnote{The cumulative distribution function is the area under $f$ from its minimum value to the desired $x$ value. It is thusly defined as the following integral:\[F(x) = \int_{-\infty}^xf(t)\d t\](As the density function\index{function!density} is equal to 0 outside of the domain of $x$, an infinity can be used as the lower bound.}
 			\[P(X \le x) = F(x)\]
 			\callout{17}{As a density curve is categorically \emphi{continuous}, the inclusivity of the binary relation of the \pindex{probability} statement is irrelevant to the value of the percentile.\footnote{The lack of regard for inclusivity with percentile, as well as other probability statements made regarding continuous distributions, is due to the area being $\int_{-\infty}^xf(t)\d t$. As $\mathrm{d}t$ is a differential, it is infinitesimal, so adding or subtracting $f(x)\d t$ to or from the integral has no tangible impact on its value.}}
-			The probability of $X$ falling within two values is equal to the difference of their percentiles and the chance of $X$ falling above a value is 1 minus its percentile.
+			The probability of $X$ falling within two values is equal to the difference of their percentiles and the \pindex{chance} of $X$ falling above a value is 1 minus its percentile.
 			\begin{align*}
 				(x_1 < X < x_2) &= P(X \le x_2) - P(X \le x_1) && P(X > x) = 1 - P(X \le x)
 			\end{align*}
