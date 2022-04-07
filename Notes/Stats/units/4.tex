@@ -118,9 +118,9 @@
 			This is the product of the probability of $x$ successes, that of $n - x$ failures (necessitated by the definition of a binomial), and the total number of possibilities in which there are $x$ successes.\footnote{The probability of exactly and at most $x$ successes can be found using $\binompdf$ and $\binomcdf$ respectively:\begin{align*}P(x) = \binomPDF{n}{p}{x} && P(X < x) = \binomCDF{n}{p}{x}\end{align*}} \\
 			The \textbf{sample space} of a binomial variable can be derived as each term of a binomial expansion\footnote{The binomial expansion of $a + b$ raised to power $n$ is the following:\[(a + b)^n = \sum_{n = 0}^n\binom{n}{k}a^{n - k}b^k\]} of the conjugate of $p$ added to $p$ itself.
 			\[S_{B(n, p)} = ((1 - p) + p)^n = \sum_{x = 0}^n\binom{n}{x}(a - p)^{n - x}p^x\]
-			A binomial variable's expected value (mean) is equal to the product of the number of trials and the probability of success while its standard deviation is the product of the probability of success and the number of trials.\footnote{The probability is simply the long-run relative frequency, so the expected number of successes for a binomial distribution is simply the expected relative frequency of successes multiplied by the total number of trials.}
+			A binomial variable's \emph{expected value} (\emph{mean}) is equal to the product of the number of trials and the probability of success while its standard deviation is the product of the probability of success and the number of trials.\footnote{The probability is simply the long-run relative frequency, so the expected number of successes for a binomial distribution is simply the expected relative frequency of successes multiplied by the total number of trials.}
 			\[\mu_X = np\]
-			The variance of a binomial variable is the product of the number of trials and the probability of success and its conjugate.{}
+			The \emph{variance} of a binomial variable is the product of the number of trials and the probability of success and its conjugate.{}
 			\[\sigma_X^2 = np(1 - p)\]
 		\section{Geometric Distributions}
 			%TODO Geometric Distributions

@@ -6,27 +6,36 @@
 \usepackage[hang,flushmargin]{footmisc} 
 \usepackage[margin=0.5in]{geometry}
 \usepackage[utf8]{inputenc}
+\usepackage{kbordermatrix}
 \usepackage{moresize}
 \usepackage{pgfplots}
 \usepackage{tikz}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc, shapes}
+
+\DeclareMathOperator{\Alpha}{A}
+\DeclareMathOperator{\Beta}{B}
+\DeclareMathOperator{\Tau}{T}
 
 \newcommand{\avg}[1]{#1_{\mathrm{avg}}}
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 \newcommand{\com}[1]{#1_{\mathrm{com}}}
 \newcommand{\comd}[2]{#1_{\mathrm{com}#2}}
 \newcommand{\comment}[1]{}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\iv}{\text{\^\i}}
+\newcommand{\jv}{\text{\^\j}}
+\newcommand{\kv}{\text{\^k}}
+\newcommand{\net}[1]{#1_{\mathrm{net}}}
 \newcommand{\tsn}[1]{
 	\draw[-] (0, 0) -- (1.732 * #1, 0); 
 	\draw[-] (0, 1 * #1) -- (1.732 * #1, 0);
 	\draw[-] (0, 0) -- (0, 1 * #1)}
-
+\renewcommand{\th}[1]{#1^{\mathrm{th}}}
 \newcommand{\U}{\hspace{0.7mm}}
 	\newcommand{\g}[1]{\U\mathrm{#1g}}
 	\newcommand{\J}[1]{\U\mathrm{#1J}}
 	\newcommand{\m}[1]{\U\mathrm{#1m}}
 	\newcommand{\N}[1]{\U\mathrm{#1N}}
-	\newcommand{\net}[1]{#1_{\mathrm{net}}}
 	\newcommand{\rad}{\U\mathrm{rad}}
 	\newcommand{\s}[1]{\U\mathrm{#1s}}
 
@@ -37,7 +46,18 @@
 \begin{document}
 	\maketitle
 	\tableofcontents
+	\part{Front Matter}
+		\chapter{Mathematical Foundations}
+			\subfile{gen/0.tex}
 	\part{Mechanics}
+		\chapter{Kinematics}
+			\subfile{mech/1.tex}
+		\chapter{Forces}
+			\subfile{mech/2}
+		\chapter{Energy}
+			\subfile{mech/3}
+		\chapter{Systems of Particles}
+			\subfile{mech/4}
 		\chapter{Rotations}
 			\subfile{mech/5}
 \end{document}

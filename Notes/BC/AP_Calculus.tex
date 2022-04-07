@@ -9,10 +9,16 @@
 \usepackage{moresize}
 \usepackage{pgfplots}
 \usepackage{tikz}
+\usetikzlibrary{angles, quotes}
 \usetikzlibrary{calc}
 
+
+
+
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+\renewcommand{\d}{\mathrm{d}}
 \newcommand{\maximum}[1]{\mathrm{max}\left\{#1\right\}}
+\newcommand{\nth}[1]{#1^{\mathrm{th}}}
 
 \author{Arnav Patri}
 \title{AP Calculus}
@@ -21,7 +27,9 @@
 \begin{document}
 	\maketitle
 		\tableofcontents
-			\setcounter{part}{9}
-			\part{Infinite Series}
+			\setcounter{part}{8}
+			\chapter{Parametric, Polar, and Vector-Valued Functions}
+				\subfile{units/9}
+			\chapter{Infinite Series}
 				\subfile{units/10}
 \end{document}
