@@ -132,10 +132,10 @@
 		\end{enumerate}
 		\section{Significance Tests about Proportions}
 			\callout{17}{In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$ and that the standard error can be calculated, so Large Counts and the 10\% condition (not for experiments) must be satisfied and interpreted for Normality and independence respectively.}
-			To perform \textbf{1 proportion} $\pmb{z}$\textbf{-test}, a significance test about one proportion, $z$ must be calculated. \\
+			To perform \textbf{1-proportion $\pmb{z}$ test}, a significance test about one proportion, $z$ must be calculated. \\
 			\[z = \frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\]			
 			\subsection*{Significance Tests about Differences in Proportions}
-				A \textbf{2 proportion} $\pmb{z}$\textbf{-test} can be performed to compare the proportions for two populations is based on the difference between sample proportions.
+				A \textbf{2-proportion $\pmb{z}$ test} can be performed to compare the proportions for two populations is based on the difference between sample proportions.
 				\begin{align*}
 					H_0:p_1 - p_2 = p_0 && H_a: p_1 - p_2 \gtrless p_0 && H_a:p_1 - p_2 \ne p_0
 				\end{align*}
@@ -153,12 +153,13 @@
 				\[z = \z{\hat{p}_1 - \hat{p}_2}{\mu_{\hat{p}_1 - \hat{p}_2}}{s_{\hat{p}_1 - \hat{p}_2}} = \z{\hat{p}_1 - \hat{p}_2}{0}{\propsed{\hat{p}_C}{n_1}{\hat{p}_C}{n_2}} = \z{\hat{p}_1}{\hat{p}_2}{\propsee{\hat{p}_C}{n_1}{n_2}}\]
 		\section{Significance Tests about Means}
 			\subsection*{Significance Tests about Differences in Means}
-			\callout{17}{To perform a significance test for a population mean, randomness, independence (10\%), and Normality (\emph{CLT} or distribution) must be verified.}
+			\callout{17}{To perform a significance test for a population mean, a \textbf{1-sample t test} randomness, independence (10\%), and Normality (\emph{CLT} or distribution) must be verified.}
 			The \emph{standardized test statistic} for a significance test about a mean is $t$.
 			\[t = \z{\bar{x}}{\mu_{\bar{x}}}{s_{\bar{x}}} = \z{\bar{x}}{\mu_0}{s_x/\sqrt{n}}\]
 			The \emph{$t$-distribution} used to calculate the $P$-value uses \emph{degrees of freedom} 1 less than the sample size.
 			\[\df = n - 1\]
 			\callout{17}{Minute, practically unimportant changes in in $\mu_0$ can drastically shrink the $P$-value when the sample size is always large enough. A very large sample size results in the null hypothesis almost always being rejected. \textbf{$\pmb{P}$-hacking} takes advantage of this fact.}
+			
 	\chapter{Chi-Square Tests}
 	\chapter{Slopes}
 \end{document} 

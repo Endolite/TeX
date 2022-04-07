@@ -6,7 +6,7 @@
 			\[\sum_i x_i = \sum x_i\]
 			\subsection{Matrices}
 				A matrix is arranged as a two-dimensional rectangular array or numbers, comprised of rows ($R$) and columns ($C$). \\
-				 A matrix with $m$ rows and $n$ columns can be described as being $m \times n$ ($m$ by $n$). This is its dimension. \\
+				 A matrix with $m$ rows and $n$ columns can be described as being $m \times n$ ($m$ by $n$). This is its dimension. If $m$ and $n$ are equal, the matrix is a \textbf{square matrix}. \\
 				 The $\th{i}$ row or column can be denoted $R_i$ or $C_i$ respectively. \\
 				 Each cell of a matrix is an element. To denote the element in row $i$ and column $j$ of a matrix $A$, $A_{i,j}$ can be used.
 				\[
@@ -19,6 +19,13 @@
 							R_m & A_{m, 1} & A_{m, 2} & A_{m, \ldots} & A_{m, n}
 						}
  				\]
+ 				The \textbf{determinant} of a $2 \times 2$ matrix is the difference between the products of the diagonal terms.
+ 					\[\det\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right) = ad - bc\]
+ 				The determinant of a $3 \times 3$ matrix is quite similar that of a $2 \times 2$ one, using an anchor point and multiplying that by the determinant of the matrix constructed from the remaining 4 terms.
+ 				\[
+ 					\det\left(\begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix}\right) = a\det\left(\begin{bmatrix} e & f \\ h & i \end{bmatrix}\right) + b\det\left(\begin{bmatrix} d & f \\ g & i \end{bmatrix}\right) + c\det\left(\begin{bmatrix} d & e \\ g & i \end{bmatrix}\right)
+ 				\]
+ 				This trend continues for \emph{square} matrices of higher dimension.
  				\subsubsection{Row Operations}
  					A \textbf{row operation} manipulates the rows of a matrix. \\
  					The \textbf{interchange} of the $\th{i}$ and $\th{j}$ rows is denoted $R_i \leftrightarrow J$. This operation simply swaps the rows.
@@ -62,32 +69,34 @@
  						} 
  					\]
  				\subsubsection{Linear Equations}
- 				Matrices can be used to solve systems of linear equations in any number of dimensions.
-				To represent a linear equation with an \textbf{augmented matrix}, the each element of a row should correspond to the coefficient of a variable with the exception of the last column's element corresponding to a constant.
- 				\[
- 					a_1x_1 + a_2x_2 + \ldots + a_nx_n = A \equiv
- 						\hspace{-2.5mm}\kbordermatrix{
- 							& x_1 & x_2 & \cdots & x_n  & & c\\
- 							& a_1 & a_2 & \cdots & a_n & \vrule & A
- 						}
- 				\]
- 				A \textbf{system of linear equations} with $m$ equations and $n$ dimensions can also be represented via an augmented matrix using row operations.
- 				\[
-	 					\begin{aligned}
-	 						a_{1, 1}x_1 + a_{1, 2}x_2 + \ldots + a_{1, n}nx_n &= A_1 \\
-	 						a_{2, 1}x_1 + a_{2, 2}x_2 + \ldots + a_{2, n}nx_n &= A_2 \\
-	 						&\hspace{6.75mm}\vdots \\
-	 						a_{m, 1}x_1 + a_{m, 2}x_2 + \ldots + a_{m, n}nx_n &= A_m \\
-	 					\end{aligned}
- 					\equiv
- 						\kbordermatrix{
- 							& x_1 & x_2 & \cdots & x_n & & c \\
- 							a_1 & a_{1, 1} & a_{1, 2} & a_{1, \ldots} & a_{1, n} & \vrule & A_1 \\
- 							a_2 & a_{2, 1} & a_{2, 2} & a_{2, \ldots} & a_{2, n} & \vrule & A_2 \\
- 							\vdots & a_{\ldots, 1} & a_{\ldots, 2} & \ddots & a_{\ldots, n} & \vrule & \vdots \\
- 							a_m & a_{m, 1} & a_{m, 2} & a_{m, \ldots} & a_{m, n} & \vrule & A_m
- 						}
- 				\]
+	 				Matrices can be used to solve systems of linear equations in any number of dimensions.
+					To represent a linear equation with an \textbf{augmented matrix}, the each element of a row should correspond to the coefficient of a variable with the exception of the last column's element corresponding to a constant.
+	 				\[
+	 					a_1x_1 + a_2x_2 + \ldots + a_nx_n = A \equiv
+	 						\hspace{-2.5mm}\kbordermatrix{
+	 							& x_1 & x_2 & \cdots & x_n  & & c\\
+	 							& a_1 & a_2 & \cdots & a_n & \vrule & A
+	 						}
+	 				\]
+	 				A \textbf{system of linear equations} with $m$ equations and $n$ dimensions can also be represented via an augmented matrix using row operations.
+	 				\[
+		 					\begin{aligned}
+		 						a_{1, 1}x_1 + a_{1, 2}x_2 + \ldots + a_{1, n}nx_n &= A_1 \\
+		 						a_{2, 1}x_1 + a_{2, 2}x_2 + \ldots + a_{2, n}nx_n &= A_2 \\
+		 						&\hspace{6.75mm}\vdots \\
+		 						a_{m, 1}x_1 + a_{m, 2}x_2 + \ldots + a_{m, n}nx_n &= A_m \\
+		 					\end{aligned}
+	 					\equiv
+	 						\kbordermatrix{
+	 							& x_1 & x_2 & \cdots & x_n & & c \\
+	 							a_1 & a_{1, 1} & a_{1, 2} & a_{1, \ldots} & a_{1, n} & \vrule & A_1 \\
+	 							a_2 & a_{2, 1} & a_{2, 2} & a_{2, \ldots} & a_{2, n} & \vrule & A_2 \\
+	 							\vdots & a_{\ldots, 1} & a_{\ldots, 2} & \ddots & a_{\ldots, n} & \vrule & \vdots \\
+	 							a_m & a_{m, 1} & a_{m, 2} & a_{m, \ldots} & a_{m, n} & \vrule & A_m
+	 						}
+	 				\]
+ 				\subsubsection{Matrix Operations}
+ 					
 			\subsection{Vectors}
 				A \textbf{scalar} is a quantity with only magnitude. \\
 				A \textbf{vector} is a quantity with both magnitude and direction. A vector is denoted by an arrow ($\to$) above the variable. It can be represented by a 1-row matrix. \\
