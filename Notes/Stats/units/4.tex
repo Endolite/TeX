@@ -73,7 +73,7 @@
 			The \emph{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.\footnote{A random variable's sample space can be input into two lists, one corresponding to its values and the other to their frequencies. From there, \texttt{1-Var Stats} can be run the the former input as the \texttt{List} and the latter as the \texttt{FreqList}. This provides the values of $\mu_X$, $\sigma_X$, and $\sigma_X^2$.}
 			\[\mu_X = \sum x_ip_i\]
 			\callout{13.605}{The mean of a discrete random variable need not be one of its possible values.}
-			The \emph{variance} $\sigma^2$ of a discrete random variable is the sum of the products of the square of the distance from the mean multiplied by frequency.
+			The \emph{variance} $\sigma^2$ of a discrete random variable is the sum of the products of the square of the distance from the mean multiplied by frequency.\footnote{Multiplying a value by its relative frequency is the same as multiplying it by its frequency and dividing it by the size of the data set.}
 			\[\sigma_X^2 = \sum(x_i - \mu_X)^2p_i\]
 		\section{Continuous Random Variables}
 			A \textbf{continuous random variable} can take on any value within an interval (potentially unbounded). \\
@@ -101,27 +101,56 @@
 			\end{align*}
 	\chapter{Probability Distributions}
 		\section{Binomial Distributions}
-			For a \emph{discrete} random variable to be \textbf{binomial}, it must meed the following conditions:
-			\begin{enumerate}
-				\item
-					The possible outcomes of each trial must be \textbf{binary}, meaning that each trial can either be a success or a failure.
-				\item
-					Each trial must be \emph{independent}.
-				\item
-					The number of trials must be fixed in advance.
-				\item
-					The probability of success must be constant between trials.
-			\end{enumerate}
+			\callout{17}{
+				For a \emph{discrete} random variable to be \textbf{binomial}, it must meed the following conditions:
+				\begin{enumerate}
+					\item
+						The possible outcomes of each trial must be \textbf{binary}, meaning that each trial can either be a success or a failure.
+					\item
+						Each trial must be \emph{independent}.
+					\item
+						The number of trials must be fixed in advance.
+					\item
+						The probability of success must be constant between trials.
+				\end{enumerate}
+			}
 			A binomial distribution with parameters $n$ trials and probability $p$ of any given trial being successes can be denoted $B(n, p)$. \\
 			The probability of $x$ successes in $n$ trials, each with a probability $p$ of being successful, is defined as such:\footnote{The binomial $\binom{n}{x}$ is defined as such:\[\binom{n}{x} = \frac{n!}{(n - x)!}\]}
+			The probability of $x$ successes after $n$ trials is also referred to as the \textbf{binomial coefficient}\index{coefficient!binomial} and is denoted as such:
+			\[P(x) = f(x,n,p)\]
 			\[P(x) = \binom{n}{x}p^x(1 - p)^{n - x}\]
 			This is the product of the probability of $x$ successes, that of $n - x$ failures (necessitated by the definition of a binomial), and the total number of possibilities in which there are $x$ successes.\footnote{The probability of exactly and at most $x$ successes can be found using $\binompdf$ and $\binomcdf$ respectively:\begin{align*}P(x) = \binomPDF{n}{p}{x} && P(X < x) = \binomCDF{n}{p}{x}\end{align*}} \\
 			The \textbf{sample space} of a binomial variable can be derived as each term of a binomial expansion\footnote{The binomial expansion of $a + b$ raised to power $n$ is the following:\[(a + b)^n = \sum_{n = 0}^n\binom{n}{k}a^{n - k}b^k\]} of the conjugate of $p$ added to $p$ itself.
-			\[S_{B(n, p)} = ((1 - p) + p)^n = \sum_{x = 0}^n\binom{n}{x}(a - p)^{n - x}p^x\]
+			\[S_{B(n, p)} = ((1 - p) + p)^n = \sum_{x = 0}^n\binom{n}{x}(1 - p)^{n - x}p^x\]
 			A binomial variable's \emph{expected value} (\emph{mean}) is equal to the product of the number of trials and the probability of success while its standard deviation is the product of the probability of success and the number of trials.\footnote{The probability is simply the long-run relative frequency, so the expected number of successes for a binomial distribution is simply the expected relative frequency of successes multiplied by the total number of trials.}
 			\[\mu_X = np\]
-			The \emph{variance} of a binomial variable is the product of the number of trials and the probability of success and its conjugate.{}
+			The \emph{variance} of a binomial variable is the product of the number of trials and the probability of success and its conjugate.
 			\[\sigma_X^2 = np(1 - p)\]
+			A binomial distribution\index{distribution!binomial} can be graphed as a \pindex{histogram}.\footnote{A binomial distribution's graph can be thought of as a piecewise.\[f(x, n, p) = \begin{cases}\binom{n}{x}(1 - p)^{n - x}p^x & x\in \mathbb{N} \\ f(\nint(x), n, p) & x\notin \mathbb{N}\end{cases}\]} \\
+			Depending on the value of $p$, the skew of the binomial distribution will vary. \\
+			\begin{center}
+				\begin{tabular}{|c|ccc|}\hline
+					$p$ & $<0.5$ & $0.5$ & $>0.5$ \\\hline
+					skew & right & symmetrical & none \\\hline
+				\end{tabular}
+			\end{center}
 		\section{Geometric Distributions}
-			%TODO Geometric Distributions
+			The \textbf{geometric setting} is identical to the \emph{binomial setting} apart from the fact that the number of trials is not predetermined.
+			\callout{17}{
+				For a \emphi{discrete} random variable to be \textbfi{geometric}, it must meet the following conditions.
+				\begin{enumerate}
+					\item
+						The possible outcomes of each trial must be \emphi{binary}.
+					\item
+						Each trial must be \emphi{independent}.
+					\item
+						The probability of success must be constant between trials.
+				\end{enumerate}
+			}
+			The probability of achieving success after exactly $x$ trials is the probability of $x - 1$ failures and 1 success, and is appropriately defined as such:
+			\[P(x) = (p - 1)^{x - 1}p\]
+			The \emph{mean} of a geometric variable\index{variable!geometric} is simply the reciprocal of $p$.
+			\[\mu_X = \frac{1}{p}\]
+			The \emph{standard deviation} of a geometric variable is as follows:
+			\[\sigma_X = \frac{\sqrt{1 - p}}{p}\]
 \end{document}

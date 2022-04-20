@@ -12,31 +12,35 @@
 \usepackage{tikz}
 \usetikzlibrary{calc, shapes}
 
-\DeclareMathOperator{\Tau}{T}
-
-\newcommand{\avg}[1]{#1_{\mathrm{avg}}}
+% Functions
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
-\newcommand{\com}[1]{#1_{\mathrm{com}}}
-\newcommand{\comd}[2]{#1_{\mathrm{com}#2}}
 \newcommand{\comment}[1]{}
-\renewcommand{\d}{\mathrm{d}}
-\renewcommand{\det}{\mathrm{det}}
+\renewcommand{\th}[1]{#1^{\mathrm{th}}}
+% Units
+\DeclareMathOperator{\kg}{kg}
+\DeclareMathOperator{\J}{J}
+\DeclareMathOperator{\m}{m}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\s}{s}
+% Descriptors/Variables
+\DeclareMathOperator{\avg}{avg}
+\DeclareMathOperator{\cog}{cog}
+\DeclareMathOperator{\com}{com}
+\DeclareMathOperator{\net}{net}
+\DeclareMathOperator{\Tau}{T}
+% Vectors
 \newcommand{\iv}{\text{\^\i}}
 \newcommand{\jv}{\text{\^\j}}
 \newcommand{\kv}{\text{\^k}}
-\newcommand{\net}[1]{#1_{\mathrm{net}}}
-\newcommand{\tsn}[1]{
+% Mathematical Symbols
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\det}{\mathrm{det}}
+% Tikz
+\comment{\newcommand{\tsn}[1]{
 	\draw[-] (0, 0) -- (1.732 * #1, 0); 
 	\draw[-] (0, 1 * #1) -- (1.732 * #1, 0);
-	\draw[-] (0, 0) -- (0, 1 * #1)}
-\renewcommand{\th}[1]{#1^{\mathrm{th}}}
-\newcommand{\U}{\hspace{0.7mm}}
-	\newcommand{\g}[1]{\U\mathrm{#1g}}
-	\newcommand{\J}[1]{\U\mathrm{#1J}}
-	\newcommand{\m}[1]{\U\mathrm{#1m}}
-	\newcommand{\N}[1]{\U\mathrm{#1N}}
-	\newcommand{\rad}{\U\mathrm{rad}}
-	\newcommand{\s}[1]{\U\mathrm{#1s}}
+	\draw[-] (0, 0) -- (0, 1 * #1)}}
 
 \title{AP Physics C}
 \author{Arnav Patri}
@@ -47,10 +51,10 @@
 	\tableofcontents
 	\part{Front Matter}
 		\chapter{Mathematical Foundations}
-			\subfile{gen/0.tex}
+			\subfile{gen/0}
 	\part{Mechanics}
 		\chapter{Kinematics}
-			\subfile{mech/1.tex}
+			\subfile{mech/1}
 		\chapter{Forces}
 			\subfile{mech/2}
 		\chapter{Energy}
@@ -59,5 +63,9 @@
 			\subfile{mech/4}
 		\chapter{Rotations}
 			\subfile{mech/5}
+		\chapter{Statics and Oscillations}
+			\subfile{mech/6}
+		\chapter{Gravitation}
+			\subfile{mech/7}
 	\part{Electricity and Magnetism}
 \end{document}

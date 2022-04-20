@@ -69,7 +69,7 @@
 		If the $P$-value is less than the \textbf{significance level} $\pmb{\alpha}$, $H_0$ can be rejected and it can be concluded that there is convincing evidence for $H_a$. If the $P$-value is greater than or equal to $\alpha$, $H_0$ cannot be rejected, and it can be concluded that there is not convincing evidence for $H_a$. \\
 		The $P$-value is calculated using the \textbf{standardized test statistic}, which is the number of standard deviations from the null value of the parameter. \\
 		For a null hypothesis to be significant is for a significance test to provide a $P$-value less than the significance level.
-		\[\text{standardized test statistic} = \z{\text{statistic}}{\text{null parameter}}{\text{standard error of statistic from null parameter}} = \mathrm{s}\]
+		\[\text{standardized test statistic} = \z{\text{statistic}}{\text{null parameter}}{\text{standard error of statistic from null parameter}} = \mathrm{sts}\]
 		The $P$-value is equal to the probability of $z$ satisfying the $H_a$ assuming that $H_0$ is true. It can therefore be calculated as such using a \emph{cumulative distribution function}, so long as Normality and independence are justified.
 		\[\small
 			P\text{-value} = \begin{cases}
@@ -104,9 +104,9 @@
 		\end{center}
 		The probability of a Type \Roman{1} error occurring is equal to $\alpha$. \\
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases. \\
-		A confidence interval for $\hat{p}$ (using $s_{\hat{p}}$) can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
+		A confidence interval about a statistic (using the \emph{standard error}) can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
 		A two-sided test of of $H_0$ at significance level $\alpha$ usually provides the same conclusion as a confidence level of the complement of $\alpha$.
-		\[[P(\mathrm{S \ne s}) < \alpha] \approxident [\text{null parameter} \in (\text{statistic} \pm \ME)]\]
+		\[[P(\mathrm{|STS| < |sts|}) < \alpha] \approxident [\text{null parameter} \in (\text{statistic} \pm \ME)]\]
 		A test's \textbf{power} is the probability of convincing evidence being found that convincingly supports $H_a$ given a value for the parameter being tested. This is also is equal to the probability of avoiding a Type \Roman{2} error. 
 		\[\mathrm{power} = 1 - P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})\]
 		Power can be increased in three ways:
@@ -131,11 +131,11 @@
 				\end{itemize}
 		\end{enumerate}
 		\section{Significance Tests about Proportions}
-			\callout{17}{In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$ and that the standard error can be calculated, so Large Counts and the 10\% condition (not for experiments) must be satisfied and interpreted for Normality and independence respectively.}
+			\callout{17}{In order for a significance test of $H_0:p = p_0$ to be performed, it must be verified that the distribution of $\hat{p}$ is approximately Normal assuming $H_0$ and that the standard error can be calculated, so \emph{Large Counts} and the \emph{10\% condition} (not for experiments) must be satisfied and interpreted for Normality and independence respectively.}
 			To perform \textbf{1-proportion $\pmb{z}$ test}, a significance test about one proportion, $z$ must be calculated. \\
 			\[z = \frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}} = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\]			
 			\subsection*{Significance Tests about Differences in Proportions}
-				A \textbf{2-proportion $\pmb{z}$ test} can be performed to compare the proportions for two populations is based on the difference between sample proportions.
+				A \textbf{2-proportion $\pmb{z}$ test} can be performed to compare the proportions for two populations is based on the difference between sample proportions. They hypotheses for these tests typically take the following forms:
 				\begin{align*}
 					H_0:p_1 - p_2 = p_0 && H_a: p_1 - p_2 \gtrless p_0 && H_a:p_1 - p_2 \ne p_0
 				\end{align*}
@@ -146,20 +146,34 @@
 				A significance test first assumes that the null hypothesis $H_0:p_1 = p_2$ is true. This common value is referred to as $p$. \\
 				The \textbf{combined sample proportion} is denoted $\hat{p}_C$ and is equal to the total successes divided by the total sample size, making it effectively a weighted average. It is the sample proportion that assumes that the parameter values are equal.
 				\[\hat{p}_C = \frac{x_1 + x_2}{n_1 + n_2} = \frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1 + n_2}\]
-				The Large Counts condition must be met with $\hat{p}_C$.
+				The \emph{Large Counts} condition must be met with $\hat{p}_C$.
 				\[n_1\hat{p}_C, n_1(1 - \hat{p}_C), n_2\hat{p}_C, n_2(1 - \hat{p}_C) \ge 10\]
-				\callout{17}{For a significance test to be run about a difference of proportions, the randomness, independence (10\%) (for each proportion), and Large Counts conditions must be met.}
+				\callout{17}{For a significance test to be run about a difference of proportions, the randomness, independence (\emph{10\%}) (for each proportion), and \emph{Large Counts} conditions must be met.}
 				The \emph{standardized test statistic} is the $z$-score calculated using the difference in proportions and its standard error assuming the mean to be 0 ($H_0$ to be true).
 				\[z = \z{\hat{p}_1 - \hat{p}_2}{\mu_{\hat{p}_1 - \hat{p}_2}}{s_{\hat{p}_1 - \hat{p}_2}} = \z{\hat{p}_1 - \hat{p}_2}{0}{\propsed{\hat{p}_C}{n_1}{\hat{p}_C}{n_2}} = \z{\hat{p}_1}{\hat{p}_2}{\propsee{\hat{p}_C}{n_1}{n_2}}\]
 		\section{Significance Tests about Means}
-			\subsection*{Significance Tests about Differences in Means}
-			\callout{17}{To perform a significance test for a population mean, a \textbf{1-sample t test} randomness, independence (10\%), and Normality (\emph{CLT} or distribution) must be verified.}
+			\callout{17}{To perform a significance test for a population mean, a \textbf{1-sample $\pmb{t}$ test}, randomness, independence (\emph{10\%}), and Normality (\emph{CLT} or distribution) must be verified.}
 			The \emph{standardized test statistic} for a significance test about a mean is $t$.
 			\[t = \z{\bar{x}}{\mu_{\bar{x}}}{s_{\bar{x}}} = \z{\bar{x}}{\mu_0}{s_x/\sqrt{n}}\]
 			The \emph{$t$-distribution} used to calculate the $P$-value uses \emph{degrees of freedom} 1 less than the sample size.
 			\[\df = n - 1\]
 			\callout{17}{Minute, practically unimportant changes in in $\mu_0$ can drastically shrink the $P$-value when the sample size is always large enough. A very large sample size results in the null hypothesis almost always being rejected. \textbf{$\pmb{P}$-hacking} takes advantage of this fact.}
-			
+			\subsection*{Significance Tests about Differences in Means}
+				A \textbf{2-sample $\pmb{t}$ test} about a difference in means compares the means of two populations based on samples. These tests' hypotheses take the following forms:
+				\begin{align*}
+					H_0: \mu_1 - \mu_2 = \mu_0 && H_a: \mu_1 - \mu_2 \gtrless \mu_0 && H_a: \mu_1 - \mu_2 \ne \mu_0
+				\end{align*}
+				Typically, the null difference is 0, so these hypotheses can be rewritten in the following forms:
+				\begin{align*}
+					H_0: \mu_1 = \mu_2 && H_a: \mu_1 \gtrless \mu_2 && H_a: \mu_1 \ne \mu_2
+				\end{align*}
+				\callout{17}{In order for a significance test to be performed about a difference in means, the randomness, independence (\emph{10\%}), and normality (\emph{CLT} or distribution) must be verified for \emph{each} sample.}
+				The \emph{standardized test statistic} for a difference in means is as follows:
+				\[t = \z{\diff{\bar{x}}}{\mu_0}{\msdiff{s}{1}{2}} = \z{\bar{x}_1 - \bar{x}_2}{0}{\msdiffe{s}{1}{n_1}{2}{n_2}} = \z{\bar{x}_1}{\bar{x}_2}{\msdiffe{s}{1}{n_1}{2}{n_2}}\]
+				When the data is \emph{paired}, a \textbf{1-sample $\pmb{t}$ test for a difference in means} (a \textbf{paired $\pmb{t}$ test for a difference in means}) can be performed:
+				\begin{align*}
+					t &= \z{\diff{\bar{x}}}{\mu_0}{\msdiff{s}{1}{2}} = \z{\diff{\bar{x}}}{0}{\diff{s}/\sqrt{n}} = \frac{\diff{\bar{x}}}{\diff{s}/\sqrt{n}} & \df &= n - 1
+				\end{align*}
 	\chapter{Chi-Square Tests}
 	\chapter{Slopes}
 \end{document} 

@@ -4,13 +4,14 @@
 	\section{Parametric Equations}
 		A \textbf{parametric equation} defines its independent and dependent variables in terms of the same parameter, often $t$.
 		\callout{17}{A parametric graph should have arrows going through it showing the direction of $t$. It should not have arrows showing end behavior.}
-		To graph a parametric function, $t$ can be swept or the parameter can be eliminated by solving for it in terms of one of the variables. \\
+		To graph a parametric function, $t$ can be swept or the parameter can be eliminated by solving for it in terms of one of the variables.
+		\subsection{Parametric Derivatives}
 		The derivative of a parametric equation is still taken, unless otherwise specified, with respect to time.
 		\[\frac{\d y}{\d x} = \frac{\frac{\d y}{\d t}}{\frac{\d x}{d t}}\]
 		The second derivative of a parametric equation is the time is the first derivative differentiated with respect to $t$ divided by $\d x/\d t$.
 		\[\frac{\d^2y}{\d x^2} = \frac{\frac{\d}{\d t}\frac{\d y}{\d x}}{\frac{\d x}{\d t}}\]
 		The $\nth{n}$ derivative of a parametric equation takes the following form: \\
-		\subsection*{Arc Length}
+		\subsection{Parametric Arc Length}
 			\textbf{Rectangular arc length} is defined as such:
 			\[L = \int_a^b\sqrt{1 + \left(\frac{\d y}{\d x}\right)^2}\d x\]
 		\textbf{Parametric arc length} is differentiated with respect to $t$:
@@ -32,10 +33,11 @@
 				\draw[|-|] (-0.4, 0.1) -- node[left]{$r$} (2.8, 3.3);
 			\end{tikzpicture}
 		\end{center}
-		Polar coordinates can be written in infinite ways by adding or subtracting multiples of $2\pi$.\\
+		Polar coordinates can be written in infinite ways by adding or subtracting integer multiples of $2\pi$. \\
+		\[(r, \theta) \equiv (r, \theta \pm 2z\pi) \forall z \in \mathbb{Z}\]
 		To convert from polar to cartesian coordinates, trigonometric functions can be used.
 		\[\overset{\text{polar}}{(r, \theta)} \implies \overset{\text{cartesian}}{(r\cos\theta, r\sin\theta)}\]
-		Inverse tangent and Pythagorean theorem can be used to reverse this process.
+		Inverse tangent and the Pythagorean theorem can be used perform the converse process.
 		\[\overset{\text{cartesian}}{(x, y)} \implies \overset{\text{polar}}{\left(\sqrt{x^2 + y^2}, \arctan\left(\frac{y}{x}\right)\right)}\]
 		Radii can be negative, reflecting it over the origin. A negative radius is equivalent to an additional rotation of $\pi$.
 		\begin{center}
@@ -55,7 +57,7 @@
 				\draw pic[draw, <-, angle radius = 1.4cm, "$-\pi$" shift = {(-1mm, 1mm)}]{angle = d--b--a};
 			\end{tikzpicture}
 		\end{center}
-		\subsubsection*{General Forms}
+		\subsection{General Forms}
 			Polar equations come in four general forms:
 			\begin{itemize}
 				\item There are three types of \textbf{circles}:
@@ -65,8 +67,9 @@
 								\begin{tikzpicture}
 									\draw[<->] (-2, 0) -- (2, 0);
 									\draw[<->] (0, -2) -- (0, 2);
-									\draw[] circle (1.6cm);
+									\draw[domain = 0:{2 * pi}, smooth] plot({deg(\x)}:{1.5});
 									\node at (1.5, 1.5){$r = a$};
+									\draw[|-|] (0, 0.1) -- node[above]{$a$} ++ (1.5, 0);
 								\end{tikzpicture}
 							\end{center}
 						\item $r = a\cos\theta$ is a circle tangent to the origin on the horizontal axis with radius $\frac{|a|}{2}$.
@@ -74,6 +77,9 @@
 								\begin{tikzpicture}
 									\draw[<->] (-2, 0) -- (2, 0);
 									\draw[<->] (0, -2) -- (0, 2);
+									\draw[domain = 0:pi, smooth] plot({deg(\x)}: {1.5 * cos(deg(\x))});
+									\draw[|-|] (0, 0.1) -- node[above]{$|a|$} ++ (1.5, 0);
+									\node at (1.1, 1.3) {$r = a\cos\theta$};
 								\end{tikzpicture}
 							\end{center}
 						\item $r = a\sin\theta$ is a circle tangent to the origin on the vertical axis with radius $\frac{|a|}{2}$.
@@ -81,6 +87,8 @@
 								\begin{tikzpicture}
 									\draw[<->] (-2, 0) -- (2, 0);
 									\draw[<->] (0, -2) -- (0, 2);
+									\draw[domain = 0:pi, smooth] plot({deg(\x)}:{1.5 * sin(deg(\x))});
+									\draw[|-|] (0.1, 0) -- node[right]{$|a|$} ++ (0, 1.5);
 								\end{tikzpicture}
 							\end{center}
 					\end{itemize}

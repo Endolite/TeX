@@ -32,16 +32,309 @@
 		\paragraph{9. Construction zones}
 			\begin{enumerate}[a.]
 				\item
+					\[\mu = \text{average speed of drivers in 25 mph construction zone (mph)}\]
 					\begin{align*}
-						a
+						H_0&: \mu = 25 & H_a&: \mu > 25
 					\end{align*}
+					It is being tested whether a mean's true value is greater than its null value, a 1-sided 1-sample $t$ test should be performed. \\
+					The randomness condition is met, as the sample was random. \\
+					The 10\% condition is met, as more than 100 drivers likely passed through the 25 mph construction zone, so the sample size of 10 is less than 10\% of the population size. \\
+					\begin{center}
+						\begin{tikzpicture}
+							\draw[] (21, -0.1) -- (21, 0.1);
+							\draw[] (21, 0) -- (27, 0);
+							\draw[] (27, -0.25) -- (27, 0.25);
+							\draw[] (27, 0.25) -- (29.5, 0.25);
+							\draw[] (27, -0.25) -- (29.5, -0.25);
+							\draw[] (29.5, -0.25) -- (29.5, 0.25);
+							\draw[] (29.5, 0.25) -- (32, 0.25);
+							\draw[] (29.5, -0.25) -- (32, -0.25);
+							\draw[] (32, -0.25) -- (32, 0.25);
+							\draw[] (32, 0) -- (34, 0);
+							\draw[] (34, -0.1) -- (34, 0.1);
+							\draw[] (20, -1) -- (35, -1);
+							\foreach \x in{4,...,7}
+								\pgfmathparse{\x * 5} 
+								\pgfmathprintnumberto{\pgfmathresult}\fx
+								\draw[-] (\x * 5, -0.9) -- (\x * 5, -1.1) node[below]{\fx};
+						\end{tikzpicture}	
+					\end{center}
+					The modified box plot of the distribution is only slightly skewed and lacks any outliers, indicating approximate Normality.
+					\begin{align*}
+						\bar{x} &= \frac{\sum x_i}{n} = \frac{278}{10} = 27.8 \\
+						s_x &= \sqrt{\frac{\sum(x_i - \bar{x})}{n - 1}} \approx 3.938 \\
+						s_{\bar{x}} &= \frac{s_x}{\sqrt{n}} \approx \frac{3.938}{\sqrt{9}} \approx 1.245 \\
+						t &= \z{\bar{x}}{\mu_0}{s_{\bar{x}}} \approx \z{27.8}{25}{1.245} \approx 3.051 \\
+						\pval &= P(T > t) = \tCDF{t \approx 3.051}{\infty}{n - 1 = 10 - 1 = 9} \approx 0.007
+					\end{align*}
+					As the $\pval$ of about $0.007$ is less than the significance level $\alpha = 0.01$, $H_0$ can be rejected. The data provides convincing evidence that the mean speed of drivers in the 25 mph construction zone is greater than 25 mph.
+				\item
+					A low significance level that the power is lower, so the probability of a Type \Roman{2} error is higher. Making this error here would mean concluding that the data does not provide convincing evidence of the true mean speed of drivers in the 25 mph construction zone is greater than 25 mph, failing to reject $H_0$.
 			\end{enumerate}
 		\paragraph{11. Reading level}
+			\[\mu = \text{mean reading level of pages in the novel}\]
+			\begin{align*}
+				H_0&: \mu = 5 & H_a&: \mu < 5
+			\end{align*}
+			It is being tested whether the true mean is less than the null mean, so a 1-sided 1-sample $t$ test is appropriate. \\
+			The randomness condition is met, as the sample is random. \\
+			The 10\% condition is met, as it can be assumed that the novel is at least 400 pages long, so the sample size of 40 is less than 10\% of the population size. \\
+			The Normality condition is met, as the sample size of 40 is greater than 30 and therefore large enough to fulfill the Central Limit Theorem to ensure Normality.
+			\begin{align*}
+				s_{\bar{x}} &= \frac{s_x}{\sqrt{n}} = \frac{0.8}{\sqrt{40}} \approx 0.126 \\
+				t &= \z{\bar{x}}{\mu_0}{s_{\bar{x}}} \approx \z{4.8}{5}{0.126} \approx -1.581 \\
+				\pval &= \tCDF{-\infty}{t \approx -1.581}{n - 1 = 40 - 1 = 39} \approx 0.061
+			\end{align*}
+			As the $\pval$ of about 0.061 is greater than the significance level $\alpha = 0.05$, $H_0$ cannot be rejected. The data does not provide convincing evidence that the true mean reading level of the novel's pages is less than 5.
 		\paragraph{13. Pressing pills}
+			\[\mu = \text{mean tablet hardness}\]
+			\begin{align*}
+				H_0&: \mu = 11.5 & H_a&: \mu \ne 11.5
+			\end{align*}
+			As it is being determined whether or not the true mean varies from the null value, a 2-sided 1-sample $t$ test should be carried out. \\
+			The Randomness condition is met, as the sample is random. \\
+			The 10\% condition is met, as over 200 pills are likely produced per large batch, so the sample size of 20 is likely less than 10\% of the population size.
+			\begin{center}
+				\begin{tikzpicture}[xscale = 30]
+					\draw[] (11.36, -0.1) -- (11.36, 0.1);
+					\draw[] (11.36, 0) -- (11.4605, 0);
+					\draw[] (11.4605, -0.25) -- (11.4605, 0.25);
+					\draw[] (11.4605, 0.25) -- (11.501, 0.25);
+					\draw[] (11.4605, -0.25) -- (11.501, -0.25);
+					\draw[] (11.501, -0.25) -- (11.501, 0.25);
+					\draw[] (11.501, 0.25) -- (11.597, 0.25);
+					\draw[] (11.501, -0.25) -- (11.597, -0.25);
+					\draw[] (11.597, -0.25) -- (11.597, 0.25);
+					\draw[] (11.597, 0) -- (11.715, 0);
+					\draw[] (11.715, -0.1) -- (11.715, 0.1);
+					\draw[] (11.3, -1) -- (11.8, -1);
+					\foreach \x in {3,...,8}
+						\pgfmathparse{11 + (\x * 0.1)} \pgfmathprintnumberto{\pgfmathresult}\fx
+						\draw[] (11 + \x * 0.1, -0.9) -- (11 + \x * 0.1, -1.1) node[below]{\fx};
+				\end{tikzpicture}
+			\end{center}
+			The modified box plot of the distribution is roughly symmetrical and lacks outliers, so approximate Normality is justified.
+			\begin{align*}
+				\bar{x} &= \frac{\sum x_i}{n} \approx 11.513 \\
+				s_x &= \sqrt{\frac{\sum(x_i - \bar{x})}{n - 1}} \approx 0.094 \\
+				s_{\bar{x}} &= \frac{s_x}{\sqrt{n}} \approx \frac{0.094}{\sqrt{20}} \approx 0.021 \\
+				t &= \z{\bar{x}}{\mu_0}{s_{\bar{x}}} \approx \z{11.513}{11.5}{0.021} \approx 0.608 \\
+				\pval &= 1 - \tCDF{-t \approx -0.608}{t \approx 0.608}{n - 1 = 20 - 1 = 19} \approx 0.45
+			\end{align*}
+			As the $\pval$ of 0.45 is greater than the significance level $\alpha = 0.05$, $H_0$ cannot be rejected. The data does not provide convincing evidence of $H_a$.
 		\paragraph{15. Pressing pills}
+			\begin{enumerate}[a.]
+				\item	
+					A 95\% confidence interval provides a range of plausible values rather than simply stating whether or not it is plausible for the true mean to be a particular value as well. (Whether or not it is plausible for $\mu$ to be equal to be 11.55 can be determined by whether or not it is contained within the interval, which it in this case is.)
+				\item
+					If the true mean is equal to 11.55, there is a 61\% chance of convincing evidence being found for the alternative hypothesis.
+				\item
+					\[P(\text{Type \Roman{2} error}) = 1 - \text{power} = 1 - 0.61 = 0.39\]
+				\item
+					The probability of a Type \Roman{2} error occurring can be decreased by either increasing the sample size, causing the standard errors of both the sample and the statistic to decrease, or increasing the effect size, in this case making $\mu$ larger than 11.55, making the observed differences in results larger and therefore easier to detect.
+			\end{enumerate}
 		\paragraph{19. Tests and confidence intervals}
+			\begin{enumerate}[a.]
+				\item
+					As the two-sided test about $\mu$ has a $\pval$ of 0.06, which is greater than 0.05, $H_0$ cannot be rejected at a significance level of $\alpha = 0.05$, so a confidence interval with a confidence level of $1 - \alpha = 0.95$ includes the null value of 10.
+				\item
+					As the two-sided test about $\mu$ has a $\pval$ of 0.06, which is less than 0.1, $H_0$ can be rejected at a significance level of $\alpha = 0.1$, so a confidence interval with a confidence level of $1 - \alpha = 0.9$ does not include the null value of 10.
+			\end{enumerate}
 		\paragraph{21. Do you have ESP?}
-		\paragraph{23. Improving SAT}
-		\paragraph{25. Sampling shoppers}
-		\paragraph{26. Ages of presidents}
+			\begin{enumerate}[a.]
+				\item
+					The $\pval$ of their results is at most 0.01, meaning that the probability of them occurring due to random chance assuming the null hypothesis --- that they are guessing randomly --- is 0.01. As such, the expected number of people to receive results of that probability in a sample of size $n$ is the product of the $\pval$ and the sample size, in this case 1\% of 500, which is 5. Therefore, 4 people having these results is not indicative of them possessing ESP.
+				\item
+					To test whether or not these 4 subjects truly have ESP, the experiment should be repeated, as the chances of a person getting results with a $\pval$ of at most 0.01 twice due only to random chance is the equal to the product of the sample size and the square of the $\pval$, making it .05 in this case, which is less than 1, meaning that none are expected to pass.
+			\end{enumerate}
+		\paragraph{23. Improving SAT scores}\ \\
+			The $\pval$ of 0.0148 is less than the significance level $\alpha = 0.05$, making it statistically significant. The difference between the sample mean of those that used the app and the population mean of those within the program was only two points, though, which is an insignificant amount.
+		\paragraph{25. Sampling shoppers}\ \\
+			The shoppers were consecutive, making the sample a convenience sample, which makes it subject to bias, shifting the sample mean in an unknown way that will not be accounted for in the test.
+		\paragraph{26. Ages of presidents}\ \\
+			The population data is all that is available, so the parameter is known, making a significance test useless.
+		\paragraph{27.}\ \\
+			The standard deviation of a mean is dependent on that of a quantitative value, which cannot be known without the population data. The answer is therefore \textbf{b}.
+		\paragraph{28.}
+			\[\pval = \tCDF{-\infty}{-2.25}{n - 1 = 20 - 1 = 19} \approx 0.018\]
+			The answer is therefore \textbf{a}.
+		\paragraph{29.}
+			\[|t| > \left|\invT{\tarea{0.005} = 0.0025}{n - 1 = 15 - 1 = 14}]\right| \approx 3.326\]
+			The answer is therefore \textbf{d}.
+		\paragraph{30.}\ \\
+			The test is not statistically significant at a significance level $\alpha = 0.01$, so the answer is \textbf{c}.
+		\paragraph{31.}\ \\
+			Accuracy is vital for inference, so the answer is \textbf{a}.
+		\paragraph{32.}\ \\
+			Increasing the sample size and significance level makes it more likely for a test to be statistically significant, so the answer is \textbf{a}.
+	\section{Tests About a Difference in Means}
+		\paragraph{41. Fish oil}
+			\begin{enumerate}[a.]
+				\item
+					\footnotesize\begin{align*}
+						\mu_F &= \text{mean decrease in diastolic blood pressure in males with high blood pressure after 4 weeks with fish oil} \\
+						\mu_R &= \text{mean decrease in diastolic blood pressure in males with high blood pressure after 4 weeks with regular oil} \\
+					\end{align*}
+					\begin{align*}
+						H_0: \mu_F = \mu_R && H_a: \mu_F > \mu_R
+					\end{align*}
+					As there are two groups that were randomly assigned treatments, a 2-sample $t$ test should be performed. \\
+					The assignment of treatments was random, so the randomness condition is met.
+					\begin{center}
+						\begin{tikzpicture}[xscale = 0.8]
+							\draw[<->] (-6.25, 0) -- (15.25, 0);
+							\draw[] (-6, 0.9) -- (-6, 1.1);
+							\draw[] (-6, 1) -- (-4, 1);
+							\draw[] (-4, 0.75) -- (-4, 1.25);
+							\draw[] (-4, 1.25) -- (0, 1.25);
+							\draw[] (-4, 0.75) -- (0, 0.75);
+							\draw[] (0, 0.75) -- (0, 1.25);
+							\draw[] (0, 1.25) -- (2, 1.25);
+							\draw[] (0, 0.75) -- (2, 0.75);
+							\draw[] (2, 0.75) -- (2, 1.25);
+							\draw[] (0,  1.5) -- (0, 2);
+							\draw[] (0, 2) -- (8, 2);
+							\draw[] (0, 1.5) -- (8, 1.5);
+							\draw[] (8, 1.5) -- (8, 2);
+							\draw[] (8, 2) -- (12, 2);
+							\draw[] (8, 1.5) -- (12, 1.5);
+							\draw[] (12, 1.5) -- (12, 2);
+							\draw[] (12, 1.75) -- (14, 1.75);
+							\draw[] (14, 1.65) -- (14, 1.85);
+							\foreach \x in {0,...,7}
+								\pgfmathparse{(\x * 3) - 6} \pgfmathprintnumberto{\pgfmathresult}\fx
+								\draw[] (-6 + \x * 3, 0.1) -- (-6 + \x * 3, -0.1) node[below]{\fx};
+						\end{tikzpicture}
+					\end{center}
+					The modified box plots of each distribution lack skew and outliers, so approximate Normality can be assumed.
+					\begin{align*}
+						\bar{x}_F &= \frac{\sum x_{F, i}}{n_F} \approx 6.571 \\
+						\bar{x}_R &= \frac{\sum x_{R, i}}{n_R} \approx -1.143 \\
+						\bar{x}_F - \bar{x}_R &\approx 6.571 + 1.143 \approx 7.714 \\
+						s_{F} &= \sqrt{\frac{\sum(\bar{x}_F - x_{F, i})}{n_F - 1}} \approx 5.855 \\
+						s_{R} &= \sqrt{\frac{\sum(\bar{x}_R - x_{R, i})}{n_R - 1}} \approx 3.185 \\
+						s_{\bar{x}_F - \bar{x}_R} &= \meandiff{s_F}{n_f}{s_R}{n_R} \approx \meandiff{5.855}{7}{3.185}{7} \approx 2.519 \\
+						t &= \z{\bar{x}_F}{\bar{x}_R}{s_{\bar{x}_F - \bar{x}_R}} \approx \frac{7.714}{2.519} \approx 3.062 \\
+						\df &= \dfdiff{s_{\bar{x}_F - \bar{x}_R}}{s_F}{n_F}{s_R}{n_R} \approx \dfdiff{2.519}{5.855}{7}{3.185}{7} \approx 9.264 \\
+						\pval &= \tCDF{t \approx 3.062}{\infty}{\approx 9.274} \approx 0.007
+					\end{align*}
+					As the $\pval$ of 0.007 is less than the significance level of $\alpha = 0.05$, the null hypothesis can be rejected. The data does provide convincing evidence the fish oil helps reduce blood pressure more, on average, than regular oil for men like those in the study. \\
+				\item
+					Assuming that fish oil has no affect on blood pressure compared to regular oil, the probability of getting a difference between the results of two studies at least as large as that observed here is about 0.7\%.
+			\end{enumerate}
+		\paragraph{43. Who talks more --- men or women?}
+			\begin{align*}
+				\mu_F &= \text{mean number of words spoken by female students at the university per day} \\
+				\mu_M &= \text{mean number of words spoken by male students at the university per day} 
+			\end{align*}
+			\begin{align*}
+				H_0: \mu_F = \mu_M && H_a: \mu_F \ne \mu_M
+			\end{align*}
+			As the data is not paired, and there are two means, a 2-sample $t$ test should be performed. \\
+			The randomness condition is met, as the samples of the people are random. \\
+			The 10\% condition is met, as the university is large, so there are likely more than 560 male students and 560 female students. \\
+			The Normality condition is met by the Central Limit theorem, as the sample sizes of 56 are greater than 30, making them large enough for the theorem to justify Normality.
+			\begin{align*}
+				\bar{x}_F - \bar{x}_M &= 16177 - 16569 = -392 \\
+				s_{\bar{x}_F - \bar{x}_M} &= \meandiff{s_F}{n_F}{s_M}{n_M} = \meandiff{7520}{56}{9108}{56} \approx 1578.347 \\
+				t &= \z{x_F}{x_M}{s_{\bar{x}_F - \bar{x}_M}} \approx \frac{-392}{1578.347} \approx -0.248 \\
+				\df &= \dfdiff{s_{\bar{x}_F - \bar{x}_M}}{s_F}{n_F}{s_M}{n_M} \approx \dfdiff{1578.347}{7520}{56}{9108}{56} \approx 106.195 \\
+				\pval &= 2\tCDF{-\infty}{t \approx -0.248}{\approx 106.195} \approx 0.804
+			\end{align*}
+			As the $\pval$ of 0.804 is greater than the significance level $\alpha = 0.05$, $H_0$ cannot be rejected. The data does not provide convincing evidence that there is a difference between the mean number of words spoken per day by a given male and female student of this school.
+		\paragraph{45. Who talks more --- men or women?}
+			\begin{enumerate}[a.]
+				\item
+					\begin{align*}
+						t^* &= \left|\invT{\tarea{C} = \tarea{0.95} = 0.025}{\approx 106.195}\right| \approx 1.983 \\
+						\cint &= \bar{x}_F - \bar{x}_M \pm t^*s_{\bar{x}_F - \bar{x}_M} \approx -392 \pm (1.983)(1578.347) \approx (-3521.862, 2737.862)
+					\end{align*}
+					It can be said with 95\% confidence that the true mean difference between the number of words spoken on a given day by a given male and female student of this university is contained within the interval $(-3521.862, 2737.862)$.
+				\item
+					In addition to showing that it is plausible for no difference to exist, as 0 is contained within the interval, it shows a range of plausible values for the mean.
+			\end{enumerate}
+		\paragraph{47. Teaching reading}
+			\begin{enumerate}[a.]
+				\item
+					Those that did the activities had a higher average score than those that did not, having a higher mean and median. Their scores were also less variable, as the distribution has a lower range and interquartile range.
+				\item
+					The $\pval$ of the test was 0.013, which is less than the significance level $\alpha = 0.05$, meaning that the null hypothesis can be rejected. The evidence convincingly supports the hypothesis that third-graders in the program that do the activities have higher a higher mean DRP score.
+				\item
+					It can be concluded that the new reading activities resulted in an increase in the mean DRP score, as the data convincingly supports the alternative hypothesis and since this is an experiment, it can be used to justify causality.
+				\item
+					Since the null hypothesis was rejected, a Type \Roman{1} error may have occurred.
+			\end{enumerate}
+		\paragraph{49. A better drug?}
+			\begin{enumerate}[a.]
+				\item
+					\begin{align*}
+						s_{\bar{x}_{\mathrm{new}} - \bar{x}_{\mathrm{cur}}} &= \meandiff{s_{\mathrm{new}}}{n_{\mathrm{new}}}{s_{\mathrm{cur}}}{n_{\mathrm{cur}}} = \meandiff{13.3}{15}{11.93}{14} \approx 4.686 \\
+						t &= \z{\bar{x}_\mathrm{new} - \bar{x}_{\mathrm{cur}}}{\mu_{(\mathrm{new} - \bar{x}_{\mathrm{cur}}),0}}{s_{\bar{x}_{\mathrm{new}} - \bar{x}_{\mathrm{cur}}}} \approx \z{68.7 - 54.1}{10}{4.686} \approx 0.982
+					\end{align*}
+				\item
+					\begin{align*}
+						\df &= \dfdiff{s_{\bar{x}_{\mathrm{new}} - \bar{x}_{\mathrm{new}}}}{s_{\mathrm{new}}}{n_{\mathrm{new}}}{s_{\mathrm{cur}}}{n_{\mathrm{cur}}} \approx \dfdiff{4.686}{13.3}{15}{11.93}{14} \approx 26.963 \\
+						\pval &= \tCDF{t \approx 0.982}{\infty}{\approx 26.963} \approx 0.168
+					\end{align*}
+					As the $\pval$ of about 0.168 is greater than the significance level $\alpha = 0.05$, $H_0$ cannot be rejected. The data does not provide convincing evidence that there exists a difference between the mean cholesterol reduction caused by the current and new drugs.
+				\item
+					A test's power can be increased by increasing the sample size, reducing the standard error of the difference and increasing the standardized test statistic and degrees of freedom, resulting in a lower $\pval$, as the tails are reduced. It can also be increased by increasing the significance level, making it easier for the $\pval$ to fall beneath it.
+			\end{enumerate}
+		\paragraph{51. Rewards and creativity}
+			\begin{enumerate}[a.]
+				\item
+					Random assignment is the only way to justify causality in an experiment.
+				\item
+					A Type \Roman{1} error would occur if it was concluded that the data provides convincing evidence that intrinsic rewards promote creativity better than extrinsic ones, the null hypothesis being rejected, despite that not being the case in reality. \\
+					A Type \Roman{2} error would occur if it was concluded that the data does not provide convincing evidence that intrinsic rewards promote creativity better than intrinsic ones, the null hypothesis not being rejected, despite it being the case in reality.
+				\item
+					\[\pval = P(\bar{x}_{\mathrm{intrinsic}} - \bar{x}_{\mathrm{extrinsic}} > 19.833 - 15.739) \approx \frac{1}{47} \approx 0.021\]
+					Assuming that there is no difference between the true values of the means, the probability of data producing a difference in sample means of at least 4.144, that observed, is about 2.1\%.
+				\item
+					Because the $\pval$ of about 0.021 is less than the significance level of $\alpha = 0.05$, the null hypothesis can be rejected. The data provides convincing evidence that there is a nonzero difference between the true mean creativity (based on a scored poem) depending on whether the motivation is intrinsic or extrinsic. 
+			\end{enumerate}
+		\paragraph{53. Drive-thru or go inside?}
+			\begin{align*}
+				\mu_I &= \text{time taken to place order inside (s)} \\
+				\mu_D &= \text{time take to place order through drive-thru (s)} \\
+				\diff{\mu} &= \mu_{I - D} = \mu_I - \mu_D	
+			\end{align*}
+			\begin{align*}
+				H_0&: \mu_I = \mu_D & H_a: \mu_I > \mu_D
+			\end{align*}
+			The data is paired, as each ordered at the same time, so a paired $t$ test should be performed. \\
+			The randomness condition is met, as the times were randomly generated. \\
+			The independence condition is met via the 10\% rule, as there were likely over 100 orders of each type placed over the two-week period at the establishment, making the sample size of 10 less than 10\% of each population.
+			\begin{center}
+				\begin{tikzpicture}[xscale = 0.9]
+					\draw[<->] (-5.25, 0) -- (13.25, 0);
+					\draw[] (-5, 0.9) -- (-5, 1.1);
+					\draw[] (-5, 1) -- (1, 1);
+					\draw[] (1, 0.75) -- (1, 1.25);
+					\draw[] (1, 1.25) -- (3.5, 1.25);
+					\draw[] (1, 0.75) -- (3.5, 0.75);
+					\draw[] (3.5, 0.75) -- (3.5, 1.25);
+					\draw[] (3.5, 1.25) -- (7, 1.25);
+					\draw[] (3.5, 0.75) -- (7, 0.75);
+					\draw[] (7, 0.75) -- (7, 1.25);
+					\draw[] (7, 1) -- (13, 1);
+					\draw[] (13, 0.9) -- (13, 1.1);
+					\foreach \x in {0,...,6}
+						\pgfmathparse{(\x * 3) - 5} \pgfmathprintnumberto{\pgfmathresult}\fx
+						\draw[] (-5 + \x * 3, 0.1) -- (-5 + \x * 3, -0.1) node[below]{\fx};
+				\end{tikzpicture}	
+			\end{center}
+			The distribution of the differences is symmetrical and lacks outliers, so Normality is justified.
+			\begin{align*}
+				\diff{\bar{x}} &= \frac{\sum x_{\mathrm{diff},i}}{n} = 3.9
+			\end{align*}
+		\paragraph{59.}
+		\paragraph{61.}
+		\paragraph{63.}
+		\paragraph{64.}
+		\paragraph{65.}
+		\paragraph{66.}
+		\paragraph{67.}
+		\paragraph{68.}
+		\paragraph{69.}
 \end{document}
