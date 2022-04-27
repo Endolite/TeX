@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{arydshln}
+\usepackage{bm}
 \usepackage{csquotes}
 \usepackage[hang,flushmargin]{footmisc} 
 \usepackage[margin=0.5in]{geometry}
@@ -31,6 +32,7 @@
 \newcommand{\binomCDF}[3]{\binomcdf\left(n:#1, p:#2, x:#3\right)}
 \newcommand{\binomPDF}[3]{\binompdf\left(n:#1, p:#2, x:#3\right)}
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+\newcommand{\Chi}{X}
 \newcommand{\cint}{\text{confidence interval}}
 \newcommand{\comment}[1]{}
 \renewcommand{\d}{\,\mathrm{d}}
@@ -49,7 +51,7 @@
 \newcommand{\randnorm}[3]{\randomnorm\left(\mu: #1, \sigma: #2, n: #3\right)}
 \renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
 \newcommand{\textbfi}[1]{\textbf{#1}\index{#1}}
-\newcommand{\val}{P-\text{value}}
+\newcommand{\pval}{P\text{-value}}
 \newcommand{\z}[3]{\frac{#1 - #2}{#3}}
 
 \makeindex

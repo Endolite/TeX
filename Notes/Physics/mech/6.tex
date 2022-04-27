@@ -12,4 +12,42 @@
 		\subsection{Center of Gravity}
 			The gravitational force $\vec{F}_g$ on a body is the sum of all of the gravitational forces acting on its individual particles. This can be simplified by treating it as as single force that acts on the \textbf{center of gravity} (\textbf{cog}).
 			If the gravitational force is the same for all of a body's particles, then the center of gravity is simply the center of mass.
+			\section{Simple Harmonic Motion}
+				An oscillation's \textbf{frequency} ($\bm{f}$) is the number of times per second that it takes for it to complete an \textbf{oscillation} (cycle). \\
+				The unit of frequency is  \textbf{hertz} (\textbf{Hz}), equal to one $\mathrm{s}^{-1}$.
+				\[\Hz = \frac{1}{\s}\]
+				The \textbf{period} (\textbf{T}) is the inverse of the frequency, making it the amount of time that it takes for a full period to be completed.
+				\[T = \frac{1}{f}\]
+				Any process that regularly repeats is \textbf{periodic}. \\
+				\textbf{Simple harmonic motion} is periodic motion that is a sinusoidal function of time. It can be described in an equation with parameters of amplitude ($x_m$), angular frequency ($\omega$), and phase angle ($\phi$) as such:
+				\[x(t) = x_m\cos(\omega t + \phi)\]
+				The \textbf{amplitude} is the maximum displacement in either direction. \\
+				The \textbf{phase} is the argument of cosine while the phase angle adjusts for the initial conditions. \\
+				The \textbf{angular frequency} is the product of the period of cosine and the frequency.
+				\[\omega = 2\pi f\]
+				The velocity is the derivative of motion with respect to time.
+				\[v(t) = \frac{\d}{\d t}x(t) = -\omega x_m\sin(\omega t + \phi)\]
+				The product of the angular frequency and amplitude is the \textbf{velocity amplitude} ($\bm{vm}$). \\
+				The acceleration is the time derivative of motion.
+				\[a(t) = \frac{\d}{\d t}v(t) = -\omega^2x_m\cos(\omega t + \phi) = -\omega^2x(t)\]
+				The product of the square of the angular frequency and the amplitude is the \textbf{acceleration amplitude} ($\bm{am}$). \\
+				Newton's second law can be applied to the formula for acceleration to derive the force.
+				\[F = ma = m(-\omega^2x) = -m\omega^2x\]
+				Simple harmonic motion is the motion of a particle with a force acting on it proportional to the particle's displacement but in the opposite direction. \\
+				The formula for force can be rewritten similarly to Hooke's law.
+				\begin{align*}
+					F = ma &= -kx \\
+					a &= \frac{-k}{m}x
+				\end{align*}
+				If the force is proportional to the first power of $x$, the motion can be described as \textbf{linear simple harmonic oscillation} can be described as such:
+				\begin{align*}
+					a = \frac{-k}{m}x &= -\omega^2 a \\
+					\omega &= \frac{k}{m} \\
+					T &= \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{m}{k}}
+				\end{align*}
+				The equations for kinetic and potential energy can be rewritten using kinematics:
+				\begin{align*}
+					U &= \frac{1}{2}k^2 = \frac{1}{2}kx_m^2\cos^2(\omega t + \phi) \\
+					K &= \frac{1}{2}mv^2 = \frac{1}{2}k^2\sin^2(\omega t + \phi)
+				\end{align*}
 \end{document}

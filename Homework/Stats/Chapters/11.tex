@@ -326,15 +326,103 @@
 			\end{center}
 			The distribution of the differences is symmetrical and lacks outliers, so Normality is justified.
 			\begin{align*}
-				\diff{\bar{x}} &= \frac{\sum x_{\mathrm{diff},i}}{n} = 3.9
+				\diff{\bar{x}} &= \frac{\sum x_{\mathrm{diff},i}}{n} = 3.9 \\
+				\diff{s} &= \sqrt{\frac{\sum(x_i - \bar{x})^2}{n - 1}} \approx 5.646 \\
+				s_{\diff{\bar{x}}} &= \frac{\diff{s}}{\sqrt{n}} \approx \frac{5.646}{\sqrt{10}} \approx 1.786 \\
+				t &= \z{\diff{\bar{x}}}{\mu_0}{s_{\diff{\bar{x}}}} \approx \z{3.9}{0}{1.786} \approx 2.184 \\
+				\df &= n - 1 = 10 - 1 = 9 \\
+				\pval &= \tCDF{2.184}{\infty}{9} \approx 0.028
 			\end{align*}
-		\paragraph{59.}
-		\paragraph{61.}
-		\paragraph{63.}
-		\paragraph{64.}
-		\paragraph{65.}
-		\paragraph{66.}
-		\paragraph{67.}
-		\paragraph{68.}
-		\paragraph{69.}
+			As the $\pval$ is less than 0.05, the null hypothesis can be rejected. The data provides convincing evidence that the mean time taken inside is greater than that taken going through the drive-thru.
+		\paragraph{59. Two samples or paired data?}
+			\begin{enumerate}[a.]
+				\item
+					The cars are of the same make and model and the assignment is random, so the data is paired.
+				\item
+					The subjects are exposed to both treatments, so the data is paired.
+				\item
+					The subjects are not the same, so the data is not paired.
+			\end{enumerate}
+		\paragraph{61. Have a ball!}
+			\begin{enumerate}
+				\item
+					Each student threw both balls, so the data is paired.
+				\item
+					The median is greater that 0, indicating that the center of the distribution of the differences is 0, so a difference may exist.
+				\item
+					\begin{align*}
+						\mu_B &= \text{mean baseball throw distance (yd)} \\
+						\mu_S &= \text{mean softball throw distance (yd)} \\
+						\diff{\mu} &= \mu_{B - S} = \mu_B - \mu_S
+					\end{align*}
+					\begin{align*}
+						H_0&:\diff{\mu} = 0 & H_a&:\diff{\mu} > 0
+					\end{align*}
+				\item
+					The distribution contains an outlier, meaning that Normality cannot be justified, the sample size of 24 being less than 30 and therefore too small for central limit theorem to justify Normality.
+				\item
+					\begin{align*}
+						\diff{\bar{x}} &= \frac{\sum x_i}{n} \approx 6.542 \\
+						\pval &= P(\diff{\bar{x}} > \diff{\bar{x}}) \approx P(\diff{\bar{x}} > 6.542) \approx 0
+					\end{align*}
+					As the $\pval$ of 0 is less than the significance level $\alpha = 0.05$, the null hypothesis can be rejected. The data provides convincing evidence that the mean distance that one can throw a baseball is greater than that of a softball.
+			\end{enumerate}
+		\paragraph{63. Coaching and SAT scores}
+			\begin{enumerate}[a.]
+				\item
+					The change in an individual is being examined, so the data is paired. A paired $t$ test using gain should therefore be used.
+				\item
+					\[\mu_G = \text{mean gain in SAT score from Try 1 to 2}\]
+					\begin{align*}
+						H_0&: \mu_G = 0 & H_a&: \mu_G > 0
+					\end{align*}
+					A single difference in means is being tests, so a 2 sample $t$ test should be performed. \\
+					The randomness condition is met, as the sample was randomly taken. \\
+					The independence condition is met, as there are likely over 4270 coached students, making the sample size of 427 less than 10\% of the population size of 4270. \\
+					The Normality condition is met, as the sample size of 427 is greater than 30, so the central limit theorem can be applied to justify Normality.
+					\begin{align*}
+						s_{\bar{x}_G} &= \frac{s_G}{\sqrt{n_C}} = \frac{59}{\sqrt{427}} \approx 2.855 \\
+						t &= \frac{\bar{x}_G}{s_{\bar{x}_G}} \approx \frac{29}{2.855} \approx 10.157 \\
+						\df &= n_C - 1 = 427 - 1 = 426 \\
+						\pval &= \tCDF{t \approx 10.157}{\infty}{426} \approx 3.774 \times 10^{-22}
+					\end{align*}
+					As the $\pval$ of about $3.774 \times 10^{-22}$ is less than the significance level $\alpha = 0.05$, the null hypothesis can be rejected. The data provides convincing evidence that the coaching does increase SAT scores on average.
+			\end{enumerate}
+		\paragraph{64. Coaching and SAT scores}
+			\begin{enumerate}[a.]
+				\item
+					\begin{align*}
+						\mu_C = \text{mean score gain for those that were coached}
+						\mu_U = \text{mean score gain for those that were not coached}
+					\end{align*}
+					\begin{align*}
+						H_0&: \mu_C = \mu_U & H_a: \mu_C > \mu_U \\
+					\end{align*}
+					There are two unpaired means, so a 2 sample $t$ test should be performed.
+					The samples were randomly taken, so the Randomness condition is met. \\
+					The independence condition is met, as there are well over 4,270 and 27330 coached and uncoached students respectively, making the sample sized of 247 and 2733 less than 10\% of their respective population sizes. \\
+					The Normality condition is met, as sample sizes of 247 and 2733 are both greater than 30, so the central limit theorem is applicable to justify Normality.
+					\begin{align*}
+						\bar{x}_C - \bar{x}_U &= 29 - 21 = 8 \\
+						s_{\bar{x}_C - \bar{x}_U} &= \meandiff{s_C}{n_C}{s_U}{n_U} = \meandiff{59}{427}{52}{2733} \approx 3.024 \\
+						t &= \z{\bar{x}_C}{\bar{x}_U}{s_{\bar{x}_C - \bar{x}_U}} \approx \frac{8}{3.024} \approx 2.646 \\
+						\df &= \dfdiff{s_{\bar{x}_C - \bar{x}_U}}{s_C}{n_C}{s_U}{n_U} \approx \dfdiff{3.024}{59}{427}{52}{2733} \approx 534.45 \\
+						\pval &= \tCDF{t \approx 2.646}{\infty}{\approx 534.45} \approx 0.004 
+					\end{align*}
+					As the $\pval$ of about 0.004 is less than the significance level $\alpha = 0.05$, the null hypothesis can be rejected. The data provides convincing evidence that the mean gain in SAT score for those that were coached is greater than that of those that were not.
+				\item
+					The interval exclusively contains values that are greater than 0, telling us that the true mean gain is not 0. It also provides a range of plausible values for the true mean, though.
+				\item
+					I believe that coaching courses are worth paying for, as the increase is significant both statistically and practically.
+			\end{enumerate}
+		\paragraph{65.}\ \\
+			A Type \Roman{2} error occurs when the null hypothesis is not rejected despite the alternate hypothesis being true. The answer is therefore \textbf{d}.
+		\paragraph{66.}\ \\
+			The $\pval$ is the probability of receiving results at least as significant as those supported assuming that the null hypothesis is true. The answer is therefore \textbf{b}.
+		\paragraph{67.}\ \\
+			A two-sided $t$ test with significance level $\alpha$ produces the same results as a confidence interval with confidence level $C = 1 - 2\alpha$. The answer is therefore \textbf{d}.
+		\paragraph{68.}\ \\
+			For a significance test to be performed about a difference in paired means, the distribution of the differences must be checked for Normality. The answer is therefore \textbf{c}.
+		\paragraph{69.}\ \\
+			To test a difference between paired measured concentrations, a paired $t$ test should be performed. The answer is therefore \textbf{a}.
 \end{document}

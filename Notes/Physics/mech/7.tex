@@ -4,11 +4,11 @@
 	\textbf{Gravitation} is the tendency for bodies to attract each other. \\
 	The gravitational force is dependent on mass. It is always attractive. \\
 	Newton's \textbf{law of gravitation} defines the strength of the attractive force between particles.
-	\[F_G = G\frac{m_1m_2}{r^2}\]
+	\[F_G = \frac{Gm_1m_2}{r^2}\]
 	$G$ is the \textbf{gravitational constant}
 	\[G \approx 6.67 \times 10^{-11} \,\N\cdot\m^2/\kg^2\]
 	Newton's law of gravitation can be rewritten in vector form using $\hat{r}$, which is a vector of magnitude 1 that points from one particle to another.
-	\[\vec{F}_G = G\frac{m_1m_2}{r^2}\hat{r}\]
+	\[\vec{F}_G = \frac{Gm_1m_2}{r^2}\hat{r}\]
 	As is made clear by this vector form, gravitational forces always come in \emph{third-law pairs}. \\
 	The \textbf{shell theorem} states that a uniform spherical shell of matter attracts a particle that is outside the shell as though all of the shell's mass was concentrated at its center. \\
 	The net gravitational force can be calculated by the \textbf{principle of superposition}, which simply states that the net effect is the sum of the individual effects.
@@ -18,4 +18,41 @@
 	If the object in question is a uniform sphere or shell, it can be treated as having its mass at its center rather than considering the object as a whole. \\
 	Newton's law of gravitation can be combined with Newton's second law to calculate the acceleration due to gravity.
 	\[a_{G,1} = \frac{F_g}{m_1} = \frac{Gm_1m_2/r^2}{m_1} = \frac{Gm_2}{r^2}\]
+	An additional implication of the shell theorem is that no net gravitational force is exerted on a particle within the shell. (The forces still exist, but balance out.) \\
+	The \textbf{gravitational potential energy} of a two-particle system is as follows:\footnote{The formula for gravitational potential energy is the integral of that of the force of gravity with respect to $r$.\[U_G = \int F_G\,\d r = \int \frac{Gm_1m_2}{r^2}\,\d r = \frac{-Gm_1m_2}{r}\]}
+	\[U_G = \frac{-Gm_1m_2}{r}\]
+	The gravitational potential energy of a system is the sum of all the gravitational potential energies of every possible pair of particles.
+	Gravitational potential energy is a property of a pair of particles. The potential energy cannot be allocated to the individual particles. \\
+	When one object is far more massive than the other, the smaller object can be given all of the gravitational potential energy (for practical calculations). \\
+	For a projectile to escape a body's gravitational pulls, it must come to rest only at infinity, if at all. This means that $K$ must both be 0, and $U$ is 0 because $r$ is $\infty$. Their sum must therefore be at least 0 at the surface of the body.
+	\begin{align*}
+		K + U = 0 &=\frac{1}{2}m_1v^2 + \left(\frac{-Gm_1m_2}{r}\right) \\
+			v &= \sqrt{\frac{2Gm_2}{r}}
+	\end{align*}
+	\section{Kepler's Laws of Planetary Motion}
+		\subsection{The Law of Orbits}
+			All planets in the solar system move in elliptical orbits with the Sun as a focus. \\
+			An orbit is defined by its \textbf{semimajor axis} $\bm{a}$ and its \textbf{eccentricity} $\bm{e}$.
+		\subsection{The Law of Areas}
+			A line connecting a planet to the Sun sweeps out equal areas in the plane of the planet's orbit for an equal time interval; that is, the rate $\frac{\d A}{\d t}$ at which is sweeps out an area $A$ is constant.
+		\subsection{The Law of Periods}
+			The sqaure of the period of a planet's orbit is proportional to the cube of its semimajor axis.
+			\[T^2 \propto a^3\]
+			More concretely, the law of periods can be written as such:
+			\[T^2 =\frac{4\pi^2a^3}{GM}\]
+	\section{Satellites}
+		The total mechanical energy of a circular orbit can be described as such:\footnote{
+			The gravitational force can be related to the centripetal acceleration of a satellite to derive its kinetic energy.
+			\begin{align*}
+				a_c &= \frac{v^2}{r} = \frac{F_G}{m} = \frac{GMm}{mr^2} \\
+				v^2 &= \frac{GM}{r} \\
+				K &= \frac{1}{2}mv^2 = \frac{1}{2}\left(\frac{GMm}{r}\right) = \frac{GMm}{2r} \\
+					&= \frac{-U_G}{2}
+			\end{align*}
+			The net mechanical energy can then be found.
+			\[E = K + U = \frac{-U}{2} + U = \frac{U}{2} = \frac{-GMm}{2r} = -K\]
+		}
+		\[E = -K = \frac{-GMm}{2r}\]
+		For an elliptical orbit, the semimajor axis can be used in place of the radius, as the eccentricity of the orbit has of no bearing on the total kinetic energy.
+		\[E = \frac{-GMm}{2a}\]
 \end{document}

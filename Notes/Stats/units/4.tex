@@ -67,7 +67,7 @@
 		For a probability distribution to be valid, the sum of all probabilities must be one and all individual probabilities be within $[0,1]$. \\
 		The probability of $X$ being equal to $x_i$ can be denoted as either $P(x_i)$ or as $p_i$.
 		\[P(X = x_i) = P(x_i) = p_i\]
-		The \emphi{mean} or \textbfi{expected value} (denoted $E(X)$) is a weighted average of all possible values of $X$.
+		The \emphi{mean} or \textbfi{expected value} (denoted $\mathbb{E}(X)$) is weighted average of all possible values of $X$.
 		\section{Discrete Random Variables}
 			A \textbf{discrete random variables}\index{variable!discrete!random} have a fixed finite set of possible values with gaps between them. \\
 			The \emph{mean} $\mu$ of a discrete random variable is equal to the sum of the products of each value and its frequency.\footnote{A random variable's sample space can be input into two lists, one corresponding to its values and the other to their frequencies. From there, \texttt{1-Var Stats} can be run the the former input as the \texttt{List} and the latter as the \texttt{FreqList}. This provides the values of $\mu_X$, $\sigma_X$, and $\sigma_X^2$.}
@@ -100,12 +100,21 @@
 				\mu_Y &= a + b\mu_X & \sigma_Y &= b\sigma_X
 			\end{align*}
 	\chapter{Probability Distributions}
+		\section*{Bernoulli Distributions}
+			The \textbf{Bernoulli distribution} is a probability distribution of a \textbfi{binary} random variable, a variable that can only take 1 of 2 values, a 0 or a 1. \\
+			The probability of any given value being a 1 must be a constant $p$, and as the possible values are only 0 and 1, the probability of a value being a 0 must also be a constant $q = 1 - p$. \\
+			The probability mass function with parameter $p$ is denoted and defined as one of the following:
+			\[f(k;p) \mid k \in \{0, 1\} = \begin{cases} p & k = 1 \\ q & k = 0 \end{cases} = p^k(1 - p)^{k - 1} = pk + (1 - p)(1 - k)\]
+			The \emph{mean} of a Bernoulli variable $X$ is $p$ while its variance is the product of $p$ and $q$.\footnote{The mean and variance of a Bernoulli variable can be derived from that of a discrete random variable.\begin{align*} \mu_X &= \sum x_ip_i = 0q + 1p = p \\ \sigma^2_X &= \sum(x_i - \mu_X)^2p_i = (0 - p)^2q + (1 - p)^2p = (-p)^2q + (q)^2p = p^2(1 - p) + (1 - p)^2p = p^2 - p^3 + (1 - 2p + p^2)p \\ &= p^2 - p^3 + p - 2p^2 + p^3 = p - p^2 = p(1 - p) = pq  \end{align*}}
+			\begin{align*}
+				\mu_X &= p & \sigma_X^2 &= pq
+			\end{align*}
 		\section{Binomial Distributions}
 			\callout{17}{
 				For a \emph{discrete} random variable to be \textbf{binomial}, it must meed the following conditions:
 				\begin{enumerate}
 					\item
-						The possible outcomes of each trial must be \textbf{binary}, meaning that each trial can either be a success or a failure.
+						The possible outcomes of each trial must be \emph{binary}.
 					\item
 						Each trial must be \emph{independent}.
 					\item
@@ -115,18 +124,17 @@
 				\end{enumerate}
 			}
 			A binomial distribution with parameters $n$ trials and probability $p$ of any given trial being successes can be denoted $B(n, p)$. \\
-			The probability of $x$ successes in $n$ trials, each with a probability $p$ of being successful, is defined as such:\footnote{The binomial $\binom{n}{x}$ is defined as such:\[\binom{n}{x} = \frac{n!}{(n - x)!}\]}
+			The probability of $x$ successes in $n$ trials, each with a probability $p$ of being successful, is defined as such:\footnote{The binomial $\binom{n}{x}$ is defined as such:\[\binom{n}{x} = \frac{n!}{(n - x)!x!}\]}
 			The probability of $x$ successes after $n$ trials is also referred to as the \textbf{binomial coefficient}\index{coefficient!binomial} and is denoted as such:
-			\[P(x) = f(x,n,p)\]
-			\[P(x) = \binom{n}{x}p^x(1 - p)^{n - x}\]
+			\[P(x) = f(x;n,p) = \binom{n}{x}p^x(1 - p)^{n - x}\]
 			This is the product of the probability of $x$ successes, that of $n - x$ failures (necessitated by the definition of a binomial), and the total number of possibilities in which there are $x$ successes.\footnote{The probability of exactly and at most $x$ successes can be found using $\binompdf$ and $\binomcdf$ respectively:\begin{align*}P(x) = \binomPDF{n}{p}{x} && P(X < x) = \binomCDF{n}{p}{x}\end{align*}} \\
 			The \textbf{sample space} of a binomial variable can be derived as each term of a binomial expansion\footnote{The binomial expansion of $a + b$ raised to power $n$ is the following:\[(a + b)^n = \sum_{n = 0}^n\binom{n}{k}a^{n - k}b^k\]} of the conjugate of $p$ added to $p$ itself.
 			\[S_{B(n, p)} = ((1 - p) + p)^n = \sum_{x = 0}^n\binom{n}{x}(1 - p)^{n - x}p^x\]
 			A binomial variable's \emph{expected value} (\emph{mean}) is equal to the product of the number of trials and the probability of success while its standard deviation is the product of the probability of success and the number of trials.\footnote{The probability is simply the long-run relative frequency, so the expected number of successes for a binomial distribution is simply the expected relative frequency of successes multiplied by the total number of trials.}
 			\[\mu_X = np\]
-			The \emph{variance} of a binomial variable is the product of the number of trials and the probability of success and its conjugate.
+			The \emph{variance} of a binomial variable is the product of the number of trials and the probability of success and its conjugate.\footnote{The variance of a binomial variable can be derived from that of a discrete random variable as such:\[\sigma_X = \sum(x_i - \mu_X)^2p_i = \sum(x_i - np)\binom{n}{x}p^x(1 - p)^{n - x}\]}
 			\[\sigma_X^2 = np(1 - p)\]
-			A binomial distribution\index{distribution!binomial} can be graphed as a \pindex{histogram}.\footnote{A binomial distribution's graph can be thought of as a piecewise.\[f(x, n, p) = \begin{cases}\binom{n}{x}(1 - p)^{n - x}p^x & x\in \mathbb{N} \\ f(\nint(x), n, p) & x\notin \mathbb{N}\end{cases}\]} \\
+			A binomial distribution\index{distribution!binomial} can be graphed as a \pindex{histogram}.\footnote{A binomial distribution's graph can be thought of as a piecewise.\[f(x; n, p) = \begin{cases}\binom{n}{x}(1 - p)^{n - x}p^x & x \in \mathbb{N} \land x \le n\\ f(\nint(x); n, p) & x \notin \mathbb{N} \land x \le n\end{cases}\]} \\
 			Depending on the value of $p$, the skew of the binomial distribution will vary. \\
 			\begin{center}
 				\begin{tabular}{|c|ccc|}\hline
@@ -151,6 +159,7 @@
 			\[P(x) = (p - 1)^{x - 1}p\]
 			The \emph{mean} of a geometric variable\index{variable!geometric} is simply the reciprocal of $p$.
 			\[\mu_X = \frac{1}{p}\]
-			The \emph{standard deviation} of a geometric variable is as follows:
+			The \emph{standard deviation} of a geometric variable is as follows:\footnote{The }
 			\[\sigma_X = \frac{\sqrt{1 - p}}{p}\]
+			
 \end{document}

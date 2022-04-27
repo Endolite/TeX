@@ -21,8 +21,10 @@
 \DeclareMathOperator{\tcdf}{tcdf}
 \DeclareMathOperator{\up}{upper}
 
-\newcommand{\comment}[1]{}
+
+\newcommand{\chiCDF}[3]{\chi^2\text{cdf}\left(\low: #1, \up: #2, \df: #3\right)}
 \newcommand{\cint}{\text{confidence interval}}
+\newcommand{\comment}[1]{}
 \newcommand{\dfdiff}[5]{\frac{#1^4}{\frac{#2^4/#3^2}{#3 - 1} + \frac{#4^4/#5^2}{#5 - 1}}}
 \newcommand{\diff}[1]{#1_{\mathrm{diff}}}
 \newcommand{\invNormal}[4]{\invNorm\left(\area:#1, \mu: #2, \sigma: #3, \mathrm{Tail: #4}\right)}
@@ -59,4 +61,6 @@
 		\subfile{Chapters/10}
 	\chapter{Testing Claims About Means}
 		\subfile{Chapters/11}
+	\chapter{Inference for Distributions and Relationships}
+		\subfile{Chapters/12}
 \end{document}
