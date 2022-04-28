@@ -215,14 +215,24 @@
 			The $\pval$ of a chi-square test is the probability of $\chi^2$ falling above the standardized test statistic.
 			\[\pval = P(\Chi^2 > \chi^2)\]
 			If the $\pval$ is statistically significant, the largest contributions to the test statistic can be reported by comparing the observed and expected counts. 
-		\section{Homogeneity}
-			The \textbf{chi-square test for homogeneity} compares the distributions of a single categorical variable for multiple populations/treatments.
-			\callout{18.1}{The conditions for a chi-square test for homogeneity are the same as those for one for goodness of fit.}
-		\section{Independence}
-			The \textbf{chi-square test for independence} tests the association between two categorical variables in the same population of interest.
-			\callout{18.2}{
-				The conditions for a chi-square test for independence are the same as those for one for goodness of fit.
-			}	
-
+		\section{Homogeneity and Independence}
+			The \textbf{chi-square test for homogeneity} compares the distributions of a single categorical variable for multiple populations/treatments. It is used when the totals for the explanatory variables are predetermined, as is the case for \emph{experiments}. \\
+			The hypotheses for tests for homogeneity take the following forms:
+			\[\footnotesize\begin{aligned}
+				H_0&: \text{There is no difference in the true distributions of [response variable] for [different values of explanatory variable]} \\
+				H_a&: \text{There is a difference in the true distributions of [response variable] for [different values of explanatory variable]}
+			\end{aligned}\]
+			The \textbf{chi-square test for independence} tests the association between two categorical variables in the same population of interest. It is used when only the total is known, as is the case for \emph{samples}. \\
+			The hypotheses for tests for independence take the following forms:
+			\[\begin{aligned}
+				H_0&: \text{There is no association between [explanatory variable] and [response variable]} \\
+				H_a&: \text{There is an association between [explanatory variable] and [response variable]}
+			\end{aligned}\]
+			\callout{18.1}{The conditions for chi-square tests for homogeneity and independence are the same as those for one for goodness of fit.}
+			The \emph{expected counts} for a cell on a two-way table is the product of the sum and row totals divided by the total.
+			\[\mathrm{expected = \frac{\text{row total} \times \text{column total}}{total}}\]
+			The \emph{degrees of freedom} is the product of one less than the row and column totals.
+			\[\mathrm{\df = (rows - 1)(columns - 1)}\]
+			The chi-square statistic itself is defined the same way as for tests for goodness of fit.
 	\chapter{Slopes}
 \end{document} 

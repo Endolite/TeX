@@ -96,7 +96,7 @@
 						H_a&: \text{The actual proportions of smooth and wrinkled peas are not \(0.75\) and \(0.25\) respectively}
 					\end{align*}
 					\[\begin{array}{|c|c|c|}\hline
-						& \text{observed} & \text{expected} \\\hline
+						\text{pea} & \text{observed} & \text{expected} \\\hline
 						\text{smooth} & 423 & 0.75(423 + 133) = 417 \\\hline
 						\text{wrinkled} & 133 & 0.25(423 + 133) = 139 \\\hline
 					\end{array}\]
@@ -309,7 +309,7 @@
 					\end{align*}
 				\item
 					\[\begin{tabular}{|c|c|c|c|}\hline
-						& <1 & 2-3 & >4 \\\hline
+						& $<1$ & 2--3 & $>4$ \\\hline
 						Yes & 49.33 & 124.18 & 17.5 \\\hline
 						No & 551.67 & 1388.8 & 184.5 \\\hline
 					\end{tabular}\]
@@ -324,20 +324,131 @@
 			\end{enumerate}
 		\paragraph{43. Finger length}
 			\begin{align*}
-				H_0&:
+				H_0&: \text{There is no association between gender and relative finger length in this population.} \\
+				H_a&: \text{There is an association between gender and relative finger length in this population.}
 			\end{align*}
-		\paragraph{47.}
-		\paragraph{53.}
-		\paragraph{65.}
-		\paragraph{66.}
-		\paragraph{67.}
-		\paragraph{68.}
+			As an association between categorical variables is being tested, a chi-square test for independence should be performed. \\
+			The sample was random, so the randomness condition is met. \\
+			There 10\% condition is met, as there are far over 2270 and 2230 female and male high school students respectively.
+			\[\begin{tabular}{|c|c|c|}\hline
+				& Female & Male \\\hline
+				Index longer & 77.97 & 80.03 \\\hline
+				Same length & 42.439 & 43.561 \\\hline
+				Ring longer & 106.591 & 109.409 \\\hline
+			\end{tabular}\]
+			As all expected counts are greater than 5, the Large Counts condition is met.
+			\begin{align*}
+				\chi^2 &= \sum\left[\mathrm{\frac{(observed - expected)^2}{expected}}\right] \approx 2.065 \\
+				\df &= (2 - 1)(3 - 1) = 2 \\
+				\pval &= \chiCDF{\chi^2 \approx 2.065}{\infty}{2} \approx 0.356
+			\end{align*}
+			As the $\pval$ of about 0.356 is greater than the significance level $\alpha = 0.1$, the null hypothesis cannot be rejected. The data does not provide convincing evidence of an association existing between gender and relative finger length in this population.
+		\paragraph{47. Which test?}
+			\begin{enumerate}[a.]
+				\item
+					The data came from two random samples, so a chi-square test for homogeneity should be performed.
+				\item
+					The data came from a single random sample and an association between two categorical variables is being assessed, so a chi-square test for independence should be performed.
+			\end{enumerate}
+		\paragraph{53. Treating ulcers}
+			\begin{enumerate}[a.]
+				\item
+					$H_0:$ There is no difference between the improvement rates for patients given gastric-freezing and placebo treatments. \\
+					$H_a:$ There is a difference between the improvement rates for patients given the gastric-freezing and placebo treatments.
+				\item
+					As the $\pval$ of 0.57 is greater than the significance level $\alpha = 0.05$, the null hypothesis cannot be rejected. The data does not provide convincing evidence of a difference between the improvement rates for patients given the gastric-freezing and placebo treatments.
+				\item
+					The $\pval$s of both tests are equal.
+			\end{enumerate}
 	\section{Inference for Slopes}
-		\paragraph{69.}
-		\paragraph{71.}
-		\paragraph{73.}
-		\paragraph{25.}
-		\paragraph{77.}
+		\paragraph{65. Predicting height}
+			\begin{enumerate}[a.]
+				\item
+					\[\mu_y = 105 + 4.2(15) = 168\,\text{cm}\]
+				\item
+					\begin{align*}
+						z &= \z{y}{\mu_y}{\sigma_y} = \z{180}{168}{7} \approx  1.714 \\
+						P(Z > z) &= \normalCDF{z \approx 1.714}{\infty}{0}{1} \approx 0.043 = 4.3\%
+					\end{align*}
+				\item
+					The slope of the sample regression line would likely not be exactly 4.2, as a single sample is unlikely to perfectly represent the population.
+			\end{enumerate}
+		\paragraph{66. Predicting high temperatures}
+			\begin{enumerate}[a.]
+				\item
+					\[\mu_y = 16.6 + 1.02(40) = 57.4\,^\circ\mathrm{F}\]
+				\item
+					\begin{align*}
+						z &= \z{y}{\mu_y}{\sigma_y} = \z{70}{57.4}{6.64} \approx 1.898 \\
+						P(Z > z) &= \normalCDF{z \approx 1.898}{\infty}{0}{1} \approx 0.029 = 2.9\%
+					\end{align*}
+				\item
+					A random sample, especially one of a size as small as 10, is unlikely to perfectly represent the population, so the slope would likely differ.
+			\end{enumerate}
+		\paragraph{67. Oil and residuals}\ \\
+			The residual plot shows that the standard deviation of the residuals increases with the explanatory variable, meaning that the standard deviation of the response variable is dependent on the explanatory variable, preventing inference.
+		\paragraph{68. SAT Math scores}\ \\
+			A nonrandom pattern is displayed on the residual plot, indicating that the explanatory and response variables are nonlinearly related, preventing inference regarding the regression.
+		\paragraph{69. Beer and BAC}\ \\
+			The residual plot displays a random pattern, indicating that the response and explanatory variables follow a linear relationship. \\
+			The independence condition is met by the 10\% conditions, as there are far more 160 adults aged over 21, making the sample size of 16 less than a tenth of the population size. \\
+			The distribution of the explanatory variable lacks strong skew or outliers, meaning that the Normality condition is met. \\
+			The variability of the residuals is about the same for every value of the explanatory variable. \\
+			The randomness condition is met, as the assignment was random.
+		\paragraph{71. Beer and BAC}
+			\begin{enumerate}[a.]
+				\item
+					The estimate for $\alpha$ is the constant coefficient, which is $-0.012701$. When no beers are drunk, the BAC is estimated to be $-0.012701$.
+				\item
+					The estimate for $\beta$ is the beers coefficient, which is 0.017964. An increase in beers drank of 1 results in BAC increasing by 0.017964.
+				\item
+					The estimate for $\sigma_y$ is $s$, which is 0.0204. The actual BAC varies by an average of 0.0204 from the amount predicted by the least-square regression line.
+				\item
+					The standard error of the slope $s_b$ is 0.0024. If the random assignment were to be repeated many times, the sample slope would vary from the true slope by an average of 0.0024.
+			\end{enumerate}
+		\paragraph{73. Beer and BAC}
+			\begin{enumerate}[a.]
+				\item
+					\begin{align*}
+						\df &= n - 2 = 16 - 2 = 14 \\
+						t^* &= \left|\invT{\tarea{0.99} = 0.005}{15}\right| \approx 2.977 \\
+						\ME &= t^*s_b \approx 2.977 \times 0.0024 \approx 0.007 \\
+						\cint &= b \pm \ME \approx 0.018 \pm 0.007 = (0.001, 0.025)
+					\end{align*}
+				\item
+					It can be said with 99\% confidence that the true slope $\beta$ of the population least-squares regression line relating BAC to beers drank is within the interval $(0.001, 0.025)$.
+				\item
+					Over many samples, 99\% of the confidence intervals constructed at the 99\% confidence level will contain the true population slope.
+				\item
+					As 0 is not contained within the confidence interval, there is convincing evidence of a linear association existing between number of beers drank and BAC.
+			\end{enumerate}
+		\paragraph{75. Less mess?}
+			\begin{align*}
+				Y &= \text{amount of soda expelled (mL)} \\
+				X &= \text{time spent tapping} \\
+				\beta &= \text{slope of the population regression line relating Y to X}
+			\end{align*}
+			The residual plot shows a random pattern, indicating a linear relationship between time spent tapping and the amount of soda expelled. \\
+			The independence condition is met, as this is an experiment. \\
+			The Normality condition is met, as the distribution of the residuals lacks any strong skew or outliers. \\
+			The variability and therefore the standard deviation of the residuals appears to be constant regardless of the time spent tapping. \\
+			The assignment was random.
+			\begin{align*}
+				\df &= n - 2 = 40 - 2 = 38 \\
+				t^* &= \left|\invT{\tarea{0.95} = 0.025}{38}\right| \approx 2.024 \\
+				\ME &= t^*s_b \approx 2.024 \times 0.177 \approx 0.237 \\
+				\cint &= b \pm \ME \approx -2.635 \pm 0.237 \approx (-2.872, 2.398)
+			\end{align*}
+			It can be said with 95\% confidence that the slope of the population regression line relating the amount of soda expelled and time spent tapping is contained within the interval $(-2.872, 2.398)$.
+		\paragraph{77. Beavers and beetles}
+			\begin{enumerate}[a.]
+				\item
+					\begin{align*}
+						Y &= \\
+						X &= \\
+						\beta &= \text{slope of the population regression line relating Y to X}
+					\end{align*}
+			\end{enumerate}
 		\paragraph{79.}
 		\paragraph{83.}
 		\paragraph{85.}
