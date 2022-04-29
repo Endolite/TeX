@@ -444,17 +444,92 @@
 			\begin{enumerate}[a.]
 				\item
 					\begin{align*}
-						Y &= \\
-						X &= \\
-						\beta &= \text{slope of the population regression line relating Y to X}
+						Y &= \text{clusters of beetle larvae} \\
+						X &= \text{trees cut by beavers} \\
+						\beta &= \text{slope of the population regression line relating $Y$ to $X$}
 					\end{align*}
+					\begin{align*}
+						\df &= n - 2 = 23 - 2 = 21 \\
+						t^* &= \left|\invT{\tarea{C} = \tarea{0.99} = 0.005}{21}\right| \approx 2.831 \\
+						\ME &= t^*s_b \approx 2.831 \times 1.136 \approx 3.216 \\
+						\cint &= b \pm \ME \approx 11.894 \pm 3.216 \approx (8.678, 15.11)
+					\end{align*}
+					It can be said with 99\% confidence that the true slope of the population regression line relating the number of clusters of beetle larvae and that of trees cut by beavers is contained within the interval $(8.678, 15.11)$.
+				\item
+					The width of the confidence interval, double the margin of error, can be reduced by either increasing the sample size, increasing $\df$ and therefore reducing $t^*$ in addition to reducing $s_b$, or by reducing the confidence level, reducing $t^*$. The former would be more expensive and time consuming while the latter would result in a confidence interval that is less likely to contain the true slope.
 			\end{enumerate}
-		\paragraph{79.}
-		\paragraph{83.}
-		\paragraph{85.}
+		\paragraph{79. Weeds among the corn}
+			\begin{align*}
+				Y &= \text{yield} & X &= \text{weeds per meter} & \beta &= \text{slope of regression line relating $Y$ to $X$}
+			\end{align*}
+			\begin{align*}
+				H_0&: \beta = 0 & H_a&: \beta < 0
+			\end{align*}
+			The residual plot shows a random pattern, indicating a linear relationship between $Y$ and $X$. \\
+			The data was collected in an experiment, so each observation is independent. \\
+			The residual plot lacks strong skew or outliers, so Normality is justified. \\
+			The spread of the residuals looks to be fairly constant regardless of the number of weeds per meter, indicating the standard deviation of $Y$ is as well. \\
+			The assignment was random.
+			\begin{align*}
+				t &= \z{b}{\beta_0}{s_b} \approx \z{-1.099}{0}{0.571} \approx -1.923 \\
+				\df &= n - 2 = 16 - 2 = 14 \\
+				\pval &= \tCDF{-\infty}{t \approx -1.923}{14} \approx 0.038
+			\end{align*}
+			As the $\pval$ of about 0.038 is less than the significance level $\alpha = 0.05$, the null hypothesis can be rejected. The data provides convincing evidence that the population regression line relating yield to weeds per meter has a negative slope.
+		\paragraph{83 Turn up the volume?}
+			\begin{enumerate}[a.]
+				\item
+					\[\beta = \text{Slope of regression line relating Y to X}\]
+					\begin{align*}
+						H_0&: \beta = 0 & H_a&: \beta < 0
+					\end{align*}
+					\begin{align*}
+						t &= \z{b}{\beta_0}{s_b} = \z{-0.0483}{0}{0.0116} \approx -4.164 \\
+						\df &= n - 2 = 30 - 2 = 28 \\
+						\pval &= \tCDF{-\infty}{t \approx -4.164}{28} \approx 1.351 \times 10^{-4}
+					\end{align*}
+					As the $\pval$ of about $1.351 \times 10^{-4}$ is less than the significance level $\alpha = 0.05$, the null hypothesis can be rejected. The data provides convincing evidence that the volume of music and the number of correct test questions are negatively associated.
+				\item
+					Over many trials of size 30 of the same experiment, assuming $H_0$ to be true, the probability of receiving results that support the null hypothesis at least as strongly as those observed here is about $1.351 \times 10^{-4}$.
+			\end{enumerate}
+		\paragraph{85. Stats teachers' cars}
+			\begin{enumerate}[a.]
+				\item
+					\begin{align*}
+						\df &= n - 2 = 21 - 2 = 19 \\
+						t^* &= \left|\invT{\tarea{c} = \tarea{0.95} = 0.025}{19}\right| \approx 2.093 \\
+						\ME &= t^*s_b \approx 2.094 \times 1249 \approx 2614.187 \\
+						\cint &= b \pm \ME \approx 11630.6 \pm 2614.187 \approx (9016.413, 14244.787)
+					\end{align*}
+				\item
+					The test is attempting to determine whether a specific subset of a population differs significantly from the population at large regarding a rate relating a period of time to a quantitative value, so a 2-sided test about a population slope should be performed.
+				\item
+					\begin{align*}
+						t &= \z{b}{\beta_0}{s_b} = \z{11630.6}{15000}{1249} \approx -2.698 \\
+						\pval &= \tCDF{-\infty}{t \approx -2.698}{19} \approx 0.00713
+					\end{align*}
+					As the $\pval$ of about 0.00713 is less than the significance level $\alpha = 0.05$, the null hypothesis can be rejected. The data provides convincing evidence that the true average number of miles put on their primary vehicle per year for an AP\textsuperscript{\textregistered} Statistics teacher differs from that of an average person (15000).
+				\item
+					The confidence interval and significance tests led to the same conclusions, as 15000 was not contained within the interval.
+			\end{enumerate}
 		\paragraph{87.}
-		\paragraph{88.}
+			\[\hat{y} = 91.9766 + 3.0867x\]
+			The answer is therefore \textbf{c}.
+		\paragraph{88.}\ \\
+		The slope of the \emph{population} regression line represents the average change in the response variable for a change of 1 in the explanatory variable. The answer is therefore \textbf{c}.
 		\paragraph{89.}
-		\paragraph{91.}
-		\paragraph{92.}
+			\begin{align*}
+				H_0&: \beta = 0 & H_a&: \beta > 0
+			\end{align*}
+			The answer is therefore \textbf{a}.
+		\paragraph{91.}\ \\
+			0.4117 is the standard error of the sample slope, so the answer is therefore \textbf{e}.
+		\paragraph{92.}\ \\
+			\begin{align*}
+				\df &= n - 2 = 25 - 2 = 23 \\
+				t^* &= \left|\invT{\tarea{C} = \tarea{0.95} = 0.025}{23}\right| \approx 2.069 \\
+				\ME &= t^*s_b \approx 2.069 \times 0.4117 \approx 0.8517 \\
+				\cint &= b \pm \ME \approx 3.8076 \pm 0.8517
+			\end{align*}
+			The answer is therefore \textbf{b}.
 \end{document}

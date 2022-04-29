@@ -4,10 +4,11 @@
 	\chapter{Confidence Intervals}
 		A statistic is a \textbf{point estimator} used to estimate an unknown population parameter. A \textbf{point estimate} is a statistic's value, and is referred to as such because it is a single point. As such, it is almost never accurate. \\
 		A point estimate can be made made more reliable by either increasing the sample size or using a more accurate sampling procedure. \\
-		The \textbf{standard error} $\bm{s}$ (with the appropriate subscript denoting its statistic) of a statistic is the point estimate of the standard deviation of the sampling distribution. \\
-		A \textbf{confidence interval} provides an interval of plausible values for an unknown parameter based on sample data. It is equal to the point estimate plus or minus the \textbf{margin of error} (\textbf{ME}).
-		\[\text{confidence interval} = \text{point estimate} \pm \text{margin of error}\]
-		The probability that a confidence interval contains the true parameter value is the confidence interval's \textbf{confidence level} ($\bm{C}$).
+		The \textbf{standard error $\bm{s}$} (with the appropriate subscript denoting its statistic) of a statistic is the point estimate of the standard deviation of the sampling distribution. \\
+		A \textbf{confidence interval} provides an interval of plausible values for an unknown parameter based on sample data. It is equal to the point estimate plus or minus the \textbf{margin of error (ME)}.
+		\[\cint = \text{point estimate} \pm \text{margin of error}\]
+		The probability that a confidence interval contains the true parameter value is the confidence interval's \textbf{confidence level ($\bm{C}$)}.j
+		\[P(\text{parameter} \in \cint) = C\]
 		The margin of error describes the maximum deviation of the estimate from the parameter. It is the product of the critical value and the standard error of the statistic.
 		\[\ME = \text{critical value} \times \text{standard error}\]
 		The \textbf{critical value} is equal to the the number of standard deviations from the mean within which the probability of a random variable falling is equal to $C$.
@@ -217,13 +218,19 @@
 			If the $\pval$ is statistically significant, the largest contributions to the test statistic can be reported by comparing the observed and expected counts. 
 		\section{Homogeneity and Independence}
 			The \textbf{chi-square test for homogeneity} compares the distributions of a single categorical variable for multiple populations/treatments. It is used when the totals for the explanatory variables are predetermined, as is the case for \emph{experiments}. \\
-			The hypotheses for tests for homogeneity take the following forms:
-			\[\footnotesize\begin{aligned}
-				H_0&: \text{There is no difference in the true distributions of [response variable] for [different values of explanatory variable]} \\
-				H_a&: \text{There is a difference in the true distributions of [response variable] for [different values of explanatory variable]}
-			\end{aligned}\]
+			The hypotheses for tests for homogeneity take the following forms:\footnote{The hypotheses for a test for homogeneity can be written as such:
+			\begin{align*}
+				H_0&: p_{1, i} = p_{2, i} \forall (i \mid \exists p_i) & H_a&: p_{1, i} \ne p_{2, i} \exists (i \mid \exists p_i)
+			\end{align*}}
+			\begin{align*}
+				H_0&: \text{There is no difference in the true distributions of [response variable] for [different populations]} \\
+				H_a&: \text{There is a difference in the true distributions of [response variable] for [different populations]}
+			\end{align*}
 			The \textbf{chi-square test for independence} tests the association between two categorical variables in the same population of interest. It is used when only the total is known, as is the case for \emph{samples}. \\
-			The hypotheses for tests for independence take the following forms:
+			The hypotheses for tests for independence take the following forms:\footnote{The hypotheses for chi square tests for independence can be written as such:
+			\begin{align*}
+				H_0&: P(x_i \mid y_j) = P(x_i) \forall (i, j \mid \exists x_i, y_j) & H_a&: P(x_i \mid y_j) \ne P(x_i) \exists (i, j \mid \exists x_i, y_j)
+			\end{align*}}
 			\[\begin{aligned}
 				H_0&: \text{There is no association between [explanatory variable] and [response variable]} \\
 				H_a&: \text{There is an association between [explanatory variable] and [response variable]}
@@ -235,4 +242,49 @@
 			\[\mathrm{\df = (rows - 1)(columns - 1)}\]
 			The chi-square statistic itself is defined the same way as for tests for goodness of fit.
 	\chapter{Slopes}
+		The \textbf{sample regression line} takes the following form:
+		\[\hat{y} = a + bx\]
+		The sample \emph{regression line} can be used to test claims regarding the \textbf{population (true) regression line}, which takes the following form:
+		\[\mu_y = \alpha + \beta x\]
+		\callout{17}{
+			In order for inference to be performed regarding a regression, the following condition must be met:
+			\begin{itemize}
+				\item
+					The true relationship between the response and explanatory variables must be \emph{linear}.
+				\item
+					Individual observations must be \emph{independent (10\%)}.
+				\item
+					The response variable must vary approximately Normally for a given value of the explanatory variable.
+				\item
+					The standard deviation of the response variable must not vary with the value of the explanatory variable
+				\item
+					The data must be random.
+			\end{itemize}
+		}
+		When the conditions for inference are met, the \textbf{sampling distribution of the sample slope $\bm{b}$} follows an approximately Normal distribution with the following parameters:
+		\begin{align*}
+			\mu_b &= \beta & \sigma_b &= \frac{\sigma_y}{\sigma_x\sqrt{n}}
+		\end{align*}
+		The sample slope $b$ and intercept $a$ estimate the population regression line's slope $\beta$ and intercept $\alpha$. \\
+		The standard error of the sample slope can be approximated, using the standard error of the \emph{residuals} $s$ in place of that of the response variable.
+		\[s_b = \frac{s}{s_x\sqrt{n - 1}}\]
+		Confidence intervals and significance tests for the population slope are based on a $t$ distribution with \emph{degrees of freedom} \underline{2} less than the sample size.
+		\[\df = n - 2\]
+		The \textbf{$\bm{t}$ interval for the slope $\bm{\beta}$} is as follows:
+		\[\cint = b \pm t^*s_b\]
+		The hypotheses for a \textbf{$\bm{t}$ test about a slope} are as follows:
+		\begin{align*}
+			H_0&: \beta = \beta_0 & H_a&: \beta \gtrless \beta_0 & H_a&: \beta \ne \beta_0
+		\end{align*}
+		The null slope is typically 0, which is claiming that no correlation exists between the response and explanatory variables. \\
+		The \emph{standardized test statistic $t$} can be calculated as such:
+		\[t = \z{b}{\mu_b}{\sigma_b} \approx \z{b}{\beta_0}{s_b}\]
+		\footnote{
+				The following Minitab table is often provided and can be interpreted as such:
+				\[\begin{array}{|c|c|c|c|c|}\hline
+					\texttt{Predictor} & \texttt{Coef} & \texttt{SE Coef} & \texttt{T} & \texttt{P} \\\hline
+					\texttt{Constant} & a & s_a = \sqrt{s\left(\frac{1}{n} + \frac{\bar{x}^2}{s_x\sqrt{n - 1}}\right)} & t_a = \frac{a}{s_a} & P(|T| > |t_a|) \\\hline
+					\texttt{[Explanatory Variable]} & b & s_b = \frac{s}{s_x\sqrt{n - 1}} & t_b = \frac{b}{s_b} & P(|T| > |t_b|) \\\hline
+					\texttt{S = } s & \multicolumn{2}{c|}{\texttt{R-Sq = } r^2} & \multicolumn{2}{c|}{\texttt{R-Sq(adj) = } r^2 \text{ excluding influential points}} \\\hline
+				\end{array}\]}
 \end{document} 

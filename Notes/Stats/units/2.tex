@@ -80,6 +80,16 @@
 				\hat{y} &= e^a e^{\ln x^b} = cx^b
 			\end{align*}
 			The model that bests fits the \pindex{data} is the one that minimizes $s$, the standard deviation of the residuals\index{standard deviation}.
+			\footnote{
+				The following Minitab table is often provided and can be interpreted as such:
+				\[\begin{array}{|c|c|c|c|c|}\hline
+					\texttt{Predictor} & \texttt{Coef} & \texttt{SE Coef} & \texttt{T} & \texttt{P} \\\hline
+					\texttt{Constant} & a & s_a = \sqrt{s\left(\frac{1}{n} + \frac{\bar{x}^2}{s_x\sqrt{n - 1}}\right)} & t_a = \frac{a}{s_a} & P(|T| > |t_a|) \\\hline
+					\texttt{[Explanatory Variable]} & b & s_b = \frac{s}{s_x\sqrt{n - 1}} & t_b = \frac{b}{s_b} & P(|T| > |t_b|) \\\hline
+					\texttt{S = } s & \multicolumn{2}{c|}{\texttt{R-Sq = } r^2} & \multicolumn{2}{c|}{\texttt{R-Sq(adj) = } r^2 \text{ excluding influential points}} \\\hline
+				\end{array}\]
+				Information regarding the third, fourth, and fifth columns is found in Chapter 12.
+			}
 	\chapter{Two-Variable Categorical Data}\index{data!categorical}
 		\textbf{Segmented bar graphs} have one bar per \pindex{variable}. Each bar is divided into segments according to their \emph{relative frequency}\index{frequency!relative}. The height of each bar is equal to 1. \\
 		\textbf{Side-by-side bar graphs} show the distribution of one categorical variable for each value of another. The grouping of the bars is based on one of the categorical variables while the bars themselves show the frequencies of the values of the other. \\
