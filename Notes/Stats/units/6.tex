@@ -2,17 +2,18 @@
 
 \begin{document}
 	\chapter{Confidence Intervals}
-		A statistic is a \textbf{point estimator} used to estimate an unknown population parameter. A \textbf{point estimate} is a statistic's value, and is referred to as such because it is a single point. As such, it is almost never accurate. \\
+		A statistic is a \textbf{point estimator} used to estimate an unknown population parameter. An arbitrary parameter and its point estimator are denoted $\theta$ and $\hat{\theta}$ respectively. \\
+		A \textbf{point estimate} is a statistic's value, and is referred to as such because it is a single point. As such, it is almost never accurate. \\
 		A point estimate can be made made more reliable by either increasing the sample size or using a more accurate sampling procedure. \\
 		The \textbf{standard error $\bm{s}$} (with the appropriate subscript denoting its statistic) of a statistic is the point estimate of the standard deviation of the sampling distribution. \\
 		A \textbf{confidence interval} provides an interval of plausible values for an unknown parameter based on sample data. It is equal to the point estimate plus or minus the \textbf{margin of error (ME)}.
-		\[\cint = \text{point estimate} \pm \text{margin of error}\]
-		The probability that a confidence interval contains the true parameter value is the confidence interval's \textbf{confidence level ($\bm{C}$)}.j
-		\[P(\text{parameter} \in \cint) = C\]
+		\[\cint = \pest \pm \moe = \hat{\theta} \pm \ME\]
+		The probability that a confidence interval contains the true parameter value is the confidence interval's \textbf{confidence level ($\bm{C}$)}.
+		\[P(\p \in \cint) = P(\theta \in \hat{\theta} \pm \ME) = C\]
 		The margin of error describes the maximum deviation of the estimate from the parameter. It is the product of the critical value and the standard error of the statistic.
-		\[\ME = \text{critical value} \times \text{standard error}\]
+		\[\ME = \crit \times \text{ standard error of statistic} = \crit  \times s_{\hat{\theta}}\]
 		The \textbf{critical value} is equal to the the number of standard deviations from the mean within which the probability of a random variable falling is equal to $C$.
-		\[P(-\text{critical value} < \text{standardized test statistic} < \text{critical value}) = C\]
+		\[P(-\crit < \sts< \crit) = C\]
 		\section{Confidence Intervals about Proportions}
 			%TODO Confidence Intervals about Proportions
 			\subsection*{Confidence Intervals about Differences in Proportions}
@@ -21,12 +22,12 @@
 			When the standard deviation of $X$ (not of the sampling distribution of $\bar{x}$) is known, a confidence interval about $\bar{x}$ can be constructed using the templates for confidence intervals and margin of error, simply using the sampling distribution's standard deviation rather than the statistic's standard error.
 			\[\cint = \bar{x} \pm z^*\frac{\sigma}{\sqrt{n}}\]
 			This is a \textbf{one-sample $\bm{z}$-interval for a population mean}.
-			When $\sigma$ is not known, the standard deviation can be replaced by the standard error to calculate the \textbf{standard error of $\bm{\bar{x}}$}.
+			When $\sigma$ is not known, the population standard deviation can be replaced by its point estimator to calculate the \textbf{standard error of $\bm{\bar{x}}$}.
 			\[s_{\bar{x}} = \frac{s_x}{\sqrt{n}}\]
 			The margin of error is appropriately changed:
 			\[\ME = z^*\frac{s_x}{\sqrt{n}}\]
 			This results in the intervals being too small, though, and the confidence level decreases from what would be expected given $z^*$. The critical value can also change, though, becoming $t^*$ rather than $z^*$, making the intervals longer and making the confidence level representative. The reason that $t$ is used is that a $\bm{t}$\textbf{ distribution} is used rather than a Normal one. ($t^*$ can still be interpreted in the same way as $z^*$, though (the number of standard errors from the point estimate).) \\
-			The specific $t$ distribution used is specified by \textbf{degrees of freedom} (\textbf{df}), which  is 1 less than the sample size.\footnote{The density curve of a $t$ distribution with degrees of freedom $\nu$ is defined (using the gamma function $\Gamma$ or the beta function $\B$) as such:\[f(x) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}} = \frac{1}{\sqrt{\nu}\B\left(\frac{1}{2},\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}\]As $\df$ approaches infinity, the $t$ distribution approaches a normal curve (the tails approaching 0 more quickly), so $t^*$ approaches $z^*$. This is because a greater sample size means that $s_x$ will be closer to $\sigma$.} \\
+			The specific $t$ distribution used is specified by \textbf{degrees of freedom (df)}, which  is 1 less than the sample size.\footnote{The density curve of a $t$ distribution with degrees of freedom $\nu$ is defined (using the gamma function $\Gamma$ or the beta function $\B$) as such:\[f(x) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}} = \frac{1}{\sqrt{\nu}\B\left(\frac{1}{2},\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}\]As $\df$ approaches infinity, the $t$ distribution approaches a normal curve (the tails approaching 0 more quickly), so $t^*$ approaches $z^*$. This is because a greater sample size means that $s_x$ will be closer to $\sigma$.} \\
 			\[\df = n - 1\]
 			The confidence interval constructed about $\bar{x}$ using $t^*$ and $s_x$ is a \textbf{one-sample $\bm{t}$ interval for a population mean}.
 			\[\ME = t^*\frac{s_x}{\sqrt{n}}\]
@@ -37,16 +38,13 @@
 			\end{align*}
 			\subsection*{Confidence Intervals about Differences in Means}
 				A confidence interval about a difference in means is a \textbf{two-sample $\bm{t}$ interval for a mean difference}. In order for it be constructed about, Normality and independence must be justified and both samples must be independent. \\
-				The center of the confidence interval is the difference between the sample means, denoted by a subscript \textbf{diff}, while its standard error is simply the square root of the sum of the variances of the standard errors of the individual statistics.
-				\begin{align*}
-					\diff{\bar{x}} &= \overline{x_1 - x_2} = \bar{x}_1 - \bar{x}_2 & 
-					\cint &= \diff{\bar{x}} \pm \msdiff{s}{1}{2} = (\bar{x}_1 - \bar{x}_2) \pm t^*\msdiffe{s}{1}{n_1}{2}{n_2}
-				\end{align*}
+				The center of the confidence interval is the difference between the sample means while its standard error is simply the square root of the sum of the variances of the standard errors of the individual statistics.
+				\[\cint = (x_1 - x_2) \pm \msdiff{s}{1}{2} = (\bar{x}_1 - \bar{x}_2) \pm t^*\msdiffe{s}{1}{n_1}{2}{n_2}\]
 				If both standard deviations are known, they are used along with $z^*$.
 				\[(\bar{x}_1 - \bar{x}_2) \pm z^*\sqrt{\frac{\sigma_1^2}{n_1} +\frac{\sigma_2^2}{n_2}}\]
-				The degrees of freedom of a difference of means is the equal to the estimated variance divided by the sum of the estimated variances of each statistic divided by 1 less than their sample sizes.
+				The degrees of freedom of a difference of means is the equal to the square of the sample variance of the difference divided by the sum of the those of each statistic divided by 1 less than their sample sizes.
 				\[\df = \frac{s_{\bar{x}_1 - \bar{x}_2}^4}{\frac{s_{\bar{x}_1}^4}{n_1 - 1} + \frac{s_{\bar{x}_2}^4}{n_2 - 1}} = \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{\left(s_1^2/n_1\right)^2}{n_1 - 1} + \frac{\left(s_2^2/n_2\right)^2}{n_2 - 1}}\]
-				When the data is \emph{paired}, the response being collected from the same set of individuals independently, the difference can be treated as a single mean, as each sample difference is known, and a \textbf{paired $\bm{t}$ interval} can be created. $\diff{s}$ can therefore be used as well.\footnote{
+				When the data is \emph{paired}, the response being collected from the same set of individuals independently, the difference can be treated as a single mean, as each sample difference is known, and a \textbf{paired $\bm{t}$ interval} can be created. The center of this confidence interval is the mean of the differences, denoted $\diff{\bar{x}}$, while the standard error is derived from the sample standard deviation of the differences.\footnote{
 					When $n_1 = n_2$, it can be verified that the values of $s_{\bar{x}_1 - \bar{x}_2}$ derived by $\diff{s}$ and by $s_1$ and $s_2$ individually are the same.
 					\begin{align*}
 						\diff{s} &= \sqrt{s_1^2 + s_2^2} \\
@@ -55,27 +53,29 @@
 					\end{align*}
 					}
 				\begin{align*}
-					\diff{s} &= s_{1 - 2} = \sqrt{s_1^2 + s_2^2} &\cint = \diff{\bar{x}} \pm t^*\frac{\diff{s}}{\sqrt{n}}
+					\diff{\bar{x}} &= \overline{x_1 - x_2} = \bar{x}_1 - \bar{x}_2 & \diff{s} &= s_{1 - 2} = \sqrt{s_1^2 + s_2^2} &\cint = \diff{\bar{x}} \pm t^*\frac{\diff{s}}{\sqrt{n}}
 				\end{align*}
 	\chapter{Significance Tests}
 		A \textbf{significance test} is a procedure that uses observed data to test between two claims, often made regarding parameters, about hypotheses.
 		\callout{17}{In order for a significance test to be performed, randomness, independence, and Normality must be verified.}
-		The \textbf{null hypothesis} ($\bm{H_0}$) claims that the parameter is equal to a \textbf{null value}, what it was previously assumed to be, denoted by a subscript $0$ on the parameter. It is often a statement of no change or difference.
-		\[H_0:\rm{parameter} = \text{null value}\]
-		The claim that is attempting to be supported is the \textbf{alternative hypothesis} ($\bm{H_a}$). It can either be \textbf{one-sided}, claiming that the parameter is greater or less than the null value, or \textbf{two-sided}, claiming simply that the parameter is not equal to the null value.
-		\[H_a:\rm{parameter} \gtrless \text{null value} \lor \rm{parameter} \ne \text{null value}\]
+		The \textbf{null hypothesis $\bm{H_0}$} claims that the parameter is equal to a \textbf{null value}, what it was previously assumed to be, denoted by a subscript $0$ on the parameter. It is often a statement of no change or difference.
+		\[H_0: \p = \np\]
+		The claim that is attempting to be supported is the \textbf{alternate hypothesis ($\bm{H_a}$)}. It can either be \textbf{one-sided}, claiming that the parameter is greater or less than the null value, or \textbf{two-sided}, claiming simply that the parameter is not equal to the null value.
+		\begin{align*}
+			H_a&: \p \gtrless \np & H_a: \p \ne \np
+		\end{align*}
 		A test's $\bm{P}$\textbf{-value} is the probability of \emph{significant} evidence being found that supports $H_a$ that is at least as strong as that observed assuming that $H_0$ is true.
 		\[\pval = P(\text{statistic supports } H_a \mid H_0)\] \\
 		The smaller the $\pval$, the lower the chances of receiving evidence of the alternative. A small $\pval$ therefore supports the $H_a$. \\
 		If the $\pval$ is less than the \textbf{significance level} $\bm{\alpha}$, $H_0$ can be rejected and it can be concluded that there is convincing evidence for $H_a$. If the $\pval$ is greater than or equal to $\alpha$, $H_0$ cannot be rejected, and it can be concluded that there is not convincing evidence for $H_a$. \\
-		The $\pval$ is calculated using the \textbf{standardized test statistic}, which is the number of standard deviations from the null value of the parameter. \\
+		The $\pval$ is calculated using the \textbf{standardized test statistic} (t), which is the number of standard deviations from the null value of the parameter. \\
 		For a null hypothesis to be significant is for a significance test to provide a $\pval$ less than the significance level.
-		\[\text{standardized test statistic} = \z{\text{statistic}}{\text{null parameter}}{\text{standard error of statistic from null parameter}} = \mathrm{sts}\]
+		\[\sts = \z{\s}{\np}{\text{standard error of statistic}}\]
 		The $\pval$ is equal to the probability of $z$ satisfying the $H_a$ assuming that $H_0$ is true. It can therefore be calculated as such using a \emph{cumulative distribution function}, so long as Normality and independence are justified.
 		\[\small
 			\pval = \begin{cases}
-				P(\text{parameter} \gtrless \text{null parameter}) = P(\mathrm{S \gtrless s}) & H_a:\text{parameter} \gtrless \text{null parameter} \\
-				P(|\text{parameter}| < |\text{null parameter}|) = P(\mathrm{S < -|s|}) + P(\mathrm{S > |s|}) & H_a:\text{parameter} \ne \text{null parameter}
+				P(\s \gtrless \os \mid H_0) & H_a: \p \gtrless \np \\
+				P(|\s| > |\os| \mid H_0) & H_a:\text{parameter} \ne \text{null parameter}
 			\end{cases}
 		\]
 		\callout{17}{Conclusions should only ever be made regarding the rejection of $H_0$ and the convincing support of $H_a$. $H_0$ should never be supported and $H_a$ should never be rejected.}
@@ -107,7 +107,7 @@
 		As $\alpha$ increases, the probability of a Type \Roman{1} error increases but that of a Type \Roman{2} error decreases. \\
 		A confidence interval about a statistic (using the \emph{standard error}) can be used in tandem with a sample statistic to provide a set of plausible values for the true parameter, should the alternative hypothesis be convincingly supported. \\
 		A two-sided test of of $H_0$ at significance level $\alpha$ usually provides the same conclusion as a confidence level of the complement of $\alpha$.
-		\[[P(\mathrm{|STS| < |sts|}) < \alpha] \approxident [\text{null parameter} \in (\text{statistic} \pm \ME)]\]
+		\[[P(\mathrm{|\s| < |\os|}) < \alpha] \approxident [\text{null parameter} \in (\text{statistic} \pm \ME)]\]
 		A test's \textbf{power} is the probability of convincing evidence being found that convincingly supports $H_a$ given a value for the parameter being tested. This is also is equal to the probability of avoiding a Type \Roman{2} error. 
 		\[\mathrm{power} = 1 - P(\text{Type \Roman{2} Error})^C = P(\text{statistic convincingly supports } H_a \mid H_a \text{ is true})\]
 		Power can be increased in three ways:
@@ -208,10 +208,10 @@
 			For evidence to exist of a deviation from the null hypothesis is for any difference to exist between the observed and expected counts. \\
 			The \textbf{expected count} is the product of the null proportion and the sample size and \emph{should not be rounded}. \\
 			The \emph{degrees of freedom} is 1 less than the number of categories. \\
-			A \textbf{chi-square distribution} is denoted $\bm{\chi^2(k)}$ where $k = \df$.
+			A \textbf{chi-square distribution} is denoted $\bm{\chi^2(k)}$ (where $k = \df$) while its probability density function is denoted $f(x;k)$ (where $x = \chi^2$).\footnote{The probability density function of a chi-square distribution with degrees of freedom $k$ is defined as such:\[f(x;k) = \begin{cases}\frac{x^{\frac{k}{2} - 1}e^{\frac{-x}{2}}}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)} & x > 0 \\ 0 & x \le 0 \end{cases}\]}
 			\begin{align*}
-				\text{shape} &= \text{skew right} & \min\{k\} &= 0 & \max\{k\} &= \infty \\
-				\mu_{\chi^2(k)} &= \chi^2(\df) & \max\{\chi^2(k)\} &= \chi^2(\df - 2) & \sigma_{\chi^2(k)} &= \sqrt{2\df}
+				\text{shape} &= \text{skew right} & \min\{\chi^2\} &= 0 & \max\{\chi^2\} &= \infty \\
+				\mu_{\chi^2} &= \df & \max\{f(\chi^2;\df)\} &= f(\df - 2, \df) & \sigma_{\chi^2} &= \sqrt{2\df}
 			\end{align*}
 			The $\pval$ of a chi-square test is the probability of $\chi^2$ falling above the standardized test statistic.
 			\[\pval = P(\Chi^2 > \chi^2)\]
@@ -244,7 +244,7 @@
 	\chapter{Slopes}
 		The \textbf{sample regression line} takes the following form:
 		\[\hat{y} = a + bx\]
-		The sample \emph{regression line} can be used to test claims regarding the \textbf{population (true) regression line}, which takes the following form:
+		The sample egression line can be used to test claims regarding the \textbf{population (true) regression line}, which takes the following form:
 		\[\mu_y = \alpha + \beta x\]
 		\callout{17}{
 			In order for inference to be performed regarding a regression, the following condition must be met:
@@ -266,7 +266,7 @@
 			\mu_b &= \beta & \sigma_b &= \frac{\sigma_y}{\sigma_x\sqrt{n}}
 		\end{align*}
 		The sample slope $b$ and intercept $a$ estimate the population regression line's slope $\beta$ and intercept $\alpha$. \\
-		The standard error of the sample slope can be approximated, using the standard error of the \emph{residuals} $s$ in place of that of the response variable.
+		The standard error of the sample slope can be approximated, using the sample standard deviation of the \emph{residuals} $s$ in place of that of the response variable.
 		\[s_b = \frac{s}{s_x\sqrt{n - 1}}\]
 		Confidence intervals and significance tests for the population slope are based on a $t$ distribution with \emph{degrees of freedom} \underline{2} less than the sample size.
 		\[\df = n - 2\]

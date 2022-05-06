@@ -14,7 +14,7 @@
 			\textbf{Stem (and leaf) plots}\index{plot!stem (and leaf)} can only display quantities. The stem (vertical axis) corresponds to the first digit while the leaf (horizontal axis) corresponds to the remaining digits. The stem is always on the left, and the leaves should always be ordered from least to greatest. A key is required to denote the magnitudes displayed. \\
 			\textbf{Histograms}\index{histogram} show bars that are assigned equal intervals. To find the length of each interval, the range can be divided by the number of classes and the result rounded up. Each bar's height shows the number of individuals within the class. \\
 			\textbf{Time plots}\index{plot!time} measure a variable over time. \\
-			A \textbf{cumulative frequency curve}\index{frequency!cumulative!curve} (OGIVE)\index{OGIVE} is a line graph that shows the cumulative relative frequency, the sum of all lower classes' \textbf{relative frequencies}\index{frequency!relative}, the percentages of data contained within each class, (inclusive). Rather than each class being represented as a range, they are labeled by their \emph{medians}\index{median}.
+			A \textbf{cumulative frequency curve\index{frequency!cumulative!curve} (OGIVE)\index{OGIVE}} is a line graph that shows the cumulative relative frequency, the sum of all lower classes' \textbf{relative frequencies}\index{frequency!relative}, the percentages of data contained within each class, (inclusive). Rather than each class being represented as a range, they are labeled by their \emph{medians}\index{median}.
 			\subsection*{Graphically Describing Distributions}
 				A distribution can be described by its \emphi{shape}, \emphi{outliers}, \emph{center}\index{measure of!center}, and \emph{spread}\index{measure of!spread} (\textbfi{SOCS}).
 				\paragraph{Shape}
@@ -87,7 +87,7 @@
 			\callout{18.4}{Because the probability of $X$ being any particular value is 0, the function's output values do not actually represent anything, though they can be likened to the relative frequencies of distribution curves\index{curve!distribution}.}
 			Because a density curve is effectively an idealized distribution curve, representing a \pindex{population} rather than a \pindex{sample}, different variables are used. \\ 
 			\[\begin{array}{|c|c|c|}\hline
-				\mathrm{Quantity} & \text{Sample Data} & \text{Population Value} \\\hline
+				\mathrm{Quantity} & \text{Sample} & \text{Population} \\\hline
 				\mathrm{Mean} & \bar{x} & \mu \\
 				\text{Standard Deviation} & s & \sigma \\\hline
 			\end{array}\]
@@ -140,7 +140,7 @@
 					\node[] at (0, -0.1) {$\sigma$ from $\mu$};
 				\end{tikzpicture}
 			\end{center}
-			To \emphi{simulate} a situation that shows Normality, \emphi{random} numbers can be generated following a Normal distribution.\footnote{To generate $n$ random numbers following a Normal distribution, the $\randomnorm$ (\texttt{math/PROB/6}) function can be used as such:\[\randnorm{\mu}{\sigma}{n} = \{x_1, x_2 , \ldots, x_n\}\]This list can then be stored using $\texttt{sto}\to\texttt{L}_n$}
+			To \pindex{simulate} a situation that shows Normality, \emphi{random} numbers can be generated following a Normal distribution.\footnote{To generate $n$ random numbers following a Normal distribution, the $\randomnorm$ (\texttt{math/PROB/6}) function can be used as such:\[\randnorm{\mu}{\sigma}{n} = \{x_1, x_2 , \ldots, x_n\}\]This list can then be stored using $\texttt{sto}\to\texttt{L}_n$}
 			\subsection*{Standardization and $z$-Scores}
 				The $\bm{z}$\textbf{-score}\index{z-score} is the number of standard deviations\index{standard deviation} away from the \pindex{mean}.\footnote{$z$-scores follow the same conventions as variables\index{variable}, $Z$ being used for any value, $z$ for any particular value, and $z_i$ for a defined particular value. The subscript may also denote the variable that it is the $z$-score of, though, in case the cases would correspond, as in $Z_X$, $z_x$, and $z_{x,i}$}
 				\[z = \z{x}{\mu}{\sigma}\]

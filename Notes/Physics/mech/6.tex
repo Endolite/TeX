@@ -13,10 +13,10 @@
 			The gravitational force $\vec{F}_g$ on a body is the sum of all of the gravitational forces acting on its individual particles. This can be simplified by treating it as as single force that acts on the \textbf{center of gravity} (\textbf{cog}).
 			If the gravitational force is the same for all of a body's particles, then the center of gravity is simply the center of mass.
 			\section{Simple Harmonic Motion}
-				An oscillation's \textbf{frequency} ($\bm{f}$) is the number of times per second that it takes for it to complete an \textbf{oscillation} (cycle). \\
-				The unit of frequency is  \textbf{hertz} (\textbf{Hz}), equal to one $\mathrm{s}^{-1}$.
+				An oscillation's \textbf{frequency ($\bm{f}$)} is the number of times per second that it takes for it to complete an \textbf{oscillation} (cycle). \\
+				The unit of frequency is  \textbf{hertz (Hz)}, equal to one $\mathrm{s}^{-1}$.
 				\[\Hz = \frac{1}{\s}\]
-				The \textbf{period} (\textbf{T}) is the inverse of the frequency, making it the amount of time that it takes for a full period to be completed.
+				The \textbf{period ($\bm{T}$)} is the inverse of the frequency, making it the amount of time that it takes for a full period to be completed.
 				\[T = \frac{1}{f}\]
 				Any process that regularly repeats is \textbf{periodic}. \\
 				\textbf{Simple harmonic motion} is periodic motion that is a sinusoidal function of time. It can be described in an equation with parameters of amplitude ($x_m$), angular frequency ($\omega$), and phase angle ($\phi$) as such:
@@ -30,7 +30,7 @@
 				The product of the angular frequency and amplitude is the \textbf{velocity amplitude} ($\bm{vm}$). \\
 				The acceleration is the time derivative of motion.
 				\[a(t) = \frac{\d}{\d t}v(t) = -\omega^2x_m\cos(\omega t + \phi) = -\omega^2x(t)\]
-				The product of the square of the angular frequency and the amplitude is the \textbf{acceleration amplitude} ($\bm{am}$). \\
+				The product of the square of the angular frequency and the amplitude is the \textbf{acceleration amplitude ($\bm{a_m}$)}. \\
 				Newton's second law can be applied to the formula for acceleration to derive the force.
 				\[F = ma = m(-\omega^2x) = -m\omega^2x\]
 				Simple harmonic motion is the motion of a particle with a force acting on it proportional to the particle's displacement but in the opposite direction. \\
@@ -42,7 +42,7 @@
 				If the force is proportional to the first power of $x$, the motion can be described as \textbf{linear simple harmonic oscillation} can be described as such:
 				\begin{align*}
 					a = \frac{-k}{m}x &= -\omega^2 a \\
-					\omega &= \frac{k}{m} \\
+					\omega &= \sqrt{\frac{k}{m}} \\
 					T &= \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{m}{k}}
 				\end{align*}
 				The equations for kinetic and potential energy can be rewritten using kinematics:
@@ -50,4 +50,31 @@
 					U &= \frac{1}{2}k^2 = \frac{1}{2}kx_m^2\cos^2(\omega t + \phi) \\
 					K &= \frac{1}{2}mv^2 = \frac{1}{2}k^2\sin^2(\omega t + \phi)
 				\end{align*}
+			\section{Pendulums}
+				When the \textbf{angular amplitude $\bm{\theta_m}$} is small, the \textbf{small angle approximation} can be used:
+				\[\sin\theta \approx \theta\]
+				The angular frequency and period of a simple pendulum of length $L$ can be found as such:
+				\begin{align*}
+					\omega &= \sqrt{\frac{mgL}{I}} = \sqrt{\frac{mgL}{mL^2}}  = \sqrt{\frac{g}{L}} & T &= \frac{1}{f} = \frac{1}{\omega / 2\pi} = \frac{2\pi}{\sqrt{g/L}} = 2\pi\sqrt{\frac{L}{g}}
+				\end{align*}
+				A \textbf{physical pendulum} has a complex mass distribution. \\
+				The force of gravity acting towards the center of the pendulum is the force multiplied by $\sin\theta$.
+				\[F_\bot = mg\sin\theta \approx mg\theta\]
+				The angular acceleration of a physical pendulum can be calculated in tandem with the small angle approximation to calculate torque (using the distance $h$ between the rotational axis and center of mass):
+				\begin{align*}
+					\alpha &= \frac{\Tau}{I} = \frac{-hmg\theta}{mL^2} = \frac{-hg\theta}{L^2}
+				\end{align*}
+				The already derived formula for angular frequency can be used to derive torque.
+				\begin{align*}
+					\omega &= \sqrt{\frac{mgh}{I}} & \Tau &= \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{I}{mgh}}
+				\end{align*}
+				If pivoted about its center of mass, a physical pendulum will not show simple harmonic motion. \\
+				A physical pendulum's center of oscillation is the length $L_0$ of a simple pendulum with the same period. \\
+				A \textbf{torsion pendulum} is the result of elasticity from a twisting wire. It moves in \textbf{angular simple harmonic motion}. \\
+				The torque of a torsion pendulum is the negative of the product of the angular magnitude and the \textbf{torsion constant $\bm{\kappa}$}.\footnote{The formula for the torque of a torsion pendulum uses the angular form of Hooke's law.}
+				\[\tau = -\kappa\theta\]
+				The period of a torsion pendulum is such:
+				\[T = 2\pi\sqrt{\frac{I}{\kappa}}\]
+				Simple harmonic motion is circular motion as viewed from the edge. \\
+				
 \end{document}

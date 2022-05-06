@@ -127,6 +127,8 @@
 			The probability of $x$ successes in $n$ trials, each with a probability $p$ of being successful, is defined as such:\footnote{The binomial $\binom{n}{x}$ is defined as such:\[\binom{n}{x} = \frac{n!}{(n - x)!x!}\]}
 			The probability of $x$ successes after $n$ trials is also referred to as the \textbf{binomial coefficient}\index{coefficient!binomial} and is denoted as such:
 			\[P(x) = f(x;n,p) = \binom{n}{x}p^x(1 - p)^{n - x}\]
+			The probability of a success within the first $x$ trials can be denoted as a summation.
+			\[P(X \le x) = \sum_{i = 0}^x\binom{n}{i}p^i(1 - p)^{n - i}\]
 			This is the product of the probability of $x$ successes, that of $n - x$ failures (necessitated by the definition of a binomial), and the total number of possibilities in which there are $x$ successes.\footnote{The probability of exactly and at most $x$ successes can be found using $\binompdf$ and $\binomcdf$ respectively:\begin{align*}P(x) = \binomPDF{n}{p}{x} && P(X < x) = \binomCDF{n}{p}{x}\end{align*}} \\
 			The \textbf{sample space} of a binomial variable can be derived as each term of a binomial expansion\footnote{The binomial expansion of $a + b$ raised to power $n$ is the following:\[(a + b)^n = \sum_{n = 0}^n\binom{n}{k}a^{n - k}b^k\]} of the conjugate of $p$ added to $p$ itself.
 			\[S_{B(n, p)} = ((1 - p) + p)^n = \sum_{x = 0}^n\binom{n}{x}(1 - p)^{n - x}p^x\]
