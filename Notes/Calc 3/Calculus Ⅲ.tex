@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
+\usepackage{cellspace}
 \usepackage{csquotes}
 \usepackage[hang,flushmargin]{footmisc}
 \usepackage[margin=0.5in]{geometry}
@@ -14,11 +15,16 @@
 \usepackage{tikz-3dplot}
 \usetikzlibrary{calc}
 
+% Configuration
 \title{Calculus \Roman{3}}
 \author{Arnav Patri}
 
+\cellspacetoplimit5pt
+\cellspacebottomlimit5pt
+
 % Notation
 \renewcommand{\d}{\,\mathrm{d}}
+\renewcommand{\Vec}[1]{\overrightarrow{#1}}
 
 % Utilities
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}

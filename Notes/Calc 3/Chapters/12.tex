@@ -40,4 +40,38 @@
 					\[(x - h)^2 + (y - k)^2 + (z - l)^2 = r^2\]
 			}
 		\section{Vectors}
+			The term \textbf{vector} is used to indicate a quantity with both magnitude and direction.
+			\subsection*{Geometric Description of Vectors}
+				\addcontentsline{toc}{subsection}{Geometric Description of Vectors}
+				A vector is often represented by an arrow, the length of which represents its magnitude. A vector is denoted by a letter in boldface (\textbf{v}) or with an arrow above a letter ($\vec{v}$). \\
+				A \textbf{displacement vector} is a vector representing how something is displaced from its \textbf{initial point} (tail) to its \textbf{terminal point} (tip).
+				\[\begin{tikzpicture}
+					\draw[thick, ->] (0, 0) node[anchor = north east]{$A$} -- node[anchor = south east]{$\vec{v}$} ++ (2, 1.5) node[anchor = south west]{$B$};
+					\draw[thick, ->] (3, 0.25) node[anchor = north east]{$C$} -- node[anchor = south east]{$\vec{u}$} ++ (2, 1.5) node[anchor = south west]{$D$};
+				\end{tikzpicture}\]
+				In the above figure, vector $\vec{v}$ has initial point $A$ and terminal point $B$. This can be indicated by writing $\vec{v} = \Vec{AB}$. If $AB = CD$ and the angles relative to the same axis are equal, then the $\vec{v}$ and $\vec{u}$ are \textbf{equivalent} (or \textbf{equal}). \\
+				The only vector without a direction is the \textbf{zero vector}, denoted by \textbf{0}, which has length 0. \\
+				The sum of two vectors can be denoted with the initial point of the first and the terminal point of the second. \\
+				\[\begin{tikzpicture}
+					\draw[thick, ->, color = red] (0, 0) node[anchor = north east]{$A$} -- (1.49, 1.75) node[anchor = south west]{C};
+					\draw[thick, ->] (0, 0) -- (2.5, 1) node[anchor = west]{$B$};
+					\draw[thick, ->] (2.5, 1) -- (1.51, 1.75);
+					\node[] at (6, 1){\small$\Vec{AB} + \Vec{BC} = \Vec{AC}$};
+				\end{tikzpicture}\]
+				To add vectors, the one's tail can be moved to the other's tip and the resultant terminal point found.
+				\callout{17}{\paragraph{Definition of vector addition} The sum of two vectors position such that the initial point of one is the terminal point of the other is the vector from the initial point of the first to the terminal point of the second.}
+				The definition of vector addition is sometimes referred to as the \textbf{Triangle Law}.
+				\[\begin{tikzpicture}
+					\draw[thick, ->] (0, 0) -- node[anchor = north west]{$\vec{u}$} ++ (3, 1);
+					\draw[thick] (3, 1) -- node[anchor = west]{$\vec{v}$} ++ (0.5, 2);
+					\draw[thick, ->, color = red] (0, 0) -- node[anchor = south east]{$\vec{u} + \vec{v}$} ++ (3.5, 3); 
+				\end{tikzpicture}\]
+				Doing the opposite addition results in the same resultant vector. This is made visible b y the \textbf{Parallelogram Law}.
+				\[\begin{tikzpicture}
+					\draw[thick, ->] (0, 0) -- node[anchor = north west]{$\vec{u}$} ++ (3, 1);
+					\draw[thick] (3, 1) -- node[anchor = west]{$\vec{v}$} ++ (0.5, 2);
+					\draw[thick, ->] (0, 0) -- node[anchor = east]{$\vec{v}$} (0.5, 2);
+					\draw[thick] (0.5, 2) -- node[anchor = south east]{$\vec{u}$} ++ (3, 1);
+					\draw[thick, ->, color = red] (0, 0) -- node[anchor = south, rotate = 43]{$\vec{v} + \vec{u}$} node[anchor = north, rotate = 43]{$\vec{u} + \vec{v}$} ++ (3.5, 3);
+				\end{tikzpicture}\]
 \end{document}
