@@ -228,8 +228,8 @@
 									&= \pi\int_0^r\left[(r^2 - x^2) - 2b\sqrt{r^2 - x^2} + b^2 - \left(\frac{b^2(a^2 - x^2)}{a^2} -\frac{2b^2\sqrt{a^2 - x^2}}{a} + b^2\right)\right]\d x \\
 									&= \pi\int_0^r\left[r^2 - x^2 - 2b\sqrt{r^2 - x^2} + b^2 - b^2 +  \frac{b^2x^2}{a^2} + \frac{2b^2\sqrt{a^2 - x^2}}{a} - b^2\right]\d x \\
 									&= \pi\int_0^r\left[r^2 - x^2 - 2b\sqrt{r^2 - x^2} - b^2 + \frac{b^2x^2}{a^2} + \frac{2b^2\sqrt{a^2 - x^2}}{a}\right]\d x \\
-									&= \pi\left(\left[(r^2 - b^2)x + \left(\frac{b^2}{a^2} - 1 \right)\frac{x^3}{3}\right]_0^r + 2b\int_0^r\left[\sqrt{r^2 - x^2} + \frac{\sqrt{a^2 - x^2}}{a}\right]\d x\right) \\
-								I &= \int\left[\sqrt{\alpha^2 - x^2}\right]\d x 
+									&= \pi\left(\left[(r^2 - b^2)x + \left(\frac{b^2}{a^2} - 1 \right)\frac{x^3}{3}\right]_0^r + 2b\int_0^r\left[ \frac{b\sqrt{a^2 - x^2}}{a} - \sqrt{r^2 - x^2}\right]\d x\right) \\
+								I(\alpha) &= \int\left[\sqrt{\alpha^2 - x^2}\right]\d x 
 										\implies x = \alpha\sin\theta 
 										\implies \d x = \alpha\cos\theta\d\theta \\
 									&= \int\left[\cos\theta\sqrt{\alpha^2 - \alpha^2\sin^2\theta}\right]\d\theta
@@ -239,10 +239,29 @@
 										= \alpha\left(\frac{2\sin\theta\cos\theta}{4} + \frac{\theta}{2}\right) + C \\
 									&= \alpha^2\left(\frac{\left(\frac{x}{\alpha}\right)\left(\frac{\sqrt{\alpha^2 - x^2}}{\alpha}\right)}{2} + \frac{\arcsin(x/\alpha)}{2}\right) + C
 										= \frac{x\sqrt{\alpha^2 - x^2} + \alpha^2\arcsin(x/\alpha)}{2} + C \\
-								V_1 &= \begin{aligned}[t] &\pi\left[(r^2 - b^2)x + \left(\frac{b^2}{a^2} - 1 \right)\frac{x^3}{3}\right. \\ &\left.+ 2b\left(\frac{x\sqrt{r^2 - x^2} + r^2\arcsin(x/r)}{2} + \frac{x\sqrt{a^2 - x^2} + a^2\arcsin(x/a)}{2a}\right)\right]_0^r \end{aligned} \\
-									&= \begin{aligned}[t]&\pi\left[x\left(r^2 - b^2 - \frac{x^2}{3}\left(\frac{b^2}{a^2} - 1\right)\right)\right. \\ &\left.+ \frac{b}{a}\left(x\left(\sqrt{r^2 - x^2} + \sqrt{a^2 - x^2}\right) + r^2\arcsin(x/r) + a^2\arcsin(x/a)\right)\right]_0^r\end{aligned} \\
-									&= \begin{aligned}[t]&\pi\left[r\left(r^2 - b^2 - \frac{r^2}{3}\left(\frac{b^2}{a^2} - 1\right) \right)\right. \\ &\left.+ \frac{b}{a}\left(r\left(0 + \sqrt{a^2 - r^2}\right) + \frac{\pi r^2}{2} + a^2\arcsin\left(\frac{r}{a}\right)\right) - (0)\right]\end{aligned}\\
-									&= \pi\left[\right]
+									V_1 &= \pi\left[(r^2 - b^2)x + \left(\frac{b^2}{a^2} - a\right)\frac{x^3}{3} + 2b\left(\frac{bI(a)}{a} - I(r)\right)\right]_0^r \\
+										&= \begin{aligned}[t] &\pi\left[(r^2 - b^2)x + \left(\frac{b^2}{a^2} - 1 \right)\frac{x^3}{3}\right. \\ 
+											&\left.+ 2b\left(\frac{bx\sqrt{a^2 - x^2} + a^2b\arcsin(x/a)}{2a} - \frac{x\sqrt{r^2 - x^2} + r^2\arcsin(x/r)}{2}\right)\right]_0^r \end{aligned} \\
+										&= \begin{aligned}[t] &\pi\left[(r^2 - b^2)x + \left(\frac{b^2}{a^2} - 1 \right)\frac{x^3}{3}\right. \\ 
+											&\left.+ 2b\left(\frac{xb\sqrt{a^2 - x^2} + a^2b\arcsin(x/a)}{2a} - \frac{x\sqrt{r^2 - x^2} + r^2\arcsin(x/r)}{2}\right)\right]_0^r \end{aligned} \\
+										&= \begin{aligned}[t]&\pi\left[x\left(r^2 - b^2 + \frac{x^2}{3}\left(\frac{b^2}{a^2} - 1\right)\right)\right. \\ 
+											&\left.+ \frac{b}{a}\left(x\left(b\sqrt{a^2 - x^2} - a\sqrt{r^2 - x^2}\right) + a^2b\arcsin\left(\frac{x}{a}\right) - r^2\arcsin\left(\frac{x}{r}\right)\right)\right]_0^r\end{aligned} \\
+										&= \begin{aligned}[t]&\pi\left[r\left(r^2 - b^2 + \frac{r^2}{3}\left(\frac{b^2}{a^2} - 1\right) \right)\right. \\ 
+											&\left.+ \frac{b}{a}\left(r\left(b\sqrt{a^2 - r^2} - 0\right) + a^2b\arcsin\left(\frac{r}{a}\right) - \frac{a\pi r^2}{2}\right) - (0)\right]\end{aligned}\\
+										&= \pi\left(r^3 - b^2r + \frac{b^2r^3}{3a^2} - \frac{r^3}{3} + \frac{b^2r\sqrt{a^2 - r^2}}{a} + ab^2\arcsin\left(\frac{r}{a}\right) - \frac{b\pi r^2}{2}\right) \\
+										&= \pi\left(\frac{2r^3(2a^2 + b^2) - 3a^2b\pi r + 6ab^2r\left(\sqrt{a^2 - r^2} - a\right) - 6a^3b^2\arcsin(r/a)}{6a^2}\right)
+							\end{align*}
+							\begin{align*}
+								V_2 &= \pi\int_r^a\left(\frac{b\sqrt{a^2 - x^2}}{a} - b\right)^2\d x
+										= \pi\int_r^a\left[\frac{b^2(a^2 - x^2)}{a^2} - \frac{2b^2\sqrt{a^2 - x^2}}{a} + b^2\right]\d x \\
+									&= \pi\int_r^a\left[b^2 - \frac{b^2x^2}{a^2} - \frac{2b^2\sqrt{a^2 - x^2}}{a} + b^2\right]\d x
+										= \pi\int_r^a\left[2b^2 - \frac{b^2x^2}{a^2} - \frac{2b^2\sqrt{a^2 - x^2}}{a}\right]\d x \\
+									&= \pi\left[2b^2x - \frac{b^2x^3}{3a^2} - \frac{2b^2I(a)}{a}\right]_r^a
+										= \pi\left[2b^2x - \frac{b^2x^3}{3a^2} - \frac{b^2x\sqrt{a^2 - x^2} + a^2\arcsin(x/a)}{a}\right]_r^a \\
+									&= \pi\left[2b^2a - \frac{b^2a^3}{3a^2} - \frac{0 + a^2(\pi/2)}{a}
+										- \left(2b^2r - \frac{b^2r^3}{3a^2} - \frac{b^2r\sqrt{a^2 - r^2} + a^2\arcsin(r/a)}{a}\right)\right] \\
+									&= \pi\left[2b^2a - 2b^2r + \frac{b^2r^3 - b^2a^3}{3a^2} + \frac{0.5a^2\pi + b^2r\sqrt{a^2 - r^2} - a^2\arcsin(r/a)}{a}\right] \\
+									&= \pi\left[\frac{}{}\right]
 							\end{align*}
 					\end{enumerate}
 			\end{enumerate}
