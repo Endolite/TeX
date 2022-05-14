@@ -14,9 +14,11 @@
 \author{Arnav Patri}
 
 \pagestyle{fancy}
-\fancyhead{}
+\fancyhf{}
 	\fancyhead[L]{\leftmark}
 	\fancyhead[R]{Arnav Patri}
+	\fancyhead[C]{\thepage}
+	\fancyfoot{}
 	\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 
 % Symbols
@@ -249,7 +251,7 @@
 										&= \begin{aligned}[t]&\pi\left[r\left(r^2 - b^2 + \frac{r^2}{3}\left(\frac{b^2}{a^2} - 1\right) \right)\right. \\ 
 											&\left.+ \frac{b}{a}\left(r\left(b\sqrt{a^2 - r^2} - 0\right) + a^2b\arcsin\left(\frac{r}{a}\right) - \frac{a\pi r^2}{2}\right) - (0)\right]\end{aligned}\\
 										&= \pi\left(r^3 - b^2r + \frac{b^2r^3}{3a^2} - \frac{r^3}{3} + \frac{b^2r\sqrt{a^2 - r^2}}{a} + ab^2\arcsin\left(\frac{r}{a}\right) - \frac{b\pi r^2}{2}\right) \\
-										&= \pi\left(\frac{2r^3(2a^2 + b^2) - 3a^2b\pi r + 6ab^2r\left(\sqrt{a^2 - r^2} - a\right) - 6a^3b^2\arcsin(r/a)}{6a^2}\right)
+										&= \pi\left(\frac{2r^3(2a^2+b^2) -3a^2b\pi r^2 + 6ab^2r\left(\sqrt{a^2 - r^2} - a\right) + 6a^3b^2\arcsin(r/a)}{6a^2}\right)
 							\end{align*}
 							\begin{align*}
 								V_2 &= \pi\int_r^a\left(\frac{b\sqrt{a^2 - x^2}}{a} - b\right)^2\d x
@@ -257,11 +259,15 @@
 									&= \pi\int_r^a\left[b^2 - \frac{b^2x^2}{a^2} - \frac{2b^2\sqrt{a^2 - x^2}}{a} + b^2\right]\d x
 										= \pi\int_r^a\left[2b^2 - \frac{b^2x^2}{a^2} - \frac{2b^2\sqrt{a^2 - x^2}}{a}\right]\d x \\
 									&= \pi\left[2b^2x - \frac{b^2x^3}{3a^2} - \frac{2b^2I(a)}{a}\right]_r^a
-										= \pi\left[2b^2x - \frac{b^2x^3}{3a^2} - \frac{b^2x\sqrt{a^2 - x^2} + a^2\arcsin(x/a)}{a}\right]_r^a \\
-									&= \pi\left[2b^2a - \frac{b^2a^3}{3a^2} - \frac{0 + a^2(\pi/2)}{a}
-										- \left(2b^2r - \frac{b^2r^3}{3a^2} - \frac{b^2r\sqrt{a^2 - r^2} + a^2\arcsin(r/a)}{a}\right)\right] \\
-									&= \pi\left[2b^2a - 2b^2r + \frac{b^2r^3 - b^2a^3}{3a^2} + \frac{0.5a^2\pi + b^2r\sqrt{a^2 - r^2} - a^2\arcsin(r/a)}{a}\right] \\
-									&= \pi\left[\frac{}{}\right]
+										= \pi\left[2b^2x - \frac{b^2x^3}{3a^2} - \frac{b^2x\sqrt{a^2 - x^2} + a^2b^2\arcsin(x/a)}{a}\right]_r^a \\
+									&= \begin{aligned}[t]&\pi\left[2b^2a - \frac{b^2a^3}{3a^2} - \frac{0 + a^2b^2(\pi/2)}{a}\right. \\
+										&\left.- \left(2b^2r - \frac{b^2r^3}{3a^2} - \frac{b^2r\sqrt{a^2 - r^2} + a^2b^2\arcsin(r/a)}{a}\right)\right]\end{aligned} \\
+									&= \pi\left[2ab^2 - 2b^2r + \frac{b^2r^3 - a^3b^2}{3a^2} + \frac{b^2r\sqrt{a^2 - r^2} + a^2b^2\arcsin(r/a) - 0.5a^2b^2\pi}{a}\right] \\
+									&= \frac{b^2\pi\left(6a^3 - 6a^2r + r^3 - a^3 + 3ar\sqrt{a^2 - r^2} + 3a^3\arcsin(r/a) - 1.5a^3\pi\right)}{3a^2} \\
+									&= \frac{b^2\pi\left(2r^3 + 6ar\left(\sqrt{a^2 - r^2} - 2a\right) + a^3(10 + 6\arcsin(r/a) - 3\pi)\right)}{6a^2} \\
+								V &= 4\left(V_1 + V_2\right) \\
+									&= \begin{aligned}[t]&\frac{2\pi}{3a^2}\left(4r^3(2a^2 + b^2) - 3a^2b\pi r^2 + 6ab^2r\left(2\sqrt{a^2 - r^2} - 3a\right)\right.\\
+										&\left.+ a^3b^2\left(12\arcsin\left(\frac{r}{a}\right) + 10 - 3\pi\right)\right)\end{aligned} \\
 							\end{align*}
 					\end{enumerate}
 			\end{enumerate}
