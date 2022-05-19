@@ -105,6 +105,13 @@
 						\end{aligned}\,\right|\, x = 0
 					\]
 				\item
+				\[
+					\left.\begin{aligned}
+						\frac{x^2}{a^2} - \frac{y^4}{b^2} \mid a, b \ne 0 &&
+							y = 
+					\end{aligned}\right| x = 0
+				\]
+				\item
 					\[
 						\left.\begin{aligned}
 							x^2 + y^2 &= r^2 & 
@@ -116,13 +123,6 @@
 							\text{(a) } &y = 0 \\
 							\text{(b) } &y = b
 						\end{aligned}
-					\]
-				\item
-					\[
-						\left.\begin{aligned}
-							\frac{x^2}{a^2} - \frac{y^4}{b^2} \mid a, b \ne 0 &&
-								y = 
-						\end{aligned}\right| x = 0
 					\]
 			\end{enumerate}
 			\newpage
@@ -363,6 +363,8 @@
 					\[\lim_{x\to 0^+}(4x + 1)^{\cot x}\]
 				\item
 					\[\lim_{x\to 0^+}(1 - \cos x)^{\sin x}\]
+				\item
+					\[\lim_{x\to\infty}(\ln x)^{1/x}\]
 			\end{enumerate}
 			\newpage
 		\section*{Solutions}
@@ -429,7 +431,20 @@
 							&= \lim_{x\to 0^+}\left[\frac{2\sin x \cos x \tan x + \sin^2 x \sec^2 x}{\sin x}\right]
 								= \lim_{x\to 0^+}[2\cos x \tan x + \sin x \sec x] \\
 							&= 2(1)(0) + (0)(1) = 0 \\
-						L &= 1
+						L &= e^0 = 1
+					\end{align*}
+				\item
+					\begin{align*}
+						L &= \lim_{x\to\infty} (\ln x)^{1/x}
+								&&\implies \infty^0 \\
+						\ln L &= \lim_{x\to\infty}\left[\frac{\ln x}{x}\right]
+								&&\implies \frac{\infty}{\infty} \\
+							&= \lim_{x\to\infty}\left[\frac{1/x}{1}\right] = 0 \\
+						L &= e^0 = 1
+					\end{align*}
+				\item
+					\begin{align*}
+						\lim_{x\to\infty}\left[x\right]
 					\end{align*}
 			\end{enumerate}
 \end{document}
