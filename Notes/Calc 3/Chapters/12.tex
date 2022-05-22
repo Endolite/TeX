@@ -254,12 +254,15 @@
 				\section{Equations of Lines and Planes}
 					\subsection*{Lines}
 						\addcontentsline{toc}{subsection}{Lines}
-						A line in three dimensional space is defined by a known point and a direction. The direction can be described by a vector parallel to the line. A \textbf{vector equation} of a line has a parameter of some scalar which is multiplied by the parallel vector. The result is then added to the initial point.
+						A line in three dimensional space is defined by a known point and a direction. The direction can be described by a vector parallel to the line. A \textbf{vector equation} of a line has a \textbf{parameter} of some scalar which is multiplied by the parallel vector. The result is then added to the initial point.
 						\[\vec{r} = \vec{r}_0 + t\vec{v}\]
-						Rewritten in component form,
-							\begin{align*}
-								x &= x_0 + v_xt & y &= y_0 + v_yt & z &= z_0 + v_zt
-							\end{align*}
+						Rewritten in component form, this provides the \textbf{parametric equations} of the line.
+						\callout{17}{
+							The parametric equations of a line that posses through the point $P_0(x_0, y_0, z_0)$ and is parallel to the direction vector $\vec{v}$ are
+								\begin{align*}
+									x &= x_0 + v_xt & y &= y_0 + v_yt & z &= z_0 + v_zt
+								\end{align*}
+						}
 						If a vector is used to describe a line's direction, its components are called the line's \textbf{direction numbers}. As any parallel vector can be used, any set of numbers proportional to a given set of direction numbers can also be used as a set of direction numbers for the line. \\
 						A line can also be described by eliminating the parameter, solving each component's equation for the parameter.\
 						\begin{align*}
@@ -269,8 +272,22 @@
 							\begin{align*}
 								x &= x_0 & \frac{y - y_0}{v_y} &= \frac{z - z_0}{v_z}
 							\end{align*}
-						The line segment from $r_0$ to $r_1$ is given by the vector equation
-							\[r(t) = (1 - r)r_0 + t\vec{r}_1 \mid 0 \le t \le 1\]
+						The line segment from $\vec{r}_0$ to $\vec{r}_1$ is given by the vector equation
+							\[\vec{r}(t) = (1 - t)\vec{r}_0 + t\vec{r}_1 \mid 0 \le t \le 1\]
 					\subsection*{Planes}
 						\addcontentsline{toc}{subsection}{Planes}
+						While a line in space is determined by a point and its direction, a plane is more difficult to define. A single vector parallel to the plane is not able to properly convey its \enquote{direction}, but one perpendicular to it does not completely specify it either. A plane is instead determined by a point in the plane and a vector $\vec{n}$, called the \textbf{normal vector}, that is orthogonal to the plane. \\
+						For a point $P_0(x_0, y_0, z_0)$ determining the plane with position vector $\vec{r}_0$, an arbitrary point $P(x, y, z)$ on the plane with position vector $\vec{r}$, and a normal vector $\vec{n}$, the vector $\vec{r} - \vec{r}_0$ is represented by $\Vec{P_0P}$. As $\vec{n}$ is orthogonal to every vector in the plane, it is also perpendicular to $\vec{r} - \vec{r}_0$, so
+							\[\vec{n} \cdot (\vec{r} - \vec{r}_0) = 0 \implies \vec{n}\cdot \vec{r} = \vec{n} \cdot \vec{r}_0\]
+						These equations are both \textbf{vector equations of the plane}. \\
+						A scalar equation for the plane can be derived by rewriting the vectors in terms of their components and evaluating the cross product.
+						\callout{17}{
+							A \textbf{scalar equation of the plane} through the point $P_0(x_0, y_0, z_0)$ with normal vector $\vec{n}$ is
+								\[n_x(x - x_0) + n_y(y - y_0) + n_z(z - z_0) = 0\]
+							This can be rewritten as a \textbf{linear equation} in $x$, $y$, and $z$ by expanding.
+								\[n_xx + n_yy + n_zz + d = 0 \mid d = -(n_xx_0 + n_yy_0 + n_zz_0)\]
+						}
+					\subsection*{Distances}
+						\addcontentsline{toc}{subsection}{Distances}
+						The distance from a point $P(x, y, z)$ to a plane $ax + by + cz + d = 0$ can be found 
 \end{document}

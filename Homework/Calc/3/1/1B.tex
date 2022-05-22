@@ -1,6 +1,7 @@
 \documentclass{article}[A4, 12pt]
 
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[margin = 0.75 in]{geometry}
 
 % Configuration
@@ -8,32 +9,29 @@
 \author{Arnav Patri}
 
 % Symbols
-
 \newcommand{\vi}{\text{\^\i}}
 \newcommand{\vj}{\text{\^\j}}
-\newcommand{\vk}{\text{\^k}}
 
 \begin{document}
 	\maketitle
 	\begin{enumerate}
 		\item
-			Find an equation of the sphere with center (2, -1,4)  and radius 2. Describe its intersection with each of the coordinate planes.
-			\begin{align*}
-				r^2 &=(x - h)^2 + (y - k)^2 + (z - l)^2 \implies 4 = (x - 2)^2 +(y + 1)^2 + (z - 4)^2 \\
-			\end{align*}
+			Find an equation of the sphere with center $(2, -1,4)$  and radius 2. Describe its intersection with each of the coordinate planes. \\
 			\textbf{Solution:}
-			As the distance from a plane to a point is simply the absolute value of coordinate of the variable that must be zero in order for the point to lie on the plane, the distance to the $xy$-, $yz$-, and $xz$- planes from the center of a sphere in standard form are $|l|$, $|h|$, and $|k|$ respectively. In this case, they are 2, 1, and 4. By definition, all points on a sphere must lie a fixed distance from its center. This distance is $r$, in this case 2. If the distance from the sphere to a plane exceeds this value, it does not intersect that plane. As 4 is greater than 2, the sphere does not intersect the $xy$ plane. \\
-			If a sphere does intersect a plane, that intersection must either be a point or a cross-section of the sphere (a circle). If the distance from a sphere to a plane is exactly equal to its radius, the sphere cannot go any farther in the direction of the plane, so it must only intersect the plane at that point. The intersection is otherwise a circle. This sphere therefore intersects the $yz$-plane at a point and the $xz$ plane at a circle. \\
+			\[r^2 = (x - h)^2 + (y - k)^2 + (z - l)^2 \implies 4 = (x - 2)^2 +(y + 1)^2 + (z - 4)^2 \]
+			As the distance from a plane to a point is simply the absolute value of coordinate of the variable that must be zero in order for the point to lie on the plane, the distance to the $xy$-, $yz$-, and $xz$-planes from the center of a sphere in standard form are $|l|$, $|h|$, and $|k|$ respectively. In this case, they are 2, 1, and 4. By definition, all points on a sphere must lie a fixed distance from its center. This distance is $r$, in this case 2. If the distance from the sphere to a plane exceeds this value, it does not intersect that plane. As 4 is greater than 2, the sphere does not intersect the $xy$-plane. \\
+			If a sphere does intersect a plane, that intersection must either be a point or a cross-section of the sphere (a circle). If the distance from a sphere to a plane is exactly equal to its radius, the sphere cannot go any farther in the direction of the plane, so it must only intersect the plane at that point. The intersection is otherwise a circle. This sphere therefore intersects the $yz$-plane at a point and the $xz$-plane at a circle. \\
 			The intersections can be verified algebraically as such:
 			\begin{align*}
 				4 &= (x - 2)^2 + (y + 1)^2 + (-4)^2 
 						= (x - 2)^2 + (y + 1)^2 + 16  \tag{$xy$} \\
 					-12 &= (x - 2)^2 + (y + 1)^2 
-						\implies r^2 = (x - h)^2 + (y - k)^2 \\
+						\implies r^2 = (x - h)^2 + (y - k)^2 \mid r \notin \mathbb{R} \implies \text{no solutions for } (x, y) \in \mathbb{R}^2 \\
 				4 &= (-2)^2 + (y + 1)^2 + (z - 4)^2 
 						= 4 + (y + 1)^2 + (z - 4)^2 \tag{$yz$} \\
 					0 &= (y + 1)^2 + (z - 4)^2 
-						\implies r^2 = (y + 1)^2 + (z - 4)^2 \mid r^2 = 0\\
+						\implies r^2 = (y + 1)^2 + (z - 4)^2 \mid r = 0 \implies \text{1 solution for } (y, z) \in \mathbb{R}^2 \\
+					y &= -1 \qquad z = 4 \implies (0, -1, 4) \\
 				4 &= (x - 2)^2 + (1)^2 + (z - 4)^2 = (x - 2)^2 + 1 + (z - 4)^2
 						= (x - 2)^2 + 1 + (z - 4)^2  \tag{$xz$} \\
 					3 &= (x - 2)^2 + (z - 4)^2 
