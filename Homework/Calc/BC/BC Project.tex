@@ -418,7 +418,7 @@
 				\item
 					\[\lim_{n\to 1^+}\left(\int_n^\infty\left[\frac{1}{x^n}\right]\d x\right)^{n - 1}\]
 				\item
-					\[\lim_{n\to\infty}\left(\int_n^{\infty}\left[\frac{1}{x^n}\right]\d x\right)^{\int_{n + 1}^\infty\left[\frac{1}{x^{n + 1}}\right]\d x}\]
+					\[\lim_{n\to\infty}\left(\int_n^{\infty}\left[\frac{1}{x^n}\right]\d x\right)^{\int_{n + 1}^\infty\left[\frac{1}{x^{n + 1}}\right]\d x} \text{ using comparative grown rates}\]
 			\end{enumerate}
 			\newpage
 		\section*{Solutions}
@@ -552,15 +552,8 @@
 								= \lim_{n\to\infty}\left[-\frac{\ln((n - 1)n^{n - 1})}{n(n + 1)^n}\right] \\
 							&= \lim_{n\to\infty}\left[-\frac{\ln(n - 1) + (n - 1)\ln n}{n(n + 1)^n}\right]
 								&&\implies -\frac{\infty}{\infty} \\
-								&= 0 \text{, as $(n + 1)^n > n^n > \ln n > \ln(n - 1)$}\\
-						\frac{\d}{\d x}\left[(n + 1)^n\right] &= \frac{\d}{\d x}\left[e^{n\ln(n + 1)}\right] 
-								= e^{n\ln(n + 1)} \times \frac{\d}{\d x}\left[n\ln(n + 1)\right] \\
-							&= e^{n\ln(n + 1)}\left((1)\ln(n + 1) +  \frac{n}{n + 1}\right) \\
-							&= \frac{e^{n\ln(n + 1)}((n + 1)\ln(n + 1) + n)}{x + 1} \\
-							&= \lim_{n\to\infty}\left[-\frac{\frac{1}{n - 1} + \left(\ln n + \frac{n - 1}{n}\right)}{(n + 1)^n + \frac{e^{n\ln(n + 1)}n((n + 1)\ln(n + 1) + n)}{n + 1}}\right] \\
-							&= \lim_{n\to\infty}\left[-\frac{\frac{n + (n - 1)^2 + n(n + 1)\ln n}{n(n + 1)}}{\frac{(n + 1)^{n + 1} + e^{n\ln(n + 1)}n((n + 1)\ln(n + 1) + n)}{n + 1}}\right] \\
-							&= \lim_{n\to\infty}\left[-\frac{n + (n - 1)^2 + n(n + 1)\ln n}{n\left((n + 1)^{n + 1} + e^{n\ln(n + 1)}n((n + 1)\ln(n + 1) + n))\right)}\right] \\
-							&= 0 \text{, as}
+							&= 0 \text{, as $(n + 1)^n > n^n > \ln n > \ln(n - 1)$} \\
+						L &= e^0 = 1
 					\end{align*}
 			\end{enumerate}
 \end{document}
