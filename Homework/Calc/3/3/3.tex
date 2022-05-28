@@ -1,0 +1,31 @@
+\documentclass[12pt, A4]{article}
+\usepackage{amsmath}
+\usepackage[margin = 0.75 in]{geometry}
+% Configuration
+\title{Assignment 3}
+\author{Arnav Patri}
+% Notation
+\renewcommand{\Vec}[1]{\overrightarrow{#1}}
+
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item	
+			Find the \textbf{\underline{vector equation}} and the \textbf{\underline{parametric equation}} for the line that joins $P(1, -1, 2)$ and $Q(3, 0, -2)$. \\
+			\begin{align*}
+				\vec{r}_0 &= \Vec{OP} 
+						= \langle 1, -1, 2 \rangle \\
+				\vec{v} &= \langle 3 - 1, 0 - (-1), -2 - 2 \rangle
+						= \langle 2, 1, -4 \rangle \\
+				\vec{r} &= \vec{r}_0 + t\vec{v}
+						= \langle 1, -1, 2 \rangle + t\langle 2, 1, -4 \rangle
+						= \langle 1 + 2t, -1 + t, 2 - 4t \rangle \\
+				x &= 1 + 2t \qquad y = -1 + t \qquad z = 2-4t
+			\end{align*}
+		\item
+			Given the vector function $r(t) = \left\langle t^4, t, t^2 \right\rangle$, find the unit tangent vector $T(1)$ and $r'(t) \times r''(t)$.
+			\begin{align*}
+				r'(t) &= \left\langle 4t^3, 1, 2t \right\rangle \\
+			\end{align*}
+	\end{enumerate}
+\end{document}

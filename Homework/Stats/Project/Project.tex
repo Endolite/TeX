@@ -1,0 +1,56 @@
+\documentclass[margin = 5mm]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[utf8]{inputenc}
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+
+
+% Symbols
+\DeclareMathOperator{\df}{\mathrm{df}}
+\DeclareMathOperator{\invNorm}{\texttt{invNorm}}
+\DeclareMathOperator{\ME}{ME}
+\newcommand{\tCDF}[3]{\texttt{tcdf}\bm{\left(}\texttt{lower:} #1, \texttt{upper:} #2, \texttt{df:} #3\bm{\right)}}
+
+\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+\newcommand{\pval}{P\text{-value}}
+\newcommand{\z}[3]{\frac{#1 - #2}{#3}}
+
+\begin{document}
+	\nopagecolor
+	\begin{tabular}{c}
+		$\begin{aligned}
+			H_0 &: \mu_S = \mu_J &
+				H_a &: \mu_S \ne \mu_J
+		\end{aligned}$ \\
+		where $\mu_S$ is the mean GPA of sophomores at Novi High School and $\mu_J$ is the mean GPA of juniors at Novi High School \\
+		As two means are being compared and the data is unpaired, a 2-sample $t$-test should be performed. \\
+		$\begin{aligned} \\
+			\bar{x} &= \frac{\sum x_i}{n}\\
+			\bar{x}_S &\approx 3.464 &
+				\bar{x}_J &\approx 3.56 \\
+			s_x &= \sqrt{\frac{\sum(x - \bar{x})^2}{n - 1}} \\
+			s_S &\approx 0.66 &
+				s_J &\approx 0.7 \\
+			s_{\bar{x}_S - \bar{x}_J} &= \sqrt{\frac{s_S^2}{n} + \frac{s_J^2}{n}} 
+					\approx \sqrt{\frac{0.66^2}{30} + \frac{0.7^2}{30}} \approx  1.103 \\
+			t &= \frac{\bar{x}_S - \bar{x}_J}{s_{\bar{x}_S - \bar{x}_J}} 
+					\approx \frac{3.464 - 3.56}{1.103} 
+					\approx -0.547 \\
+			\df &= \frac{s_{\bar{x}_S - \bar{x}_J}^4}{\frac{\left(s_S/\sqrt{n}\right)^4}{n - 1} + \frac{\left(s_J/\sqrt{n}\right)^4}{n - 1}} 
+			\approx \frac{1.103^4}{\frac{\left(0.66/\sqrt{30}\right)^4}{30 - 1} + \frac{\left(0.7/\sqrt{30}\right)^4}{30 - 1}} \approx 29.789 \\
+			\pval &= 2\tCDF{-\infty}{t \approx -0.087}{\approx 29.789} \approx 0.931
+		\end{aligned}$
+		\\
+		Last full day of school: \\
+		Get rid of passcode
+		\\
+		Reach my house at 7:45 AM \\
+		Give phone \\
+		Every class we have together (including lunch), give phone
+	\end{tabular}
+\end{document}

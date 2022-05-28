@@ -1,0 +1,79 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.25)  28 MAY 2022 11:53
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**12.tex
+(./12.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+! Missing number, treated as zero.
+<to be read again> 
+                   \c@3 
+l.2 
+    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \c@3 
+l.2 
+    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/subfiles/subfiles.cls
+Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
+! Missing \endcsname inserted.
+<to be read again> 
+                   \c@3 
+l.35 \let
+         \@classoptionslist\relax
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \c@3 
+l.35 \let
+         \@classoptionslist\relax
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\@use@ption ...sname ds@\CurrentOption \endcsname 
+                                                  
+l.35 \let
+         \@classoptionslist\relax
+I'm ignoring this, since I wasn't doing a \csname.
+
+Preamble taken from file `../Calculus_\c@3 '
+(/usr/local/texlive/2021/texmf-dist/tex/latex/import/import.sty
+Package: import 2020/04/01  v 6.2
+)
+
+! LaTeX Error: File `../Calculus_c@3.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.45 \input{\preamble@file}
+                           ^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 63 strings out of 478994
+ 1237 string characters out of 5858184
+ 284371 words of memory out of 5000000
+ 17636 multiletter control sequences out of 15000+600000
+ 403430 words of font info for 27 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 53i,0n,60p,140b,13s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

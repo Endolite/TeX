@@ -1,0 +1,13 @@
+# Fdb version 3
+["pdflatex"] 1653753211 "12.tex" "12.pdf" "12" 1653753211
+  "../Calculus_c@3.tex" 0 -1 0 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/import/import.sty" 1586645574 6201 0ad8b5da8e12f60a88d546b2198a56f2 ""
+  "/usr/local/texlive/2021/texmf-dist/tex/latex/subfiles/subfiles.cls" 1605478891 1507 57de335d88fde4e5c924dfed577fdb74 ""
+  "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1616443989 39972 3d6bb4d9d719e93193fa020b58adf5d4 ""
+  "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1621963510 2724743 fae6ad252cf6be897f5c1f489c77008f ""
+  "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
+  "12.aux" 1653753189 8 a94a2480d3289e625eea47cd1b285758 ""
+  "12.tex" 1653485014 22928 71c09edc0b11ad5b5c15cf7e77a25fb6 ""
+  (generated)
+  "12.log"
+  "12.pdf"

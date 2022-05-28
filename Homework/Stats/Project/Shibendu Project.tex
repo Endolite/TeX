@@ -1,0 +1,83 @@
+\documentclass[12pt, A4]{report}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Configuration
+\title{AP Calculus Practice Problems}
+\author{Arnav Patri}
+
+\pagestyle{fancy}
+\fancyhf{}
+	\fancyhead[L]{\leftmark}
+	\fancyhead[R]{Arnav Patri}
+	\fancyhead[C]{\thepage}
+	\fancyfoot{}
+	\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% Symbols
+\renewcommand{\d}{\text{d}}
+
+\begin{document}
+		\subsection*{Problems}
+			\addcontentsline{toc}{subsection}{Problems}
+			\begin{enumerate}
+				\item
+			\end{enumerate}
+		\subsection*{Solutions}
+			\addcontentsline{toc}{subsection}{Solutions}
+			\begin{enumerate}
+				\item
+					\[
+						\lim_{n\to\infty}\left[\frac{n + 5}{3n + 5}\right] = \frac{1}{3} 
+								\ne 0
+								\implies \text{diverges by alternating series test}
+					\]
+				\item
+					\begin{align*}
+						\lim_{n\to\infty}\left[\frac{n^{2/5}}{n^5}\right] &= 0 
+								\qquad \frac{1}{(n + 1)^{6/2}} < \frac{1}{n^{6/2}} 
+									\implies \text{converges by alternating series test} \\
+						\sum_{n = 1}^\infty\left|\frac{(-1)^nn^{3/2}}{n^5}\right| &= \sum_{n = 1}^\infty\left[\frac{1}{n^{7/2}}\right]
+								\implies p= \frac{7}{2} > 1 
+								\implies \text{converges by $p$-series} \\
+							&\implies \text{converges absolutely}
+					\end{align*}
+				\item
+					\begin{align*}
+						\lim_{n\to\infty}\left[\frac{(-1)^{2n}}{5^n}\right] &= \lim_{n\to\infty}\left[\frac{1}{5^n}\right] 
+								= 0 
+								= 0 \\
+						\frac{1}{5^{n + 1}} < \frac{1}{5^n}
+										&\implies \text{converges by alternating series test} \\
+						\sum_{n = 1}^\infty\left|\frac{(-1)^n(-1)^{2n}}{5^n}\right| &= \sum_{n = 1}^\infty\left[\frac{1}{5^n}\right]
+								= \sum_{n = 1}^\infty\left(\frac{1}{5}\right)^n \implies r = \frac{1}{5} < 1 \\
+							&\implies \text{converges by geometric series} \\
+							&\implies \text{converges absolutely}
+					\end{align*}
+				\item
+				\item
+					\begin{align*}
+						\lim_{n\to\infty}\left[\frac{n}{n^2 + 4}\right] &= 0 \text{ by comparative growth rates} \\
+						\frac{n + 1}{(n + 1)^2 + 4} < \frac{n}{n^2 + 4} &\implies \text{converges by alternating series test} \\
+						\sum_{n = 0}^\infty\left|\frac{(-1)^{n = 1}n}{n^2 + 4}\right| &= \sum_{n = 0}^\infty\left[\frac{n}{n^2 + 4}\right] \\
+						\sum_{n = 0}^\infty\left[\frac{n}{n^2}\right] &= \sum_{n = 0}^\infty\left[\frac{1}{n}\right]
+								\implies p = 1 \ge 1 \implies \text{diverges by $p$-series} \\
+						\lim_{n\to\infty}\left|\frac{n}{n^2 + 4} \times \frac{n}{1}\right| &= \lim_{n\to\infty}\left[\frac{n^2}{n^2 + 4}\right] 
+								= 1
+								\implies \text{diverges by limit comparison test} \\
+							&\implies \text{ converges conditionally}
+					\end{align*}
+				\item
+					\[\lim_{n\to\infty}\left[\frac{n!}{e^{2n + 1}}\right] = \infty \text{ by comparative growth rates} \ne 0 \implies \text{diverges by $n^{\text{th}}$ term test}\]
+				\item
+					
+			\end{enumerate}
+\end{document}
