@@ -6,6 +6,9 @@
 \author{Arnav Patri}
 % Notation
 \renewcommand{\Vec}[1]{\overrightarrow{#1}}
+\newcommand{\vi}{\text{\^\i}}
+\newcommand{\vj}{\text{\^\j}}
+\newcommand{\vk}{\text{\^k}}
 
 \begin{document}
 	\maketitle
@@ -25,7 +28,20 @@
 		\item
 			Given the vector function $r(t) = \left\langle t^4, t, t^2 \right\rangle$, find the unit tangent vector $T(1)$ and $r'(t) \times r''(t)$.
 			\begin{align*}
-				r'(t) &= \left\langle 4t^3, 1, 2t \right\rangle \\
+				\vec{r}'(t) &= \left\langle 4t^3, 1, 2t \right\rangle \\
+				\vec{T}(t) &= \frac{\vec{r}'(t)}{|\vec{r}'(t)|} 
+						= \frac{\left\langle 4t^3, 1, 2t \right\rangle}{\sqrt{16t^6 + 1 + 4t^2}}\\
+				\vec{T}(1) &= \frac{\langle 4, 1, 2 \rangle}{\sqrt{16 + 1 + 4}}
+						= \frac{\langle 4, 1, 2 \rangle}{\sqrt{21}} \\
+				\vec{r}''(t) &= \left\langle 12t^2, 0, 2 \right\rangle \\
+				\vec{r}'(t) \times \vec{r}''(t) &=
+						\begin{vmatrix}
+							\vi & \vj & \vk \\
+							4t^3 & 1 & 2t \\
+							12t^2 & 0 & 2
+						\end{vmatrix} \\
+					&= \left\langle (1)(2) - (2t)(0), (-1)\left(4t^3)(2) - (2t)(12t^2)\right), \left(4t^3\right)(0) - (1)\left(12t^2\right) \right\rangle \\
+					&= \left\langle 2 - 2t, 16t^3, 12t^2 \right\rangle
 			\end{align*}
 	\end{enumerate}
 \end{document}
