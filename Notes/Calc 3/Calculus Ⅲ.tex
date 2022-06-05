@@ -6,6 +6,7 @@
 \usepackage{cellspace}
 \usepackage{csquotes}
 \usepackage[hang,flushmargin]{footmisc}
+\usepackage{hyperref}
 \usepackage[margin=0.5in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{moresize}
@@ -18,19 +19,29 @@
 % Configuration
 \title{Calculus \Roman{3}}
 \author{Arnav Patri}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \cellspacetoplimit5pt
 \cellspacebottomlimit5pt
 
 % Notation
 \DeclareMathOperator{\comp}{comp}
-\renewcommand{\d}{\text{d}}
+\newcommand{\dd}{\d}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
 \DeclareMathOperator{\orth}{orth}
 \DeclareMathOperator{\proj}{proj}
 \renewcommand{\Vec}[1]{\overrightarrow{#1}}
 \newcommand{\vi}{\text{\^\i}}
 \newcommand{\vj}{\text{\^\j}}
 \newcommand{\vk}{\text{\^k}}
+\newcommand{\vps}{\hspace{0.5mm}}
 
 % Utilities
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}

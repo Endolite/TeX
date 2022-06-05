@@ -3,17 +3,134 @@
 \begin{document}
 	\setcounter{section}{1}
 	\section{Some Preliminaries}
-		\subsection{}
+		\subsubsection*{Exercise 1.2.1.}
 			\begin{enumerate}[(a)]
 				\item
 					Prove that $\sqrt{3}$ is irrational. Does a similar argument work to show $\sqrt{6}$ is irrational? \\
-					\subitem \textbf{Solution}
-					\subitem
-						\emph{Proof}. A rational number can always be expressed as the ratio of two integers $p$ and $q$. The square of a rational number can therefore always be
+					\emph{Proof.} 
+						A rational number can always be expressed as the ratio of two coprime integers $p$ and $q$. Assuming that $\sqrt{3}$ is rational,
+							\begin{align*}
+								\sqrt{3} &= \frac{p}{q} \\
+								3 &= \frac{p^2}{q^2} \\
+								3q^2 &= p^2
+							\end{align*}
+						It can be seen here that $p^2$ is divisible by 3, as it is not a perfect square, , which can only be the case if $p$ is also divisible by 3. Rewriting $p$ as the product of 3 and another integer $r$, 
+							\begin{align*}
+								3q^2 &= 9r^2 \\
+								q^2 &= 3r^2
+							\end{align*}
+						$q^2$ is therefore also divisible by 3. This makes 3 a common factor of $p$ and $q$, which means that they are not coprime, which cannot be the case given the initial assumption made that they were. It can therefore only be the case that there is no combination of coprime integers $p$ and $q$ with a ratio equal to $\sqrt{3}$, making it irrational by definition. $\Box$ \\
+					6, like 3, is not a perfect square, so
+						\[6q^2 = p^2\]
+						implies that $p^2$ and by proxy $p$ is divisible by 6. The rest of the proof continues in the same vein as the original.
 				\item
 					Where does the proof of Theorem 1.1.1 break down if we try to use it to prove $\sqrt{4}$ is irrational?
-					\subitem \textbf{Solution}
-					\subitem
-						
+					\emph{Proof.} 
+						A rational number is expressible as the ratio of two coprime integers $p$ and $q$. Assuming $\sqrt{4}$ to be rational,
+							\begin{align*}
+								\sqrt{4} &= \frac{p}{q} \\
+								4 &= \frac{p^2}{q^2} \\
+								4q^2 &= p^2
+							\end{align*}
+						This equation is satisfied by $q = 1$ and $p = 2$.
+			\end{enumerate}
+		\subsubsection{Exercise 1.2.2.}
+			Show that there is no rational number $r$ satisfying $2^r = 3$. \\
+			\emph{Proof.}
+				A rational number can be written as the ratio of two integers $p$ and $q$. Assuming $r$ to be rational, 
+					\begin{align*}
+						3 &= 2^r \\
+							&= 2^{p/q} \\
+						3^q &= 2^p
+					\end{align*}
+					All positive integer powers of an odd number, such as 3, are odd and those of an even number, such as 2, are even, so there are no integers $p$ and $q$ that satisfy this equation. There is therefore no rational number satisfying the original equation. $\Box$
+		\subsubsection*{Exercise 1.2.3.}
+			Decide which of the following represent true statements about the nature of sets. For any that are false, provide a specific example where the statement in question does not hold.
+			\begin{enumerate}[(a)]
+				\item
+					If $A_1 \supe A_2 \supe A_3 \supe A_4 \cdots$ are all sets containing an infinite number of elements, then the intersection $\bigcap\limits_{n = 1}^\infty A_n$ is infinite as well. \\
+					\emph{Solution.} 
+						This is false. Consider $A_n = \{n + k \mid k \in \N_0\}$ as a counterexample.
+				\item
+					If $A_1 \supe A_2 \supe A_3 \supe A_4 \cdots$ are all finite, nonempty sets of real numbers, then the intersection $\bigcap\limits_{n = 1}^\infty A_n$ is finite and nonempty. \\
+					\emph{Solution.} 
+						The minimum cardinality of a set $A_n$ is 1, so that 1 element must be contained in all sets $A_n$, making it equal to 
+							$\bigcap\limits_{n = 1}^\infty A_n$.
+				\item
+					$A \cap (B \cup C) = (A \cap B) \cup C$. \\
+					\emph{Solution.} 
+						Let $A = \varnothing$.
+							\begin{align*}
+								A \cap (B \cup C) &= (A \cap B) \cup C \\
+								\varnothing \cap (B \cup C) &= (\varnothing \cap B) \cup C \\
+								\varnothing &= \varnothing \cup C \\
+									&= C
+							\end{align*}
+				\item
+					$A \cap (B \cap C) = (A \cap B) \cap C$. \\
+					\emph{Solution.} 
+						Intersection is associative, making this true.
+				\item
+					$A \cap (B \cup C) = (A \cup B) \cap (A \cap C)$. \\
+					\emph{Solution.}
+			\end{enumerate}
+		\subsubsection*{Exercise 1.2.4.}
+			Produce an infinite collection of sets $A_1, A_2, A_3, \ldots$ with the property that every $A_i$ has an infinite number of elements, $A_i \cap A_j = \varnothing$ for all $i \ne j$, and $\bigcup\limits_{i = 1}^\infty A_i = \N$. \\
+			\emph{Solution.}
+				The union of every set must be $\N$, but each term must be in only one set. The simplest way to do this is to unroll the numbers in a diagonal fashion.
+					\[\begin{array}{cccccc}
+						1 & 3 & 6 & 10 & 15 & \cdots \\
+						2 & 5 & 9 & 14 & \iddots \\
+						4 & 8 & 13 & \iddots \\
+						7 & 12 & \iddots \\
+						11 & \iddots \\
+						\vdots
+					\end{array}\]
+		\subsubsection*{Exercise 1.2.5. (De Morgan's Laws}
+			\begin{enumerate}[(a)]
+				\item
+					If $x \in (A \cap B)^C$, explain why $x \in A^C \cup B^C$. This shows that $(A \cap B)^C \sube A^C \cup B^C$. \\
+					\emph{Proof.}
+						\begin{align*}
+							x \in (A \cap B)^C &\vdash x \notin (A \cap B) \\
+								&\vdash (x \notin A) \lor (x \notin B) \\
+								&\vdash \left(x \in A^C \right) \lor \left(x \in B^C \right) \\
+								&\vdash x (A^C \cup B^C) \\
+								&\vdash (A \cap B)^C \sube A^C \cup B^C\quad \Box
+						\end{align*}
+				\item
+					Prove the reverse inclusion $(A \cap B)^C \supe A^C \cup B^C$ and conclude that $(A \cap B)^C = A^C \cup B^C$. \\
+					\emph{Proof.}
+						\begin{align*}
+							x \in \left(A^C \cup B^C\right) &\vdash \left(x \in A^C\right) \lor \left(x \in B^C\right) \\
+								&\vdash (x \notin A) \lor (x \notin B) \\
+								&\vdash x \notin (A \cap B) \\
+								&\vdash x \in (A \cap B)^C \\
+								&\vdash \left(A^C \cup B^C\right) \sube A^C \cup B^C \\
+								&\vdash A^C \cup B^C \supe \left(A^C \cup B^C\right) \quad \Box
+						\end{align*}
+				\item
+			\end{enumerate}
+		\subsubsection*{Exercise 1.2.6.}
+			\begin{enumerate}[(a)]
+				\item
+					Verify the triangle inequality in the special case  where $a$ and $b$ have the same sign. \\
+						\emph{Solution.}
+							If $a$ and $b$ have the same sign, the sum of their absolute values is equal to the absolute value of their sum, satisfying the triangle inequality.
+				\item
+					Find an efficient proof for all the cases at once by first demonstrating $(a + b)^2 \le (|a| + |b|)^2$. \\
+						\emph{Solution.}
+							\begin{align*}
+								(a + b)^2 &\le (|a| + |b|)^2 \\
+								a^2 + 2ab + b^2 &\le |a|^2 + 2|a||b| + |b|^2
+							\end{align*}
+						Squares of real numbers are always positive, so taking the absolute value of a square does not change its value.
+							\[2ab \le 2|a||b|\]
+						If $a$ and $b$ are of opposite signs, $2ab$ will be negative. As $2|a||b|$ is the product of 3 positive numbers, though, it must always be positive. This makes the statement $2ab \le 2|a||b|$ true. As squaring does not affect the relationship of an inequality, it must also be true that
+							\[|a + b| \le |a| + |b|\]
+				\item
+					Prove $|a - b| \le |a - c| + |c - d| + |d - b|$ for all $a$, $b$, $c$, and $d$.
+				\item
+					Prove $||a| = |b|| \le |a - b|$. (The unremarkable identity $a = a - b + b$ may be useful.)
 			\end{enumerate}
 \end{document}

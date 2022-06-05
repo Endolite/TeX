@@ -3,5 +3,99 @@
 \begin{document}
 	\section{Vector Functions and Space Curves}
 		\subsection*{Vector-Valued Functions}
-		\addcontentsline{toc}{subsection}{Vector-Valued Functions}
+			\addcontentsline{toc}{subsection}{Vector-Valued Functions}
+			A function is a rule that assigns each element in its domain to an element in its range. A \textbf{vector(-valued) function} is one with a domain of real numbers and a range of vectors. \\
+			A three-dimensional vector function can be written in terms of the sum of real valued functions corresponding to each component, called its \textbf{component functions}. If the components of $\vec{r}$ are real-valued functions $f$, $g$, and $h$, it can be written that
+				\[\vec{r} = \langle f(t), g(t), h(t) \rangle = f(t)\vi + g(t)\vj + h(t)\vk\]
+		\subsection*{Limits and Continuity}
+			\addcontentsline{toc}{subsection}{Limits and Continuity}
+				The \textbf{limit} of a vector function is defined by the limits of its component functions.
+				\callout{17}{
+					If $\vec{r}(t) = \langle f(t), g(t), h(t) \rangle$, then
+						\[\lim_{t\to c}\vec{r}(t) = \left\langle \lim_{t\to c}f(t), \lim_{t\to c}g(t), \lim_{t\to c}h(t) \right\rangle\]
+						so long as the limits of the component functions exist.
+				}
+				A vector function $\vec{r}$ is \textbf{continuous} at $c$ if	
+					\[\lim_{t\to c}\vec{r}(t) = \vec{r}(c)\]
+				By extension, its component functions must also be continuous at $c$.
+		\subsection*{Space Curves}
+			\addcontentsline{toc}{subsection}{Space Curves}
+			A \textbf{space curve} is a set $C$ of all points $(x, y, z)$ in space where $x$, $y$, and $x$, $y$, and $z$ are determined by continuous real-valued functions on an interval $I$. These functions' equations are the \textbf{parametric equations of $\bm{C}$}, and $t$ is its \textbf{parameter}.
+	\section{Derivatives and Integrals of Vector Functions}
+		\subsection*{Derivatives}
+			\addcontentsline{toc}{subsection}{Derivatives}
+				The derivative $\vec{r}\vps'$ of a vector function $\vec{r}$ is defined by the limit of the difference quotient (if it exists), just like the derivative of a real-valued function.
+					\[\der{\vec{r}}{t} = \vec{r}\vps'(t) = \lim_{h\to 0}\left[\frac{\vec{r}(t + h) - \vec{r}(t)}{h}\right]\]
+				$\vec{r}\vps'(t)$ is the \textbf{tangent vector} to the curve defined by $\vec{r}$ at $t$, provided $\vec{r}\vps'(t)$ exists and is not $\vec{0}$. The \textbf{tangent line} to $C$ at $\vec{r}(t)$ is the line through $\vec{r}(t)$ parallel to $\vec{r}\vps'(t)$. \\
+				The derivative of a vector function can be found as that of each of its components.
+				\callout{17}{
+					If $\vec{r}(t) = \langle f(t), g(t), h(t)$ where each component function is differentiable,
+						\[\vec{r}\vps'(t) = \langle f'(t), g'(t), h'(t) \rangle\]
+				}
+				A unit vector in the direction of the tangent vector is the \textbf{unit tangent vector $\bm{\vec{T}}$}, defined by
+					\[\vec{T}(t) = \frac{\vec{r}\vps'(t)}{|\vec{r}\vps'(t)|}\]
+				The \textbf{second derivative} of a vector function $\vec{r}$ is the derivative of $\vec{r}\vps'$.
+			\subsection*{Differentiation Rules}
+				\addcontentsline{toc}{subsection}{Differentiation rules}
+					\callout{17}{
+						If $\vec{u}$ and $\vec{v}$ are differentiable vector functions, $c$ is a scalar, and $f$ is a real-valued function,
+							\begin{align*}
+								\der{}{t}[\vec{u}(t) + \vec{v}(t)] &= \vec{u}\vps'(t) + \vec{v}\vps'(t) &
+									\der{}{t}[c\vec{u}(t)] &= c\vec{u}\vps'(t) \\
+								\der{}{t}[\vec{u}(t) \cdot \vec{v}(t)] &= \vec{u}\vps'(t) \cdot \vec{v}(t) + \vec{v}\vps(t) \cdot \vec{u}(t) &
+									\der{}{t}[\vec{u}(t) \times \vec{v}(t)] &= \vec{u}\vps'(t) \times \vec{v}(t) + \vec{v}\vps'(t) \times \vec{u} \\
+								\der{}{t}[f(t)\vec{u}(t)] &= f'(t)\vec{u}(t) + f(t)\vec{u}\vps'(t) &
+									\der{}{t}[\vec{u}(f(t))] &= f'(t)\vec{u}\vps'(f(t))
+							\end{align*}
+					}
+			\subsection*{Integrals}
+				\addcontentsline{toc}{subsection}{Integrals}
+				The \textbf{definite integral} of a continuous vector function can be defined similarly to that of a continuous real-valued function.
+					\[\int_a^b\vec{r}(t)\,\d t = \lim_{n\to\infty}\sum_{i = 1}^\infty \vec{r}(t_i^*)\Delta t\]
+				This definition can be rewritten in terms of components.
+					\begin{align*}
+						\int_a^b\vec{r}(t)\,\d t &= \left\langle \int_a^b f(t)\,\d t, \int_a^b g(t)\,\d t, \int_a^b h(t)\,\d t \right\rangle \\ 
+							&= \lim_{n\to\infty}\left\langle \sum_{i = 1}^n f(t_i^*)\Delta t, \sum_{i = 1}^n g(t_i^*)\Delta t, \sum_{i = 1}^n h(t_i^*)\Delta t \right\rangle
+					\end{align*}
+				The fundamental theorem of calculus can be extended to vector functions.
+					\[\int_a^b \vec{r}(t)\,\d t = \left[\vec{R}(t)\right]_a^b = \vec{R}(b) - \vec{R}(a)\]
+				The constant of integration for the indefinite integral of a vector function is itself a vector $\vec{C}$.
+					\[\int \vec{r}(t)\,\d t = \vec{R}(t) + \vec{C}\]
+		\section{Arc Length and Curvature}
+			\subsection*{Arc Length}
+				\addcontentsline{toc}{subsection}{Arc Length}
+				The arc length of a vector function is simply the integral of its derivative's magnitude.
+					\begin{align*}
+						L &= \int_a^b|\vec{r}\vps'(t)|\d t
+								= \int_a^b\left[\sqrt{\left(\der{x}{t}\right)^2 + \left(\der{y}{t}\right)^2 + \left(\der{z}{t}\right)^2}\right]\d t
+					\end{align*}
+				A single curve can be represented by multiple vector functions, each of which is a \textbf{parametrization} of the original curve. Regardless of which parametrization is used, the arc length will be the same (so long as parameters are converted between), as arc length is a geometric property, making it independent of the parametrization used.
+			\subsection*{The Arc Length Function}
+				\addcontentsline{toc}{subsection}{The Arc Length Function}
+				For a curve $C$ given by a continuous vector function $\vec{r}$ parametrized using $t \in [a, b]$, the \textbf{arc length function} is defined as
+					\[s(t) = \int_a^t|\vec{r}\vps'(u)|\d u\]
+				Differentiating both sides (applying the fundamental theorem of calculus for the right side), it can be seen that
+					\[\der{s}{t} = |\vec{r}\vps'(t)|\]
+				This \textbf{Parametrization of a curve with respect to arc length} can be used to analyze the curve, as arc length is not dependent on a particular coordinate system of parametrization, instead being an inherent geometric property of the curve's.
+			\subsection*{Curvature}
+				\addcontentsline{toc}{subsection}{Curvature}
+					A parametrization is called \textbf{smooth} on an interval if its derivative is continuous and not equal to $\vec{0}$ at any point in the interval. \\
+					The curvature of a curve $C$ at a given point is a measure of how quickly it is changing direction. More specifically, it is the magnitude of the rate of change of the unit tangent vector with respect to arc length. (Arc length is used due to its parametrization-independence.)
+					\callout{17}{
+						The \textbf{curvature} of a curve is 
+							\[\kappa = \left|\der{\vec{T}}{s}\right|\]
+					}
+					The curvature can be more easily computed by expressing it in terms of parameter $t$ instead of $s$. Using chain rule, 
+						\[
+							\der{\vec{T}}{s} = \der{\vec{T}}{s}\der{s}{t}
+								\implies \kappa
+								= \left|\der{\vec{T}}{s}\right|
+								= \left|{\frac{\d \vec{T} / \d t}{\d s / \d t}}\right|
+						\]
+					Rewriting by differentiating the formula for arc length, 
+						\[\kappa(t) = \frac{|\vec{T}'(t)|}{|\vec{r}\vps'(t)|}\]
+					It may sometimes be more convenient to re-express curvature as
+						\[\kappa(t) = \frac{|\vec{r}\vps'(t) \times \vec{r}\vps''(t)|}{|\vec{r}\vps'(t)|}\]
+				\subsection*{The Normal and Binormal Vectors}
+					\addcontentsline{toc}{subsection}{The Normal and Binormal Vectors}
 \end{document}
