@@ -1,0 +1,49 @@
+\documentclass[12pt, A4]{article}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin = 0.75 in]{geometry}
+% Configuration
+\title{Assignment 4}
+\author{Arnav Patri}
+% Notation
+\renewcommand{\Vec}[1]{\overrightarrow{#1}}
+\newcommand{\vi}{\text{\^\i}}
+\newcommand{\vj}{\text{\^\j}}
+\newcommand{\vk}{\text{\^k}}
+\newcommand{\vps}{\hspace{0.5mm}}
+
+\begin{document}
+	\maketitle
+		\begin{enumerate}[1)]
+			\item
+				Find and sketch the domain of the function $f(x, y) = \sqrt{r} + \sqrt{1 - x^2 - y^2}$.
+				\begin{itemize}
+					\item[] \textbf{Solution}
+				\end{itemize}
+			\item
+				Let $f(x, y) = 4 - x^2 - 5y^2$. Find $f_x(1, 1)$ and $f_y(1, 1)$ and interpret these numbers as slopes.
+				\begin{itemize}
+					\item[] \textbf{Solution}
+						\begin{align*}
+							f_x(x, y) &= -2x &
+									f_y(x, y) &= -10y \\
+							f_x(1, 1) &= -2(1) = -2 &
+									f_y(1, 1) &= -10(1) = -10
+						\end{align*}
+						At the point where $x = 1$ and $y = 1$, the slopes of the lines tangent to $f(x, y) = 4 - x^2 - 5y^2$ parallel to the $x$- and $y$-axes respectively are -10 and -2.
+				\end{itemize}
+
+			\item
+				Let $f(x, y) = x^3 + xy^2 - 3y^2$. Find $f_x$, $f_y$, $f_{xx}$, $f_{yy}$, and $f_{xy}$.
+				\begin{itemize}
+					\item[] \textbf{Solution}
+						\begin{align*}
+							f_x(x, y) &= 3x ^2 + y^2 &
+									f_y(x, y) &= 2xy - 6y \\
+							f_{xx}(x, y) &= 6x &
+									f_{yy} &= 2x - 6 \\
+							f_{xy} &= 2y
+						\end{align*}
+				\end{itemize}
+		\end{enumerate}
+\end{document}

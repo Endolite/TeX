@@ -20,7 +20,9 @@
 				By extension, its component functions must also be continuous at $c$.
 		\subsection*{Space Curves}
 			\addcontentsline{toc}{subsection}{Space Curves}
-			A \textbf{space curve} is a set $C$ of all points $(x, y, z)$ in space where $x$, $y$, and $x$, $y$, and $z$ are determined by continuous real-valued functions on an interval $I$. These functions' equations are the \textbf{parametric equations of $\bm{C}$}, and $t$ is its \textbf{parameter}.
+			A \textbf{space curve} is a set $C$ of all points $(x, y, z)$ in space where $x$, $y$, and $x$, $y$, and $z$ are determined by continuous real-valued functions on an interval $I$. These functions' equations are the \textbf{parametric equations of $\bm{C}$}, and $t$ is its \textbf{parameter}. \\
+			The collision of two space curves (being equal at the same parameter value) can be determined by equating each corresponding component and seeing if there are any values of the component for which all three equations are satisfied. \\
+			The intersection of two space curves can be determined by writing the equations in terms of different parameters, creating a system of equations equating each corresponding component and solving for one of the parameters to plug back into its corresponding vector equation to find the point.
 	\section{Derivatives and Integrals of Vector Functions}
 		\subsection*{Derivatives}
 			\addcontentsline{toc}{subsection}{Derivatives}
@@ -79,23 +81,64 @@
 				This \textbf{Parametrization of a curve with respect to arc length} can be used to analyze the curve, as arc length is not dependent on a particular coordinate system of parametrization, instead being an inherent geometric property of the curve's.
 			\subsection*{Curvature}
 				\addcontentsline{toc}{subsection}{Curvature}
-					A parametrization is called \textbf{smooth} on an interval if its derivative is continuous and not equal to $\vec{0}$ at any point in the interval. \\
-					The curvature of a curve $C$ at a given point is a measure of how quickly it is changing direction. More specifically, it is the magnitude of the rate of change of the unit tangent vector with respect to arc length. (Arc length is used due to its parametrization-independence.)
-					\callout{17}{
-						The \textbf{curvature} of a curve is 
-							\[\kappa = \left|\der{\vec{T}}{s}\right|\]
-					}
-					The curvature can be more easily computed by expressing it in terms of parameter $t$ instead of $s$. Using chain rule, 
-						\[
-							\der{\vec{T}}{s} = \der{\vec{T}}{s}\der{s}{t}
-								\implies \kappa
-								= \left|\der{\vec{T}}{s}\right|
-								= \left|{\frac{\d \vec{T} / \d t}{\d s / \d t}}\right|
-						\]
-					Rewriting by differentiating the formula for arc length, 
-						\[\kappa(t) = \frac{|\vec{T}'(t)|}{|\vec{r}\vps'(t)|}\]
-					It may sometimes be more convenient to re-express curvature as
-						\[\kappa(t) = \frac{|\vec{r}\vps'(t) \times \vec{r}\vps''(t)|}{|\vec{r}\vps'(t)|}\]
-				\subsection*{The Normal and Binormal Vectors}
-					\addcontentsline{toc}{subsection}{The Normal and Binormal Vectors}
+				A parametrization is called \textbf{smooth} on an interval if its derivative is continuous and not equal to $\vec{0}$ at any point in the interval. \\
+				The curvature of a curve $C$ at a given point is a measure of how quickly it is changing direction. More specifically, it is the magnitude of the rate of change of the unit tangent vector with respect to arc length. (Arc length is used due to its parametrization-independence.)
+				\callout{17}{
+					The \textbf{curvature} of a curve is 
+						\[\kappa = \left|\der{\vec{T}}{s}\right|\]
+				}
+				The curvature can be more easily computed by expressing it in terms of parameter $t$ instead of $s$. Using chain rule, 
+					\[
+						\der{\vec{T}}{s} = \der{\vec{T}}{s}\der{s}{t}
+							\implies \kappa
+							= \left|\der{\vec{T}}{s}\right|
+							= \left|{\frac{\d \vec{T} / \d t}{\d s / \d t}}\right|
+					\]
+				Rewriting by differentiating the formula for arc length, 
+					\[\kappa(t) = \frac{|\vec{T}'(t)|}{|\vec{r}\vps'(t)|}\]
+				It may sometimes be more convenient to re-express curvature as
+					\[\kappa(t) = \frac{|\vec{r}\vps'(t) \times \vec{r}\vps''(t)|}{|\vec{r}\vps'(t)|}\]
+			\subsection*{The Normal and Binormal Vectors}
+				\addcontentsline{toc}{subsection}{The Normal and Binormal Vectors}
+				As the magnitude of the unit tangent vector is always 1 (by definition), the dot product of it and its derivative is 0 (as this is true of any vector function of constant magnitude). The \textbf{(principle) unit normal vector $\bm{\vec{N}}$} is the unit vector of the derivative of the unit tangent vector.
+					\[\vec{N}(t) = \frac{\vec{T}\vps'(t)}{|\vec{T}\vps'(t)|}\]
+				This vector can be thought of as indicating the direction that a curve is turning at a point. \\
+				The \textbf{binormal vector $\bm{\vec{B}}$} is the cross product of the unit tangent and normal vectors.
+					\[\vec{B}(t) = \vec{T}(t) \times \vec{N}(t)\]
+				The plane determined by the normal and binormal vectors at point $P$ on curve $C$ is the \textbf{normal plane}. It consists of all lines that are orthogonal to the tangent vector. \\
+				The plane determined by the tangent and normal vectors is the \textbf{osculating plane}. \\
+				The \textbf{circle of curvature} or \textbf{osculating circle} at point $P$ is the circle in the osculating plane with radius $1/\kappa$ whose edge contains $P$. The center of this circle is the \textbf{center of curvature}.
+			\subsection*{Torsion}
+				\addcontentsline{toc}{subsection}{Torsion}
+				The curvature at a point indicates how tightly a curve \enquote{bends}. As the tangent vector is orthogonal to the normal plane, $\d\vec{T}/\d s$ shows how the normal plane changes moving along the curve. As the binormal vector is orthogonal to the osculating plane, $\d\vec{B}/\d s$ shows how the osculating plane changes. \\
+				As $\d\vec{B}/\d s$ is parallel to the normal vector, there is a scalar $\tau$ such that
+					\[\der{\vec{B}}{s} = -\tau\vec{N}\]
+				Taking the dot product with $\vec{N}$ on both sides,
+					\[\tau(t) = -\der{\vec{B}}{s} \cdot \vec{N}\]
+				Torsion is easier to compute using parameter $t$, so using chain rule, 
+					\[\tau(t) = -\frac{\vec{B}\vps(t) \cdot \vec{N}(t)}{|\vec{r}\vps'(t)|}\]
+				Torsion can also be computed as
+					\[\tau(t) = \frac{(\vec{r}\vps'(t) \times \vec{r}\vps''(t)) \cdot \vec{r}\vps'''(t)}{|\vec{r}\vps'(t) \times \vec{r}\vps''(t)|^2}\]
+		\section{Motion in Space: Velocity and Acceleration}
+			\subsection*{Velocity, Speed, and Acceleration}
+				\addcontentsline{toc}{subsection}{Velocity, Speed, and Acceleration}
+				\textbf{Velocity} is the derivative of position with respect to time.
+					\[\vec{v}(t) = \der{\vec{r}}{t}\]
+				\textbf{Speed} is the magnitude of velocity. It can also be found as the derivative of arc length (distance traveled) with respect to time.
+					\[|\vec{v}(t)| = \der{s}{t}\]
+				\textbf{Acceleration} is the derivative of velocity.
+					\[\vec{a}(t) = \der{\vec{v}}{t} = \der{^2\vec{r}}{t^2}\]
+				\textbf{Newton's Second Law of Motion} states that for a force $\vec{F}$ acting on an object of mass $m$ that produces an acceleration $\vec{a}$,
+					\[\vec{F}(t) = m\vec{a}(t)\]
+			\subsection*{Projectile Motion}
+				\addcontentsline{toc}{subsection}{Projectile Motion}
+					The magnitude of acceleration due to gravity is
+						\[g \approx 9.8\,\mathrm{m/s^2}\]
+			\subsection*{Tangential and Normal Components of Acceleration}
+				\addcontentsline{toc}{subsection}{Tangential and Normal Components of Acceleration}
+					 The tangential and normal components of acceleration can be found as
+					 	\begin{align*}
+					 		a_T &= \der{|\vec{v}|}{t} &
+					 				a_N &= \kappa|\vec{v}|^2	
+					 	\end{align*}
 \end{document}
