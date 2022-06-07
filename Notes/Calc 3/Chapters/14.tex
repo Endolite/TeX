@@ -1,2 +1,71 @@
 \documentclass[../Calculus_\Roman{3}]{subfiles}
 
+\begin{document}
+	\section{Functions of Several Variables}
+		\subsection*{Functions of Two Variables}
+			\addcontentsline{toc}{subsection}{Functions of Two Variables}
+			\callout{17}{
+				A \textbf{function of two variables} is a rule that assigns to each ordered pair of real numbers in its domain to a real number in its range.
+			}
+			For a function $z = f(x, y)$, $x$ and $y$ are the \textbf{independent variables} and $z$ is the \textbf{dependent variable}. \\
+			A function of two variables is a function with its domain as a subset of $\R^2$ and its range is a subset of $\R$.
+		\subsection*{Graphs}
+			\addcontentsline{toc}{subsection}{Graphs}
+			\callout{17}{
+				The \textbf{graph} of two-variable function $f$ is the set of all points $(x, y, z)$ in $\R^3$ such that $z = f(x, y)$ and $(x, y)$ is in a subset of $\R^2$.
+			}
+		\subsection*{Level Curves and Contour Maps}
+			\callout{17}{
+				The \textbf{level curves} of a function $F$ of two variables are the curves with equations $f(x, y) = k$ where $k$ is a constant within the range of $f$.
+			}
+			A collection of level curves is a \textbf{contour map}.
+	\section{Limits and Continuity}
+		\subsection*{Limits of Functions of Two Variables}
+		\addcontentsline{toc}{subsection}{Limits of Functions of Two Variables}
+			The notation
+				\[\lim_{(x, y) \to (a, b)} f(x, y) = L\]
+				is used to denote that the values of $f(x, y)$ approaches $L$ as $x$ approaches $a$ and $y$ approaches $b$.
+			\callout{17}{
+				For a function of two variables $f$, the \textbf{limit of $\bm{f(x, y)}$ as $\bm{(x, y)}$ approaches $\bm{a, b}$} is denoted as
+				\[\lim_{(x, y) \to (a, b)} f(x, y)\].
+				This is equal to $L$ if, for every $\epsilon > 0$ there is a corresponding number $\delta > 0$ such that 
+					\[(x, y) \in D \land 0 < \sqrt{(x - a)^2 + (y - b)^2} < \delta \implies |f(x, y) - L| < \epsilon\]
+			}
+		\subsection*{Showing that a Limit Does Not Exist}
+			\addcontentsline{toc}{subsection}{Showing that a Limit Does Not Exist}
+				The limit does not exist at $(a, b)$ if $f$ approaches two different values when approaching from different paths.
+		\subsection*{Properties of Limits}
+			\addcontentsline{toc}{subsection}{Properties of Limits}
+			The following are true of limits:
+				\begin{align*}
+					\lim_{x \to a}[f(x) \pm g(x)] &= \lim_{x\ to a}f(x) \pm \lim_{x\ to a}g(x) &
+						\lim_{x \to a} cf(x) &= c\lim_{x\to a}f(x) \\
+					\lim_{x \to a}[f(x) \times g(x)] &= \lim_{x \to a} f(x) \times \lim_{x \to a} g(x) &
+						\lim_{x \to a}\left[\frac{f(x)}{g(x)}\right] &= \frac{\lim_{x \to a}f(x)}{\lim_{x \to a}g(x)}
+				\end{align*}
+			A \textbf{polynomial} function is a sum of terms in the form $cx^my^n$ where $c$ is a constant and $m$ and $n$ are nonnegative integers. A \textbf{rational function} is a ratio of two polynomials.
+		\subsection*{Continuity}
+			\addcontentsline{toc}{subsection}{Continuity}
+				\callout{17}{
+					A function $f(x, y)$ is \textbf{continuous} at $(a, b)$ if
+						\[\lim_{(x, y) \to (a, b)}f(x, y) = f(a, b)\]
+					It is continuous on an interval if this it is continuous at every point within.
+				}
+				Polynomials and rational functions are continuous on their entire domains.
+		\subsection*{Functions of Three or More Variables}
+			\addcontentsline{toc}{subsection}{Functions of Three or More Variables}
+				Everything thus far can be extended to functions of more than two variables.
+	\section{Partial Derivatives}
+		\subsection*{Partial Derivatives of Functions of Two Variables}
+			A \textbf{partial derivative} of a two-variable function assumes treats all but the variable being differentiated with respect to as constants. It is the instantaneous rate of change in the direction of the variable. \\
+			The partial derivative of a function $f$ with respect to variable $x$ is denoted $f_x$. It can also be denoted as
+				\[\pder{f}{x}\]
+			\callout{17}{
+				The partial derivatives of a function $f$ are the functions $f_x$ and $f_y$, defined as
+					\begin{align*}
+						f_x(x, y) &= \lim_{h \to 0}\left[\frac{f(x + h, y) - f(x, y)}{h}\right] &
+						f_y(x, y) &= \lim_{h \to 0}\left[\frac{f(x, y + h) - f(x, y)}{h}\right]
+					\end{align*}
+			}
+			The partial derivative of $f(x, y)$ with respect to $x$ is the slope of the tangent line parallel to the $x$-axis while that with respect to $y$ is the slope of the tangent line parallel to the $y$-axis.
+\end{document}
