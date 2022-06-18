@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin = 0.75 in]{geometry}
+
+% Configuration
+\title{Assignment 5}
+\author{Arnav Patri}
+
+% Notation Macros
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\vi}{\text{\^\i}}
+\newcommand{\vj}{\text{\^\j}}
+\newcommand{\vk}{\text{\^k}}
+\newcommand{\vps}{\hspace{0.5m}}
+
+\begin{document}
+	\maketitle
+		\begin{enumerate}
+			\item
+				Find the Directional derivative of the function $f(x, y) = x^3y - 2x^2y^2$ in the direction of the vector $\vec{v} = \vi + 2\vj$ at the point $P(1, 1)$.
+			\item
+				Find $\pder{z}{z}$ and $\pder{z}{y}$ for $x^2 - y^2 + z^2 - 2z = 4$
+				\begin{itemize}[ ]
+					\item \textbf{Solution}
+						\begin{align*}
+							\pder{}{x}(x^2 - y^2 + z^2 - 2z) &= \pder{}{x}(4) 
+								&\pder{}{y}(x^2 - y^2 + z^2 - 2z)
+									&= \pder{}{y}(4) \\
+							2x - 0 + 2z\pder{z}{x} - 2\pder{z}{x} &= 0
+								&0 - 2y + 2z\pder{z}{y} - 2\pder{z}{y}
+									&= 0 \\
+							\pder{z}{x}(2z - 2) &= -2x
+								&\pder{z}{y}(2z - 2)
+									&= 2y \\
+							\pder{z}{x} &= -\frac{x}{z - 1}
+								&\pder{z}{y}
+									&= \frac{y}{z - 1}
+						\end{align*}
+				\end{itemize}
+			\item
+				Find the local maximum and local minmimum values and saddle points of $f(x, y) = xy - 2x - 2y - x^2 - y^2$.
+		\end{enumerate}
+\end{document}

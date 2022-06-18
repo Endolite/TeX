@@ -27,9 +27,9 @@
 				is used to denote that the values of $f(x, y)$ approaches $L$ as $x$ approaches $a$ and $y$ approaches $b$.
 			\callout{17}{
 				For a function of two variables $f$, the \textbf{limit of $\bm{f(x, y)}$ as $\bm{(x, y)}$ approaches $\bm{a, b}$} is denoted as
-				\[\lim_{(x, y) \to (a, b)} f(x, y)\].
-				This is equal to $L$ if, for every $\epsilon > 0$ there is a corresponding number $\delta > 0$ such that 
-					\[(x, y) \in D \land 0 < \sqrt{(x - a)^2 + (y - b)^2} < \delta \implies |f(x, y) - L| < \epsilon\]
+				\[\lim_{(x, y) \to (a, b)} f(x, y)\]
+				This is equal to $L$ if, for every $\varepsilon > 0$ there is a corresponding number $\delta > 0$ such that 
+					\[(x, y) \in D \land 0 < \sqrt{(x - a)^2 + (y - b)^2} < \delta \implies |f(x, y) - L| < \varepsilon\]
 			}
 		\subsection*{Showing that a Limit Does Not Exist}
 			\addcontentsline{toc}{subsection}{Showing that a Limit Does Not Exist}
@@ -57,6 +57,7 @@
 				Everything thus far can be extended to functions of more than two variables.
 	\section{Partial Derivatives}
 		\subsection*{Partial Derivatives of Functions of Two Variables}
+			\addcontentsline{toc}{subsection}{Partial Derivatives of Functions of Two Variables}
 			A \textbf{partial derivative} of a two-variable function assumes treats all but the variable being differentiated with respect to as constants. It is the instantaneous rate of change in the direction of the variable. \\
 			\callout{17}{
 				The partial derivatives of a function $f$ are the functions $f_x$ and $f_y$, defined as
@@ -77,7 +78,7 @@
 				\]
 			When evaluating a partial derivative with respect to one variable, all other dependent variables can be regarded as constant.
 		\subsection*{Interpretations of Partial Derivatives}
-			\addcontentsline{toc}{subsection}
+			\addcontentsline{toc}{subsection}{Interpretations of Partial Derivatives}
 			The partial derivative of $f(x, y)$ with respect to $x$ is the slope of the tangent line parallel to the $x$-axis while that with respect to $y$ is the slope of the tangent line parallel to the $y$-axis.
 		\subsection*{Higher Derivatives}
 			\addcontentsline{toc}{subsection}{Higher Derivatives}
@@ -110,5 +111,144 @@
 			}
 		\subsection*{Linear Approximations}
 			\addcontentsline{toc}{subsection}{Linear Approximations}
-			The \textbf{linearization} of $f$ at $(a, b)$ 
+			The \textbf{linearization} $L$ of $f$ at $(a, b)$ is its tangent plane, which can be used to approximate $f(x, y)$ at points close to $(a, b)$.
+				\[L(x, y) = f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0)\]
+			\callout{17}{
+				If $z = f(x)$, $f$ can be said to be \textbf{differentiable} if $\Delta z$ can be expressed as
+					\[\Delta z = f_x(a, b)\Delta x + f_y(a, b)\Delta y + \varepsilon_1\Delta x + \varepsilon_2\Delta y\]
+					where $\varepsilon_1$ and $\varepsilon_2$ are functions of $\Delta x$ and $\Delta y$ that approach 0 as $(\Delta x, \Delta y)$ approaches $(0, 0)$.
+			}
+		\subsection*{Differentials}
+			\addcontentsline{toc}{subsection}{Differentials}
+			For a differentiable function of a single variable $y = f(x)$, the differential $\d x$ is defined to be an independent variable. The differential of $y$ is then defined as
+				\[\d y = f'(x)\d x\]
+			$\Delta y$ is the change in the curve $f(x)$ while $\d y$ is the change in the tangent line for a change in $x$ $\d x = \Delta x$. \\
+			For a differentiable function of two variables $z = f(x, y)$, the \textbf{differentials} $\d x$ and $\d y$ are defined to be independent variables. The \textbf{(total) differential} $\d z$ is defined by
+				\[\d z = f_x(x, y)\d x + f_y(x, y)\d y = \pder{z}{x}\d x + \pder{z}{y}\d y\]
+	\section{The Chain Rule}
+		The chain rule for functions of a single variable provides a rule for differentiating a composite function; if $y = f(u)$ and $u = g(x)$, $y$ is an indirectly differentiable function of $x$ with derivative
+			\[\der{y}{x} = \der{y}{u}\der{u}{x}\]
+		\subsection*{The Chain Rule: Case 1}
+			\addcontentsline{toc}{subsection}{The Chain Rule: Case 1}
+				For a function of more than 1 variable, there are multiple versions of the chain rule. The first version deals with the case where $z = f(x, y)$ and both $x$ and $y$ are functions of variable $t$, making $z$ an indirect function of $t$.
+				\callout{17}{
+					If $z = f(x, y)$ is a differentiable function of $x$ and $y$ where $x$ and $y$ are functions of $t$, then $z$ is a differentiable function of $t$ such that
+						\[\der{z}{t} = \pder{z}{x}\der{x}{t} + \pder{z}{y}\der{x}{t}\]
+				}
+		\subsection*{The Chain Rule: Case 2}
+			\addcontentsline{toc}{subsection}{The Chain Rule: Case 2}
+			\callout{17}{
+				If $z = f(x, y)$ is a differentiable function of $x$ and $y$ where $x$ and $y$ are functions of $t$ and $u$, 
+					\begin{align*}
+						\pder{z}{t} &= \pder{z}{x}\pder{x}{t} + \pder{z}{y}\pder{y}{t} &
+							\pder{z}{u} &= \pder{z}{x}\pder{x}{u} + \pder{z}{y}\pder{y}{u}
+					\end{align*}
+			}
+			In this case, $t$ and $u$ are \textbf{independent variables}, $x$ and $y$ are \textbf{intermediate variables}, and $z$ is the \textbf{dependent} variable.
+		\subsection*{The Chain Rule: General Version}
+			\addcontentsline{toc}{subsection}{The Chain Rule: General Version}
+			\callout{17}{
+				If $u$ is a differentiable function of $n$ variables $x_1, x_2, \ldots, x_n$, each of which is a differentiable function of $m$ variables $t_1, t_2, \ldots, t_m$,
+					\[\pder{u}{t_i} = \sum_{j = 1}^{i}\pder{u}{x_m}\pder{x_i}{t_i}\]
+					for each $i$ in $1, 2, \ldots, m$.
+			}
+		\subsection*{Implicit Differentiation}
+			\addcontentsline{toc}{subsection}{Implicit Differentiation}
+			Suppose that an equation of the form $F(x, y) = 0$ defines $y$ implicitly as a function of $x$. If $F$ is differentiable, Case 1 of the Chain Rule can be applied to differentiate both sides of the equation.
+				\begin{align*}
+					0 &= F(x, y)  \\
+					0 &= \pder{F}{x}\der{x}{x} + \pder{F}{y}\der{y}{x}
+				\end{align*}
+				As $\d x/\d x$ is equal to 1,
+				\begin{align*}
+					\der{y}{x} &= -\frac{\pder{F}{x}}{\pder{F}{y}} = -\frac{F_x}{F_y}
+				\end{align*}
+			The \textbf{Implicit Function Theorem} states that if $F$ is defined on a disk containing $(a, b)$ where $F(a, b)$ = 0, $F_y(a, b) \ne 0$, and $F_x$ and $F_y$ are continuous on the disk, then the equation $F(x, y) = 0$ defined $y$ as a function of $x$ near the point $(a, b)$.
+	\section{Directional Derivatives and the Gradient Vector}
+		\subsection*{Directional Derivatives}
+			\addcontentsline{toc}{subsection}{Directional Derivatives}
+			The partial derivatives $f_x$ and $f_y$ represent the rates of change in the $x$ and $y$ directions. To find the rate of change in the direction of an arbitrary unit vector $\vec{u} = \langle a, b \rangle$, the slope of the line tangent to the curve $C$ formed by the intersection of the surface $S$ formed by the equation $z = f(x, y)$ and the vertical plane that passes through the point of differentiation $P(x_0, y_0, z_0)$ in the direction of $\vec{u}$ can be evaluated. \\
+			If $Q(x, y, z)$ is another point on $C$ and $P'$ and $Q'$ are the projections of $P$ and $Q$ onto the $xy$-plane, the vector $\Vec{P'Q'}$ is parallel to $\vec{u}$, so
+				\[\Vec{P'Q'} = h\vec{u}\]
+				for some scalar $h$. From this, it can be seen that
+				\begin{align*}
+					x - x_0 &= ha &
+						y - y_0 &= hb \\
+					x &= x_0 + ha &
+						y &= y_0 + hb
+				\end{align*}
+				Applying the difference quotient using $z$,
+				\[\frac{\Delta z}{h} = \frac{f(x_0 + ha, y_0 + hb) - f(x_0, y_0)}{h}\]
+				Taking the limit as $h$ approaches 0 provides the slope of the tangent line in the direction of $\vec{u}$.
+			\callout{17}{
+				The \textbf{directional derivative} of $f$ at $(x_0, y_0)$ in the direction of unit vector $\vec{u} = \langle a, b \rangle$ is
+					\[D_{\vec{u}}f(x_0, y_0) = \lim_{h \to 0}\left[\frac{f(x_0 + ha, y_0 + hb) - f(x_0, y_0)}{h}\right]\]
+			}
+			The directional derivative can be computed without using limits as well.
+			\callout{17}{
+				If $f$ is a differentiable function of $x$ and $y$, then $f$ has a directional derivative in the direction of any unit vector $\vec{u} = \langle a, b, \rangle$ and
+					\[D_{\vec{u}}f(x, y) = f_x(x, y)a + f_y(x, y)b\]
+			}
+		\subsection*{The Gradient Vector}
+			\addcontentsline{toc}{subsection}{The Gradient Vector}
+			The equation for the directional derivative of a differentiable function can be written as the dot product
+				\[D_{\vec{u}}f(x, y) = \langle f_x(x, y), f_y(x, y) \rangle \cdot \vec{u}\]
+				The first vector in this dot product is called the \textbf{gradient} of $f$.
+			\callout{17}{
+				If $f$ is a function of two variables $x$ and $y$, the \textbf{gradient} of $f$ is the vector function $\nabla f$ defined by
+					\[
+						\nabla f(x, y) = \langle f_x(x, y), f_y(x, y) \rangle 
+								= \pder{f}{x}\vi + \pder{f}{y}\vj
+					\]			
+			}
+			Rewriting the equation for the directional derivative using the gradient vector,
+				\[D_{\vec{u}}f(x, y) = \nabla f(x, y) \cdot \vec{u}\]
+		\subsection*{Functions of Three Variables}
+			\addcontentsline{toc}{subsection}{Functions of Three Variables}
+			\callout{17}{
+				The \textbf{directional derivative} of $f$ at $(x_0, y_0, z_0)$ in the direction of unit vector $\vec{u} = \langle a, b, c \rangle$ is
+					\[D_{\vec{u}}f(x_0, y_0, z_0) = \lim_{h \to 0}\left[\frac{f(x_0 + ha, y_0 + hb, z_0 + hc) - f(x_0, y_0, z_0)}{h}\right]\]
+			}
+			This can be rewritten using vectors, defining $\vec{r}_0$ to be $\langle x_0, y_0$ if $n = 2$ and $\langle x_0, y_0, z_0$ is $n = 3$.
+				\[D_{\vec{u}}f(\vec{r}_0) = \lim_{x \to 0}\left[\frac{f(\vec{r}_0 + h\vec{u}) - f(\vec{r}_0)}{h}\right]\]
+			The \textbf{gradient vector} is
+				\[\nabla f = \langle f_x, f_y, f_z \rangle = \pder{f}{x}\vi + \pder{f}{y}\vj + \pder{f}{z}\vk\]
+				Rewriting the directional derivative using the gradient vector,
+					\[D_{\vec{u}}f(x, y, z) = \nabla f(x, y, z) \cdot \vec{u}\]
+		\subsection*{Maximizing the Directional Derivative}
+			\addcontentsline{toc}{subsection}{Maximizing the Directional Derivative}
+				The way that the directional derivative is defined, it is clear that its maximum magnitude is simply that of gradient.
+					\[\max\{D_{\vec{u}}f(\vec{r})\} = |\nabla f(\vec{r})|\]
+				As the dot product is maximized for parallel vectors, this must occur when $\vec{u}$ is in the same direction as the gradient.
+		\subsection*{Tangent Planes to Level Surfaces}
+			\addcontentsline{toc}{subsection}{Tangent Planes to Level Surfaces}
+			Suppose the surface $S$ has equation $F(x, y, z) = k$ (making it a level surface of a function $F$ for all 3 variables). Let point $P(x_0, y_0, z_0)$ be a point on $S$ and $C$ be a curve on $S$ that passes through $P$. $C$ is described by a continuous vector function $\vec{r}(t) = \langle x(t), y(t), z(t) \rangle$. Let $\vec{r}(t_0) = \langle x_0, y_0, z_0 \rangle$. As $P$ is on $C$, it must satisfy the equation of $S$.
+				\[F(x(t), y(t), z(t)) = k\]
+				Using the chain rule to differentiate,
+					\[\pder{F}{x}\der{x}{t} + \pder{F}{y}\der{y}{t} + \pder{F}{z}\der{z}{t} = 0\]
+				This can be rewritten as
+				\[\nabla F \cdot \vec{r}\vps'(t) = 0\]
+				Plugging in the values for $P$,
+					\[\nabla F(x_0, y_0, z_0) \cdot \vec{r}\vps'(t_0) = 0\]
+				This means that the gradient vector at $P$ is perpendicular to the tangent vector to any curve on $S$ that passes through $P$. If $\nabla F(x_0, y_0, z_0 \ne \vec{0}$, the \textbf{tangent plane to the level surface} $F(x, y, z) = k$ at $P$ can be defined as $F(x, y, z) = k$ at $P(x_0, y_0, z_0)$ as the plane passing through $P$ with normal vector $\nabla F(x_0, y_0, z_0)$. As an equation,
+					\[F_x(x_0, y_0, z_0)(x - x_0) + F_y(x_0, y_0, z_0)(y - y_0) + F_z(x_0, y_0, z_0)(z - z_0) = 0\]
+			The \textbf{normal line} to $S$ at $P$ is that passing through $P$ perpendicular to the tangent plane. This is given by the gradient vector, making its symmetric equations
+				\[\frac{x - x_0}{F_x(x_0, y_0, z_0)} = \frac{y - y_0}{F_y(x_0, y_0, z_0)} = \frac{z - z_0}{F_z(x_0, y_0, z_0)}\]
+		\subsection*{Significance of the Gradient Vector}
+			\addcontentsline{toc}{subsection}{Significance of the Gradient Vector}
+			\callout{17}{\paragraph{Properties of the Gradient Vector}
+				Let $f$ be a differentiable function of 2 or 3 variables and that $\lambda f \ne \vec{0}$.
+					\begin{enumerate}
+						\item
+							The directional derivative of $f$ at $\vec{r}$ in the direction of unit vector $\vec{u}$ is given by
+								\[D_{\vec{u}}f(\vec{r}) = \nabla f(\vec{r}) \cdot \vec{u}\]
+						\item
+							$\nabla f(\vec{r})$ is in the direction of the maximum rate of increase at $\vec{r}$. This maximum rate of change is $|\nabla f(\vec{r})|$
+						\item
+							$\nabla f(\vec{r})$ is perpendicular to the level curve/surface of $f$ through $\vec{r}$.
+					\end{enumerate}
+			}
+	\section{Maximum and Minimum Values}
+		\subsection*{Maximum and Minimum Local Values}
+			\addcontentsline{toc}{subsection}{Minimum and Maximum Local Values}
 \end{document}

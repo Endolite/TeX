@@ -30,19 +30,22 @@
 \cellspacebottomlimit10pt
 
 % Notation
-\DeclareMathOperator{\comp}{comp}
-\newcommand{\dd}{\d}
-\renewcommand{\d}{\mathrm{d}}
-\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
-\DeclareMathOperator{\orth}{orth}
-\DeclareMathOperator{\proj}{proj}
-\renewcommand{\Vec}[1]{\overrightarrow{#1}}
-\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\vi}{\text{\^\i}}
-\newcommand{\vj}{\text{\^\j}}
-\newcommand{\vk}{\text{\^k}}
-\newcommand{\vps}{\hspace{0.5mm}}
-\newcommand{\R}{\mathbb{R}}
+	% Derivatives
+		\newcommand{\dd}{\d}
+		\renewcommand{\d}{\mathrm{d}}
+		\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+		\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+	% Vectors
+		\DeclareMathOperator{\comp}{comp}
+		\DeclareMathOperator{\orth}{orth}
+		\DeclareMathOperator{\proj}{proj}
+		\renewcommand{\Vec}[1]{\overrightarrow{#1}}
+		\newcommand{\vi}{\text{\^\i}}
+		\newcommand{\vj}{\text{\^\j}}
+		\newcommand{\vk}{\text{\^k}}
+		\newcommand{\vps}{\hspace{0.5mm}}
+	% Sets
+		\newcommand{\R}{\mathbb{R}}
 
 % Utilities
 \newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
