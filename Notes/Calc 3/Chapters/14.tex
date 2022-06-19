@@ -249,6 +249,43 @@
 					\end{enumerate}
 			}
 	\section{Maximum and Minimum Values}
-		\subsection*{Maximum and Minimum Local Values}
-			\addcontentsline{toc}{subsection}{Minimum and Maximum Local Values}
+		\subsection*{Local Maximum and Minimum Values}
+			\addcontentsline{toc}{subsection}{Local Minimum and Maximum Values}
+			The local extrema of a multivariable function $f(x, y)$ are the points at which $f(x, y)$ is maximized or minimized relative to all points around it. \\
+			In order for $f$ to have a local extremum at $(a, b)$, its first derivatives with respect to $x$ and $y$ must be 0 at that point (should they exist). \\
+			A \textbf{critical point} is a point at which the first derivatives are both equal to 0. A critical point that is not an extremum is a \textbf{saddle point}.
+			\callout{17}{
+				\paragraph{Second Derivatives Test}
+					If the second partial derivatives of $f$ are continuous on a disk with center $(a, b)$ and $(a, b)$ is a critical point,
+						\begin{itemize}
+							\item
+								If $D > 0$
+								\begin{itemize}
+									\item
+										and $f_{xx}(a, b) > 0$, $f(a, b)$ is a local minimum
+									\item
+										and $f_{xx}(a, b) < 0$, $f(a, b)$ is a local maximum
+								\end{itemize}
+							\item
+								If $D < 0$, $f(a, b)$ is a saddle point
+						\end{itemize}
+						where
+						\[D = D(a, b) = f_{xx}(a, b)f_{yy}(a, b) - (f_{xy}(ab))^2\]
+			}
+			$D$ can be remembered as the determinant
+				\[
+					D
+						= \begin{vmatrix}
+							f_{xx} &
+								f_{xy} \\
+							f_{yx} &
+								f_{yy}
+						\end{vmatrix}
+						=
+				\]
+	\section{Lagrange Multipliers}
+		Lagrange's method enables the optimization of a function $f(x, y, z)$ subject to a constraint of the form $g(x, y, z) = k$.
+		\subsection*{Lagrange Multipliers}
+			\addcontentsline{toc}{subsection}{Lagrange Multipliers}
+			To maximize $f(x, y)$ with constraint $g(x, y) = k$ is to find the maximum value of $c$ for which the level curve $f(x, y) = c$ intersects $g(x, y) = k$. This occurs when the curves share a common tangent line. The normal lines where they touch are identical, meaning that the gradient vectors are also congruent.
 \end{document}
