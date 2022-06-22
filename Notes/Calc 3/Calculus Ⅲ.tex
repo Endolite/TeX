@@ -1,33 +1,34 @@
 \documentclass[12pt, A4]{report}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{bm}
-\usepackage{cellspace}
-\usepackage{csquotes}
-\usepackage[hang,flushmargin]{footmisc}
-\usepackage{hyperref}
-\usepackage[margin=0.5in]{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage{moresize}
-\usepackage{multirow}
-\usepackage{pgfplots}
-\usepackage{tikz}
-\usepackage{tikz-3dplot}
-\usetikzlibrary{arrows.meta, angles, calc, quotes}
+%Packages
+	\usepackage{amsmath}
+	\usepackage{amssymb}
+	\usepackage{bm}
+	\usepackage{cellspace}
+	\usepackage{csquotes}
+	\usepackage[hang,flushmargin]{footmisc}
+	\usepackage{hyperref}
+	\usepackage[margin=0.5in]{geometry}
+	\usepackage[utf8]{inputenc}
+	\usepackage{moresize}
+	\usepackage{multirow}
+	\usepackage{pgfplots}
+	\usepackage{tikz}
+	\usepackage{tikz-3dplot}
+	\usetikzlibrary{arrows.meta, angles, calc, quotes}
 
 % Configuration
-\title{Calculus \Roman{3}}
-\author{Arnav Patri}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
-\cellspacetoplimit10pt
-\cellspacebottomlimit10pt
+	\title{Calculus \Roman{3}}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
 
 % Notation
 	% Derivatives
@@ -48,9 +49,9 @@
 		\newcommand{\R}{\mathbb{R}}
 
 % Utilities
-\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
-\newcommand{\comment}[1]{}
-\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+	\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+	\newcommand{\comment}[1]{}
+	\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
 
 \usepackage{subfiles}
 \begin{document}
@@ -63,4 +64,6 @@
 			\subfile{chapters/13.tex}
 		\chapter{Partial Derivatives}
 			\subfile{chapters/14.tex}
+		\chapter{Multiple Integrals}
+			\subfile{15.tex}
 \end{document}

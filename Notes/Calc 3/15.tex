@@ -1,0 +1,72 @@
+\documentclass[../Calculus \Roman{3}.tex]{subfiles}
+
+\begin{document}
+	\section{Double Integrals over Rectangles}
+		Just as the area problem leads to the definite integral, the definition of the double integral can be found by attempting to find the volume of a solid.
+		\subsection*{Review of the Definite Integral}
+			\addcontentsline{toc}{subsection}{Volumes and Double Integrals}
+			To find the area of a curve $f$ over the interval $[a, b]$, the interval can be split into $n$ subintervals $[x_{i - 1}, x_i]$ of equal width $\Delta x = (b - a)/n$. Sample points $x_i^*$ can then be chosen in each subinterval. The Riemann sum
+				\[\sum_{i = 1}^n f(x_i^*)\Delta x\]
+				can be evaluated as $n$ approaches infinity to obtain the definite integral of $f$ from $a$ to $b$.
+				\[\int_a^b f(x)\,\d x = \lim_{n \to \infty}\sum_{i = 1}^n f(x_i^*)\Delta x\]
+		\subsection*{Volumes and Double Integrals}
+			\addcontentsline{toc}{subsection}{Volumes and Double Integrals}
+			Consider a function $f$ of two variables defined on a closed rectangle
+				\[R = [a, b] \times [c, d] = \left\{(x, y) \in \R^2 \mid a \le x \le b \land c \le y \le d\right\}\]
+				Suppose that $f(x, y) \ge 0$. The graph of $f$ is the surface $z = f(x, y)$. Let $S$ be a solid that lies above $R$ and under the graph of $f$.
+					\[S = \left\{(x, y, z) \in \R^3 \mid 0 \le z \le f(x, y) \land (x, y) \in R\right\}\]
+				To find the volume of $S$, $R$ can first be divided into sub-rectangles, dividing the interval $[a, b]$ into $m$ subintervals $[x_{i - 1}, x_i]$ of equal width $\Delta x = (b - a)/m$ and the interval $[c, d]$ into $n$ subintervals $[y_{i - 1}, y_i]$ of equal width $\Delta y = (d - c)/n$. Drawing lines parallel to the axes through the endpoints of these subintervals forms the sub-rectangles
+					\[R_{i,j} = [x_{i - 1}, x_i] \times [y_{i - 1}, y_i] = \{(x, y) \mid x_{i - 1} \le x \le x_i \land y_{j - 1} \le y \le y_j\}\]
+					of equal area
+						\[\Delta A = \Delta x\Delta y\]
+				Selecting a \textbf{sample point} $\bigl(x_{i, j}^*, y_{i, j}^*\bigr)$ in each $R_{i, j}$ enables the approximation of the part of $S$ that lies above $R_{i, j}$, creating boxes of volume
+					\[f\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A\]
+				The sum of these boxes can be used to approximate the total volume of $S$.
+					\[V \approx \sum_{i = 1}^m\sum_{j = 1}^n f\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A\]
+					This is referred to as the \textbf{double Riemann sum}.
+			\callout{17}{
+				The \textbf{double integral} of $f$ over the rectangle $R$ is
+					\[\iint\limits_R f(x, y)\,\d A = \lim_{m, n \to \infty}\sum_{i = 1}^m\sum_{j = 1}^n f\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A\]
+					if this limit exists.
+			}
+			This definition of the double integral means that for every number $\varepsilon > 0$, there is an integer $N$ such that
+				\[\Biggl|\iint\limits_R f(x, y)\,\d A - \sum_{i = 1}^m\sum_{j = 1}^n f\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A\Biggr| < \varepsilon\]
+				for all integers $m$ and $n$ greater than $N$ and for any choice of sample points $\bigl(x_{i, j}^*, y_{i, j}^*\bigr)$ in $R_{i, j}$. \\
+			A function is \textbf{integrable} if the limit definition of its definite integral converges. If $f$ is bounded on $R$ and $f$ is continuous over $R$ (except possibly on a finite number of smooth curves), then $f$ is integrable over $R$. \\
+			The sample point $\bigl(x_{i, j}^*, y_{i, j}^*\bigr)$ can be chosen to be any point in sub-rectangle $R_{i, j}$, but if the upper-right corner is chosen, the expression for a double integral can be simplified.
+				\[\iint f(x, y)\,\d a = \sum_{i = 1}^m\sum_{j = 1}^n f(x_i, y_j) \Delta A\]
+			\callout{17}{
+				If $f(x, y) \ge 0$, the volume $V$ of a solid that lies above rectangle $R$ and below surface $z = f(x, y)$ is
+					\[V = \iint\limits_R f(x, y)\,\d A\]
+			}
+		\subsection*{The Midpoint Rule}
+			\addcontentsline{toc}{subsection}{The Midpoint Rule}
+			\callout{17}{\paragraph{Midpoint Rule for Double Integrals}
+				\[\iint\limits_R f(x, y)\,\d A \approx \sum_{i = 1}^m\sum_{j = 1}^n f(\bar{x}_i, \bar{y}_i)\Delta A\]
+				where $\bar{x}_i$ is the midpoint of $[x_{i - 1}, x_i]$ and $\bar{y}$ is that of $[y_{i - 1}, y_i]$.
+			}
+		\subsection*{Iterated Integrals}
+			\addcontentsline{toc}{subsction}{Iterated Integrals}
+			Single definite integrals are generally far easier to solve using the fundamental theorem of calculus rather than their definition. The same is true for double integrals, simply using two single integrals. \\
+			Suppose $f$ is a function of two variables that is integrable over rectangle $R = [a, b] \times [c, d]$. The notation
+				\[\int_c^d f(x, y)\,\d y\]
+				is used to denote that $x$ is held constant and $f(x, y)$ is integrated with respect to $y$. This is called \textit{partial integration with respect to $y$}. \\
+				As the value of $\int_c^d f(x, y)\,\d y$ is dependent on $x$, it defines a function in terms of $x$. Integrating this function with respect to $x$ over $[a, b]$ results in an \textbf{iterated integral}
+				\[\int_a^b\int_c^d f(x, y)\,\d x\,\d y\]
+				This integral is evaluated \textit{from the inside out}.
+			\callout{17}{\paragraph{Fubini's Theorem}
+				If $f$ is continuous over rectangle
+					\[R = \{(x, y) \mid a \le x \le b \land c \le y \le d\}\]
+					then
+					\[
+						\iint\limits_R f(x, y)\,\d A = \int_a^b\int_c^d f(x, y)\,\d x\,\d y 
+								= \int_c^d\int_a^b f(x, y)\,\d y\,\d x
+					\]
+					so long as $f$ is bounded on $R$, $f$ is discontinuous only on a finite number of smooth curves, and the iterated integrals exist.
+			}
+			In the special case that $f(x, y)$ is factorable into the product of functions $g$ and $h$ of only $x$ and only $y$,
+				\[\iint\limits_R g(x)h(y)\,\d A = \int_a^bg(x)\,\d x\int_c^dh(y)\,\d y\]
+				where $R = [a, b] \times [c, d]$.
+		\subsection*{Average Value}
+			\addcontentsline{toc}{subsection}{Average Value}
+\end{document}

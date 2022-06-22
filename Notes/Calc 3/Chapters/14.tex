@@ -281,11 +281,43 @@
 							f_{yx} &
 								f_{yy}
 						\end{vmatrix}
-						=
 				\]
 	\section{Lagrange Multipliers}
 		Lagrange's method enables the optimization of a function $f(x, y, z)$ subject to a constraint of the form $g(x, y, z) = k$.
-		\subsection*{Lagrange Multipliers}
-			\addcontentsline{toc}{subsection}{Lagrange Multipliers}
-			To maximize $f(x, y)$ with constraint $g(x, y) = k$ is to find the maximum value of $c$ for which the level curve $f(x, y) = c$ intersects $g(x, y) = k$. This occurs when the curves share a common tangent line. The normal lines where they touch are identical, meaning that the gradient vectors are also congruent.
+		\subsection*{Lagrange Multipliers: One Constraint}
+			\addcontentsline{toc}{subsection}{Lagrange Multipliers: One Constraint}
+			To maximize $f(x, y)$ with constraint $g(x, y) = k$ is to find the maximum value of $c$ for which the level curve $f(x, y) = c$ intersects $g(x, y) = k$. This occurs when the curves share a common tangent line. The normal lines where they touch are identical, meaning that the gradient vectors are parallel, so
+				\[\nabla f(x_0, y_0) = \lambda\nabla g(x_0, y_0)\]
+				for some scalar $\lambda$, called a \textbf{Lagrange multiplier}.
+			\callout{17}{\paragraph{Method of Lagrange Multipliers}
+				To find the extrema of $f(x, y, z)$ subject to the constraint $g(x, y, z) = k$, 
+				\begin{enumerate}
+					\item
+						Find all values of $x$, $y$, $z$, and $\lambda$ such that
+							\[\nabla f(x, y, z) = \lambda\nabla g(x, y, z)\]
+							and
+							\[g(x, y, z) = k\]
+					\item
+						Evaluate $f$ at all points $(x, y, z)$ that result from step 1, comparing each result to find the extrema.
+				\end{enumerate}
+			}
+			Expanding into components creates a system of four equations that can be used to solve for the four unknowns $x$, $y$, $z$, and $\lambda$.
+			\begin{align*}
+				f_x &= \lambda g_x &
+					f_y &= \lambda g_y &
+					f_z &= \lambda g_z &
+					g(x, y, z) &= k
+			\end{align*}
+		\subsection*{Lagrange Multipliers: Two Constraints}
+			\addcontentsline{toc}{subsection}{Lagrange Multipliers: Two Constraints}
+			The extreme values of $f(x, y, z)$ can also be found under the two constraints $g(x, y, z) = k$ and $h(x, y, z) = c$. These are the extrema of $f$ on the curve of intersection $C$ of the level surfaces $g(x, y, z) = k$ and $h(x, y, z) = c$. As $\nabla g$ and $\nabla h$ are orthogonal to $g$ and $h$, they are also orthogonal to $C$. This means that $\nabla f(x_0, y_0, z_0)$ is in the plane determined by $\nabla g(x_0, y_0, z_0)$ and $\nabla h(x_0, y_0, z_0)$. As such, there are two scalars (Lagrange multipliers) $\lambda$ and $\mu$ such that
+			\[\nabla f(x_0, y_0, z_0) = \lambda\nabla g(x_0, y_0, z_0) + \mu\nabla h(x_0, y_0, z_0)\]
+			Writing this in terms of components creates a system of five equations that can be used to solve for the five unknowns $x$, $y$, $z$, $\lambda$, and $\mu$.
+			\begin{align*}
+				f_x &= \lambda g_x + \mu h_x &
+					f_y &= \lambda g_y + \mu h_y &
+					f_z &= \lambda g_z + \mu h_z &
+					g(x, y, z) &= k &
+					h(x, y, z) &= c
+			\end{align*}
 \end{document}
