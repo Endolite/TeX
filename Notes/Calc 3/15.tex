@@ -110,4 +110,31 @@
 		\subsection*{Changing the Order of Integration}
 			\addcontentsline{toc}{subsection}{Changing the Order of Integration}
 			The order of integration can be changed to make an integral easier to evaluate.
+	\section{Double Integrals in Polar Coordinates}
+		\subsection*{Review of Polar Coordinates}
+			\addcontentsline{toc}{subsection}{Review of Polar Coordinates}
+			The polar coordinates $(r, \theta)$ are related to their corresponding rectangular coordinates $(x, y)$ by the following formulas:
+			\begin{align*}
+				r^2 &= x^2 + y^2 &
+						x &= r\cos\theta &
+						y &= r\sin\theta
+			\end{align*}
+		\subsection*{Double Integrals in Polar Coordinates}
+			\addcontentsline{toc}{subsection}{Double Integrals in Polar Coordinates}
+				A \textbf{polar rectangle} $R$ is described by
+					\[R = \{(r, \theta) \mid a \le r \le b \land \alpha \le \theta \le \beta\}\]
+				\callout{17}{
+					If $f$ is continuous on polar rectangle $R$ given by
+						\[R = \{(r, \theta) \mid a \le r \le b \land \alpha \le \theta \le \beta\}\]
+						where
+						\[0 \le \beta - \alpha \le 2\pi\]
+						then
+						\[\iint\limits_R f(x, y)\,\d A = \int_\alpha^\theta\int_a^b f(r\cos\theta, r\sin\theta)r\,\d r\d\theta\]
+				}
+				\callout{17}{
+					If $f$ is continuous on a polar region $D$ of the form
+						\[D = \{(r, \theta) \mid \alpha \le \theta \le \beta \land h_1(\theta) \le r \le h_2(\theta)\]
+						then
+						\[\iint\limits_D f(x, y)\,\d A = \int_\alpha^\theta\int_{h_1(\theta)}^{h_2(\theta)} f(r\cos\theta, r\sin\theta)r\,\d r\,\d\theta\]
+				}
 \end{document}
