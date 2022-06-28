@@ -46,7 +46,7 @@
 				where $\bar{x}_i$ is the midpoint of $[x_{i - 1}, x_i]$ and $\bar{y}$ is that of $[y_{i - 1}, y_i]$.
 			}
 		\subsection*{Iterated Integrals}
-			\addcontentsline{toc}{subsction}{Iterated Integrals}
+			\addcontentsline{toc}{subsection}{Iterated Integrals}
 			Single definite integrals are generally far easier to solve using the fundamental theorem of calculus rather than their definition. The same is true for double integrals, simply using two single integrals. \\
 			Suppose $f$ is a function of two variables that is integrable over rectangle $R = [a, b] \times [c, d]$. The notation
 				\[\int_c^d f(x, y)\,\d y\]
@@ -69,4 +69,45 @@
 				where $R = [a, b] \times [c, d]$.
 		\subsection*{Average Value}
 			\addcontentsline{toc}{subsection}{Average Value}
+			The \textbf{average value} of a single-variable function $f$ on the interval $a, b$ is
+				\[f_{\avg} = \frac{1}{b - a}\int_a^b f(x)\,\d x\]
+				That of a function of two variables defined on rectangle $R$ is similarly
+				\[f_{\avg} = \frac{1}{A(R)}\iint\limits_R f(x, y)\,\d A\]
+				where $A(R)$ is the area of $R$.
+	\section{Double Integrals over General Regions}
+		\subsection*{General Regions}
+			\addcontentsline{toc}{subsection}{General Regions}
+			Suppose a general region $D$ is bounded, meaning that it can be enclosed by a rectangular region $R$. In order to integrate a function $f$ over $D$, a new function $F$ is defined with domain $R$ as
+				\[
+					F(x, y) = 
+						\begin{cases}
+ 							f(x, y) & 
+ 								(x, y) \in D \\
+ 							0 &
+ 								(x, y) \notin D \land (x, y) \in R
+				 		\end{cases}
+				\]
+				If $F$ is integrable over $R$, the \textbf{double integral of $\bm{f}$ over $\bm{d}$} is defined as
+					\[\iint\limits_D f(x, y)\,\d A = \iint\limits_R F(x, y)\,\d A\]
+			A plane region $D$ is \textbf{type \Roman{1}} if it lies between the graphs of two continuous functions of $x$.
+				\[D = \{(x, y) \mid a \le x \le b \land g_1(x) \le y \le g_2(x)\}\]
+				where $g_1$ and $g_2$ are continuous on $[a, b]$. (It should be noted that $g_1$ and $g_2$ need only be continuous, meaning that they may be piecewise.)
+			\callout{17}{
+				If $D$ is a continuous type \Roman{1} region described by
+					\[D = \{(x, y) \mid a \le x \le b \land g_1(x) \le y \le g_2(x)\}\]
+					then
+					\[\iint\limits_D f(x, y)\,\d A \int_a^b\int_{g_1(x)}^{g_2(x)} f(x, y)\,\d y\,\d x\]
+			}
+			A plane region of \textbf{type \Roman{2}} can be expressed as
+				\[D = \{(x, y) \mid c \le y \le d \land h_1(y) \le x \le h_2(y)\}\]
+				where $h_1$ and $h_2$ are continuous.
+			\callout{17}{
+				If $D$ is a continuous type \Roman{2} region described by
+					\[D = \{(x, y) \mid c \le y \le d \land h_1(y) \le x \le h_2(y)\]
+					then
+					\[\iint\limits_R f(x, y)\,\d A = \int_c^d\int_{h_1(y)}^{h_2(y)}f(x, y)\,\d x\,\d y\]
+			} 
+		\subsection*{Changing the Order of Integration}
+			\addcontentsline{toc}{subsection}{Changing the Order of Integration}
+			The order of integration can be changed to make an integral easier to evaluate.
 \end{document}
