@@ -137,4 +137,90 @@
 						then
 						\[\iint\limits_D f(x, y)\,\d A = \int_\alpha^\theta\int_{h_1(\theta)}^{h_2(\theta)} f(r\cos\theta, r\sin\theta)r\,\d r\,\d\theta\]
 				}
+	\section{Applications of Double Integrals}
+		\subsection*{Density and Mass}
+			\addcontentsline{toc}{subsection}{Density and Mass}
+			If a lamina occupies a region $D$ in the $xy$-plane and its \textbf{density} at a point $(x, y)$ in $D$ is given by $\rho(x, y)$, a continuous function on $D$, 
+				\[\rho(x, y) = \lim\frac{\Delta m}{\Delta A}\]
+				where $\Delta m$ and $\Delta A$ are the mass and area of small rectangles and the limit is taken as the dimensions of the rectangle approach 0. The total mass of the lamina is determined by
+				\[
+					m = \lim_{m, n \to \infty}\sum_{i = 1}^m\sum_{j = 1}^n\rho\bigl(x_{i,j}^*, y_{i, j}^*\bigr)\Delta A
+							= \iint\limits_D\rho(x, y)\,\d A
+				\]
+			Other types of density are similar. If an electric charge is distributed over region $D$ and the charge density is given by $\sigma(x, y)$ at point $(x, y)$ in $D$, then the total \textbf{electric charge} $Q$ is given by
+				\[Q = \iint\limits_D\sigma(x, y)\,\d A\]
+		\subsection*{Density and Mass}
+			\addcontentsline{toc}{subsection}{Density and Mass}
+			The \textbf{moment} of a lamina \textbf{about the $\bm{x}$-axis} is given by
+				\[
+					M_x = \lim_{m, n \to \infty}\sum_{i = 1}^m\sum_{j = 1}^n y_{i, j}^*\rho\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A
+							= \iint\limits_D y\rho(x, y)\,\d A
+				\]
+				The \textbf{moment about the $\bm{y}$-axis} is similarly
+					\[
+						M_y = \lim_{m, n \to \infty}\sum_{i = 1}^m\sum_{j = 1}^n x_{i, j}^*\rho\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A
+								= \iint\limits_D x\rho(x, y)\,\d A
+					\]
+			The center of mass $(\bar{x}, \bar{y})$ is defined such that $m\bar{x} = M_y$ and $m\bar{y} = M_x$. The lamina behaves as though its entire mass is concentrated at this point.
+			\callout{17}{
+				The coordinates $(\bar{x}, \bar{y})$ of the center of mass of a lamina occupying region $D$ with density function $\rho(x, y)$ are
+					\begin{align*}
+						\bar{x} &= \frac{M_y}{m} = \frac{1}{m}\iint\limits_D x\rho(x, y)\,\d A &
+								\bar{y} &= \frac{M_x}{m} = \frac{1}{m}\iint\limits_D y\rho(x, y)\,\d A
+					\end{align*}
+					where mass $m$ is given by
+						\[m = \iint\limits_D \rho(x, y)\,\d A\]
+			}
+		\subsection*{Moment of Inertia}
+			The \textbf{moment of inertia} or \textbf{second moment} of a particle of mass $m$ about an axis is defined as $mr^2$, where $m$ is the particle's mass and $r$ is its distance from the axis. Extending this concept to lamina, the \textbf{moment of inertia} of a lamina \textbf{about the $\bm{x}$-axis} is
+				\[
+					I_x = \lim_{m, n \to \infty}\sum_{i = 1}^m\sum_{j = 1}^n\bigl(y_{i, j}^*\bigr)^2\rho\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A
+							= \iint\limits_D y^2\rho(x, y)\,\d A
+				\]
+				and the \textbf{moment of inertia about the $\bm{y}$-axis} is
+					\[
+						I_y = \lim_{m, n \to \infty}\sum_{i = 1}^m\sum_{j = 1}^n\bigl(x_{i, j}^*\bigr)^2\rho\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A
+								= \iint\limits_D x^*\rho(x, y)\,\d A
+					\]
+			The \textbf{moment of inertia about the origin} or \textbf{polar moment of inertia} is
+				\[
+					I_0 = \lim_{m, n \to \infty}\sum_{i = 1}^m\sum_{j = 1}^n\Bigl(\bigl(x_{i, j}^*\bigr)^2 + \bigl(y_{i, j}^*\bigr)^2\Bigr)\rho\bigl(x_{i, j}^*, y_{i, j}^*\bigr)\Delta A
+							= \iint\limits_D \bigl(x^2 + y^2\bigr)\rho(x, y)\,\d A
+							= I_x + I_y
+				\]
+			The \textbf{radius of gyration of a lamina about an axis} is the number $R$ such that
+				\[mR^2 = I\]
+				The radii of gyration with respect to the $x$- and $y$-axes are given by
+					\begin{align*}
+						m\bbar{y}^2 &= I_x &
+								m\bbar{x}^2 &= I_y
+					\end{align*}
+					$(\bbar{x}, \bbar{y})$ is the point at which tyhe mass could be concentrated without affecting the moment of inertia with respect to the coordinate axes.
+		\subsection*{Probability}
+			\addcontentsline{toc}{subsection}{Probability}
+			The \textbf{probability density function} $f$ of a continuous random variable $X$ defines the probability of $X$ falling between $a$ and $b$ as
+				\[P(a \le X \le b) = \int_a^b f(x)\,\d x\]
+				The \textbf{joint density function} of two continuous random variables $X$ and $Y$ is a function $f$ of two variables such that the probability that $(X, Y)$ lies in a region $D$ is given by
+					\[P((X, Y) \in D) = \iint\limits_D f(x, y)\,\d A\]
+				If this region is a rectangle,
+					\[P((a \le X \le b) \land (c \le Y \le d)) = \int_a^b\int_c^d f(x, y)\,\d A\]
+				As probabilities can't be negative and are measured from 0 to 1, the
+					\begin{align*}
+						f(x, y) &\ge 0 &
+							\iint\limits_{\R^2} f(x, y)\,\d A = 1
+					\end{align*}
+			If $X$ and $Y$ are random variables with respective probability density functions $f_X$ and $f_Y$, $X$ and $Y$ are \textbf{independent random variables} if their joint density function is the product of their individual density functions.
+				\[f(x, y) = f_X(x)f_Y(y) \implies \text{$X$ and $Y$ are independent}\]
+		\subsection*{Expected Values}
+			\addcontentsline{toc}{subsection}{Expected Values}
+			The \textbf{mean} of a continuous random variable $X$ with probability density function $f$ is
+				\[\mu = \int_{-\infty}^\infty xf(x)\,\d x\]
+			If $X$ and $Y$ are independent random variables with joint density function $f$, then the \textbf{$\bm{X}$-} and \textbf{$\bm{Y}$-means} or \textbf{expected values of $\bm{X}$ and $\bm{Y}$} are
+				\begin{align*}
+					\mu_X &= \iint\limits_{\R^2} xf(x, y)\,\d A &
+							\mu_Y &= \iint\limits_{\R^2} yf(x, y)\,\d A
+				\end{align*}
+			These are the coordinates of the center of mass of the probability density function.
+	\section{Surface Area}
+		
 \end{document}
