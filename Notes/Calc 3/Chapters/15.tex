@@ -203,8 +203,8 @@
 				The \textbf{joint density function} of two continuous random variables $X$ and $Y$ is a function $f$ of two variables such that the probability that $(X, Y)$ lies in a region $D$ is given by
 					\[P((X, Y) \in D) = \iint\limits_D f(x, y)\,\d A\]
 				If this region is a rectangle,
-					\[P((a \le X \le b) \land (c \le Y \le d)) = \int_a^b\int_c^d f(x, y)\,\d A\]
-				As probabilities can't be negative and are measured from 0 to 1, the
+					\[P((x_1 \le X \le x_2) \land (y_1 \le Y \le y_2)) = \int_{x_1}^{x_2}\int_{y_1}^{y_2} f(x, y)\,\d y\,\d x\]
+				As probabilities can't be negative and are measured from 0 to 1
 					\begin{align*}
 						f(x, y) &\ge 0 &
 							\iint\limits_{\R^2} f(x, y)\,\d A = 1
@@ -222,5 +222,154 @@
 				\end{align*}
 			These are the coordinates of the center of mass of the probability density function.
 	\section{Surface Area}
-		
+		\callout{17}{
+			The surface area of a surface with equation $z = f(x, y)$ with $(x, y) \in D$ where $f_x$ and $f_y$ are continuous is
+				\[A(S) = \iint\limits_D\left[\sqrt{1 + \left(\pder{z}{x}\right)^2 + \left(\pder{z}{y}\right)^2}\right]\d A\]
+		}
+	\section{Triple Integrals}
+		\subsection*{Triple Integrals over Rectangular Boxes}
+			\addcontentsline{toc}{subsection}{Triple Integrals over Rectangular Boxes}
+			A rectangular box $B$ is defined as
+				\[B = \{(x, y, z) \mid a \le x \le b \land c \le y \le d \land r \le z \le s\}\]
+			The \textbf{triple Riemann sum} can be used to define the \textbf{triple integral} of $f$ over $B$.
+				\[\iiint\limits_B f(x, y, z)\,\d V = \lim_{l, m, n \to \infty}\sum_{i = 1}^l\sum_{j = 1}^m\sum_{k = 1}^n f\bigl(x_{i, j, k}^*, y_{i, j, k}^*, z_{i, j, k}^*\bigr)\Delta V\]
+			\callout{17}{\paragraph{Fubini's Theorem for Triple Integrals}
+				If $f$ is continuous over the rectangular box $R = [a, b] \times [c, d] \times [r, s]$, then
+					\[\iiint\limits_D f(x, y, z)\,\d V = \int_a^b\int_c^d\int_r^s f(x, y, z)\,\d z\,\d y\,\d x\]
+			}
+		\subsection*{Triple Integrals over General Regions}
+			\addcontentsline{toc}{subsection}{Triple Integrals over General Regions}
+			A solid region $E$ is \textbf{type 1} if it lies between the graphs of two continuous functions of $x$ and $y$; that is to say,
+				\[E = \{(x, y, z) \mid (x, y) \in D, u_1(x, y) \le z \le u_2(x, y)\}\]
+				where $D$ is the projection of $E$ onto the $xy$-plane. \\
+				The integral over a type 1 solid region $E$ with $xy$-projection $D$ is
+					\[\iiint\limits_E f(x, y, z)\,\d V = \iint\limits_D\int_{u_1(x, y)}^{u_2(x, y)} f(x, y, z)\,\d z\,\d A\]
+				If $D$ is itself a type \Roman{1} plane region, then
+					\[E = \{(x, y, z) \mid a \le x \le b \land g_1(x) \le y \le g_2(x) \land u_1(x, y) \le z \le u_2(x, y)\}\]
+					and
+					\[\iiint\limits_E f(x, y, z)\,\d V = \int_a^b\int_{g_1(x)}^{g_2(x)}\int_{u_1(x, y)}^{u_2(x, y)} f(x, y, z)\,\d z\,\d y\,\d x\]
+				If it is a type \Roman{2} plane region, on the other hand, then
+					\[E = \{(x, y, z) \mid c \le y \le d \land h_1(y) \le x \le h_2(y) \land u_1(x, y) \le z \le u_2(x, y)\}\]
+					and
+					\[\iiint\limits_E f(x, y, z)\,\d V = \int_c^d\int_{h_1(y)}^{h_2(y)}\int_{u_1(x, y)}^{u_2(x, y)} f(x, y, z)\,\d z\,\d x\,\d y\]
+			A solid region $E$ is \textbf{type 2} if it lies between the graphs of two continuous functions of $y$ and $z$; that is,
+				\[E = \{(x, y, z) \mid (y, z) \in D \land u_1(y, z) \le x \le u_2(y, z)\}\]
+				where $D$ is the projection of $E$ onto the $yz$-plane. \\
+				The triple integral over a type 1 solid region $E$ with $yz$-projection $D$ is
+					\[\iiint\limits_E f(x, y, z)\,\d V = \iint\limits_D\int_{u_1(y, z)}^{u_2(y, z)} f(x, y, z)\,\d x\,\d A\]
+			A solid region $E$ is \textbf{type 3} if it lies between the graphs of two continuous functions of $x$ and $z$; that is,
+				\[E = \{(x, y, z) \mid (x, z) \in D \land u_1(x, z) \le y \le u_2(x, z)\}\]
+				where $D$ is the projection of $E$ onto the $xz$-plane.
+				The integral over a type 3 solid region is $D$ with $xz$-projection $D$ is
+					\[\iiint\limits_E f(x, y, z)\,\d V = \iint\limits_D\int_{u_1(x, z)}^{u_2(x, z)} f(x, y, z)\,\d y\,\d A\]
+		\subsection*{Applications of Triple Integrals}
+			\addcontentsline{toc}{subsection}{Applications of Triple Integrals}
+			If $f(x, y, z) = 1$ for all $(x, y, z) \in E$, then the triple integral represents the volume of $E$.
+				\[V(E) = \iiint\limits_E f(x, y, z)\,\d V\]
+			If a solid region $E$ has density function $\rho(x, y, z)$, the mass of the region can be found as a triple integral.
+				\[m = \iiint\limits_E \rho(x, y, z)\,\d V\]
+				The three \textbf{moments} of $E$ about each coordinate plane are
+					\begin{align*}
+						M_{yz} &= \iiint\limits_E x\rho(x, y, z)\,\d V &
+								M_{xz} &= \iiint\limits_E y\rho(x, y, z)\,\d V &
+								M_{yz} &= \iiint\limits_E z\rho(x, y, z)\,\d V
+					\end{align*}
+				The \textbf{center of mass} is at the point $(\bar{x}, \bar{y}, \bar{z})$ where
+					\begin{align*}
+						\bar{x} &= \frac{M_{yz}}{x} &
+								\bar{y} &= \frac{M_{xz}}{y} &
+								\bar{z} &= \frac{M_{xy}}{z}
+					\end{align*}
+					If the density is constant, the center of mass is called the \textbf{centroid} of $E$. \\
+				The \textbf{moments of inertia} about the coordinate axes are
+					\begin{align*}
+						I_x &= \iiint\limits_E \bigl(y^2 + z^2\bigr)\rho(x, y., z)\,\d V &
+								I_y &= \iiint\limits_E \bigl(x^2 + z^2\bigr)\rho(x, y, z)\,\d V &
+								I_z &= \iiint\limits_E \bigl(x^2 + y^2\bigr)\rho(x, y, z)\,\d V
+					\end{align*}
+				The total \textbf{electric charge} on a solid occupying region $E$ with charge density $\sigma(x, y, z)$.
+					\[Q = \iiint\limits_E \sigma(x, y, z)\,\d V\]
+				The \textbf{joint density function} of 3 random variables $X$, $Y$, and $Z$ is a function of 3 variables such that the probability that $(X, Y, Z)$ lies in $E$ is
+					\[P((X, Y, Z) \in E) = \iiint\limits_E f(x, y, z)\,\d V\]
+					In particular,
+					\[P(x_1 \le X \le x_2 \land y_1 \le Y \le y_2 \land z_1 \le Z \le z_2) = \int_{x_1}^{x_2}\int_{y_1}^{y_2}\int_{z_1}^{z_2} f(x, y, z)\,\d z\,\d y\,\d x\]
+					The joint density functions satisfies
+						\begin{align*}
+							f(x, y, z) &\ge 0 &
+									\iiint\limits_{\R^3} f(x, y, z)\,\d V &= 1
+						\end{align*}
+	\section{Triple Integrals in Cylindrical Coordinates}
+		\subsection*{Cylindrical Coordinates}
+			\addcontentsline{toc}{subsection}{Cylindrical Coordinates}
+			The \textbf{cylindrical coordinate system} represents a point as an ordered triple $(r, \theta, z)$, where $(r, \theta)$ is the projection of the point onto the polar plane and $z$ is the displacement perpendicular to the plane from that projection.
+				\[\begin{tikzpicture}[xscale = 5, yscale = 5]
+							\draw[thick, ->] (0,0,0) coordinate(O) node[anchor = east]{$O$} -- (1, 0, 0) coordinate(Y) node[anchor = north east]{$y$};
+							\draw[thick, ->] (0, 0, 0) -- (0, 1, 0) coordinate(Z) node[anchor = north west]{$z$};
+							\draw[thick, ->] (0, 0, 0) -- (0, 0, 1) coordinate(X) node[anchor = south east]{$x$};
+							\filldraw (1, 1.3, 1) coordinate(P) circle (0.05mm);
+							\node[anchor = east] at (1, 1.3, 1) {$(r, \theta, z)$};
+							\draw[dashed] (1, 1.3, 1) -- (1, 0, 1) coordinate(PJ);
+							\draw[dashed] (1, 0, 1) -- (0, 0, 0);
+							\draw[decoration = {brace, raise = 5pt}, decorate] (0, 0, 0) -- node[anchor = south west, inner sep = 6pt]{$r$} (1, 0, 1);
+							\path pic[draw, angle radius = 5mm, "$\theta$", angle eccentricity = 1.5, anchor = north, inner sep = -5pt]{angle = X--O--PJ};
+							\draw[decoration = {brace, mirror, raise = 5pt}, decorate] (1, 0, 1) -- node[anchor = west, inner sep = 8pt]{$z$} (1, 1.3, 1);
+					\end{tikzpicture}\]
+			Converting from cylindrical to rectangular coordinates, 
+				\begin{align*}
+					x &= r\cos\theta &
+							y &= r\sin\theta &
+							z &= z
+				\end{align*}
+				Performing the converse operation,
+				\begin{align*}
+					\theta &= \arctan\Bigl(\frac{y}{x}\Bigr) &
+							r &= \sqrt{x^2 + y^2} &
+							z &= z
+				\end{align*}
+			\subsection*{Triple Integrals in Cylindrical Coordinates}
+				If $f$ is continuous and $E$ is a type 1 region with projection in the $xy$-plane $D$ defined as
+					\[E = \{(x, y, z) \mid (x, y) \in D \land u_1(x, y) \le z \le u_2(x, y)\}\]
+					where $D$ is given in polar coordinates by
+					\[D = \{(r, \theta) \mid \alpha \le \theta \le \beta \land h_1(\theta) \le r \le h_2(\theta)\}\]
+					then
+					\[\iiint\limits_E f(x, y, z)\,\d V = \int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1(r\cos\theta, r\sin\theta)}^{u_2(r\cos\theta, r\sin\theta)} f(r\cos\theta, r\sin\theta, z)\,\d z\,\d r\,\d\theta\]
+	\section{Triple Integrals in Spherical Coordinates}
+		\subsection*{Spherical Coordinates}
+			\addcontentsline{toc}{subsection}{Spherical Coordinates}
+			The \textbf{spherical coordinate system} represents a point as an ordered triple $(\rho, \theta, \varphi)$ where $\rho$ is the distance to the origin, $\theta$ is the angle in the projection of the point onto the $xy$-plane, and $\varphi$ is the angle from the positive $z$-axis to the line segment connecting the point to the origin.
+					\[\begin{tikzpicture}[xscale = 5, yscale = 5]
+							\draw[thick, ->] (0,0,0) coordinate(O) node[anchor = east]{$O$} -- (1, 0, 0) coordinate(Y) node[anchor = north east]{$y$};
+							\draw[thick, ->] (0, 0, 0) -- (0, 1, 0) coordinate(Z) node[anchor = north west]{$z$};
+							\draw[thick, ->] (0, 0, 0) -- (0, 0, 1) coordinate(X) node[anchor = south east]{$x$};
+							\draw[-] (0, 0, 0) -- (1, 1.3, 1) coordinate(P) node[anchor = west] {$(\rho, \theta, \phi)$};
+							\filldraw (1, 1.3, 1) circle (0.05mm);
+								\draw[decoration = {brace, raise = 5pt}, decorate] (0, 0, 0) -- node[anchor = south east, inner sep = 5pt]{$\rho$}(1, 1.3, 1);
+							\draw[dashed] (1, 1.3, 1) -- (1, 0, 1) coordinate(PJ);
+							\draw[dashed] (1, 0, 1) -- (0, 0, 0);
+							\path pic[draw, angle radius = 5mm, "$\theta$", angle eccentricity = 1.5, anchor = south, inner sep = -5pt]{angle = X--O--PJ};
+							\path pic[draw, angle radius = 13mm, "$\varphi$", angle eccentricity = 1.5, anchor = north, inner sep = 5pt]{angle = P--O--Z};
+					\end{tikzpicture}\]
+				Converting from spherical to rectangular coordinates,
+					\begin{align*}
+						x &= \rho\sin\phi\cos\theta &
+								y &= \rho\sin\phi\sin\theta &
+								z &= \rho\cos\phi
+					\end{align*}
+					Performing the converse operation, 
+					\begin{align*}
+						\rho &= \sqrt{x^2 + y^2 + z^2} &
+								\theta &= \arctan\Bigl(\frac{y}{x}\Bigr) &
+								\phi &= \arccos\Bigl(\frac{z}{\rho}\Bigr)
+					\end{align*}
+		\subsection*{Triple Integrals in Spherical Coordinates}
+			\addcontentsline{toc}{subsection}{Triple Integrals in Spherical Coordinates}
+				A \textbf{spherical wedge} $E$ is defined as
+					\[E = \{(\rho, \theta, \phi) \mid a \le \rho \le b \land \alpha \le \theta \le \beta \land \delta \le \phi \le \gamma\}\]
+				\callout{17}{
+					For a spherical wedge $E$ given by
+						\[E = \{(\rho, \theta, \phi) \mid a \le \rho \le b \land \alpha \le \theta \le \beta \land \delta \le \phi \le \gamma\}\]
+						the integral of $f(x, y, z)$ over $E$ is
+						\[\iiint\limits_E f(x, y, z)\,\d V = \int_\delta^\gamma\int_\alpha^\beta\int_a^b f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi)\rho^2\sin\phi\,\d\rho\,\d\theta\,\d\phi\]
+				}
+	\section{Change of Variables in Multiple Integrals}
 \end{document}
