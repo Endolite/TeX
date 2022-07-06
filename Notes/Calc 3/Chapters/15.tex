@@ -372,4 +372,59 @@
 						\[\iiint\limits_E f(x, y, z)\,\d V = \int_\delta^\gamma\int_\alpha^\beta\int_a^b f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi)\rho^2\sin\phi\,\d\rho\,\d\theta\,\d\phi\]
 				}
 	\section{Change of Variables in Multiple Integrals}
+		In one-dimensional calculus, the substitution rule can be written as 
+			\[\int f(x)\,\d x = \int f(x(u))\der{x}{u}\,\d x\]
+			\subsection*{Change of Variables in Double Integrals}
+				\addcontentsline{toc}{subsection}{Change of Variables in Multiple Integrals}
+				A change of variables can generally be described by a \textbf{transformation} $T$ to from the $uv$-plane to the $xy$-plane.
+					\[T(u, v) = (x, y)\]
+					$x$ and $y$ are related to $u$ and $v$ by
+					\begin{align*}
+						x &= g(u, v) &
+								y &= h(u, v)
+					\end{align*}
+				It is typically assumed that $T$ is a \textbf{$\bm{C^1}$ transformation}, meaning that $T$ is a two-variable function with real inputs and outputs. \\
+				The output of an input is its \textbf{image}. If no two points share an image, the transformation is \textbf{one-to-one}. \\
+				If $T$ is a one-to-one transformation, it has an inverse \textbf{inverse transformation} $T^{-1}$ from the $xy$-plane to the $uv$-plane.
+					\begin{align*}
+						u &= G(x, y) &
+								v &= H(x, y)
+					\end{align*}
+				\callout{17}{
+					The \textbf{Jacobian} of transformation $T$ given by $x = g(u, v)$ and $y = h(u, v)$ is
+						\[
+							\def\arraystretch{1.4}
+							\pder{(x, y)}{(u, v)} =
+									\begin{vmatrix}
+										\pder{x}{u} & \pder{x}{v} \\
+										\pder{y}{u} & \pder{y}{v}
+									\end{vmatrix} =
+									\pder{x}{u}\pder{y}{v} - \pder{x}{v}\pder{y}{u}
+						\]
+				}
+				\callout{17}{\paragraph{Change of Variables in a Double Integral}
+					If $T$ is a one-to-one $C^1$ transformation with nonzero Jacobian that maps region $S$ in the $uv$-plane to region $R$ in the $xy$-plane, $f$ is continuous on $R$ , and $R$ and $S$ are type \Roman{1} or \Roman{2} plane regions, then
+						\[\iint\limits_R f(x, y)\,\d A = \iint\limits_D f(x(u, v), y(u, v))\left|\pder{(x, y)}{(u, v)}\right|\d u\,\d v\]
+				}
+			\subsection*{Change of Variables in Triple Integrals}
+				\addcontentsline{toc}{subsection}{Change of Variables in Triple Integrals}
+				Let $T$ be a one-to-one transformation that maps region $S$ in  $uvw$-space to region $R$ in the $xyz$-space.
+					\begin{align*}
+						x &= g(u, v, w) &
+								y &= h(u, v, w) &
+								z &= k(u, v, w)
+					\end{align*}
+					The \textbf{Jacobian} of $T$ is
+						\[
+							\def\arraystretch{1.4}
+							\pder{(x, y, z)}{(u, v, w)} = 
+								\begin{vmatrix}
+									\pder{x}{u} & \pder{x}{v} & \pder{x}{w} \\
+									\pder{y}{u} & \pder{y}{v} & \pder{y}{w} \\
+									\pder{z}{u} & \pder{z}{v} & \pder{z}{w}
+								\end{vmatrix}
+						\]
+					\callout{17}{
+						\[\iiint\limits_R f(x, y, z) = \iiint\limits_S f(x(u, v, w), y(u, v, w), z(u, v, w))\left|\pder{(x, y, z)}{u, v, w}\right|\d u\,\d v\,\d w\]
+					}
 \end{document}

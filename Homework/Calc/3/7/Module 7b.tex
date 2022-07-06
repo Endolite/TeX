@@ -1,0 +1,35 @@
+\documentclass[A4, 12pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage[margin = 0.75 in]{geometry}
+
+% Configuration
+\title{15.6.13. (p. 1093)}
+\author{Arnav Patri}
+
+% Macros
+	% Notation
+		% Differentials/Derivatives
+			\renewcommand{\d}{\mathrm{d}}
+			\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+			\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+
+\begin{document}
+	\maketitle	
+	\thispagestyle{empty}
+	\flushleft
+	Evaluate the triple integral
+		\[\iiint\limits_E y\,\d V\]
+		where
+		\[E = \{(x, y, z) \mid 0 \le x \le 3, 0 \le y \le x, x - y \le z \le x + y\]
+		\begin{align*}
+			\iiint\limits_E y\,\d V &= \int_0^3\int_0^x\int_{x - y}^{x + y} y\,\d z\,\d y\,\d x
+					= \int_0^3\int_0^x[yz]_{x - y}^{x + y}\,\d y\,\d x 
+					= \int_0^3\int_0^x[y(x + y - (x - y)]\,\d y\,\d x \\
+				&= \int_0^3\int_0^x\left[2y^2\right]\d y\,\d x
+					= \int_0^3\left[\frac{2y^3}{3}\right]_0^x\d x
+					= \int_0^3\left[\frac{2x^3}{3}\right]\d x
+					= \left[\frac{x^4}{6}\right]_0^3 = \frac{27}{2}
+		\end{align*}
+\end{document}

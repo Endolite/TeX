@@ -1,0 +1,45 @@
+\documentclass[A4, 12pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage[margin = 0.75 in]{geometry}
+
+% Configuration
+\title{15.5.13. (p. 1082)}
+\author{Arnav Patri}
+
+% Macros
+	% Notation
+		% Differentials/Derivatives
+			\renewcommand{\d}{\mathrm{d}}
+			\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+			\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+
+\begin{document}
+	\maketitle	
+	\thispagestyle{empty}
+	\flushleft
+	Find the area of the surface of the part of the sphere $x^2 + y^2 + z^2 = a^2$ that lies within the cylinder $x^2 + y^2 = ax$ and above the $xy$-plane.
+	\begin{align*}
+		ax &= x^2 + y^2 \\
+		ar\cos\theta &= r^2 \\
+		r &= a\cos\theta \\
+		D &= \left\{(r, \theta) \,\middle|\, 0 \le r \le a\cos\theta, 0 \le \theta \le \pi\right\} \\
+		x^2 + y^2 + z^2 &= a^2 \\
+		z &= \sqrt{a^2 - x^2 - y^2} \\
+		\pder{z}{x} &= \frac{-x}{\sqrt{a^2 - x^2 - y^2}} \qquad
+				\pder{z}{y} = \frac{-y}{\sqrt{a^2 - x^2 - y^2}} \\
+		A &= \iint\limits_D \left[\sqrt{1 + \left(\pder{z}{x}\right)^2 + \left(\pder{z}{y}\right)^2}\right]\d A 
+				= \iint\limits_D\left[\sqrt{1 + \frac{x^2 + y^2}{a^2 - x^2 - y^2}}\right]\d A \\
+			&= \iint\limits_D\left[\sqrt{\frac{a^2}{a^2 - x^2 - y^2}}\right]\d A 
+				= \int_0^\pi\int_0^{a\cos\theta}\left[r\sqrt{\frac{a^2}{a^2 - r^2}}\right]\d r\,\d\theta \\
+		u &= a^2 -r^2 \qquad u_1 = a^2 - 0 = a^2 \qquad u_2 = a^2 -a^2\cos^2\theta = a^2\sin^2\theta \\
+		\d u &= -2r\d r\\
+		A &= -\frac{a}{2}\int_0^\pi\int_{a^2}^{a^2\sin^2\theta}\left[\sqrt{\frac{1}{u}}\right]\d u\,\d\theta 
+				= \frac{a}{2}\int_\pi^0\left[2\sqrt{u}\right]_{a^2}^{a^2\sin^2\theta}\d\theta \\
+			&= a\int_\pi^0[a\sin\theta - a]\,\d\theta
+				= a[-a\cos\theta - a\theta]_\pi^0
+				= a[-a - 0 - a + a\pi]
+				= a^2(\pi - 2) \\
+	\end{align*}
+\end{document}
