@@ -2,6 +2,66 @@
 
 \begin{document}
 	\section{Vector Fields}
-		\subsection*{Vector Fields in $\R^2$ and $\R^3$}
-		
+		\subsection*{Vector Fields in $\bm{\R^2}$ and $\bm{\R^3}$}
+			\addcontentsline{toc}{subsection}{Vector Fields in $\R^2$ and $\R^3$}
+			\callout{17}{
+				A \textbf{vector field} on $\R^2$ is a function $\vec{F}$ that assigns each point $(x, y)$ in its domain $D$ (some subset of $\R^2$) a two-dimensional vector $\vec{F}(x, y)$. \\
+				That on $\R^3$ follows the same definition, simply with 3 dimensions.
+			}
+		\subsection*{Gradient Fields}
+			\addcontentsline{toc}{subsection}{Gradient Fields}
+			The gradient of a two-variable function $f$ of $(x, y)$ is
+				\[\nabla f(x, y) = \pder{f}{x}\vi + \pder{f}{y}\vj\]
+				This is a vector field on $\R^2$.
+			A vector field $\vec{F}$ is \textbf{conservative} if there is some scalar function $f$ for which $\vec{F} = \nabla f$. If this is the case, $f$ is a \textbf{potential function} for $\vec{F}$.
+	\section{Line Integrals}
+		\subsection*{Line Integrals in the Plane}
+			\addcontentsline{toc}{subsection}{Line Integrals in the Plane}
+			\callout{17}{
+				If $f$ is defined along a smooth curve $C$ given by
+					\[\vec{r}(t) = x(t)\vi + y(t)\vj\]
+					then the \textbf{line integral of $\bm{f}$ along $\bm{C}$} is
+					\[\int_C f(x, y)\,\d s = \lim_{n \to \infty}\sum_{i = 1}^n f(x_i^*, y_i^*)\Delta s_i\]
+					if this limit exists.
+			}
+			The formula for line integral of $f(x, y)$ along curve $C$ can be rewritten as 
+				\[\int_C f(x, y)\,\d s = \int_a^b\left[f(x(t), y(t))\sqrt{\left(\der{x}{t}\right)^2 + \left(\der{y}{t}\right)^2}\right]\d s\]
+			The value of the line integral is independent of the parametrization of the curve so long as the curve is only traversed once from $a$ to $b$.
+		\subsection*{Line Integrals with Respect to $\bm{x}$ or $\bm{y}$}
+			\addcontentsline{toc}{subsection}{Line Integrals with Respect to $x$ or $y$}
+			The \textbf{line integrals of $\bm{f}$ along $\bm{C}$ with respect to $\bm{x}$ and $\bm{y}$} are 
+				\begin{align*}
+					\int_C f(x, y)\,\d x &= \lim_{n \to \infty}\sum_{i = 1}^n f(x_i^*, y_i^*)\Delta x_i &
+							\int_C f(x, y)\,\d y &= \lim_{n \to \infty}\sum_{i = 1}^n f(x_i^*, y_i^*)\Delta y_i
+				\end{align*}
+				To distinguish, the line integral with respect to $s$ is referred to as the \textbf{line integral with respect to arc length}.
+			The parametrization of a curve determines its \textbf{orientation}, the direction of the path traces as $t$ increases.
+			If $-C$ denotes a curve with the same points as $C$ but the opposite orientation,
+				\begin{align*}
+					\int_{-C} f(x, y)\,\d x &= -\int_C f(x, y)\,\d x &
+							\int_{-C} f(x, y)\,\d y &= -\int_C f(x, y)\,\d y
+				\end{align*}
+				Integrating with respect to arc length, though, orientation has no impact on the value, as $s$ is always positive.
+				\[\int_{-C} f(x, y)\,\d s = \int_C f(x, y)\,\d s\]
+		\subsection*{Line Integrals in Space}
+			\addcontentsline{toc}{subsection}{Line Integrals in Space}
+			Let $C$ be a smooth space curve given by
+				\[\vec{r}(t) = x(t)\vi + y(t)\vj + z(t)\vk\]
+				If $f$ is a function of 3 variables that is continuous on some region containing $C$, the \textbf{line integral of $\bm{f}$ along C} (with respect to arc length) is defined as
+					\[\int_C f(x, y, z)\,\d s = \lim_{n \to \infty}\sum_{i = 1}^n f(x_i, y_i, z_i)\Delta s_i\]
+				This can be evaluated by expanding $s$.
+				\[\int_C f(x, y, z)\,\d s = \int_a^b\left[f(x, y, z)\sqrt{\left(\der{x}{t}\right)^2 + \left(\der{y}{t}\right)^2 + \left(\der{z}{t}\right)^2}\right]\d t\]
+				This can in turn be more compactly rewritten as
+				\[\int_C f(x, y, z)\,\d s = \int_a^b f(\vec{r}(t))|\vec{r}\vps'|\,\d t\]
+			Line integrals with respect to $x$, $y$, and $z$ are defined as
+				\begin{align*}
+					\int_C f(x, y, z)\,\d x &= \lim_{n \to \infty}\sum_{i = 1}^n f(x_i^*, y_i^*, z_i^*)\Delta x_i
+							= \int_a^b f(x(t), y(t), z(t))x'(t)\,\d t \\
+					\int_C f(x, y, z)\,\d y &= \lim_{n \to \infty}\sum_{i = 1}^n f(x_i^*, y_i^*, z_i^*)\Delta y_i
+							= \int_a^b f(x(t), y(t), z(t))y'(t)\,\d t \\
+					\int_C f(x, y, z)\,\d z &= \lim_{n \to \infty}\sum_{i = 1}^n f(x_i^*, y_i^*, z_i^*)\Delta y_i
+							= \int_a^b f(x(t), y(t), z(t))z'(t)\,\d t
+				\end{align*}
+		\subsection*{Line Integrals of Vector Fields: Work}
+			\addcontentsline{toc}{subsection}{Line Integrals of Vector Fields: Work}
 \end{document}
