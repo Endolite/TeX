@@ -25,7 +25,7 @@
 					if this limit exists.
 			}
 			The formula for line integral of $f(x, y)$ along curve $C$ can be rewritten as 
-				\[\int_C f(x, y)\,\d s = \int_a^b\left[f(x(t), y(t))\sqrt{\left(\der{x}{t}\right)^2 + \left(\der{y}{t}\right)^2}\right]\d s\]
+				\[\int_C f(x, y)\,\d s = \int_a^b\left[f(x(t), y(t))\sqrt{\left(\der{x}{t}\right)^2 + \left(\der{y}{t}\right)^2}\right]\d t\]
 			The value of the line integral is independent of the parametrization of the curve so long as the curve is only traversed once from $a$ to $b$.
 		\subsection*{Line Integrals with Respect to $\bm{x}$ or $\bm{y}$}
 			\addcontentsline{toc}{subsection}{Line Integrals with Respect to $x$ or $y$}
@@ -64,4 +64,67 @@
 				\end{align*}
 		\subsection*{Line Integrals of Vector Fields: Work}
 			\addcontentsline{toc}{subsection}{Line Integrals of Vector Fields: Work}
+			Work done as a particle moves along $C$ experiencing variable force $F$ is
+				\[W = \int_C \left[\vec{F} \cdot \vec{T}\right]\d s\]
+				often abbreviated as
+				\[\int_C \vec{F} \cdot \d\vec{r}\]
+				This can be rewritten using the definition of $\vec{T}$.
+				\[W = \int_a^b\left[\vec{F}(\vec{r}(t)) \cdot \vec{r}\vps'(t)\right]\d t\]
+			\callout{17}{
+				If $\vec{F}$ is a continuous vector field given by vector function defined on smooth curve $C$ given by $\vec{r}(t)$ for $a \le t \le b$, the \textbf{line integral of $\bm{\vec{F}}$ along $\bm{C}$} is
+					\[\int_C \vec{F} \cdot \d\vec{r} = \int_a^b\left[\vec{F}(\vec{r}(t)) \cdot \vec{r}\vps'(t)\right]\d t 
+							= \int_C \vec{F} \cdot \vec{T}\,\d s\]
+			}
+			A continuous vector field's integral along curve $C$ given by $\vec{r}(t)$ for $a \le t \le b$ can be split into its components as
+				\[\int_C F \cdot \d\vec{r} = \int_C[P\,\d x + Q\,\d y + R\,\d z]\]
+				where
+				\[\vec{F} = \langle P, Q, R \rangle\]
+	\section{The Fundamental Theorem for Line Integrals}
+		The Fundamental Theorem of Calculus states that
+			\[\int_a^b f'(x)\,\d x = f(b) - f(a)\]
+			where $f'$ is continuous on $[a, b]$.
+		\subsection*{The Fundamental Theorem for Line Integrals}
+			\addcontentsline{toc}{subsection}{The Fundamental Theorem for Line Integrals}
+			\callout{17}{
+				If $C$ is a smooth curve given by $\vec{r}(t)$ for $a \le t \le b$ and $f$ is a differentiable function of two or three variables whose gradient vector is continuous on $C$, then
+					\[\int_C \nabla f(x) \cdot \,\d\vec{r} = f(\vec{r}(b)) = f(\vec{r}(a))\]
+			}
+		\subsection*{Independence of Path}
+			\addcontentsline{toc}{subsection}{Independence of Path}
+			If $C_1$ and $C_2$ are two smooth curves, called \textbf{paths}, with the same initial and terminal points $a$ and $b$, then in general,
+				\[\int_{C_1} \vec{F} \cdot \d\vec{r} \ne \int_{C_2} \vec{F} \cdot \d\vec{r}\]
+				but
+				\[\int_C \nabla f \cdot \d\vec{r} = \int_{C_2} \nabla f \cdot \d\vec{r}\]
+				whenever $\nabla f$ is continuous. \\
+				Line integrals of conservative vector fields are \textbf{independent of path}. \\
+			A path is \textbf{closed} if its initial and terminal points are the same.
+			\callout{17}{
+				\[\int_C F \cdot \d\vec{r}\]
+					is independent of path in $D$ if and only if
+					\[\int_C F \cdot \d\vec{r} = 0\]
+					for every closed path $C$ in $D$.
+			}
+			\callout{17}{
+				If $F$ is a vector field that is continuous on open region $D$, then if
+					\[\int_C F \cdot \d\vec{r}\]
+					is independent of path in $D$, then $F$ is a conservative vector field on $D$.
+			}
+		\subsection*{Conservative Vector Fields and Potential Functions}
+			\addcontentsline{toc}{subsection}{Conservative Vector Fields and Potential Functions}
+			\callout{17}{
+				If $\vec{F}(x, y)$ is a conservative vector field given by
+					\[\vec{F}(x, y) = \langle P(x, y), Q(x, y) \rangle\]
+					where $P$ and $Q$ have continuous first-order partial derivatives on domain $D$, then throughout $D$,
+					\[\pder{P}{y} = \pder{Q}{x}\]
+			}
+			A \textbf{simple curve} is one that does not intersect itself between its endpoints. \\
+			A \textbf{simply connected region} is a contiguous region without any holes.
+			\callout{17}{
+				If
+					\[\vec{F} = \langle P, Q \rangle\]
+					is a vector field on a simply-connected region $D$ and $P$ and $Q$ have continuous first-order partial derivatives and
+					\[\pder{P}{y} = \pder{Q}{x}\]
+					throughout $D$, then, $\vec{F}$ is conservative.
+			}
+	\section{Green's Theorem}				
 \end{document}
