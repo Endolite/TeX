@@ -1,0 +1,68 @@
+\documentclass[A4, 12pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin = 0.75 in]{geometry}
+
+% Configuration
+\title{16.2}
+\author{Arnav Patri}
+
+% Macros
+	% Notation
+		% Differentials/Derivatives
+			\renewcommand{\d}{\mathrm{d}}
+			\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+			\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+		% Vectors
+			\newcommand{\vi}{\text{\^\i}}
+			\newcommand{\vj}{\text{\^\j}}
+			\newcommand{\vk}{\text{\^k}}
+			\newcommand{\vps}{\hspace{0.5mm}}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\paragraph{15. (p. 1141)}
+		Evaluate the line integral
+			\[\int_C\left[z\,\d x + xy\,\d y + y^2\,\d z\right]\]
+			where $C$ is the given space curve
+			\[C: x = \sin t, y = \cos t, z = \tan t, -\frac{\pi}{4} \le t \le \frac{\pi}{4}\]
+		\begin{align*}
+			x &= \sin t & y &= \cos t & z &= \tan t \\
+			\d x &= \cos t\,\d t & \d y &= -\sin t\,\d t & \d z &= \sec^2 t\,\d t
+		\end{align*}
+		\begin{align*}
+			\int_C\left[z\,\d x + xy\,\d y + y^2\,\d z\right] &= \int_{-\pi/4}^{\pi/4} \left[\sin t - \sin^2t\cos t+ 1\right]\d t
+					= [t -\cos t]_{-\pi/4}^{\pi/4} - \int_{-\pi /4}^{\pi /4}\left[\sin^2 t\cos t\right]\d t \\
+				u &= \sin t 
+						\implies u_1 = -\frac{\sqrt{2}}{2}, u_2 = \frac{\sqrt{2}}{2}, \d u = \cos t\,\d t \\
+				\int_{-\pi /4}^{\pi /4}\left[\sin^2 t\cos t\right]\d t &= \int_{-\sqrt{2}/2}^{\sqrt{2}/2} \left[u^2\right]\d u
+						= \left[\frac{u^3}{3}\right]_{-\sqrt{2}/2}^{\sqrt{2}/2}
+						= \frac{2^{3/2}}{24} - \left(\frac{-2^{3/2}}{24}\right)
+						= \frac{2\left(2\sqrt{2}\right)}{24}
+						= \frac{\sqrt{2}}{6} \\
+				[t - \cos t]_{-\pi/4}^{\pi/4} &= \frac{\pi}{4} - \frac{\sqrt{2}}{2} - \left(-\frac{\pi}{4} - \frac{\sqrt{2}}{2}\right) 
+				= \frac{\pi}{2} \\
+			\int_C\left[z\,\d x + xy\,\d y + y^2\,\d z\right] &= \frac{\pi}{2} - \frac{\sqrt{2}}{6} 
+					= \frac{3\pi - \sqrt{2}}{6}
+		\end{align*}
+	\paragraph{23. (p. 1142)}
+		Evaluate the line integral $\int_C \vec{F} \cdot \d\vec{r}$, where $C$ is given by the vector function $\vec{r}(t)$.
+		\begin{align*}
+			\vec{F}(x, y, z) &= \sin x\,\vi + \cos y\,\vj + xz\,\vk &
+				\vec{r}(t) &= t^3\,\vi - t^2\,\vj + t\,\vk, 0 \le t \le 1
+		\end{align*}
+		\begin{align*}
+			\vec{F}(\vec{r}(t)) &= \sin\left(t^3\right)\vi + \cos\left(-t\right)^2\vj + t^4\,\vk 
+					= \sin\left(t^3\right)\vi + \cos\left(t^2\right)\vj + t^4\,\vk \\
+			\vec{r}\vps'(t) &= 3t^2\,\vi - 2t\,\vj + \vk \\
+			\vec{F}(\vec{r}(t)) \cdot \vec{r}\vps'(t) &= 3t^2\sin\left(t^3\right) - 2t\cos\left(t^2\right) + t^4 \\
+			\int_C \vec{F} \cdot \d\vec{r} &= \int_0^1 \vec{F}(\vec{r}(t)) \cdot \vec{r}\vps'(t)\,\d t
+					= \int_0^1\left[3t^2\sin\left(t^3\right) - 2t\cos\left(t^2\right) + t^4\right]\d t \\
+				&= \left[-\cos\left(t^3\right) - \sin\left(t^2\right) + 0.2t^5\right]_0^1
+					= -\cos(1) - \sin(1) + 0.2 - (-1 - 0 + 0) \\
+				&= 1.2 - \sin(1) - \cos(1)
+		\end{align*}
+\end{document}
