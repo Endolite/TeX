@@ -1,22 +1,23 @@
 \documentclass[12pt, A4]{report}
 
 %Packages
-	\usepackage{amsmath}
-	\usepackage{amssymb}
-	\usepackage{bm}
-	\usepackage{cellspace}
-	\usepackage{csquotes}
-	\usepackage[hang,flushmargin]{footmisc}
-	\usepackage{hyperref}
-	\usepackage[margin=0.5in]{geometry}
-	\usepackage[utf8]{inputenc}
-	\usepackage{moresize}
-	\usepackage{multirow}
-	\usepackage{pgfplots}
-	\usepackage{tikz}
-	\usepackage{tikz-3dplot}
-		\usetikzlibrary{arrows.meta, angles, calc, quotes}
-
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.5in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+		\usepackage{tikz-3dplot}
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Symbols
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{esint} % Integrals
 % Configuration
 	\title{Calculus \Roman{3}}
 	\author{Arnav Patri}
@@ -32,7 +33,6 @@
 
 % Notation
 	% Derivatives
-		\newcommand{\dd}{\d}
 		\renewcommand{\d}{\mathrm{d}}
 		\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
 		\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
@@ -40,6 +40,8 @@
 		\newcommand{\bbar}[1]{\bar{\bar{#1}}}
 	% Vectors
 		\DeclareMathOperator{\comp}{comp}
+		\DeclareMathOperator{\curl}{curl}
+		\DeclareMathOperator{\divg}{div}
 		\DeclareMathOperator{\orth}{orth}
 		\DeclareMathOperator{\proj}{proj}
 		\renewcommand{\Vec}[1]{\overrightarrow{#1}}

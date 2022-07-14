@@ -99,15 +99,15 @@
 				Line integrals of conservative vector fields are \textbf{independent of path}. \\
 			A path is \textbf{closed} if its initial and terminal points are the same.
 			\callout{17}{
-				\[\int_C F \cdot \d\vec{r}\]
+				\[\int_C \vec{F} \cdot \d\vec{r}\]
 					is independent of path in $D$ if and only if
-					\[\int_C F \cdot \d\vec{r} = 0\]
+					\[\int_C \vec{F} \cdot \d\vec{r} = 0\]
 					for every closed path $C$ in $D$.
 			}
 			\callout{17}{
 				If $F$ is a vector field that is continuous on open region $D$, then if
-					\[\int_C F \cdot \d\vec{r}\]
-					is independent of path in $D$, then $F$ is a conservative vector field on $D$.
+					\[\int_C \vec{F} \cdot \d\vec{r}\]
+					is independent of path in $D$, then $\vec{F}$ is a conservative vector field on $D$.
 			}
 		\subsection*{Conservative Vector Fields and Potential Functions}
 			\addcontentsline{toc}{subsection}{Conservative Vector Fields and Potential Functions}
@@ -126,5 +126,101 @@
 					\[\pder{P}{y} = \pder{Q}{x}\]
 					throughout $D$, then, $\vec{F}$ is conservative.
 			}
-	\section{Green's Theorem}				
+	\section{Green's Theorem}
+		\subsection*{Green's Theorem}
+			\addcontentsline{toc}{subsection}{Green's Theorem}
+			Let $C$ be a simple closed curve and $D$ be the region that it bounds. The \textbf{positive orientation} of $C$ refers to a single \textit{counterclockwise} traversal of $C$.
+			\callout{17}{
+				Let $C$ be a positively-oriented, piecewise-smooth, simple closed curve in the plane and let $D$ be the region bounded by $C$. If $P$ and $Q$ have continuous partial derivatives on an open region containing $D$, then
+					\[\int_C[P\,\d x + Q\,\d y] = \iint\limits_D\left[\pder{Q}{x} - \pder{P}{y}\right]\d A\]
+			}
+			The notation
+				\begin{align*}
+					\oint_C[P\,\d x + Q\,\d y] &&\text{or}&& \varointctrclockwise_C[P\,\d x + Q\,\d y]
+				\end{align*}
+				is sometimes used to denote a positively-oriented closed curve $C$. \\
+			The positively oriented boundary curve of region $D$ is sometimes denoted $\partial D$, so Green's Theorem can be rewritten as
+				\[\iint\limits_D \left[\pder{Q}{x} - \pder{P}{y}\right]\d A = \int_{\partial D}[P\,\d x + Q\,\d y]\]
+		\subsection*{Finding Areas with Green's Theorem}
+			\addcontentsline{toc}{subsection}{Finding Areas with Green's Theorem}
+			As the area of $D$ is 
+				\[\iint\limits_D 1\,\d A\]
+				$P$ and $Q$ should be chosen such that
+				\[\pder{Q}{x} - \pder{P}{y} = 1\]
+				Green's Theorem can then be used to determine the area of $D$ as
+				\[A = \oint_C x\,\d y = -\oint_C y\,\d x = \frac{1}{2}\oint_C[x\,\d y - y\,\d x]\]
+		\subsection*{Extended Versions of Green's Theorem}
+			\addcontentsline{toc}{subsection}{Extended Versions of Green's Theorem}
+			Green's Theorem can be extended to the case where $D$ is a finite union of simple regions.
+			\[\int_{C_1 \cup C_2}[P\,\d x + Q\,\d y] = \iint\limits_{D_1 \cup D_2}\left[\pder{Q}{x} - \pder{P}{y}\right]\d A\]
+	\section{Curl and Divergence}
+		\section*{Curl}
+			\addcontentsline{toc}{subsection}{Curl}
+			The vector differential operator $\nabla$ is defined as
+				\[\nabla = \left\langle \pder{}{x}, \pder{}{y}, \pder{}{z} \right\rangle\]
+			If $\vec{F} = \langle P, Q, R \rangle$ is a vector field on $\R^3$ and the partial derivatives of each component exist, then the \textbf{curl} of $\vec{F}$ is a vector field on $\R^3$ defined by the cross product of $\nabla$ and $\vec{F}$.
+				\[
+					\def\arraystretch{1.2}
+					\curl\vec{F} = \nabla \times \vec{F} =
+						\begin{vmatrix}
+							\vi & \vj & \vk \\
+							\pder{}{x} & \pder{}{y} & \pder{}{z} \\
+							P & Q & R
+						\end{vmatrix}
+					 	= \left\langle \pder{R}{y} - \pder{Q}{z}, \pder{P}{z} - \pder{R}{x}, \pder{Q}{x} - \pder{P}{y}\right\rangle
+				\]
+			\callout{17}{
+				The curl of a conservative vector field is $\vec{0}$.
+					\begin{align*}
+						\def\arraystretch{1.2}
+						\curl(\nabla f) &= \nabla \times (\nabla f) =
+								\begin{vmatrix}
+									\vi & \vj & \vk \\
+									\pder{}{x} & \pder{}{y} & \pder{}{z} \\
+									\pder{f}{x} & \pder{f}{y} & \pder{f}{z}
+								\end{vmatrix} \\
+							&= \left\langle \pder{^2f}{y\partial z} - \pder{^2f}{z\partial y}, \pder{^2f}{z\partial x} - \pder{^2f}{x\partial z} , \pder{^2f}{x\partial y} - \pder{^2f}{y\partial x}\right\rangle \\
+							&= \langle 0, 0, 0 \rangle
+									= \vec{0}
+					\end{align*}
+			}
+			\callout{17}{
+				If $\vec{F}$ is a vector field defined on all of $\R^3$ with component functions that have continuous partial derivatives and $\curl \vec{F} = \vec{0}$, then $\vec{F}$ is a conservative vector field.
+			}
+		\section*{Divergence}
+			\addcontentsline{toc}{subsection}{Divergence}
+			If $\vec{F} = \langle P, Q, R \rangle$ is a vector field on $\R^3$, then the \textbf{divergence} of $\vec{F}$ is the function defined by
+				\[\divg \vec{F} = \nabla \cdot \vec{F} = \pder{P}{x} + \pder{Q}{y} + \pder{R}{z}\]
+				provided $\partial P/\partial x$, $\partial Q/\partial y$, and $\partial R/ \partial z$ exist.
+			\callout{17}{
+				If $\vec{F} = \langle P, Q, R \rangle$ is a vector field on $\R^3$ and each component is twice-differentiable, then
+					\begin{align*}
+						\divg\curl \vec{F} &= \nabla \cdot (\nabla \times \vec{F})
+								= \pder{}{x}\left(\pder{R}{y} - \pder{Q}{z}\right) + \pder{}{y}\left(\pder{P}{z} - \pder{R}{x}\right) + \pder{}{z}\left(\pder{Q}{x} - \pder{P}{y}\right) \\
+							&= \pder{^2R}{x\partial y} - \pder{^2Q}{x\partial y} + \pder{^2P}{y\partial z} - \pder{^2R}{x\partial y} + \pder{^2Q}{x\partial z} - \pder{^2P}{z\partial y}
+								= 0
+					\end{align*}
+			}
+			The \textbf{Laplace operator} is the dot product of the vector differential and itself.
+				\[\nabla^2 = \nabla \cdot \nabla\]
+		\section*{Vector Forms of Green's Theorem}
+			\addcontentsline{toc}{subsection}{Vector Forms of Green's Theorem}
+			The line integral of the vector field $\vec{F} = \langle P, Q \rangle$ over boundary curve $C$ of plane region $D$ is
+				\[\oint_C \vec{F} \cdot \d\vec{r} = \oint_C[P\,\d x + Q\,\d y]\]
+				Regarding $\vec{F}$ as a vector field $\vec{F} = \langle P, Q, 0 \rangle$ in $\R^3$,
+				\[
+					\curl \vec{F} =
+						\begin{vmatrix}
+							\vi & \vj & \vk \\
+							\pder{}{x} & \pder{0}{y} & \pder{}{z} \\
+							P & Q & 0
+						\end{vmatrix}
+						= \left(\pder{Q}{x} - \pder{P}{y}\right)\vk
+				\]
+				The integrand of Green's Theorem can therefore be rewritten as
+				\[(\curl\vec{F}) \cdot \vk = \left(\pder{Q}{x} - \pder{P}{y}\right)\vk \cdot \vk = \pder{Q}{x} - \pder{P}{y}\]
+				Green's Theorem can be rewritten in vector form as
+				\[\oint_C \vec{F} \cdot \d\vec{r} = \oint_C \vec{F} \cdot \vec{R}\,\d s = \iint\limits_D (\curl\vec{F}) \cdot \vk \,\d A\]
+				This can also be rewritten as
+				\[\oint_C \vec{F} \cdot \vec{n} \,\d s = \iint\limits_D \divg\vec{F}(x, y)\,\d A\]
 \end{document}
