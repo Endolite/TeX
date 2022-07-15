@@ -1,0 +1,65 @@
+\documentclass[A4, 12pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage{esint}
+\usepackage[margin = 0.75 in]{geometry}
+
+% Configuration
+\title{Module 9}
+\author{Arnav Patri}
+
+% Macros
+	% Notation
+		% Differentials/Derivatives
+			\renewcommand{\d}{\mathrm{d}}
+			\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+			\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+		% Vectors
+			\newcommand{\vi}{\text{\^\i}}
+			\newcommand{\vj}{\text{\^\j}}
+			\newcommand{\vk}{\text{\^k}}
+			\newcommand{\vps}{\hspace{0.5mm}}
+			
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\paragraph{16.3.19. (p. 1152)}
+		\begin{enumerate}[(a)]
+			\item 
+				Find a function $f$ such that $\vec{F} = \nabla f$.
+				\begin{align*}
+					\vec{F}(x, y) &= x^2y^3\vi + x^3y^2\vj \\
+					f_x(x, y) &= x^2y^3 \\
+					f(x, y) &= \int\left[x^2y^3\right]\d x
+							= \frac{x^3y^3}{3} + g(x) \\
+					f_y(x, y) &= x^3y^2 + g'(y) = x^3y^2 \\
+					g'(y) &= 0 \\
+					f(x, y) &= \frac{x^3y^3}{3}
+				\end{align*}
+			\item 
+				Use part (a) to evaluate $\int_C \vec{F} \cdot \d\vec{r}$ along the given curve $C$.
+				\begin{align*}
+					C &: \vec{r}(t) = \left\langle t^3 - 2t, t^3 + 2t \right\rangle, 0 \le t \le 1 \\
+					\int_C \vec{F} \cdot \d\vec{r} &= f(\vec{r}(1)) - f(\vec{r}(0))
+							= f(-1, 3) - f(0, 0) 
+							= -9 - 0
+							= -9
+				\end{align*}
+		\end{enumerate}
+	\paragraph{16.4.7. (p. 1160)}
+		Use Green's Theorem to evaluate the line integral along the given positively oriented curve.
+			\[\int_C\left[x^2y^2\,\d x + y\arctan y\,\d y\right] \text{where $C$ is the triangle with vertices $(0, 0)$, $(1, 0)$, and $(1, 3)$}\]
+			\begin{align*}
+				D &= \{(x, y) \mid 0 \le x \le 1, 0 \le y \le 3x\} \\
+				P &=x^2y^2 \implies P_y = 2x^2y \qquad Q = y\arctan{y} \implies Q_x = 0 \\
+				\int_C[P\,\d x + Q\,\d y] &= \iint\limits_D\left[\pder{Q}{x} - \pder{P}{y}\right]\d A
+						= \int_0^1\int_0^{3x}\left[0 - 2x^2y\right]\d y\,\d x 
+						= \int_0^1\left[-x^2y^2\right]_0^{3x}\d x \\
+					&= \int_0^1\left[-9x^4 - (0)\right]\d x 
+						= \left[-1.8x^5\right]_0^1
+						= -1.8 - (0)
+						= -1.8
+			\end{align*}
+\end{document}

@@ -373,7 +373,7 @@
 				}
 	\section{Change of Variables in Multiple Integrals}
 		In one-dimensional calculus, the substitution rule can be written as 
-			\[\int f(x)\,\d x = \int f(x(u))\der{x}{u}\,\d x\]
+			\[\int f(x)\,\d x = \int f(x(u))\der{u}{x}\,\d x\]
 			\subsection*{Change of Variables in Double Integrals}
 				\addcontentsline{toc}{subsection}{Change of Variables in Multiple Integrals}
 				A change of variables can generally be described by a \textbf{transformation} $T$ to from the $uv$-plane to the $xy$-plane.
@@ -425,6 +425,6 @@
 								\end{vmatrix}
 						\]
 					\callout{17}{
-						\[\iiint\limits_R f(x, y, z) = \iiint\limits_S f(x(u, v, w), y(u, v, w), z(u, v, w))\left|\pder{(x, y, z)}{u, v, w}\right|\d u\,\d v\,\d w\]
+						\[\iiint\limits_R f(x, y, z)\,\d V = \iiint\limits_S f(x(u, v, w), y(u, v, w), z(u, v, w))\left|\pder{(x, y, z)}{u, v, w}\right|\d u\,\d v\,\d w\]
 					}
 \end{document}
