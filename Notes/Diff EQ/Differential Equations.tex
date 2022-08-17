@@ -1,0 +1,55 @@
+\documentclass[12pt, A4]{report}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+		\usepackage{tikz-3dplot}
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Symbols
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{esint} % Integrals
+		\usepackage{physics} % Differentials
+% Configuration
+	\title{Differential Equations}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+	
+% Macros
+	% Notation
+		% Sets
+			\newcommand{\R}{\mathbb{R}}
+		% Other
+			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\th}{\text{th}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\comment}[1]{}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+
+\usepackage{subfiles}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\chapter{Introduction to Differential Equations}
+		\subfile{chapters/1.tex}
+\end{document}
+

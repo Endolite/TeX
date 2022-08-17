@@ -1,0 +1,70 @@
+\documentclass[../Differential Equations.tex]{subfiles}
+
+\begin{document}
+	\section{Definitions and Terminology}
+		\subsectionb{A Definition}
+				\callout{17}{\paragraph{Differential Equation}
+						An equation containing the derivatives of one or more unknown functions (or dependent variables) with respect to one or more independent variables is a \textbf{differential equation (DE)}.
+				}
+		\subsectionb{Classification by Type}
+			A differential containing only ordinary derivatives with respect to a \textit{single} independent variables is an \textbf{ordinary differential equation (ODE)}. One involving partial derivatives is a \textbf{partial differential equation (PDE)}.
+		\subsectionb{Notation}
+			\textbf{Leibniz notation} denotes derivatives as ratios of differentials with the operators and variables raised to the \(n\) for the \(n^\th\) derivative.
+			\textbf{Prime notation} denotes the \(n^\th\) derivative with either \(n\) primes or \((n)\) in superscript of the dependent variable or the function. The \(n^\th\) derivative of $y = f(x)$ can thusly be denoted as
+				\[\dv[n]{y}{x} = y^{(n)} = f^{(n)}(x)\]
+			Newton's \textbf{dot notation} is sometimes used to denote derivatives with respect to time, placing \(n\) dots above the dependent variable to denote its \(n^\th\) derivative with respect to \(t\). The second derivative of \(x\) with respect to \(t\) can be denoted as
+				\[\ddot{x} = \dv[2]{x}{t}\]
+			\textbf{Subscript Notation} is often used for partial derivatives, indicating the independent variable in the subscript. The second partial \(x\) derivative with respect to \(z\) can be denoted as
+				\[z_{xx} = \pdv[2]{z}{x}\]
+		\subsectionb{Classification by Order}
+			The \textbf{order of a differential equation} is the order of the highest derivartive in the equation. \\
+			A first-order ODE is sometimes written in the \textbf{differential form}
+				\[M(x, y)\,\dd{x} + N(x, y)\,\dd{y} = 0\]
+			Symbolically, an \(n^\th\)-order ODE in one dependent variable can be expressed generally as
+				\[F\bigl(x, y, y', \ldots, y^{(n)}\bigr) = 0\]
+				where \(F\) is a real-valued function of \(n + 2\) variables. \\
+			It is assumed that it is possible to solve an ODE in the form above uniquely for the highest derivative \(y^(n)\) in terms of the remaining \(n + 1\) variables. \\
+			The \textbf{normal form} of the above expression is
+				\[\dv[n]{y}{x} = f\bigl(x, y, y', \ldots, y^{(n - 1)}\bigr)\]
+				where \(f\) is a real-values continuous function. \\
+			The following normal forms can be used to represent general first- and second-order ODEs:
+				\begin{align*}
+					\dv{y}{x} &= f(x, y)
+							& \dv[2]{y}{x} &= f(x, y, y') 
+				\end{align*}
+		\subsectionb{Classification by Linearity}
+			An general \(n^\th\) order ODE is \textbf{linear} if \(F\) is linear in \(y, y', y^{(n)}\). This means that it is linear when
+				\[a_n(x)\dv[n]{y}{x} + a_{n - 1}(x)\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0(x)y = g(x)\]
+			Two important special cases of the above are linear first- and second-order DEs:
+				\begin{align*}
+					a_1(x)\dv{y}{x} + a_0(x)y &= g(x)
+							& a_2(x)\dv[2]{y}{x} + a_1(x)\dv{y}{x} + a_0(x)y = g(x)
+				\end{align*}
+			The characteristic properties of linear ODEs are that the dependent variable and all of its derivatives are of first degree and that the coefficients of those terms are dependent at most on the independent variable. \\
+			A \textbf{nonlinear} ODE is one that is not linear. \\
+			Nonlinear functions of the dependent variable cannot appear in linear ODEs.
+		\subsectionb{Solutions}
+			\callout{17}{\paragraph{Solution of an ODE}
+				Any function \(\varphi\) defined on an interval \(I\) with at least \(n\) derivatives that are continuous on \(I\) which when substituted into an \(n^\th\)-order ODE reduce the equation to an identity is a \textbf{solution} of the equation on the interval.
+			}
+			A solution of a general \(n^\th\)-order ODE is a function \(\varphi\) with at least \(n\) derivatives for which
+				\[F\bigl(x, \varphi(x), \varphi'(x), \ldots, \varphi^{(n)}(x)\bigr) = 0 \qquad \forall\,x \in I\]
+			\(\varphi\) is said to \textit{satisfy} the differential equation on \(I\). It is assumed that a solution \(\varphi\) is a real-valued function. \\
+			A solution is occasionally denoted alternatively by \(y(x)\).
+		\subsectionb{Interval of Definition}
+			The interval \(I\) over which \(\varphi\) satisfies the ODE is referred to as the \textbf{interval of definition/}\hspace{-5pt} \textbf{existence/validity}  or the \textbf{domain of the solution}. \\
+			A solution of a DE that is identically 0 on an interval \(I\) is said to be a \textbf{trivial solution}.
+		\subsectionb{Solution Curve}
+			The graph of \(\varphi\) is called a \textbf{solution curve}. \\
+			The domain of \(\varphi\) need not be the same as \(I\).
+		\subsectionb{Explicit and Implicit Solutions}
+			A function that expresses the dependent variable solely in terms of the independent variable and constants is said to be \textit{explicit}. An \textbf{explicit solution} is a solution with an explicit function. It can be thought of as an explicit formula \(y = \varphi(x)\) that can be manipulated.
+		\subsectionb{Families of Solutions}
+			When solving a first-order DE, the solution \textit{usually} contains a single constant or parameter \(C\), similar to the constant of integration obtained from the indefinite integral. A solution of \(F(x, y, y') = 0\) containing constant \(C\) is a set of solutions \(G(x, y, C) = 0\) called a \textbf{one-parameter family of solutions}. \\
+			An \(n^\th\)-order DE often yields an \textbf{\(\bm{n}\)-parameter family of solutions} \(G(x, y, C_1, C_2, \ldots, C_n) = 0\). \\
+			The parameters in a family of solutions are \textit{arbitrary} up to a point, but they should always take on values that make sense in the real-number system. \\
+			A \textbf{singular solution} is one that cannot be obtained by specializing \textit{any} of the parameters in the family of solutions.
+		\subsectionb{Systems of Differential Equations}
+			A \textbf{system of ODEs} is comprised of multiple unknown functions of a single independent variable. \\
+			A \textbf{solution} of a system is a pair of differentiable functions defined on common interval \(I\) that satisfy each equation of the system on the interval.
+\end{document}
