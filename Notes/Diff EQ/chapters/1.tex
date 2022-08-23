@@ -90,7 +90,9 @@
 	\section{Initial-Value Problems}
 		Often, a solution to a DE must meet other conditions imposed on it and its derivatives. \\
 			\[\dv[n]{y}{x} = f\bigl(x, y, y', \ldots, y^{(n - 1)}\bigr) \mid y(x_0) = y_0, y'(x) = y_1, \ldots, y^{(n - 1)}(x_0) = y_{n - 1}\]
-			If these desired values are constants, this is an \textbf{\(\bm{n^\th}\)-order initial-value problem (IVP)}. The desired values are called \textbf{initial conditions (IC)}. \\
+			If these desired values are constants, this is an \textbf{\(\bm{n^\th}\)-order initial-value problem (IVP)}. The desired values are called \textbf{initial conditions (IC)}.\footnote{
+					If conditions are prescribed at multiple points, called \textbf{boundary conditions}, the problem is called a \textbf{boundary-value problem (BVP)}.
+				} \\
 		Solving an \(n^\th\)-order IVP often requires that an \(n\)-parameter family of solutions be found that can then be used in tandem with the constraints to find the constants. The resulting particular solution is defined on some interval that contains \(x_0\).
 		\subsectionb{Geometric Interpretation}
 			A first-order IVP
@@ -101,9 +103,17 @@
 				can be interpreted as finding a solution \(y(x)\) with a graph that passes through \((x_0, y_0)\) with slope \(y_1\).
 		\subsectionb{Existence and Uniqueness}
 			It can be assumed that \textit{most} DEs will hav solutions and that the solutions of IVPs will \textit{generally} be unique. \\
-			\callout{17}{
+			\callout{17}{\paragraph{Theorem 1.2.1}
 				Let \(R\) be a rectangular region in the \(xy\)-plane defined by
 					\[R = \{(x, y) \mid a \le x \le b, c \le y \le d\}\]
-					that contains point \((x_0, y_0)\). If \(f(x, y)\) and \(\pdv*{f}{y}\) are continuous over \(R\), then there exists some interval \(I_0: (x_0 - h, x_0 + h)\) (where \(h > 0\)) contained in \([a, b]\) and a unique function \(y(x)\) defined on this interval that is a solution of the IVP.
+					that contains point \((x_0, y_0)\). If \(f(x, y)\) and \(\pdv*{f}{y}\) are continuous over \(R\)\footnote{
+							These conditions are sufficient but not necessary. When \(f(x, y)\) and \(\pdv*{f}{y}\) are continuous on \(R\), a solution of the IVP exists and is unique so long as \((x_0, y_0)\) is contained within \(R\). If these conditions are not met, though, the IVP \textit{may} still have a solution that \textit{may} be unique, or it may have multiple or no solutions.
+						}, then there exists some interval \(I_0: (x_0 - h, x_0 + h)\) (where \(h > 0\)) contained in \([a, b]\) and a unique function \(y(x)\) defined on this interval that is a solution of the IVP.
 			}
+		\subsectionb{Interval of Existence/Uniqueness}
+			The domain of the function that represents a solution to an IVP, the interval \(I\) over which the solution is defined or exists, and the interval \(I_0\) of existence \textit{and} uniqueness. \\
+			Suppose \((x_0, y_0)\) is a  point in the interior of rectangle \(R\). The continuity of function \(f(x, y)\) on \(R\) is sufficient to guarantee the existence of at least on solution of \(\dv*{y}{x} = f(x, y)\), \(y(x_0) = y_0)\), defined on some interval \(I\). The interval of definition \(I\) for this IVP is generally taken to be the largest interval containing \(x_0\) over which the solution \(y(x)\) is both defined and differentiable. The interval depends both on the DE and the initial condition. \\
+			The condition of continuity of \(\pdv*{f}{y}\) on \(R\) means that the solution on \(I_0\) containing \(x_0\) is the \textit{only} solution satisfying the initial condition. \\
+			It should be noted that the interval of definition \(I\) may not be as wide as \(R\) and the interval of existence \(I_0\) and uniqueness may not be as large as \(I\). The number \(h > 0\) that defines \(I_0\) may be very small, so the solution \(y(x)\) should bed thought of as \textit{unique locally}: a solution defined near \((x_0, y_0)\).
+	\section{Differential Equations as Mathematical Models}
 \end{document}
