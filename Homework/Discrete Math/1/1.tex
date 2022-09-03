@@ -1,0 +1,215 @@
+\documentclass[12pt, A4]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+		\usepackage{tikz-3dplot}
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Formatting
+		\usepackage{booktabs}
+		\usepackage{tasks}
+	% Symbols
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{esint} % Integrals
+		\usepackage{physics} % Differentials
+% Configuration
+	\title{Homework Set 1}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+	
+% Macros
+	% Notation
+		% Operators
+			\DeclareMathOperator{\divr}{div}
+		% Sets
+			\newcommand{\R}{\mathbb{R}}
+		% Other
+			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\mod}{\text{mod}}
+			\DeclareMathOperator{\return}{\text{return}}
+			\renewcommand{\th}{\text{th}}
+			\DeclareMathOperator{\while}{\text{while}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\comment}[1]{}
+		\newcommand{\enumset}[1]{\setcounter{enumi}{#1}}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}	
+
+\begin{document}
+	\maketitle
+	\setcounter{section}{3}
+	\section{Number Theory and Cryptography}
+		\setcounter{subsection}{1}
+		\subsection{Integer Representations and Algorithms}
+			\subsubsection*{1--11 odd, 21, 23}
+				\begin{enumerate}
+					\item
+						\begin{tasks}(2)
+							\task
+								\(231 = (1110\, 0111)_2\)
+							\task
+								\(4532 = (1\, 0001\, 1011\, 0100)_2\)
+							\task
+								\(97644 = (1\, 0111\, 1101\, 0110\, 1100)_2\)
+						\end{tasks}
+					\enumset{2}
+					\item
+						\begin{tasks}(2)
+							\task
+								\((1\, 1111)_2 = 37\)
+							\task
+								\((10\, 0000\, 0001)_2 = 513\)
+							\task
+								\((1\, 0101\, 0101)_2 = 215\)
+							\task
+								\((110\, 1001\, 0001\, 0000)_2 = 26896\)
+						\end{tasks}
+					\enumset{4}
+					\item
+						\begin{tasks}(2)
+							\task
+								\((572)_8 = 378\)
+							\task
+								\((1604)_8 = 900\)
+							\task
+								\((432)_8 = 275\)
+							\task
+								\((2417)_8 = 1295\)
+						\end{tasks}
+					\enumset{6}
+					\item
+						\begin{tasks}(1)
+							\task
+								\((80\text{E})_{16} = (1000\, 0000\, 1110)_2\)
+							\task
+								\((135\text{AB})_{16} = (0001\, 0011\, 0101\, 1010\, 1011)_2\)
+							\task
+								\((\text{ABBA})_{16} = (1010\, 1011\, 1011\, 1010)_2\)
+							\task
+								\((\text{DEFACED})_{16} = (1101\, 1110\, 1111\, 1010\, 1100\, 1110\, 1101)_2\)
+						\end{tasks}
+					\enumset{8}
+					\item
+						\((\text{ABCDEF})_{16} = (1010\, 1011\, 1100\, 1101\, 1110\, 1111)_2\)
+					\enumset{10}
+					\item
+						\((1011\, 0111\, 1011)_2 = (\text{B7B})_{16}\)
+					\enumset{20}
+					\item
+						\begin{tasks}(2)
+							\task
+								\begin{tabular}{*{9}{c@{\,}}}
+									\(\overset{1}{}\) & 1 & 0 & 0 && \(\overset{1}{0}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 \\
+									+ & 1 & 1 & 1 && 0 & 1 & 1 & 1 \\\hline
+									 1 & 0 & 1 & 1 && 1 & 1 & 1 & 0\\
+									\end{tabular} \\\\
+								\begin{tabular}{*{18}{c@{\,}}}
+									& & & & & & & & & & 1 & 0 & 0 && 0 & 1 & 1 & 1 \\
+									& & & & & & & & & \(\times\) & 1 & 1 & 1 && 0 & 1 & 1 & 1 \\\hline
+									& \(\overset{1}{}\) & \(\overset{1}{}\) && \(\overset{1}{}\)  & \(\overset{1}{}\) & \(\overset{10}{}\) & \(\overset{11}{}\) && \(\overset{11}{}\) & \(\overset{10}{1}\) & \(\overset{11}{0}\) & \(\overset{10}{0}\) && \(\overset{10}{0}\) & \(\overset{1}{1}\) & 1 & 1 \\
+									& & && & & & && 1 & 0 & 0 & 0 && 1 & 1 & 1 \\
+									& & && & & & 1 && 0 & 0 & 0 & 1 && 1 & 1 \\
+									& & && & 1 & 0 & 0 && 0 & 1 & 1 & 1 \\
+									& & && 1 & 0 & 0 & 0 && 1 & 1 & 1 \\
+									+ & & 1 && 0 & 0 & 0 & 1 && 1 & 1 \\\hline
+									& 1 & 0 && 0 & 0 & 0 & 1 && 0 & 0 & 0 & 0 && 0 & 0 & 0 & 1
+									\end{tabular} \\
+							\task
+								\begin{tabular}{*{10}{c@{\,}}}
+									\(\overset{1}{}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 & 0 && \(\overset{1}{1}\) & 1 & \(\overset{1}{1}\) & 1 \\
+									+ & 1 & 0 & 1 & 1 && 1 & 1 & 0 & 1 \\\hline
+									1 & 1 & 0 & 0 & 1 && 1 & 0 & 1 & 0
+								\end{tabular} \\\\
+								\begin{tabular}{*{10}{c@{\,}}}
+									\(\overset{1}{}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 & 0 && \(\overset{1}{1}\) & 1 & \(\overset{1}{1}\) & 1 \\
+									+ & 1 & 0 & 1 & 1 && 1 & 1 & 0 & 1 \\\hline
+									1 & 1 & 0 & 0 & 1 && 1 & 0 & 1 & 0
+								\end{tabular}
+							\task
+								
+						\end{tasks}
+					\enumset{22}
+					\item
+						\begin{tasks}(4)
+							\task
+								\begin{tabular}{*{4}{c@{\,}}}
+									\(\overset{1}{}\) & \(\overset{1}{7}\) & \(\overset{1}{6}\) & 3 \\
+									+ & 1 & 4 & 7 \\\hline
+									1 & 1 & 3 & 2
+								\end{tabular} \\\\
+								\begin{tabular}{*6{c@{\,}}}
+									& & & 7 & 6 & 3 \\
+									& & \(\times\) & 1 & 4 & 7 \\\hline
+									& \(\overset{2}{}\) & \(\overset{1}{6}\) & \(\overset{1}{6}\) & 4 & 5 \\
+									\(\overset{1}{}\) & 3 & 7 & 1 & 4  \\
+									+ & 7 & 6 & 3 \\\hline
+									1 & 4 & 4 & 3 & 0 & 5
+								\end{tabular}
+							\task
+								\begin{tabular}{*{5}{c@{\,}}}
+									& 6 & 0 & 0 & 1 \\
+									+ & & 2 & 7 & 2 \\\hline
+									& 6 & 2 & 7 & 3
+								\end{tabular} \\\\
+								\begin{tabular}{*{8}{c@{\,}}}
+									& & & & 6 & 0 & 0 & 1 \\
+									& & & \(\times\) & & 2 & 7 & 2 \\\hline
+									& \(\overset{1}{}\) & & 1 & 4 & 0 & 0 & 2 \\
+									& & 5 & 2 & 0 & 0 & 7 \\
+									+ & 1 & 4 & 0 & 0 & 2 \\\hline
+									& 2& 1 & 3 & 4 & 2 & 7 & 2
+									
+								\end{tabular}
+							\task
+								\begin{tabular}{*{5}{c@{\,}}}
+									& \(\overset{1}{1}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 \\
+									+ & & 7 & 7 & 7 \\\hline
+									& 2 & 1 & 1 & 0
+								\end{tabular} \\\\
+								\begin{tabular}{*{7}{c@{\,}}}
+									& & & \(\overset{1}{1}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 \\
+									& & \(\times\) & & 7 & 7 & 7 \\\hline
+									& & & 7 & 7 & 7 & 7 \\
+									& & 7 & 7 & 7 & 7  \\
+									+ & 7 & 7 & 7 & 7 \\\hline
+									1 & 1 & 0 & 7 & 6 & 6 & 7
+								\end{tabular}
+							\task
+								\begin{tabular}{*{5}{c@{\,}}}
+									5 & 4 & 3 & 2 & 1 \\
+									+ & 3 & 4 & 5 & 6 \\\hline
+									5 & 7 & 7 & 7 & 7
+								\end{tabular} \\\\
+								\begin{tabular}{*{10}{c@{\,}}}
+									& & & & & 5 & 4 & 3 & 2 & 1 \\
+									& & & & & \(\times\) & 3 & 4 & 5 & 6 \\\hline
+									& & \(\overset{1}{}\) & \(\overset{1}{}\) & \(\overset{2}{4}\) & 1 & \(\overset{1}{2}\) & \(\overset{1}{3}\) & 4 & 6 \\
+									& & & 3 & 3 & 6 & 0 & 2 & 5 \\
+									& & 2 & 6 & 1 & 5 & 0 & 4 \\
+									+ & 2 & 0 & 5 & 1 & 6 & 3 \\\hline
+									& 2 & 3 & 7 & 3 & 2 & 6 & 2 & 1 & 6
+								\end{tabular}
+						\end{tasks}
+				\end{enumerate}
+		\subsection{Primes and Greatest Common Divisors}
+			\subsubsection*{1, 3, 5, 15, 17, (19 extra credit)}
+\end{document}

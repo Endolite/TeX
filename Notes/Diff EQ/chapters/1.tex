@@ -36,9 +36,7 @@
 			An general \(n^\th\) order ODE is \textbf{linear} if \(F\) is linear in \(y, y', y^{(n)}\). This means that it is linear when
 				\[a_n(x)\dv[n]{y}{x} + a_{n - 1}(x)\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0(x)y = g(x)\]
 			Two important special cases of the above are linear first-\footnote{
-					A first order ODE written in differential form as
-						\[M(x, y)\dd{x} + N(x, y)\dd{y} = 0\]
-						may be linear or nonlinear, as there is no indication of which symbol is the dependent variable.
+					A first order ODE written in differential form as \(M(x, y)\dd{x} + N(x, y)\dd{y} = 0\) may be linear or nonlinear, as there is no indication of which symbol is the dependent variable.
 				} and second-order DEs:
 				\begin{align*}
 					a_1(x)\dv{y}{x} + a_0(x)y &= g(x)
@@ -46,7 +44,8 @@
 				\end{align*}
 			The characteristic properties of linear ODEs are that the dependent variable and all of its derivatives are of first degree and that the coefficients of those terms are dependent at most on the independent variable. \\
 			A \textbf{nonlinear} ODE is one that is not linear. \\
-			Nonlinear functions of the dependent variable cannot appear in linear ODEs.
+			Nonlinear functions of the dependent variable cannot appear in linear ODEs. \\
+			A DE can not be classified as linear or nonlinear if both differentials are in the numerator.
 		\subsectionb{Solutions}
 			\callout{17}{\paragraph{Solution of an ODE}
 				Any function \(\varphi\) defined on an interval \(I\) with at least \(n\) derivatives that are continuous on \(I\) which when substituted into an \(n^\th\)-order ODE reduce the equation to an identity is a \textbf{solution} of the equation on the interval.
@@ -54,9 +53,9 @@
 			A DE need not have a solutions.
 			A solution of a DE may involve \textbf{integral-defined function}\footnote{
 					A function \(F\) of a single variable \(x\) can be defined as
-						\[F(x) = \int_a^x g(t)\,\dd{t}\]
+						\[F(x) = \int_a^x g(t)\dd{t}\]
 						If the integrand \(g\) is continuous over \([a, b]\) and \(x\) falls within the interval, then \(F\) is differentiable on the open interval and
-						\[F'(x) = \dv{x}\int_a^x g(t)\,\dd{t} = g(x)\]
+						\[F'(x) = \dv{x}\int_a^x g(t)\dd{t} = g(x)\]
 						The integral is often \textbf{nonelementary}, meaning that it is not composed of elementary functions. \\
 						Elementary functions include constant, polynomial, rational, exponential, logarithmic, trigonometric, and inverse trigonometric functions, as well as rational powers and finite combinations using the four basic arithmetic operations and compositions of these functions.
 				}. \\
@@ -116,4 +115,72 @@
 			The condition of continuity of \(\pdv*{f}{y}\) on \(R\) means that the solution on \(I_0\) containing \(x_0\) is the \textit{only} solution satisfying the initial condition. \\
 			It should be noted that the interval of definition \(I\) may not be as wide as \(R\) and the interval of existence \(I_0\) and uniqueness may not be as large as \(I\). The number \(h > 0\) that defines \(I_0\) may be very small, so the solution \(y(x)\) should bed thought of as \textit{unique locally}: a solution defined near \((x_0, y_0)\).
 	\section{Differential Equations as Mathematical Models}
+		\subsectionb{Mathematical Models}
+			A \textbf{mathematical model} is a mathematical description of some system or phenomenon. \\
+			To construct a mathematical model, one must first identify the independent variables of the system. The model's \textbf{level of resolution} is determined by which variables are chosen to be included From there, a set of hypotheses about the system can be made. These will include any empirical laws that may apply. \\
+			Assumptions made regarding a system often involve \textit{rates of change}, so their models often include \textit{derivatives}; that is to say, mathematical models often take the form of DEs or system of them. \\
+			If the DE or system is solvable, then the model can be considered reasonable if the solution is in line with data or known facts. Otherwise, the level of resolution can be increased or alternative assumptions can be made.
+			\callout{15}{\paragraph{Steps in the modeling process with differential equations}
+				\[\begin{tikzpicture}[yscale = 2]
+					\node at (-5, 1) [draw, minimum height = 1.5 cm, minimum width = 3cm, align = center, text width = 3cm] {Assumptions and hypotheses};
+						\draw[->] (-3.36, 1) -- (-2, 1);
+					\node at (0, 1) [align = center, text width = 4cm] {Express assumptions in terms of DEs};
+						\draw[->] (2, 1) -- (3.3, 1);
+					\node at (5, 1) [draw, minimum height = 1.5cm, minimum width = 3cm, align = center, text width = 3cm] {Mathematical formulation};
+						\draw[->] (5, 0.625) -- (5, 0.2); 
+					\node at (5, 0) [align = center] {Solve the DEs};
+						\draw[->] (5, -0.2) -- (5, -0.6);
+					\node at (5, -1) [draw, minimum height = 1.5cm, minimum width = 3cm, align = center, text width = 2cm] {Obtain Solutions};
+						\draw[->] (3.36, -1) -- (1.5, -1);
+					\node at (0, -1) [align = center, text width = 4cm] {Display predictions of model (eg., graphically)};
+						\draw[->] (-1.5, -1) -- (-3.3, -1);
+					\node at (-5, -1) [draw, minimum height = 1.5cm, minimum width = 3cm, align = center, text width = 3cm] {Check model prediction with known facts};
+						\draw[->] (-5, -0.6) -- (-5, -0.4);
+					\node at ( -5, 0) [align = center, text width = 4.5cm] {If necessary, alter assumptions or increase resolution of model};
+						\draw[->] (-5, 0.35) -- (-5, 0.6);
+				\end{tikzpicture}\]
+			}
+			Increasing the resolution also increases the complexity of the model, meaning that an explicit solution becomes less likely. \\
+			Mathematical models of physical systems often involve time as a variable \(t\). A solution gives the \textbf{state of the system}.
+		\subsectionb{Population Dynamics}
+			The \textbf{Malthusian model for population growth} assumes that the the growth rate over a certain time is proportional to the total population at that time.
+				\[\dv{P}{t} \propto P \qquad \text{or} \qquad \dv{P}{t} = kP\]
+				Due to its simplicity, it is only used to model the \textit{growth of small populations over short intervals}. \\
+				This model is also used for the model of continuous compound interest \(\dv*{S}{t} = rS\) (where \(S\) is capital and \(r\) is the annual interest rate).
+		\subsectionb{Radioactive Decay}
+			\textbf{Radioactive decay} can be modeled under the assumption that the rate \(\dv*{A}{t}\) at which a substance's nuclei decay is proportional to the number of nuclei \(A(t)\) of the substance remaining at time \(t\).
+				\[\dv{A}{t} \propto A \qquad \text{or} \qquad \dv{A}{t} = kA\]
+			This model is also used to determine a drug's half-life and in the model of a first-order chemical reaction.
+			\callout{15.33}{
+				\textit{A single differential equation may serve as a mathematical model for many phenomena.}
+			}
+			Mathematical models often have side conditions, meaning that they may either be IVPs or BVPs.
+		\subsectionb{Newton's Law of Warming/Cooling}
+			Newton's law of cooling/warming can be expressed as 
+				\[\dv{T}{t} \propto T - T_m \qquad \text{or} \qquad \dv{T}{t} = k(T - T_m)\]
+				where \(T\) is temperature of the body, \(T_m\) is the temperature of the surrounding medium, and \(t\) is time.
+		\subsectionb{Spread of a Disease}
+			The spread of a disease can be modeled as
+				\[dv{x}{t} = kxy\]
+				where \(x(t)\) is the number of people that have contracted the disease and \(y(t)\) is the number of people that have not been exposed. The product of these two can be used to approximate the number of interactions between the two groups.
+		\subsectionb{Chemical Reactions}
+			Radioactive decay is a \textbf{first-order reaction}. Such a reaction can be modeled as
+				\[\dv{X}{t} = kX\]
+				where \(X(t)\) is the amount of substance \(A\) remaining. \\
+			Suppose one molecule each of substances \(A\) and \(B\) is used to form a single molecule of substance \(C\). If \(X\) is the amount of \(C\) formed and \(\alpha\) and \(\beta\) are the initial amounts of \(A\) and \(B\), then the instantaneous amounts of \(A\) and \(B\) that have not yet been converted are \(\alpha - X\) and \(\beta - X\) respectively. The rate of formation of \(C\) is therefore given by
+				\[\dv{X}{t} = k(\alpha - X)(\beta - X)\]
+				A reaction modeled by this is said to be a \textbf{second-order reaction}
+		\subsectionb{Mixtures}
+			If \(A(t)\) denotes the amount of salt at time \(t\), then the rate at which this changes is
+				\[\dv{A}{t} = R_{\text{in}} - R_{\text{out}}\]
+		\subsectionb{Draining a Tank}
+			\textbf{Torricelli's law} states that the speed \(v\) of efflux of water through a sharp-edged hole at the bottom of a container filled to depth \(h\) is equal to the speed that a body would acquire in free fall from the same height (\(v = \sqrt{2gh}\) where \(g\) is acceleration due to gravity). If the are of the hole is \(A_h\) and the speed of water leaving is \(v = \sqrt{2gh}\), then the volume of water leaving per second is \(A_h\sqrt{2gh}\). If \(V(t)\) denotes the volume of water remaining at time \(t\), then
+				\[\dv{V}{t} = -A_h\sqrt{2gh}\]
+		\subsectionb{Series Circuits}
+			Consider the \textit{LCR}-series circuit
+				\[\begin{circuitikz}
+					\draw (0, 0)
+						to[V = $E(t)$] (0, 2)
+						to[L = $L$] (2, 2);
+				\end{circuitikz}\]
 \end{document}

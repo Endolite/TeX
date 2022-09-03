@@ -1,0 +1,43 @@
+\documentclass[A4, 12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 0.75in]{geometry}
+	% Notation
+		\usepackage{esint} % Integrals
+		\usepackage{physics} % Differentials/Vectors
+		
+\title{Discussion 2: Autonomous or Non-Autonomous DE}
+\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+		\begin{enumerate}[1)]
+			\item
+				\[
+					\dv{y}{x} + xy = 3 
+						\implies \dv{y}{x} = 3 - xy = f(x, y)
+				\]
+				As \(\dv*{y}{x}\) can not be expressed as a function of just \(y\), it this DE is \textbf{non-autonomous}.
+			\item
+				\[
+					\dv{y}{x} + y = 3x
+						\implies \dv{y}{x} = 3x - y = f(x, y)
+				\]
+				\(\dv*{y}{x}\) is dependent on both \(x\) and \(y\), meaning that this DE is \textbf{non-autonomous} as well.
+			\item
+				\[
+					x\dv{y}{x} - y = 0
+						\implies \dv{y}{x} = \frac{y}{x} = f(x, y)
+				\]
+				Because \(\dv*{y}{x}\) is a ratio of \(y\) and \(x\), it is dependent on both, so this DE is \textbf{non-autonomous}.
+			\item
+				\[
+					\dv{y}{x} + 5y = 0
+						\implies \dv{y}{x} = -5y = g(y)
+				\]
+				Since \(\dv*{y}{x}\) can be expressed as a function of \(y\), this DE is \textbf{autonomous}.
+		\end{enumerate}
+\end{document}

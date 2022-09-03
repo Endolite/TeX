@@ -34,11 +34,16 @@
 	
 % Macros
 	% Notation
+		% Operators
+			\DeclareMathOperator{\divr}{div}
 		% Sets
 			\newcommand{\R}{\mathbb{R}}
 		% Other
 			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\mod}{\text{mod}}
+			\DeclareMathOperator{\return}{\text{return}}
 			\renewcommand{\th}{\text{th}}
+			\DeclareMathOperator{\while}{\text{while}}
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 		\newcommand{\comment}[1]{}
@@ -48,5 +53,12 @@
 
 \begin{document}
 	\maketitle
-	\tableofcontents	
+	\tableofcontents
+	\setcounter{chapter}{3}
+	\chapter{Number Theory and Cryptography}
+		\subfile{chapters/4.tex}
+	\setcounter{chapter}{5}
+	\chapter{Counting}
+		\subfile{chapters/6.tex}	
 \end{document}
+ d 

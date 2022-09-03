@@ -13,12 +13,13 @@
 	% Diagrams
 		\usepackage{pgfplots}
 		\usepackage{tikz}
-		\usepackage{tikz-3dplot}
+			\usepackage{circuitikz} % Circuits
+			\usepackage{tikz-3dplot} % 3D
 			\usetikzlibrary{arrows.meta, angles, calc, quotes}
-	% Symbols
+	% Notation
 		\usepackage{amssymb} % Miscellaneous
 		\usepackage{esint} % Integrals
-		\usepackage{physics} % Differentials
+		\usepackage{physics} % Differentials/Vectors
 % Configuration
 	\title{Differential Equations}
 	\author{Arnav Patri}
@@ -43,6 +44,7 @@
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 		\newcommand{\comment}[1]{}
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
 
 \usepackage{subfiles}
 
@@ -51,5 +53,7 @@
 	\tableofcontents
 	\chapter{Introduction to Differential Equations}
 		\subfile{chapters/1.tex}
+	\chapter{First-Order Differential Equations}
+		\subfile{chapters/2.tex}
 \end{document}
 

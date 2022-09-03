@@ -1,0 +1,69 @@
+\documentclass[./Discrete Math.tex]{subfiles}
+
+\begin{document}
+	
+	\setcounter{section}{1}
+	\section{Integer Representations and Algorithms}
+		\callout{17}{\paragraph{Definition of a Number}
+			A number is dependent on a given base and its place value and digits.
+		}
+		\setcounter{subsection}{1}
+		\subsection{Representations of Integers}
+			A base \(b\) has \(b - 1\) digits. The first digit from the right is multiplied by \(b^0\), the second by \(b^1\), and so on. The number itself is the sum of each digit multiplied by \(b\) raised to the power of its respective place value. \\
+			0 is a member of every base (except sometimes base 1).
+			\callout{17}{
+				Let \(b\) be an integer greater than 1. If \(b\) is an integer greater than 1 and \(n\) is positive, then \(n\) can be expressed uniquely in the form
+					\[n = a_kb^k + a_{k - 1}b^{k - 1} + \cdots + a_1b + a_0\]
+			}
+			A number in base \(b\) is denoted by \((n)_b\).
+			\callout{17}{
+				A number is a linear combination of its digits and their place values.
+			}
+			\callout{17}{\paragraph{Constructing Base \(b\) Expansions}
+				Given an integer \(n\) to be represented in base \(b\),
+				\begin{align*}
+					&q := n \\
+					&k := 0 \\
+					&\while\, q \ne 0 \\
+						 &\qquad a:= a \,\mod\, b \\
+						 &\qquad q := q \divr b \\
+						 &\qquad k := k + 1 \\
+					&\return\, (a_{k - 1}, \ldots, a_1, a_0) \{(a_{k - 1} \ldots a_1a_0)_b \text{ is the base \(b\) expansion of \(n\)\}} 
+				\end{align*}
+			}
+			A number in its own base is always represented as 10. \\
+			Addition and multiplication in base \(b\) follows the same conventions as that of base 10. \\
+			To add two numbers \(a\) and \(b\) in base 2, their rightmost bits \(a_0\) and \(b_0\) can be added such that \\
+				\[a_0 + b_0 = 2c_0 + s_0\]
+				where \(s_0\) is \(s_0\) is the rightmost bit of the binary expansion of the sum and \(c_0\) is the \textbf{carry}, being either 0 or 1. This process can be repeated. \\
+				\[c_0 = \frac{a_0 + b_0 - s_0}{2}\]
+	\section{Primes and Greatest Common Divisors}
+		\setcounter{subsection}{1}
+		\subsection{Primes}
+			\callout{17}{A \textbf{prime number} is a whole number whose only factors are 1 and itself. By definition, it does not appear on the multiplication table. A nonprime positive integer is called \textbf{composite}}
+			\callout{17}{\paragraph{The Fundamental Theorem of Arithmetic}
+				Every integer greater greater than 1 can be written uniquely as the the product of one or more primes.
+			}
+			Two numbers are relatively prime or coprime if their greatest common factor (GCF) is 1. \\
+			If \(n\) is divisible by \(a\) and \(b\), then it is also divisible by \(a \times b\).
+		\subsection{Trial Division}
+	\setcounter{section}{0}
+	\section{Divisibility and Modular Arithmetic}
+		\subsection*{Divisibility Rules}
+			If the difference between a 2 times a number's last digit and the rest of the number is divisible by 7 or 0, the number is as well.
+			If the difference between a number's last digit multiplied by 5 and the rest of the numbers is divisible by 17 or 0, the number is divisible by 17. \\
+			If the sum of 2 times the last digit of a number and the rest of the digits is divisible by 19, the number is divisible by 19. \\
+			If the sum of 7 times the last digit of a number and the rest of the number is divisible by 23, then so is the number. \\
+			If the difference between 3 times the last digit of a number and the rest of the number is divisible by 31, then so is the number.
+			\[101,001\]
+			Ends in 1 \(\therefore\) not divisible by 2. \\
+			\(1 + 1 + 1 = 3\), \(3 \,\mod\, 3 = 0 \therefore\) divisible by 3. \\
+			\(101,001 / 3 = 33,667\)
+			Ends in 1 \(\therefore\) not divisible by 5. \\
+			\[111,111\]
+			Ends in 1 \(\therefore\) not divisible by 2. \\
+			\(1 + 1 + 1 + 1 + 1 + 1 = 6\), \(6\,mod\,3 = 0 \therefore\) divisible by 3. \\
+			Ends in 1 \(\therefore\) not divisible by 5.
+			\(111 - 111 = 0 \therefore\) divisible by 7.
+			\(33,667 / 7 = 5,291\).
+\end{document}
