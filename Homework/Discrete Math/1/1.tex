@@ -44,7 +44,6 @@
 			\newcommand{\R}{\mathbb{R}}
 		% Other
 			\DeclareMathOperator{\avg}{avg}
-			\renewcommand{\mod}{\text{mod}}
 			\DeclareMathOperator{\return}{\text{return}}
 			\renewcommand{\th}{\text{th}}
 			\DeclareMathOperator{\while}{\text{while}}
@@ -125,7 +124,7 @@
 								\begin{tabular}{*{18}{c@{\,}}}
 									& & & & & & & & & & 1 & 0 & 0 && 0 & 1 & 1 & 1 \\
 									& & & & & & & & & \(\times\) & 1 & 1 & 1 && 0 & 1 & 1 & 1 \\\hline
-									& \(\overset{1}{}\) & \(\overset{1}{}\) && \(\overset{1}{}\)  & \(\overset{1}{}\) & \(\overset{10}{}\) & \(\overset{11}{}\) && \(\overset{11}{}\) & \(\overset{10}{1}\) & \(\overset{11}{0}\) & \(\overset{10}{0}\) && \(\overset{10}{0}\) & \(\overset{1}{1}\) & 1 & 1 \\
+									& \(\overset{1}{}\) & \(\overset{1}{}\) && \(\overset{1}{}\)  & \(\overset{1}{}\) & \(\overset{10}{}\) & \(\overset{11}{}\) && \(\overset{11}{}\) & \(\overset{10}{1}\) & \(\overset{10}{0}\) & \(\overset{10}{0}\) && \(\overset{10}{0}\) & \(\overset{1}{1}\) & 1 & 1 \\
 									& & && & & & && 1 & 0 & 0 & 0 && 1 & 1 & 1 \\
 									& & && & & & 1 && 0 & 0 & 0 & 1 && 1 & 1 \\
 									& & && & 1 & 0 & 0 && 0 & 1 & 1 & 1 \\
@@ -134,15 +133,21 @@
 									& 1 & 0 && 0 & 0 & 0 & 1 && 0 & 0 & 0 & 0 && 0 & 0 & 0 & 1
 									\end{tabular} \\
 							\task
-								\begin{tabular}{*{10}{c@{\,}}}
-									\(\overset{1}{}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 & 0 && \(\overset{1}{1}\) & 1 & \(\overset{1}{1}\) & 1 \\
-									+ & 1 & 0 & 1 & 1 && 1 & 1 & 0 & 1 \\\hline
-									1 & 1 & 0 & 0 & 1 && 1 & 0 & 1 & 0
+								\begin{tabular}{*{11}{c@{\,}}}
+									\(\overset{1}{}\) && \(\overset{1}{1}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & \(\overset{1}{0}\) && \(\overset{1}{1}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 \\
+									&+ & 1 & 0 & 1 & 1 && 1 & 1 & 0 & 1 \\\hline
+									1 && 1 & 0 & 1 & 0 && 1 & 1 & 0 & 0
 								\end{tabular} \\\\
-								\begin{tabular}{*{10}{c@{\,}}}
-									\(\overset{1}{}\) & \(\overset{1}{1}\) & \(\overset{1}{1}\) & 1 & 0 && \(\overset{1}{1}\) & 1 & \(\overset{1}{1}\) & 1 \\
-									+ & 1 & 0 & 1 & 1 && 1 & 1 & 0 & 1 \\\hline
-									1 & 1 & 0 & 0 & 1 && 1 & 0 & 1 & 0
+								\begin{tabular}{*{19}{c@{\,}}}
+									& & & & & & & & & &  1& 1 & 1 & 0 && 1 & 1 & 1 & 1 \\
+									& & & & & & & & & \(\times\) & 1 & 0 & 1 & 1 && 1 & 1 & 0 & 1 \\\hline
+									\(\overset{1}{}\) & \(\overset{1}{}\) & \(\overset{10}{}\) & \(\overset{11}{}\) && \(\overset{100}{}\) & \(\overset{100}{}\) & \(\overset{100}{}\) & \(\overset{100}{}\) && \(\overset{11}{1}\) & \(\overset{11}{1}\) & \(\overset{10}{1}\) & \(\overset{10}{0}\) && \(\overset{1}{1}\) & 1 & 1 & 1 \\
+									& & & & & & & 1 & 1 && 1 & 0 & 1 & 1 && 1 & 1 \\
+									& & & & & & 1 & 1 & 1 && 0 & 1 & 1 & 1 && 1 \\
+									& & & & & 1 & 1 & 1 & 0 && 1 & 1 & 1 & 1 \\
+									& & & 1 && 1 & 1 & 0 & 1 && 1 & 1 & 1 \\
+									+ & 1 & 1 & 1 && 0 & 1 & 1 & 1 && 1 \\\hline
+									1 & 0 & 1 & 1 && 0 & 0 & 0 & 0 && 0 & 1 & 1 & 1 && 0 & 0 & 1 & 1
 								\end{tabular}
 							\task
 								
@@ -211,5 +216,20 @@
 						\end{tasks}
 				\end{enumerate}
 		\subsection{Primes and Greatest Common Divisors}
-			\subsubsection*{1, 3, 5, 15, 17, (19 extra credit)}
+			\subsubsection*{1, 3, 5, 15, 17 (19 extra credit)}
+				\begin{enumerate}
+					\item
+						\begin{tasks}(2)
+							\task
+								\(\sqrt{21} \approx 4.583 > 2, 3\)
+								\begin{itemize}[leftmargin = -0.25cm]
+									\item
+										ends in 1 \(\therefore\) not divisible by 2
+									\item
+										\(2 + 1 = 3, 3 \bmod 3 = 0 \, \therefore\) divisible by 3
+								\end{itemize}
+								21 is composite
+							\task
+						\end{tasks}
+				\end{enumerate}
 \end{document}
