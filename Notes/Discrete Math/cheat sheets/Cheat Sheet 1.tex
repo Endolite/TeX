@@ -1,4 +1,4 @@
-\documentclass[12pt, A4]{report}
+\documentclass[12pt, A4, twocolumn]{article}
 
 % Packages
 	% Basics
@@ -13,49 +13,32 @@
 	% Diagrams
 		\usepackage{pgfplots}
 		\usepackage{tikz}
-			\usepackage{circuitikz} % Circuits
-			\usepackage{tikz-3dplot} % 3D
+		\usepackage{tikz-3dplot}
 			\usetikzlibrary{arrows.meta, angles, calc, quotes}
-	% Notation
+	% Symbols
 		\usepackage{amssymb} % Miscellaneous
 		\usepackage{esint} % Integrals
-		\usepackage{physics} % Differentials/Vectors
+		\usepackage{physics} % Differentials
 % Configuration
-	\title{Differential Equations}
+	\title{Test 1 Cheat Sheet}
 	\author{Arnav Patri}
-	\hypersetup{
-	    colorlinks,
-	    citecolor=black,
-	    filecolor=black,
-	    linkcolor=black,
-	    urlcolor=black
-	}
-	\cellspacetoplimit10pt
-	\cellspacebottomlimit10pt
 	
 % Macros
 	% Notation
-		% Constants
-			\DeclareMathOperator{\en}{e}
+		% Operators
+			\DeclareMathOperator{\divr}{div}
 		% Sets
 			\newcommand{\R}{\mathbb{R}}
 		% Other
 			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\mod}{\text{mod}}
+			\DeclareMathOperator{\return}{\text{return}}
 			\renewcommand{\th}{\text{th}}
+			\DeclareMathOperator{\while}{\text{while}}
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 		\newcommand{\comment}[1]{}
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
-		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
-
-\usepackage{subfiles}
-
 \begin{document}
-	\maketitle
-	\tableofcontents
-	\chapter{Introduction to Differential Equations}
-		\subfile{chapters/1.tex}
-	\chapter{First-Order Differential Equations}
-		\subfile{chapters/2.tex}
+	\subsubsection*{Chapter 5}
 \end{document}
-

@@ -161,7 +161,7 @@
 				where \(T\) is temperature of the body, \(T_m\) is the temperature of the surrounding medium, and \(t\) is time.
 		\subsectionb{Spread of a Disease}
 			The spread of a disease can be modeled as
-				\[dv{x}{t} = kxy\]
+				\[\dv{x}{t} = kxy\]
 				where \(x(t)\) is the number of people that have contracted the disease and \(y(t)\) is the number of people that have not been exposed. The product of these two can be used to approximate the number of interactions between the two groups.
 		\subsectionb{Chemical Reactions}
 			Radioactive decay is a \textbf{first-order reaction}. Such a reaction can be modeled as
@@ -177,10 +177,12 @@
 			\textbf{Torricelli's law} states that the speed \(v\) of efflux of water through a sharp-edged hole at the bottom of a container filled to depth \(h\) is equal to the speed that a body would acquire in free fall from the same height (\(v = \sqrt{2gh}\) where \(g\) is acceleration due to gravity). If the are of the hole is \(A_h\) and the speed of water leaving is \(v = \sqrt{2gh}\), then the volume of water leaving per second is \(A_h\sqrt{2gh}\). If \(V(t)\) denotes the volume of water remaining at time \(t\), then
 				\[\dv{V}{t} = -A_h\sqrt{2gh}\]
 		\subsectionb{Series Circuits}
-			Consider the \textit{LCR}-series circuit
-				\[\begin{circuitikz}
+			Consider the \textit{LRC}-series circuit
+				\[\begin{circuitikz}[xscale = 2, yscale = 1.5]
 					\draw (0, 0)
 						to[V = $E(t)$] (0, 2)
-						to[L = $L$] (2, 2);
+						to[L = $L$] (2, 2)
+						to[R = $R$] (2, 0)
+						to[C = $C$] (0, 0);
 				\end{circuitikz}\]
 \end{document}

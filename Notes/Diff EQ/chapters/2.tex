@@ -106,4 +106,49 @@
 			The solution of an IVP \(\dv*{y}{x} = g(x)\), \(y(x_0) = y_0\) defined on interval \(I\) containing \(x_0\) and \(x\) over which \(g\) is continuous is given by
 				\[y(x) = y_0 + \int_{x_0}^x g(t)\dd{t}\]
 				When the integral is nonelementary, this is acceptable as a final solution.
+	\section{Linear Equations}
+		\subsectionb{A Definition}
+			\callout{12.1}{\paragraph{Definition 2.3.1. Linear Equation}
+				A first-order DE of the form
+					\[a_1(x)\dv{y}{x} + a_0(x)y = g(x)\]
+					is a \textbf{linear equation} in \(y\).
+			}
+		\subsectionb{Standard Form}
+			By dividing by \(a_1(x)\), the \textbf{standard form} of a first-order linear equation is obtained:
+				\[\dv{y}{x} + P(x)y = f(x)\]
+				A solution of this should be on an interval \(I\) over which both \(P\) and \(f\) are continuous.
+		\subsectionb{Method of Solution}
+			The left hand side of the standard form of a first-order linear DE can be rewritten as the derivative of a product by multiplying by \(\mu(x)\).
+			\[\dv{}{x}[\mu(x)] = \mu\dv{y}{x} + \dv{\mu}{x}y = \mu\dv{y}{x} + \mu Py\]
+			Evidently,
+			\[
+				\dv{\mu}{x} = \mu P \implies 
+					\frac{\dd{\mu}}{\mu} = P \dd{x} \implies
+					\ln|\mu| = \int P(x)\dd{x} \implies
+					\mu = \en^{\int P(x)\dd{x}}
+			\]
+			The constant of integration is chosen to be 1 for simplicity. This result is called the \textbf{integrating factor}. Substituting in,
+			\[
+				\dv{}{x}{\Bigl[y\en^{\int P(x)\dd{x}}\Bigr] = \int P(x)\dd{x}}\dv{y}{x} + P(x)\en^{\int P(x)\dd{x}}y = \en^{\int P(x)\dd{x}}f(x)
+			\]
+			Integrating both sides,
+			\[y\en^{\int P(x)\dd{x}} = \int \en^{\int P(x)\dd{x}}f(x)\dd{x}\]
+			Solving for \(y\) produces a one-parameter family of solutions
+			\[y = \en^{-\int P(x)\dd{x}}\left(\int \en^{\int P(x)\dd{x}}f(x)\dd{x} + C\right)\]
+			\callout{17}{\paragraph{Solving a First-Order Linear DE}
+				\begin{enumerate}
+					\item
+						Put the equation into standard form.
+					\item
+						Identify \(P(x)\) to find the integrating factor \(\en^{\int P(x)\dd{x}}\). Evaluate the integral, forgoing the integration constant.
+					\item
+						Multiply both sides by the integrating factor:
+							\[\dv{y}{x}\Bigl[y\en^{\int P(x)\dd{x}}\Bigr] = \en^{\int P(x)\dd{x}}f(x)\]
+					\item
+						Integrate both sides and solve for \(y\).
+				\end{enumerate}
+
+			}
+		\subsectionb{General Solutions}
+			Suppose \(P\) and \(f\), found in the standard form of a first-order linear DE, are continuous on \(I\). \textit{If} a solution of the DE exists on \(I\), it must be of the form found via the integrating factor. Conversely, any function in this form is a solution on \(I\). In other words, the family of solutions found via the integrating factor contains \textit{every} solution defined on \(I\).
 \end{document}

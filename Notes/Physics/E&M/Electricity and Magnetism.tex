@@ -1,27 +1,23 @@
-\documentclass[12pt, A4]{report}
+\documentclass[A4, 12pt]{report}
 
 % Packages
 	% Basics
 		\usepackage{amsmath}
+		\usepackage{amssymb}
 		\usepackage{bm}
-		\usepackage{cellspace}
 		\usepackage{csquotes}
-		\usepackage[hang,flushmargin]{footmisc}
 		\usepackage[margin=0.75in]{geometry}
 		\usepackage{hyperref}
 		\usepackage[utf8]{inputenc}
 	% Diagrams
 		\usepackage{pgfplots}
 		\usepackage{tikz}
-			\usepackage{circuitikz} % Circuits
-			\usepackage{tikz-3dplot} % 3D
-			\usetikzlibrary{arrows.meta, angles, calc, quotes}
 	% Notation
-		\usepackage{amssymb} % Miscellaneous
 		\usepackage{esint} % Integrals
-		\usepackage{physics} % Differentials/Vectors
+		\usepackage{physics} 
+		\usepackage{siunitx} % Units 
 % Configuration
-	\title{Differential Equations}
+	\title{AP Physics C: Electricity and Magnetism}
 	\author{Arnav Patri}
 	\hypersetup{
 	    colorlinks,
@@ -30,18 +26,7 @@
 	    linkcolor=black,
 	    urlcolor=black
 	}
-	\cellspacetoplimit10pt
-	\cellspacebottomlimit10pt
-	
 % Macros
-	% Notation
-		% Constants
-			\DeclareMathOperator{\en}{e}
-		% Sets
-			\newcommand{\R}{\mathbb{R}}
-		% Other
-			\DeclareMathOperator{\avg}{avg}
-			\renewcommand{\th}{\text{th}}
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 		\newcommand{\comment}[1]{}
@@ -49,13 +34,8 @@
 		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
 
 \usepackage{subfiles}
-
 \begin{document}
 	\maketitle
-	\tableofcontents
-	\chapter{Introduction to Differential Equations}
-		\subfile{chapters/1.tex}
-	\chapter{First-Order Differential Equations}
-		\subfile{chapters/2.tex}
+	\chapter{Electrostatics}
+		\subfile{units/1.tex}
 \end{document}
-
