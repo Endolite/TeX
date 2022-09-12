@@ -1,0 +1,50 @@
+\documentclass[./Discrete Math.tex]{subfiles}
+
+\begin{document}
+	\section{Mathematical Induction}
+		\setcounter{subsection}{1}
+		\subsection{Mathematical Induction}
+			Mathematical induction\footnote{In logic, \textbf{deductive reasoning} uses inference to draw conclusions from premises while \textbf{inductive reasoning} draws conclusions that are supported by not ensured by the evidence. Mathematical proofs, including those that employ induction, are deductive.} can be used to prove statements asserting that a propositional function \(P(n)\) is true for all positive integers \(n\).
+			\callout{17}{\paragraph{Principle of Mathematical Induction}
+				In order to prove that \(P(n)\) is true for all positive integers \(n\), two steps must be completed: 
+				\begin{enumerate}
+					\item
+						The \textbf{basis step} must verify that \(P(1)\) is true.
+					\item
+						The \textbf{inductive step} must show that \(P(k) \Rightarrow P(k + 1)\) is true for all positive integers \(k\).
+				\end{enumerate}
+			}
+			To complete the inductive step, it is assumed that \(P(k)\) is true for an arbitrary positive integer \(k\) and that this assumption guarantees that \(P(k + 1)\) is true as well. This assumption is called the \textbf{inductive hypothesis}. \\
+			The inductive step shows that \(\forall k(P(k) \Rightarrow P(k + 1))\) is true where the domain is \(\Z^+\). \\
+			Expresses as a rule of inference, this proof technique can be written as
+				\[(P(1) \land \forall k(P(k) \Rightarrow P(k + 1))) \Rightarrow \forall nP(n)\]
+				with the domain \(\Z^+\).
+		\setcounter{subsection}{4}
+			\subsection{Guidelines for Proofs by Mathematical Induction}
+				\callout{17}{\paragraph{Template for Proofs by Mathematical Induction}
+					\begin{enumerate}
+						\item
+							Express the statement to be proven in the form of \enquote{for all \(n \ge b\), \(P(n)\)} for a fixed integer \(b\).
+						\item
+							Denote the basis step, showing that \(P(b)\) is true.
+						\item
+							Identify the inductive hypothesis in the form \enquote{Assume that \(P(k)\) is true for an arbitrary fixed integer \(k \ge b\)}.
+						\item
+							Sate what must be proven under the assumption in order to prove the validity of the inductive hypothesis.
+						\item
+							Prove the statement \(P(k + 1)\) under the assumption.
+						\item
+							Identify the conclusion of the inductive step.
+						\item
+							State the conclusion that \enquote{by mathematical induction, \(P(n)\) is true for all integers \(n\) with \(n \ge b\)}.
+					\end{enumerate}
+				}
+	\setcounter{section}{2}
+	\section{Recursive Definitions and Structural Induction}
+		\setcounter{subsection}{1}
+		\subsection{Recursively Defined Functions}
+			A function with the set of nonnegative integers as its domain can be defined by a \textbf{basis step}, setting the value of the function at 0, and a \textbf{recursive step}, providing a rule for finding its value at an integer from its values at smaller integers. This describes a \textbf{recursive/inductive definition}. \\
+			Recursively defined functions are \textbf{well-defined}, meaning that for every positive integer, the corresponding function value is unambiguously determined.
+		\setcounter{subsection}{2}
+		\subsection{Recursively Defined Sets and Structures}
+\end{document}

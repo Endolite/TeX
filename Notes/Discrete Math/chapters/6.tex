@@ -2,8 +2,113 @@
 
 \begin{document}
 	\section{The Basics of Counting}
+		\setcounter{subsection}{1}
+		\subsection{Basic Counting Principle}
+			\callout{17}{\paragraph{The Product Rule}
+				If a procedure can be decomposed into a sequence of two tasks, one with \(n_1\) possible ways of being completed and another with \(n_2\) ways, there are \(n_1n_2\) total ways to carry out the procedure.
+			}
+			\callout{17}{\paragraph{The Sum Rule}
+				If a task can be completed either in one of \(n_1\) ways or in one of \(n_12\) ways, where there is no overlap between the sets of \(n_1\) and \(n_2\) ways, then there are \(n_1 + n_2\) ways to complete the task.
+			}
+		\setcounter{subsection}{2}
+		\subsection{The Subtraction Rule (Inclusion-Exclusion for Two Sets)}
+			\callout{17}{\paragraph{The Subtraction Rule}
+				If a task can be completed in either \(n_1\) or \(n_2\) ways, then the number of ways to do the task is \(n_1 + n_2\) minus the number of ways that are shared between both.
+			}
+			The subtraction rule is also known as the \textbf{principle of exclusion principle}. For two sets \(A_1\) and \(A_2\),
+				\[|A_1 \cup A_2| = |A_1| + |A_2| - |A_1 \cap A_2|\]
+				This uses an exclusive or rather than an inclusive or.
+		\subsection{The Division Rule}
+			\callout{17}{\paragraph{The Division Rule}
+				If a task can be done using a procedure that can be carried out \(n\) ways and exactly \(d\) of \(n\) ways correspond to every way, there are \(n/d\) ways to complete the task.
+			}
+		\subsection{Tree Diagrams}
+			Counting problems are often solvable using \textbf{tree diagrams}, which consist of a root, a number of branches leaving the root, possible further branches extending from them, and so on.
 	\setcounter{section}{2}
 	\section{Permutations and Combinations}
-	\section{Binomial Coefficients}
+		\setcounter{subsection}{1}
+		\subsection{Permutations}
+			A \textbf{permutation} of a set of distinct objects is an ordered arrangement of these objects. An ordered arrangement of a set of \(r\) distinct elements of a set is called an \textbf{\(\bm{r}\)-permutation}.
+			\callout{17}{
+				If \(n\) is a positive integer and \(r\) is an integer within \([1, n]\), then there are
+				\[P(n, r) = {}_nC_r= n(n - 1)(n - 2) \cdots (n - r + 1) = \prod_{i = 0}^{r - 1}[n - i] \]
+				\(r\)-permutations of a set with \(n\) distinct elements.	
+			}
+			\callout{7.67}{
+				If \(n\) and \(r\) are integers with \(0 \le r \le n\), then
+					\[P(n, r) = \frac{n!}{(n - r)!}\]
+			}
+		\subsection{Combinations}
+			A \textbf{combination} is an unordered selection of objects. An unordered selection of \(r\) elements from a set is an \textbf{\(\bm{r}\)-combination}
+			\callout{17}{
+				The number of \(r\)-combinations of a set of \(n\) elements, where \(n\) is a nonnegative integer and \(0 \le r \le n\), is
+					\[C(n, r) = {}_nC_r = \frac{n!}{r!(n - r)!} = \binom{n}{r}\]
+			}
+			\callout{17}{
+				If \(n\) and \(r\) are nonnegative integers with \(r \le n\),
+					\[C(n, r) = C(n, n - r)\]
+			}
+	\section{Binomial Coefficients and Identities}
+		\setcounter{subsection}{1}
+		\subsection{The Binomial Theorem}
+			The binomial theorem allows the coefficients of the terms of exponential powers of binomials to be found. A \textbf{binomial} expression is simply the sum of two terms.
+			\callout{15.73}{\paragraph{The Binomial Theorem}
+				If \(x\) and \(y\) are variables and \(n\) is a nonnegative integer, then
+					\[(x + y)^n = \sum_{i = 0}^n \binom{n}{j}x^{n - 1}y^i\]
+			}
+			\callout{17}{
+				If \(n\) is a nonnegative integer, then
+					\begin{align*}
+						\sum_{k = 0}^n \binom{n}{k} &= 2^n &
+							\sum_{k = 0}^n (-1)^k \binom{n}{k} &= 0 &
+							\sum_{k = 0}^n 2^k \binom{n}{k} = 3^n
+					\end{align*}
+			}
+		\subsection{Pascal's Identity and Triangle}
+			\callout{13.14}{\paragraph{Pascal's Identity}
+				If \(n\) and \(k\) are positive integers such that \(k \le n\), then
+					\[\binom{n + 1}{k} = \binom{n}{k - 1} + \binom{n}{k}\]
+			}
+		\subsection{Other Identities Involving Binomial Coefficients}
+			\callout{15.9}{\paragraph{Vandermonde's Identity}
+				If \(m\), \(n\), and \(r\) are nonnegative integers with \(r \le m, n\), then
+					\[\binom{m + n}{r} = \sum_{k = 0}^r \binom{m}{r - k}\binom{n}{k}\]
+			}
+			\callout{5.87}{
+				If \(n\) is a nonnegative integer, then
+					\[\binom{2n}{n} = \sum_{k = 0}^n \binom{n}{k}^2\]
+			}
+			\callout{10.01}{
+				If \(n\) and \(r\) are nonnegative integers such that \(r \le n\), then
+					\[\binom{n + 1}{r + 1} = \sum_{i = r}^n \binom{i}{r}\]
+			}
 	\section{Generalized Permutations and Combinations}	
+		\setcounter{subsection}{1}
+		\subsection{Permutations with Repetition}
+			\callout{14.8}{
+				The number of \(r\)-permutations of a set of \(n\) elements with repetitions allowed is \(n^r\).
+			}
+		\subsection{Combinations with Repetition}
+			\callout{17}{
+				The number of \(r\)-combinations of a set of \(n\) elements with repetitions allowed is \(C(n + r - 1, r) = C(n + r - 1, n - 1)\).
+			}
+		\subsection{Permutations with Indistinguishable Objects}
+			\callout{17}{
+				The number of distinct permutations of \(n\) objects, where \(n_1\) are indistinguishable objects of type 1, \(n_2\) are indistinguishable objects of type 2, \ldots, and \(n_k\) are indistinguishable objects of type \(k\) is
+					\[\frac{n!}{n_1!n_2!\ldots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
+			}
+		\subsection{Distributing Objects into Boxes}
+			\callout{17}{
+				The number of ways to distribution \(n\) distinguishable objects into \(k\) distinguishable boxes such that \(n_i\) objects are placed into box \(i\) is
+					\[\frac{n!}{n_1!n_2!\ldots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
+			}
+			The number of ways of placing \(n\) indistinguishable objects into \(k\) distinguishable boxes is equal to that of \(n\)-combinations of a set of \(k\) elements with repetition allowed, being \(k^n\). \\
+			The number of ways to place \(n\) distinguishable objects into \(k\) indistinguishable boxes is equal to
+				\[
+					\sum_{j = 1}^k S(n, j) = \sum_{j = 1}^k {n \brace j} 
+							= \sum_{j = 1}^k \frac{1}{j!}\sum_{i = 0}^{j - 1}(-1)^j\binom{j}{i}(j - i)^n
+				\]
+				where \(S(n, j)\) and \({n \brace k}\) denote \textbf{Stirling numbers of the second kind}:
+				\[S(n, j) = \frac{1}{j!}\sum_{i = 1}^{j - 1}(-1)^i\binom{j}{i}(j - i)^n\]
+			Distributing \(n\) indistinguishable objects into \(k\) indistinguishable boxes is the same as writing \(n\) as the sum of at most \(k\) positive integers in nonincreasing order. If \(a_1 + a_2 + \cdots + a_i = n\) where \(a_1, a_2, \ldots, a_i\) are descending positive integers, it is said that this list is a \textbf{partition} of the positive integer \(n\) into \(i\) positive integers. If \(p_k(n)\) is the number of partitions of \(n\) into at most \(k\) positive integers, then there are \(p_k(n)\) ways to sort \(n\) indistinguishable objects into \(k\) indistinguishable boxes. No simple closed formula for this number exists.
 \end{document}
