@@ -1,0 +1,47 @@
+\documentclass[A4, 12pt]{article}
+
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 1 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{physics}
+% Macros
+	\DeclareMathOperator{\en}{e}
+% Configuration
+	\title{Discussion 2}
+	\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+		\begin{enumerate}[1)]
+			\item
+				\begin{align*}
+					5\dv{y}{x} + 25xy &= 1 \implies
+						\dv{y}{x} + 5xy = \frac{1}{5} \\
+					P(x) &= 5x \qquad f(x) = \frac{1}{5} \\
+					\mu(x) &= \en^{\int 5x\dd{x}} = \en^{\frac{5x^2}{2}}
+				\end{align*}
+			\item
+				\begin{align*}
+					x^2\dv{y}{x} + 2xy &= x \implies
+						\dv{y}{x} + \frac{2y}{x} = \frac{1}{x} \\
+					P(x) &= \frac{2}{x} \qquad f(x) = \frac{1}{x} \\
+					\mu(x) &= \en^{\int \frac{2}{x}\dd{x}} = \en^{2\ln|x|} = x^2
+				\end{align*}
+			\item
+				\begin{align*}
+					\sin(x) \dv{y}{x} + \sin(2x)y &= 1 \implies
+							\dv{y}{x} + \frac{\sin(2x)}{\sin(x)}y = \csc{x} 
+									= \dv{y}{x} + \frac{2\sin(x)\cos(x)}{\sin(x)}
+									y \\
+					\dv{y}{x} + 2\cos(x)y &= \csc(x) \implies P(x) = 2\cos(x) \qquad f(x) = \csc(x) \\
+					\mu(x) &= \en^{\int 2\cos(x)\dd{x}}
+							= \en^{2\sin(x)}
+				\end{align*}
+		\end{enumerate}
+\end{document}
