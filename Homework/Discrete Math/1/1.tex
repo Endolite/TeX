@@ -221,15 +221,109 @@
 					\item
 						\begin{tasks}(2)
 							\task
-								\(\sqrt{21} \approx 4.583 > 2, 3\)
-								\begin{itemize}[leftmargin = -0.25cm]
-									\item
-										ends in 1 \(\therefore\) not divisible by 2
-									\item
-										\(2 + 1 = 3, 3 \bmod 3 = 0 \, \therefore\) divisible by 3
-								\end{itemize}
-								21 is composite
+								\(21 = 7 \times 3 \therefore \) composite
 							\task
+								\(\sqrt{29} \approx 5.385\)
+								\begin{itemize}[leftmargin = -0.25cm]
+									\item Odd \(\therefore \not{\mid}\,\,\, 2\) 
+									\item \(29 = 10(3) - 1 \therefore \not{\mid}\,\,\, 3\)
+									\item \(29 = 6(5) - 1 \therefore \not{\mid}\,\,\, 5 \therefore \text{prime}\)
+								\end{itemize}
+							\task
+								\(\sqrt{71} \approx 8.426\)
+									\begin{itemize}[leftmargin = -0.25cm]
+										\item Odd \(\therefore \not{\mid}\,\,\, 2\)
+										\item \(7 + 1 = 8 = 3(3) - 1 \therefore \not{\mid}\,\,\, 3\)
+										\item \(71 = 5(14) + 1 \therefore \not{\mid}\,\,\, 5\)
+										\item  \(71 = 7(10) + 1 \therefore \not{\mid}\,\,\, 7 \therefore\) prime
+									\end{itemize}
+							\task
+								\(\sqrt{97} \approx 9.849\)
+									\begin{itemize}[leftmargin = -0.25cm]
+										\item Odd \(\therefore \not{\mid}\,\,\, 2\)
+										\item \(97 = 3(32) + 1 \therefore \not{\mid}\,\,\, 3\)
+										\item \(97 = 5(19) + 2 \therefore \not{\mid}\,\,\, 5\)
+										\item \(97 = 7(14) - 1 \therefore \not{\mid}\,\,\, 7 \therefore\) prime	
+									\end{itemize}
+						\end{tasks}
+					\setcounter{enumi}{2}
+					\item
+						\begin{tasks}(4)
+							\task
+								\(88 = 2^3 \times 11\)
+							\task
+								\(126 = 2 \times 3^2 \times 7\)
+							\task
+								\(729 = 3^6\)
+							\task
+								\(1001 = 7 \times 11 \times 13\)
+							\task
+								\(1111 = 11 \times 101\)
+							\task
+								\(909,090 = 2 \times 3^3 \times 5 \times 13 \times 259\)
+						\end{tasks}
+					\setcounter{enumi}{4}
+					\item
+						\(10! = 2 \times 3 \times 4 \times 5 \times 6 \times 7 \times 8 \times 9 \times 10 = 2^8 \times 3^4 \times 5^2 \times 7\)
+					\setcounter{enumi}{14}
+					\item
+						\(30 = 2 \times 3 \times 5 \implies 1, 7, 11, 13, 17, 19, 23, 29\)
+					\setcounter{enumi}{16}
+					\item
+						\begin{tasks}(2)
+							\task
+								\(11, 15 = 3 \times 5, 19 \therefore\) Yes
+							\task
+								\(14 = 7 \times 2, 15 = \bm{3} \times 5, 21 = \bm{3} \times 21 \therefore\) No
+							\task
+								\(12 = 2^2 \times 3, 17, 31, 37 \therefore\) Yes
+							\task
+								\(7, 8 = 2^3, 9 = 3^2, 11 \therefore\) Yes
 						\end{tasks}
 				\end{enumerate}
+	\setcounter{section}{5}
+	\section{Counting}
+		\setcounter{subsection}{2}
+		\subsection{Permutations and Combinations}
+			\begin{enumerate}
+				\item
+					\(\{a, b, c\}, \{a, c, b\}, \{b, a, c\}, \{b, c, a\}, \{c, a, b\}, \{c, b, a\}\)
+				\setcounter{enumi}{2}
+				\item
+					\(P(6, 6) = \dfrac{6!}{(6 - 6)!} = 720\)
+				\setcounter{enumi}{4}
+				\item
+					\begin{tasks}(3)
+						\task
+							\(P(6, 3) = \dfrac{6!}{(6 - 3)!} = 120\)
+						\task
+							\(P(6, 5) = \dfrac{6!}{(6 - 5)!} = 720\)
+						\task
+							\(P(8, 1) = \dfrac{8!}{(8 - 1)!} = 8\)
+						\task
+							\(P(8, 5) = \dfrac{8!}{(8 - 5)!} = 336\)
+						\task
+							\(P(8, 8) = \dfrac{8!}{(8 - 8)!} = 40320\)
+						\task
+							\(P(10, 9) = \dfrac{10!}{(10 - 9)!} = 3628880\) 
+					\end{tasks}
+				\setcounter{enumi}{6}
+				\item
+					\(P(9, 5) = \dfrac{9!}{(9 - 5)!} = 15120\)
+				\setcounter{enumi}{8}
+				\item
+					\(P(12, 3 = \dfrac{12!}{(12 - 3)!} = 1320\)
+				\setcounter{enumi}{10}
+				\item
+					\begin{tasks}(2)
+						\task
+							\(C(10, 4) = \dfrac{10!}{4!(10 - 4)!} = 210\)
+						\task
+							\(\displaystyle \sum_{i = 0}^4 C(10, i) = \sum_{i = 0}^4 \frac{10!}{i!(10 - i)!} = 386\)
+						\task
+							\(\displaystyle \sum_{i = 4}^{10} C(10, i) = \sum_{i = 4}^{10} \frac{10!}{i!(10 - i)!} = 848\)
+						\task
+							\(C(10, 5) = \dfrac{10!}{5!(10 - 5)!} = 252\)
+					\end{tasks}
+			\end{enumerate}
 \end{document}

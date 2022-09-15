@@ -54,7 +54,7 @@
 			The binomial theorem allows the coefficients of the terms of exponential powers of binomials to be found. A \textbf{binomial} expression is simply the sum of two terms.
 			\callout{15.73}{\paragraph{The Binomial Theorem}
 				If \(x\) and \(y\) are variables and \(n\) is a nonnegative integer, then
-					\[(x + y)^n = \sum_{i = 0}^n \binom{n}{j}x^{n - 1}y^i\]
+					\[(x + y)^n = \sum_{i = 0}^n \binom{n}{i}x^{n - i}y^i\]
 			}
 			\callout{17}{
 				If \(n\) is a nonnegative integer, then
@@ -95,14 +95,14 @@
 		\subsection{Permutations with Indistinguishable Objects}
 			\callout{17}{
 				The number of distinct permutations of \(n\) objects, where \(n_1\) are indistinguishable objects of type 1, \(n_2\) are indistinguishable objects of type 2, \ldots, and \(n_k\) are indistinguishable objects of type \(k\) is
-					\[\frac{n!}{n_1!n_2!\ldots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
+					\[\frac{n!}{n_1!n_2!\cdots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
 			}
 		\subsection{Distributing Objects into Boxes}
 			\callout{17}{
 				The number of ways to distribution \(n\) distinguishable objects into \(k\) distinguishable boxes such that \(n_i\) objects are placed into box \(i\) is
 					\[\frac{n!}{n_1!n_2!\ldots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
 			}
-			The number of ways of placing \(n\) indistinguishable objects into \(k\) distinguishable boxes is equal to that of \(n\)-combinations of a set of \(k\) elements with repetition allowed, being \(k^n\). \\
+			The number of ways of placing \(n\) indistinguishable objects into \(k\) distinguishable boxes is equal to that of \(n\)-combinations of a set of \(k\) elements with repetition allowed, being \(C(n + r - 1, r\). \\
 			The number of ways to place \(n\) distinguishable objects into \(k\) indistinguishable boxes is equal to
 				\[
 					\sum_{j = 1}^k S(n, j) = \sum_{j = 1}^k {n \brace j} 
