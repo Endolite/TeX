@@ -1,0 +1,202 @@
+\documentclass[./Differential Equations.tex]{subfiles}
+
+\begin{document}
+	\section{Linear Models}
+		\subsectionb{Growth and Decay}
+		The IVP
+				\[\dv{x}{t} \propto x, \quad x(t_0) = x_0\]	
+				can model growth or decay.
+		\subsectionb{Half-Life}
+			A substance's \textbf{half-life} is the amount of time that it takes for half of the atoms in the initial amount \(A_0\) to disintegrate or transmute into those of another element. The longer a substance's half-life, the more stable it is.
+		\subsectionb{Newton's Law of Cooling/Warming}
+			Newton's law of cooling/warming is given by
+				\[\dv{T}{t} = k(T - T_m)\]
+				where \(T(t)\) is the temperature of the object, \(T_m\) is the ambient temperature, and \(k\) is a proportionality constant.
+		\subsectionb{Series Circuits}
+			For an \(LR\)-series circuit
+				\[\begin{circuitikz}[xscale = 2, yscale = 1.5]
+					\draw (0, 0)
+						to[V, l = \(E(t)\)] (0, 2)
+						to[L = \(L\)] (2, 2)
+						to (2, 0)
+						to[R = \(R\)] (0, 0);
+				\end{circuitikz}\]
+				containing only a resistor and an inductor, Kirchhoff's second law states that the sum of the voltage drop across the inductor (\(L(\dv*{i}{t})\)) and that across the resistor (\(iR\)) is equal to the impressed voltage (\(E(t)\)) on the circuit. This provides the first-order linear DE
+				\[L\dv{i}{t} + Ri = E(t)\]
+				for the current \(i(t)\), where \(L\) and \(R\) are the inductance and resistance respectively. The current is also called the \textbf{response} os the system. \\
+			The voltage drop across a capacitor with capacitance \(C\) is given by \(q(t)/C\), \(q\) being the charge on the capacitor. For an \(RC\)-series circuit
+				\[\begin{circuitikz}[xscale = 2, yscale = 1.5]
+					\draw (0, 0)
+						to[V, l = \(E(t)\)] (0, 2)
+						to[R = \(R\)] (2, 2)
+						to (2, 0)
+						to[C = \(C\)] (0, 0);
+				\end{circuitikz}\]
+				Kirchhoff's second law then gives
+				\[Ri + \frac{1}{C}q = E(t)\]
+				As \(i\) and \(q\) are related by \(i = \dv*{q}{t}\), though, this can be rewritten as the linear DE
+				\[R\dv{q}{t} + \frac{1}{c}q = E(t)\]
+	\section{Nonlinear Models}
+		\subsectionb{Population Dynamics}
+			If \(P(t)\) denotes a population's size at time \(t\), the model for exponential growth begins by assuming that \(\dv*{P}{t} + kP\) for some \(k > 0\). In this model, the \textbf{relative/specific growth rate}, as defined by
+				\[\frac{\dv*{P}{t}}{P}\]
+				is a constant \(k\). \\
+			As resources are finite, true exponential growth over long periods of time is essentially unheard of. \\
+			The assumption that a population's growth is dependent only on the size of the population can be states as
+				\[\frac{\dv*{P}{Pt}}{P} = f(P) \qquad \text{or} \qquad \dv{P}{t} = Pf(P)\]
+				This DE is called the \textbf{density-dependent hypothesis}.
+		\subsectionb{Logistic Equation}
+			Suppose that the maximum number of individuals sustainable in a population is \(K\). This quantity \(K\) is called the environment's \textbf{carrying capacity}. For the DE, then,
+				\[f(K) = 0 \qquad \text{and} \qquad f(0) = r\]
+			 	The simplest assumption to satisfy these conditions is that \(f(P)\) is linear:
+			 	\[f(P) = c_1P + c_2\]
+			 	Using the conditions, we find that \(c_2 = r\) and \(c_1 = -r/K\), so 
+			 	\[f(P) = r - \frac{r}{K}P\]
+			 	The DE then becomes
+			 	\[\dv{P}{t} = P\Bigl(r - \frac{r}{K}P\Bigr)\]
+			 	Relabeling the constants,
+			 	\[\dv{P}{t} = P(a - bP)\]
+		\subsectionb{Solution of the Logistic Equation}
+			The logistic model can be solved via separation of variables:
+				\begin{align*}
+				a \\
+					\left(\frac{1/a}{P} + \frac{b/a}{a - bP}\right)\dd{P} &= \dd{t} \\
+					\frac{1}{a}\ln|P| - \frac{1}{a}\ln|a - bP| &= t + c \\
+					\ln\left|\frac{P}{a - bP}\right| &= at + ac \\
+					\frac{P}{a - bP} = c_1\en^{at}
+				\end{align*}
+				It then follows that
+				\[P(t) = \frac{ac_1\en^{at}}{1 + bc_1\en^{at}} = \frac{ac_1}{bc_1 + \en^{-at}}\]
+				If \(P(0) = P_0 \ne a/b\), then \(c_1 = P_0/(a - bP_0)\), so
+				\[P(t) = \frac{aP_0}{bP_0 + (a - bP_0)\en^{-at}}\]
+		\subsectionb{Chemical Reactions}
+			Suppose \(a\) grams of chemical \(A\) and \(b\) grams of chemical \(B\) are combined. If there are \(M\) parts of \(A\) and \(N\) parts of \(B\) formed in the compound, then the number of grams of chemicals \(A\) and \(B\) remaining at time \(t\) are respectively
+				\[a - \frac{M}{M + N}X \qquad \text{and} \qquad b - \frac{N}{M + N}{X}\]
+				where \(X(t)\) is the number of grams of chemical \(C\) formed. \\
+				The law of mass action states that when temperature is constant, the rate at which two substances react is proportional to the amounts of each that are untransformed at time \(t\):
+				\[\dv{X}{t} \propto \left(a - \frac{M}{M + N}X\right)\left(b - \frac{N}{M + N}X\right)\]
+				Factoring out \(M/(M + N)\) from the first factor and \(N/(M + N)\) from the second and introducing constant of proportionality \(k > 0\), this can be rewritten as
+				\[\dv{X}{t} = k(\alpha - X)(\beta - X)\]
+				where
+				\[\alpha = a\frac{M + N}{M} \qquad \text{and} \qquad \beta = b\frac{M + N}{N}\]
+			A chemical reaction governed by this nonlinear De is said to be a \textbf{second-order reaction}.
+	\section{Modeling with Systems of First-Order Differential Equations}
+		\subsectionb{Linear/Nonlinear Systems}
+			A system of two related first-order DEs may be
+				\begin{align*}
+					\dv{x}{t} &= g_1(t, x, y) &
+						\dv{y}{t} = g_2(t, x, y)
+				\end{align*}
+				When \(g_1\) and \(g_2\) are linear in \(x\) and \(y\), being of the forms
+				\begin{align*}
+					g_1(t, x, y) &= c_1x + c_2y + f_1(t) &
+						g_2(t, x, y) &= c_3x + c_4y + f_2(t)
+				\end{align*}
+				where the coefficients \(c_i\) may depend on \(t\), the system is said to be \textbf{linear}. It is otherwise \textbf{nonlinear}.
+		\subsectionb{Radioactive Series}
+			When a substance decays via radioactivity, it generally doesn't simply transmute in a single step into a stable substance; a \textbf{radioactive decay series} is the process of continuous decaying into gradually more stable elements. \\
+			Schematically, a radioactive series may be described as
+				\[\ch{\(X\) ->[\(-\lambda\textsubscript{1}\)] \(Y\) ->[\(-\lambda\textsubscript{2}\)] \(Z\)}\]
+				where
+				\[k_1 = -\lambda_1 < 0 \qquad \text{and} \qquad k_2 = -\lambda_2 < 0\]
+				are the decay constants of substances \(X\) and \(Y\) respectively and \(Z\) is a stable element. Suppose as well that \(x(t)\), \(y(t)\), and \(z(t)\) denote the amounts os substances \(X\), \(Y\), and \(Z\) remaining at time \(t\). The decay of \(X\) is described by
+				\[\dv{x}{t} = -\lambda_1x\]
+				while that of \(Y\) is the net rate
+				\[\dv{y}{t} = \lambda_1x - \lambda_2y\]
+				as \(Y\) is \textit{gaining} atoms from the decay of \(X\) while \textit{losing} them due to its own decay. \\
+				As \textit{Z} is a stable element, its aggregation is simply from the decay of \(Y\):
+				\[\dv{z}{t} = \lambda_2y\]
+				These three first-order DEs compose a linear system that models the radioactive decay series of 3 elements.
+		\subsectionb{A Predator-Prey Model}
+			Suppose that two species interact within the same ecosystem and that one eats only vegetation while the other preys only on the former; the latter is the predator, the former the prey. Let \(x(t)\) denote the predator population and \(y(t)\) denote the prey population. When there are no prey, the decline in predators would decline corresponding to
+				\[\dv{x}{t} = -ax, \quad a > 0\]
+				When there are prey in the environment it seems reasonable that the number of interactions between the species would be jointly proportional to their populations. So when prey are present, the predator population would increase at rate \(bxy, b > 0\). Adding this to the last equation,
+				\[\dv{x}{t} = -ax + bxy\]
+			If there are no predators, the prey thrive, growing proportionally to the population:
+				\[\dv{y}{t} = dy, \quad d > 0\]
+				When predators are present, though, the prey population would decline at a rate modeled by \(cxy\), decreasing by the rate at which they are eaten in their encounters:
+				\[\dv{y}{t} = dy - cxy\]
+				These formula constitute the \textbf{Lotka-Volterra predator-prey model}:
+				\begin{align*}
+					\dv{x}{t} &= -ax + bxy = x(-a + by) & 
+						\dv{y}{t} &= dy - cxy = y(d - cx)
+				\end{align*}
+				where \(a\), \(b\), \(c\), and \(d\) are positive constant. \\
+				Apart from two constant solutions, \(x(t) = 0\), \(y(t) = 0\) and \(x(t) = d/c\), \(y(t) = a/b\), this system cannot be solved in terms of elementary functions.
+		\subsectionb{Competition Models}
+			Suppose two different species occupy the same ecosystem, competing for resources. In isolation, assume that the rate at which each population grows is respectively
+				\[\dv{x}{t} = ax \qquad \text{and} \qquad \dv{y}{t} = cy\]
+				As they are in direct competition, it may be assumed that each rate is diminished by the mere existence of the other population, providing the system
+				\begin{align*}
+					\dv{x}{t} &= ax - by &
+						\dv{y}{t} &= cy - dx
+				\end{align*}
+				where \(a\), \(b\), \(c\), and \(d\) are positive constants. \\
+				If the growth rate is instead affected proportionally to the number of interactions, the resulting system would be
+				\begin{align*}
+					\dv{x}{t} &= ax - bxy &
+						\dv{y}{t} &= cy - dxy
+				\end{align*}
+				which is quite similar to the Lotka-Volterra predator-prey model. \\
+				It may be more realistic to replace the isolated rates with logistic models rather than exponential ones, making them
+				\[\dv{x}{t} = a_1x - b_1x^2 \qquad \text{and} \qquad \dv{y}{t} = a_2y - b_2y^2\]
+				which results in another nonlinear model
+				\begin{align*}
+					\dv{x}{t} &= a_1x - b_1x^2 - c_1xy = x(a_1 - b_1x - c_1y) \\
+					\dv{y}{t} &= a_2y - b_2y^2 - c_2xy = y(a_2 - b_2 - c_2x)
+				\end{align*}
+				in which all coefficients are positive. \\
+				All of these models are called \textbf{competition models}.
+		\subsectionb{Networks}
+			An electrical network with more than one loop such as
+				\[\begin{circuitikz}
+					\ctikzset{bipoles/resistor/height = 0.15}
+					\ctikzset{bipoles/resistor/width = 0.4}
+					\ctikzset{bipoles/cuteinductor/width = 0.7}
+					\ctikzset{bipoles/cuteinductor/height = 0.5}
+					\draw (0, 0) node[below] {\(A_2\)}
+						to [V, l = \(E\), *-*] (0, 4)
+						(0, 2.5) to [short, i_ = \(i_1\)] (0, 4) node[above]{\(A_2\)}
+						to [R, l_ = \(R_1\), *-*] (1.75, 4) node[above]{\(B_1\)}
+						to [short, i = \(i_2\)] (1.75, 2.5)
+						(1.75, 2.5) to [L, l = \(L_1\)] (1.75, 1.5)
+						(1.75, 1.5) to [R, l = \(R_2\), -*] (1.75, 0) node[below]{\(B_2\)}
+						to (0, 0)
+						(1.75, 4) to [short, i_ = \(i_3\), -*] (3.5, 4) node[above]{\(C_1\)}
+						to [L, l = \(L_2\), -*] (3.5, 0) node[below]{\(C_2\)}
+						to (1.75, 0);
+				\end{circuitikz}\]
+				results in simultaneous DEs. In this case, the current \(i_1(t)\) splits in two at one of the network's \textit{branch point} \(B_1\). \textbf{Kirchhoff's first law} shows that
+				\[i_1(t) = i_2(t) + i_3(t)\]
+				\textbf{Kirchhoff's second law} can also be applied to each loop. Summing the voltage drops across each part of loop \(A_1B_1B_2A_2A_2A_1\) gives
+				\[E(t) = i_1R_1 + L_1\dv{i_2}{t} + i_2R_2\]
+				Doing the same for loop \(A_1B_1C_1C_2B_2A_2A_1\) results in
+				\[E(t) = i_1R_1 + L_2\dv{i_3}{t}\]
+				Using the first derived equation to eliminate \(i_1\) in the sums yields a linear system of two first order equations:
+				\begin{align*}
+					L_1\dv{i_2}{t} + (R_1 + R_2)i_2 + R_1i_3 &= E(t) \\
+					L_3\dv{i_3}{t} + R_1i_2 + R_1I_3 &= E(T)
+				\end{align*}
+				Similarly,
+				\[\begin{circuitikz}
+					\ctikzset{bipoles/resistor/height = 0.15}
+					\ctikzset{bipoles/resistor/width = 0.4}
+					\ctikzset{bipoles/cuteinductor/width = 0.7}
+					\ctikzset{bipoles/cuteinductor/height = 0.5}
+					\draw (0, 0) to [V, l = \(E\)] (0, 3)
+					(0, 2) to[short, i_ = \(i_1\)] (0, 3)
+					to [L, l_ = \(L\), -*] (2, 3)
+					to [short, i_ = \(i_2\)] (2, 2)
+					(2, 3) to [R, l = \(R\), -*] (2, 0)
+					to (0, 0)
+					(2, 3) to [short, i_ = \(i_3\)] (3, 3)
+					to (4, 3)
+					to [C, l = \(C\)] (4, 0)
+					to (2, 0);
+				\end{circuitikz}\]
+				results in the system
+				\begin{align*}
+					L\dv{i_1}{t} + Ri_2 &= E(t) \\
+					RC\dv{i_2}{t} + i_2 - i_1 &= 0
+				\end{align*}
+\end{document}

@@ -1,0 +1,89 @@
+\contentsline {chapter}{\numberline {1}Introduction to Differential Equations}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Definitions and Terminology}{3}{section.1.1}%
+\contentsline {subsection}{A Definition}{3}{section*.2}%
+\contentsline {paragraph}{Differential Equation}{3}{section*.3}%
+\contentsline {subsection}{Classification by Type}{3}{section*.4}%
+\contentsline {subsection}{Notation}{3}{section*.5}%
+\contentsline {subsection}{Classification by Order}{4}{section*.6}%
+\contentsline {subsection}{Classification by Linearity}{4}{section*.7}%
+\contentsline {subsection}{Solutions}{4}{section*.8}%
+\contentsline {paragraph}{Solution of an ODE}{4}{section*.9}%
+\contentsline {subsection}{Interval of Definition}{5}{section*.10}%
+\contentsline {subsection}{Solution Curve}{5}{section*.11}%
+\contentsline {subsection}{Explicit and Implicit Solutions}{5}{section*.12}%
+\contentsline {subsection}{Families of Solutions}{5}{section*.13}%
+\contentsline {subsection}{Systems of Differential Equations}{6}{section*.14}%
+\contentsline {section}{\numberline {1.2}Initial-Value Problems}{6}{section.1.2}%
+\contentsline {subsection}{Geometric Interpretation}{6}{section*.15}%
+\contentsline {subsection}{Existence and Uniqueness}{7}{section*.16}%
+\contentsline {paragraph}{Theorem 1.2.1}{7}{section*.17}%
+\contentsline {subsection}{Interval of Existence/Uniqueness}{7}{section*.18}%
+\contentsline {section}{\numberline {1.3}Differential Equations as Mathematical Models}{7}{section.1.3}%
+\contentsline {subsection}{Mathematical Models}{7}{section*.19}%
+\contentsline {paragraph}{Steps in the modeling process with differential equations}{8}{section*.20}%
+\contentsline {subsection}{Population Dynamics}{8}{section*.21}%
+\contentsline {subsection}{Radioactive Decay}{8}{section*.22}%
+\contentsline {subsection}{Newton's Law of Warming/Cooling}{8}{section*.23}%
+\contentsline {subsection}{Spread of a Disease}{9}{section*.24}%
+\contentsline {subsection}{Chemical Reactions}{9}{section*.25}%
+\contentsline {subsection}{Mixtures}{9}{section*.26}%
+\contentsline {subsection}{Draining a Tank}{9}{section*.27}%
+\contentsline {subsection}{Series Circuits}{10}{section*.28}%
+\contentsline {subsection}{Falling Bodies}{10}{section*.29}%
+\contentsline {subsection}{Falling Bodies and Air Resistance}{10}{section*.30}%
+\contentsline {subsection}{Suspended Cables}{11}{section*.31}%
+\contentsline {chapter}{\numberline {2}First-Order Differential Equations}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Solution Curves without a Solution}{12}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Direction Fields}{12}{subsection.2.1.1}%
+\contentsline {subsubsection}{Slope}{12}{section*.32}%
+\contentsline {subsubsection}{Direction Field}{12}{section*.33}%
+\contentsline {subsubsection}{Increasing/Decreasing}{12}{section*.34}%
+\contentsline {subsection}{\numberline {2.1.2}Autonomous First-Order DEs}{13}{subsection.2.1.2}%
+\contentsline {subsubsection}{Autonomous First-Order DEs}{13}{section*.35}%
+\contentsline {subsubsection}{Critical Points}{13}{section*.36}%
+\contentsline {subsubsection}{Solution Curves}{13}{section*.37}%
+\contentsline {subsubsection}{Attractors and Repellers}{13}{section*.38}%
+\contentsline {subsubsection}{Autonomous DEs and Direction Fields}{14}{section*.39}%
+\contentsline {subsubsection}{Translation Property}{14}{section*.40}%
+\contentsline {section}{\numberline {2.2}Separable Equations}{14}{section.2.2}%
+\contentsline {subsection}{Solution by Integration}{14}{section*.41}%
+\contentsline {subsection}{A Definition}{14}{section*.42}%
+\contentsline {paragraph}{Separable Equation}{14}{section*.43}%
+\contentsline {subsection}{Method of Solution}{15}{section*.44}%
+\contentsline {subsection}{Losing a Solution}{15}{section*.45}%
+\contentsline {subsection}{Use of Computers}{15}{section*.46}%
+\contentsline {subsection}{An Integral-Defined Function}{15}{section*.47}%
+\contentsline {section}{\numberline {2.3}Linear Equations}{15}{section.2.3}%
+\contentsline {subsection}{A Definition}{15}{section*.48}%
+\contentsline {paragraph}{Definition 2.3.1. Linear Equation}{15}{section*.49}%
+\contentsline {subsection}{Standard Form}{16}{section*.50}%
+\contentsline {subsection}{Method of Solution}{16}{section*.51}%
+\contentsline {paragraph}{Solving a First-Order Linear DE}{16}{section*.52}%
+\contentsline {subsection}{General Solutions}{17}{section*.53}%
+\contentsline {subsection}{Piecewise-Linear Differential Equation}{17}{section*.54}%
+\contentsline {subsection}{Error Function}{17}{section*.55}%
+\contentsline {section}{\numberline {2.4}Exact Equations}{17}{section.2.4}%
+\contentsline {subsection}{Differential of a Function of Two Variables}{17}{section*.56}%
+\contentsline {subsection}{A Definition}{18}{section*.57}%
+\contentsline {paragraph}{Exact Equation}{18}{section*.58}%
+\contentsline {paragraph}{Theorem 2.4.1 Criterion for an Exact Differential}{18}{section*.59}%
+\contentsline {subsection}{Method of Solution}{18}{section*.60}%
+\contentsline {section}{\numberline {2.5}Solutions by Substitutions}{18}{section.2.5}%
+\contentsline {subsection}{Substitutions}{18}{section*.61}%
+\contentsline {subsection}{Homogenous Equations}{19}{section*.62}%
+\contentsline {subsection}{Bernoulli's Equation}{19}{section*.63}%
+\contentsline {subsection}{Reduction to Separation of Variables}{19}{section*.64}%
+\contentsline {chapter}{\numberline {3}Modeling with First-Order Differential Equations}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Linear Models}{20}{section.3.1}%
+\contentsline {subsection}{Growth and Decay}{20}{section*.65}%
+\contentsline {subsection}{Half-Life}{20}{section*.66}%
+\contentsline {subsection}{Newton's Law of Cooling/Warming}{20}{section*.67}%
+\contentsline {subsection}{Series Circuits}{21}{section*.68}%
+\contentsline {section}{\numberline {3.2}Nonlinear Models}{21}{section.3.2}%
+\contentsline {subsection}{Population Dynamics}{21}{section*.69}%
+\contentsline {subsection}{Logistic Equation}{22}{section*.70}%
+\contentsline {subsection}{Solution of the Logistic Equation}{22}{section*.71}%
+\contentsline {subsection}{Chemical Reactions}{23}{section*.72}%
+\contentsline {section}{\numberline {3.3}Modeling with Systems of First-Order Differential Equations}{23}{section.3.3}%
+\contentsline {subsection}{Linear/Nonlinear Systems}{23}{section*.73}%
+\contentsline {subsection}{Radioactive Series}{23}{section*.74}%

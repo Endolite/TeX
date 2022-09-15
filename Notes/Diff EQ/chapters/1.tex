@@ -177,7 +177,7 @@
 			\textbf{Torricelli's law} states that the speed \(v\) of efflux of water through a sharp-edged hole at the bottom of a container filled to depth \(h\) is equal to the speed that a body would acquire in free fall from the same height (\(v = \sqrt{2gh}\) where \(g\) is acceleration due to gravity). If the are of the hole is \(A_h\) and the speed of water leaving is \(v = \sqrt{2gh}\), then the volume of water leaving per second is \(A_h\sqrt{2gh}\). If \(V(t)\) denotes the volume of water remaining at time \(t\), then
 				\[\dv{V}{t} = -A_h\sqrt{2gh}\]
 		\subsectionb{Series Circuits}
-			Consider the \textit{LRC}-series circuit
+			Consider the single-loop \textit{LRC}-series circuit
 				\[\begin{circuitikz}[xscale = 2, yscale = 1.5]
 					\draw (0, 0)
 						to[V = $E(t)$] (0, 2)
@@ -185,4 +185,34 @@
 						to[R = $R$] (2, 0)
 						to[C = $C$] (0, 0);
 				\end{circuitikz}\]
+				containing an inductor, a resistor, and a capacitor. The current remaining in a circuit after a switch is closed is denoted by \(i(t)\) while the charge on a capacitor is denoted by \(q(t)\). \(L\), \(R\), and \(C\) denote inductance, resistance, and capacitance respectively and are generally constants. \\
+				According to \textbf{Kirchhoff's second law}, the impressed voltage \(E(t)\) on a closed loop must be equal to the sum of the voltage drops in the loop. As current \(i(t)\) is related to charge \(q(t)\) by \(i = \dv*{q}{t}\), equating the sum of the 3 voltages
+				\begin{align*}
+					L\dv{i}{t} &= L\dv[2]{q}{t} &
+							iR &= R \dv{q}{t} &
+							\frac{1}{C}q
+				\end{align*}
+				to the impressed voltage yields a second-order DE
+				\[L\dv[2]{q}{t} + R\dv{q}{t} + \frac{1}{C}q = E(t)\]
+		\subsectionb{Falling Bodies}
+			\textbf{Newton's first law of motion} states that a body in motion will stay in motion and one at rest will stay at rest unless acted upon by an external force. Both statements are equivalent to stating that the sum of the forces (the \textit{net}/resultant force) acting on the body is 0, then so is its acceleration. \\
+			\textbf{Newton's second law of motion} states that \(F = ma\), where \(F\) is force, \(m\) is mass, and \(a\) is acceleration.
+		\subsectionb{Falling Bodies and Air Resistance}
+			A falling body of mass \(m\) may encounter air resistance proportion to its velocity \(v\). The net force acting on such a mass is given by \(F = mg - kv\), (\(k\) being a positive constant of proportionality) the former term being the force of gravity and the latter being that of air resistance, called \textbf{viscous damping}. As \(a = \dv*{v}{t}\), Newton's second law can be rewritten a
+				\[F = ma = m\dv{v}{t}\]
+				Equating the net force to this form of Newton's second law yields a first-order DE for the velocity \(v(t)\):
+				\[m\dv{v}{t} = mg - kv\]
+				In terms of position \(s\),
+				\[m\dv[2]{s}{t} = mg - k\dv{s}{t}\]
+		\subsectionb{Suspended Cables}
+			Suppose a flexible cable is suspended between two vertical supports. Let \(P_1\) denote its lowers hanging point and \(P_2\) some arbitrary point. The portion of the cable connecting these two points is a curve in the \(xy\)-plane, the \(y\)-axis passing through \(P_1\) and the \(x\)-axis being \(a\) units below \(P_1\). \\
+			There are 3 forces acting on the cable: the tensions \(\vec{T}_1\) and \(\vec{T}_2\) tangent to the cable at \(P_1\) and \(P_2\) respectively and the weight of the cable \(\vec{W}\). Let \(T_1 = |\vec{T}_1|\), \(T_2 = |\vec{T}_2|\), and \(W = |\vec{W}|\). The tension \(\vec{T}_2\) is the only force with both vertical and horizontal components. As the system, is in static equilibrium,
+			\begin{align*}
+				T_1 &= T_2\cos\theta &
+					W &= T_2\sin\theta
+			\end{align*}
+			Dividing the former equation by the latter, \(T_2\),
+			\[\tan\theta = \frac{W}{T_1}\]
+			As \(\dv*{y}{x} = \tan\theta\), 
+				\[\dv*{y}{x} = \frac{W}{T_1}\]
 \end{document}
