@@ -258,7 +258,7 @@
 							\task
 								\(1001 = 7 \times 11 \times 13\)
 							\task
-								\(1111 = 11 \times 101\)
+								\(1,111 = 11 \times 101\)
 							\task
 								\(909,090 = 2 \times 3^3 \times 5 \times 13 \times 259\)
 						\end{tasks}
@@ -283,6 +283,11 @@
 				\end{enumerate}
 	\setcounter{section}{5}
 	\section{Counting}
+		\subsection{The Basics of Counting}
+			\begin{enumerate}
+				\setcounter{enumi}{2}
+				\item	
+			\end{enumerate}
 		\setcounter{subsection}{2}
 		\subsection{Permutations and Combinations}
 			\begin{enumerate}
@@ -293,7 +298,7 @@
 					\(P(6, 6) = \dfrac{6!}{(6 - 6)!} = 720\)
 				\setcounter{enumi}{4}
 				\item
-					\begin{tasks}(3)
+					\begin{tasks}(2)
 						\task
 							\(P(6, 3) = \dfrac{6!}{(6 - 3)!} = 120\)
 						\task
@@ -303,16 +308,16 @@
 						\task
 							\(P(8, 5) = \dfrac{8!}{(8 - 5)!} = 336\)
 						\task
-							\(P(8, 8) = \dfrac{8!}{(8 - 8)!} = 40320\)
+							\(P(8, 8) = \dfrac{8!}{(8 - 8)!} = 40,320\)
 						\task
-							\(P(10, 9) = \dfrac{10!}{(10 - 9)!} = 3628880\) 
+							\(P(10, 9) = \dfrac{10!}{(10 - 9)!} = 3,628,880\) 
 					\end{tasks}
 				\setcounter{enumi}{6}
 				\item
-					\(P(9, 5) = \dfrac{9!}{(9 - 5)!} = 15120\)
+					\(P(9, 5) = \dfrac{9!}{(9 - 5)!} = 15,120\)
 				\setcounter{enumi}{8}
 				\item
-					\(P(12, 3 = \dfrac{12!}{(12 - 3)!} = 1320\)
+					\(P(12, 3 = \dfrac{12!}{(12 - 3)!} = 1,320\)
 				\setcounter{enumi}{10}
 				\item
 					\begin{tasks}(2)
@@ -325,5 +330,78 @@
 						\task
 							\(C(10, 5) = \dfrac{10!}{5!(10 - 5)!} = 252\)
 					\end{tasks}
+				\setcounter{enumi}{20}
+				\item
+					\begin{tasks}(3)
+						\task
+							\(P(5, 5) = \dfrac{5!}{(5 - 5)!} = 120\)	
+						\task
+							\(P(4, 4) = \dfrac{4!}{(4 - 4)!} = 24\)
+						\task
+							\(P(5, 5) = \dfrac{5!}{(5 - 5)!} = 120\)
+						\task
+							\(P(4, 4) = \dfrac{4!}{(4 - 4)!} = 24\)
+						\task
+							\(P(3, 3) = \dfrac{3!}{(3 - 3)!} = 6\)
+						\task
+							0, as repetitions are not allowed
+					\end{tasks}
+				\setcounter{enumi}{28}
+				\item
+					\begin{tasks}(2)
+						\task
+							\(C(25, 4) = \dfrac{25!}{4!(25 - 4)!} = 12,650\)
+						\task
+							\(P(25, 4) = \dfrac{25!}{(25 - 4)!} = 303,600\)
+					\end{tasks}
+				\setcounter{enumi}{36}
+				\item
+					\(C(10, 2) = \frac{10!}{2!(10 - 2)!} = 45\)
+				\setcounter{enumi}{38}
+				\item
+					\(\displaystyle \sum_{i = 3}^{7}C(10, i) = \sum_{i = 3}^7 \frac{10!}{i!(10 - i)!} = 912\)
+			\end{enumerate}
+		\setcounter{subsection}{3}
+		\subsection{Binomial Coefficients and Identities}
+			\begin{enumerate}
+				\item
+			\end{enumerate}
+		\subsection{Generalized Permutations and Combinations}
+			\begin{enumerate}
+				\setcounter{enumi}{4}
+				\item
+					\(C(5 + 3 - 1, 3) = \dfrac{(7)!}{3!(4)!} = 35\)
+				\setcounter{enumi}{8}
+				\item
+					\begin{tasks}(2)
+						\task
+							\(C(8 + 6 - 1, 6) = \dfrac{13!}{6!(7)!} = 1,716\)	
+						\task
+							\(C(8 + 12 - 1, 12) = \dfrac{19!}{12!(7)!} = 50,388\)
+						\task
+							\(C(8 + 24 - 1, 24) = \dfrac{31!}{24!(7)!} = 2,629,575\)
+						\task
+							\(C(8 + 4 - 1, 4) = \dfrac{11!}{4!(7)!} = 330\)
+					\end{tasks}
+					\begin{itemize}[leftmargin = 1.04cm]
+						\item[e)]
+							\(\displaystyle \sum_{i = 0}^{2} C(7 + 9 - i - 1, 9 - i) = \sum_{i = 0}^2 \frac{(15 - i)!}{(9 - i)!(6)!} = 9,724\)	
+					\end{itemize}
+				\setcounter{enumi}{10}
+				\item
+					\(C(2 + 8 - 1, 8) = \dfrac{9!}{8!(1)!} = 9\)
+				\setcounter{enumi}{32}
+				\item
+					\(\dfrac{11!}{5!2!2!1!1!} = 83,160\)
+				\setcounter{enumi}{34}
+				\item
+					\(P(3, 1) + [1 + P(3, 2)] + \left[1 + 2\left(\dfrac{3!}{2!1!}\right) + P(3, 3)\right] + \left[2\left(\dfrac{4!}{3!1!}\right) + \dfrac{4!}{2!1!1!}\right] + \left[\dfrac{5!}{3!1!1!}\right] = 63\)
+			\end{enumerate}
+	\setcounter{section}{4}
+	\section{Induction and Recursion}
+		\subsection{Mathematical Induction}
+			\begin{enumerate}
+				\setcounter{enumi}{4}
+				\item	
 			\end{enumerate}
 \end{document}
