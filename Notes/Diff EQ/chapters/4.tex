@@ -3,8 +3,85 @@
 \begin{document}
 	\section{Preliminary Theory --- Linear Equations}	
 		\subsection{Initial-Value and Boundary-Value Problems}
+			\subsubsectionb{Initial-Value Problem}
+				For a linear DE, an \textbf{\(\bm{n^{\th}}\)-order initial-value problem (IVP)} is
+				\begin{align*}
+					a_n(x)\dv[n]{y}{x} + a_{n - 1}\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0y &= g(x) \\ 
+					\text{subject to} \quad y(x_0) &= y_0, y'(x_0) = y_1, \ldots, y^{(n - 1)}(x_0) = y_{n - 1}
+				\end{align*}
+			\subsubsectionb{Existence and Uniqueness}
+				\callout{17}{\paragraph{Theorem 4.1.1 Existence of a Unique Solution}
+					Let \(a_n(x)\), \(a_{n - 1}(x)\), \(\ldots\), \(a_1(x)\), \(a_0(x)\), and \(g(x)\) be continuous on an interval \(I\) and let \(a_n(x) \ne 0\) for every \(x\) in the interval. If \(x = x_0\) at any point within \(I\), then a solution \(y(x)\) of the IVP both exists on the interval and is unique.
+				}
+			\subsubsectionb{Boundary-Value Problem}
+				A linear DE of order two or greater in which the dependent variable or its derivatives are specified at \textit{different points}, such as
+				\[a_2(x)\dv[2]{y}{x} + a_1(x)\dv{y}{x} + a_0(x)y = g(q) \qquad \text{subject to} \qquad y(a) = y_0, y(b) = y_1\]
+				is called a \textbf{boundary-value problem (BVP)}. The specified values are called \textbf{boundary conditions (BC)}. A solution of the above problem is a function that satisfies the DE on some interval \(I\) containing both \(a\) and \(b\) that pases through the points \(a, y_0\) and \(b, y_2\).
 		\subsection{Homogenous Equations}
+			A linear \(n^{\th}\)-order DE of the form
+				\[a_n(x)\dv[n]{y}{x} + a_{n - 1}(x)\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0(x)y = 0\]
+				is said to be \textbf{homogenous} while one of the form
+				\[a_n(x)\dv[n]{y}{x} + a_{n - 1}(x)\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0(x)y = g(x)\]
+				where \(g(x)\) is not identically 0 is said to be \textbf{nonhomogenous}. \\
+			It should be noted that word \textit{homogenous} as used here does not refer to coefficients that are homogenous functions.
+			\callout{17}{
+				When stating definitions or theorems regarding linear equations, it shall always be assumed that on some common interval \(I\), the coefficient functions \(a_i(x)\) and \(g(x)\) are continuous and that \(a_n(x) \ne 0\) for every \(x\) in the interval.
+			}
+			\subsubsectionb{Differential Operators}
+				The symbol \(D\) is called a \textbf{differential operator}, as it transforms a differentiable function into another function. In general,
+					\[\dv[n]{y}{x} = D^ny\]
+					where \(y\) is a sufficiently differentiable function. Polynomial expressions that involve \(D\) are also differential operators. In general, an \textbf{\(\bm{n^{\th}}\)-order differential/polynomial operator} to be
+					\[L = a_n(x)D^n + a_{n - 1}(x)D^{n - 1} + \cdots + a_1(x)D + a_0(x)\]
+				As \(D(c(f(x)) = cDf(x)\) (where \(c\) is a constant) and \(D\{f(x) + g(x)\} = Df(x) + Dg(x)\), the differential operator \(L\) also posses the property that acting on a linear combination of differentiable functions is the same as the linear combination of \(L\) operating on the individual functions. Symbolically,
+					\[L\{\alpha f(x) + \beta g(x)\} = \alpha Lf(x) + \beta Lg(x)\]
+					where \(\alpha\) and \(\beta\) are constant. Because of this property, \(L\) can be said to be a \textbf{linear operator}.
+			\subsubsectionb{Differential Equations}
+				Any linear DE can be expresses in terms of \(D\) notation.
+			\subsubsectionb{Superposition Principle}
+				\callout{17}{\paragraph{Theorem 4.1.2 Superposition Principle --- Homogenous Equations}
+					Let \(y_1, y_2, \ldots, y_k\) be solutions of the homogenous \(n^{\th}\)-order DE \(L(y) = 0\) on an interval \(I\). The linear combination
+						\[y = c_1y_1(x) + c_2y_2(x) + \cdots + c_ky_k(x)\]
+						where the \(c_i\) are arbitrary constants, is also a solution of the DE on \(I\).
+				}
+			\subsubsectionb{Linear Dependence and Linear Independence}
+				\callout{17}{\paragraph{Linear Dependence/Independence}
+					A set of functions \(f_1(x), f_x(x), \ldots, f_n(x)\) is said to be \textbf{linearly dependent} on an interval \(I\) if there exist constants \(c_i\) (that are not all 0) such that
+						\[c_1f_1(x) + c_2f_2(x) + \cdots + c_nf_n(x) = 0\]
+						for every \(x\) in the interval. If a set of functions are not linearly dependent on an interval, they are \textbf{linearly independent}.
+				}
+				\textit{If a set of two functions are linearly dependent, then they are constant multiples of each other.} \\
+				A set of functions is linearly dependent on a interval if at least one of the functions can be expressed as a linear combination of the others.
+			\subsubsectionb{Solutions of Differential Equations}
+				\callout{17}{\paragraph{Wronskian}
+					Let each of the functions \(f_1(x), f_2(x), \ldots, f_n(x)\) possess at least \(n - 1\) derivatives. The determinant
+						\[
+							W(f_1, f_2, \ldots, f_n) = \begin{vmatrix}f_1 & f_2 & \cdots & f_n \\ f_1' & f_2' & \cdots & f_n' \\ \vdots & \vdots && \vdots \\ f_1^{(n - 1)} & f_2^{(n - 1)} & \cdots & f_n^{(n - 1)}\end{vmatrix}
+						\]
+						is the \textbf{Wronskian} of the functions.
+				}
+				\callout{17}{\paragraph{Theorem 4.1.3 Criterion for Linearly Independent Solutions}
+					Let \(y_1, y_2, \ldots, y_n\) be \(n\) solutions of the homogenous linear \(n^{\th}\)-order DE \(L(y) = 0\) on interval \(I\). The set of solutions is \textbf{linearly independent} on \(I\) if an only if \(W(y_1, y_2, \ldots, y_n) \ne 0\) for every \(x\) in the interval.
+				}
+				\callout{17}{\paragraph{Fundamental Set of Solutions}
+					Any set of \(n\) linearly independent solutions of the homogenous linear \(n^{\th}\)-order linear DE \(L(y) = 0\) on an interval \(I\) is said to be a \textbf{fundamental set of solutions} on the interval.
+				}
+				\callout{17}{\paragraph{Theorem 4.1.4 Existence of a Fundamental Set}
+					A fundamental set of solutions for the homogenous linear \(n^{\th}\)-order DE \(L(y) = 0\) exists on any interval \(I\).
+				}
+				\callout{17}{\paragraph{General Solution --- Homogenous Equations}
+					Let \(y_1, y_2, \ldots, y_n\) be a fundamental set of solutions of the homogenous linear \(n^{\th}\)-order DE \(L(y) = 0\) on an interval \(I\). The \textbf{general solution} of the equation on the interval is given by
+						\[y = c_1y_1(x) + c_2y_2(x) + \cdots + c_ny_n(x)\]
+						where \(c_i\) are arbitrary constants.
+				}
 		\subsection{Nonhomogenous Equations}
+			Any function \(y_p\) with no parameters that satisfies a nonhomogenous equation is said to be a \textbf{particular solution}. If \(y_{1 \cdots k}\) corresponds to solutions of a homogenous equation on interval \(I\) and \(y_p\) is a particular solution of a nonhomgenous equation on the same interval, the linear combination
+				\[y = c_1y_1(x) + c_2y_2(x) + \cdots + c_ky(k) + y_p(x)\]
+			\callout{17}{\paragraph{Theorem 4.1.6 General Solution --- Nonhomogenous Equation}
+				Let \(y_p\) be any particular solution of the nonhomogenous linear \(n^{\th}\) DE \(L(y) = g(x)\) on interval \(I\) and let \(y_{1 \cdots}\) be a fundamental set of solutions of the corresponding homogenous De \(L(y) = 0\) on the same interval. The \textbf{general solution} of the equation on the interval is
+					\[y = c_1y_1(x) + c_2y_2(x) + \cdots + c_ny_n(x) + y_p(x)\]
+					where \(c_{i \cdots n}\) are arbitrary constants.
+			}
+			
 	\section{Reduction of Order}
 	\section{Homogenous Linear Equations with Constant Coefficients}
 	\section{Undetermined Coefficients --- Superposition Approach}

@@ -41,6 +41,23 @@
 \begin{document}
 	\section*{Chapter 4}
 		\subsubsection*{Divisibility Rules}
+			\begin{enumerate}
+				\setcounter{enumi}{2}
+				\item
+					\(\displaystyle\sum d_i \mid 3 \implies n \mid 3\)
+				\setcounter{enumi}{4}
+				\item
+					\(d_{\text{final}} = 0, 5 \implies n \mid 5\)
+				\setcounter{enumi}{6}
+				\item
+					\(0.2(n - d_{\text{final}}) \mid 7 \implies n \mid 7\)
+				\setcounter{enumi}{10}
+				\item
+					\(\text{(odds from right)} - \text{(evens from right)} \mid 7 \implies n \mid 7\)
+				\setcounter{enumi}{12}
+				\item
+					\(4d_{\text{final}} + \text{remaining} \mid 7 \implies n \mid 7\)
+			\end{enumerate}
 	\section*{Chapter 6}
 		\subsection*{Counting Rules}
 			\begin{itemize}
@@ -50,6 +67,7 @@
 					\textbf{Sum Rule:} If a task can be completed either in one of \(n_1\) ways or in one of \(n_12\) ways, where there is no overlap between the sets of \(n_1\) and \(n_2\) ways, then there are \(n_1 + n_2\) ways to complete the task.
 				\item
 					\textbf{Subtraction Rule:} If a task can be completed in either \(n_1\) or \(n_2\) ways, then the number of ways to do the task is \(n_1 + n_2\) minus the number of ways that are shared between both.
+						\[|A_1 \cup A_2| = |A_1| + |A_2| - |A_1 \cap A_2|\]
 				\item
 					\textbf{Division Rule:} If a task can be done using a procedure that can be carried out \(n\) ways and exactly \(d\) of \(n\) ways correspond to every way, there are \(n/d\) ways to complete the task.
 			\end{itemize}

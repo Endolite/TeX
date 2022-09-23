@@ -286,7 +286,64 @@
 		\subsection{The Basics of Counting}
 			\begin{enumerate}
 				\setcounter{enumi}{2}
-				\item	
+				\item
+					\begin{tasks}(2)
+						\task
+							\(4^10 = 1,048,576\)
+						\task
+							\(5^{10} = 9,765,625\)
+					\end{tasks}
+				\setcounter{enumi}{6}
+				\item
+					\(26^3 = 17,576\)	
+				\setcounter{enumi}{18}
+				\item
+					\begin{tasks}(2)
+						\task
+							\(3^6 = 729\)
+						\task
+							\(4^4 = 256\)
+						\task
+							\(4^5 = 1024\)
+						\task
+							\(2^6 = 64\)
+					\end{tasks}
+				\setcounter{enumi}{20}
+				\item
+					\begin{tasks}(2)
+						\task
+							\(\{56, 63, 70, 77, 84, 91, 98\}, 7\)
+						\task
+							\(\{55, 66, 77, 88, 99\}, 5\)
+						\task
+							\(\{77\}, 1\)
+					\end{tasks}
+				\setcounter{enumi}{26}
+				\item
+					\(3^{50}\)
+				\setcounter{enumi}{32}
+				\item
+					\begin{tasks}(2)
+						\task
+							\(21^8\)
+						\task
+							\(C(21, 8) = \dfrac{21!}{8!(21 - 8)!} = 203,490\)
+						\task
+							\(5 \times 26^7\)
+						\task
+							\(5 \times C(26, 7) = 5 \times \dfrac{26!}{7!(26 - 7)!} = 3,289,000\)
+						\task
+							\(26^8 - 21^8\)
+						\task
+							\(8 \times 5 \times 21^7\)
+						\task
+							\(26^7 - 21^7\)
+						\task
+							\(26^6 - 21^6\)
+					\end{tasks}
+				\setcounter{enumi}{54}
+				\item
+					\(25 + 16 - 8 = 33\)
 			\end{enumerate}
 		\setcounter{subsection}{2}
 		\subsection{Permutations and Combinations}
@@ -317,7 +374,7 @@
 					\(P(9, 5) = \dfrac{9!}{(9 - 5)!} = 15,120\)
 				\setcounter{enumi}{8}
 				\item
-					\(P(12, 3 = \dfrac{12!}{(12 - 3)!} = 1,320\)
+					\(P(12, 3) = \dfrac{12!}{(12 - 3)!} = 1,320\)
 				\setcounter{enumi}{10}
 				\item
 					\begin{tasks}(2)
@@ -365,6 +422,38 @@
 		\subsection{Binomial Coefficients and Identities}
 			\begin{enumerate}
 				\item
+					\begin{tasks}
+						\task
+							\[(x + y)^4 = (x + y)(x + y)(x + y)(x + y)\]
+							\begin{itemize}[leftmargin = -0.25in]
+								\item
+									\(x^4\) and \(y^4\) are only possible from a single combination each, so their coefficients are 1.	
+								\item
+									\(x^3y\) and \(xy^3\) terms arise by selecting the same product thrice, making their coefficients \(C(4, 3) = 4\).
+								\item
+									\(x^2y^2\) can be obtained by selecting \(x\) and \(y\) twice each, making their coefficients \(C(4, 2) = 6\).
+							\end{itemize}
+							\[(x + y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4\]
+						\task
+							\begin{align*}
+								(x + y)^4 &= \binom{4}{4}x^4y^0 + \binom{4}{3}x^3y^1 + \binom{4}{2}x^2y^2 + \binom{4}{1}x^1y^3 + \binom{4}{0}x^0y^4 \\
+									&= x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4
+							\end{align*}
+					\end{tasks}
+				\setcounter{enumi}{2}
+				\item
+					\begin{align*}
+						(x + y)^6 &= \binom{6}{6}x^6y^0 + \binom{6}{5}x^5y^1 + \binom{6}{4}x^4y^2 + \binom{6}{3}x^3y^3 + \binom{6}{2}x^2y^2 + \binom{6}{1}x^1y^5 + \binom{6}{0}x^0y^6 \\
+							&= x^6 + 6x^5y + 15x^4y^2 + 20x^3y^3 + 15x^2y^4 + 6xy^5 + y^6
+					\end{align*}
+				\setcounter{enumi}{4}
+				\item
+					\(100 + 1 = 101\)
+				\setcounter{enumi}{6}
+				\item
+					\(\dbinom{19}{10}(2)^{10}(-x)^{9} = -94,595,072x^9\)
+				\item
+					\(\dbinom{200}{101}(2x)^{101}(-3y)^{99}\)
 			\end{enumerate}
 		\subsection{Generalized Permutations and Combinations}
 			\begin{enumerate}
