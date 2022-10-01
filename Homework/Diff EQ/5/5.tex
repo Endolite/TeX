@@ -1,0 +1,63 @@
+\documentclass[A4, 12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 1 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{physics}
+% Macros
+	\newcommand{\en}{\text{e}}
+% Configuration
+	\title{Discussion 5}
+	\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+		\begin{enumerate}[a)]
+			\item 
+				\[
+					\dv[2]{y}{x} + x(y - 1) = 0 \implies
+							\dv[2]{y}{x} + xy - x = 0 \implies
+							\dv[2]{y}{x} + xy = x 
+				\]
+				This DE is of the form \(L(y) = g(x)\) where
+				\[
+					L = D^2 + x \qquad \text{and} \qquad
+						g(x) = x \not\equiv 0
+				\]
+				making it \textbf{nonhomogenous}.
+			\item
+				\begin{align*}
+					y'' + y' = \en^{3x}
+				\end{align*}
+				This DE is of the form \(L(y) = g(x)\) where
+				\[
+					L = D^2 + D \qquad \text{and} \qquad
+						g(x) = \en^{3x} \not\equiv 0
+				\]
+				making it \textbf{nonhomogenous}.
+			\item
+				\begin{align*}
+					xy''' + xy' - 3y = 0
+				\end{align*}
+				This DE is of the form \(L(y) = 0\) where
+				\[
+					L = xD^3 + xD - 3
+				\]
+				making it \textbf{homogenous}.
+			\item
+				\begin{align*}
+					\dv{x}{y} + 5y = 0
+				\end{align*}
+				This DE is of the form \(L(y) = 0\) where
+				\[
+					L = D + 5
+				\]
+				making it \textbf{homogenous}.
+		\end{enumerate}
+\end{document}

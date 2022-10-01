@@ -102,13 +102,13 @@
 				The number of ways to distribution \(n\) distinguishable objects into \(k\) distinguishable boxes such that \(n_i\) objects are placed into box \(i\) is
 					\[\frac{n!}{n_1!n_2!\ldots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
 			}
-			The number of ways of placing \(n\) indistinguishable objects into \(k\) distinguishable boxes is equal to that of \(n\)-combinations of a set of \(k\) elements with repetition allowed, being \(C(n + r - 1, r\). \\
+			The number of ways of placing \(n\) indistinguishable objects into \(k\) distinguishable boxes is equal to that of \(n\)-combinations of a set of \(k\) elements with repetition allowed, being \(C(k + n - 1, n)\). \\
 			The number of ways to place \(n\) distinguishable objects into \(k\) indistinguishable boxes is equal to
 				\[
 					\sum_{j = 1}^k S(n, j) = \sum_{j = 1}^k {n \brace j} 
 							= \sum_{j = 1}^k \frac{1}{j!}\sum_{i = 0}^{j - 1}(-1)^j\binom{j}{i}(j - i)^n
 				\]
-				where \(S(n, j)\) and \({n \brace k}\) denote \textbf{Stirling numbers of the second kind}:
-				\[S(n, j) = \frac{1}{j!}\sum_{i = 1}^{j - 1}(-1)^i\binom{j}{i}(j - i)^n\]
+				where \(S(n, j)\) and \({n \brace j}\) denote \textbf{Stirling numbers of the second kind}:
+				\[S(n, j) = {n \brace j} = \frac{1}{j!}\sum_{i = 1}^{j - 1}(-1)^i\binom{j}{i}(j - i)^n\]
 			Distributing \(n\) indistinguishable objects into \(k\) indistinguishable boxes is the same as writing \(n\) as the sum of at most \(k\) positive integers in nonincreasing order. If \(a_1 + a_2 + \cdots + a_i = n\) where \(a_1, a_2, \ldots, a_i\) are descending positive integers, it is said that this list is a \textbf{partition} of the positive integer \(n\) into \(i\) positive integers. If \(p_k(n)\) is the number of partitions of \(n\) into at most \(k\) positive integers, then there are \(p_k(n)\) ways to sort \(n\) indistinguishable objects into \(k\) indistinguishable boxes. No simple closed formula for this number exists.
 \end{document}

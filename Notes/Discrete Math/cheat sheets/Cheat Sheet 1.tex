@@ -39,6 +39,7 @@
 		\newcommand{\comment}[1]{}
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
 \begin{document}
+	Arnav Patri
 	\section*{Chapter 4}
 		\subsubsection*{Divisibility Rules}
 			\begin{enumerate}
@@ -53,12 +54,20 @@
 					\(0.2(n - d_{\text{final}}) \mid 7 \implies n \mid 7\)
 				\setcounter{enumi}{10}
 				\item
-					\(\text{(odds from right)} - \text{(evens from right)} \mid 7 \implies n \mid 7\)
+					\(\text{(odds from right)} - \text{(evens from right)} \mid 11 \implies n \mid 11\)
 				\setcounter{enumi}{12}
 				\item
-					\(4d_{\text{final}} + \text{remaining} \mid 7 \implies n \mid 7\)
+					\(4d_{\text{final}} + \text{remaining} \mid 13 \implies n \mid 13\)
 			\end{enumerate}
 	\section*{Chapter 6}
+		\subsection*{Summation Formulas}
+			\[\def\arraystretch{2}\begin{array}{|c|c|}\hline
+				k & \displaystyle\sum_{i = 1}^n i^k \\\hline
+				0 & n \\
+				1 & \dfrac{n(n + 1)}{2} \\
+				2 & \dfrac{n(n + 1)(2n + 1)}{6} \\
+				k & \displaystyle\left(\sum_{i = 1}^n i^{k - 2}\right)^2 \\\hline
+			\end{array}\]	
 		\subsection*{Counting Rules}
 			\begin{itemize}
 				\item
@@ -81,13 +90,18 @@
 				\(r\)-permutations & Y & \(n^r\) \\
 				\(r\)-combinations & Y & \(\dfrac{(n + r - 1)!}{r!(n - 1)!}\) \\\hline
 			\end{tabular}\]
+			\textbf{Permutations of Indistinguishable Objects}
+				(\(n\) total, \(n_i\) of category \(i\), \(k\) categories)
+				\[\frac{n!}{n_1!n_2!\cdots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
 		\subsection*{Boxes}
 			\begin{itemize}
 				\item
 					\textbf{Distinguishable Objects, Distinguishable Boxes}
+						(\(n\) total, \(n_i\) in box \(i\), \(k\) boxes)
 						\[\frac{n!}{n_1!n_2!\cdots n_k!} = \frac{n!}{\prod\limits_{i = 1}^k n_i!}\]
 				\item
 					\textbf{Indistinguishable Objects, Distinguishable Boxes}
+						(\(r\) indistinguishable objects, \(n\) distinguishable boxes)
 						\[C(n + r - 1, r) = \frac{(n + r - 1)!}{r!(n - 1)!}\]
 				\item
 					\textbf{Distinguishable Objects, Indistinguishable Boxes}

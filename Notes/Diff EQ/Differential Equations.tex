@@ -38,13 +38,15 @@
 % Macros
 	% Notation
 		% Constants
-			\DeclareMathOperator{\en}{e}
+			\newcommand{\en}{\text{e}}
 		% Functions
 			\DeclareMathOperator{\erfc}{erfc}
 		% Sets
+			\newcommand{\N}{\mathbb{N}}
 			\newcommand{\R}{\mathbb{R}}
 		% Other
 			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
 			\renewcommand{\th}{\text{th}}
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}

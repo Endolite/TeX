@@ -49,11 +49,13 @@
 		The \textbf{electric flux \({\bm{\text{d}}{\Phi_E}}\)} is given by
 			\[\dd{\Phi_E} = \vec{E} \cdot \dd{\vec{A}} \tag{electric flux}\]
 			with units \(\SI{}{N/C.m^2}\).
-			The \textbf{total flux} through a surface is found by integrating this:
-				\[\Phi_E = \iint\limits_R \vec{E} \cdot \dd{\vec{A}} \tag{total flux}\]
+			The \textbf{total flux} through a surface is found by the integral
+				\[\Phi_E = \iint_D \vec{E} \cdot \dd{\vec{A}} \tag{total flux}\]
 			Through a \textbf{closed surface} (as used in Gauss' law),
 				\[\Phi_E = \oiint_D \vec{E} \cdot \dd{\vec{A}} = \oiint_D E\dd{A}\cos\varphi \tag{net flux}\]
 				where \(\varphi\) is the angle between the electric field and the surface. \\
+				For a uniform electric field,
+				\[\Phi_E = \oiint_D E \dd{A} \cos\varphi = E\cos\varphi\oiint_D \dd{A} = EA\cos\varphi \]
 			The relationship between the surface and the field can be described by flux as
 			\[
 				\begin{array}{|c|ccc|}\hline
@@ -63,6 +65,23 @@
 			\]
 		\textbf{Gauss' law} relates the net flux \(\Phi_E\) of an electric field through a closed (Gaussian) surface to the net charge \(\subt{q}{enc}\) enclosed by the surface as
 			\[\varepsilon_0\Phi_E = \subt{q}{enc} \tag{Gauss' law}\]
+		If excess charge is placed on a conductor, the charge will move to the surface. \\
+		Everywhere inside a conductor, \(\subt{E}{net} = 0\). \\	
 		A \textbf{(uniform) surface charge density \(\bm{\sigma}\)} is equal to
-			\[\sigma = \frac{q}{A}\]
+			\[\sigma = \frac{q}{A} \tag{uniform surface charge density}\]
+		The magnitude of the electric field outside of a conductor with uniform surface charge density \(\sigma\) is
+			\[E = \frac{\sigma}{\varepsilon_0} \tag{conducting surface}\]
+			That outside of an insulator is
+			\[E = \frac{\sigma}{2\varepsilon_0} \tag{insulator}\]
+		The magnitude of the electric field produced by a uniform spherical shell of radius \(R\) is
+			\[
+				E = \begin{cases}
+ 					k\dfrac{q}{r^2} & r \ge R \\
+ 					0 & r < R
+ 				\end{cases}
+			\]
+		A \textbf{(uniform) volume charge density \(\bm{\rho}\)} is equal to
+			\[\rho = \frac{q}{V} \tag{uniform volume charge density}\]
+		Within a sphere of radius \(R\) with uniform volume charge density, the magnitude of the field is radial:
+			\[E = \left(k\frac{Q}{R^3}\right)r \tag{uniform charge, field at \(r \le R\)}\]
 \end{document}

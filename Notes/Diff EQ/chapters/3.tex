@@ -35,7 +35,7 @@
 				Kirchhoff's second law then gives
 				\[Ri + \frac{1}{C}q = E(t)\]
 				As \(i\) and \(q\) are related by \(i = \dv*{q}{t}\), though, this can be rewritten as the linear DE
-				\[R\dv{q}{t} + \frac{1}{c}q = E(t)\]
+				\[R\dv{q}{t} + \frac{1}{C}q = E(t)\]
 	\section{Nonlinear Models}
 		\subsectionb{Population Dynamics}
 			If \(P(t)\) denotes a population's size at time \(t\), the model for exponential growth begins by assuming that \(\dv*{P}{t} + kP\) for some \(k > 0\). In this model, the \textbf{relative/specific growth rate}, as defined by
@@ -43,13 +43,13 @@
 				is a constant \(k\). \\
 			As resources are finite, true exponential growth over long periods of time is essentially unheard of. \\
 			The assumption that a population's growth is dependent only on the size of the population can be states as
-				\[\frac{\dv*{P}{Pt}}{P} = f(P) \qquad \text{or} \qquad \dv{P}{t} = Pf(P)\]
+				\[\frac{\dv*{P}{t}}{P} = f(P) \qquad \text{or} \qquad \dv{P}{t} = Pf(P)\]
 				This DE is called the \textbf{density-dependent hypothesis}.
 		\subsectionb{Logistic Equation}
 			Suppose that the maximum number of individuals sustainable in a population is \(K\). This quantity \(K\) is called the environment's \textbf{carrying capacity}. For the DE, then,
 				\[f(K) = 0 \qquad \text{and} \qquad f(0) = r\]
 			 	The simplest assumption to satisfy these conditions is that \(f(P)\) is linear:
-			 	\[f(P) = c_1P + c_2\]
+			 	\[f(P) = C_1P + C_2\]
 			 	Using the conditions, we find that \(c_2 = r\) and \(c_1 = -r/K\), so 
 			 	\[f(P) = r - \frac{r}{K}P\]
 			 	The DE then becomes
@@ -61,13 +61,13 @@
 				\begin{align*}
 				a \\
 					\left(\frac{1/a}{P} + \frac{b/a}{a - bP}\right)\dd{P} &= \dd{t} \\
-					\frac{1}{a}\ln|P| - \frac{1}{a}\ln|a - bP| &= t + c \\
-					\ln\left|\frac{P}{a - bP}\right| &= at + ac \\
-					\frac{P}{a - bP} = c_1\en^{at}
+					\frac{1}{a}\ln|P| - \frac{1}{a}\ln|a - bP| &= t + C \\
+					\ln\left|\frac{P}{a - bP}\right| &= at + aC \\
+					\frac{P}{a - bP} = C_1\en^{at}
 				\end{align*}
 				It then follows that
-				\[P(t) = \frac{ac_1\en^{at}}{1 + bc_1\en^{at}} = \frac{ac_1}{bc_1 + \en^{-at}}\]
-				If \(P(0) = P_0 \ne a/b\), then \(c_1 = P_0/(a - bP_0)\), so
+				\[P(t) = \frac{aC_1\en^{at}}{1 + bC_1\en^{at}} = \frac{aC_1}{bC_1 + \en^{-at}}\]
+				If \(P(0) = P_0 \ne a/b\), then \(C_1 = P_0/(a - bP_0)\), so
 				\[P(t) = \frac{aP_0}{bP_0 + (a - bP_0)\en^{-at}}\]
 		\subsectionb{Chemical Reactions}
 			Suppose \(a\) grams of chemical \(A\) and \(b\) grams of chemical \(B\) are combined. If there are \(M\) parts of \(A\) and \(N\) parts of \(B\) formed in the compound, then the number of grams of chemicals \(A\) and \(B\) remaining at time \(t\) are respectively
