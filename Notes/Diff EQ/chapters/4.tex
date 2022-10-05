@@ -331,7 +331,7 @@
 				\begin{align*}
 					f(x) &= \dv{y}{x}[u_1y_1] + P(x)u_1y_1 \\
 						&= u_1\dv{y_1}{x} + y_1\dv{u_1}{x} + P(x)u_1y_1 \\
-						&= u_1\left[\dv{y_1}{x} + P(x)y_1\right] + y_1\dv{u_1}{x} \\
+						&= u_1\overset{0}{\overbrace{\left(\dv{y_1}{x} + P(x)y_1\right)}} + y_1\dv{u_1}{x} \\
 						&= y_1\dv{u_1}{x}
 				\end{align*}
 				Separating variables and integrating,
@@ -341,6 +341,56 @@
 				\end{align*}
 				The particular solution is therefore
 				\[y = u_1y_1 = y_1\int \frac{f(x)}{y_1(x)} \dd{x}\]
+		\subsectionb{Linear Second-Order DEs}
+			Consider the linear second-order DE
+				\[a_2(x)y'' + a_1(x)y' + a_0y = g(x)\]
+				In standard form,
+				\[y'' + P(x)y' + Q(x)y = f(x)\]
+				Suppose that \(P(x)\), \(Q(x)\), and \(f(x)\) are continuous on common interval \(I\). The complementary solution 
+				\[y_c = C_1y(x) + C_2y(x)\]
+				Replacing the parameters with functions,
+				\[y_p(x) = u_1(x)y_1(x) + u_2(x)y_2(x)\]
+				Using product rule,
+				\begin{align*}
+					y_p' &= u_1'y_1 + y_1'u_1 + u_2'y_2 + y_2'u_2 \\
+					y_p'' &= u_1''y_1 + y_1'u_1' + y_1''u_1 + u_1'y_1' + u_2''y_2 + y_2'u_2 + y_2''u_2 + u_2'y_2'
+				\end{align*}
+				Substituting,
+				\begin{align*}
+					y_p'' + P(x)y_p' + Q(x)y_p &= u_1 \overset{0}{\overbrace{(y_1'' + Py_1' + Qy_1)}} + u_2(y) + u_2\overset{0}{\overbrace{(y_2'' + Py_2' + Qy_2)}} \\
+						&\quad + y_1u_1'' + u_1'y_1' + y_2u_2'' + u_2'y_2' + P(y_1u_1' + y_2u_2') + y_1'u_1' + y_2'u_2'\\
+						&= \dv{}{x}[y_1u_1'] + \dv{}{x}[y_2u_2'] + P(y_1u_1' + y_2u_2') + y_1'u_1' + y_2'u_2' \\
+						&= \dv{}{x}[y_1u_1' + y_2u_2'] + P(y_1u_1' + y_2u_2') + y_1u_1' + y_2u_2'
+								= f(x)
+				\end{align*}
+				As there are two unknowns, two equations are needed. These are obtained by further assuming that
+				\[y_1u_1' + y_2u_2' = 0\]
+				as this results in DE reducing to
+				\[y_1u_1 + y_2u_2 = f(x)\]
+				This provides the desired two equations. By Cramer's Rule the solution of this system can be expressed in terms of determinants:
+				\[
+					u_1' = \frac{W_1}{W} = -\frac{y_2f(x)}{W} \qquad \text{and} \qquad
+						u_2' = \frac{W_2}{W} = \frac{y_1f(x)}{W}
+				\]
+				where
+				\[
+					W = \begin{vmatrix}
+ 							y_1 & y_2 \\
+ 							y_1' & y_2'
+ 						\end{vmatrix}, \quad
+ 						W_1 = \begin{vmatrix}
+ 									0 & y_2 \\
+ 									f(x) & y_2'
+ 								\end{vmatrix}, \quad \text{and} \quad
+						W_2 = \begin{vmatrix}
+ 									y_1 & 0 \\
+ 									y_1' & f(x)
+ 								\end{vmatrix}
+				\]
+				The functions \(u_1\) and \(u_2\) can then be found simply by integrating the results. \\
+				The determinant \(W\) is the Wronskian of \(y_1\) and \(y_2\). As they are linearly independent, \(W(y_1(x), y_2(x))\) is never 0 for any \(x\) in \(I\).
+				
+		\subsectionb{Summary of the Method}
 	\section{Cauchy-Euler Equations}
 	\section{Green's Function}
 		\subsection{Initial-Value Problems}
