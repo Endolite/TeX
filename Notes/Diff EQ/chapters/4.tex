@@ -60,7 +60,7 @@
 						is the \textbf{Wronskian} of the functions.
 				}
 				\callout{17}{\paragraph{Theorem 4.1.3 Criterion for Linearly Independent Solutions}
-					Let \(y_1, y_2, \ldots, y_n\) be \(n\) solutions of the homogenous linear \(n^{\th}\)-order DE \(L(y) = 0\) on interval \(I\). The set of solutions is \textbf{linearly independent} on \(I\) if an only if \(W(y_1, y_2, \ldots, y_n) \ne 0\) for every \(x\) in the interval.
+					Let \(y_1, y_2, \ldots, y_n\) be \(n\) solutions of the homogenous linear \(n^{\th}\)-order DE \(L(y) = 0\) on interval \(I\). The set of solutions is \textbf{linearly independent} on \(I\) if an only if \(W(y_1, y_2, \ldots, y_n) \not\equiv 0\) for every \(x\) in the interval.
 				}
 				\callout{17}{\paragraph{Fundamental Set of Solutions}
 					Any set of \(n\) linearly independent solutions of the homogenous linear \(n^{\th}\)-order linear DE \(L(y) = 0\) on an interval \(I\) is said to be a \textbf{fundamental set of solutions} on the interval.
@@ -305,6 +305,42 @@
 				\end{enumerate}
 			}
 	\section{Variation of Parameters}
+		\subsectionb{Linear First-Order DEs Revisited}
+			The general solution of the linear first-order DE
+				\[a_1(x)y' + a_0(x)y = g(x)\]
+				is found by first writing it in standard form as
+				\[\dv{y}{x} + P(x)y = f(x)\]
+				If \(P(x)\) and \(f(x)\) are continuous on common interval \(I\), the integrating factor can be used to identify the solution as
+				\[y = C\en^{-\int P(x) \dd{x}} + \en^{-\int P(x) \dd{x}}\int \en^{-\int P(x) \dd{x}}f(x) \dd{x}\]
+				This is of the form \(y_c + y_p\), where
+				\[
+					y_p = C\en^{-\int P(x)\dd{x}} \qquad \text{and} \qquad
+						y_c = \en^{-\int P(x)\dd{x}}\int\en^{-\int P(x) \dd{x}}f(x) \dd{x}
+				\]
+				This particular solution can be derived via \textbf{variation of parameters}. \\
+			Suppose that \(y_1\) is a particular solution of a homogenous first-order linear DE; that is,
+				\[\dv{y_1}{x} + P(x)y_1 = 0\]
+				The solution
+				\[y = \en^{-\int P(x) \dd{x}}\]
+				is also known, and as the equation is linear, \(C_1y_1(x)\) is its general solution. Variation of parameters consists of finding a particular solution of				
+				\[\dv{y}{x} + P(x)y = 0\]
+				that is of the form
+				\[y_p = u_1(x)g_1(x)\]
+				The \textit{parameter} \(C_1\) has been replaced by the \textit{function} \(u_1\). \\
+				Substituting \(y_p = u_1g_1\) into the equation,
+				\begin{align*}
+					f(x) &= \dv{y}{x}[u_1y_1] + P(x)u_1y_1 \\
+						&= u_1\dv{y_1}{x} + y_1\dv{u_1}{x} + P(x)u_1y_1 \\
+						&= u_1\left[\dv{y_1}{x} + P(x)y_1\right] + y_1\dv{u_1}{x} \\
+						&= y_1\dv{u_1}{x}
+				\end{align*}
+				Separating variables and integrating,
+				\begin{align*}
+					\dd{u_1} &= \frac{f(x)}{y_1(x)} \dd{x} \\
+					u_1 &= \int \frac{f(x)}{y_1(x)} \dd{x}
+				\end{align*}
+				The particular solution is therefore
+				\[y = u_1y_1 = y_1\int \frac{f(x)}{y_1(x)} \dd{x}\]
 	\section{Cauchy-Euler Equations}
 	\section{Green's Function}
 		\subsection{Initial-Value Problems}
