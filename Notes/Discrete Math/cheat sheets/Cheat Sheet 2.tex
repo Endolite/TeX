@@ -1,0 +1,61 @@
+\documentclass[12pt, A4, twocolumn]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+		\usepackage{moresize}
+		\usepackage{multirow}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+		\usepackage{tikz-3dplot}
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Symbols
+		\usepackage{amssymb} % Miscellaneous
+% Configuration
+	\title{Test 2 Cheat Sheet}
+	\author{Arnav Patri}
+% Macros
+	% Notation
+		% Operators
+			\DeclareMathOperator{\divr}{div}
+		% Sets
+			\newcommand{\N}{\mathbb{N}}
+			\newcommand{\R}{\mathbb{R}}
+			\newcommand{\Z}{\mathbb{Z}}
+		% Other
+			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\mod}{\text{mod}}
+			\DeclareMathOperator{\return}{\text{return}}
+			\renewcommand{\th}{\text{th}}
+			\DeclareMathOperator{\while}{\text{while}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\comment}[1]{}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+
+\begin{document}
+	Arnav Patri
+	\setcounter{section}{9}	
+	\section{Graphs}
+		\[\small\begin{tabular}{|c|c|c|c|}\hline
+			\multicolumn{4}{|c|}{Graph Terminology} \\\hline
+			\multirow{2}{*}{Type} & \multirow{2}{*}{Directed?} & Multiple & \multirow{2}{*}{Loops?} \\
+			& & Edges? & \\\hline
+			Simple & N & N & N \\
+			Multi- & N & Y & N \\
+			Psuedo- & N & Y & Y \\
+			Simple Directed & Y & N & N \\
+			Simple Multi- & Y & Y & Y \\
+			Mixed & Y/N & Y & Y \\\hline
+		\end{tabular}\]
+		\normalsize
+		as;ldfj ;aslkjdf ;salj fd;sajf ;klsjdf;lkja sdlkfj;aklsjdf ;askljfd;lkjsa fd
+\end{document}

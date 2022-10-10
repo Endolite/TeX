@@ -216,7 +216,7 @@
 								y_2 = \frac{1}{2}\left(\en^{kx} - \en^{-kx}\right) = \sinh kx 
 					\]
 					meaning that another form of the general solution is
-					\[y = C_1\cosh kx + C_2\sinh kx\]
+					\[y = C_1\cosh(kx) + C_2\sinh(kx)\]
 			\subsectionb{Higher-Order Equations}
 				In general, in order to solve an \(n^{\th}\)-order homogenous DE \(L(y) = 0\), the \(n^{\th}\) degree polynomial
 					\[a_nm^n + a_{n - 1}m^{n - 1} + \cdots + a_2m^2 + a_1m + a_0 = 0\]
@@ -367,7 +367,7 @@
 				\[y_1u_1' + y_2u_2' = 0\]
 				as this results in DE reducing to
 				\[y_1u_1 + y_2u_2 = f(x)\]
-				This provides the desired two equations. By Cramer's Rule the solution of this system can be expressed in terms of determinants:
+				This provides the desired two equations. By Cramer's Rule, the solution of this system can be expressed in terms of determinants:
 				\[
 					u_1' = \frac{W_1}{W} = -\frac{y_2f(x)}{W} \qquad \text{and} \qquad
 						u_2' = \frac{W_2}{W} = \frac{y_1f(x)}{W}
@@ -389,12 +389,162 @@
 				\]
 				The functions \(u_1\) and \(u_2\) can then be found simply by integrating the results. \\
 				The determinant \(W\) is the Wronskian of \(y_1\) and \(y_2\). As they are linearly independent, \(W(y_1(x), y_2(x))\) is never 0 for any \(x\) in \(I\).
-				
 		\subsectionb{Summary of the Method}
+			Due to the long-winded nature of the procedure, it is more efficient here to simply memorize the formulas for first- and second-order equations. \\
+			Solving
+				\[a_2y'' + a_1y' + a_0y = g(x)\]
+				the complementary function can be found as
+				\[y_c = C_1y_1 + C_2y_2\]
+				The Wronskian \((W(y_1(x), y_2(x))\) can then be computed. Dividing by \(a_1\), the DE can be put into standard form
+				\[y'' + P(x)y' + Q(x)y = f(x)\]	
+				to determine \(f(x)\). \(u_1\) and \(u_2\) can be as
+				\[
+					u_1 = -\int \frac{y_1f(x)}{W} \dd{x} \qquad \text{and} \qquad
+						u_2 = \int \frac{y_1f(x)}{W} \dd{x}
+				\]
+				A particular solution is then
+				\[y_p = u_1y_1 + u_2y_2\]
+				The general solution is then
+				\[
+					y = y_c + y_p
+						= C_1y_2 + C_2y_2 + u_1y_2 + u_2y_2
+				\]
+		\subsectionb{Higher-Order Equations}
+			The method used for second-order DEs can be generalized to those of order \(n\) in standard form
+				\[y^{(n)} + P_{n - 1}(x)y^{(n - 1)} + \cdots + P_1(x)y' + P_0(x)y = f(x)\]
+				If
+				\[y_c = C_1y_1 + C_2y_2 + \cdots + C_ny_n\]
+				then a particular solution is
+				\[y_p = u_1y_1 + u_2y_2 + \cdots + u_ny_n\]
+				where \(u_k'\) is determined by the equations
+				\[
+					\begin{array}{ccccccccc}
+						y_1u_1' &+ &y_2u_2' &+ &\cdots &+ & y_nu_n' &= &0 \\
+						y_1'u_1' &+ & y_2'u_2' &+ &\cdots &+ & y_n'u_n' &= &0 \\
+						\vdots &&&&&&&& \vdots \\
+						y_1^{(n - 1)}u_1 &+ & y_2^{(n - 1)}u_2' &+ &\cdots &+ & y_n^{(n - 1)}u_n' &= &0
+					\end{array}
+				\]
+				The first \(n - 1\) equations in this system are assumptions made to simplify the resultant equation of substituting \(y_p\) into the DE. Cramer's Rule gives
+				\[u_k' = \frac{W_k}{W}\]
+				where \(W\) is the Wronskian of \(y_{1 \cdots n}\) and \(W_k\) is the determinant obtained by replacing the \(k^{\th}\) column of the Wronskian with a column comprised of \((0, 0, \ldots, f(x))\).
 	\section{Cauchy-Euler Equations}
+		\subsectionb{Cauchy-Euler Equation}
+			A linear DE of the form
+				\[a_nx^n\dv[n]{y}{x} + a_{n - 1}x^{n - 1}\dv[n - 1]{y}{x} + \cdots + a_1x\dv{y}{x} + a_0y = g(x)\]
+				(where the coefficients \(a_{0 \cdots n}\) are constants) is a \textbf{Cauchy-Euler equation}. The defining characteristic of this type of equation is the fact that the degree of the monomial coefficients \(x^k\) match the orders \(k\) of differentiation. \\
+			It should be noted that the lead coefficient \(a_nx^n\) of any Cauchy-Euler equatino is zero at \(x = 0\), so to ensure the existence of a unique solution, the interval \((0, \infty)\) is generally considered.
+		\subsectionb{Method of Solution}
+			Substituting \(x^m\) into a Cauchy-Euler equation yields a polynomial in \(m\) times \(x^m\), as
+				\[
+					a_kx^k\dv[k]{y}{x} 
+						= a_kx^km(m - 1)(m - 2)\cdots(m - k + 1)x^{m - k} 
+						= a_km(m - 1)(m - 2)\cdots(m - k + 1)x^m
+				\]
+				Substituting into a second-order equation,
+				\[
+					ax^2\dv[2]{y}{x} + bx\dv{y}{x} + cy
+						= am(m - 1)x^m + bmx^m + cx^m
+						= (am(m - 1) + bm + c)x^m
+				\]
+				Thus \(y = x^m\) is a solution of the DE if \(m\) is a solution of the \textbf{auxiliary equation}
+					\[
+						am(m - 1) + bm + c = 0 \qquad \text{or} \qquad
+						am^2 + (b - a)m + c = 0
+					\]
+		\subsectionb{Case I: Distinct Real Roots}
+			Let \(m_1\) and \(m_2\) denote distinct real roots of the auxiliary equation. This implies that \(y_1 = x^{m_1}\) and \(y_2 = x^{m_2}\) form a fundamental set of solutions, making the general solution
+				\[y = C_1x^{m_1} + C_2x^{m_2}\]
+		\subsectionb{Case II: Repeated Real Roots}
+			If the roots of the auxiliary equation are repeated, then only a single solution \(y = x^m\) is obtained. The roots of a quadratic being zero necessitates that the discriminant be 0, meaning that
+				\[m = -\frac{b - a}{2a}\]
+				Rewriting the Cauchy-Euler Equation in standard form yields
+				\[\dv[2]{y}{x} + \frac{b}{ax}\dv{y}{x} + \frac{c}{ax^2}y = 0\]
+				meaning that
+				\[
+					P(x) = \frac{b}{ax} \qquad \text{and} \qquad
+					\int P(x) \dd{x} = \frac{b}{a}\ln{x}
+				\]
+				Thus
+				\begin{align*}
+					y_2 &= x^m\int \frac{\en^{-\frac{b}{a}\ln x}}{x^{2m}} \dd{x} 
+							= x^m\int\left[x^{-b/a} \times x^{-2m}\right]\dd{x} 
+							= x^m\int\left[x^{-b/a} \times x^{\frac{b - a}{a}}\right]\dd{x} \\
+						&= x^m\int \frac{\dd{x}}{x}
+								= x^m\ln{x}
+				\end{align*}
+				The general solution is therefore
+				\[y = C_1x^m + C_2x^m\ln{x}\]
+		\subsectionb{Case III: Conjugate Complex Roots}
+			If the roots of the auxiliary equation are the conjugate pair \(m = \alpha \pm i\beta\) (where \(\alpha\) and \(\beta > 0\) are real, then a solution is
+				\[y = C_1x^{\alpha + i\beta} + C_2x^{\alpha + i\beta}\]
+				The positive complex term can be rewritten as
+				\[
+					x^{i\beta} = \en^{i\beta\ln{x}}
+						= \cos(\beta\ln{x}) + i\sin(\beta\ln{x})
+				\]
+				The negative complex term can similarly be rewritten as
+				\[x^{-i\beta} = \cos(\beta\ln{x}) - i\sin(\beta\ln{x})\]
+				Adding and subtracting these results yield
+				\[
+					x^{i\beta} + x^{-i\beta} = 2\cos(\beta\ln{x}) \qquad \text{and} \qquad
+					x^{i\beta} - x^{-i\beta} = 2i\sin(\beta\ln{x})
+				\]
+				Letting \(C_1 = C_2 = 1\) gives
+				\[
+					y_1 = x^\alpha\left(x^{i\beta} + x^{-i\beta}\right)
+						= 2x^\alpha\cos(\beta\ln{x})
+				\]
+				while letting \(C_1 = 1\) and \(C_1 = -1\) yields 
+				\[
+					y_2 = x^\alpha\left(x^{i\beta} - x^{-i\beta}\right)
+						= 2ix^\alpha\sin(\beta\ln{x})
+				\]
+				As 
+				\[W\left(x^\alpha\cos(\beta\ln{x}), x^\alpha\sin(\beta\ln{x})\right) = \beta x^{2n - 1} \not\equiv 0\]
+				for \(\beta, x \in \R^+\), it can be concluded that
+				\[
+					y_1 = x^\alpha\cos(\beta\ln{x}) \qquad \text{and} \qquad
+					y_2 = x^\alpha\sin(\beta\ln{x})
+				\]
+				constitute a fundamental set of real solutions. The general solution is therefore
+				\[y = C_1x^\alpha\cos(\beta\ln{x}) + C_2x^\alpha\sin(\beta\ln{x})\]
 	\section{Green's Function}
 		\subsection{Initial-Value Problems}
+			\subsubsectionb{Three Initial-Value Problems}
+				Consider the second-order IVP
+					\[y'' + P(x)y' + Q(x)y = f(x), \quad y(x_0) = y_0, \quad y'(x_0) = y_1\]
+					The solution \(y\) can be expressed as the superposition of two solutions
+					\[y(x) = y_h(x) + y_p(x)\]
+					where \(y_h(x)\) is the solution of the associated homogenous DE with nonhomogenous initial conditions
+					\[y'' + P(x)y' + Q(x)y = 0, \quad y(x_0) = y_0, \quad y'(x_0) = y_1\]
+					and \(y_p\) is the solution of the nonhomogenous DE with homogenous (0) initial conditions
+					\[y'' + P(x)y' + Q(x)y = f(x), \quad y(x_0) = 0, \quad y'(x_0) = 0\]
+					\callout{15.18}{
+						It is assumed that at least one of the numbers \(y_0\) or \(y_1\) is not 0. Otherwise, the \(y_h = 0\).
+					}
+					If the coefficients \(P\) and \(Q\) are constants, \(y_h\) can be found without issue using its auxiliary equation. \\
+					Due the initial conditions being 0, \(y_p\) can describe a physical system that is initially at rest, giving it the moniker \textbf{rest solution}.
+			\subsubsectionb{Green's Function}
+				If \(y_1(x)\) and \(y_2(x)\) form a fundamental set of solutions on \(I\) of the associated homogenous form of the IVP, then a particular solution of the nonhomogenous equation on the interval of the form
+					\[y_p(x) = u_1(x)y_1(x) + u_2(x)y_2(x)\]
+					can be found on by variation of parameters. \\
+					The variable coefficients are defined by
+					\[
+						u_1'(x) = -\frac{y_1(x)f(x)}{W}, \quad u_2'(x) = \frac{y_1(x)f(x)}{W}
+					\]
+					The linear independence of \(y_1\) and \(y_2\) on \(I\) guarantees that \(W(y_1(x), y_2(x)) \ne 0\) for all \(x\) in \(I\). If \(x\) and \(x_0\) are both in \(I\), the integrating the derivatives on the interval \([x_0, x]\) and substituting the results into \(y_p\) yields
+					\[y_p(x) = -y_1(x)\int_{x_0}^x\frac{y_2(t)f(t)}{W(t)}\dd{t} + y_2(x)\int_{x_0}^x\frac{y_1(t)f(t)}{W(t)}\dd{t}\]
+					As \(y_1(x)\) and \(y_2(x)\) are constant with respect to \(t\),
+					\[y_p(x) = -\int_{x_0}^x\frac{y_1(x)y_2(t)}{W(t)}f(t)\dd{t} + \int_{x_0}^x\frac{y_1(t)y_2(x)}{W(t)}f(t)\dd{t}\]
+					These two integrals can be rewritten as the single integral
+					\[y_p(x) = \int_{x_0}^x G(x, t)f(t)\dd{t}\]
+					where
+					\[G(x, t) = \frac{y_1(t)y_2(x) - y_1(x)y_2(t)}{W(t)}\]
+					is the \textbf{Green's function} for the DE. \\
+				Note that a Green's function is dependent only on the fundamental solutions \(y_1\) and \(y_2\) of the associated homogenous DE of the IVP and \textit{not} on the forcing function\(f\). Therefore all linear second-order DEs with the same left-hand side but with different forcing functions will have the same Green's function. An alternative title for the Green's function is the \textbf{Green's function for the second-order differential operator \(\bm{D^2 + P(x)D + Q(x)}\)}.
 		\subsection{Boundary Value Problems}
+			
 	\section{Solving Systems of DEs by Elimination}
 	\section{Nonlinear Differential Equations}
 \end{document}

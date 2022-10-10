@@ -7,5 +7,24 @@
 		}
 		It should be noted that \(V\) or \(E\) may be infinite. If both are infinite, the graph is considered an \textbf{infinite graph}. If both are finite, the graph is called a \textbf{finite graph}. \\
 		A graph in which each edge connects two different vertices and no two edges connect the same pair of vertices is called a \textbf{simple graph}. \\
-		Graphs with \textbf{multiple edges} that connect the same vertices are called \textbf{multigraphs}.
+		Graphs with \textbf{multiple edges} that connect the same vertices are called \textbf{multigraphs}. \\
+		An unordered pair of vertices \(\{u, v\}\) is said to be of multiplicity \(m\) if there are \(m\) different edges associated with it. \\
+		An edge connecting a vertex to itself is called a \textit{loop}.
+		Graphs with loops or multiple edges connecting the same pair of vertices is sometimes called a \textbf{psuedograph}. \\
+		\textbf{Undirected graphs} have \textbf{undirected} edges.
+		\callout{17}{
+			A \textit{directed graph} or \textit{digraph} \((V, E)\) is comprised of a set of vertices \(V \not\equiv \varnothing\) and a set of \textit{directed edges (arcs)} \(E\). Each directed edge is associated with an ordered pair of vertices. That associated with \((u, v)\) is said to \textit{start} at \(u\) and \textit{end} at \(v\).
+		}
+		A directed graph without loops or multiple directed edges is a \textbf{simple directed graph}. \\
+		A \textbf{directed multigraph} have \textbf{multiple directed edges} between to vertices (or possibly the same vertex). \\
+		An ordered pair of vertices \((u, v)\) is said to be of multiplicity \(m\) if there are \(m\) directed edges associated with it. \\
+		A \textbf{mixed graph} has both directed and undirected edges. \\
+		Two vertices in an undirected graph are \textit{adjacent} (or \textit{neighbors} if there is an edge connecting them. Such an edge is called \textit{incident with} the vertices and is also said to \textit{connect} them. \\
+		The set of all neighbors of a vertex \(v\) is denoted by \(N(v)\) and is called the \textit{neighborhood} of \(v\). If \(A\) is a subset of \(V\), \(N(A)\) is denotes the set of all vertices in \(G\) that are adjacent to at least one vertex in \(A\), so \(N(A) = \bigcup\limits_{v \in A} N(v)\). \\
+		The \textit{degree} of a vertex in an undirected graph is the number of edges that are incident with. A loop contributes 2 to a vertex's degree. This is denoted by \(\deg v\).
+	\setcounter{section}{2}
+	\section{Representing Graphs and Graph Isomorphism}
+		\setcounter{subsection}{2}
+		\subsection{Adjacency Matrices}
+			Let \(G(V, E)\) be a graph. The \textbf{adjacency matrix A} (or \(\textbf{A}_G\)) of \(G\) is the \(|V| \times |V|\) matrix where \(\textbf{A}_{G, i, j}\) is the number of edges connecting vertices \(i\) and \(j\).
 \end{document}
