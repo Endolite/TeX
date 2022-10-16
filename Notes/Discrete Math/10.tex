@@ -19,12 +19,51 @@
 		A \textbf{directed multigraph} have \textbf{multiple directed edges} between to vertices (or possibly the same vertex). \\
 		An ordered pair of vertices \((u, v)\) is said to be of multiplicity \(m\) if there are \(m\) directed edges associated with it. \\
 		A \textbf{mixed graph} has both directed and undirected edges. \\
-		Two vertices in an undirected graph are \textit{adjacent} (or \textit{neighbors} if there is an edge connecting them. Such an edge is called \textit{incident with} the vertices and is also said to \textit{connect} them. \\
-		The set of all neighbors of a vertex \(v\) is denoted by \(N(v)\) and is called the \textit{neighborhood} of \(v\). If \(A\) is a subset of \(V\), \(N(A)\) is denotes the set of all vertices in \(G\) that are adjacent to at least one vertex in \(A\), so \(N(A) = \bigcup\limits_{v \in A} N(v)\). \\
+		
+	\section{Graph Terminology and Special Types of Graphs}
+		Two vertices in an undirected graph are \textbf{adjacent} (or \textit{neighbors} if there is an edge connecting them. Such an edge is called \textbf{incident with} the vertices and is also said to \textbf{connect} them. \\
+		The set of all neighbors of a vertex \(v\) is denoted by \(N(v)\) and is called the \textbf{neighborhood} of \(v\). If \(A\) is a subset of \(V\), \(N(A)\) denotes the set of all vertices in \(G\) that are adjacent to at least one vertex in \(A\), so \(N(A) = \bigcup\limits_{v \in A} N(v)\). 
 		The \textit{degree} of a vertex in an undirected graph is the number of edges that are incident with. A loop contributes 2 to a vertex's degree. This is denoted by \(\deg v\).
-	\setcounter{section}{2}
+		\callout{17}{\paragraph{The Handshaking Theorem}
+			If \(G = (V, E)\) is an undirected graph with \(m\), edges, then
+				\[2m = \sum_{v \in V} \deg v\]
+		}
+		\callout{17}{
+			An undirected graph has an even number of vertices with odd degree.
+		}
+		The \textbf{in-degree} of a vertex \(v\), denoted \(\deg^-v\), is the number of edges that terminate at \(v\). The \textbf{out-degree} of \(v\), denoted \(\deg^+v\), is the number of edges with \(v\) as their initial vertex.
+		\callout{17}{
+			If \(G(V, E)\), is a digraph, then
+				\[\sum_{v \in V} \deg^- v + \sum_{v \in v}\deg^+ v = |E|\]
+		}
+		A \textbf{complete graph on \(\bm{n}\) vertices}, denoted \(K_n\), is the simple graph containing exactly one edge between each pair of distinct vertices. \\
+		A \textbf{cycle \(\bm{C_n}\)} consists of \(n\) vertices \(v_1, v_2, \ldots, v_n\) and edges \(\{v_1, v_2\}, \{v_2, v_2\}, \ldots, \{v_{n - 1}, v_n\}, \{v_n, v_1\}\). A \textbf{wheel \(\bm{W_n}\)} is obtained by adding an additional vertex to the cycle (for \(n \ge 3\)) and connecting this new vertex to each of the \(n\) vertices in \(C_n\) with \(n\) edges. \\
+		An \textbf{\(\bm{n}\)-dimensional hypercube} or \textbf{\(\bm{n}\)-cube \(\bm{Q_n}\)}  is a graph with \(2^n\) vertices representing all bit strings of length \(n\), where there is an edge between two vertices that differ in exactly one bit position.
+		A simple graph \(G\) is \textbf{bipartite} if \(V\) can be partitioned into two mutually exclusive subsets \(V_1\) and \(V_2\) such that every edge connects a vertex in \(V_1\) to one in \(V_2\). \\
+		A \textit{complete bipartite graph} \(K_{m, n}\) is a graph that has its vertex set partitioned into subsets \(V_1\) and \(V_2\) where \(|V_1| = m\) and \(|V_2| = n\) such that there is an edge from every vertex in \(V_1\) to one in \(V_2\). \\
+		A \textit{subgraph} of graph \(G(V, E)\) is a graph \((W, F)\) where \(W \subset V\) and \(F \subset E\).
 	\section{Representing Graphs and Graph Isomorphism}
-		\setcounter{subsection}{2}
-		\subsection{Adjacency Matrices}
-			Let \(G(V, E)\) be a graph. The \textbf{adjacency matrix A} (or \(\textbf{A}_G\)) of \(G\) is the \(|V| \times |V|\) matrix where \(\textbf{A}_{G, i, j}\) is the number of edges connecting vertices \(i\) and \(j\).
+		An \textbf{adjacency list} is a list of all nodes adjacent to a given node. \\
+		Let \(G(V, E)\) be a graph. The \textbf{adjacency matrix A} (or \(\textbf{A}_G\)) of \(G\) is the \(|V| \times |V|\) matrix where \(\textbf{A}_{G, i, j}\) is the number of edges connecting vertices \(v_i\) and \(v_j\), where the indices are arbitrary. \\
+		Let \(G(V, E)\) be an undirected graph. The \textbf{incidence matrix \(\textbf{M}\)} is the \(|V| \times |E|\) matrix where \(\textbf{M}_{i, j}\) is the 1 if edge \(e_j\) connects to node \(v_i\) and 0 otherwise. \\
+		The simple graphs \(G_1(V_1, E_1)\) and \(G_2(V_2, E_2)\) are \textbf{isomorphic} if there exists a one-to-one, onto function \(f\) from \(V_1\) to \(V_2\) such that \(a\) and \(b\) are adjacent in \(G_1\) if and only if \(f(a)\) and \(f(b)\) are adjacent in \(G_2\) for all \(a\) and \(b\) in \(V_1\). Such a function \(f\) is called an \textbf{isomorphism}. Two simple graphs that are not isomorphic are \textbf{nonisomorphic}. \\
+		A property preserved by isomorphism is \textbf{graph invariant}.
+	\section{Connectivity}
+		Informally, a \textbf{path} is a sequence of edges starting at a vertex that travels between nodes following a graph's edges. \\
+		Let \(G\) be an undirected graph. A \textbf{path of length \(\bm{n}\)} (where \(n \in \Z^+\)) from \(u\) to \(v\) is a sequence of \(n\) edges for which there exists a sequence \(x_{0 \cdots n}\) of vertices such that \(x_0 = u\),  \(x_n = v\), and each \(e_i\) connects \(x_{i - 1}\) and \(x_i\). \\
+		A path of a simple graph is denoted by the sequence of vertices, as this uniquely determines the path. \\
+		A path is a \textbf{circuit} if the beginning and terminal points are the same and the length is not 0. \\
+		A path is said to \textit{pass through} its vertices and \textit{traverse} its edges. \\
+		A path is \textbf{simple} if it does not contain a given edge more than once. \\
+		An undirected graph is said to be \textbf{connected} if there exists a path between every pair of node. One that is not connected is \textbf{disconnected}. \\
+		A \textbf{connected component} of a graph is a subgraph of it that is connected that is not a proper subgraph of another connected subgraph. \\
+		A directed graph is \textbf{strongly connected} if there is a path between \(a\) and \(b\) and \(b\) and \(a\) for every pair of vertices. It is \textbf{weakly connected} if its underlying undirected graph is connected.
+	\section{Euler and Hamiltonian Graphs}
+		An \textbf{Euler circuit} in a graph is simple circuit containing all of its edges. An \textbf{Euler path} is a simple path containing every edge. \\
+		The initial and final edges of an Euler circuit add 1 each to that node's degree, and the circuit passing through that point contributes 2 more to the degree, meaning that the degree of the starting node must be even, as must that of every other vertex. In order for a graph to have an Euler circuit, then, all of its nodes must be of even degree. \\
+		The initial and final vertices of an Euler path must be of odd degree, but every other node must have an even degree, so a graph with an Euler path must have exactly two nodes of odd degree. \\
+		A connected multigraph with at least two vertices has an Euler circuit if an only if each vertex is of even degree and it has an Euler path if an only if exactly two vertices are of odd degree. \\
+		A \textbf{Hamilton path} in a graph is a simple path that passes through each point exactly once while a simple circuit that passes through each node exactly once is a \textbf{Hamilton circuit}. \\
+		\textbf{Dirac's theorem} states that a simple graph \(G\) with \(n \ge 3\) vertices where the degree of each vertex is at least \(n / 2\), then \(G\) has a Hamilton circuit. \\
+		\textbf{Ore's theorem} states that if a simple graph \(G\) has \(n \ge 3\) vertices such that the sum of the degrees of any two nonadjacent nodes is at least \(n\) has a Hamilton circuit.
 \end{document}

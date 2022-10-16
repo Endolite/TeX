@@ -10,6 +10,7 @@
 		\usepackage[margin=0.75in]{geometry}
 		\usepackage{hyperref}
 		\usepackage[utf8]{inputenc}
+		\usepackage{moreverb}
 	% Diagrams
 		\usepackage{pgfplots}
 		\usepackage{tikz}
@@ -47,7 +48,7 @@
 			\DeclareMathOperator{\while}{\text{while}}
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
-		\newcommand{\comment}[1]{}
+		\renewcommand{\comment}[1]{}
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
 
 \usepackage{subfiles}

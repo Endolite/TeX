@@ -542,9 +542,45 @@
 					where
 					\[G(x, t) = \frac{y_1(t)y_2(x) - y_1(x)y_2(t)}{W(t)}\]
 					is the \textbf{Green's function} for the DE. \\
-				Note that a Green's function is dependent only on the fundamental solutions \(y_1\) and \(y_2\) of the associated homogenous DE of the IVP and \textit{not} on the forcing function\(f\). Therefore all linear second-order DEs with the same left-hand side but with different forcing functions will have the same Green's function. An alternative title for the Green's function is the \textbf{Green's function for the second-order differential operator \(\bm{D^2 + P(x)D + Q(x)}\)}.
+				Note that a Green's function is dependent only on the fundamental solutions \(y_1\) and \(y_2\) of the associated homogenous DE of the IVP and \textit{not} on the forcing function \(f\). Therefore all linear second-order DEs with the same left-hand side but with different forcing functions will have the same Green's function. An alternative title for the Green's function is the \textbf{Green's function for the second-order differential operator \(\bm{D^2 + P(x)D + Q(x)}\)}.
 		\subsection{Boundary Value Problems}
-			
+			A BVP for a second-order DE specifies \(y\) and \(y'\) at two different points. Conditions for BVPs are special cases of the more general homogenous boundary conditions
+				\begin{align*}
+					A_1y(a) + B_1y'(a) &= 0 &
+						A_2y(b) + B_2(b) &= 0
+				\end{align*}
+				where \(A_1\), \(A_2\), \(B_1\), and \(B_2\) are constants. The goal is to find the integral solution \(y_p(x)\) for the nonhomogenous BVP of the form
+				\begin{align*}
+					y'' + P(x)y' + Q(x)y &= f(x) \\
+					A_1y(a) + B_1y'(a) &= 0 \\
+					A_2y(b) + B_2y'(b) &= 0
+				\end{align*}
+				It is assumed that \(P(x)\), \(Q(x)\), and \(f(x)\) are all continuous on \([a, b]\) as well as that the corresponding homogenous BVP has only the trivial solution \(y = 0\). This latter assumption is sufficient to guarantee that a unique solution of the nonhomogenous BVP exists and is given by
+				\[y_p(x) = \int_a^b G(x, t) \dd{t}\]
+			\subsubsectionb{Another Green's Function}
+				Let \(y_1(x)\) and \(y_2(x)\) be linearly independent solutions on \([a, b]\) of the associated of the associated homogenous BVP at \(x\) be within the interval. These can be integrated over two different intervals:
+					\begin{align*}
+						u_1(x) &= -\int_b^x \frac{y_2(t)f(t)}{W(t)} \dd{t} &
+							u_2(x) &= \int_a^x \frac{y_1(t)f(t)}{W(t)} \dd{t}
+					\end{align*}
+					A particular solution is then
+					\[y_p(x) = \int_a^x \frac{y_1(x)y_2(t)}{W(t)}f(t) \dd{t} + \int_x^b \frac{y_1(t)y_2(x)}{W(t)}f(t) \dd{t}\]
+					This can be compactly written as
+					\[y_p(x) = \int_a^b G(x, t) f(t) \dd{t}\]
+					where
+					\[
+						G(x, t) = \begin{cases}
+ 							\frac{y_1(t)y_2(x)}{W(t)} & a \le t \le x \\
+ 							\frac{y_1(x)y_2(t)}{W(t)} & x \le t \le b
+ 						\end{cases}
+ 					\]
+ 					This piecewise-defined function is called a \textbf{Green's function} for the BVP. It can be proven that this function is continuous on \([a, b]\). \\
+ 					If the solutions \(y_1\) and \(y_2\) are chosen such that at, \(x = a\)
+ 					\[
+ 						A_1y_1(a) + B_1y_1'(a) = 0\qquad \text{and} \qquad
+ 						A_2y_2(b) + B_2y_2'(b) = 0
+ 					\]
+ 					then \(y_p\) satisfies both homogenous boundary conditions.
 	\section{Solving Systems of DEs by Elimination}
 	\section{Nonlinear Differential Equations}
 \end{document}
