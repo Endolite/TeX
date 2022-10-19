@@ -1,0 +1,93 @@
+\documentclass[12pt, A4]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+		\usepackage{tikz-3dplot}
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Formatting
+		\usepackage{booktabs}
+		\usepackage{tasks}
+	% Symbols
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{esint} % Integrals
+		\usepackage{physics} % Differentials
+% Configuration
+	\title{Homework Set 2}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+	
+% Macros
+	% Notation
+		% Operators
+			\DeclareMathOperator{\divr}{div}
+		% Sets
+			\newcommand{\R}{\mathbb{R}}
+		% Other
+			\DeclareMathOperator{\avg}{avg}
+			\DeclareMathOperator{\return}{\text{return}}
+			\renewcommand{\th}{\text{th}}
+			\DeclareMathOperator{\while}{\text{while}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\comment}[1]{}
+		\newcommand{\enumset}[1]{\setcounter{enumi}{#1}}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}	
+
+\begin{document}
+	\maketitle
+	\setcounter{section}{9}
+	\section{Graphs}
+		\setcounter{subsection}{2}
+		\subsection{Representing Graphs and Graph Isomorphism}
+		\begin{enumerate}
+			\enumset{42}
+			\item
+				\(|V_1| = |V_1| =  6, |E_1| = |E_2|= 9\)
+				\[
+					\textbf{A}_{G, 1} = \begin{bmatrix}
+ 							0 & 1 & 0 & 1 & 0 & 1 \\
+ 							1 & 0 & 1 & 0 & 0 & 1 \\
+ 							0 & 1 & 0 & 1 & 1 & 0 \\
+ 							0 & 0 & 1 & 1 & 0 & 1 \\
+ 							1 & 1 & 0 & 0 & 1 & 0
+ 						\end{bmatrix} \qquad
+ 					\textbf{A}_{G, 2} = \begin{bmatrix}
+ 							0 & 1 & 0 & 1 & 1 & 0 \\
+ 							1 & 0 & 1 & 0 & 1 & 0 \\
+ 							0 & 1 & 0 & 1 & 0 & 1 \\
+ 							1 & 1 & 0 & 0 & 0 & 1 \\
+ 							0 & 0 & 1 & 1 & 1 & 0
+ 						\end{bmatrix} \qquad
+ 					\begin{array}{|c|c|c}\hline
+						v \in V & f(v) \\\hline
+						u_1 & v_1 \\
+						u_2 & v_2 \\
+						u_3 & v_3 \\
+						u_4 & v_4 \\
+						u_5 & v_6 \\
+						u_6 & v_5 \\\hline
+					\end{array}
+				\]
+		\end{enumerate}
+
+\end{document}

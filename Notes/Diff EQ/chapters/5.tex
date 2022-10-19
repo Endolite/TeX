@@ -1,0 +1,79 @@
+\documentclass[./Differential Equations.tex]{subfiles}
+
+\begin{document}
+	\section{Linear Models: Initial-Value Problems}
+		\subsection{Spring/Mass Systems: Free Undampened Motion}
+			\subsubsectionb{Hooke's Law}
+				Suppose a rigid body of is attached to a flexible spring. The spring force \(F_s\) is proportional to the displacement \(s\) of the body from its equilibrium position and is in the direction of equilibrium; that is
+					\[F_s = -ks\]
+			\subsubsectionb{Newton's Second Law}
+				Newton's second law of motion states that
+					\[\subt{F}{net} = ma\]
+					where \(m\) is mass and \(a\) is acceleration or \(\dv*[2]{x}{t}\). \\
+				If the mass on a spring vibrates without regard to any external forces, having \textbf{free motion}, and the mass is hanging vertically from the spring, then Newton's second law gives
+					\[
+						m\dv[2]{x}{t} = \overset{\subt{F}{net}}{\overbrace{-(x + s) + mg}}
+							= -kx + \overset{0}{\overbrace{mg - ks}} 
+							= -kx
+					\]
+					where \(s\) is the equilibrium position (where \(ks = mg\)) and \(x\) is the displacement from equilibrium.
+			\subsubsectionb{DE of Free Undampened Motion}
+				Dividing by \(m\) yields the second-order DE
+					\[\dv[2]{x}{t} + \omega^2x = 0\]
+					where \(\omega^2 = k/m\). This equation is said to describe \textbf{simple harmonic motion (SHM)} or \textbf{free undampened motion}.
+			\subsubsectionb{Equation of Motion}
+				The auxiliary equation of the SHM DE is
+					\[m^2 + \omega^2 = 0\]
+					so the solutions are
+					\[m = \pm i\omega\]
+					making the general solution
+					\[x(t) = C_1\cos(\omega t) + C_2\sin(\omega t)\]
+				The \textbf{period} of motion \(\bm{T}\) (in \(\SI{}{s}\)), the amount of time it takes for a full oscillation to occur, is
+					\[T = \frac{2\pi}{\omega}\]
+					The \textbf{frequency} of motion \(\bm{f}\) (in \(\SI{}{s^{-1}}\) or \(\SI{}{hz}\)) is
+					\[f = \frac{1}{T} = \frac{\omega}{2\pi}\]
+					The number
+					\[\omega = \sqrt{\frac{k}{x}}\]
+					(in \(\SI{}{rad/s}\)) and \(f\) are both sometimes referred to as the \textbf{natural frequency} of the system. \\
+					The equation derived by solving for the constants of the general solution is the \textbf{equation of motion} of the system.
+			\subsubsectionb{Alternative Forms of \(\bm{x(t)}\)}
+				When \(C_1, C_2 \ne 0\), the \textbf{actual amplitude \(\bm{A}\)} of free vibrations is not immediately obvious, so it is often convenient to convert the equation of SHM to the simpler form
+					\[x(t) = A\sin(\omega t + \varphi)\]
+					where
+					\[A = \sqrt{C_1^2 + C_2^2}\]
+					and \(\varphi\) is a \textbf{phase angle} defined by
+					\[
+						\left.\begin{aligned}
+							\sin\varphi &= \frac{C_1}{A} \\
+							\cos\varphi &= \frac{C_2}{A}
+						\end{aligned}\right\}
+						\tan\varphi = \frac{C_1}{C_2}
+					\]
+				A cosine function is sometimes preferred, making the solution
+					\[x(t) = A\cos(\omega t + \varphi)\]
+					where \(\varphi\) is defined by
+					\[
+						\left.\begin{aligned}
+							\sin\varphi &= \frac{C_2}{A} \\
+							\cos\varphi &= \frac{C_1}{A}
+						\end{aligned}\right\}
+						\tan\varphi = \frac{C_2}{C_1}
+					\]
+			\subsubsectionb{Double Spring Systems}
+				The \textbf{effective spring constant \(\bm{\subt{k}{eff}}\)} of a system with two \textit{parallel} springs with spring constants \(k_1\) and \(k_2\) is 
+					\[\subt{k}{eff} = k_1 + k_2\]
+				That of a system with two \textit{series} springs is
+					\[\subt{k}{eff} = \frac{k_1k_2}{k_1 + k_2}\]
+			\subsubsectionb{Systems with Variable Spring Constants}
+				In reality, it is reasonable to expect the spring constant to decay over time. One model for the \textbf{aging spring} replaces the spring constant \(k\) with the decreasing function
+					\[K(t) = k\en^{-\alpha t}\]
+					where \(k\) and \(\alpha\) are positive constants. The linear DE
+					\[mx'' + k\en^{-\alpha t}x = 0\]
+					cannot be solved with the methods discussed thus far. \\
+				When a spring/mass system is subject to a rapidly decreasing temperature, \(k\) may be replaced with \(K(t) = kt\) where \(k\) is a positive constant, a function that increases with time. The resulting model
+				\[mx'' + ktx = 0\]
+				is a form of \textbf{Airy's differential equation}.
+		\subsection{Spring/Mass Systems: Free Dampened Motion}
+			\subsubsection{DE of Free Dampened Motion}
+				Damping forces
+\end{document}

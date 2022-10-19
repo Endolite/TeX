@@ -582,5 +582,44 @@
  					\]
  					then \(y_p\) satisfies both homogenous boundary conditions.
 	\section{Solving Systems of DEs by Elimination}
+		\subsectionb{Systematic Elimination}
+			A linear equation
+				\[a_ny^{(n)} + a_{n - 1}y^{(n - 1)} + \cdots + a_1y' + a_0y = g(t)\]
+				where \(a_i\) are constants can be written as
+				\[\left(a_nD^n + a_{n - 1}D^{n - 1} + \cdots + a_1D + a_0\right)y = g(t)\]
+				If the \(n^{\th}\)-order differential operator factors into several of lower order, the factors commute
+		\subsectionb{Solution of a System}
+			A \textbf{solution} of a system of DEs is a set of sufficiently differentiable functions \(x = \varphi_1(t)\), \(y = \varphi_2(t)\), \(z = \varphi_3(t)\), and so on, that satisfies each equation in the system on some interval \(I\).
+		\subsectionb{Method of Solution}
+			Linear DEs can be rewritten using differential operators. Differential operators can then be used on each equation to get them to eliminate each other through addition or subtraction.
 	\section{Nonlinear Differential Equations}
+		\subsectionb{Some Differences}
+			Nonlinear DEs do not possess the property of superposability. \\
+			Nonlinear DEs may possess singular solutions, unlike linear DEs.
+		\subsectionb{Reduction of Order}
+			The nonlinear second-order DEs \(F(x, y', y'') = 0\), where the dependent variable \(y\) is absent,  and \(F(y, y', y'') = 0\), where the independent variable \(x\) is missing, can be reduced to first-order equations by the substitution \(u = y'\).
+		\subsectionb{Dependent Variable Missing}
+			If \(u = y'\), then
+				\[F(x, y', y'') = 0 \implies F(x, u, u') = 0\]
+				If this equation is solved for \(u\), then \(y\) can be found by means of integration. As a second-order equation is being solved, the solution will contain two constants.
+		\subsectionb{Independent Variable Missing}
+			If \(x\) is missing, then the DE must be transformed so that \(x\) becomes the dependent variable and \(y\) the independent. Letting \(u = y'\),
+				\[y'' = \dv{u}{x} = \dv{u}{y}\dv{y}{x} = u\dv{u}{y}\]
+				so
+				\[F(y, y', y'') = 0 \implies F\left(y, u, u\dv{u}{y}\right) = 0\]
+		\subsectionb{Use of a Numerical Solver}
+			To analyze an \(n^{\th}\)-order IVP numerically, the \(n^{\th}\)-order DE if first expressed as a system of \(n\) first-order equations. A second-order IVP must first be put into normal form \(y'' = f(x, y, y')\). Letting \(u = y'\), 
+				\[
+					\dv[2]{y}{x} = f(x, y, y'),\quad 
+					y(x_0) = y_0,\quad
+					y'(x_0) = u_0
+				\]
+				then \(y'' = u'\) and \(y'(x_0) = u(x_0)\), so the IVP becomes
+				\[
+					\begin{cases}
+						y' = u	\\
+						u' = f(x, y, u) 
+					\end{cases} \qquad \text{subject to} \qquad
+					y(x_0) = y_0,\quad u(x_0) = y'_0
+				\]
 \end{document}
