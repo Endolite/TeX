@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+    \usepackage{bm}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 1 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{physics}
+    \usepackage{siunitx}
+% Macros
+	\newcommand{\en}{\text{e}}
+  \newcommand{\subt}[2]{#1_{\text{#2}}}
+% Configuration
+	\title{Discussion 8}
+	\author{Arnav Patri}
+
+\begin{document}
+  \maketitle
+  \begin{enumerate}[\textbf{\arabic*.}]
+    \item \textbf{What is the equation of motion?}
+      The equation of motion of a system is the equation that describes the position of a body with respect to time taking into consideration the forces acting on that body.
+    \item \textbf{What is the DE of free dampened motion?}
+      Newton's second law states that
+        \[\subt{F}{net} = \sum F_i = ma\]
+      where \(m\) is mass and \(a\) is \(\dv*[2]{x}{t}\) where \(x\) is position and \(t\) is time. The force from gravity is on a body of mass \(m\) is therefore
+        \[F_g = mg\]
+        where \(g \approx \SI{9.8}{m/s^2}\) is the acceleration due to gravity. \\
+      The spring force \(F_s\) on a rigid body hanging from spring in equilibrium is directly proportional to the displacement of the body from the spring's equilibrium position and always points in the direction of the spring's equilibrium, so
+        \[F_s = -ks\]
+        where \(k\) is some positive constant and \(s\) is the equilbrium position of the spring-mass system. \\
+      The spring-mass system being in equilibrium means that 
+        \[\subt{F}{net} = mg - ks = 0\]
+      If a mass hanging from a spring vibrates with free motion, then Newton's second law gives
+        \[
+            m\dv[2]{x}{t} = \overset{\subt{F}{net}}{\overbrace{k(-x + s) + mg}} 
+              = -kx + \overset{0}{\overbrace{mg - kx}} = -kx
+        \]
+        where \(x\) is the displacement of the body from its equilibrium position \(s\). Dividing by \(m\) yields the DE of free undampened motion
+        \[\dv[2]{x}{t} + \omega^2 x = 0\]
+        where \(\omega^2 = k / m\)
+      A damping force is (here) directly proportional to \(\dv*{x}{t}\). Adding this term to the formulation of Newton's second law yields
+        \[m\dv[2]{x}{t} = -kx - \beta \dv{x}{t}\]
+        where \(\beta\) is some positive dampping constant. Dividing by \(m\) yields the DE of free dampened motion
+        \[\dv[2]{x}{t} + 2\lambda\dv{x}{t} + \omega^2 x = 0\]
+        where \(2\lambda = \beta / m\).
+    \item  \textbf{What is the solution that represents the equation of motion with damping forces?}
+      The auxiliary equation of the DE of free dampened motion is
+        \[m^2 + 2\lambda m + \omega^2\]
+        which has roots
+        \[m = -\lambda \pm \sqrt{\lambda^2 - \omega^2}\]
+        The discriminant provides 3 distinct cases.
+      \begin{enumerate}[\textbf{\Roman*.}]
+        \item \(\bm{\lambda^2 - \omega^2 > 0}\) 
+          When \(\lambda^2 > \omega^2\), the system is said to be overdamped, as \(\beta\) is large compared to \(k\). \\
+          The auxiliary equation has two distinct real roots
+            \[
+              m_1 = -\lambda + \sqrt{\lambda^2 - \omega^2} \qquad \text{and} \qquad
+              m_2 = -\lambda - \sqrt{\lambda^2 - \omega^2}
+            \]
+            making the solution
+            \[
+              x(t) = C_1\en^{-\lambda t + \sqrt{t\lambda^2 - \omega^2}} + C_2\en^{-\lambda t - t\sqrt{\lambda^2 - \omega^2}}
+                = \en^{-\lambda t}\left(C_1\en^{t\sqrt{\lambda^2 - \omega^2}} + C_2\en^{-t\sqrt{\lambda^2 + \omega^2}}\right)
+            \]
+        \item \(\bm{\lambda^2 - \omega^2 = 0}\)
+          When \(\lambda^2 = \omega^2\), the system is said to be critically dampen, as any slight decrease in the damping fource would result in oscillatory motion. \\
+          The auxiliary equation has a single real root
+            \[m = -\lambda\]
+            making the solution
+            \[x(t) = \en^{-\lambda t}\left(C_1 + C_2 t\right)\]
+        \item \(\bm{\lambda^2 - \omega^2 < 0}\)
+          When \(\lambda^2 < \omega^2\), the system is said to be underdamped, as \(\beta\) is small compared to \(k\). \\
+          The auxiliary equation has two distinct imaginary roots
+            \[
+              m_1 = -\lambda + i\sqrt{\omega^2 - \lambda^2} \qquad \text{and} \qquad
+              m_2 = -\lambda - i\sqrt{\omega^2 - \lambda^2}
+            \]
+            making the solution
+            \[
+              x(t) = \en^{-\lambda t}\left(C_1\cos\left(t\sqrt{\omega^2 - \lambda^2}\right) + C_2\sin\left(t\sqrt{\omega^2 - \lambda^2}\right)\right)
+            \]
+      \end{enumerate}
+    \item \textbf{If the mass starts from a point above the equilibrium position by 5 cm with a downward velocity 12 cm/s}
+      \begin{enumerate}[\bfseries a.]
+        \item \textbf{What is the value for \(\bm{x(0)}\)?}
+          The mass starts \SI{5}{cm} above the equilibrium position, so \(x(0) = \SI{-0.05}{m}\).
+        \item \textbf{What is the value for \(\bm{x'(0)}\) or \(\bm{\text{d}x/\text{d}t}\) at \(\bm{t = 0}\)?}
+          The mass has an initial downward velocity of \SI{12}{cm/s}, so \(x'(0) = \SI{0.12}{m/s}\).
+      \end{enumerate}
+    \item \textbf{If the mass starts from a point below the equilibrium position by 4 cm from rest}
+      \begin{enumerate}[\bfseries a.]
+        \item \textbf{What is the value for \(\bm{x(0)}\)?}
+          The mass starts \SI{4}{cm} below the equilibrium position, so \(x(0) = \SI{0.04}{m}\).
+        \item \textbf{What is the value for \(\bm{x'(0)}\) or \(\bm{\text{d}x/\text{d}t}\) at \(\bm{t = 0}\)?}
+          The mass starts from rest, so \(x'(0) = 0\).
+      \end{enumerate}
+  \end{enumerate}
+\end{document}

@@ -1,0 +1,29 @@
+PWD /home/endolite/Documents/GitHub/TeX/Notes/Discrete Math/chapters
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/endolite/Documents/GitHub/TeX/Notes/Discrete Math/chapters/5.tex
+OUTPUT 5.log
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/import/import.sty

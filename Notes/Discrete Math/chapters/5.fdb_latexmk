@@ -1,0 +1,15 @@
+# Fdb version 3
+["pdflatex"] 1666284739 "/home/endolite/Documents/GitHub/TeX/Notes/Discrete Math/chapters/5.tex" "5.pdf" "5" 1666284739
+  "/etc/texmf/web2c/texmf.cnf" 1663195640 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/endolite/Documents/GitHub/TeX/Notes/Discrete Math/chapters/5.tex" 1666284720 4754 b9444554e5d82dd5efc819a37c7c229b ""
+  "/usr/share/texlive/texmf-dist/tex/latex/import/import.sty" 1586645574 6201 0ad8b5da8e12f60a88d546b2198a56f2 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls" 1605478891 1507 57de335d88fde4e5c924dfed577fdb74 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1663196883 2801675 d4a2287d31f2eb9a1f4fc80fa4182aa8 ""
+  "5.aux" 1666284739 32 3985256e7290058c681f74d7a3565a19 ""
+  "5.tex" 1666284720 4754 b9444554e5d82dd5efc819a37c7c229b ""
+  "DiscreteMath.tex" 0 -1 0 ""
+  (generated)
+  "5.log"
+  "5.pdf"
