@@ -64,7 +64,7 @@
             making the solution
             \[
               x(t) = C_1\en^{-\lambda t + \sqrt{t\lambda^2 - \omega^2}} + C_2\en^{-\lambda t - t\sqrt{\lambda^2 - \omega^2}}
-                = \en^{-\lambda t}\left(C_1\en^{t\sqrt{\lambda^2 - \omega^2}} + C_2\en^{-t\sqrt{\lambda^2 + \omega^2}}\right)
+                = \en^{-\lambda t}\left(C_1\en^{t\sqrt{\lambda^2 - \omega^2}} + C_2\en^{-t\sqrt{\lambda^2 - \omega^2}}\right)
             \]
         \item \(\bm{\lambda^2 - \omega^2 = 0}\)
           When \(\lambda^2 = \omega^2\), the system is said to be critically dampen, as any slight decrease in the damping fource would result in oscillatory motion. \\
@@ -83,6 +83,15 @@
             \[
               x(t) = \en^{-\lambda t}\left(C_1\cos\left(t\sqrt{\omega^2 - \lambda^2}\right) + C_2\sin\left(t\sqrt{\omega^2 - \lambda^2}\right)\right)
             \]
+            This can alternatively written as
+            \[x(t) = A\en^{-\lambda t}\sin\left(t\sqrt{\omega^2 - \lambda^2} + \varphi\right)\]
+            where
+            \[
+            	A = \sqrt{C_1^2 + C_2^2} \qquad \text{and} \qquad
+            	\tan\varphi = \frac{C_1}{C_2}
+            \]
+            \(A\en^{-\lambda t}\) is sometimes referred to as the damped amplitude of vibrations. \\
+            The solution is nonperiodic, \(2\pi/\sqrt{\omega^1 - \lambda^2}\) is referred to as the quasi period and \(\sqrt{\omega^2 - \lambda^2}/2\pi\) the quasi frequency. The quasi period is the interval between two successive maxima.
       \end{enumerate}
     \item \textbf{If the mass starts from a point above the equilibrium position by 5 cm with a downward velocity 12 cm/s}
       \begin{enumerate}[\bfseries a.]
@@ -96,7 +105,7 @@
         \item \textbf{What is the value for \(\bm{x(0)}\)?}
           The mass starts \SI{4}{cm} below the equilibrium position, so \(x(0) = \SI{0.04}{m}\).
         \item \textbf{What is the value for \(\bm{x'(0)}\) or \(\bm{\text{d}x/\text{d}t}\) at \(\bm{t = 0}\)?}
-          The mass starts from rest, so \(x'(0) = 0\).
+          The mass starts from rest, so \(x'(0) = \SI{0}{m/s}\).
       \end{enumerate}
   \end{enumerate}
 \end{document}

@@ -92,7 +92,7 @@
 					As each solution contains the \textit{damping factor} \(\en^{-\lambda t}\) and \(\lambda\) is positive, the displacements become negligible as \(t\) increases.
 			\subsubsectionb{Case I: \(\bm{\lambda^2 - \omega^2 > 0}\)}
 				The system is said to be \textbf{overdamped} when \(\lambda^2 > \omega^2\), as \(\beta\) is large compared to \(k\). The corresponding solution is
-					\[x(t) = \en^{-\lambda t}\left(C_1\en^{-\sqrt{\lambda^2 - \omega^2}} + C_2\en^{-\sqrt{\lambda^2 - \omega^2}}\right)\]
+					\[x(t) = \en^{-\lambda t}\left(C_1\en^{t\sqrt{\lambda^2 - \omega^2}} + C_2\en^{-t\sqrt{\lambda^2 - \omega^2}}\right)\]
 					This equation describes smooth nonoscillatory motion.
 			\subsubsectionb{Case II: \(\bm{\lambda^2 - \omega^2 = 0}\)}
 				The system is said to be \textbf{critically dampened} when \(\lambda^2 = \omega^2\), as any slight decrease in the damping force would yield oscillatory motion. The general solution is
@@ -114,7 +114,7 @@
 						A = \sqrt{C_1^2 + C_2^2} \qquad \text{and} \qquad
 						\tan\varphi = \frac{C_1}{C_2}
 					\]
-					\(A\en^{-\lambda t}\) is sometimes referred to as the \textbf{dampened amplitude} of vibrations. \\
+					\(A\en^{-\lambda t}\) is sometimes referred to as the \textbf{damped amplitude} of vibrations. \\
 				As the solution is not periodic, the number
 					\[\frac{2\pi}{\sqrt{\omega^2 - \lambda^2}}\]	
 					is called the \textbf{quasi period} and
