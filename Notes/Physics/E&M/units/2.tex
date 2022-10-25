@@ -4,8 +4,35 @@
 	\section{Electric Potential}
 		Electrostatic forces are \textbf{conservative}, so \(W_C = -\Delta U\). It can then be seen that
 			\[
-				\Delta U = - \int_C \vec{F} \cdot \dd{\vec{r}} 
-						= -q\int_C \vec{E} \cdot \dd{\vec{r}}
+				\Delta U = - \int_C \vec{F} \cdot \dd{\vec{s}} 
+						= -q\int_C \vec{E} \cdot \dd{\vec{s}}
 			\]	
-			
+		The change in \textbf{electric potential \(\bm{V}\)} (measured in volts (\(\SI{}{V}\))) is found as
+			\[
+				\Delta V = \frac{\Delta U}{q}
+					= -\frac{q\int_C \vec{E} \cdot \dd{\vec{s}}}{q}
+					= -\int_C \vec{E} \cdot \dd{\vec{s}}
+			\]
+			If the initial potential is set to 0, then
+			\[V = -\int_C \vec{E} \cdot \dd{\vec{s}}\]
+		Adjacent points with the same electric potential form an \textbf{equipotential surface}, which can be imaginary or real. \\
+		The electric potential from a point charge can be found as
+			\[
+				V_f - V_i = -\int_C \vec{E} \cdot \dd{s}
+					= -\int_R^\infty E \dd{r}
+					= k\frac{q}{r}
+			\]
+			Setting \(V_f\) to 0 (at \(\infty\)),
+			\[V_i = V = k\frac{q}{r}\]
+		The potential due to a collection of \(n\) charged particles is simply the sum of the individual potentials:
+			\[V = \sum_{i = 1}^n V_i = \sum_{i = 1}^n k\frac{q_i}{r_i} \tag{\(n\) charged particles}\]
+			Note that direction is not considered. \\
+			As a convention, positively charged particles produce positive potentials while negative ones produce negative potentials. \\
+		The potential energy of a system of particles is the sum of the potential energies of every pair of particles in the system. It is equal to the work required to assemble the system with particles that are initially at rest and infinitely far apart. For two particles of distance \(r\),
+			\[U = k\frac{q_1q_2}{r} \tag{2-particle system}\]
+		The \(x\) component of an electric field can be found from potential as
+			\[E_x = -\dv{V_x}{x}\]
+		For a continuous charge distribution over an extended object, the net potential can be found as
+			\[V = \int_C \dd{V} = k\int_C \frac{dq}{r}\]
+			A substitution can then be made using the appropriate charge density.
 \end{document}
