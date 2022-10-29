@@ -131,5 +131,40 @@
 					\[F(t) = \frac{f(t)}{m}\]
 			\subsubsectionb{Transient and Steady-State Terms}
 				When \(F\) is a periodic function, such as
-					\[F(t) = F_0\sin\gamma t \qquad \text{or} \qquad F(t) = F_0\cos\gamma t\]
+					\[F(t) = F_0\sin(\gamma t) \qquad \text{or} \qquad F(t) = F_0\cos(\gamma t)\]
+	\section{Linear Models: Boundary-Value Problems}
+		\subsectionb{Deflection of a Beam}
+			Many structures employ girders or beams to keep stable. Such beams distort or deflect under their own weight or under the influence of some external force. This deflection \(y(x)\) is governed by a relatively simple \(4^{\th}\)-order DE. \\
+			Assume that a beam of length \(L\) is homogenous with uniform cross-sections along its length. Without any load (including the beam's own weight, a curve that joins the centroids of each cross section in a straight line is called the \textbf{axis of symmetry}. If a load is then applied in a vertical plane containing the axis of symmetry, the beam undergoes a distortion. The curve that now connects all centroids is the \textbf{deflection/elastic curve}. Let the axis of symmetry be the \(x\)-axis and that the deflection \(y(x)\) is measured relative to it pointing downwards. The bending moment \(M(x)\) at a point \(x\) along the beam can be found from the load per unit length \(w(x)\) by
+				\[\dv[2]{M}{x} = w(x)\]
+				It is also proportional to the curvature \(\kappa\) as
+				\[\dv[2]{M}{x} = EI\kappa\]
+				where \(E\) and \(I\) are constants, being Young's modulus of the beam's material and the moment of inertia of a cross section (about an axis referred to as the neutral axis) respectively. The product is called the \textbf{flexural rigidity} of the beam. \\
+				Curvature is given by
+				\[\kappa = \frac{y''}{\left(1 + (y')^2\right)^{3/2}}\]
+			When the deflection is small, the slope \(y' \approx 0\), so \(\left(1 + (y')^2\right)^{3/2} \approx 1\). Letting \(\kappa \approx y''\), \(M = EIy''\), so
+				\[\dv[2]{M}{x} + EI\dv[2]{x}y'' = EI\dv[4]{y}{x}\]
+				It can then be seen that 
+				\[EI\dv[4]{y}{x} = w(x)\]
+				The boundary conditions are dependent on how the beam is supported. A cantilever beam is \textbf{embedded} or \textbf{clamped} at one end and \textbf{free} at the other. For a cantilever, \(y(0) = y'(0) = y''(L) = y'''(L) = 0\) \\
+			The function \(F(x) = \dv*{M}{x} = EI\dv*[3]{y}{x}\) is called the shear force. If the end of a beam is \textbf{simply/pin/fulcrum supported} or \textbf{hinged}, then \(y = y' = 0\) at that end. In summary,
+				\[\begin{array}{|c|cc|}\hline
+					\text{Ends} & \text{Boundary} & \text{Conditions} \\\hline 
+					\text{Embedded} & y = 0, & y' = 0 \\
+					\text{Free} & y'' = 0, & y''' = 0 \\
+					\text{Simply Supported or HInged} &  y = 0, & y'' = 0 \\\hline
+				\end{array}\]
+		\subsectionb{Eigenvalues and Eigenfunctions}
+			Many problems require the solving of a 2-point BVP involving a linear DE containing a parameter \(\lambda\). \textit{Nontrivial (nonzero)} solutions are sought. \\
+			Consider the BVP
+				\[
+					y'' + \lambda y = 0, \quad
+					y(0) = 0, \quad
+					y(L) = 0
+				\]
+			This presents 3 cases:
+			\subsubsectionb{Case I: \(\bm{\lambda = 0}\)}
+				For \(\lambda = 0\), the solution of \(y'' = 0\) is \(y = C_1x + C_2\). The conditions imply that \(C_1 = C_2 = 0\), so the only solution is the trivial solution \(y = 0\).
+			\subsubsectionb{Case II: \(\bm{\lambda < 0}\)}
+				For \(\lambda < 0\), it is convenient to make the substitution \(\lambda = \alpha^2\) (where \(\alpha \in \R^+\)). The roots of the auxiliary equation \(m^2 - \alpha^2 = 0\) are then \(m = \pm \alpha\). As the interval is finite, the general solution is written as 
 \end{document}

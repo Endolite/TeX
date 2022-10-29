@@ -1,0 +1,355 @@
+\documentclass[12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+    	\usepackage{bm}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 0.75 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{physics}
+    \usepackage{siunitx}
+% Macros
+	\newcommand{\en}{\text{e}}
+ 	\newcommand{\subt}[2]{#1_{\text{#2}}}
+ 	\newcommand{\supt}[2]{#1^{\text{#2}}}
+% Configuration
+	\title{Practice Test 2}
+	\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+	\begin{enumerate}[\textbf{Q\arabic*:}]
+		\item \textbf{What is the difference between homogenous and non-homogenous differential equations? Write an example for each and solve it.} \\
+			A homogenous DE is one of the form \(L(y) = 0\) where
+				\[L = a_n(x)D^n + a_{n - 1}(x)D^{n - 1} + \cdots + a_1(x)D + a_0(x)\]
+				A homogenous DE is one that does not contain any terms that involve \(x\) without also involving \(y\) or one of its derivatives. \\
+			An example of a homogenous DE is 
+				\[y'' + 16y = 0\]
+				The auxiliary equation of this is
+				\[m^2 + 16 = (m + 4i)(m - 4i) = 0\]
+				which has roots \(m = \pm 4i\). The solution is therefore
+				\[y(x) = C_1\cos(4x) + C_2\sin(4x)\]
+			A non-homogenous DE is one of the form \(L(y) = g(x)\), where \(L\) is defined as above. It is a DE that is not homogenous. \\
+			An example of a non-homogenous DE is 
+				\[y'' + 16y = 2x\]
+				The corresponding homogenous equation is
+				\[y'' + 16y = 0\]
+				which has already been solved above, so
+				\[y_c = C_1\cos(4x) + C_2\sin(4x)\]
+				\(g(x) = 2x\), so \(y_p\) is of the form
+				\[y_p = Ax\]
+				The second derivative is then
+				\[y_p'' = 0\]
+				Substituting into the DE yields
+				\[
+					2x = y_p'' + 16y_p
+						= 0 + 16Ax
+						= 16Ax
+				\]
+				\(A\) can therefore be found to be
+				\[A = \frac{1}{8}\]
+				making the particular solution
+				\[y_p = \frac{x}{8}\]
+				and the general solution
+				\[
+					y(x) = y_c + y_p
+						= C_1\cos(4x) + C_2\sin(4x) + \frac{x}{8}
+				\]
+		\item \textbf{What is the main formula to solve homogenous differential equations using section 4.3? Write an example for a homogenous differential equation that can be solved using section 4.3 and solve it.} \\
+			The formula outlined by section 4.3 is the auxiliary equation, which is the equation that replaces \(y^{(n)}\) with \(m^n\). \\
+			An example of a linear homogenous DE that can be solved using its auxiliary equation is
+				\[y'' - 2y' + y = 0\]
+				which has auxiliary equation
+				\[
+					m^2 - 2m + 1 = (m - 1)^2
+						= 0
+				\]
+				which has the single root \(m = 1\). The solution to this is therefore
+				\[y(x) = C_1\en^x + C_2x\en^x\]
+		\item \textbf{What is the main formula to solve homogenous differential equations using section 4.7? Write an example for a homogenous differential equation that can be solved using section 4.7 and solve it} \\
+			Section 4.7 is focused on Cauchy-Euler equations, which linear DEs of the form \(L(y) = g(x)\) where
+				\[L = a_nx^nD^n + a_{n - 1}x^{n - 1}D^{n - 1} + \cdots + a_1xD + a_0\]
+				where the coefficients \(a_0\) to \(a_n\) are constants. The auxiliary equation of an \(\supt{n}{th}\)-order Cauchy-Euler equation is obtained by substituting \(y = x^n\) into the equation. For a second-order equation,
+				\[
+					ax^2y'' + bxy' + cy = am(m - 1)x^m + bmx^m + cx^m
+						= (am(m - 1) + bm + c)x^m
+				\]
+				making the auxiliary equation
+				\[
+					am(m - 1) + bm + c = am^2 + (b - a)m + c
+						= 0
+				\]
+			An example of a homogenous Cauchy-Euler equation is
+				\[x^2y'' + 2xy' - 6y = 0\]	
+				which has auxiliary equation
+				\[
+					m^2 + (2 - 1) m - 6 = m^2 + m - 6 
+						= (m - 2)(m + 3)
+						= 0
+				\]
+				which has roots \(m = -3, 2\), making the solution
+				\[y(x) = C_1x^{-3} + C_2x^2\]
+		\item \textbf{What is the non-homogenous differential equation? Write an example of a non-homogenous differential equation and solve it.} \\
+			As previously stated, a non-homogenous DE is one that contains a term that contains an \(x\) without also having \(y\) or one of its derivatives; that is to say, a DE of the form \(L(y) = g(x)\) where \(L\) is defined above. \\
+			An example of a non-homogenous DE is
+				\[y'' + y = \sin x\]
+				the corresponding homogenous DE for which is
+				\[y'' + y = 0\]
+				which has auxiliary equation
+				\[m^2 +  = (m + i)(m - i) = 0\]
+				which has roots \(m = \pm i\), making the complementary solution
+				\[y_c = C_1\cos x + C_2\sin x\]
+				\(g(x) = \sin x\), so the particular solution is of the form
+				\[y_p = A\cos x + B\sin x\]
+				As both \(\cos x\) and \(\sin x\) are repeated in the complementary solution, though, thic becomes
+				\[y_p = Ax\cos x + Bx\sin x\]
+				the first and second derivatives of which are
+				\[
+					y_p' = A\cos x - Ax\sin x + B\sin x + Bx\cos x
+						= (A + Bx)\cos x + (-Ax + B)\sin x
+				\]
+				and
+				\begin{align*}
+					y_p'' &= -A\sin x - A\sin x - Ax\cos x + B\cos x + B\cos x - Bx\sin x \\
+						&= (2B - Ax)\cos x + (-2A - Bx)\sin x
+				\end{align*}
+				Substituting into the DE,
+				\begin{align*}
+					\sin x &= y_p'' + y_p
+							= (2B - Ax)\cos x + (-2A - Bx)\sin x  + Ax\cos x + Bx \sin x \\
+						&= 2B\cos x - 2A\sin x
+				\end{align*}
+				It is then clear that
+				\[
+					B = 0 \qquad \text{and} \qquad
+						A = -\frac{1}{2}
+				\]
+				Making the particular solution
+				\[y_p = -\frac{x\cos x}{2}\]
+				and the general solution
+				\[
+					y(x) = y_c + y_p
+						= C_1\cos(x) + C_2\sin(x) - \frac{x\cos x}{2}
+				\]
+		\item \textbf{What is the name of the method that is used to solve a non-homogenous differential equation using the table in section 4.4? Write an example of a differential equation and explain how to use the table (solve it).} \\
+			The method highlighted in section 4.4 is the superposition approach to undetermined coefficients, which is used to find the particular solution of a non-homogenous differential equation. It involves using the form of \(g(x)\) (in \(L(y) = g(x)\)) to find the form of the particular solution. \\
+			An example of a non-homogenous DE is
+				\[y'' + 4y' + 4y = 4\en^{2x}\]
+				The corresponding homogenous DE is
+				\[y'' + 4y' + 4y = 0\]
+				which has auxiliary equation 
+				\[m^2 + 4m + 4 = (m + 2)^2 = 0\]
+				which has root \(m = -2\), making the complementary solution
+				\[y_c = C_1\en^{-2 x} + C_2x\en^{-2 x}\]
+				\(g(x) = 4\en^{2x}\), so the particular solution is of the form
+				\[y_p = A\en^{2x}\]
+				As seen on the table in section 4.4. The first and second derivatives of this are then
+				\[
+					y_p' = 2A\en^{2x} \qquad \text{and} \qquad
+					y_p'' = 4A\en^{2x}
+				\]
+				Substituting into the DE,
+				\[
+					4\en^{2x} = y_p'' + 4y_p' + 4y_p
+						= 4A\en^{2x} + 8A\en^{2x} + 4A\en^{2x}
+						= 16A\en^{2x}
+				\]
+				It is then clear that
+				\[A = \frac{1}{4}\]
+				making the particular solution
+				\[y_p = \frac{\en^{2x}}{4}\]
+				and the general solution
+				\[y(x) = C_1\en^{-2x} + C_2x\en^{-2x} + \frac{\en^{2x}}{4}\]
+		\item \textbf{What is the name of the method that is used to solve a non-homogenous differential equation using the formulas given in section 4.5? Write an example of a differential equation and explain how to use the general formula (solve it).} \\
+			Section 4.5 outlines the annihilator approach to undetermined coefficients. This method involves the construction of a differential operator \(L_1\) that is then applied to both sides of the equation \(L(y) = g(x)\). \\
+			An example of a non-homogenous DE is
+				\[2y'' + 2y = 4x^2\]
+				The corresponding homogenous DE is
+				\[2y'' + 2y = 0\]
+				which has auxiliary equation
+				\[2m^2 + 2 = 2(m^2 + 1) = 0\] 
+				which has solutions \(m = \pm 1\), making the complementary solution
+				\[y_c = C_1\cos x + C_2\sin x\]
+				\(g(x) = 4x^2\) can be annihilated by the differential operator \(L = D^3\)
+				Operating on the DE,
+				\[0 = D^3(2D^2 + 2)y\]
+				The auxiliary equation is then
+				\[2m^3(m^2 + 1)\]
+				which has roots \(m_1 = m_2 = m_3 = 0\), \(m_4 = -i\), and \(m_5 = i\), making form of its general solution
+				\[y(x) = C_1\cos x + C_2\sin x + C_3 + C_4x + C_5x^2\]
+				This implies that the form of the particular solution is
+				\[y_p = Ax^2 + Bx + C\]
+				The first and second derivatives of this are then
+				\[
+					y_p' = 2Ax + B \qquad \text{and} \qquad
+					y_p'' = 2A
+				\]
+				Substituting this into the original DE,
+				\[
+					4x^2 = 2y_p'' + 2y_p
+						= 4A + 2Ax^2 + 2Bx + 2C
+				\]
+				It is then evident that
+				\[B = 0, \quad 4A + 2C = 0,\text{ and} \quad 2A = 4\]
+				This means that
+				\[A = 2 \qquad \text{and} \qquad C = -4\]
+				making the particular solution
+				\[y_p = 2x^2 - 4x\]
+				and the general solution
+				\[y(x) = y_c + y_p = C_1\cos x + C_2\sin x + 2x^2 - 4\]
+		\item \textbf{What is the method that is used to solve a non-homogenous differential equation if the methods in sections 4.4 and 4.5 cannot be used to solve them? Write an example of a differential equation and explain how to use the variation of variable method (solve it).} \\
+			Variation of parameters involves solving for the complementary function, evaluating the Wronskian of the individual solutions, putting the DE into standard form to find \(f(x)\), and evaluating the variable coefficients of the particular solution via the integral
+				\[u_k = \int \frac{W_k}{W} \dd{x}\]
+				where \(W_k\) is the  Wronskian with the \(\supt{k}{th}\) column replaced with \(0, 0, \ldots, f(x)\). \\
+			An example of a non-homogenous DE is
+				\[y'' - y = \frac{1}{x^2}\]
+				The corresponding homogenous DE is
+				\[y'' + y = 0\]
+				which has auxiliary equation
+				\[m^2 + 1 = (m + i)(m - i) = 0\]
+				which has roots \(m = \pm i\), making the complementary solution
+				\[y_c = C_1\cos x + C_2\sin x\]
+				so
+				\[
+					y_1 = \cos x \qquad \text{and} \qquad
+					y_2 = \sin x
+				\]
+				The equation is already in standard form, so \(f(x) = x^{-2}\).	The Wronskian is then
+				\[
+					W = \begin{vmatrix}
+						\cos x & \sin x \\
+						-\sin x & \cos x
+					\end{vmatrix} = \cos^2x + \sin^2x = 1
+				\]
+				and
+				\[
+					W_1 = \begin{vmatrix}
+						0 & \sin x \\
+						x^{-2} & \cos x
+					\end{vmatrix} = -\frac{\sin x}{x^2} \qquad \text{and} \qquad
+					W_2 = \begin{vmatrix}
+ 						\cos x & 0 \\
+ 						-\sin x & x^{-2}
+ 					\end{vmatrix} = \frac{\cos x}{x^2}
+				\]
+				The coefficients are then
+				\[
+					u_1 = \int \frac{W_1}{W} \dd{x} = -\int \frac{\sin x}{x^2} \dd{x} \qquad \text{and} \qquad
+					u_2 = \int \frac{W_2}{W} \dd{x} = \int \frac{\cos x}{x^2} \dd{x}
+				\]
+				These integrals are nonelementary, so the coefficients can be rewritten as
+				\[
+					u_1 = -\int_{x_0}^x \frac{\sin t}{t^2} \dd{t} \qquad \text{and} \qquad
+					u_2 = \int_{x_0}^x \frac{\cos t}{t^2}\dd{t}
+				\]
+				The particular solution is then
+				\[
+					y_p = u_1y_1 + u_2y_2
+						= -\cos x\int_{x_0}^x \frac{\sin t}{t^2}\dd{t} + \sin x\int_{x_0}^x \frac{\cos t}{t^2}\dd{t}
+				\]
+				and the general solution is
+				\[
+					y(x) = y_c + y_p 
+						= C_1\cos x + C_2\sin x -\cos x\int_{x_0}^x \frac{\sin t}{t^2}\dd{t} + \sin x\int_{x_0}^x \frac{\cos t}{t^2}\dd{t}
+				\]
+		\item \textbf{List the methods that can be used to solve a second-order non-linear differential equation with examples (DE example for each method) and solve each example.}
+			Second-order non-linear DEs that are missing either the independent or dependent variable can be solved using reduction of order, using the substitution \(u = y'\). \\
+			When \(y\) is missing, the substitution \(u = y'\) can be made to turn \(F(x, y', y'')\) into the first-order DE \(F(y, u, u')\). \\
+			An example of this is the DE
+				\[y'' + (y')^2 + 1 = 0\]
+				Making the substitution,
+				\[\dv{u}{x} + u^2 + 1 = 0\]
+				Rewriting,
+				\begin{align*}
+					\dd{u} &= -\left(u^2 + 1\right)\dd{x} \\
+					\int \frac{\dd{u}}{u^2 + 1} &= -\int \dd{x} \\
+					\arctan u &= -x + C \\
+					u &= \tan(-x + C) \\
+						&= -\tan(x + C_1)
+				\end{align*}
+				Reversing the substitution,
+				\[y' = -\tan(x + C_1)\]
+				Integrating,
+				\[
+					y = -\int \tan(x + C_1)\dd{x} 
+						= \ln|\sec(x + C_1)| + C_2
+				\]
+			When \(x\) is missing, the same substitution can be made to turn \(F(y, y', y'')\) into \(F(y, u, u\dv*{u}{y})\). \\
+			An example of this is 
+				\[y'' + 2y(y')^3 = 0\]
+				Making the substitution,
+				\[u\dv{u}{y} + 2yu^3 = 0\]
+				Rewriting,
+				\begin{align*}
+					\dv{u}{y} &= 2yu^2  \\
+					\int \frac{\dd{u}}{u^2} &= \int 2y\dd{y} \\
+					-\frac{1}{u} &= y^2 + C
+				\end{align*}
+				Reversing the substitution,
+				\begin{align*}
+					-\dv{x}{y} &= y^2 + C_1 \\
+					-\int \dd{x} &= \int [y^2 + C_1]\dd{y} \\
+					-x + C_2 &= \frac{y^3}{3} + C_1y
+				\end{align*}
+		\item \textbf{Write an example of an IVP and use a Green's function to solve it.}
+			\[y'' - 4y = \en^{2x}, \quad y(0) = 0, \quad y'(0) = 0\]
+				The corresponding homogenous DE is
+				\[y'' - 4y = 0\]
+				which has auxiliary equation
+				\[m^2 - 4 = (m + 2)(m - 2) = 0\]
+				which has roots \(m = \pm 2\), making the complementary solution
+				\[y_c = C_1\en^{-2x} + C_2\en^{2x}\]
+				so
+				\[y_1 = \en^{-2x} \qquad \text{and} \qquad y_2 = \en^{2x}\]
+				making the Wronskian
+				\[
+					\begin{vmatrix}
+						\en^{-2x} & \en^{2x} \\
+						-2\en^{-2x} & 2\en^{2x}
+					\end{vmatrix} = 2 + 2 = 4
+				\]
+				The Green's function is then
+				\[G(x, t) = \frac{\en^{2(x - t)} - \en^{2(t - x)}}{4} = \frac{\sinh(2(x - t))}{2}\]
+				The equation is already in standard form, so \(f(x) = \en^{x}\). The particular solution is therefore
+				\begin{align*}
+					y_p &= \int_0^x \frac{\en^{2(x - t)} - \en^{2(t - x)}}{4}\en^{t}\dd{t} \\
+						&= \int_0^x \frac{\en^{2x - t} - \en^{3t - 2x}}{4}\dd{t} \\
+						&= \frac{\en^{2x}}{2}\int_0^x\en^{-t}\dd{t} - \frac{\en^{-2x}}{4}\int_0^x\en^{3t}\dd{t} \\
+						&= \frac{\en^{2x}}{4}\left[-\en^{-t}\right]_0^x - \frac{\en^{-2x}}{4}\left[\frac{\en^{3t}}{3}\right]_0^x \\
+						&= \frac{\en^{2x}}{4}\left[-\en^{-x}  + 1\right] - \frac{\en^{-2x}}{4}\left[\frac{\en^{3x}}{3} - \frac{1}{3}\right] \\
+						&= \frac{\en^{2x} - \en^x}{4} + \frac{\en^{-2x} - \en^{x}}{12} \\
+						&= \frac{\en^{2x}}{4} - \frac{\en^{x}}{3} + \frac{1}{12\en^{2x}}
+				\end{align*}
+		\item \textbf{Write an example of a BVP and use a Green's function to solve it.}
+			\[y'' + 4y = 3, \quad y'(0) = 0, \quad y(\pi / 2) = 0\]
+				The corresponding homogenous DE is
+				\[m^2 + 4 = (m + 2i)(m -2i) = 0\]
+				which has roots \(m = \pm 2i\), making the complementary solution
+				\[y_c = C_1\cos(2x) + C_2\sin(2x)\]
+				The Wronskian is then
+				\[
+					W = \begin{vmatrix}
+						\cos(2x) & \sin(2x) \\
+						-2\sin(2x) & 2\cos(2x)
+					\end{vmatrix} = 2\cos^2(2x) + 2\sin^2(2x) = 2
+				\]
+				The Green's function is therefore
+				\[
+					G(x, t) = \begin{cases}
+						\frac{\cos(2t)\sin(2x)}{2} & 0 \le t \le x \\
+						\frac{\cos(2x)\sin(2t)}{2} & x \le t \le \pi/2
+					\end{cases}
+				\]
+				The equation is in standard form, so \(f(x) = 3\). The particular solution is therefore
+				\begin{align*}
+					y_p &= 3\int_0^{\pi/2} G(x, t) \dd{t} \\
+						&= 1.5\sin(2x)\int_0^x\cos(2t)\dd{t} + 1.5\cos(2x)\int_x^{\pi/2}\sin(2t)\dd{t} \\
+						&= 1.5\sin(2x)[0.5\sin(2t)]_0^x - 1.5\cos(2x)[0.5\cos(2t)]_x^{\pi/2} \\
+						&= 0.75\sin^2(2x) + 0.75\cos(2x) + 0.75\cos^2(2x) \\
+						&= 0.75 + 0.75\cos(2x)
+				\end{align*}
+	\end{enumerate}
+\end{document}
