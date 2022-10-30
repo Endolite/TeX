@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+    \usepackage{bm}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 1 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{physics}
+    \usepackage{siunitx}
+% Macros
+	\newcommand{\en}{\text{e}}
+  	\newcommand{\subt}[2]{#1_{\text{#2}}}
+  	\newcommand{\Z}{\mathbb{Z}}
+% Configuration
+	\title{Discussion 9: Eigenfunctions and Eigenvalues}
+	\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\begin{enumerate}[\textbf{\arabic*.}]
+		\item \textbf{What is the difference between eigenfunctions and eigenvalues?} \\
+			The eigenvalues \(\lambda_n\) of a BVP are the values that give nontrivial solutions to a BVP for \(n \in \Z^+\). The eigenfunctions are those nontrivial solutions. \\
+		\item \textbf{What is the trivial solution} \\
+			The trivial solution to a BVP with conditions \(y(x_1) = y(x_2) = 0\) is \(y = 0\).
+		\item \textbf{Do you think it is mandatory to solve three cases to find eigenfunctions and eigenvalues?} \\
+			All three cases for eigenvalues must be checked to ensure that all solutions are found. The only case that may yield eigenvalues and eigenfunctions is case 3, though, as eigenfunctions can only exist for a periodic function.
+		\item \textbf{Please answer true or false:}
+			\begin{itemize}
+				\item \textbf{Eigenfunctions and eigenvalues are obtained only in case 3} \\
+					True; eigenvalues and eigenfunctions are only found when the solution is periodic, which is only the case for case 3. Case 1 yields a linear solution while case 2 provides the sum of exponentials (or hyperbolic sines and cosines), neither of which are periodic. Case 3, on the other hand, presents trigonometric sines and cosines, which are periodic.
+				\item \textbf{Eigenfunctions and eigenvalues may be obtained in any of the three cases} \\
+					False; as outlined above, only case 3 can yield eigenvalues and eigenfunctions.
+				\item \textbf{Eigenfunctions and eigenvalues may be obtained in the case that includes sines and cosines.} \\
+					True; eigenfunctions and eigenvalues can be found for case 3, which provides a solution involving sines and cosines.
+			\end{itemize}
+		\item \textbf{If you find the eigenfunctions and eigenvalues in the first case, do you think you should continue, or is it not required to go over the other two cases?} \\
+			If eigenfunctions and eigenvalues are found for one case, it should still be verified that the others yield only trivial solutions.
+	\end{enumerate}
+\end{document}

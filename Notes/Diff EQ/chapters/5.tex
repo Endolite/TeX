@@ -166,5 +166,42 @@
 			\subsubsectionb{Case I: \(\bm{\lambda = 0}\)}
 				For \(\lambda = 0\), the solution of \(y'' = 0\) is \(y = C_1x + C_2\). The conditions imply that \(C_1 = C_2 = 0\), so the only solution is the trivial solution \(y = 0\).
 			\subsubsectionb{Case II: \(\bm{\lambda < 0}\)}
-				For \(\lambda < 0\), it is convenient to make the substitution \(\lambda = \alpha^2\) (where \(\alpha \in \R^+\)). The roots of the auxiliary equation \(m^2 - \alpha^2 = 0\) are then \(m = \pm \alpha\). As the interval is finite, the general solution is written as 
+				For \(\lambda < 0\), it is convenient to make the substitution \(\lambda = \alpha^2\) (where \(\alpha \in \R^+\)). The roots of the auxiliary equation \(m^2 - \alpha^2 = 0\) are then \(m = \pm \alpha\). As the interval is finite, the general solution of
+					\[y'' - \alpha^2y = 0\]
+					is written as
+					\[y = C_1\cosh(\alpha x) + C_2\sinh(\alpha x)\]
+					making \(y(0)\)
+					\[y(0) = C_1\cosh(0) + C_2\sinh(0) = C_1\]
+					\(y(0) = 0\) then implies that \(C_1 = 0\), so \(y\) becomes
+					\[y = C_2\sinh(\alpha x)\]
+					The second condition, \(y(L) = 0\), means that
+					\[y(L) = C_2\sinh(\alpha L) = 0\]
+					which, for \(\alpha \ne 0\) necessitates that \(C_2 = 0\). The only solution for this BVP is then the trivial solution \(y =0\).
+			\subsubsectionb{Case III: \(\bm{\lambda > 0}\)}
+				For \(\lambda > 0\), it is also convenient to write \(\lambda = -\alpha^2\) (where \(\alpha \in \R^+\)). The roots of the auxiliary equation \(m^2 + \alpha^2 = 0\) are then \(m = \pm i\alpha\), so the general solution of
+					\[y'' + \alpha^2y = 0\]
+					is
+					\[y = C_1\cos(\alpha x) + C_2\sin(\alpha x)\]
+					\(y(0)\) again implies that \(C_1  0\) and the condition \(y(L) = 0\) or
+					\[C_2\sin(\alpha L) = 0\]
+					is satisfied by \(C_2 = 0\). This again yields the trivial solution \(y = 0\). If it is required that \(C_2 \ne 0\), though, then \(\sin(\alpha L) = 0\) is satisfied so long as \(\alpha L\) is an integer multiple of \(\pi\):
+					\[
+						\alpha L = n\pi \quad \text{or} \quad
+						\alpha = \frac{n\pi}{L} \quad \text{or} \quad
+						\lambda_n = \alpha_n^2 = \left(\frac{n\pi}{L}\right)^2, \quad
+						n \in \Z^+
+					\]
+					For any real nonzero \(C_2\),
+					\[y_n(x) = C_2\sin\left(\frac{n\pi x}{L}\right)\]
+					is a solution for \(n \in \Z^+\). As the DE is homogenous, any constant multiple of a solution is itself also a solution, so \(C_2\) can be set to 1. In other words, for each number in the sequence
+					\[\lambda_n = \frac{n^2\pi^2}{L^2} \quad \text{for} \quad n \in \Z^+\]
+					the corresponding function
+					\[y_n = \sin\left(\frac{n\pi}{L}\right)\]
+					is a nontrivial solution of the problem
+					\[
+						y'' + \lambda_ny = 0, \quad
+						y(0) = 0, \quad
+						y(L) = 0
+					\]
+					The numbers \(\lambda_n\) are known as \textbf{eigenvalues}. The nontrivial solutions are called \textbf{eigenfunctions}.
 \end{document}
