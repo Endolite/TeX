@@ -1,0 +1,45 @@
+\documentclass[./Discrete Math.tex]{subfiles}
+
+\begin{document}
+	\section{An Introduction to Discrete Probability}
+		An \textbf{experiment} is a procedure that yields a set of possible outcomes. \\
+		A \textbf{sample space} is a set of possible outcomes. An \textbf{event} is a subset of the sample space.
+		\callout{17}{
+			If \(S\) is a finite nonempty sample space of equally likely outcomes and \(E \subseteq S\), the \textbf{probability of \(\bm{E}\)} is
+				\[P(E) = \frac{|E|}{|S|}\]
+		}
+		An event's probability must be within 0 and 1 (inclusive), as \(0 \le |E| \le |S|\). \\
+		The \textbf{complement} of an event \(E\), denoted \(E^C\), is defined as
+			\[E^C = \{e \mid e \in S \land e \notin E\}\]
+		The probability of an event's complement is
+			\[P\left(E^C\right) = 1 - P(E)\]
+		The \textbf{intersection} of 2 events \(A\) and \(B\) is defined as
+			\[A \cap B = \{e \mid e \in A \land e \in B\}\]
+			2 events are \textbf{mutually exclusive} or \textbf{disjoint} if the probability of their intersection is 0.
+			\[P(A \cap B) = 0 \iff A \text{ and } B \text{ are mutually exclusive}\]
+		The \textbf{union} of 2 events \(A\) and \(B\) is defined as
+			\[
+				A \cup B = \{e \mid (e \in A \land e \notin B) \lor (e \in B \land e \notin A)\}
+					= \{e \mid e \in A \triangle B\}
+			\]
+			The probability of the union of these 2 events is
+			\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]
+			If the 2 events are disjoint, then, \(P(A \cap B) = 0\), so \(P(A \cup B) = P(A) + P(B)\). \\
+		Both union and intersection are commutative. \\
+		The probability of an event \(A\) occurring given that another event \(B\) has already occurred, denoted \(P(A \mid B)\), is called the \textbf{conditional probability} of \(A\) given \(B\). Conditional probabilities are not commutative. \\
+		The probability of the union of \(A\) and \(B\) can be found as
+			\[P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B)\]
+			Rewriting,
+			\[
+				P(A|B) = \frac{P(A \cap B)}{P(B)}
+					= \frac{P(A) \times P(B|A)}{P(B)}
+			\]
+			This is \textbf{Bayes' theorem}.
+			If \(A\) and \(B\) are \textbf{independent} exclusive, then conditionality does nothing; that is,
+			\[
+				P(A|B) = P(A) \quad \text{and} \quad
+				P(B|A) = P(B) \iff 
+				A \text{ and } B \text{ are independent}
+			\]
+		A \textbf{two-way/contingency table} lists the possible outcomes of 2 variables as rows and columns, the cells representing the corresponding union.
+\end{document}

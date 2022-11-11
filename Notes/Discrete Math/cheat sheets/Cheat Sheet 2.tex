@@ -54,23 +54,26 @@
 			Multi- & N & Y & N \\
 			Psuedo- & N & Y & Y \\
 			Simple Directed & Y & N & N \\
-			Simple Multi- & Y & Y & Y \\
+			Directed Multi- & Y & Y & Y \\
 			Mixed & Y/N & Y & Y \\\hline
 		\end{tabular}\]
 		\normalsize
 		Two vertices are \textit{adjecent/neighbors} if there is an edge connected them. Such an edge is \textit{incident} with both vertices. \\
 		The set of all neighbors of a vertex \(v\), denoted \(N(v)\), is the \textit{neighborhood} of \(v\). The neighborhood of \(A \subset V\), denoted \(N(A)\), is the set of all vertices in \(G\) that are adjectent to at least one vertex in \(A\). \\
-		A vertex \(v\)'s \textit{degree}, denoted \(\deg v\), in an undirected graph is the number of edges incident with it, with loops being counted twice. \\\\
+		A vertex \(v\)'s \textit{degree}, denoted \(\deg v\), in an undirected graph is the number of edges incident with it, with loops being counted twice. \\
+		The sum of the degrees of every vertex of an undirected graph is \(2|E|\). \\\\
 		The \textit{initial vertex} of a \textit{directed edge} or \textit{arc} \((u, v)\) in a digraph is \(u\) while the \textit{terminal/end vertex} is \(u\). \((u, v)\) is \textit{adjacent from} \(u\) and \textit{adjacent to} \(v\). \\
 		A vertex \(v\)'s \textit{in-degree}, denoted \(\deg^-v\), is the number of edges that terminate at \(v\), while its \textit{out-degree}, denoted \(\deg^+v\), is the number of edges that start at \(v\). \\\\
-		A \textit{complete graph on \(n\) vertices}, denoted \(K_n\), is the simple graph that contains exactly one edge between each pair of distinct vertices. Its outline can be drawn as a regular polygon with \(n\) vertices. Each pair of nodes can then be connected. It has \(\binom{n}{2}\) edges.\\
+		A \textit{complete graph on \(n\) vertices}, denoted \(K_n\), is the simple graph that contains exactly one edge between each pair of distinct vertices. Its outline can be drawn as a regular polygon with \(n\) vertices. Each pair of nodes can then be connected. It has \(\binom{n}{2}\) edges. \\
 		A \textit{cycle} \(C_n\) for \(n \ge 3\) consists of \(n\) vertices and edges connecting each vertex to exactly two other nodes. It can be drawn as a regular polygon with \(n\) vertices. \\
 		A \textit{wheel} \(W_n\) is obtained by adding an additional vertex to \(C_n\) that all other vertices connect to. This can be drawn as a regular polygon with \(n\) vertices with an additional node in the center that connects to all other vertices. \\
-		An \textit{\(n\)-dimensional hypercube} or \textit{\(n\)-cube} \(Q_n\) is a graph with \(2^n\) vertices representing all bit strings of length \(n\) with edges connecting vertices differing in exactly one bit position. \(Q_1\) is a line, \(Q_2\) a square, \(Q_3\) a cube, and so on. \\\\
+		An \textit{\(n\)-dimensional hypercube} or \textit{\(n\)-cube} \(Q_n\) is a graph with \(2^n\) vertices representing all bit strings of length \(n\) with edges connecting vertices differing in exactly one bit position. \(Q_1\) is a line, \(Q_2\) a square, \(Q_3\) a cube, and so on. \\
+		The sum of every vertex's in-degrees is equal to that of their out-degrees, both of which \(|E|\). \\\\
 		A simple graph is \textit{bipartite} if \(V\) can be partitioned into two disjoint subsets \(V_1\) and \(V_2\) such that every edge connects a vertex in \(V_1\) to one in \(V_2\); that is to say, no two edges in the same subset are connected. \\
 		A \textit{complete bipartite graph} \(K_{m, n}\) is a bipartite graph with \(|V_1| = m\) and \(|V_2| = n\) such that there is an edge from every vertex in \(V_1\) to every vertex in \(V_2\). \\\\
 		The union of 2 simple graphs \(G_1 = (V_1, E_1\) and \(G_2 = (V_2, E_2)\) is the simple graph \(G_1 \cup G_2 = (V_1 \cup V_2, E_1 \cup E_2)\). \\\\
 		A graph's \textit{adjacency matrix} is the \(|V| \times |V|\) matrix \(\textbf{A}_G = [a_{i, j}]\) where \(a_{i, j}\) is equal to the number of edges connecting \(v_i\) and \(v_j\). The ordering may be arbitrary. \\
+		For a digraph's adjacency matrix, \(a_{i, j}\) is equal to the number of arcs connecting starting at \(v_i\) and ending at \(v_j\). \\
 		A graph's \textit{incidence matrix} is the \(|V| \times |E|\) matrix \(\textbf{M}_G = [m_{i, j}]\) where \(m_{i, j}\) is 1 if \(e_j\) is incident to \(m_i\) and 0 otherwise. \\\\
 		Two simple graphs are \textit{isomorphic} if there is a one-to-one and onto function \(f\) between the vertex sets with the property that \(a\) and \(b\) are adjacent in the first graph if and only if \(f(a)\) and \(f(b)\) are in the other. Such a function is called an \textit{isomorphism}. Two simple graphs that are not isomorphic are \textit{nonisomorphic}. \\\\
 		A \textit{path} is a sequence of connected edges. It is denoted by the sequence of edges. It \textit{passes through} nodes while \textit{traversing} edges. \\

@@ -19,7 +19,7 @@
 		The electric potential from a point charge can be found as
 			\[
 				V_f - V_i = -\int_C \vec{E} \cdot \dd{s}
-					= -\int_R^\infty E \dd{r}
+					= -\int_r^\infty E \dd{r}
 					= k\frac{q}{r}
 			\]
 			Setting \(V_f\) to 0 (at \(\infty\)),
@@ -33,6 +33,123 @@
 		The \(x\) component of an electric field can be found from potential as
 			\[E_x = -\dv{V_x}{x}\]
 		For a continuous charge distribution over an extended object, the net potential can be found as
-			\[V = \int_C \dd{V} = k\int_C \frac{dq}{r}\]
+			\[V = \int_C \dd{V} = k\int_C \frac{\dd{q}}{r}\]
 			A substitution can then be made using the appropriate charge density.
+	\section{Capacitance}
+		A capacitor is comprised of 2 isolated conductors with charges \(+q\) and \(-a\). Its \textbf{capacitance \(\bm{C}\)} is defined as
+			\[C = \frac{|q|}{V}\]
+			where \(V\) is the potential difference between the plates. It is measured in \(\SI{}{C/V}\) or \textbf{Farads (F)}. By its definition, capacitance is always positive. \\
+			A capacitor's capacitance is a constant inherent to its physical attributes. \\
+		A parallel-plate capacitor is comprised of 2 parallel plates of area \(A\) separated by a distance \(d\). The charges on the faces of the plates facing each other are of magnitude \(q\) and opposite signs. \\
+		The electric field due to a parallel-plate capacitor is uniform only between the plates.
+			\[\begin{tikzpicture}
+				\draw (0, 0) to (10, 0);
+				\draw (0, 0.25) to (10, 0.25);
+				\draw (0, 0) to (0, 0.25);
+				\draw (10, 0) to (10, 0.25);
+				\draw (5, 0.125) to (6, -0.175) node[below] {\(-q\)};
+				
+				\draw (0, 1) to (10, 1);
+				\draw (0, 1.25) to (10, 1.25);
+				\draw (0, 1) to (0, 1.25);
+				\draw (10, 1) to (10, 1.25);
+				\draw (5, 1.125) to (6, 1.3) node[above] {\(+q\)};
+				
+				\foreach \x in {1,...,39}
+					\draw[decoration = {markings, mark = at position 1 with {\arrow[scale = 1.5]{>}}}, postaction = {decorate}] (\x/4, 1) to (\x/4, 0.625);
+				\foreach \x in {1,...,39}
+					\draw (\x/4, 0.625) to (\x/4, 0.25);
+					
+				\draw (0, 1.5) to[bend right = 34] (-0.5, 0.625);
+				\draw[decoration = {markings, mark = at position 1 with {\arrow[scale = 1.5]{>}}}, postaction = {decorate}] (-0.5, 0.626) to (-0.5, 0.625);
+				\draw (-0.5, 0.625) to[bend right = 34] (0, -0.25);
+			\end{tikzpicture}\]
+		A battery is denoted by
+			\[\begin{circuitikz}
+				\draw (0, 0) to[battery1] (1, 0);
+			\end{circuitikz}\]
+			where the larger side is positive and the shorter negative. \\
+			An open switch is denoted by
+			\[\begin{circuitikz}
+				\draw (0, 0) to[nos, o-o] (0.5, 0);
+			\end{circuitikz}\]
+			A capacitor is denoted by
+			\[\begin{circuitikz}
+				\draw (0, 0) to[C] (1, 0);
+			\end{circuitikz}\]
+		When a circuit with a battery, an open switch, and an uncharged capacitor is completed by closing the switch, conduction electrons shift, resulting in the capacitor plates being of opposite charges. \\
+		Gauss' law can be used to relate the electric field between a capacitor's plates to the charge \(q\) on either plate as
+			\[
+				V = -\int_C \vec{E} \cdot \dd{\vec{s}}
+					= -\int_-^+ E \dd{s}
+			\]
+			It is assumed that the plates of the capacitor are large and close enough for fringing to be negligible, making \(\vec{E}\) constant between the plates. Using a Gaussian surface that encloses just the charge \(q\) on the positive plate,
+			\[
+				\oiint \vec{E} \cdot \dd{A} = EA
+					= \frac{\subt{q}{enc}}{\varepsilon_0} = \frac{q}{\varepsilon_0} 
+			\]
+			so
+			\[
+				E = \frac{q}{A\varepsilon_0} \qquad \text{and} \qquad
+				q = EA\varepsilon_0
+			\]
+			Where \(A\) is the plate's area. Therefore
+			\[
+				V = \int_-^+ E\dd{s}
+					= E\int_0^d \dd{s}
+					= Ed
+			\]
+			Substituting \(CV\) for \(q\) yields 
+			\[
+				C = \frac{q}{V} 
+					= \frac{EA\varepsilon_0}{Ed}
+					= \frac{A\varepsilon_0}{d}
+					\tag{parallel-plate capacitor}
+			\]
+		Consider a cylindrical capacitor of length \(L\) formed by 2 coaxial cylinders of radii \(a\) and \(b\). Assume that \(L \gg b\) so that fringing may be neglected. Each plate has charge \(q\), so			
+			\[
+				q = EA\varepsilon_0 = 
+					E\varepsilon_0(2\pi rL)
+			\]
+			Using Gauss' law,
+			\[
+				\oiint \vec{E} \cdot \dd{A} 
+					= E(2\pi rL)
+					= \frac{\subt{q}{enc}}{\varepsilon_0}
+					= \frac{q}{\varepsilon_0}
+			\]
+			so
+			\[E = \frac{1}{2\pi\varepsilon_0}\frac{q}{rL}\]
+			and
+			\[
+				V = \frac{q}{2L\pi\varepsilon_0}\int_a^b\frac{\dd{r}}{r}
+					= \frac{q}{2L\pi\varepsilon_0}\ln(\frac{b}{a})
+			\]
+			The capacitance is then
+			\[
+				C = \frac{q}{V}
+					= 2\pi\varepsilon_0\frac{L}{\ln(b/a)}
+			\]
+		Capacitors connected in parallel can be replaced by a single capacitor with the same total charge \(\subt{q}{eq}\) and potential difference \(V\) as the original capacitors. \\
+			When a potential difference \(V\) is applied across several parallel capacitors, that potential difference \(V\) is applied to each capacitor. The total charge \(\subt{q}{eq}\) is the the sum of the charges of each individual capacitor.
+			\[\subt{q}{eq} = \sum q_i\]
+			The equivalent capacitance \(\subt{C}{eq}\) is then simply
+			\[\subt{C}{eq} = \sum C_i \tag{capacitors in parallel}\]
+		Capacitors connected in series can be replaced by a single capacitor with the same total charge and potential difference. \\
+			When a potential difference \(V\) is applied across several series capacitors, the capacitors all have the same charge \(q\). The sum of the potential differences across all capacitors is equal to the applied potential difference \(V\).
+			\[\subt{V}{eq} = \sum q\left(\frac{1}{C_i}\right)\]
+			The reciprocal of the equivalent capacitance \(\subt{C}{eq}\) is then
+			\[\frac{1}{\subt{C}{eq}} = \sum \frac{1}{C_i} \tag{capacitors in series}\]
+		The \textbf{electric potential energy \(\bm{\subt{U}{c}}\)} of a charged capacitor is
+			\[
+				U_c = \frac{q^2}{2C}
+					= \frac{1}{2}CV^2
+						\tag{potential energy}
+			\]
+			This is equal to the work required to charge the capacitor. This energy can be viewed as being stored in the electric field between the plates. \\
+			Every electric field has an associated stored energy. In a vacuum, the \textbf{energy density \(\bm{u}\)} in a field of magnitude \(E\) is
+			\[u = \frac{1}{2}\varepsilon_0E^2 \tag{energy density}\]
+		A \textbf{dielectric} is an insulating material placed between the plates of a capacitor. This increases the structural integrity of the capacitor while increasing its capacitance. \\
+		The \textbf{dielectric constant \(\bm{\kappa}\)} is a unitless constant that is the ratio of the final capacitance to the initial capacitance.
+			\[C = \kappa C_0\]
 \end{document}

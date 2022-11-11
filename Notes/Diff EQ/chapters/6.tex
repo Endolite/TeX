@@ -1,0 +1,62 @@
+\documentclass[./Differential Equations.tex]{subfiles}
+
+\begin{document}
+	\section{Review of Power Series}
+		\subsectionb{Power Series}
+			A \textbf{power series centered at \(\bm{a}\)} is an infinite series of the form
+				\[\sum_{n = 0}^\infty c_n(x - a)^n\]
+		\subsectionb{Important Facts}
+			\subsubsection*{Convergence}
+				A power series is \textbf{convergent} at a value of \(x\) if its sequence of partial sums \(\{\{S_N(x)\}\}\) converges; that is,
+					\[\lim_{N \to \infty}S_N(x) = \lim_{N \to \infty}\sum_{n = 0}^Nc_n(x - a)^n\]
+					must exist. If this limit does not exist, the series is said to be \textbf{divergent}. \\
+				 The \textbf{interval of convergence} is the set of \textit{all} real numbers \(x\) for which the series converges. Every power series has one. \\
+				 The radius \(R\) of the interval of convergence is the \textbf{radius of convergence}. If \(R > 0\), then a power series converges for \(|x - a| < R\) (equivalently \(a - R < x < a\)  and diverges for \(|x - a| > R\). If the series is only convergent at its center, \(R = 0\). If it converges for all \(x \in \R\), then \(R = \infty\). It may or may not converge at the endpoints of the interval. \\
+				 The power series \textbf{converges absolutely} within its interval of convergence (not inclusive), meaning that
+				 	\[\sum_{n = 0}^\infty\left|c_n(x - a)^n\right|\]
+				 	converges. \\
+				 The convergence of a power series can often be determined by the \textbf{ratio test}. If \(c_n \ne 0\) for all \(n \in \N\), let
+				 	\[
+				 		\lim_{n \to \infty}\left|\frac{c_{n + 1}(x - a)^{n + 1}}{c_n(x - a)^n}\right|
+				 			= |x - a|\lim_{n \to \infty}\left|\frac{c_{n + 1}}{c_n}\right|
+				 			= L
+					\]
+					If \(L < 1\), the series converges absolutely. If \(L > 1\), it diverges. If \(L = 1\), the test is inconclusive. This test is always inconclusive at the endpoints of the interval of convergence.
+			\subsubsection*{A Power Series Defines a Function}
+				A power series defines a function
+						\[f(x) = \sum_{n = 0}^\infty c_n(x - a)^n\]
+						whose domain is the the series' interval of convergence. If the radius of convergence is \(R > 0\), the \(f\) is continuous, differentiable, and integrable on \(a \pm R\). If it is \(\infty\), \(f\) is continuous, differentiable, and integrable on \(\R\). \(f'(x)\) and \(\int f(x)\dd{x}\) can be found term-by-term via differentiation or integration. Convergence at the endpoints may be gained through integration or lost through differentiation. \\
+					If
+						\[y = \sum_{n = 0}^\infty c_nx^n\]
+						is a power series, then
+						\[
+							y' = \sum_{n = 0}^\infty c_nnx^{n - 1} \qquad \text{and} \qquad
+							y'' = \sum_{n = 0}^\infty c_nn(n - 1)x^{n - 2}
+						\]
+						It is then clear that the first term of \(y'\) and the first 2 of \(y''\) are 0. Omitting these, they become
+						\[
+							y' = \sum_{n = 1}^\infty c_nnx^{n - 1} \qquad \text{and} \qquad
+							y'' = \sum_{n = 2}^\infty c_nn(n - 1)x^{n - 2}
+						\]
+						Note in particular the changed lower bound of the summation in the derivatives.
+			\subsubsection*{Properties}
+				The \textbf{identity property} states that if
+					\[\sum_{n = 0}^\infty c_n(x - a)^n = 0\]
+					and \(R > 0\), then \(c_n = 0\) for all \(n \in \N\). \\
+				A function \(f\) is said to be \textbf{analytic at a point} if it can be represented at that point with a power series with a radius of convergence that is either positive or infinite. \\
+				Power series may be combined through addition, multiplication, and division.
+				\callout{17}{\paragraph{Common Maclaurin Series}
+					\[\def\arraystretch{2}\begin{array}{|c|c|c|}\hline
+						f(x) & \text{Maclaurin Series} & \text{Interval of Convergence} \\\hline
+						e^x & \displaystyle\sum_{n = 0}^\infty \frac{1}{n!}x^n & \R \\
+						\cos x & \displaystyle\sum_{n = 0}^\infty \frac{(-1)^n}{(2n)!}x^{2n} & \R \\
+						\sin x & \displaystyle\sum_{n = 0}^\infty \frac{(-1)^n}{(2n + 1)!}x^{2n + 1} & \R \\
+						\arctan x & \displaystyle\sum_{n = 0}^\infty \frac{(-1)^n}{2n + 1}x^{2n + 1} & [-1, 1] \\
+						\cosh x & \displaystyle\sum_{n = 0}^\infty \frac{1}{(2n)!}x^{2n} & \R \\
+						\sinh x & \displaystyle\sum_{n = 0}^\infty \frac{1}{(2n + 1)!}x^{2n + 1} & \R \\
+						\ln(1 + x) & \displaystyle\sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n}x^n & (-1, 1] \\
+						\displaystyle\frac{1}{1 - x} & \displaystyle\sum_{n = 0}^\infty x^n & (-1, 1) \\\hline
+					\end{array}\]
+				}
+		\subsectionb{Shifting the Summation Index}
+\end{document}
