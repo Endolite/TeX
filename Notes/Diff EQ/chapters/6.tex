@@ -58,5 +58,111 @@
 						\displaystyle\frac{1}{1 - x} & \displaystyle\sum_{n = 0}^\infty x^n & (-1, 1) \\\hline
 					\end{array}\]
 				}
-		\subsectionb{Shifting the Summation Index}
+		\subsectionb{A Preview}
+			To find a power series solution to DE, the desired derivatives must first be calculated. These can then be substituted back into the DE. The indices can be shifted to combine the summations. For a homogenous DE, identity can be used to solve for the coefficients.
+	\section{Solutions About Ordinary Points}
+		\subsectionb{A Definition}
+			Dividing the homogenous linear second-order DE
+			\callout{17}{\paragraph{Definition 6.2.1 Ordinary and Singular Points}
+				A point \(x = x_0\) is said to be an \textbf{ordinary point} of the DE
+					\[a_2(x)y'' + a_1(x)y' + a_0(x)y = 0\]
+					if both \(P(x)\) and \(Q(x)\) are analytic at \(x_0\), where
+					\[y'' + P(x)y' + Q(x)y = 0\]
+					is the standard form of the DE. A point that is not an ordinary point of this DE is a \textbf{singular point} of it.
+			}
+		\subsectionb{Polynomial Coefficients}
+			A polynomial is analytic at any value of \(x\), and a rational function is whenever its denominator is not zero. Both coefficients
+				\[
+					P(x) = \frac{a_1(x)}{a_2(x)} \qquad \text{and} \qquad
+					Q(x) = \frac{a_0(x)}{a_2(x)}
+				\]
+				are analytic wherever \(a_2(x) \ne 0\). It then follows that \textit{a number \(x = x_0\) is an ordinary point of a linear second-order homogenous DE if \(a_2(x_0) \ne 0\), and \(x = x_0\) is a singular point if \(a_2(x_0) = 0\)}.
+			\callout{17}{\paragraph{Theorem 6.2.1 Existence of Power Series Solutions}
+				Let \(x = x_0\) be an ordinary point of a linear second-order homogenous DE. Two linearly independent solutions in the form of the power series
+					\[y = \sum_{n = 0}^\infty c_n(x - x_0)^n\]
+					can always be found. A power series solution converges at least on some interval defined by \(|x - x_0| < R\), where \(R\) is the distance from \(x_0\) to the closest singular point.
+			}
+			A solution of the form
+				\[y = \sum_{n = 0}^\infty c_n(x - x_0)^n\]
+				is said to be a \textbf{solution about the ordinary point \(\bm{x_0}\)}. The distance \(R\) is the \textit{minimum value} or \textit{lower bound} of the radius of convergence.
+	\section{Solutions about Singular Points}
+		\subsection{A Definition}
+			A singular point \(x_0\) of the standard-form second-order homogenous linear DE
+				\[y'' + P(x)y' + Q(x)y = 0\]
+				can be further classified as either regular or irregular.
+			\callout{17}{\paragraph{Definition 6.3.1 Regular and Irregular Singular Points}
+				A singular point \(x = x_0\) is said to be \textbf{regular} if the functions
+					\[
+						p(x) = (x - x_0)P(x) \qquad \text{and} \qquad
+						q(x) = (x - x_0)^2Q(x)
+					\]
+					are both analytic at \(x_0\). One that is not regular is \textbf{irregular}.
+			}
+		\subsectionb{Polynomial Coefficients}
+			In order for \(x = x_0\) to be a singular point, either \(P(x)\) or \(Q(x)\) is not analytic at \(x_0\). As \(a_2(x)\) is a polynomial and \(x_0\) is one of its zeros, it follows that \(x - x_0\) is one of its factors. After simplifying the rational functions, then, the factor \(x - x_0\) must remain to some positive integer power in at least one of the denominators. \\
+			Suppose \(x = x_0\) is a singular point and that \(p(x)\) and \(q(x)\) are analytic at \(x_0\). Multiplying \(P(x)\) by \(x - x_0\) and \(Q(x)\) by \((x - x_0)^2\) must then result in cancellation with the denominator, as \(x - x_0\) no longer appears in either. The regularity of \(x_0\) can then be determined by checking the denominators. \\
+			\callout{17}{
+				\textit{If \(x - x_0\) appears at most to the first power in the denominator of \(P(x)\) and at most to the second power in the denominator of \(Q(x)\), then \(x = x_0\) is a regular singular point.}
+			}
+			Observe also that if \(x = x_0\) is a regular singular point and the DE is multiplied by \((x - x_0)^2\), then
+				\[(x - x_0)^2y'' + (x - x_0)p(x)y' + q(x)y = 0\]
+				where \(p\) and \(q\) are analytic at \(x = x_0\).
+		\subsectionb{Method of Frobenius}
+			\callout{17}{\paragraph{Theorem 6.3.1 Frobenius' Theorem}
+				If \(x = x_0\) is a regular singular point of a second-order homogenous linear DE, then there exists at least one solution of the form
+					\[
+						y = (x - x_0)^r\sum_{n = 0}^\infty c_n(x - x_0)^n
+							= \sum_{n = 0}^\infty c_n(x - x_0)^{n + r}
+					\]
+					where \(r\) is a constant. The series converges at least on some interval \(0 < x - x_0 < R\).
+			}
+		\subsectionb{Indicial Equation}
+			The \textbf{indicial equation} of a problem is the quadratic equation in \(r\) found by equating the \textit{total coefficient of the lower power of \(x\) to 0} after substituting the form of the solution into the DE. The values of \(r\) are the \textbf{indicial roots/exponents} of the singularity \(x = x_0\).. These values can then be substituted into a recurrence relation, relating \(c_k\) to \(c_{k + 1}\). Frobenius' theorem guarantees that at least one solution of the assumed series form can be found. \\
+			The indicial equation can be obtained without substituting. If \(x = 0\) is a regular singular point, then both 
+				\[
+					p(x) = xP(x) \qquad \text{and} \qquad
+					q(x) = x^2Q(x)
+				\]
+				are analytic at \(x = 0\); that is, their power series expansions 
+					\[
+						p(x) = \sum_{n = 0}^\infty a_nx^n \qquad \text{and} \qquad
+						q(x) = \sum_{n = 0}^\infty b_nx^n
+					\]
+				are valid on intervals with positive radii of convergence. Multiplying the standard form by \(x^2\) yields
+				\[x^2y'' + x[xP(x)]y' + [x^2Q(x)]y = 0\]
+				Substituting
+				\[y = \sum_{n = 0}^\infty c_nx^{n + r}\]
+				and the series expansions of \(p(x)\) and \(q(x)\) into this yields the general indicial equation
+				\[r(r - 1) + a_0r + b_0 = 0\]
+				where \(a_0\) and \(b_0\) are the constant terms of the power series expansions of \(p(x)\) and \(q(x)\) respectively.
+		\subsectionb{Three Cases}
+			Let \(x = 0\) be a regular singular point of a linear second-order homogenous DE and \(r_1\) and \(r_2\) be real. When employing the method of Frobenius, three cases can be distinguished that correspond to the nature of the indicial roots.
+			\subsubsectionb{Case I}
+				If \(r_1 > r_2\) and \(r_1 - r_2\) is not a positive integer, then there exist 2 linearly independent solutions of the DE of the form
+					\[
+						y_1(x) = \sum_{n = 0}^\infty c_nn^{x + r_1}, \quad c_0 \ne 0 \qquad \text{and} \qquad
+						y_2(x) = \sum_{n = 0}^\infty b_nx^{n + r_2}, \quad b_0 \ne 0
+					\]
+			\subsubsectionb{Case II}
+				If \(r_1 - r_2 = N\) where \(N \in \Z^+\), then there exist 2 linearly independent solutions of the form
+					\[
+						y_1(x) = \sum_{n = 0}^\infty c_nx^{n + r_1}, \quad c_0 \ne 0 \qquad \text{and} \qquad
+						y_2(x) = Cy_1(x)\ln x + \sum_{n = 0}^\infty b_nx^{n + r_2}, \quad b_0 \ne 0
+					\]
+					where \(C\) is a constant (that may be 0).
+			\subsubsectionb{Case III}
+				If \(r_1 = r_2\), then there exist 2 linearly independent solutions of the form
+					\[
+						y_1(x) = \sum_{n = 0}^\infty c_nx^{n + r_1}, \quad c_0 \ne 0 \qquad \text{and} \qquad
+						y_2(x) = y_1(x)\ln x + \sum_{n = 1}^\infty b_nx^{n + r_1}
+					\]
+		\subsectionb{Finding a Second Solution}
+			In case II, there may be 2 solutions of the form
+				\[y = \sum_{n = 0}^\infty c_nx^{n + r}\]
+				This is cannot be known in advance, instead being determined after finding the indicial roots and examining the recurrence relation that defines the coefficients. It is possible that \(C = 0\); that is,
+				\[
+					y_1(x) = \sum_{n = 0}^\infty c_nx^{n + r_1} \qquad \text{and} \qquad
+					y_2(x) = \sum_{n = 0}^\infty b_nx^{n + r_2}
+				\]
+				
 \end{document}

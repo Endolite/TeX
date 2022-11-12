@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+    \usepackage{bm}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 1 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{physics}
+    \usepackage{siunitx}
+% Macros
+	\newcommand{\en}{\text{e}}
+  	\newcommand{\subt}[2]{#1_{\text{#2}}}
+  	\newcommand{\Z}{\mathbb{Z}}
+% Configuration
+	\title{Discussion 10: Ordinary Points and Singular Points}
+	\author{Arnav Patri}
+	
+\begin{document}
+	\maketitle
+		\begin{enumerate}
+			\item
+				Consider the linear second-order homogenous DE
+					\[a_2(x)y'' + a_1(x)y' + a_0(x)y = 0\]
+					This can be rewritten in standard form by dividing by \(a_2(x)\) as
+					\[y'' + P(x)y' + Q(x)y = 0\]
+					where
+					\[
+						P(x) = \frac{a_1(x)}{a_2(x)} \qquad \text{and} \qquad
+						Q(x) = \frac{a_0(x)}{a_2(x)}
+					\]
+					A function is said to be analytic at a point if it can be represented by a power series with a radius of convergence that is positive or infinite. \\
+					A point \(x = x_0\) is an ordinary point of the above DE if both \(P(x)\) and \(Q(x)\) are analytic at \(x_0\). A point that is not an ordinary point is a singular point of the DE.
+			\item
+				Consider the same DE. Let \(x = x_0\) be a singular point of it. It is said to be a regular singular point if
+					\[
+						p(x) = (x - x_0)P(x) \qquad \text{and} \qquad
+						q(x) = (x - x_0)Q(x)
+					\]
+					are both analytic at \(x_0\). It is said to be irregular if at least one is not analytic.
+			\item
+				\begin{enumerate}[1)]
+					\item
+						\[x^3y'' + 4x^2y' + 6y = 0\]
+							Dividing by \(x^3\) yields the standard form
+								\[y'' + \frac{4}{x}y' + \frac{6}{x^3}y = 0\]
+								making
+								\[
+									P(x) = \frac{4}{x} \qquad \text{and} \qquad
+									Q(x) = \frac{6}{x^3}
+								\]
+								For both denominators of \(P(x)\) and \(Q(x)\), the only factor is \(x\), making the only singular point \(x_0 = 0\), so \(x - x_0 = x\). As there is an \(x^3\) term in the denominator of \(Q(x)\), though, and \(3 > 2\), \(x = 0\) is an irregular singular point.
+					\item
+						\[\left(x^2 - 4\right)y'' + (x + 2)y' + 7y = 0\]
+							It should be noted that \(a_2(x) = x^2 - 4\) can be rewritten as \((x + 2)(x - 2)\). Dividing by \((x + 2)(x - 2)\) yields the standard form
+								\[y'' + \frac{1}{x - 2}y' + \frac{7}{(x + 2)(x - 2)}y = 0\]
+								so
+								\[
+									P(x) = \frac{1}{x - 2} \qquad \text{and} \qquad
+									Q(x) = \frac{7}{(x + 2)(x - 2)}
+								\]
+								The only factor of the denominator of \(P(x)\) is \(x - 2\) while that of \(Q(x)\) has factors \(x + 2\) and \(x - 2\). The singular points are therefore \(x_0 = \pm 2\). \\
+								\(x - 2\) appears only to the first power in the denominators of both \(P(x)\) and \(Q(x)\), and \(1 \le 1 \le 2\), making \(x = 2\) a regular singular point. \\
+								\(x + 2\) appears only to the first power in only the denominator of \(Q(x)\), and \(1 \le 2\), making \(x = -2\) a regular singular point as well.
+					\item
+						\[\left(x^3 + 4x\right)y'' - 2xy' + 7y = 0\]
+							It should be noted that \(a_2(x) = x^3 + 4x = x\left(x^2 + 4\right)\). Dividing by \(x\left(x^2 + 4\right)\) yields the standard form
+								\[y'' - \frac{2}{x^2 + 4}y' + \frac{7}{x\left(x^2 + 4\right)}y = 0\]
+								so
+								\[
+									P(x) = -\frac{2}{x^2 + 4} \qquad \text{and} \qquad
+									Q(x) = \frac{7}{x\left(x^2 + 4\right)}
+								\]
+								The only factor of the denominator of \(P(x)\) is \(x^2 + 4\) while that of \(Q(x)\) has factors \(x\) and \(x^2 + 4\). The only singular point is therefore \(x_0 = 0\). \\
+								\(x\) appears only as a factor to the first power in the denominator of \(Q(x)\), and \(1 \le 2\), making \(x = 0\) a regular singular point.
+					\item
+						\[\left(x^2 + x - 2\right)y'' + (x + 2)xy' + (x - 1)y = 0\]
+						It should be noted that \(a_2(x) = x^2 + x - 2 = (x + 2)(x - 1)\). Dividing by \((x  + 2)(x - 1)\) yields the standard form
+							\[y'' + \frac{x}{x - 1}y' + \frac{1}{x + 2}y = 0\]
+							so
+							\[
+								P(x) = \frac{x}{x - 1} \qquad \text{and} \qquad
+								Q(x) = \frac{1}{x + 2}
+							\]
+							The only factor of the denominator of \(P(x)\) is \(x - 1\) while the  only factor of that of \(Q(x)\) is \(x + 2\), making the singular points \(x_0 = -2, 1\). \\
+							\(x + 2\) appears only to the first power and only in the denominator of \(Q(x)\), and \(1 \le 2\), making \(x = -2\) a regular singular point. \\
+							\(x - 1\) appears only to the first power and only in the denominator of \(P(x)\), and \(1 \le 1\), making \(x = 1\) a regular singular point.		
+				\end{enumerate}
+		\end{enumerate}
+\end{document}
