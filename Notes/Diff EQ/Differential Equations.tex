@@ -23,6 +23,7 @@
 		\usepackage{amssymb} % Miscellaneous
 		\usepackage{chemformula} % Chemical Formulas
 		\usepackage{esint} % Integrals
+		\usepackage{mathrsfs} % Laplace
 		\usepackage{physics} % Differentials/Vectors
 		\usepackage{siunitx} % Units
 % Configuration
@@ -44,10 +45,14 @@
 			\newcommand{\en}{\text{e}}
 		% Functions
 			\DeclareMathOperator{\erfc}{erfc}
+			\DeclareMathOperator{\Uscr}{\mathscr{U}}
 		% Sets
 			\newcommand{\N}{\mathbb{N}}
 			\newcommand{\R}{\mathbb{R}}
 			\newcommand{\Z}{\mathbb{Z}}
+		% Transforms
+			\DeclareMathOperator{\Ell}{\mathscr{L}}
+			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
 		% Other
 			\DeclareMathOperator{\avg}{avg}
 			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
@@ -76,6 +81,8 @@
 		\subfile{chapters/5.tex}
 	\chapter{Series Solutions of Linear Equations}
 		\subfile{chapters/6.tex}
+	\chapter{The Laplace Transform}
+		\subfile{chapters/7.tex}
 \end{document}
 
 

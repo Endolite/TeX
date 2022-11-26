@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+    	\usepackage{bm}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 1 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{mathrsfs}
+		\usepackage{physics}
+    	\usepackage{siunitx}
+% Macros
+	\newcommand{\Ell}{\mathscr{L}}
+	\newcommand{\en}{\text{e}}
+  	\newcommand{\subt}[2]{#1_{\text{#2}}}
+  	\newcommand{\Z}{\mathbb{Z}}
+% Configuration
+	\title{Transform from a function of \(t\) to a function of \(s\)}
+	\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\begin{enumerate}[1)]
+		\item
+			\begin{align*}
+				\Ell\{\en^{3t}\} &= \int_0^\infty \en^{-st}\en^{3t}\dd{t}
+						= \int_0^\infty \en^{-t(s - 3)}\dd{t} 
+						= \left[-\frac{\en^{-t(s - 3)}}{(s - 3)}\right]_0^\infty \\
+					&= 0 + \frac{1}{s - 3}
+						= \frac{1}{s - 3}
+			\end{align*}
+			Using theorem 7.1.1,
+				\[\Ell\{e^{3t}\} = \frac{1}{s - 3}\]
+		\item
+			\[\Ell\{f(t)\} = \int_0^\infty \en^{-st}f(t)\dd{t} = F(s)\]
+		\item
+			Using theorem 7.1.1,
+			\[
+				\Ell\{\sin(3t)\} = \frac{3}{s^2 + 3^2}
+					= \frac{3}{s^2 + 9}
+			\]
+		\item
+			Using theorem 7.1.1,
+			\[
+				\Ell\{\cos^2(2t)\} = \Ell\left\{\frac{1 + \cos(4x)}{2}\right\}
+					= \frac{1}{2}\frac{1}{s} + \frac{1}{2}\frac{s}{s^2 + 4^2}
+					= \frac{1}{2s} + \frac{s}{2s^2 + 32}
+					= \frac{s^2 + 8}{s^3 + 16s}
+			\]
+	\end{enumerate}
+\end{document}
