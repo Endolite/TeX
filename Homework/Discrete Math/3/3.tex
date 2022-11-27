@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+    	\usepackage{bm}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 0.75 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{mathrsfs}
+		\usepackage{physics}
+    	\usepackage{siunitx}
+    % Formatting
+    	\usepackage{tasks}
+% Macros
+	\newcommand{\en}{\text{e}}
+	\newcommand{\Exp}{\mathbb{E}}
+  	\newcommand{\subt}[2]{#1_{\text{#2}}}
+  	\newcommand{\Z}{\mathbb{Z}}
+% Configuration
+	\title{Homework Set 3}
+	\author{Arnav Patri}
+
+\begin{document}
+	\maketitle
+	\setcounter{section}{6}
+	\section{Discrete Probability}
+		\begin{enumerate}
+			\item	
+				Boys and girls being equally likely implies that the probability of each is \(1/2 = 0.5\) (assuming them to be the only 2 possible outcomes). The number of trials (the number of children) and the probability of each child being a boy are then fixed at 3 and 0.5 respectively, meaning that this situation follows a binomial setting with probability of success \(p = 0.5\) and number of trials \(n = 3\). As such,
+				\begin{align*}
+					\mu_X &= np 
+							= 0.5 \times 3 
+							= 1.5 \\
+					\sigma_X &= \sqrt{np(1 - p)} 
+							= \sqrt{0.5(3)(1 - 0.5)} 
+							= \sqrt{0.75} 
+							= 0.5\sqrt{3} 
+							\approx 0.866
+				\end{align*}
+				The mean is 1.5 boys while the standard deviation is about 0.866 boys.
+			\item
+				\(X\) is a discrete random variable that follows the given probability distribution
+				\[\begin{array}{|c|*{5}{c}|}\hline
+					x & 0 & 1 & 2 & 3 & 4 \\\hline
+					P(x) & 0.3 & 0.4 & 0.2 & 0.06 & 0.04 \\\hline
+				\end{array}\]
+				As such,
+				\begin{align*}
+					\mu_X &= \sum x_iP(x_i)
+							= 1.14 \\
+					\sigma_X &= \sqrt{\sum(x_i - \mu_X)^2P(x_i)}
+							\approx 1.039
+				\end{align*}
+				The mean is 1.14 toppings while the standard deviation is about 1.039 toppings.
+			\item
+				One ticked being randomly selected from \(1,000\) means that the probability of any one ticket being selected is \(1/1,000 = 0.001\). This describes a discrete random variable \(X\) with probability distribution
+					\[\begin{array}{|c|*{2}{c}|}\hline
+						x & 0 & 387 \\\hline
+						P(x) & 1 - 0.001 = 0.999 & 0.001 \\\hline
+					\end{array}\]
+					The expected value of this random variable is then
+					\[
+						\Exp[X] = \sum x_iP(x_i)
+							= 0.387
+					\]
+					\(X\) represents the money gained from the drawing rather than the profit, though. The amount of money spent on the ticket is a constant 2, so 2 can simply be subtracted from this result to yield the expected profit of entering the drawing, which is \(-\$1.613\)
+			\item
+				The number of defective computers is a discrete random variable \(X\) with probability distribution
+					\[\begin{array}{|c|*{5}{c}|}\hline
+						x & 0 & 1 & 2 & 3 & 4 \\\hline
+						P(x) & 0.4305 & 0.4039 & 0.1421 & 0.0222 & 0.0013 \\\hline
+					\end{array}\]
+					As such,
+					\[
+						\mu_X = \sum x_iP(x_i)
+							= 0.7599
+					\]
+					The mean number of defective computers in a batch of 4 is 0.7599.
+			\item
+				The number of defective computers is a discrete random variable \(X\) with probability distribution
+					\[\begin{array}{|c|*{5}{c}|}\hline
+						x & 0 & 1 & 2 & 3 & 4 \\\hline
+						P(x) & 0.5220 & 0.3685 & 0.0975 & 0.0115 & 0.0005\\\hline
+					\end{array}\]
+					As such,
+					\[
+						\sigma_X = \sqrt{\sum(x_i - \mu_X)^2P(x_i)}
+							\approx 0.714
+					\]
+			\item
+				The number of trials (days) and the probability of success (rain) are fixed at 3 and 0.4 respectively. This situation therefore follows a binomial setting with probability of success \(p = 0.4\) and number of trials \(n = 3\). Let \(X\) be a random variable following this binomial distribution. The only possible values of \(X\) are 0, 1, 2, and 3. As such, the complement of \(X = 0\) is equivalent to \(X \ge 1\). Therefore,
+					\[
+						P(X \ge 1) = 1 - P(X = 0)
+							= 1 - \binom{3}{0}0.4^0(1 - 0.4)^{3 - 0}
+							= 1 - 0.216
+							= 0.784 
+					\]
+					The probability of it raining on at least 1 of the 3 days is 0.784.
+			\item
+				The probability of a given student owning a credit card given that they are a freshman is the relative frequency of owning one among freshman. This is simply the proportion of freshman that carry credit cards:
+					\begin{align*}
+						P(\text{carries a credit card} \,|\, \text{freshman}) &= \frac{\text{\# of freshman credit card carriers}}{\text{\# of freshman}} \\
+							&= \frac{40}{60}
+								= \frac{2}{3}
+								\approx 0.667
+					\end{align*}
+					The probability of a randomly selected freshman carrying a cred card is about 0.667.
+			\item
+				The probability of a given student being a freshman given that they carry a credit card is simply the relative frequency of being a freshman among those that own one. This is the proportion of credit card carriers that are freshman:
+					\begin{align*}
+						P(\text{freshman} \,|\, \text{carries a credit card}) &= \frac{\text{\# of freshman credit card carriers}}{\text{\# of credit card carriers}} \\
+							&= \frac{49}{61}
+								\approx 0.803
+					\end{align*}
+					The probability of a randomly selected credit card owner being a freshman is about 0.803.
+			\item
+				
+		\end{enumerate}
+\end{document}
+

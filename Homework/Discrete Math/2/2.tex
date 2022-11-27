@@ -27,6 +27,7 @@
 % Configuration
 	\title{Homework Set 2}
 	\author{Arnav Patri}
+	\date{}
 	\hypersetup{
 	    colorlinks,
 	    citecolor=black,
@@ -59,11 +60,13 @@
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 		\newcommand{\comment}[1]{}
 		\newcommand{\enumset}[1]{\setcounter{enumi}{#1}}
+		\makeatletter
+			\newcommand{\Letter}[1]{\@alph{#1}}
+		\makeatother
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}	
 
 \begin{document}
 	\maketitle
-	
 	\setcounter{section}{9}
 	\section{Graphs}
 		\subsection{Graphs and Graph Models}
@@ -104,7 +107,7 @@
 					\(|V| = 5\), \(E = 13\), \(\deg^-a = 6\), \(\deg^+a = 1\), \(\deg^-b = 1\), \(\deg^=b = 5\), \(\deg^-c = 2\), \(\deg^+c = 5\), \(\deg^-d = 4\), \(\deg^=d = 2\), \(\deg^- e = 0\), \(\deg^=e = 0\)
 				\enumset{19}
 				\item
-					\begin{tasks}(3)
+					\begin{tasks}(2)
 						\task
 							\[\begin{tikzpicture}
 								\node[circle, draw] (a1) at (0, 0) {\(a\)};
@@ -184,7 +187,21 @@
 									\draw (a\x) -- (a8);
 							\end{tikzpicture}\]
 						\task
-							
+							\[\begin{tikzpicture}[scale = 1.3]
+								\foreach \x in {1,...,8}
+									\node[circle, draw] (a\x) at ({2*cos((\x - 1)*45)}, {2*sin((\x - 1)*45)}) {\textit{\Letter{\x}}};
+								\foreach \x in {9,...,16}
+									\node[circle, draw] (a\x) at ({cos((\x - 1)*45)}, {sin((\x - 1)*45)}) {\textit{\Letter{\x}}};
+								\foreach \i/\j/\k/\l in {1/2/10/16, 2/3/9/11, 3/4/10/12, 4/5/11/13, 5/6/12/14, 6/7/13/15, 7/8/14/16, 8/1/15/9}{
+									\draw (a\i) to (a\j);
+									\draw (a\i) to (a\k);
+									\draw (a\i) to (a\l);
+								};
+								\foreach \x\y\z in {9/12/14, 10/13/15, 11/14/16, 12/15/9, 13/16/10, 14/9/11, 15/10/12}{
+									\draw (a\x) to (a\y);
+									\draw (a\x) to (a\z);
+								};
+							\end{tikzpicture}\]
 					\end{tasks}
 				\item
 					\[\begin{tikzpicture}
@@ -316,7 +333,229 @@
 					\end{tasks}
 				\enumset{52}
 				\item
-					why
+					\[\def\arraystretch{3}\begin{tabular}{*{4}{p{0.2\textwidth}}}
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture} 
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\draw (a) to (b);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\draw (a) to (c);
+							\end{tikzpicture}
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\draw (a) to (b);
+							\end{tikzpicture}
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\draw (a) to (c);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\draw (a) to (b);
+								\draw (a) to (c);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (b);
+							\end{tikzpicture}
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (b);
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (c);
+							\end{tikzpicture}
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (c);
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (b);
+							\end{tikzpicture}
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (c);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (b);
+								\draw (a) to (c);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (b);
+								\draw (a) to (d);
+							\end{tikzpicture}
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (c);
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (a) at (0, 1) {\(a\)};
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+								\draw (a) to (b);
+								\draw (a) to (c);
+								\draw (a) to (d);
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+							\end{tikzpicture}
+						\\
+							\begin{tikzpicture}
+								\node[circle, draw] (b) at (1, 1) {\(b\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture}
+						&
+							\begin{tikzpicture}
+								\node[circle, draw] (c) at (0, 0) {\(c\)};
+								\node[circle, draw] (d) at (1, 0) {\(d\)};
+							\end{tikzpicture}
+					\end{tabular}\]
 			\end{enumerate}
 		\subsection{Representing Graphs and Graph Isomorphism}
 			\begin{enumerate}
@@ -356,6 +595,7 @@
 								d & 0 & 1 & 1 & 1
 					}\]
 				\enumset{8}
+				\item
 					\begin{tasks}(3)
 						\task
 							\[\begin{bmatrix}
@@ -724,8 +964,86 @@
 				\item
 					\begin{tasks}(2)
 						\task	
+							An Euler circuit exists only if all edges are of even degree. For a complete graph \(K_n\), all edges are of degree \(n - 1\), so an Euler circuit exists whenever \(n\) is odd.
+						\task
+							An Euler circuit always exists for \(C_n\), as every node is of degree 2.
+						\task
+							An Euler circuit never exists for \(W_n\), as every node but 1 is of degree 3.
+						\task
+							An Euler circuit only exists for \(Q_n\) if \(n\) is even, as the degree of each node is \(n\).
 					\end{tasks}
-
+				\enumset{30}
+				\item
+					\(a, b, c, d, e, a\) is a Hamilton circuit.
+				\enumset{32}
+				\item
+					A Hamilton circuit does not exist, as \(e\), \(f\), and \(g\) are all of degree 1.
+				\enumset{34}
+				\item
+					All edges are incident to a node of degree 2 and must therefore be in the circuit.
+				\enumset{36}
+				\item
+					\(a, b, c, d, f, d, e\) is a Hamilton path.
+				\enumset{38}
+				\item
+					\(f, e, c, b, a, d\) is a Hamilton path.
+				\enumset{40}
+				\item
+					A Hamilton path does not exist, as there are 8 vertices of degree 2, only 2 of which may be the endpoints of the path. The incident edges of the other 6 nodes must be in the path. For a Hamilton path to exist, then, exactly 1 of the inside corner vertices must be an end. As this is not the case, such a path does not exist.
+				\enumset{42}
+				\item
+					\(a, b, c, f, e, d, g, h, i\) is a Hamilton path.
+				\enumset{44}
+				\item
+					A Hamilton circuit can exist only when \(m = n\) and both are at least 2.
 			\end{enumerate}
+	\subsection{Shortest-Path Problems}
+		\begin{enumerate}
+			\enumset{2}
+			\item
+				The shortest path is \(a, c, d, e, g, z\), which has length 16.	
+			\enumset{4}
+			\item
+				2: \(a, b, e, d, z\); 3: \(a, c, d, e, g, z\); 4: \(a, b, e, h, l, m, p, s, z\).
+			\enumset{6}
+			\item
+				\begin{tasks}(4)
+					\task
+						\(a, c, d\)
+					\task
+						\(a, c, d, f\)
+					\task
+						\(c, d, f\)
+					\task
+						\(b, d, e, g, z\)	
+				\end{tasks}
+			\enumset{10}
+			\item
+				\begin{tasks}(2)
+					\task
+						Boston, Chicago, Los Angeles
+					\task
+						New York, Chicago, San Francisco
+					\task
+						Dallas, Los Angeles, San Francisco
+					\task
+						Denver, Chicago, New York
+				\end{tasks}
+			\enumset{16}
+			\item
+				\begin{tasks}
+					\task
+						Newark, Woodbridge, Camden; Newark, Woodbridge, Camden, Cape May.
+					\task
+						Newark, Woodbridge, Camden; Newark, Woodbridge, Camden, Cape May.
+				\end{tasks}
+			\enumset{18}
+			\item
+				When the most distance possible is desired to be covered; for instance, creating a route for sightseeing.
+			\enumset{26}
+			\item
+				Detroit, Denver, San Francisco, Los Angeles, New York, Detroit.
+		\end{enumerate}
+
 \end{document}
 
