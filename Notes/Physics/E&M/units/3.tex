@@ -1,0 +1,41 @@
+\documentclass[./Electricity and Magnetism.tex]{subfiles}
+
+\begin{document}
+	\section{Current and Resistance}
+		If charge \(\dd{q}\) passes through a hypothetical plane in time \(\dd{t}\), the \textbf{current \(\bm{i}\)} is defined as
+			\[i = \dv{q}{t} \tag{definition of current}\]
+			It is measured in units of C/S (\textbf{Amperes A}).
+		Consider the following junction:
+			\[\begin{tikzpicture}[scale = 2]
+				\draw[thick, ->] (0, 0) -- (0.5, 0) node[above]{\(i_0\)};
+				\draw[thick] (0.5, 0) -- (1, 0);
+				\draw[thick, ->] (1, 0) to (1.5, 0.5) node[above]{\(i_1\)};
+				\draw[thick] (1.5, 0.5) to (2, 1);
+				\draw[thick, ->] (1, 0) to (1.5, -0.5) node[above]{\(i_2\)};
+				\draw[thick] (1.5, -0.5) to (2, -1);
+			\end{tikzpicture}\]
+			As the charge is conserved,
+			\[i_1 + i_2 = i_0\]
+		The current \(i\) and the \textbf{current density \(\bm{\vec{J}}\)} are related by
+			\[i = \iint\limits_S \vec{J} \cdot \dd{\vec{A}}\]
+			where \(\dd{\vec{A}}\) is a vector that is orthogonal to a surface element of area (in the direction of the current density by convention) and the integral is taken over any surface that cuts across the conductor. The direction of \(\vec{J}\) is the same as that of the velocity the moving charges if they are positive and the opposite direction if they are negative. \\
+			Current density is measured in units of \(\mathrm{A/m^2}\). \\
+		Charges move near the speed of light, ricocheting along the sides of the wire. The net movement along the wire is the \textbf{drift velocity \(\bm{\vec{v}_d}\)}. Positive charge carriers drift at this speed in the direction of \(\vec{E}\). By convention, the directions of the drift speed, current density, and current are drawn in the same direction. \\
+			The drift velocity is related to the current density as
+			\[\vec{J} = ne\vec{v}_d\]
+			where \(e\) is the charge of an electron and \(n\) is the number of charge carriers divided by the volume. The product \(ne\) is the \textbf{carrier charge density} in \(\mathrm{C/m^e}\). \\
+		The volume of the cross section of a wire is the product of the length of the region \(\Delta x\) and the cross-sectional area \(A\). The length considered is the product of the drift velocity and the change in time, so
+			\[
+				V = A\Delta x = 
+					v_dA\Delta t
+			\] 
+			The total charge \(\Delta Q\) is the product of the number of charge carriers and their individual charge \(q\). The number of charges is simply equal to the product of \(n\) and the volume, so
+				\[
+					\Delta Q = q(nV) 
+						= nqv_dA\Delta t
+				\]
+				When the charge carriers are electrons,
+				\[\Delta q = nev_dA\Delta t\]
+				Dividing both sides by \(\Delta t\),
+				\[\subt{i}{avg} = nev_dA\]
+\end{document}

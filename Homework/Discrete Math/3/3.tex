@@ -15,6 +15,7 @@
     	\usepackage{tasks}
 % Macros
 	\newcommand{\en}{\text{e}}
+	\newcommand{\enumset}[1]{\setcounter{enumi}{#1}}
 	\newcommand{\Exp}{\mathbb{E}}
   	\newcommand{\subt}[2]{#1_{\text{#2}}}
   	\newcommand{\Z}{\mathbb{Z}}
@@ -106,7 +107,7 @@
 								= \frac{2}{3}
 								\approx 0.667
 					\end{align*}
-					The probability of a randomly selected freshman carrying a cred card is about 0.667.
+					The probability of a randomly selected freshman carrying a credit card is about 0.667.
 			\item
 				The probability of a given student being a freshman given that they carry a credit card is simply the relative frequency of being a freshman among those that own one. This is the proportion of credit card carriers that are freshman:
 					\begin{align*}
@@ -118,5 +119,264 @@
 			\item
 				
 		\end{enumerate}
-\end{document}
+	\setcounter{section}{0}
+	\section{The Foundations: Logic and Proofs}
+		\subsection{Propositional Logic}
+			\begin{enumerate}
+				\item
+					\begin{tasks}(3)
+						\task
+							True proposition
+						\task
+							False proposition
+						\task
+							True proposition
+						\task
+							False proposition
+						\task
+							Not a proposition
+						\task
+							Not a proposition
+					\end{tasks}
+				\enumset{2}
+				\item
+					\begin{tasks}(2)
+						\task
+							Linda is not younger than Sanjay.
+						\task
+							Mei does not make more money than Isabella.
+						\task
+							Moshe is not taller than Monica.
+						\task
+							The moon is not made of green cheese.
+						\task
+							\(2^n < 100\).	
+					\end{tasks}
+				\enumset{4}
+				\item
+					\begin{tasks}(2)
+						\task
+							Mei does not have an MP3 player.
+						\task
+							There is pollution in New Jersey.
+						\task
+							\(2 + 1 \ne 3\).
+						\task
+							The summer in Maine is neither hot nor sunny.	
+					\end{tasks}
+				\enumset{10}
+				\item
+					\begin{tasks}(2)
+						\task
+							Sharks have not been spotted near the shore.
+						\task
+							Swimming at New Jersey shore is allowed and sharks have been spotted near the shore.
+						\task
+							Swimming at the New Jersey shore is not allowed or sharks have been spotted at the shore.
+						\task
+							Swimming at the New Jersey shore being allowed implies that sharks have not been spotted near the shore.
+						\task
+							Sharks not being spotted near the shore implies that Swimming at the New Jersey shore is allowed.
+						\task
+							Swimming at the New Jersey shore not being allowed implies that sharks have not been spotted near the shore.
+						\task
+							Swimming at the New Jersey shore is allowed if and only if sharks have not been spotted near the shore.
+						\task
+							Swimming at the New Jersey shore is not allowed or swimming at the New Jersey shore is allowed and sharks have not been spotted near the shore.
+					\end{tasks}
+				\enumset{12}
+				\item
+					\begin{tasks}(3)
+						\task
+							\(p \land q\)
+						\task
+							\(p \land \lnot q\)
+						\task
+							\(\lnot p \land \lnot q\)
+						\task
+							\(q \lor p\)
+						\task
+							\(p \to q\)
+						\task
+							\(p \leftrightarrow q\)
+					\end{tasks}
+				\enumset{14}
+				\item
+					\begin{tasks}(3)
+						\task
+							\(\lnot p\)
+						\task
+							\(p \land \lnot q\)
+						\task
+							\(q \leftarrow p\)
+						\task
+							\(\lnot p \to \lnot q\)
+						\task
+							\(p \to q\)
+						\task
+							\(q \to p\)
+					\end{tasks}
+				\enumset{18}
+				\item
+					\begin{tasks}(4)
+						\task
+							False
+						\task
+							False
+						\task
+							False
+						\task
+							False	
+					\end{tasks}
+				\newpage
+				\enumset{24}
+				\item
+					\begin{tasks}(2)
+						\task
+							If the wind blows from the northeast, then it snows.
+						\task
+							If it stays warm for a week, then the apple trees will bloom.
+						\task
+							If the Pistons win the championships, then they beat the Lakers.
+						\task
+							If one has gotten to the top of Long's peak, they must have walked eight miles.
+						\task
+							If you are famous, then you can get tenure as a professor.
+						\task
+							If you drive more than 400 miles, then you will need to buy gasoline.
+						\task
+							If you bought your CD player less than 90 days ago, your guarantee is good.
+						\task
+							If the water is not too cold, Jan will go swimming.
+						\task
+							If people believe in science, we will have a future.
+					\end{tasks}
+				\enumset{26}
+				\item
+					\begin{tasks}(2)
+						\task
+							You can buy an ice cream cone if and only if it is hot outside.
+						\task
+							You can win the contest if and only if you have the only winning ticket.
+						\task
+							You can get promoted if and only if you have connections.
+						\task
+							Your mind will decay if and only if you watch television.
+						\task
+							The trains run late if and only if I take it.
+					\end{tasks}
+				\enumset{30}
+				\item
+					\begin{tasks}(4)
+						\task
+							2
+						\task
+							16
+						\task
+							64
+						\task
+							16	
+					\end{tasks}
+				\enumset{32}
+				\item
+					\begin{tasks}
+						\task
+							\[\begin{array}{|*{3}{c|}}\hline
+								p & \lnot p & p \land \lnot p \\\hline
+								0 & 1 & 0 \\
+								1 & 0 & 0 \\\hline
+							\end{array}\]
+						\task
+							\[\begin{array}{|*{3}{c|}}\hline
+								p & \lnot p & p \lor \lnot p \\\hline
+								0 & 1 & 1 \\
+								1 & 0 & 1 \\\hline
+							\end{array}\]
+						\task
+							\[\begin{array}{|*{5}{c|}}\hline
+								p & q & \lnot q & p \lor \lnot q & (p \lor \lnot q) \to q \\\hline
+								0 & 0 & 1 & 1 & 0 \\
+								0 & 1 & 0 & 0 & 1 \\
+								1 & 0 & 1 & 1 & 0 \\
+								1 & 1 & 0 & 1 & 1 \\\hline
+							\end{array}\]
+						\task
+							\[\begin{array}{|*{5}{c|}}\hline
+								p & q & p \lor q & p \land q & (p \lor q) \to (p \land q) \\\hline
+								0 & 0 & 0 & 0 & 1 \\
+								0 & 1 & 1 & 0 & 0 \\
+								1 & 0 & 1 & 0 & 0 \\
+								1 & 1 & 1 & 1 & 1 \\\hline
+							\end{array}\]
+						\task
+							\[\begin{array}{|*{7}{c|}}\hline
+								p & q & p \to q & \lnot p & \lnot q & \lnot q \to \lnot p & (p \to q) \leftrightarrow (\lnot q \to \lnot p) \\\hline
+								0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+								0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+								1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+								1 & 1 & 1 & 0 & 0 & 1 & 1 \\\hline
+							\end{array}\]
+						\task
+							\[\begin{array}{|*{5}{c|}}\hline
+								p & q & p \to q & q \to p & (p \to q ) \to (q \to p) \\\hline
+								0 & 0 & 1 & 1 & 1 \\
+								0 & 1 & 1 & 0 & 0 \\
+								1 & 0 & 0 & 1 & 1 \\
+								1 & 1 & 1 & 1 & 1 \\\hline
+							\end{array}\]
+					\end{tasks}
+					\enumset{34}
+					\item
+						\begin{tasks}
+							\task
+									
+						\end{tasks}
+			\end{enumerate}
+	\section{Fall Test 4}
+		\begin{enumerate}
+			\enumset{8}
+			\item
+				\[\begin{array}{|*{9}{c|}}\hline
+					p & q & r& \lnot q & \lnot r & r \to \lnot q & \lnot(r \to \lnot q) & p \land \lnot r & \lnot(r \to \lnot p) \lor (p \land \lnot r) \\\hline
+					0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\
+					0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 \\
+					0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+					0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+					1 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+					1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 \\
+					1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\
+					1 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 \\\hline
+				\end{array}\]
+			\item
+				\begin{tasks}(2)
+					\task
+						\(q \land \lnot p\)	
+					\task
+						\(\lnot(\lnot q \lor p)\)
+				\end{tasks}
+			\item
+				\(p \land r \land \lnot q\)
+			\item
+				\[\begin{array}{|*{8}{c|}}\hline
+					p & q & r & q \to r & p \to (q \to r)  & q \land r & p \to (q \land r)\\\hline
+					0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+					0 & 0 & 1 & 1 & 1 & 0 & 1 \\
+					0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+					0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+					1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+					1 & 0 & 1 & 1 & 1 & 0 & 0 \\
+					1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+					1 & 1 & 1 & 1 & 1 & 1 & 1 \\\hline
+				\end{array}\]
+				The 5th and and 7th columns are not equivalent, so \(p \to (q \to r) \not\equiv p \to (q \land r)\).
+			\item
+				\begin{align}
+					p \to (q \to r) &\equiv \lnot p \lor (q \to r) \tag{definition of \(\to\)} \\
+						&\equiv \lnot p \lor (\lnot q \lor r) &\tag{definition of \(\to\)} \\
+						&\equiv \lnot p \lor \lnot q \lor r & \tag{associativity of \(\lor\)} \\
+						&\equiv (p \to \lnot q) \lor r \tag{}
+				\end{align}
 
+		\end{enumerate}
+
+\end{document}

@@ -1,0 +1,369 @@
+\documentclass[12pt, A4]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage{fixltx2e}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+		\usepackage{mathtools}
+		\usepackage{multirow}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+			\usepackage{circuitikz} % Circuits
+			\usepackage{tikz-3dplot} % 3D
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Notation
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{chemformula} % Chemical Formulas
+		\usepackage{esint} % Integrals
+		\usepackage{mathrsfs} % Laplace
+		\usepackage{physics} % Differentials/Vectors
+		\usepackage{siunitx} % Units
+% Configuration
+	\title{Differential Equations Cheat Sheet}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+	
+% Macros
+	% Notation
+		% Constants
+			\newcommand{\en}{\text{e}}
+		% Functions
+			\DeclareMathOperator{\erfc}{erfc}
+			\DeclareMathOperator{\Uscr}{\mathscr{U}}
+		% Sets
+			\newcommand{\N}{\mathbb{N}}
+			\newcommand{\R}{\mathbb{R}}
+			\newcommand{\Z}{\mathbb{Z}}
+		% Transforms
+			\DeclareMathOperator{\Ell}{\mathscr{L}}
+			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
+		% Other
+			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+			\renewcommand{\th}{\text{th}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\comment}[1]{}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
+		\newcommand{\subt}[2]{#1_{\text{#2}}}
+		\newcommand{\supt}[2]{#1^{\text{#2}}}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\section{Introduction to Differential Equations}
+		A \textbf{differential equation (DE)} is a function relating one or more unknown functions (dependent variables) to one or more independent variables. \\
+		A differential equation with a \textit{single} independent variable is said to be an \textbf{ordinary differential equation (ODE)}. One with \textit{more than one} is said to be a \textbf{partial differential equation (PDE)}. \\
+		An ODE is \textbf{linear} if the dependent variable and all of its derivatives are raised only to the first power; that is, it can be written as
+			\[a_n(x)\dv[n]{y}{x} + a_{n - 1}(x)\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0(x)y = g(x)\]
+			It is \textbf{nonlinear} if it is not linear. \\
+		An \textbf{\(\bm{\supt{n}{th}}\)-order} ODE is one where the highest derivative of the dependent variable is its \(\supt{n}{th}\) derivative. \\
+		A first-order linear DE in \textbf{differential form} is 
+			\[M(x, y)\dd{x} + N(x, y)\dd{y} = 0\]
+		A DE is in \textbf{normal form} if it can be written as
+			\[\dv[n]{y}{x} = f\left(x, y, y', \ldots, y^{(n)}\right)\]
+			where \(f\) is a real-valued function. \\
+		An \(\supt{n}{th}\)-order \textbf{initial value problem (IVP)} is a set of values, called \textbf{initial conditions}, that \(x\), \(y\), and its first \(n - 1\) derivatives must be equal to at a single point. If conditions are set at multiple points, called \textbf{boundary conditions}, it is a \textbf{boundary-value problem (BVP)}.
+	\section{First-Order Differential Equations}
+		\subsection{Separable Equations}
+			A first-order ODE is separable if it is of the form
+				\[\dv{y}{x} = g(x)h(y)\]
+				Rewriting and integrating, the DE can be solved as
+				\[\int \frac{\dd{y}}{h(y)} = \int g(x)\dd{x}\]
+		\subsection{The Integrating Factor}
+			\comment{
+				Consider the first-order linear DE
+					\[a_1(x)\dv{y}{x} + a_0(x)y = g(x)\]
+					This can be rewritten in standard form as
+					\[\dv{y}{x} + P(x)y = f(x)\]
+					where \(P(x) + a_0(x)/a_1(x)\) and \(f(x) = g(x)/a_1(x)\).
+					The \textbf{integrating factor \(\bm{\mu(x)}\)} is found as
+					\[\mu(x) = \en^{\int P(x)\dd{x}}\]
+					Multiplying by this on both sides yields
+					\begin{align*}
+						\en^{\int P(x)\dd{x}}f(x) &= \en^{\int P(x)\dd{x}}\dv{y}{x} + P(x)\en^{\int P(x)\dd{x}}y \\
+							&= \dv{x}\left[\en^{\int P(x) \dd{x}}\right]
+					\end{align*}
+					which is separable. Integrating on both sides yields
+					\[
+						\en^{\int P(x)\dd{x}}y = \int \en^{\int P(x) \dd{x}}f(x)\dd{x} + C
+					\]
+					This is a one-parameter family of solutions
+					\[y = \en^{-\int P(x)\dd{x}}\int \en^{\int P(x)}f(x) \dd{x} + C\en^{-\int P(x)}\]
+					In summary, to solve a linear first-order DE,
+			}
+			\callout{12}{\paragraph{Solving a Linear First-Order Differential Equation}
+				\begin{enumerate}
+					\item 
+						Put the DE into standard form
+							\[\dv{y}{x} + P(x)y = f(x)\]
+					\item
+						Identify \(P(x)\) and find the \textbf{integrating factor \(\bm{\mu(x)}\)} as
+							\[\mu(x) = \en^{\int P(x) \dd{x}}\]
+					\item
+						Multiply by \(\mu(x)\) on both sides, yielding 
+						\[\dv{x}\left[\en^{\int P(x) \dd{x}}\right] = \en^{\int P(x)\dd{x}}f(x)\]
+					\item
+						Integrate on both sides and solve for \(y\)
+				\end{enumerate}
+				}
+		\subsection{Exact Equations}
+			The \textbf{differential} of a function \(z = f(x, y)\) is
+				\[\dd{z} = \pdv{z}{x} + \pdv{z}{y}\]
+				In the special case that \(f(x, y) = 0\), this is 0. 
+				A differential equation
+				\[M(x, y)\dd{x} + N(x, y)\dd{y} = 0\]
+				is an \textbf{exact equation} if the left-side is an \textbf{exact differential}, which is true if
+				\[\pdv{M}{y} = \pdv{N}{x}\]
+				The solution to the DE can then be found as
+				\begin{align*}
+					f(x, y) &= \int M(x, y) \dd{x} + g(y) \\
+						&= \int N(x, y) \dd{y} + g(x)
+				\end{align*}
+				In the first case,
+				\[
+					\pdv{f}{y} = N(x, y)
+						= \dv{y}\int M(x, y) \dd{x} + g'(y)
+				\]
+				\(g'(y)\) can then be solved for an integrated to derive \(g(y)\) and \(f(x, y)\). A similar method works for the second case. \\
+				The solution of the DE is
+				\[C = f(x, y)\]
+				Consider a first-order DE in differential form that is not exact; that is,
+				\[\pdv{M}{y} \ne \pdv{N}{x}\]
+				It can be made exact by multiplying by the integrating factor \(\mu(x)\), or \(\mu(y)\), found as
+				\[
+					\mu(x) = \en^{\int \frac{M_y - N_x}{N}\dd{x}} \qquad \text{and} \qquad
+					\mu(y) = \en^{\int \frac{N_x - M_y}{M}\dd{y}}
+				\]
+				It is not guaranteed that either will exist in terms of a single variable, so both must be tested.
+		\subsection{Substitutions}
+			A function \(f(x, y)\) is homogenous if
+				\[f(tx, ty) = t^\alpha f(x, y)\]
+				for some real number \(\alpha\), called the degree. A first-order DE in differential form
+				\[M(x, y)\dd{x} + N(x, y)\dd{y} = 0\]
+				is said to be homogenous if both \(M\) and \(N\) are homogenous. If both are homogenous, then it can be written that
+				\[\begin{array}{ccccc}
+					\begin{aligned}
+						M(x, y) &= x^\alpha M(1, u) \\
+						M(x, y) &= y^\alpha M(v, 1)
+					\end{aligned} & \text{and} &
+					\begin{aligned}
+						N(x, y) &= x^\alpha N(1, u) \\
+						N(x, y) &= y^\alpha M(v, 1)
+					\end{aligned} & \text{where} &
+					\begin{aligned}
+						u &= \frac{y}{x} \\
+						v &= \frac{x}{y}	
+					\end{aligned}
+				\end{array}\]
+			\textbf{Bernoulli's equation} is 
+				\[\dv{y}{x} + P(x)y = f(x)y^n\]
+				where \(n\) is a real number. The substitution \(u = y^{1 - n}\) reduces this equation to a linear equation.
+	\setcounter{section}{3}
+	\section{Higher-Order Differential Equations}
+		\subsection{Superposition}
+			A linear \(\supt{n}{th}\)-order DE of the form
+				\[a_n(x)\dv[n]{y}{x} + a_{n - 1}(x)\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0(x)y = 0\]
+				is said to be \textbf{homogenous} while one of the form
+				\[a_n(x)\dv[n]{y}{x} + a_{n - 1}(x)\dv[n - 1]{y}{x} + \cdots + a_1(x)\dv{y}{x} + a_0(x)y = g(x)\]
+				where \(g(x)\) is not identically 0 is said to be \textbf{nonhomogenous}. \\
+				The \textbf{associated homogenous equation} of a nonhomogenous DE is the nonhomogenous DE minus \(g(x)\). \\
+			\(D\) is a \textbf{differential operator} defined by
+				\[D^ny = \dv[n]{y}{x}\]
+				An \textbf{\(\bm{\supt{n}{th}}\)-order differential operator} or \textbf{polynomial operator \(\bm{L}\)} is defined as
+				\[L = a_n(x)D^n + a_{n - 1}(x)D^{n - 1} + \cdots + a_1(x)D + a_0(x)\]
+				It should be noted that \(D\) and \(L\) are \textbf{linear operators}; that is, 
+				\[L\{\alpha f(x) + \beta g(x)\} = \alpha L(f(x)) + \beta L(g(x))\]
+				A linear homogenous equation and a nonhomogenous equation can be written respectively as
+				\[
+					L(y) = 0 \qquad \text{and} \qquad
+					L(y) = g(x)
+				\]
+			The \textbf{superposition} of functions is a linear combination of them. If \(y_{i\cdots k}\) are solutions to \(L(y) = 0\), then, the general solution can be written as
+				\[y = c_1y_1(x) + c_2y_2(x) + \cdots + c_ky_k(x)\]
+				where the \(c_i\) are arbitrary constants.
+			A set of functions \(f_1(x), f_x(x), \ldots, f_n(x)\) is said to be \textbf{linearly dependent} on an interval \(I\) if there exist constants \(c_i\) (that are not all 0) such that
+				\[c_1f_1(x) + c_2f_2(x) + \cdots + c_nf_n(x) = 0\]
+				for every \(x\) in the interval. If a set of functions are not linearly dependent on an interval, they are \textbf{linearly independent}.
+			Let each of the functions \(f_1(x), f_2(x), \ldots, f_n(x)\) possess at least \(n - 1\) derivatives. The determinant
+				\[
+					W(f_1, f_2, \ldots, f_n) = \begin{vmatrix}f_1 & f_2 & \cdots & f_n \\ f_1' & f_2' & \cdots & f_n' \\ \vdots & \vdots && \vdots \\ f_1^{(n - 1)} & f_2^{(n - 1)} & \cdots & f_n^{(n - 1)}\end{vmatrix}
+				\]
+				is the \textbf{Wronskian} of the functions. \\
+			Let \(y_1, y_2, \ldots, y_n\) be \(n\) solutions of the homogenous linear \(n^{\th}\)-order DE \(L(y) = 0\) on interval \(I\). The set of solutions is \textbf{linearly independent} on \(I\) if an only if \(W(y_1, y_2, \ldots, y_n) \not\equiv 0\) for every \(x\) in the interval. \\
+			Any set of \(n\) linearly independent solutions of the homogenous linear \(n^{\th}\)-order linear DE \(L(y) = 0\) on an interval \(I\) is said to be a \textbf{fundamental set of solutions} on the interval. \\
+			The solution of a nonhomogenous DE is the sum of the \textbf{complementary solution \(\bm{y_c}\)}, the solution to the associated homogenous equation, and the \textbf{particular solution \(y_p\)} that is free of parameters; that is,
+				\[y = y_c + y_p\]
+		\subsection{Reduction of Order}
+			Consider the homogenous linear second-order DE
+				\[a_2(x)y''+ a_1(x)y' + a_0(x)y = 0\]
+				This can be put into standard form by dividing by \(a_2(x)\):
+				\[y'' + P(x)y' + Q(x)y = 0\]
+				Given a solution \(y_1\), a second solution \(y_2\) can be found as
+				\[\boxed{y_2 = y_1\int \frac{\en^{-\int P(x) \dd{x}}}{y_1^2}\dd{x}}\]
+		\subsection{Homogenous Equations with Constant Coefficients}
+			Consider the homogenous linear second-order DE
+				\[ay'' + by' + cy = 0\]
+				with constant coefficients \(a\), \(b\), and \(c\). Assume that the solution is of the form \(y = \en^{mx}\). Substituting this yields
+				\begin{align*}
+					0 &= am^2\en^{mx} + bm\en^{mx} + c\en^{mx} \\
+						&= (am^2 + bm + c)\en^{mx}
+				\end{align*}
+				\(\en^{mx}\) is never equal to 0, so
+				\[\boxed{am^2 + bm + c = 0}\]
+				This is the \textbf{auxiliary equation} of the DE. If the roots are two distinct real numbers \(m_1\) and \(m_2\), the solution is
+				\[y = C_1\en^{m_1x} + C_2\en^{m_2x}\]
+				If there is only a single real root \(m_1\),
+				\[y = \en^{m_1x}(C_1 + C_2m)\]
+				If there are 2 distinct imaginary roots \(m_2\) and \(m_2\),
+				\[y = C_1\cos(m_1 x) + C_2\cos(m_2 x)\]
+				This logic also applies to higher-order equations.
+		\subsection{Undetermined Coefficients}
+			\subsubsection{Superposition Approach}
+				The form of \(y_p\) for a nonhomogenous linear DE can be found from that of \(g(x)\):
+					\callout{17}{\paragraph{Trial Particular Solutions}
+						\[\def\arraystretch{1.3}\begin{array}{|c|c|}\hline
+							g(x) & \text{Form of } y_p \\\hline
+							k & A \\
+							ax^n + bx^{n - 1} + \cdots & Ax^n + Bx^{n - 1} + \cdots \\
+							\sin(\alpha x) & \multirow{2}*{\(A\cos(\alpha x) + B\sin(\alpha x)\)} \\
+							\cos(\alpha x) & \\
+							\en^{kx} & A\en^{kx} \\\hline
+						\end{array}\]
+						The form of \(y_p\) when \(g(x)\) is the product of two functions is that of one function with the second function's substituted in for the constants. If \(g(x) = (ax + b)\sin x\), for example, then \(y_p = (Ax + B)\cos x + (Cx + E)\sin x\). When \(g(x)\) is a sum, the form is simply the sum of the forms of the individual terms of \(g(x)\).
+					}
+					If one of the \(y_p\) contains terms that are duplicated in \(y_c\), those terms must be multiplied by \(x^n\), where \(n\) is the smallest positive integer that avoids duplication.
+			\subsubsection{Annihilator Approach}
+				An \textbf{annihilator operator} of \(f(x)\) is an operator that makes \(f(x)\) 0.
+					\[\begin{array}{|c|ccccc|}\hline
+						f(x) & k & x^m & x^m\en^{\alpha x} & x^m\en^{\alpha x}\cos(\beta a) & x^m\en^{\alpha x}\sin(\beta x) \\\hline
+						L & D & D^{m + 1} & (D - \alpha)^{m + 1} & \multicolumn{2}{c|}{\left[D^2 - 2\alpha D + \left(\alpha^2 + \beta^2\right)\right]^{m + 1}} \\\hline
+					\end{array}\]
+					Applying the annihilator operator for \(g(x)\) to both sides of a nonhomogenous DE yields the form of \(y_p\).
+		\subsection{Variation of Parameters}
+			Let \(y_1\) be a known solution of
+				\[\dv{y_1}{x} + P(x)y_1 = 0\]
+				It is clear that
+				\[y_1 = C\en^{-\int P(x)\dd{x}}\]
+				is the general solution.
+				\textbf{Variation of parameters} involves finding a solution of a corresponding nonhomogenous equation
+				\[\dv{y}{x} + P(x)y = g(x)\]
+				that is of the form
+				\[y_p = u_1(x)y_1(x)\]
+				replacing the \textit{parameter} \(C\) with a \textit{function} \(u_1\). this into the DE yields
+				\begin{align*}
+					f(x) &= \dv{x}[u_1y_1] + P(x)u_1y_1 \\
+						&= u_1\dv{y_1}{x} + y_1\dv{u_1}{x} + P(x)u_1y_1 \\
+						&= u_1\left[\dv{y_1}{x} + P(x)y_1\right] + y_1\dv{u_1}{x} \\
+						&= y_1\dv{u_1}{x}
+				\end{align*}
+				Separating variables yields
+				\[\dd{u_1} = \frac{f(x)}{y_1(x)}\dd{x}\]
+				Integrating,
+				\[u_1 = \int \frac{f(x)}{y_1(x)}\dd{x}\]
+				making the particular solution
+				\[y_p = y_1\int \frac{f(x)}{y_1(x)}\dd{x}\]
+			Consider the standard-form nonhomogenous linear second-order DE
+				\[y'' + P(x)y' + Q(x)y = f(x)\]
+				The complementary solution is
+				\[y_c = C_1y_1(x) + C_2y_2(x)\]
+				so the desired particular solution is of the form
+				\[y_p = u_1(x)y_1(x) + u_2(x)y_2(x)\]
+				Substituting this into the DE yields the system
+				\begin{align*}
+					y_1u_1' + y_2u_2' &= 0 &
+						y_1'u_1' + y_2'u_2' &= f(x)	
+				\end{align*}
+				the solution of which can be expressed in terms of the determinants
+				\begin{align*}
+					u_1' &= \frac{W_1}{W} = -\frac{y_2f(x)}{W} &
+						u_2' &= \frac{W_2}{W} = \frac{y_1f(x)}{W}	
+				\end{align*}
+				where \(W\) is the Wronskian of \(y_1\) and \(y_2\) and \(W_i\) is \(W\) with the \(\supt{i}{th}\) column replaced by 0's until the bottom-most element, which is \(f(x)\). \\
+				For an \(\supt{n}{th}\)-order linear nonhomogenous DE,
+					\[u_i' = \frac{W_i}{W}\]
+		\subsection{Cauchy-Euler Equations}
+			A \textbf{Cauchy-Euler equation} is of the form
+				\[a_nx^n\dv[n]{y}{x} + a_{n - 1}x^{n - 1}\dv[n - 1]{y}{x} + \cdots + a_1x\dv{y}{x} + a_0y = g(x)\]
+				Assume a solution \(y = x^m\). Each term becomes a polynomial in \(n\), as
+				\[
+					a_kx^k\dv[k]{y}{x} 
+						= a_kx^km(m - 1)(m - 2)\cdots(m - k + 1)x^{m - k} 
+						= a_km(m - 1)(m - 2)\cdots(m - k + 1)x^m
+				\]
+				Factoring the result of the substitution for a homogenous second-order Cauchy-Euler equation yeilds
+				\[
+					ax^2\dv[2]{y}{x} + bx\dv{y}{x} + cy
+						= am(m - 1)x^m + bmx^m + cx^m
+						= (am(m - 1) + bm + c)x^m
+				\]
+				The \textbf{auxiliary equation} is then
+				\[\boxed{
+					0 = am(m - 1) + bm + c = a^2 + (b - a)m + c
+				}\]
+				If this equation has distinct real roots \(m_1\) and \(m_2\), the solution is
+				\[y = C_1x^{m_1} + C_2x^{m_2}\]
+				If it has repeated real root \(m_1\), the solution is
+				\[y = C_1x^{m_1} + C_2x^{m_1}\ln x\]
+				If it has distinct imaginary roots \(m_1\) and \(m_2\), the solution is
+				\[y = x^\alpha[C_1\cos(\beta\ln x) + C_2\sin(\beta\ln x)]\]
+			The method of constant coefficients does not carry over to nonhomogenous DEs with variable coefficients \textit{in general}. Variation of parameters can instead be employed. \\
+			Any Cauchy-Euler equation can be rewritten as a linear DE with constant coefficient by means of the substitution \(x = e^t\). Once a general solution to the DE in terms of \(t\) is found, the substitution \(t = \ln x\) can be made to find the solution in terms of \(x\). \\
+			To solve a Cauchy-Euler equation for \(x < 0\), the substitution \(t = -x\) can be made. Using chain rule,
+				\[
+					\dv{y}{x} = \dv{y}{t}\dv{t}{x} = -\dv{y}{t} \qquad \text{and} \qquad
+					\dv[2]{y}{x} = \dv{t}\left(-\dv{y}{t}\right)\dv{t}{x} = \dv[2]{y}{t}
+				\]
+			A second-order DE of the form
+				\[a(x - x_0)^2\dv[2]{y}{x} + b(x - x_0)\dv{y}{x} + cy = 0\]
+				is also a Cauchy-Euler equation. This can be solved by seeking a solution of the form \(y = (x - x_0)^m\), using the substitutions
+				\[
+					\dv{y}{x} = m(x - x_0)^{m - 1} \qquad \text{and} \qquad
+						\dv[2]{y}{x} = m(m - 1)(x - x_0)^{m - 2}
+				\]
+				Alternatively, the DE can be reduces by the substitution \(t = x - x_0\) and solved normally before resubstituting.
+		\subsection{Green's Functions}
+			If \(y_1\) and \(y_2\) form a fundamental set of solutions to the homogenous form of
+				\[y'' + P(x)y' + Q(x)y = f(x)\]
+				variation of parameters shows that
+				\[y_p(x) = y_1(x)\int_{x_0}^x \frac{-y_2(t)f(t)}{W(t)}\dd{t} + y_2(x)\int_{x_0}^x \frac{y_1(t)f(t)}{W(t)}\dd{t}\]
+				for an IVP with conditions at \(x_0\). This can be rewritten as
+				\[\boxed{y_p(x) = \int_{x_0}^x G(x, t)f(t)\dd{t}}\]
+				where
+				\[\boxed{G(x, t) = \frac{y_1(t)y_2(x) - y_1(x)y_2(t)}{W(t)}}\]
+				is the \textbf{Green's function} of the IVP. \\
+			Consider the a second-order linear nonhomogenous BVP with conditions at \(a\) and \(b\). The coefficient functions can be found to be
+				\[
+					u_1(x) = -\int_b^x\frac{y(t)f(t)}{W(t)}\dd{t} \qquad \text{and} \qquad
+					u_2(x) = \int_a^x\frac{y_1(t)f(t)}{W(t)}\dd{t}
+				\]
+				This final solution can be compactly written as the single integral
+				\[\boxed{y_p(x) = \int_a^b G(x, t)f(t) \dd{t}}\]
+				where
+				\[\boxed{
+					G(x, t) = \begin{cases}
+						\dfrac{y_1(t)y_2(x)}{W(t)} & a \le t \le x \\
+						\dfrac{y_1(x)y_2(t)}{W(t)} & x \le t \le b
+					\end{cases}
+				}\]
+				is the \textbf{Green's function} of the BVP.
+		\subsection{Systems of Linear DEs}
+			
+\end{document}
+

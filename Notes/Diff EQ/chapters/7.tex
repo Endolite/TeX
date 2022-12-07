@@ -54,7 +54,7 @@
 				\]
 				is equivalent to showing that
 				\[\lim_{t\to\infty} \frac{t^n}{\en^{ct}}\]
-				is finite for \(n \in \Z+\). The result follows from \(n\) applications of L\^opital's rule.
+				is finite for \(n \in \Z+\). The result follows from \(n\) applications of L\^ohpital's rule.
 			\callout{17}{\paragraph{Theorem 7.1.2 Sufficient Conditions for Existence}
 				If \(f\) is piecewise continuous on \([0, \infty)\) and of exponential order, then \(\Ell\{f(t)\}\) exists for \(s > c\).
 			}
@@ -93,7 +93,7 @@
 						\Ell^{-1}\{F(s)\} & 1 & t^n & \en^{at} & \sin(kt) & \cos(kt) & \sinh(kt) & \cosh(kt) \\\hline
 					\end{array}\]
 				}
-			\subsubsectionb{\(\mathscrbf{L}\) is a Linear Transform}
+			\subsubsectionb{\(\mathscrbf{L}^{-1}\) is a Linear Transform}
 				The inverse Laplace transform is also linear; that is,
 					\[\Ell^{-1}\{\alpha F(s) + \beta G(s)\} = \alpha\Ell^{-1}\{F(s)\} + \beta\Ell^{-1}\{G(s)\}\]
 					for some constants \(\alpha\) and \(\beta\).
@@ -221,7 +221,7 @@
 							\end{cases}
 							= g(t)[\Uscr(t - a) - \Uscr(t - b)]
 					\]
-				\callout{17}{\paragraph{Theorem 7.3.2 Second Translation Theorem}	
+				\callout{15.65}{\paragraph{Theorem 7.3.2 Second Translation Theorem}	
 					If \(F(s) = \Ell\{f(t)\}\) and \(a > 0\), then
 						\[\Ell\{f(t - a)\Uscr(t - a)\} = \en^{-as}F(s)\]
 				}
@@ -244,5 +244,11 @@
 				When \(a > 0\),
 					\[\Ell^{-1}\{\en^{-as}F(s)\} = f(t - a)\Uscr(t - a)\]
 			\subsubsectionb{Alternative Form}
-				
+				Using the definition of \(\Uscr(t - a)\) and the substitution \(u = t - a\), the transform of the product of a function and a step function can be rewritten as
+					\[
+						\Ell\{g(t)\Uscr(t - a)\} = \int_a^\infty \en^{-st}g(t)\dd{t}
+							= \int_0^\infty \en^{-s(u + a)}g(u + a) \dd{u}
+					\]
+					That is,
+					\[\boxed{\Ell\{g(t)\Uscr(t - a)\} = \en^{-as}\Ell\{g(t + a)\}}\]
 \end{document}

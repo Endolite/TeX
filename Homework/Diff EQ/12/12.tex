@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+    	\usepackage{bm}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage[margin = 1 in]{geometry}
+	% Notation
+		\usepackage{amssymb}
+		\usepackage{esint}
+		\usepackage{mathrsfs}
+		\usepackage{physics}
+    	\usepackage{siunitx}
+% Macros
+	\newcommand{\Ell}{\mathscr{L}}
+	\newcommand{\en}{\text{e}}
+  	\newcommand{\subt}[2]{#1_{\text{#2}}}
+  	\newcommand{\Z}{\mathbb{Z}}
+% Configuration
+	\title{Discussion 12: Transform \(y\), \(y'\), \(y''\), \(y'''\), \(y''''\)}
+	\author{Arnav Patri}
+	
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item
+			By definition,
+				\[
+					\Ell\{y\} = \int_0^\infty \en^{-st}y\dd{t}
+						= Y(s)
+				\]
+		\item
+			\begin{align*}
+				\Ell\{y'\} &= \int_0^\infty \en^{-st}y'\dd{t} \tag{definition of \(\Ell\)} \\
+					&= \left[\en^{-st}y\right]_0^\infty + \int_0^\infty s\en^{-st}y\dd{t} \tag{integration by parts} \\
+					&= -y_0 + s\Ell\{y\} \tag{definition of \(\Ell\)} \\
+					&= sY(s) - y_0
+			\end{align*}
+		\item
+			\begin{align*}
+				\Ell\{y''\} &= \int_0^\infty \en^{-st}y'' \dd{t} \tag{definition of \(\Ell\)} \\
+					&= \left[\en^{-st}y'\right]_0^\infty + \int_0^\infty s\en^{-st}y' \dd{t} \tag{integration by parts} \\
+					&= -y'_0 + s\Ell\{y'\} \tag{definition of \(\Ell\)} \\
+					&= -y'_0 + s^2Y(s) - sy_0 \tag{substituting \(\Ell\{y'\}\)} \\
+					&= s^2Y(s) - sy_0 - y'_0
+			\end{align*}
+		\item
+			\begin{align*}
+				\Ell\{y'''\} &= \int_0^\infty \en^{-st}y'' \dd{t} \tag{definition of \(\Ell\)} \\
+					&= \left[\en^{-st}y''\right]_0^\infty + \int_0^\infty s\en^{-st}y'' \dd{t} \tag{integration by parts} \\
+					&= -y''_0 + s\Ell\{y''\} \tag{definition of \(\Ell\)} \\
+					&= -y''_0 + s^3Y(s) - s^2y_0 - sy'_0 \tag{substituting \(\Ell\{y''\}\)} \\
+					&= s^3Y(s) - s^2y_0 - sy'_0 - y''_0
+			\end{align*}
+		\item
+			\begin{align*}
+				\Ell\{y''''\} &= \int_0^\infty \en^{-st}y''' \dd{t} \tag{definition of \(\Ell\)} \\
+					&= \left[\en^{-st}y'''\right]_0^\infty + \int_0^\infty s\en^{-st}y''' \dd{t} \tag{integration by parts} \\
+					&= -y'''_0 + s\Ell\{y'''\} \tag{definition of \(\Ell\)} \\
+					&= -y'''_0 + s^4Y(s) - s^3y_0 - s^2y'_0 - sy''0\tag{substituting \(\Ell\{y'''\}\)} \\
+					&= s^4Y(s) - s^3y_0 - s^2y'_0 - sy''_0 - y'''_0
+			\end{align*}
+	\end{enumerate}
+\end{document}
