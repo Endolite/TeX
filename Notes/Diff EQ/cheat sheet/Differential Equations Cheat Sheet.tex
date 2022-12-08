@@ -8,7 +8,7 @@
 		\usepackage{csquotes}
 		\usepackage{fixltx2e}
 		\usepackage[hang,flushmargin]{footmisc}
-		\usepackage[margin=0.75in]{geometry}
+		\usepackage[margin=0.5in]{geometry}
 		\usepackage{hyperref}
 		\usepackage[utf8]{inputenc}
 		\usepackage{mathtools}
@@ -26,19 +26,7 @@
 		\usepackage{mathrsfs} % Laplace
 		\usepackage{physics} % Differentials/Vectors
 		\usepackage{siunitx} % Units
-% Configuration
-	\title{Differential Equations Cheat Sheet}
-	\author{Arnav Patri}
-	\hypersetup{
-	    colorlinks,
-	    citecolor=black,
-	    filecolor=black,
-	    linkcolor=black,
-	    urlcolor=black
-	}
-	\cellspacetoplimit10pt
-	\cellspacebottomlimit10pt
-	
+
 % Macros
 	% Notation
 		% Constants
@@ -64,6 +52,20 @@
 		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
 		\newcommand{\subt}[2]{#1_{\text{#2}}}
 		\newcommand{\supt}[2]{#1^{\text{#2}}}
+		
+% Configuration
+	\title{Differential Equations Cheat Sheet}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+	
 \begin{document}
 	\maketitle
 	\tableofcontents
@@ -364,6 +366,306 @@
 				}\]
 				is the \textbf{Green's function} of the BVP.
 		\subsection{Systems of Linear DEs}
-			
+			A DE can be written by rewriting in terms of differential operators:
+				\[
+					a_ny^{(n)} + a_{n - 1}y^{(n - 1)} + \cdots + a_1y' + a_0y = g(t)
+						= \left(a_nD^n + a_{n - 1}D^{n - 1} + \cdots + a_1D + a_0\right)y 
+				\]
+				A system of DEs can be solved via rewriting in terms of these differential operators and solving via elimination.
+		\subsection{Nonlinear DEs}
+			When the dependent variable is missing from a DE, the substitution \(u = y'\) can be made:
+				\[
+					0 = F(x, y', y'') 
+						= F(x, u, u')
+				\]
+				This equation can then be solved for \(u\) and the result integrated for \(y\). \\
+			When the independent variable is missing from a DE, the same substitution can be made:
+				\[
+					0 = F(y, y', y'')
+						= F\left(y, u, u\dv{u}{y}\right)
+				\]
+	\section{Modeling with Higher-Order Differential Equations}
+		\subsection{Springs}
+			Hooke's law states that the \textbf{spring force \(\bm{F_s}\)} (the force applied by a spring on a body towards equilibrium) is proportional to the displacement of the spring from equilibrium (the amount of elongation) \(s\). The constant of proportionality \(k\) is the \textbf{spring constant} and is a property of the spring.
+				\[F = -ks\]
+			Newton's second law states that force \(F\) is the product of the mass \(m\) and acceleration \(a\) of the body.
+				\[F = ma\]
+				The acceleration due to gravity is \(g \approx 9.8\) \(\mathrm{m/s^2}\), so the force due to gravity \(F_s\) or weight \(W\) is
+					\[F_g = W = mg\]
+				Acceleration is simply the second derivative of position, so
+				\[
+					m\dv[2]{x}{s} =
+						F_g - F_s
+						= mg - k(x + s)
+						= mg - kx - ks
+				\]
+				\textit{Note that gravity is in the positive direction, so down is positive and up is negative}. \\ 
+				If \(s\) is the spring's equilibrium position, the spring is not moving, which means that the \(F_s\) and \(F_g\) cancel, so \(mg = ks\):
+				\[m\dv[2]{x}{t} = -kx\]
+			\subsubsection{Free Undamped Motion}
+				Dividing by \(m\) yeilds the DE of \textbf{free undamped motion} or \textbf{simple harmonic motion}
+					\[\dv[2]{x}{t} + \omega^2x = 0\]
+					where \(\omega^2 = k/m\). The auxiliary equation is evidently
+					\[m^2 + \omega^2 = 0\]
+					This has two imaginary solutions \(m_{1,2} = \pm i\omega\), making the equation of motion
+					\[x(t) = C_1\cos(\omega t) + C_2\sin(\omega t)\]
+					The \textbf{period of motion \(\bm{T}\)} (in s) is
+					\[T = \frac{2\pi}{\omega}\]
+					and the \textbf{frequency \(\bm{f}\)} (in hz or \(\mathrm{s^{-1}}\)) is simply its reciprocal
+					\[
+						f = \frac{1}{T}
+							= \frac{\omega}{2\pi}
+					\]
+				\(\omega\) (in rad/s) is sometimes referred to as the \textbf{natural frequency} of the system. \\
+				The \textbf{amplitude of free vibrations \(\bm{A}\)} is
+					\[A = \sqrt{C_1^2 + C_2^2}\]
+					It is often convenient to rewrite the equation of motion as
+					\[x(t) = A\sin(\omega t + \varphi)\]
+					where \(\varphi\) is the \textbf{phase angle} defined by
+					\[
+						\left.\begin{aligned}
+							\sin\varphi &= \frac{C_1}{A} \\
+							\cos\varphi &= \frac{C_2}{A}
+						\end{aligned}\right\}
+						\tan\varphi = \frac{C_1}{C_2}
+					\]
+					A cosine function is sometimes preferred, making the solution
+					\[x(t) = A\cos(\omega t + \varphi)\]
+					where \(\varphi\) is defined by
+					\[
+						\left.\begin{aligned}
+							\sin\varphi &= \frac{C_2}{A} \\
+							\cos\varphi &= \frac{C_1}{A}
+						\end{aligned}\right\}
+						\tan\varphi = \frac{C_2}{C_1}
+					\]
+					In reality, it is reasonable to expect the spring constant to decay over time. One model for the \textbf{aging spring} replaces the spring constant \(k\) with the decreasing function
+					\[K(t) = k\en^{-\alpha t}\]
+					where \(k\) and \(\alpha\) are positive constants. The linear DE
+					\[mx'' + k\en^{-\alpha t}x = 0\]
+					cannot be solved with the methods discussed thus far. \\
+					When a spring/mass system is subject to a rapidly decreasing temperature, \(k\) may be replaced with \(K(t) = kt\) where \(k\) is a positive constant, a function that increases with time. The resulting model
+					\[mx'' + ktx = 0\]
+					is a form of \textbf{Airy's differential equation}.
+			\subsubsection{Free Damped Motion}
+				Damping forces are those that gradually decay the acceleration of the body. It is assumed that the damping force is a constant multiple of velocity. Adding this term to the second law formulation yields
+					\[m\dv[2]{x}{t} = -k - \beta\dv{x}{t}\]
+					where \(\beta\) is a positive \textbf{damping constant}. Dividing by \(m\) and rewriting yields
+					\[0 = \dv[2]{x}{t} + 2\lambda \dv{x}{t} + \omega^2 x\]
+					where \(\omega^2 = k/m\) and \(2\lambda = \beta/m\). The auxiliary equation is then
+					\[0 = m^2 + 2\lambda m + \omega^2\]
+					which has roots
+					\[m_{1, 2} = -\lambda \pm \sqrt{\lambda^2 - \omega^2}\]
+				If the discriminant is greater than 0 (\(\lambda > \omega\)), the situation is said to be \textbf{overdamped}, and the solution is
+					\[x(t) = \en^{-\lambda t}\left(C_1\en^{t\sqrt{\lambda^2 - \omega^2}} + C_2\en^{-t\sqrt{\lambda^2 - \omega^2}}\right)\]
+					If the discriminant is 0 (\(\lambda = \omega\)), the system is said to be \textbf{critically damped}, and the solution is
+					\[x(t) = \en^{-\lambda t}\left(C_1 + C_2t\right)\]
+					If the discriminant is less than 0 (\(\lambda < \omega)\), the system is said to be \textbf{underdamped}, and the solution is
+					\[x(t) = \en^{-\lambda t}\left(C_1\cos(t\sqrt{\omega^2 - \lambda^2}) + C_2\sin(t\sqrt{\omega^2 - \lambda^2})\right)\]
+				Any solution
+					\[x(t) = \en^{-\lambda t}\left(C_1\cos\left(t\sqrt{\omega^2 - \lambda^2}\right) + C_2\sin\left(t\sqrt{\omega^2 - \lambda^2}\right)\right)\]
+					can be rewritten as
+					\[x(t) = A\en^{-\lambda t}\sin\left(t\sqrt{\omega^2 - \lambda^2} + \varphi\right)\]
+					where
+					\[
+						A = \sqrt{C_1^2 + C_2^2} \qquad \text{and} \qquad
+						\tan\varphi = \frac{C_1}{C_2}
+					\]
+					\(A\en^{-\lambda t}\) is sometimes referred to as the \textbf{damped amplitude} of vibrations. \\
+				As the solution is not periodic, the number
+					\[\frac{2\pi}{\sqrt{\omega^2 - \lambda^2}}\]	
+					is called the \textbf{quasi period} and
+					\[\frac{\sqrt{\omega^2 - \lambda^2}}{2\pi}\]
+					the \textbf{quasi frequency}. \\
+					The quasi period is the interval between two successive maxima.
+		\subsection{Eigenvalues and Eigenfunctions}
+			Many problems require the solving of a 2-point BVP involving a linear DE containing a parameter \(\lambda\). \textit{Nontrivial (nonzero)} solutions are sought. \\
+			Consider the BVP
+				\[
+					y'' + \lambda y = 0, \quad
+					y(0) = 0, \quad
+					y(L) = 0
+				\]
+			For \(\lambda = 0\), the solution of \(y'' = 0\) is \(y = C_1x + C_2\). The conditions imply that \(C_1 = C_2 = 0\), so the only solution is the trivial solution \(y = 0\). The same applies to \(\lambda < 0\). \\
+			For \(\lambda > 0\), it is convenient to write \(\lambda = -\alpha^2\) (where \(\alpha \in \R^+\)). The roots of the auxiliary equation \(m^2 + \alpha^2 = 0\) are then \(m = \pm i\alpha\), so the general solution of
+				\[y'' + \alpha^2y = 0\]
+				is
+				\[y = C_1\cos(\alpha x) + C_2\sin(\alpha x)\]
+				\(y(0)\) again implies that \(C_1  0\) and the condition \(y(L) = 0\) or
+				\[C_2\sin(\alpha L) = 0\]
+				is satisfied by \(C_2 = 0\). This again yields the trivial solution \(y = 0\). If it is required that \(C_2 \ne 0\), though, then \(\sin(\alpha L) = 0\) is satisfied so long as \(\alpha L\) is an integer multiple of \(\pi\):
+				\[
+					\alpha L = n\pi \quad \text{or} \quad
+					\alpha = \frac{n\pi}{L} \quad \text{or} \quad
+					\lambda_n = \alpha_n^2 = \left(\frac{n\pi}{L}\right)^2, \quad
+					n \in \Z^+
+				\]
+				For any real nonzero \(C_2\),
+				\[y_n(x) = C_2\sin\left(\frac{n\pi x}{L}\right)\]
+				is a solution for \(n \in \Z^+\). As the DE is homogenous, any constant multiple of a solution is itself also a solution, so \(C_2\) can be set to 1. In other words, for each number in the sequence
+				\[\lambda_n = \frac{n^2\pi^2}{L^2} \quad \text{for} \quad n \in \Z^+\]
+				the corresponding function
+				\[y_n = \sin\left(\frac{n\pi}{L}\right)\]
+				is a nontrivial solution of the problem
+				\[
+					y'' + \lambda_ny = 0, \quad
+					y(0) = 0, \quad
+					y(L) = 0
+				\]
+				The numbers \(\lambda_n\) are known as \textbf{eigenvalues}. The nontrivial solutions are called \textbf{eigenfunctions}.
+	\section{Series Solutions of Linear Equations}
+		\subsection{Power Series}
+			A \textbf{power series centered at \(\bm{a}\)} is an infinite series of the form
+				\[\sum_{n = 0}^\infty c_n(x - a)^n\]
+			\subsubsection{Convergence}
+				A power series is \textbf{convergent} at a value of \(x\) if its sequence of partial sums \(\{\{S_N(x)\}\}\) converges; that is,
+					\[\lim_{N \to \infty}S_N(x) = \lim_{N \to \infty}\sum_{n = 0}^Nc_n(x - a)^n\]
+					must exist. If this limit does not exist, the series is said to be \textbf{divergent}. \\
+				 The \textbf{interval of convergence} is the set of \textit{all} real numbers \(x\) for which the series converges. Every power series has one. \\
+				 The radius \(R\) of the interval of convergence is the \textbf{radius of convergence}. If \(R > 0\), then a power series converges for \(|x - a| < R\) (equivalently \(a - R < x < a\)  and diverges for \(|x - a| > R\). If the series is only convergent at its center, \(R = 0\). If it converges for all \(x \in \R\), then \(R = \infty\). It may or may not converge at the endpoints of the interval. \\
+				 The power series \textbf{converges absolutely} within its interval of convergence (not inclusive), meaning that
+				 	\[\sum_{n = 0}^\infty\left|c_n(x - a)^n\right|\]
+				 	converges. \\
+				 The convergence of a power series can often be determined by the \textbf{ratio test}. If \(c_n \ne 0\) for all \(n \in \N\), let
+				 	\[
+				 		\lim_{n \to \infty}\left|\frac{c_{n + 1}(x - a)^{n + 1}}{c_n(x - a)^n}\right|
+				 			= |x - a|\lim_{n \to \infty}\left|\frac{c_{n + 1}}{c_n}\right|
+				 			= L
+					\]
+					If \(L < 1\), the series converges absolutely. If \(L > 1\), it diverges. If \(L = 1\), the test is inconclusive. This test is always inconclusive at the endpoints of the interval of convergence.
+			\subsubsection{A Power Series Defines a Function}
+				A power series defines a function
+						\[f(x) = \sum_{n = 0}^\infty c_n(x - a)^n\]
+						whose domain is the the series' interval of convergence. If the radius of convergence is \(R > 0\), the \(f\) is continuous, differentiable, and integrable on \(a \pm R\). If it is \(\infty\), \(f\) is continuous, differentiable, and integrable on \(\R\). \(f'(x)\) and \(\int f(x)\dd{x}\) can be found term-by-term via differentiation or integration. Convergence at the endpoints may be gained through integration or lost through differentiation. \\
+					If
+						\[y = \sum_{n = 0}^\infty c_nx^n\]
+						is a power series, then
+						\[
+							y' = \sum_{n = 0}^\infty c_nnx^{n - 1} \qquad \text{and} \qquad
+							y'' = \sum_{n = 0}^\infty c_nn(n - 1)x^{n - 2}
+						\]
+						It is then clear that the first term of \(y'\) and the first 2 of \(y''\) are 0. Omitting these, they become
+						\[
+							y' = \sum_{n = 1}^\infty c_nnx^{n - 1} \qquad \text{and} \qquad
+							y'' = \sum_{n = 2}^\infty c_nn(n - 1)x^{n - 2}
+						\]
+						Note in particular the changed lower bound of the summation in the derivatives.
+			\subsubsection{Properties}
+				The \textbf{identity property} states that if
+					\[\sum_{n = 0}^\infty c_n(x - a)^n = 0\]
+					and \(R > 0\), then \(c_n = 0\) for all \(n \in \N\). \\
+				A function \(f\) is said to be \textbf{analytic at a point} if it can be represented at that point with a power series with a radius of convergence that is either positive or infinite. \\
+				Power series may be combined through addition, multiplication, and division. \\
+				Two power series can be added by shifting the summation indices such that the degree of \(x\) is the same for both and then taking any terms out of one power series to make the lower bound the same.
+				\callout{17}{\paragraph{Common Maclaurin Series}
+					\[\def\arraystretch{2}\begin{array}{|c|c|c|}\hline
+						f(x) & \text{Maclaurin Series} & \text{Interval of Convergence} \\\hline
+						e^x & \displaystyle\sum_{n = 0}^\infty \frac{1}{n!}x^n & \R \\
+						\cos x & \displaystyle\sum_{n = 0}^\infty \frac{(-1)^n}{(2n)!}x^{2n} & \R \\
+						\sin x & \displaystyle\sum_{n = 0}^\infty \frac{(-1)^n}{(2n + 1)!}x^{2n + 1} & \R \\
+						\arctan x & \displaystyle\sum_{n = 0}^\infty \frac{(-1)^n}{2n + 1}x^{2n + 1} & [-1, 1] \\
+						\cosh x & \displaystyle\sum_{n = 0}^\infty \frac{1}{(2n)!}x^{2n} & \R \\
+						\sinh x & \displaystyle\sum_{n = 0}^\infty \frac{1}{(2n + 1)!}x^{2n + 1} & \R \\
+						\ln(1 + x) & \displaystyle\sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n}x^n & (-1, 1] \\
+						\displaystyle\frac{1}{1 - x} & \displaystyle\sum_{n = 0}^\infty x^n & (-1, 1) \\\hline
+					\end{array}\]
+				}
+		\subsection{Solutions}
+			A point \(x = x_0\) is said to be an \textbf{ordinary point} of the DE
+				\[a_2(x)y'' + a_1(x)y' + a_0(x)y = 0\]
+				if both \(P(x)\) and \(Q(x)\) are analytic at \(x_0\), where
+				\[y'' + P(x)y' + Q(x)y = 0\]
+				is the standard form of the DE. A point that is not an ordinary point of this DE is a \textbf{singular point} of it. \\
+			The coefficients functions considered are typically polynomials, making \(P(x)\) and \(Q(x)\) rational functions, which are analytic everywhere apart from where their denominators. It then follows that \textit{A number \(x = x_0\) is an ordinary point of the DE if \(a_2(x_0) \ne 0\). Otherwise it is a singular point.}
+			\subsubsection{About Ordinary Points}
+				If \(x = x_0\) is an ordinary point of
+					\[a_2(x)y'' + a_1(x)y' + a_0(x)y = 0\]
+					then 2 linearly independent solutions of the form
+					\[y = \sum_{n = 0}^\infty c_n(x - x_0)^n\]
+					can always be found. \\
+				A power series solution converges on at least some interval defined by \(|x - x_0| < R\), where \(R\) is the distance between \(x_0\) and the closest singular point, called the \textit{minimum value} or \textit{lower bound} of the radius of convergence. \\
+				A solution of the above form is a \textbf{solution about the ordinary point \(\bm{x_0}\)}. \\
+				The power series solution about the ordinary point \(x = 0\)
+				\[\boxed{y = \sum_{n = 0}^\infty c_nx^n} \]
+				and its first 2 derivatives are
+				\[\boxed{
+					y' = \sum_{n = 1}^\infty nc_nx^{n - 1} \qquad \text{and} \qquad
+					y'' = \sum_{n = 2}^\infty n(n - 1)c_nx^{n - 2}
+				}\]
+				Substituting these into the DE and rewriting in terms of a single power series enables a recurrence relation to be found for \(c_n\). Letting the initial coefficients be 1 allows for a non-recursive equation for \(c_n\) to be found.
+			\subsubsection{About Singular Points}
+				A singular point \(x = x_0\) is said to be a \textbf{regular point} of
+					\[a_2(x)y'' + a_1(x)y' + a_0(x)y = 0\]
+					if 
+					\[
+						p(x) = (x - x_0)P(x) \qquad \text{and} \qquad
+						q(x) = (x - x_0)^2Q(x)
+					\]
+					where
+					\[
+						P(x) = \frac{a_1(x)}{a_2(x)} \qquad \text{and} \qquad
+						Q(x) = \frac{a_0(x)}{a_2(x)}
+					\]
+					are both analytic at \(x_0\). One that is not regular is \textbf{irregular}. \\
+					\textit{If \(x - x_0\) appears at most to the \(\supt{1}{st}\) power in the denominator of \(P(x)\) and at most to the \(\supt{2}{nd}\) power in that of \(Q(x)\), then \(x = x_0\) is a regular singular point.}
+				\callout{17}{\paragraph{Frobenius' Theorem}
+				If \(x = x_0\) is a regular singular point of a second-order homogenous linear DE, then there exists \textit{at least} one solution of the form
+					\[
+						y = (x - x_0)^r\sum_{n = 0}^\infty c_n(x - x_0)^n
+							= \sum_{n = 0}^\infty c_n(x - x_0)^{n + r}
+					\]
+					where \(r\) is a constant. The series converges at least on some interval \(0 < x - x_0 < R\).
+				}
+				The \textbf{method of Frobenius} involves substituting
+					\[y = \sum_{n = 0}^\infty c_n(x - x_0)^{n + r}\]
+					into the DE to derive a recurrence relation for \(c_n\). Before determining the coefficient, though, \(r\) must be determined. \\
+				The \textbf{indicial equation} is found by substituting the power series solution into the DE and simplifying, yielding a quadratic equation in \(r\) that results from equating the \textit{total coefficient of the lowest power of \(x\) to 0}. Solving for the values of \(r\) and substituting these into the a recurrence relation allows at least one solution of the assumed form to be found. If \(r \notin \N\), then the corresonding solution is not a power series.\\
+				The general indicial equation for
+					\[a_2(x)y'' + a_1(x)y' + a_0(x)y = 0\]
+					can be found to be
+					\[\boxed{0 = r(r - 1) + a_0r + b_0}\]
+					where \(a_0\) and \(b_0\) are the first (the constant) terms of the power series of \(p(x)\) and \(q(x)\) respectively. \\
+				If the roots of the indicial equation are 2 distinct real numbers \(r_1\) and \(r_2\) with \(r_1 > r_2\) and \(r_1 - r_2 \notin \Z^+\), then there exist 2 linearly independent solutions of the forms
+					\[
+						y_1(x) = \sum_{n = 0}^\infty c_nx^{n + r_1}, \quad c_0 \ne 0 \qquad \text{and} \qquad 
+						y_2(x) = \sum_{n = 0}^\infty b_nx^{n + r_2}, \quad b_0 \ne 0
+					\]
+					If the roots are distinct real numbers \(r_1\) and \(r_2\) with \(r_1 > r_2\) and \(r_1 - r_2 \in \Z\), there exist 2 linearly independent solutions of the forms
+					\[
+						y_1(x) = \sum_{n = 0}^\infty c_nx^{n + r_1}, \quad c_0 \ne 0 \qquad \text{and} \qquad
+						y_2(x) = Cy_1(x)\ln x + \sum_{n = 0}^\infty b_nx^{n + r_2}, \quad b_0 \ne 0
+					\]
+					where \(C\) is a (potentially 0) constant. \\
+					If the only a single root \(r_1\) exists, there always exist 2 linearly independent solutions of the forms
+					\[
+						y_1(x) = \sum_{n = 0}^\infty c_nx^{n + r_1}, \quad c_0 \ne 0 \qquad \text{and} \qquad
+						y_2(x) = y_1(x)\ln x + \sum_{n = 1}^\infty b_nx^{n + r_1}
+					\]
+				When \(r _1 - r_2 \in \Z^+\) (the second case described above), there \textit{may} be 2 solutions of the form
+					\[y = \sum_{n = 0}^\infty c_nx^{n + r}\]
+					This is cannot be known in advance, instead being determined after finding the indicial roots and examining the recurrence relation that defines the coefficients \(c_n\). It is possible that \(C = 0\); that is,
+					\[
+						y_1(x) = \sum_{n = 0}^\infty c_nx^{n + r_1} \qquad \text{and} \qquad
+						y_2(x) = \sum_{n = 0}^\infty b_nx^{n + r_2}
+					\]
+					When only a single solution exists (the third case described above), the method of Frobenius fails to provide a second series solution; the second solution always contains a logarithm. A second solution with the logarithmic term can be obtained by using the fact that
+					\[y_2(x) = y_1(x) \int\frac{\en^{-\int P(x)\dd{x}}}{y_1^2(x)}\dd{x}\]
+					is also a solution of the DE when \(y_1(x)\) is a known solution.
+	\section{The Laplace Transform}
+		An \textbf{integral transform} is defined as
+			\[\int_0^\infty K(s, t)f(t) \dd{t} = \lim_{b \to \infty}\int_0^b K(s, t)f(t) \dd{t}\]
+			where \(K(s, t)\) is called the \textbf{Kernel} of the transform. The kernel of the \textbf{Laplace transform \(\mathscrbf{L}\)} is \(K(s, t) = \en^{-st}\), making it
+				\[\Ell\{f(t)\} = \int_0^\infty \en^{-st}\dd{t} = F(s)\]
+		\subsection{Properties}
+			The Laplace transform is \textbf{linear}, meaning that
+				\[\Ell\{\alpha f(x) + \beta g(x)\} = \alpha F(x) + \beta G(x)\]
+				where \(\alpha\) and \(\beta\) are constants.
+			\callout{14}{\paragraph{Transforms of Some Basic Functions}
+				\[\def\arraystretch{3}\begin{array}{|c|*{7}{c}|}\hline
+					f(t) & 1 & t^n & \en^{\alpha t} & \sin(kt) & \cos(kt) & \sinh(kt) & \cosh(kt) \\\hline
+					\Ell\{f(t)\} & \dfrac{1}{s} & \dfrac{n!}{s^{n + 1}}, n \in \Z^+ & \dfrac{1}{s - a} & \dfrac{k}{s^2 + n^2} & \dfrac{s}{s^2 + k^2} & \dfrac{k}{s^2 - k^2} & \dfrac{s}{s^2 - k^2} \\\hline
+				\end{array}\]
+			}
+			A function's Laplace transform exists if if is \textbf{piecewise continuous} on \([0, \infty)\) (
 \end{document}
 
