@@ -1,0 +1,259 @@
+\documentclass[12pt, A4]{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage{fixltx2e}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.5in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+		\usepackage{mathtools}
+		\usepackage{multirow}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+			\usepackage{circuitikz} % Circuits
+			\usepackage{tikz-3dplot} % 3D
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Notation
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{chemformula} % Chemical Formulas
+		\usepackage{esint} % Integrals
+		\usepackage{mathrsfs} % Laplace
+		\usepackage{physics} % Differentials/Vectors
+		\usepackage{siunitx} % Units
+
+% Macros
+	% Notation
+		% Constants
+			\newcommand{\en}{\text{e}}
+		% Functions
+			\DeclareMathOperator{\erfc}{erfc}
+			\DeclareMathOperator{\Uscr}{\mathscr{U}}
+		% Sets
+			\newcommand{\N}{\mathbb{N}}
+			\newcommand{\R}{\mathbb{R}}
+			\newcommand{\Z}{\mathbb{Z}}
+		% Transforms
+			\DeclareMathOperator{\Ell}{\mathscr{L}}
+			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
+		% Other
+			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+			\renewcommand{\th}{\text{th}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\comment}[1]{}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
+		\newcommand{\subt}[2]{#1_{\text{#2}}}
+		\newcommand{\supt}[2]{#1^{\text{#2}}}
+		
+% Configuration
+	\title{Differential Equations Practice Final}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+
+\begin{document}
+	\maketitle
+	\begin{enumerate}[Q1]
+		\item	
+			\begin{enumerate}[1.]
+				\item
+					\[xy'' + x^2y' + y = 0\]
+				\item
+					\[xy'' + x^2y' + y = x\]
+				\item
+					\[y'' = y\]
+				\item
+					\[y'' = e^x\]
+				\item
+					\[y'' - y = 0, \quad y_1 = e^x\]
+				\item
+					\[xy' - y = \sin(x)\]
+				\item
+					\[(y'')^2 + y' = 0\]
+				\item
+					\begin{align*}
+						\dv{x}{t} &= x + y &
+								\dv{y}{t} &= x - y	
+					\end{align*}
+				\item
+					\[y = \en^{x}(C_1 + C_2x + C_3x^2)\]
+				\item
+					\[y = \en^{x}(C_1 + C_2x + C_3x^2 + C_4x^3) + \sin(x)\]
+			\end{enumerate}
+		\item
+			\begin{enumerate}[1.]
+				\item
+					\begin{align*}
+						\dd{y} &= xy\dd{x} \\
+						\frac{\dd{y}}{y} &= x\dd{x} \\
+						\ln|y| &= \frac{x^2}{2} + C \\
+						y &= \en^{x^2/2 + C}
+								= C_1\en^{x^2/2}	
+					\end{align*}
+				\comment{
+					\item
+						\begin{align*}
+							xy' - y &= \frac{1}{x} \\
+							y' - \frac{y}{x} &= \frac{1}{x^2} \\
+							P(x) &= -\frac{1}{x} \\
+							\int P(x) \dd{x} &= -\ln x \\
+							\mu(x) &= \en^{\int P(x) \dd{x}}
+									= \en^{-\ln x} = \frac{1}{x} \\
+								f(x)\mu(x) &= \frac{1}{x^2} \times \frac{1}{x} 
+										= \frac{1}{x^3} \\
+							\dv{x}\left[\frac{y}{x}\right] &= \frac{1}{x^3} \\
+							\frac{y}{x} &= \int \frac{1}{x^3} \dd{x} 
+									= -\frac{1}{2x^2} + C \\
+							y &= -\frac{1}{2x} + Cx
+						\end{align*}
+				}
+				\item (and 3.)
+					\begin{align*}
+						0 &= xy\dd{x} - \dd{y} \\
+						M(x, y) &= xy &
+							N(x, y) &= -1 \\
+						M_y &= x &
+							N_x &= 0 \\
+						\int \frac{N_x - M_y}{M} \dd{y}
+							&= -\int \frac{x}{xy} \dd{y}
+								= -\int \frac{1}{y} \dd{y}
+								= -\ln y \\
+						\mu(y) &= \en^{-\ln y}
+								= \frac{1}{y} \\
+						0 &= x\dd{x} - \frac{\dd{y}}{y} \\
+						M(x, y) &= x &
+							N(x, y) &= -\frac{1}{y} \\
+						M_y &= 0 &
+							N_x &= 0 = M_y \\
+						f(x, y) &= \int x \dd{x}
+								= \frac{x^2}{2} + g(y) \\
+						f'(x, y) = g'(y) &= -\frac{1}{y} \\
+						g(y) &= -\int \frac{1}{y} \dd{y} 
+								= -\ln y \\
+						f(x, y) = 0 &= \frac{x^2}{2} - \ln y + C \\
+						y &= \en^{x^2/2 + C}
+							= C_1\en^{x^2/2}
+					\end{align*}
+				\setcounter{enumii}{3}
+				\item
+					\begin{align*}
+						0 &= xy\dd{x} - \dd{y} \\
+						M(x, y) &= xy &
+							N(x, y) &= -1 \\
+							M(tx, ty) &= t^2xy
+									= t^2M(x, y) &
+								N(tx, ty) &= -1
+									= t^0N(x, y)
+					\end{align*}
+					As \(M\) and \(N\) are homogenous functions of different degrees, this problem cannot be solved via substitution. If \(N = x^2\),
+					\begin{align*}
+						0 &= xy\dd{x} + x^2\dd{y} \\
+						M(x, y) &= xy &
+							N(x, y) &= x^2 \\
+							M(tx, ty) &= t^2xy
+									= t^2M(x, y) &
+								N(tx, ty) &= t^2x^2
+									= t^2N(x, y) \\
+						u &= \frac{y}{x} \\
+						M(x, y) &= x^2M(1, u)
+								= x^2u &
+							N(x, y) &= x^2N(1, u)
+								= x^2 \\
+						\dd{u} &= \dv{y}{x} \\
+						\dd{y} &= u\dd{x} + x\dd{u} \\
+						0 &= x^2u\dd{x} + x^2(u\dd{x} + x\dd{u}) \\
+							&= 2x^2u\dd{x} + x^3\dd{u} \\
+						\frac{\dd{u}}{u} &= -\frac{2\dd{x}}{x} \\
+						\ln u &= -2\ln x + C \\
+						u &= \en^{-2\ln x + C}
+							= \frac{\en^{C}}{x^2} \\
+						y &= \frac{C_1}{x}
+					\end{align*}
+			\end{enumerate}
+		\item
+			\begin{enumerate}[1.]
+				\item (and 3.)
+					\begin{align*}
+						\sin(3x) &= y'' + 9y, \quad y(0) = 0, \quad y'(0) = \en \\
+						0 &= m^2 + 9 \\
+						m &= \pm 3i \\
+						y_1 &= \cos(3x) \qquad
+								y_2 = \sin(3x) \\
+						W(y_1, y_2) &= \begin{vmatrix}
+								\cos(3x) & \sin(3x) \\
+								-3\sin(3x) & 3\cos(3x)
+							\end{vmatrix}
+								= 3\cos^2(3x) + 3\sin^2(3x)
+								= 1 \\
+						G(x, t) &= \frac{\cos(3t)\sin(3x) - \cos(3x)\sin(3t)}{1}
+							= \cos(3t)\sin(3x) - \cos(3x)\sin(3t) \\
+						G(x, t)f(t) &= \cos(3t)\sin(3t)\sin(3x) - \cos(3x)\sin^2(3t) \\
+						\int_0^x G(x, t)f(t) \dd{t}&= \sin(3x)\int_0^x \cos(3t)\sin(3t)\dd{t} - \cos(3x)\int_0^x \sin^2(3t) \dd{t} \\
+							&= \sin(3x)\int_0^x \frac{\sin(6t)}{2} \dd{t} - \cos(3x)\int_0^x \frac{1 - \cos(6t)}{2} \dd{t} \\
+							&= \sin(3x)\left[-\frac{\cos(6t)}{12}\right]_0^x - \cos(3x)\left[\frac{x}{2} - \frac{\sin(6t)}{12}\right]_0^x \\
+							&= -\sin(3x)\left[\frac{1 - \cos(6x)}{12}\right] - \cos(3x)\left[\frac{1}{2} - 0 - \frac{x}{2} + \frac{\sin(6x)}{12}\right] \\
+							&= \frac{-\sin(3x)(1 - \cos(6x)) - \cos(3x)(6 - 6x + \sin(6x))}{12} \\
+							&= -\frac{\sin(3x)(2\sin^2(3x)) + \cos(3x)(6 - 6x + 2\sin(3x)\cos(3x))}{12} \\
+							&= -\frac{\sin^3(3x) + \cos(3x)(6 - 3x + \sin(3x)\cos(3x))}{6} \\
+						0 &= C_1\cos(0) + C_2\sin(0) 
+								= C_1 \\
+						\en &= C_2\cos(0)
+								= C_2 \\
+						y &= \en\sin(3x) -\frac{\sin(3x)(2\sin^2(3x)) + \cos(3x)(6 - 6x + 2\sin(3x)\cos(3x))}{12}
+					\end{align*}
+				\item (and 4.)
+			\end{enumerate}
+		\item
+			\begin{enumerate}[(a)]
+				\item
+					\begin{align*}
+						W &= 4 \,\mathrm{lb}, \quad
+								k = 2 \,\mathrm{\frac{lb}{ft}}, \quad
+								\beta = 1, \quad
+								x_0 = -1 \,\mathrm{ft}, \quad
+								v_0 = 8 \,\mathrm{\frac{ft}{s}} \\
+						m &= \frac{W}{g}
+								= \frac{1}{8}, \quad
+								\omega^2 = \frac{k}{m}
+									= 16, \quad
+								2\lambda = \frac{\beta}{m}
+										= 8 \\
+						0 &= \dv[2]{x}{t} + 8\dv{x}{t} + 16x \\
+						0 &= m^2 + 8m + 16
+								= (m + 4)^2 \\
+							m &= -4 \\
+						x &= \en^{-4t}(C_1 + C_2t) \\
+						-1 &= C_1 \\
+						v &= \en^{-4t}(C_2 - 4(C_1 + C_2t))
+								= \en^{-4t}(C_2 - 4C_1 - 4C_2t) \\
+						8 &= C_2 + 4 \\
+						C_2 &= 4 \\
+						x &= \en^{-4t}(4t - 1) \\
+						v &= \en^{-4t}(4 + 4 - 16t)
+								= \en^{-4t}(8 - 16t) \\
+						0 &= \en^{-4t}(8 - 16t)
+								= 8 - 16t \\
+						t &= 0.5 \,\mathrm{s} \\
+						\subt{x}{max} &= \en^{-2}
+					\end{align*}
+				\item
+			\end{enumerate}
+	\end{enumerate}
+	
+\end{document}

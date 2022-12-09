@@ -55,7 +55,8 @@
 		
 % Configuration
 	\title{Differential Equations Cheat Sheet}
-	\author{Arnav Patri}
+	\author{Arnav Patri and Shashank Chidige}
+	\date{}
 	\hypersetup{
 	    colorlinks,
 	    citecolor=black,
@@ -69,6 +70,41 @@
 \begin{document}
 	\maketitle
 	\tableofcontents
+	\setcounter{section}{-1}
+	\section{Preliminary Information}
+		\begin{align*}
+			\sinh x &= \frac{\en^x - \en^{-x}}{2} &
+				\cosh x &= \frac{\en^x + \en^{-x}}{2} \\
+			\sinh(-x) &= -\sinh(x) &
+				\cosh(-x) &= \cosh(x) \\
+			\cosh^2x - \sinh^2x &= 1 &
+				2 - \tanh^2x &= \sech^x \\
+			1 - \coth^2x &= -\csch^2 &
+				\sinh(u + v) &= \sinh u \cosh v + \cosh x \sinh v \\
+			\cosh(u + v) &= \cosh u \cosh v + \sinh u \sinh v
+		\end{align*}
+		\begin{verbatim}
+			syms y(x)
+			ode = diff(y, x, 2) - y == exp(3x)
+			ySol(x) = dsolve(ode)
+		\end{verbatim}
+		\texttt{diff(y, x, n)} is the \(\supt{n}{th}\) derivative of \(y\) with respect to \(x\).
+		\[\begin{array}{|c|*{5}{c}|}\hline
+			f(x) & \ln x & \tan x & \cot x & \sec x & \csc x \\\hline
+			\int f(x) \dd{x} & x(\ln x - 1) & \ln|\sec x| & \ln|\sin x| & \ln|\tan x + \sec x| & -\ln|\csc x - \cot x| \\\hline
+		\end{array}\]
+		\[\begin{array}{|c|*{6}{c}|}\hline
+			f(x) & \sinh x & \cosh x & \tanh x & \sech x & \csch x & \coth x \\\hline
+			f'(x) & \cosh x & \sinh x & \sech^2 x & -\sech x\tanh x & -\csch x \coth x & -\csch^2 x \\\hline
+			\int f(x) \dd{x} &\cosh x & \sinh x & \ln(\cosh x) & \arctan(\sinh x) & -\ln|\csch x - \coth x| & \ln(\sinh|x|) \\\hline
+		\end{array}\]
+		\[\def\arraystretch{2}\begin{array}{|c|*{6}{c}|}\hline
+			f(x) & \arcsin x & -\arccos x & \arctan x & -\arccot x & \arcsec x & -\arccsc x \\\hline
+			f'(x) & \multicolumn{2}{c}{\dfrac{1}{\sqrt{1 - x^2}}} & \multicolumn{2}{c}{\dfrac{1}{1 + x^2}} & \multicolumn{2}{c|}{\dfrac{1}{|x|\sqrt{x^2 - 1}}} \\\hline
+		\end{array}\]
+
+
+
 	\section{Introduction to Differential Equations}
 		A \textbf{differential equation (DE)} is a function relating one or more unknown functions (dependent variables) to one or more independent variables. \\
 		A differential equation with a \textit{single} independent variable is said to be an \textbf{ordinary differential equation (ODE)}. One with \textit{more than one} is said to be a \textbf{partial differential equation (PDE)}. \\
@@ -120,7 +156,7 @@
 							\[\mu(x) = \en^{\int P(x) \dd{x}}\]
 					\item
 						Multiply by \(\mu(x)\) on both sides, yielding 
-						\[\dv{x}\left[\en^{\int P(x) \dd{x}}\right] = \en^{\int P(x)\dd{x}}f(x)\]
+						\[\dv{x}\left[y\en^{\int P(x) \dd{x}}\right] = \en^{\int P(x)\dd{x}}f(x)\]
 					\item
 						Integrate on both sides and solve for \(y\)
 				\end{enumerate}
@@ -159,7 +195,7 @@
 				\[f(tx, ty) = t^\alpha f(x, y)\]
 				for some real number \(\alpha\), called the degree. A first-order DE in differential form
 				\[M(x, y)\dd{x} + N(x, y)\dd{y} = 0\]
-				is said to be homogenous if both \(M\) and \(N\) are homogenous. If both are homogenous, then it can be written that
+				is said to be homogenous if both \(M\) and \(N\) are homogenous and of the same degre. If both are homogenous, then it can be written that
 				\[\begin{array}{ccccc}
 					\begin{aligned}
 						M(x, y) &= x^\alpha M(1, u) \\
@@ -174,6 +210,12 @@
 						v &= \frac{x}{y}	
 					\end{aligned}
 				\end{array}\]
+				Product rule can be used to solve for the differential that now lacks a variable. \\
+				\begin{align*}
+					\dd{y} &= x\dd{u} + u\dd{x} &
+						\dd{x} &= y\dd{u} + u\dd{y}	
+				\end{align*}
+				Substituting this and \(M\) and \(N\) in terms of the new variable back into the equation makes it separable, allowing it to be solved. \\
 			\textbf{Bernoulli's equation} is 
 				\[\dv{y}{x} + P(x)y = f(x)y^n\]
 				where \(n\) is a real number. The substitution \(u = y^{1 - n}\) reduces this equation to a linear equation.
@@ -350,6 +392,12 @@
 				where
 				\[\boxed{G(x, t) = \frac{y_1(t)y_2(x) - y_1(x)y_2(t)}{W(t)}}\]
 				is the \textbf{Green's function} of the IVP. \\
+				The solution to the IVP
+					\[y'' + P(x)y' + Q(x)y = f(x), \quad y(x_0) = y_0, y'(x_0) = y_1\]
+					is
+					\[y = y_h + y_p\]
+					where \(y_p\) is as defined above and \(y(h)\) is the solution of
+					\[y'' + P(x)y' + Q(x)y = 0, \quad y(x_0) = y_0, y'(x_0) = y_1\]
 			Consider the a second-order linear nonhomogenous BVP with conditions at \(a\) and \(b\). The coefficient functions can be found to be
 				\[
 					u_1(x) = -\int_b^x\frac{y(t)f(t)}{W(t)}\dd{t} \qquad \text{and} \qquad
@@ -666,6 +714,136 @@
 					\Ell\{f(t)\} & \dfrac{1}{s} & \dfrac{n!}{s^{n + 1}}, n \in \Z^+ & \dfrac{1}{s - a} & \dfrac{k}{s^2 + n^2} & \dfrac{s}{s^2 + k^2} & \dfrac{k}{s^2 - k^2} & \dfrac{s}{s^2 - k^2} \\\hline
 				\end{array}\]
 			}
-			A function's Laplace transform exists if if is \textbf{piecewise continuous} on \([0, \infty)\) (
+		\subsection{Invers Transforms}
+			If \(F(s) = \Ell\{f(t)\}\), \(f(t)\) is the \textbf{inverse Laplace transform} of \(F(s)\), denoted
+				\[f(t) = \Ell^{-1}\{F(s)\}\]
+			\callout{14}{\paragraph{Some Inverse Transforms}
+				\[\def\arraystretch{3}\begin{array}{|c|*{7}{c}|}\hline
+					F(s) & \dfrac{1}{s} & \dfrac{n!}{s^{n + 1}}, n \in \N & \dfrac{1}{s - a} & \dfrac{k}{s^2 + k^2} & \dfrac{s}{s^2 + k^2} & \dfrac{k}{s^2 - k^2} & \dfrac{s}{s^2 - k^2} \\\hline
+					\Ell^{-1}\{F(s)\} & 1 & t^n & \en^{at} & \sin(kt) & \cos(kt) & \sinh(kt) & \cosh(kt) \\\hline
+				\end{array}\]
+			}
+			Just like \(\Ell\), \(\Ell^{-1}\) is a linear transform. \\
+			Decomposing a fraction into its partial fractions often aids in evaluating inverse transforms. \\
+		\subsection{Derivative Transforms}
+			If \(f'\) is continuous, integration by parts gives
+				\[
+					\Ell\{f'(t)\} = \int_0^\infty \en^{-st}f'(t)\dd{t}
+						= \left[\en^{-st}f(t)\right]_0^\infty + s\int_0^\infty \en^{-st}f(t)
+						= -f(0) + s\Ell\{f(t)\}
+				\]
+				or
+				\[\Ell\{f'(t)\} = sF(s) - f(0)\]
+				A similar process holds for higher-order derivatives.
+			\callout{17}{\paragraph{Theorem 7.2.2 Transform of a Derivative}
+				If \(f, f', \ldots, f^{(n - 1)}\) are continuous on \([0, \infty\) and of exponential order and if \(f^{(n)}(t)\) is piecewise continuous on \([0, \infty)\), then
+					\[
+						\Ell\left\{f^{(n)}\right\} = s^nF(s) - s^{n - 1}f(0) - s^{n - 2}f'(0) - \cdots - f^{(n - 1)}(0)
+							= s^nF(s) - \sum_{i = 1}^n s^{n - i}f^{(i - 1)}(0)
+					\]
+					where \(F(s) = \Ell\{f(t)\}\).
+			}
+			The Laplace transform can be applied to both sides of a differential equation.
+			\callout{9.03}{
+				\textit{The Laplace transform of a linear DE with constant coefficients becomes an algebraic equation in \(Y(s)\).}
+			}
+			\callout{17}{\paragraph{Steps in solving an IVP by the Laplace transform}
+				\[\begin{tikzpicture}
+					\node at (-5, 1) [draw, align = center, text width = 4cm] {Find unknown \(y(t)\) that satisfies DE and initial conditions};
+						\draw[->] (-2.86, 1) -- (-1.5, 1);
+					\node at (0, 1) [align = center, text width = 4cm] {Apply Laplace transform \(\Ell\)};
+						\draw[->] (1.5, 1) -- (2.8, 1);
+					\node at (5, 1) [draw, align = center, text width = 4cm] {Transformed DE becomes an algebraic equation in \(Y(s)\)};
+						\draw[->] (5, 0.15) -- (5, -1.3);
+					\node at (5, -2) [draw, align = center, text width = 4cm] {Solve transformed equation for \(Y(s)\)};
+						\draw[->] (2.86, -2) -- (2.1, -2);
+					\node at (0, -2) [align = center, text width = 4cm] {Apply inverse Laplace transform \(\Ell^{-1}\)};
+						\draw[->] (-2.1, -2) -- (-2.8, -2);
+					\node at (-5, -2) [draw, align = center, text width = 4cm] {Solution \(y(t)\) of original IVP};
+						\draw[->] (-5, -1.41) -- (-5, 0.15);
+				\end{tikzpicture}\]
+			}
+		\subsection{Operational Properties}
+			\callout{13.88}{\paragraph{Translation on the \(\bm{s}\)-axis}
+					If \(\Ell\{f(t)\} = F(s)\) and \(a\) is a real number, then
+						\[\Ell\{\en^{at}f(t)\} = F(s - a)\]
+				}
+			For emphasis, it is sometimes useful to use the notation
+				\[\Ell\{\en^{at}f(t)\} = \Ell\{f(t)\}|_{s \to s - a}\]
+				where \(s \to s - a\) means that the Laplace transform \(F(s)\) replaces \(s\) with \(s - a\) wherever it appears.
+			To compute the inverse of \(F(s - a)\), \(F(s)\) must be recognized. \(\Ell^{-1}\{F(s - a)\}\) is then simply the product of \(f(t) = \Ell^{-1}F(s)\) and \(\en^{at}\). Symbolically, this can be summarized as
+				\[
+					\Ell^{-1}\{F(s - a)\} = \Ell^{-1}\{F(s)|_{s \to s - a}\}
+						= \en^{at}f(t)
+				\]
+			\callout{17}{\paragraph{Unit Step Function}
+				The \textbf{unit step function} (or \textbf{Heaveside function}) \(\Uscr(t - a)\) is defined to be
+					\[
+						\Uscr(t - a) =
+							\begin{cases}
+								0 & 0 \le t < a \\
+								1 & t \ge a	
+							\end{cases}
+					\]
+			}
+			When a function \(f\) defined for \(t \ge 0\) is multiplied by \(\Uscr(t - a)\), the unit step function \enquote{turns off} the portion of the graph that is before \(t = a\). \\
+			The unit step function can be used to compactly write piecewise functions:
+				\[
+					f(t) =
+						\begin{cases}
+							g(t) & 0 \le t < a \\
+							h(t) & t \ge a	
+						\end{cases}
+						= g(t) - g(t)\Uscr(t - a) + h(t)\Uscr(t - a)
+				\]
+				\[
+					f(t) = 
+						\begin{cases}
+						0 & 0 \le t < a \\
+						g(t) & 	a \le t < b \\
+						0 & t \ge b
+						\end{cases}
+						= g(t)[\Uscr(t - a) - \Uscr(t - b)]
+				\]
+		\callout{15.65}{\paragraph{Translation on the \(\bm{t}\)-axis}	
+			If \(F(s) = \Ell\{f(t)\}\) and \(a > 0\), then
+				\[\Ell\{f(t - a)\Uscr(t - a)\} = \en^{-as}F(s)\]
+		}
+		When \(a > 0\),
+				\[\Ell^{-1}\{\en^{-as}F(s)\} = f(t - a)\Uscr(t - a)\]
+		Using the definition of \(\Uscr(t - a)\) and the substitution \(u = t - a\), the transform of the product of a function and a step function can be rewritten as
+				\[
+					\Ell\{g(t)\Uscr(t - a)\} = \int_a^\infty \en^{-st}g(t)\dd{t}
+						= \int_0^\infty \en^{-s(u + a)}g(u + a) \dd{u}
+				\]
+				That is,
+				\[\boxed{\Ell\{g(t)\Uscr(t - a)\} = \en^{-as}\Ell\{g(t + a)\}}\]
+		\callout{17}{\paragraph{Derivatives of Transforms}
+			If \(F(s) = \Ell\{f(t)\}\) and \(n \in \Z^+\), then
+				\[\Ell\{t^nf(t)\} = (-1)^n\dv[n]{s}F(s)\]
+		}
+		If \(f\) and \(g\) are piecewise continuous on the interval \([0, \infty)\), then their \textbf{convolution}, denoted by \(f * g\), is defined by
+			\[f * g = \int_0^t f(\tau)g(t - \tau)\dd{\tau}\]
+			This is a function of \(t\). As  such, this is sometimes written as \((f * g)(t)\). As the notation suggests, convolution can be interpreted as the \textit{generalized product} of two functions. It should be noted that this is commutative, so \(f * g = g * f\).
+		\callout{17}{\paragraph{Convolution Theorem}
+			If \(f(t)\) and \(g(t)\) are piecewise continuous on \([0, \infty)\) and of exponential order, then
+				\[
+					\Ell\{f * g\} = \Ell\{f(t)\}\Ell\{g(t)\}
+						= F(s)G(s)
+				\]
+		}
+		It is evident that
+			\[\Ell\{F(s)G(s)\} = f * g\]
+		When \(g(t) = 1\) and \(\Ell\{g(t)\} = G(s) = 1/s\), the convolution theorem implies that the Laplace transform of the integral of \(f\) is
+			\[\Ell\left\{\int_0^t f(\tau) \dd{\tau}\right\} = \frac{F(s)}{s}\]
+			The inverse form of this is
+			\[\int_0^t f(\tau) \dd{\tau} = \Ell^{-1}\left\{\frac{F(s)}{s}\right\}\]
+		The \textbf{Volterra integral equation} is
+			\[f(t) = g(t) + \int_0^t f(\tau)h(t - \tau)\dd{\tau}\]
+			where \(g(t)\) and \(h(t)\) are both known. This can be solved by taking the Laplace transform of both sides, as this can be rewritten as
+			\[f(t) = g(t) + (f * h)(t)\]
+			so
+			\[F(s) = G(s) + F(s)H(s)\]
+			This can then be solved for \(F(s)\), the inverse transform of which can be taken to find \(f(t)\).
 \end{document}
 
