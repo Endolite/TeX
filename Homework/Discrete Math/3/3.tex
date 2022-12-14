@@ -14,6 +14,7 @@
     % Formatting
     	\usepackage{tasks}
 % Macros
+	\newcommand{\comment}[1]{}
 	\newcommand{\en}{\text{e}}
 	\newcommand{\enumset}[1]{\setcounter{enumi}{#1}}
 	\newcommand{\Exp}{\mathbb{E}}
@@ -332,7 +333,59 @@
 									
 						\end{tasks}
 			\end{enumerate}
-	\section{Fall Test 4}
+	\section*{Test 3}
+		\begin{enumerate}
+			\enumset{46}
+			\item
+				True
+			\item
+				True 
+			\item
+				True
+			\item
+				True
+			\item
+				True
+			\item
+				False
+			\item
+				False
+			\item
+				True
+			\enumset{18}
+			\item
+				\(p(\{\varnothing, a, \{a\}, \{\{a\}\}\})\)
+			\enumset{21}
+			\item
+				\(p(\{a, \varnothing\})\)
+			\enumset{15}
+			\item
+				\((A \cup (B \cap C)) \supseteq ((A \cup B) \cap C)\)
+			\item
+				\(((A - B) \cup (A - C)) = (A - (B \cap C))\)
+			\comment{
+				\enumset{12}
+				\item
+				\enumset{159}
+				\item
+					\(a_n = 4n + 1\)
+				\enumset{162}
+				\item
+					\(a_n = 1.1 - 0.1n\)
+				\enumset{172}
+				\item
+					\(a_{n} = \dfrac{na_{n - 1}}{n + 1}\), \(a_1 = \dfrac{1}{2}\)
+				\item
+					\(a_n = a_{n - 1} + 10^{-n}\), \(a_1 = 0.1\)
+				\enumset{183}
+				\item
+					\begin{align*}
+						a_{n + 1} &= 2(n + 1) = 2n + 2 = a_n + 2	
+					\end{align*}
+			}
+		\end{enumerate}
+
+	\section*{Test 4}
 		\begin{enumerate}
 			\enumset{8}
 			\item
@@ -356,9 +409,10 @@
 				\end{tasks}
 			\item
 				\(p \land r \land \lnot q\)
+			\enumset{14}
 			\item
 				\[\begin{array}{|*{8}{c|}}\hline
-					p & q & r & q \to r & p \to (q \to r)  & q \land r & p \to (q \land r)\\\hline
+					p & q & r & q \to r & p \to (q \to r)  & q \land r & p \to (q \land r) \\\hline
 					0 & 0 & 0 & 1 & 1 & 0 & 1 \\
 					0 & 0 & 1 & 1 & 1 & 0 & 1 \\
 					0 & 1 & 0 & 0 & 1 & 0 & 1 \\
@@ -370,12 +424,59 @@
 				\end{array}\]
 				The 5th and and 7th columns are not equivalent, so \(p \to (q \to r) \not\equiv p \to (q \land r)\).
 			\item
-				\begin{align}
-					p \to (q \to r) &\equiv \lnot p \lor (q \to r) \tag{definition of \(\to\)} \\
-						&\equiv \lnot p \lor (\lnot q \lor r) &\tag{definition of \(\to\)} \\
-						&\equiv \lnot p \lor \lnot q \lor r & \tag{associativity of \(\lor\)} \\
-						&\equiv (p \to \lnot q) \lor r \tag{}
-				\end{align}
+				\[\begin{array}{|*{8}{c|}}\hline
+					p & q & r & q \to r & p \to (q \to r)  & p \to q & (p \to q) \to r \\\hline
+					0 & 0 & 0 & 1 & 1 & 1 & 0 \\
+					0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+					0 & 1 & 0 & 0 & 1 & 1 & 0 \\
+					0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+					1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+					1 & 0 & 1 & 1 & 1 & 0 & 1 \\
+					1 & 1 & 0 & 0 & 0 & 1 & 0 \\
+					1 & 1 & 1 & 1 & 1 & 1 & 1 \\\hline
+				\end{array}\]
+			\item
+				\begin{align*}
+					(p \to q) \land (\lnot p \to q) &\equiv (\lnot p \lor q) \land (\lnot \lnot p \lor q) \tag{definition of \(\to\)} \\
+						&\equiv (\lnot p \lor q) \land (p \lor q) \tag{double negation} \\
+						&\equiv ((\lnot p \lor q) \land p) \lor ((\lnot p \lor q) \land q) \tag{distributive property} \\
+						&\equiv ((\lnot p \land p) \lor (q \land p)) \lor ((\lnot p \land q) \lor (q \land q)) \tag{distributive property} \\
+						&\equiv (0 \lor (q \land p)) \lor ((\lnot p \land q) \lor q) &\tag{contradiction/identity} \\
+						&\equiv (p \land q) \lor ((\lnot p \land q) \lor q) \tag{identity} \\
+						&\equiv (p \land q) \lor (\lnot p \land q) \lor q \tag{associativity} \\
+						&\equiv q \lor q \\
+						&\equiv q
+				\end{align*}
+			\item
+				\(\lnot(\lnot p \land q)\)
+			\enumset{25}
+			\item
+				\[\begin{array}{|*{10}{c|}}\hline
+					p & q & r & \lnot q & \lnot q \land r & p \to (\lnot q \land r) & \lnot p & r \to q & \lnot (r \to q) & \lnot p \lor \lnot (r \to q) \\\hline
+					0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 \\
+					0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+					0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 \\
+					0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 \\
+					1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+					1 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 1 \\
+					1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+					1 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\hline
+				\end{array}\]
+				\(p \to (\lnot q \land r) \equiv \lnot p \lor \lnot(r \to q)\)
+			\enumset{28}
+			\item
+				\begin{align*}
+					((p \to \lnot q) \land q) \to \lnot p &\equiv \lnot((\lnot p \lor \lnot q) \land q) \lor \lnot p \tag{definition of \(\to\)} \\
+						&\equiv (\lnot(\lnot p \lor \lnot q) \lor \lnot q) \lor \lnot p \tag{DeMorgan's law} \\
+						&\equiv ((p \land q) \lor \lnot q) \lor \lnot p \tag{DeMorgan's law} \\
+						&\equiv ((p \lor \lnot q) \land (q \lor \lnot q)) \lor \lnot p \tag{distributive property} \\
+						&\equiv ((p \lor \lnot q) \land 1) \lor \lnot p \tag{tautology} \\
+						&\equiv (p \lor \lnot q) \lor \lnot p \tag{identity} \\
+						&\equiv p \lor \lnot q \lor \lnot p \tag{associativity} \\
+						&\equiv p \lor \lnot p \lor \lnot q \tag{commutativity} \\
+						&\equiv 1 \lor q \tag{tautology} \\
+						&\equiv 1 \tag{domination}
+				\end{align*}
 
 		\end{enumerate}
 

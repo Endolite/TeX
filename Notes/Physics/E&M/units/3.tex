@@ -35,7 +35,63 @@
 						= nqv_dA\Delta t
 				\]
 				When the charge carriers are electrons,
-				\[\Delta q = nev_dA\Delta t\]
+				\[\Delta Q = nev_dA\Delta t\]
 				Dividing both sides by \(\Delta t\),
 				\[\subt{i}{avg} = nev_dA\]
+		The \textbf{electrical resistance \(\bm{R}\)} is defined as
+			\[R = \frac{V}{i} \tag{definition of \(R\)}\]
+			where \(V\) is the potential difference across the conductor and \(i\) is the current through the conductor. It is measured in units of V/A (\(\Omega\)).
+			\textbf{Resistivity \(\bm{\rho}\)} (measured in \(\Omega \cdot \mathrm{m}\)) is defined as
+			\[\rho = \frac{E}{J} \tag{definition of \(\rho\)}\]
+			The reciprocal of this the conductivity \textbf{conductivity \(\bm{\sigma}\)} (measured in Siemens per meter (S/m))
+			\[\sigma = \frac{1}{\rho} \tag{definition of \(\sigma\)}\] \\
+		Resistance is a property of an \textit{object} while resistivity is a property of a \textit{material}. The resistance of a conducting wire of length \(L\) with uniform cross sectional area \(A\) is
+			\[R = \rho\frac{L}{A}\]
+		\textbf{Ohm's law} states that the current through a device is always directly proportional to the potential difference that is applied to it:
+			\[
+				I \propto V \qquad \text{or} \qquad
+				I = \frac{V}{R}
+					\tag{Ohm's law}
+			\]
+			A material that obeys Ohm's law is said to be \textbf{Ohmic}. A conducting device is Ohmic when the resistance of the device is independent of the magnitude and polarity of the applied potential difference. A conducting material is Ohmic when its resistivity is independent of the magnitude and direction of the applied electric field. \\
+		The \textbf{power \(\bm{P}\)} (rate of energy transfer) in an electrical device across which a potential difference of \(V\) is maintained is
+			\[P = iV \tag{rate of electrical energy transfer}\]
+			If the device is a resistor, this can be written as
+			\[
+				P = i^2R 
+					= \frac{V^2}{R} 
+					\tag{resistive dissipation}
+			\]
+	\section{Circuits}
+		In order for a steady flow of charge to be maintained, a device is required to do work on the charge carriers. Such a device is called an \textbf{emf device}, which is said to provide emf \(\emf\). \\
+		One terminal of an emf device, called the positive terminal, is kept at a higher potential than the other. This can be represented on a diagram by an arrow pointing from the negative to the positive terminal. (This arrow has a circle on the negative end to distinguish it from that denoting current direction.) \\
+		An emf device does work on charges to maintain the potential difference between its terminals. If work \(\dd{W}\) is done on positive charge \(\dd{q}\) to force it from the negative to the positive terminal, then the emf is
+			\[\emf = \dv{W}{q} \tag{definition of \(\emf\)}\]
+		An \textbf{ideal emf device} is one without any internal resistance. The potential difference between its terminals is equal to the emf. \\
+		A \textbf{real emf device} has internal resistance. The potential difference between its terminals is equal to the emf only when no current is flowing through the device. \\
+		Because \(P = i^2R\), in time interval \(\dd{t}\), an amount of energy \(i^2R\dd{t}\) will appear in the resistor as thermal energy. Said energy is said to be \textbf{disiapated}. \\
+			Over the same amount of time, a charge \(\dd{q} = i\dd{t}\) will have moved through the battery, and the work done on this charge is
+			\[
+				\dd{W} = \emf\dd{q}
+					= \emf i\dd{t}
+			\]
+			By conservation of energy, the work done by the ideal battery must be equal to the thermal energy that appears in the resistor:
+				\[\emf i\dd{t} = i^2R\dd{t}\]
+				which gives
+				\[i = \frac{\emf}{R}\] \\
+		The \textbf{loop rule} states that the algebraic sum of changes in potential encountered in the complete traversal of a given loop in a circuit is 0. \\
+		The \textbf{resistance rule} states that for a move through a resistance in the direction of current, the change in potential is \(-iR\). In the direction opposite of current, it is \(iR\). \\
+		The \textbf{emf rule} states that a move through an ideal emf device in the direction of the emf arrow yields a change in potential of \(\emf\). In the opposite direction, it is \(-\emf\). \\
+		To ground a circuit is to connect one point of it to Earth's surface. \\
+		The rate \(\subt{P}{emf}\) at which an emf device transfers energy to both the charge carriers and to the internal thermal energy is
+			\[\subt{P}{emf} = \emf \tag{power of emf device}\] \\
+		For resistors placed in series, the equivalent resistance can be found by the loop rule, which yields
+			\[\subt{R}{eq} = \sum R_i \tag{resistances in series}\]
+			Using the loop rule,
+			\[\emf - i\subt{R}{eq} = 0\]
+			so
+			\[i = \frac{\emf}{\subt{R}{eq}}\]
+			When a potential difference \(V\) is applied to resistors in series, the currents \(i\) are the same across each resistor. The sum of the potentials of each resistor is equal to the total applied potential difference \(V\). As such, resistors in series with can be replace by an equivalent resistance \(\subt{R}{eq}\) with the same current \(i\) and same total potential difference \(V\) as the original resistances. \\
+		The \textbf{junction rule} states that the sum of the currents entering a given junction must be equal to the sum of those leaving that junction. \\
+		
 \end{document}
