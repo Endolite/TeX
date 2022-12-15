@@ -18,6 +18,7 @@
 	\newcommand{\en}{\text{e}}
 	\newcommand{\enumset}[1]{\setcounter{enumi}{#1}}
 	\newcommand{\Exp}{\mathbb{E}}
+	\newcommand{\lrarr}{\leftrightarrow}
   	\newcommand{\subt}[2]{#1_{\text{#2}}}
   	\newcommand{\Z}{\mathbb{Z}}
 % Configuration
@@ -118,7 +119,24 @@
 					\end{align*}
 					The probability of a randomly selected credit card owner being a freshman is about 0.803.
 			\item
-				
+				The probability of a given student being over 40 and drinks cola is simply the relative frequency of people over 40 that drink cola:
+					\begin{align*}
+						P(\text{over 40 years of age} \cap \text{cola}) &= \frac{\text{\# of cola drinkers over 40}}{\text{sample size}}	 \\
+							&= \frac{20}{255}
+								= \frac{4}{51}
+								\approx 0.078
+					\end{align*}
+					he probability of a given student being over 40 and drinks cola is about 0.078.
+			\item
+				The probability of a given subject drinking root beer given that they are over 40 is simply the relative frequency of root beer drinkers among those that are over 40:
+					\begin{align*}
+						P(\text{root beer} \mid \text{over 40 years of age}) &= \frac{\text{\# of root beer drinkers over 40}}{\text{\# of people over 40}} \\
+							&= \frac{30}{20 + 30 + 35}
+								= \frac{30}{85}
+								= \frac{6}{17}
+								\approx 0.353
+					\end{align*}
+					The probability of a given subject drinking root beer given that they are over 40 is about 0.353.
 		\end{enumerate}
 	\setcounter{section}{0}
 	\section{The Foundations: Logic and Proofs}
@@ -229,7 +247,6 @@
 						\task
 							False	
 					\end{tasks}
-				\newpage
 				\enumset{24}
 				\item
 					\begin{tasks}(2)
@@ -330,7 +347,186 @@
 					\item
 						\begin{tasks}
 							\task
-									
+								\[\begin{array}{|*{5}{c|}}\hline
+									p & q & p \lor q & p \oplus q & (p \lor q) \to (p \oplus q) \\\hline
+									0 & 0 & 0 & 0 & 1 \\
+									0 & 1 & 1 & 1 & 1 \\
+									1 & 0 & 1 & 1 & 1 \\
+									1 & 1 & 1 & 0 & 0 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{5}{c|}}\hline
+									p & q & p \oplus q & p \land q & (p \oplus q) \to (p \land q) \\\hline
+									0 & 0 & 0 & 0 & 1 \\
+									0 & 1 & 1 & 0 & 0 \\
+									1 & 0 & 1 & 0 & 0 \\
+									1 & 1 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{5}{c|}}\hline
+									p & q & p \lor q & p \land q & (p \lor q ) \oplus (p \land q) \\\hline
+									0 & 0 & 0 & 0 & 0 \\
+									0 & 1 & 1 & 0 & 1 \\
+									1 & 0 & 1 & 0 & 1 \\
+									1 & 1 & 1 & 1 & 0 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{6}{c|}}\hline
+									p & q & p \lrarr q & \lnot p & \lnot p \lrarr q & (p \lrarr q) \oplus (\lnot p \lrarr q) \\\hline
+									0 & 0 & 1 & 1 & 0 & 1 \\
+									0 & 1 & 0 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 0 & 1 & 1 \\
+									1 & 1 & 1 & 0 & 0 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{8}{c|}}\hline
+									p & q & r & p \lrarr q & \lnot p & \lnot r & \lnot p \lrarr \lnot r & (p \lrarr q) \oplus (\lnot p \lrarr \lnot r) \\\hline
+									0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 \\
+									0 & 0 & 1 & 1 & 0 & 1 & 0 & 1 \\
+									0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 \\
+									0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 \\
+									1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+									1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+									1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+									1 & 1 & 1 & 1 & 0 & 0 & 1 & 0 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{7}{c|}}\hline
+									p & q & p \oplus q & \lnot q & p \oplus \lnot q & (p \oplus q) \to (p \oplus \lnot q) \\\hline
+									0 & 0 & 0 & 1 & 1 & 1 \\
+									0 & 1 & 1 & 0 & 0 & 0 \\
+									1 & 0 & 1 & 1 & 0 & 0 \\
+									1 & 1 & 0 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+						\end{tasks}
+					\enumset{36}
+					\item
+						\begin{tasks}
+							\task
+								\[\begin{array}{|*{4}{c|}}\hline
+									p & q & \lnot q & p \to \lnot q \\\hline
+									0 & 0 & 1 & 1 \\
+									0 & 1 & 0 & 1 \\
+									1 & 0 & 1 & 1 \\
+									1 & 1 & 0 & 0 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{4}{c|}}\hline
+									p & q & \lnot p & \lnot p \lrarr q \\\hline
+									0 & 0 & 1 & 0 \\
+									0 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 1 \\
+									1 & 1 & 0 & 0 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{6}{c|}}\hline
+									p & q & p \to q & \lnot p & \lnot p \to q & (p \to q) \lor (\lnot p \to q) \\\hline
+									0 & 0 & 1 & 1 & 0 & 1 \\
+									0 & 1 & 1 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 0 & 1 & 1 \\
+									1 & 1 & 1 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{6}{c|}}\hline
+									p & q & p \to q & \lnot p & \lnot p \to q & (p \to q) \land (\lnot p \to q) \\\hline
+									0 & 0 & 1 & 1 & 0 & 0 \\
+									0 & 1 & 1 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 0 & 1 & 0 \\
+									1 & 1 & 1 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{6}{c|}}\hline
+									p & q & p \lrarr q & \lnot p & \lnot p \lrarr q & (p \lrarr q) \lor (\lnot p \lrarr q) \\\hline
+									0 & 0 & 1 & 1 & 0 & 1 \\
+									0 & 1 & 0 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 0 & 1 & 1 \\
+									1 & 1 & 1 & 0 & 0 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{7}{c|}}\hline
+									p & q & \lnot p & \lnot q & \lnot p \lrarr \lnot q & p \lrarr q & (\lnot p \lrarr \lnot q) \lrarr (p \lrarr q) \\\hline
+									0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+									0 & 1 & 1 & 0 & 0 & 0 & 1 \\
+									1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+									1 & 1 & 0 & 0 & 1 & 1 & 1 \\\hline
+								\end{array}\]
+						\end{tasks}
+					\enumset{38}
+					\item
+						\begin{tasks}
+							\task
+								\[\begin{array}{|*{6}{c|}}\hline
+									p & q & r & \lnot q & \lnot q \lor r & p \to (\lnot q \lor r) \\\hline
+									0 & 0 & 0 & 1 & 1 & 1 \\
+									0 & 0 & 1 & 1 & 1 & 1 \\
+									0 & 1 & 0 & 0 & 0 & 1 \\
+									0 & 1 & 1 & 0 & 1 & 1 \\
+									1 & 0 & 0 & 1 & 1 & 1 \\
+									1 & 0 & 1 & 1 & 1 & 1 \\
+									1 & 1 & 0 & 0 & 0 & 0 \\
+									1 & 1 & 1 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{6}{c|}}\hline
+									p & q & r & \lnot p & q \to r & \lnot p \to (q \to r) \\\hline
+									0 & 0 & 0 & 1 & 1 & 1 \\
+									0 & 0 & 1 & 1 & 1 & 1 \\
+									0 & 1 & 0 & 1 & 0 & 0 \\
+									0 & 1 & 1 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 0 & 1 & 1 \\
+									1 & 0 & 1 & 0 & 1 & 1 \\
+									1 & 1 & 0 & 0 & 0 & 1 \\
+									1 & 1 & 1 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{7}{c|}}\hline
+									p & q & r & p \to q & \lnot p & \lnot p \to r & (p \to q) \lor (\lnot p \to r) \\\hline
+									0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+									0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+									0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+									0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 0 & 0 & 1 & 1 \\
+									1 & 0 & 1 & 0 & 0 & 1 & 1 \\
+									1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+									1 & 1 & 1 & 1 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{7}{c|}}\hline
+									p & q & r & p \to q & \lnot p & \lnot p \to r & (p \to q) \land (\lnot p \to r) \\\hline
+									0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+									0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+									0 & 1 & 0 & 1 & 1 & 0 & 0 \\
+									0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+									1 & 0 & 0 & 0 & 0 & 1 & 0 \\
+									1 & 0 & 1 & 0 & 0 & 1 & 0 \\
+									1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+									1 & 1 & 1 & 1 & 0 & 1 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{7}{c|}}\hline
+									p & q & r & p \lrarr q & \lnot q & \lnot q \lrarr r & (p \lrarr q) \lor (\lnot p \lrarr r) \\\hline
+									0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+									0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+									0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+									0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+									1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+									1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+									1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+									1 & 1 & 1 & 1 & 0 & 0 & 1 \\\hline
+								\end{array}\]
+							\task
+								\[\begin{array}{|*{8}{c|}}\hline
+									p & q & r & \lnot p & \lnot q & \lnot p \lrarr \lnot q & q \lrarr r & (\lnot p \lrarr \lnot q) \lrarr (q \lrarr r) \\\hline
+									0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+									0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 \\
+									0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+									0 & 1 & 1 & 1 & 0 & 0 & 1 & 0 \\
+									1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 \\
+									1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 \\
+									1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+									1 & 1 & 1 & 0 & 0 & 1 & 1 & 1 \\\hline
+								\end{array}\]
+
 						\end{tasks}
 			\end{enumerate}
 	\section*{Test 3}

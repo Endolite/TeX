@@ -20,12 +20,14 @@
 	% Symbols
 		\usepackage{amssymb} % Miscellaneous
 % Configuration
-	\title{Test 2 Cheat Sheet}
+	\title{Test 3 Cheat Sheet}
 	\author{Arnav Patri}
 % Macros
 	% Notation
 		% Operators
+			\DeclareMathOperator{\Exp}{\mathbb{E}}
 			\DeclareMathOperator{\divr}{div}
+			\DeclareMathOperator{\Var}{\mathbb{V}}
 		% Sets
 			\newcommand{\N}{\mathbb{N}}
 			\newcommand{\R}{\mathbb{R}}
@@ -39,50 +41,69 @@
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 		\newcommand{\comment}[1]{}
+		\newcommand{\supt}[2]{#1^{\text{#2}}}
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
 
 \begin{document}
 	Arnav Patri
-	\setcounter{section}{9}	
-	\section{Graphs}
-		A graph \(G = (E, V)\) is comprised of edge set \(E\) and vertex set \(V\).
-		\[\small\begin{tabular}{|c|c|c|c|}\hline
-			\multicolumn{4}{|c|}{Graph Terminology} \\\hline
-			\multirow{2}{*}{Type} & \multirow{2}{*}{Directed?} & Multiple & \multirow{2}{*}{Loops?} \\
-			& & Edges? & \\\hline
-			Simple & N & N & N \\
-			Multi- & N & Y & N \\
-			Psuedo- & N & Y & Y \\
-			Simple Directed & Y & N & N \\
-			Directed Multi- & Y & Y & Y \\
-			Mixed & Y/N & Y & Y \\\hline
-		\end{tabular}\]
-		\normalsize
-		Two vertices are \textit{adjecent/neighbors} if there is an edge connected them. Such an edge is \textit{incident} with both vertices. \\
-		The set of all neighbors of a vertex \(v\), denoted \(N(v)\), is the \textit{neighborhood} of \(v\). The neighborhood of \(A \subset V\), denoted \(N(A)\), is the set of all vertices in \(G\) that are adjectent to at least one vertex in \(A\). \\
-		A vertex \(v\)'s \textit{degree}, denoted \(\deg v\), in an undirected graph is the number of edges incident with it, with loops being counted twice. \\
-		The sum of the degrees of every vertex of an undirected graph is \(2|E|\). \\\\
-		The \textit{initial vertex} of a \textit{directed edge} or \textit{arc} \((u, v)\) in a digraph is \(u\) while the \textit{terminal/end vertex} is \(u\). \((u, v)\) is \textit{adjacent from} \(u\) and \textit{adjacent to} \(v\). \\
-		A vertex \(v\)'s \textit{in-degree}, denoted \(\deg^-v\), is the number of edges that terminate at \(v\), while its \textit{out-degree}, denoted \(\deg^+v\), is the number of edges that start at \(v\). \\\\
-		A \textit{complete graph on \(n\) vertices}, denoted \(K_n\), is the simple graph that contains exactly one edge between each pair of distinct vertices. Its outline can be drawn as a regular polygon with \(n\) vertices. Each pair of nodes can then be connected. It has \(\binom{n}{2}\) edges. \\
-		A \textit{cycle} \(C_n\) for \(n \ge 3\) consists of \(n\) vertices and edges connecting each vertex to exactly two other nodes. It can be drawn as a regular polygon with \(n\) vertices. \\
-		A \textit{wheel} \(W_n\) is obtained by adding an additional vertex to \(C_n\) that all other vertices connect to. This can be drawn as a regular polygon with \(n\) vertices with an additional node in the center that connects to all other vertices. \\
-		An \textit{\(n\)-dimensional hypercube} or \textit{\(n\)-cube} \(Q_n\) is a graph with \(2^n\) vertices representing all bit strings of length \(n\) with edges connecting vertices differing in exactly one bit position. \(Q_1\) is a line, \(Q_2\) a square, \(Q_3\) a cube, and so on. \\
-		The sum of every vertex's in-degrees is equal to that of their out-degrees, both of which \(|E|\). \\\\
-		A simple graph is \textit{bipartite} if \(V\) can be partitioned into two disjoint subsets \(V_1\) and \(V_2\) such that every edge connects a vertex in \(V_1\) to one in \(V_2\); that is to say, no two edges in the same subset are connected. \\
-		A \textit{complete bipartite graph} \(K_{m, n}\) is a bipartite graph with \(|V_1| = m\) and \(|V_2| = n\) such that there is an edge from every vertex in \(V_1\) to every vertex in \(V_2\). \\\\
-		The union of 2 simple graphs \(G_1 = (V_1, E_1\) and \(G_2 = (V_2, E_2)\) is the simple graph \(G_1 \cup G_2 = (V_1 \cup V_2, E_1 \cup E_2)\). \\\\
-		A graph's \textit{adjacency matrix} is the \(|V| \times |V|\) matrix \(\textbf{A}_G = [a_{i, j}]\) where \(a_{i, j}\) is equal to the number of edges connecting \(v_i\) and \(v_j\). The ordering may be arbitrary. \\
-		For a digraph's adjacency matrix, \(a_{i, j}\) is equal to the number of arcs connecting starting at \(v_i\) and ending at \(v_j\). \\
-		A graph's \textit{incidence matrix} is the \(|V| \times |E|\) matrix \(\textbf{M}_G = [m_{i, j}]\) where \(m_{i, j}\) is 1 if \(e_j\) is incident to \(m_i\) and 0 otherwise. \\\\
-		Two simple graphs are \textit{isomorphic} if there is a one-to-one and onto function \(f\) between the vertex sets with the property that \(a\) and \(b\) are adjacent in the first graph if and only if \(f(a)\) and \(f(b)\) are in the other. Such a function is called an \textit{isomorphism}. Two simple graphs that are not isomorphic are \textit{nonisomorphic}. \\\\
-		A \textit{path} is a sequence of connected edges. It is denoted by the sequence of edges. It \textit{passes through} nodes while \textit{traversing} edges. \\
-		A path is a \textit{circuit} if it begins and ends at the same node. \\
-		A path is \textit{simple} if it does not contain the same edge more than once. \\
-		An undirected graph is \textit{connected} if there is a path between every pair of vertices. One that is not connected is \textit{disconnected}. To \textit{disconnect} a graph is to remove vertices and/or edges to produce a disconnected subgraph. \\
-		A \textit{connected component} of a graph \(G\) is a connected subgraph of it that is not a proper subgraph of another connected subgraph of \(G\). \\
-		A digraph is \textit{strongly connected} if there is a path from \(u\) to \(v\) and from \(v\) to \(u\) for any pair of vertices in the graph. It is \textit{weakly connected} if there is a path between every pair of nodes in the underlying undirected graph. \\\\
-		An \textit{Euler circuit} is a simple circuit containing every edge. An \textit{Euler path} is  a simple path containing every edge. \\
-		Every vertex of graph with an Euler circuit must be of even degree. All but 2 nodes of a graph with an Euler path must be of even degree. These conditions are necessary and sufficient. \\
+	\setcounter{section}{6}	
+	\section{Discrete Probability}
+		A \textbf{sample space \(\bm{S}\)} is a set of possible outcomes. An \textbf{event} is a subset of the sample space. An \textbf{event \(\bm{E}\)} is a subset of the sample space. \\
+		If \(S\) is a finite and nonempty sample space of equally likely outcomes and \(E \subseteq S\), the \textit{probability} of \(E\) is given by
+			\[P(E) = \frac{|E|}{|S|}\]
+\		\setcounter{subsection}{1}
+		\subsection{Probability Theory}
+			The probability of the \textbf{complement} of \(E\), defined as \(\bar{E} = S - E\), is found as
+				\[P(\bar{E}) = 1 - P(E)\]
+			The \textbf{intersection} of 2 events \(E_1\) and \(E_2\), denoted by \(E_1 \cap E_2\), is the event that they both occur. \\
+				Two events are \textbf{disjoint} if the probability of their intersection is 0. \\
+			The \textbf{union} of 2 events \(E_1\) and \(E_2\), denoted \(E_1 \cup E_2\), is the event that exactly one occurs. It is found as
+				\[P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)\]
+			Probabilities \(P(s)\) can be assigned for each \(s \in S\) such that \(0 \le P(s) \le 1\) for all \(s \in S\) and \(\sum\limits_{s \in S}P(s) = 1\). \\
+			The function \(P\) from the element \(s \in S\) to the probability \(P(s)\) is a \textbf{probability distribution}. \\
+			The probability of an event \(E\) can be found as
+				\[P(E) = \sum_{s \in E} P(s)\]
+			If \(E_1, E_2, \ldots\) is a sequence of pairwise disjoint events, then
+				\[P\left(\bigcup_i E_i\right) = \sum_i P(E_i)\]
+			If \(E_1\) and \(E_2\) are events with \(P(E_2) > 0\), the \textbf{conditional probability} of \(E_1\) given \(E_2\) is denoted and found as
+				\[P(E_1 | E_2) = \frac{P(E_1 \cap E_2)}{P(E_2)}\]
+				Two events are \textbf{independent} if
+				\[P(E_1 \cap E_2) = P(E_1) \times P(E_2)\]
+				A set of events is \textbf{pairwise independent} if any given 2 events are independent. It is \textbf{mutually independent} if every event is independent from every combination of all other events. \\
+			A \textbf{Bernoulli trial} is a trial with binary outcomes. The probability of success is \(p\). \\
+			The \textbf{Binomial distribution} gives the probability of \(X\) successes after \(n\) independent Bernoulli trials with a constant probability of success \(p\).
+				\[P(x) = \binom{n}{x}p^x(1 - p)^x \tag{binomial}\]
+				(\(P(x)\) is shorthand for \(P(X = x)\)). \\
+			A \textbf{random variable} is a function from a sample space to the set of real numbers; that is, a random variable assigns a real number to every possible outcome. \\
+			The \textbf{distribution} of a random variable \(X\) on a sample space \(S\) is the set of all pairs \((x, P(x))\) for all \(x \in X(S)\).
+		\subsection{Bayes' Theorem}
+			\textbf{Bayes' theorem} states that if \(E\) and \(F\) are events with nonzero probabilities,
+				\[P(F | E) = \frac{P(E | F)P(F)}{P(E | F)P(F) + P(E|\bar{F})P(\bar{F})}\]
+		\subsection{Expected Value and Variance}
+			The \textbf{expected value} of a random variable \(X\) in sample space \(S\) is
+				\[
+					\Exp(X) = \mu_X 
+						= \sum_{s \in S}P(s)X(s)
+						= \sum_{x \in X}xP(x)
+				\]
+				The \textbf{deviation} of \(x \in X\) is \(x - \Exp(X)\). \\
+				The expectation operator \(\Exp\) is linear, meaning that for 2 random variables \(X\) and \(Y\) and 2 constants \(a\) and \(b\),
+				\[\Exp(aX + bY) = a\Exp(X) + b\Exp(Y)\]
+				It should also be noted that
+				\[\Exp(aX + b) = a\Exp(X) + b\]
+				as the expected value of a constant is simply its value. \\
+			The \textbf{Geometric distribution} gives the probability of getting the first success on the \(\supt{x}{th}\) independent Bernoulli trial with fixed probability of success \(p\). \\
+				\[P(X) = (1 - p)^{k - 1}p \tag{geometric}\]
+			Two random variables \(X\) and \(Y\) are \textbf{independent} if
+				\[P(x \cap y) = P(x) \times P(y)\]
+			The \textbf{variance} of \(X\) is
+				\begin{align*}
+					\Var(X) = \sigma^2_X &= \sum_{s \in S}(X(s) - \Exp(X))^2P(s) \\
+						&= \sum_{x \in X}(x - \Exp(x))^2P(x)
+				\end{align*}
+			\textbf{Chebyshev's inequality} states that for a random variable \(X\) and a real number \(r\),
+				\[P(|x - \Exp(x)| \ge r) \le \frac{\Var(X)}{r^2}\]
+	\setcounter{section}{0}
+	\section{Logic and Proofs}
 		
 \end{document}
