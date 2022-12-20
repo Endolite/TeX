@@ -68,7 +68,7 @@
 		An emf device does work on charges to maintain the potential difference between its terminals. If work \(\dd{W}\) is done on positive charge \(\dd{q}\) to force it from the negative to the positive terminal, then the emf is
 			\[\emf = \dv{W}{q} \tag{definition of \(\emf\)}\]
 		An \textbf{ideal emf device} is one without any internal resistance. The potential difference between its terminals is equal to the emf. \\
-		A \textbf{real emf device} has internal resistance. The potential difference between its terminals is equal to the emf only when no current is flowing through the device. \\
+		A \textbf{real emf device} has internal resistance, denoted \(r\). The potential difference between its terminals is equal to the emf only when no current is flowing through the device. \\
 		Because \(P = i^2R\), in time interval \(\dd{t}\), an amount of energy \(i^2R\dd{t}\) will appear in the resistor as thermal energy. Said energy is said to be \textbf{dissapated}. \\
 			Over the same amount of time, a charge \(\dd{q} = i\dd{t}\) will have moved through the battery, and the work done on this charge is
 			\[
@@ -97,5 +97,58 @@
 			\[\frac{1}{\subt{R}{eq}} = \sum \frac{1}{R_i} \tag{resistances in parallel}\]
 			Parallel resistors have the same potential difference across every resistor. \\
 		An \textbf{ammeter} is an instrument used to measure currents. It is used by breaking/cutting part of the wire and substituting the ammeter. \\
-			In order for an ammeter to be accurate, its resistance must be much smaller than those of other resistancs in the circuit.
+			In order for an ammeter to be accurate, its resistance must be much smaller than those of other resistances in the circuit. \\
+		A \textbf{voltmeter} is an instrument used to measure potential differences. Connecting its terminals to any two points in a circuit yields their potential difference. \\
+			In order for a voltmeter to provide an accurate reading, its resistance must be much larger than those of any circuit element across which it is connected. This ensures that negligible current passes through the voltmeter, preventing it from affecting the potential difference that is to be measured. \\
+		\[\begin{circuitikz}
+			\ctikzset{bipoles/resistor/height = 0.15}
+			\ctikzset{bipoles/resistor/width = 0.4}
+			\ctikzset{bipoles/cuteinductor/width = 0.7}
+			\ctikzset{bipoles/cuteinductor/height = 0.5}
+			\draw (0, 0) to[battery, l = \(\emf\)] (0, 4);
+		\end{circuitikz}\]
+
+		A capacitor of capacitance \(C\) is initially uncharged. To charge is, a switch is closed. This completes an \(RC\) series circuit consisting of the capacitor, the ideal battery of emf \(\emf\), and a resistance \(R\). \\
+			Once the circuit is completed, the charge begins to flow. This current increases the charge \(q\) on the plates and the potential difference \(V_C = q/C\) across the capacitor. When that potential difference is equal to the emf, the current is 0. The equilibrium (final) charge on the fully charged capacitor is then \(q = CV = C\emf\). \\
+			Applying the loop rule yields
+				\[\emf - iR - \frac{q}{C} = 0\]
+				Substituting and rearranging,
+				\[R\dv{q}{t} + \frac{q}{C} = \emf\]
+				Solving this yields
+				\[a = C\emf\left(1 - \en^{-\frac{t}{RC}}\right) \tag{charging a capacitor}\]
+				Differentiating yields
+				\[
+					i = \dv{q}{t}
+						= \frac{\emf\en^{-\frac{t}{RC}}}{R}
+						\tag{charging a capacitor}
+				\
+		\comment{
+			A capacitor with capacitance \(C\) is initially uncharged. When a switch is closed, an \(RC\) series circuit is completed consisting of the capacitor, a resistor of resistance \(R\), and an ideal battery of emf \(\emf\). \\
+				Upon the switch being closed at time \(t = 0\), the charge of the capacitor increases according to
+				\[q = C\emf\left(1 - \en^{-\frac{t}{RC}}\right)\]
+				where \(C\emf = q_0\) is the equilibrium (final) charge. While charging, the current is
+				\[
+					i = \dv{q}{t}
+						= \frac{\emf\en^{-\frac{t}{RC}}}{R}
+						\tag{charging a capacitor}
+				\]
+				The voltage is therefore
+				\[
+					V_C = \frac{q}{C}
+						= \en\left(1 - \en^{-\frac{t}{RC}}\right)
+				\]
+				The product \(RC\) is the capacitive time constant of the circuit, represented by \(\tau\).
+				\[\tau = RC \tag{time constant}\]
+			Assume that a capacitor is fully charged to potential \(V_0\) (equal to \(\emf\)). At a new time \(t = 0\), switch \(S\) is opened, making the circuit incomplete and causing the capacitor to discharge through resistance \(R\). \\
+				When a capacitor discharges through a resistance \(R\), the charge decays according to
+				\[q = q_0\en^{-\frac{t}{RC}} \tag{discharging a capacitor}\]
+				where \(q_0 = CV_0\) is the initial charge on the capacitor. \\
+				The current is
+				\[
+					i = \dv{q}{t}
+						= -\frac{q_0\en^{\frac{t}{RC}}}{RC}
+						\tag{discharging a capacitor}
+				\]
+				Initially, a charging capacitor acts like an ordinary wire relative to the charging current. After sufficient time has passed, it acts like a broken wire.
+		}
 \end{document}
