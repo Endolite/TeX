@@ -1,0 +1,74 @@
+\documentclass[12pt, A4]{report}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage{fixltx2e}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+		\usepackage{mathtools}
+		\usepackage{multirow}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+			\usepackage{circuitikz} % Circuits
+			\usepackage{tikz-3dplot} % 3D
+			\usetikzlibrary{arrows.meta, angles, calc, quotes}
+	% Notation
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{chemformula} % Chemical Formulas
+		\usepackage{esint} % Integrals
+		\usepackage{mathrsfs} % Laplace
+		\usepackage{physics} % Differentials/Vectors
+		\usepackage{siunitx} % Units
+% Macros
+	% Notation
+		% Constants
+			\newcommand{\en}{\text{e}}
+		% Functions
+			\DeclareMathOperator{\erfc}{erfc}
+			\DeclareMathOperator{\Uscr}{\mathscr{U}}
+		% Sets
+			\newcommand{\N}{\mathbb{N}}
+			\newcommand{\R}{\mathbb{R}}
+			\newcommand{\Z}{\mathbb{Z}}
+		% Transforms
+			\DeclareMathOperator{\Ell}{\mathscr{L}}
+			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
+		% Other
+			\DeclareMathOperator{\avg}{avg}
+			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+			\renewcommand{\th}{\text{th}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\comment}[1]{}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
+		\newcommand{\subt}[2]{#1_{\text{#2}}}
+% Configuration
+	\title{Contemporary Physics}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+
+\usepackage{subfiles}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\chapter{The Failures of Classical Physics}
+		\subfile{chapters/1.tex}
+\end{document}
+

@@ -1,0 +1,58 @@
+\documentclass[./Contemporary Physics.tex]{subfiles}
+
+\begin{document}
+	\section{Review of Classical Physics}
+		\subsectionb{Mechanics}
+			A particle of mass \(m\) and velocity \(v\) has \textit{kinetic energy \(K\)} defined as
+				\[K = \frac{1}{2}mv^2 \tag{1.1}\]
+				and \textit{linear momentum \(\vec{p}\)} defined as
+				\[\vec{p} = m\vec{v} \tag{1.2}\]
+				Kinetic energy can be rewritten in terms of linear momentum as
+				\[K = \frac{p^2}{2m} \tag{1.3}\]
+			When particles collide, the two fundamental conservation laws are used to analyze the collision:
+				\begin{enumerate}[\Roman{\arabic*}.]
+					\item
+						\textbf{Conservation of Energy.} 
+							The total energy of an isolated system remains constant if no external forces act upon it. In the case of a collision, the total energy of the particles must be the same both \textit{before} and \textit{after} they collide.
+					\item
+						\textbf{Conservation of Linear Momentum.}
+							The total linear momentum of an isolated system remains constant. In the case of a collision, the total linear momentum of the particles is the same both \textit{before} and \textit{after} the collision. As linear momentum is a vector, this law is generally applied for each component individually.
+				\end{enumerate}
+			Another application of the principle of conservation of energy can be seen when a particle moves subject to an external force \(F\). Such an external force often has a corresponding potential energy \(U\), defined such that (for 1-D motion)
+				\[F = -\dv{u}{x} \tag{1.4}\]
+				The total energy \(E\) is the sum of the kinetic and potential energies:
+				\[E = K + U \tag{1.5}\]
+				As a particle moves, \(K\) and \(U\) may change, but \(E\) must remain constant. \\
+			When a particle with \textit{linear momentum \(\vec{p}\)} is at displacement \(\vec{r}\) from the origin \(O\), its angular momentum \(\vec{L}\) about \(O\) is defined by
+				\[\vec{L} = \vec{r} \times \vec{p} \tag{1.6}\]
+				As is the case with linear momentum, angular momentum is conserved.
+			\subsubsectionb{Velocity Addition}
+				Let \(\vec{v}_{AB}\) represent the velocity of \(A\) relative to \(B\) and \(\vec{v}_{BC}\) be that of \(B\) relative to \(C\). The velocity of \(A\) relative to \(C\) is then
+					\[\vec{v}_{AC} = \vec{v}_{AB} + \vec{v}_{BC} \tag{1.7}\]
+		\subsectionb{Electricity and Magnetism}
+			The electrostatic (Coulomb) force exerted by a charged particle \(q_1\) on another charge \(q_2\) has magnitude
+				\[F = \frac{1}{4\pi\varepsilon}\frac{|q_1||q_2|}{r^2} \tag{1.8}\]
+				The direction of the force is along the line that joins the particles. The Coulomb constant \(k = 1/4\pi\varepsilon_0\) is
+				\[k \approx \SI[per-mode = fraction]{8.99e9}{\N\m\squared\per\coulomb\squared}\]
+				The corresponding potential energy is
+				\[U = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r} \tag{1.9}\]
+			An electrostatic potential difference \(\Delta V\) is established by a distribution of charges. When a charge \(q\) moves through a potential difference \(V\) the change in its electric potential energy is
+				\[\Delta U = q\Delta V \tag{1.10}\]
+			Charges are often measured in terms of the charge of the electron, which has magnitude
+				\[e \approx \SI{1.602e-19}{C}\]
+				The \textit{electron-volt} (\si{eV}) is defined as the energy of a charge equal in magnitude to that of an electron passing through a potential difference of \SI{1}{V}:
+				\[\SI{1}{eV} = \SI{1.602e-19}{J}\]
+			A magnetic field \(\vec{B}\) can be produced by an electric current \(i\). The magnitude of the magnetic field at the center of a circular current loop of radius \(r\) is
+				\[V = \frac{\mu_0i}{2r} \tag{1.11}\]
+				The SI unit for magnetic field is the tesla (\si{T}), defined as 
+				\[\SI{1}{T} = \SI[per-mode = fraction]{1}{\N\per\A\per\m}\]
+				The constant \(\mu_0\) is
+				\[\mu_0 \approx \SI[per-mode = fraction]{4\pi e-7}{\N\s\squared\per\coulomb\squared}\]
+				The direction of the conventional (\textit{positive}) current is opposite to the direction of travel of the negatively charged electrons, which are what typically produce the current in the wires. The direction of \(\vec{B}\) is chosen by the right-hand rule. \\
+			The \textit{magnetic moment \(\vec{\mu}\)} of a current loop is defined as
+				\[|\vec{\mu}| = iA \tag{1.12}\]
+				where \(A\) is the geometric area enclosed by the loop. The direction of \(\vec{\mu}\) is perpendicular to the plane of the loop, as determined by the right-hand rule. \\
+				When a current loop is placed in a uniform \textit{external} magnetic field \(\subt{\vec{B}}{ext}\), the torque \(\vec{\tau}\) on the loop that tends to align \(\vec{\mu}\) with \(\subt{\vec{B}}{ext}\) is
+				\[\vec{\tau} = \vec{\mu} \times \subt{\vec{B}}{ext} \tag{1.13}\]
+				When the field is applied, \(\vec{\mu}\) rotates such taht its energy tends to a minimum, which occurs when \(\vec{\mu}\) is parallel 
+\end{document}
