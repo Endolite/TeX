@@ -107,7 +107,6 @@
 			\ctikzset{bipoles/cuteinductor/height = 0.5}
 			\draw (0, 0) to[battery, l = \(\emf\)] (0, 4);
 		\end{circuitikz}\]
-
 		A capacitor of capacitance \(C\) is initially uncharged. To charge is, a switch is closed. This completes an \(RC\) series circuit consisting of the capacitor, the ideal battery of emf \(\emf\), and a resistance \(R\). \\
 			Once the circuit is completed, the charge begins to flow. This current increases the charge \(q\) on the plates and the potential difference \(V_C = q/C\) across the capacitor. When that potential difference is equal to the emf, the current is 0. The equilibrium (final) charge on the fully charged capacitor is then \(q = CV = C\emf\). \\
 			Applying the loop rule yields
@@ -115,13 +114,13 @@
 				Substituting and rearranging,
 				\[R\dv{q}{t} + \frac{q}{C} = \emf\]
 				Solving this yields
-				\[a = C\emf\left(1 - \en^{-\frac{t}{RC}}\right) \tag{charging a capacitor}\]
+				\[q = C\emf\left(1 - \en^{-\frac{t}{RC}}\right) \tag{charging a capacitor}\]
 				Differentiating yields
 				\[
 					i = \dv{q}{t}
 						= \frac{\emf\en^{-\frac{t}{RC}}}{R}
 						\tag{charging a capacitor}
-				\
+				\]
 		\comment{
 			A capacitor with capacitance \(C\) is initially uncharged. When a switch is closed, an \(RC\) series circuit is completed consisting of the capacitor, a resistor of resistance \(R\), and an ideal battery of emf \(\emf\). \\
 				Upon the switch being closed at time \(t = 0\), the charge of the capacitor increases according to

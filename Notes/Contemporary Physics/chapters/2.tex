@@ -1,0 +1,111 @@
+\documentclass{subfiles}
+
+\begin{document}
+	\section{Classical Relativity}
+		A \enquote{theory of relativity} is simply a way for observers in different reference frames to compare their observations. \\
+		The mathematical basis for converting between reference frames is called a \textit{transformation}. \\
+		Consider two observes \(O\) and \(O'\) observing the same event, \(O'\) moving relative \(O\) with constant velocity \(\vec{u}\). In their own reference frames \(O\) and \(O'\) are both at rest, but they move relative to one another with constant velocity \(\vec{u}\). According to \(O\), the space and time coordinates are \(x\), \(y\), \(z\), and \(t\), while according to \(O'\), those of the \textit{same event} are \(x'\), \(y'\), \(z'\), and \(t'\). If the relative velocity is only in the common \(xx'\) direction, \(\vec{u}\) can represent the velocity of \(O'\) as measured by \(O\). \\
+		It is assumed that each observer is able to test and verify Newton's laws in their reference frames. A reference frame that follows Newton's first law (the law of inertia) is said to be an \textit{inertial frame}. In order for a frame to be inertial, it must not be accelerating. \\
+		The classical \textit{Galilean} transformation relating the coordinates assumes as a postulate of classical physics that \(t = t'\); that is, time is the same for all observers. It is also assumed for simplicity that the coordinate systems are chosen such that their origins overlap at \(t = 0\). Consider an object in \(O'\) at coordinates \((x', y', z')\). According to \(O\), the \(y\) and \(z\) coordinates are the same as those observed in \(O'\). Along the \(x\) direction, though, \(O\) would observe the object at \(x = x' + ut\). This yields the \textit{Galilean coordinate transformation}
+			\begin{align*}
+				x' &= x - ut &
+					y' &= y &
+					z' &= z &
+					t' &= t
+						\tag{Galilean coordinate transformation}	
+			\end{align*}
+			The velocities as observed by \(O\) can be found simply by differentiating the prior results:
+			\begin{align*}
+				v_x' &= v_x - u &
+					v_y' &= v_y &
+					v_z' &= v_z	
+						\tag{Galilean velocity transformation}
+			\end{align*}
+			Again differentiating yields the relationships between the accelerations:
+			\begin{align*}
+				a_x' &= a_x &
+					a_y' &= a_y &	
+					a_z' &= a_z
+			\end{align*}
+			This shows that Newton's laws hold for both observes so long as \(u\) is constant, as the observers measure identical accelerations, meaning that the results of applying \(\vec{F} = m\vec{a}\) are also identical.
+	\setcounter{section}{2}
+	\section{Einstein's Postulates}
+		\begin{enumerate}[\textbf{\arabic*.}]
+			\item \textbf{Principle of Relativity} 
+				The laws of physics are identical for all inertial reference frames.
+			\item 
+				The speed of light is constant for all inertial reference frames.
+		\end{enumerate}
+	\section{Consequences of Einstein's Postulates}
+		As a consequence of these two postulates, the motion of the observer determines their measurements. \\
+		\subsectionb{The Relativity of Time}
+			Consider a beam of light traveling up to a mirror and back down (in the \(y\) direction) in a reference frame moving at speed \(u\) in the \(x\) direction. An observer. An observer \(O\) at rest and an observer \(O'\) moving in the same reference frame as the mirror. \\
+				From the perspective of \(O'\), the time interval between the light leaving and returning from its source is
+				\[\Delta t_0 = \frac{2L_0}{c}\]
+				where \(L_0\) is the distance between the origin of the light and the mirror. \\
+				From the perspective of \(O\), the light beam travels a distance \(2L\), where
+				\[L = \sqrt{L_0^2 + \left(\frac{u\Delta t}{2}\right)^2}\]
+				as derived by Pythagorean theorem. As \(O\) observes the beam of light to travel at \(c\), the time interval measured is
+				\[
+					\Delta t = \frac{2L}{c} 
+						= \frac{2\sqrt{L_0^2 + (u\Delta t/2)^2}}{c}
+				\]
+				Substituting for \(L_0\) and solving for \(\Delta t\) yields
+				\[\Delta t = \frac{\Delta t_0}{\sqrt{1 - u^2/c^2}} \tag{time dilation}\]
+		\subsectionb{The Relativity of Length}
+			Suppose the beam of light instead travels in the same direction as that of the motion of \(O'\). According to \(O\), the distance traveled is \(L\), while from the perspective of \(O'\) (from which the clock is at rest), it is \(L_0\). \\
+				The light takes time interval \(\Delta t_1\) to reach the mirror, in which it travels distance \(c\Delta t_1\), which is equal to the length \(L\) plus the distance \(u\Delta t_1\) traveled by by \(O'\):
+				\[c\Delta t_1 = L + u\Delta t_1\]
+				The light then takes time interval \(\Delta t_2\) to return to its source, in which it travels distance \(c\Delta t_2\), equal to the length \(L\) minus the distance \(u\Delta t_2\):
+				\[c\Delta t_2 = L - u\Delta t_2\]
+				Adding these times yields \(\Delta t\):
+				\[
+					\Delta t = \Delta t_1 + \Delta t_2
+						= \frac{L}{c - u} + \frac{L}{c + u}
+						= \frac{2L}{c}\frac{1}{1 - u^2/c^2}
+				\]
+				Applying the formula for time dilation,
+				\[
+					\Delta t = \frac{\Delta t_0}{\sqrt{1 - u^2/c^2}}
+						= \frac{2L_0}{c}\frac{1}{\sqrt{1 - u^2/c^2}}
+				\]
+				Setting the above two equations equal to each other yields
+				\[L' = L_0\sqrt{1 - \frac{v^2}{c^2}} \tag{length contraction}\]
+				Observer \(O'\), who is at rest relative to the object, measures the \textit{rest length \(L_0\)} (the \textit{proper length}) while all observers relative to whom \(O'\) is in motion measure a shorter length \textit{only in the direction of motion}.
+				A moving body appears to be shorter than one at rest. \\
+				It should be noted that length contraction occurs only in the direction of movement, meaning that any dimensions perpendicular to that of movement are unaffected. \\
+		\subsectionb{Relativistic Velocity Addition}
+			Relativistic velocity addition allows reference frames to be converted between for the component of velocity in the direction of \(u\):
+				\[v = \frac{v' + u}{1 + v'\dfrac{u}{c^2}} \tag{relativistic velocity addition}\]
+				where \(v\) is the velocity of a particle as observed from a stationary reference frame and \(v'\) is that as observed from within the same reference frame as the particle. Note that when \(v' = c\) (a beam of light being observed),
+				\[
+					v = \frac{c + u}{1 + c\dfrac{u}{c^2}}
+							= \frac{c + u}{1 + u/c}
+							= \frac{c + u}{\dfrac{c + u}{c}}
+							= c
+				\]
+				regardless of the value of \(u\). All observers measure the same speed of light \(c\) regardless of their reference frame. \\
+		\subsectionb{The Relativistic Doppler Effect}
+			The classical Doppler effect states that an observer \(O\) moving relative to the source of waves detects a frequency \(f'\) different from the true frequency \(f\) being emitted by the source \(S\):
+				\[f' = f\frac{v \pm v_0}{v \mp v_S} \tag{classical Doppler effect}\]
+				where \(v\) is the speed of the waves through some medium, \(v_S\) is the speed of the source \textit{relative to the medium}, and \(O\) is that of the observer \textit{relative to the medium}. The upper signs are chosen when \(S\) and \(O\) are moving towards each other while the lower ones are chosen when they are moving away from each other. \\
+			Consider a source of electromagnetic waves at rest in the reference frame of observer \(O\). An observer \(O'\) moving relative to the source at speed \(u\) will observe a different frequency. Suppose \(O\) observes \(N\) waves emitted at frequency \(f\). It takes an interval \(\Delta t_0 = N/f\) for these \(N\) waves to be emitted from the point of view of \(O\). This is the proper time interval in the frame of reference of \(O\). The corresponding interval to \(O'\) is \(\Delta t'\), during which \(O\) moves a distance \(u\Delta t'\). The wavelength \(\lambda'\) according to \(O'\) is the total length occupied by the waves divided by the number of waves:
+				\[
+					\lambda' = \frac{c\Delta t' + u\Delta t'}{N}
+						= \frac{c\Delta t' + u\Delta t'}{f\Delta t_0}
+				\]
+				The frequency from the reference frame of \(O'\) is \(f' = c/\lambda'\), so
+				\[
+					f' = \frac{c}{\lambda'}
+						= f\frac{\Delta t_0}{\Delta t'}\frac{1}{1 + u/c}
+				\]
+				Applying the time dilation formula,
+				\[
+					f' = f\frac{\sqrt{1 - u^2/c^2}}{1 + u/c}
+						= f\sqrt{\frac{1 - u/c}{1 + u/c}} \tag{relativistic Doppler shift}
+				\]
+				This is the formula for the \textit{relativistic Doppler shift} where the waves are observed parallel to \(\vec{u}\). It should be noted that unlike the classical formula, this formula does \textit{not} distinguish between the source and observer motion; it is only dependent on the relative speed \(u\) between the source and observer. \\
+		The \textbf{Epstein Cosmic Speedometer} is a plot of proper time (on the vertical axis) against space (on the horizontal axis). A body in motion will move through both space and time, making it an angle line. A stationary body will move only in time, making it  a vertical line. The only thing able to move through space but not time is light, making it a horizontal line. \\
+		A spacetime diagram maintains the length of all vectors, plotting space on the horizontal axis and time on the vertical axis. The vertical component of a vector is the \enquote{proper} while its horizontal component is the speed through space. \\
+		Moving through space means moving slower through time; that is, moving objects effectively have slower clocks.
+\end{document}
