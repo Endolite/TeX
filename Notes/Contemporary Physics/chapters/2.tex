@@ -52,7 +52,7 @@
 				\]
 				Substituting for \(L_0\) and solving for \(\Delta t\) yields
 				\[\Delta t = \frac{\Delta t_0}{\sqrt{1 - u^2/c^2}} \tag{time dilation}\]
-				As the \(u \le c\), the denominator of this expression is at most 1, meaning that \(\Delta t \le \Delta t_0\); that is, \(O\) measures a longer time interval than \(O'\). For observer \(O_0\), the beginning and ending of the time interval occur at the same location, so the interval \(\Delta t_0\) observed by them is known as \textit{proper time}.
+				As the \(u \le c\), the denominator of this expression is at most 1, meaning that \(\Delta t \le \Delta t_0\); that is, \(O\) measures a longer time interval than \(O'\). For observer \(O\), the beginning and ending of the time interval occur at the same location, so the interval \(\Delta t_0\) observed by them is known as \textit{proper time}.
 		\subsectionb{The Relativity of Length}
 			Suppose the beam of light instead travels in the same direction as that of the motion of \(O'\). According to \(O\), the distance traveled is \(L\), while from the perspective of \(O'\) (from which the clock is at rest), it is \(L_0\). \\
 				The light takes time interval \(\Delta t_1\) to reach the mirror, in which it travels distance \(c\Delta t_1\), which is equal to the length \(L\) plus the distance \(u\Delta t_1\) traveled by by \(O'\):
@@ -71,7 +71,7 @@
 						= \frac{2L_0}{c}\frac{1}{\sqrt{1 - u^2/c^2}}
 				\]
 				Setting the above two equations equal to each other yields
-				\[L' = L_0\sqrt{1 - \frac{v^2}{c^2}} \tag{length contraction}\]
+				\[L = L_0\sqrt{1 - \frac{u^2}{c^2}} \tag{length contraction}\]
 				Observer \(O'\), who is at rest relative to the object, measures the \textit{rest length \(L_0\)} (the \textit{proper length}) while all observers relative to whom \(O'\) is in motion measure a shorter length \textit{only in the direction of motion}.
 				A moving body appears to be shorter than one at rest. \\
 				It should be noted that length contraction occurs only in the direction of movement, meaning that any dimensions perpendicular to that of movement are unaffected. \\
@@ -181,6 +181,58 @@
 		Suppose there are a pair of twins on earth. Twin A remains on Earth while twin B sets off on a rocket ship. A believes that as a consequence of time dilation, B should be younger than them by the time they return. For two observers in relative motion, though, \textit{each} believes the \textit{other's} clock to be slow. From the point of view of B, A make a round-trip away from them and back again. Under such circumstances, it should be A's clock that is running slow, so A they expect A to be younger when they return. \\
 			The resolution of this paradox comes from considering the asymmetric roles of the twins. Special relativity applies only to inertial frames. In order to leave and reenter Earth, B must accelerate and correspondingly decelerate. Although this may be over a brief time interval, B's return journey occurs in a different inertial frame to their departure. This change in B's inertial frame is what results in the asymmetry in the twins' ages. Only B is required to change inertial frames to return, so \textit{all observers will agree} that B is the one that is \enquote{really} in motion, so it is therefore their clock that is \enquote{really} running slow, meaning that B will indeed be the younger twin upon their return.
 		\subsectionb{Spacetime Diagrams}
+			A \textit{spacetime} diagram plots time on the \(y\)-axis and space on the \(x\)-axis. The slope of a straight line is velocity as a proportion of \(c\).
+	\section{Relativistic Dynamics}
+		Dynamical quantities such as momentum and kinetic energy are dependent on  length, time, and velocity. As such, they are also affected by Einstein's postulates. \\
+		Consider a collision of two particles that is elastic from the reference frame of \(O'\). Particle 1 of mass \(m_1 = 2m\) is initially at rest while particle 2 of mass \(m_2 = m\) is moving in the negative \(x\) direction with initial velocity \(\subt{v}{2,i}' = -0.75c\). The final velocities of particles 1 and 2 are respectively \(\subt{v}{1,f}' = -0.5c\) and \(\subt{v}{2,f}' = 0.25c\). Analyzing this collision classically,
+			\begin{align*}
+				\subt{p}{i}' &= m_1\subt{v}{1,i}' + m_2\subt{v}{2,i}'
+						= -0.75mc &
+					\subt{p}{i}' &= m_1\subt{v}{2,f}' + m_2\subt{v}{2,f}'
+						= -0.75mc
+						= \subt{p}{i}'
+			\end{align*}
+			As the initial and final momenta are equal according to \(O'\), energy is conserved. \\
+		Suppose the reference frame of \(O'\) is moving in the positive \(x\) direction at a speed of \(u = 0.55c\) relative to \(O\). The velocity transformation yields the velocities of \(\subt{v}{1,i} = 0.55c\), \(\subt{v}{2,i} = -0.34c\), \(\subt{v}{1,f} = 0.069c\), and \(\subt{v}{2,f} = 0.703c\). Analyzing the collision,
+			\begin{align*}
+				\subt{p}{i} &= m_1\subt{v}{1,i} + m_2\subt{v}{2,i}
+						= 0.76mc &
+					\subt{p}{f} &= m_1\subt{v}{1,f} + m_2\subt{v}{2,f}
+						= 0.841mc
+						\ne \subt{p}{i}
+			\end{align*}
+			As \(\subt{p}{i} \ne \subt{p}{f}\), momentum is not conserved according to \(O\). This means that the law of conservation of linear momentum does not satisfy Einstein's first postulate. To retain the conservation of momentum, then, a new definition of momentum is required. This definition must yield a conservation law that holds under relativity (momentum being conserved regardless of the reference frame, so long as it is inertial) and reduces to \(\vec{p} = m\vec{v}\) at low speeds. \\
+			These requirements are satisfied by defining relativistic momentum to be
+			\[\vec{p} = \frac{m\vec{v}}{\sqrt{1 - v^2/c^2}} \tag{relativistic momentum}\]
+			The velocity \(v\) is the velocity of the particle as measured from a particular inertial frame; it is not the velocity of said frame. \\
+			Using this relativistic definition of momentum to analyze the above collision,
+			\begin{align*}
+				\subt{p}{i}' &= \frac{m_1\subt{v}{1,i}'}{\sqrt{1 - \subt{v}{1,i}'^2/c^2}} + \frac{m\subt{v}{2,i}'}{\sqrt{1 - \subt{v}{2,i}'^2/c^2}}
+						\approx 1.134mc &
+					\subt{p}{f}' &= \frac{m_2\subt{v}{1,f}'}{\sqrt{1 - \subt{v}{1,f}'^2/c^2}} + \frac{m_2\subt{v}{2,f}'}{\sqrt{1 - \subt{v}{2,f}'^2/c^2}}
+						\approx 1.134mc
+						= \subt{p}{i}'
+			\end{align*}
+			As \(\subt{p}{i}' = \subt{p}{f}'\), \(O'\) is able to conclude that momentum is conserved. To \(O\),
+			\begin{align*}
+				\subt{p}{i} &= \frac{m_1\subt{v}{1,i}}{\sqrt{1 - \subt{v}{1,i}^2/c^2}} + \frac{m\subt{v}{2,i}}{\sqrt{1 - \subt{v}{2,i}^2/c^2}}
+						\approx 0.956mc &
+					\subt{p}{f} &= \frac{m_1\subt{v}{1,f}}{\sqrt{1 - \subt{v}{1,f}^2/c^2}} + \frac{m_2\subt{v}{2,f}}{\sqrt{1 - \subt{v}{2,f}^2/c^2}}
+						\approx 0.946mc
+						= \subt{p}{i}
+			\end{align*}
+			so \(O'\) can also conclude that momentum is conserved.
+		\subsectionb{Relativistic Kinetic Energy}
+			Much like classical momentum, classical kinetic energy also fails under relativity. According to \(O'\), the aforementioned collision has kinetic energies
+			\begin{align*}
+				\subt{K}{i}' &= \frac{1}{2}m_1\subt{v}{1,i}^2 + \frac{1}{2}m_2\subt{v}{2,i}^2 
+					\approx 0.281mc^2 &
+					\subt{K}{f}' &= \frac{1}{2}m_1\subt{v}{1,f}^2 + \frac{1}{2}m_2\subt{v}{2,f}^2 
+						\approx 0.281mc^2
+						= \subt{K}{i}'
+			\end{align*}
+			but according to \(O\) is has
+			\[\]
 	\section{Extra}
 		The \textbf{Epstein Cosmic Speedometer} is a plot of proper time (on the vertical axis) against space (on the horizontal axis). A body in motion will move through both space and time, making it an angle line. A stationary body will move only in time, making it  a vertical line. The only thing able to move through space but not time is light, making it a horizontal line. \\
 		A spacetime diagram maintains the length of all vectors, plotting space on the horizontal axis and time on the vertical axis. The vertical component of a vector is the \enquote{proper} while its horizontal component is the speed through space. \\
