@@ -123,6 +123,70 @@
 				t' &= \frac{t - (u/c^2)x}{\sqrt{1 - u^2/c^2}}
 					\tag{Lorentz transformation}
 		\end{align*}
+		This is sometimes rewritten as
+		\begin{align*}
+			x' &= \gamma(x - \beta ct) &
+				y' &= y &
+				z' &= z &
+				ct' &= \gamma(ct - \beta x)	
+		\end{align*}
+		or
+		\begin{align*}
+			x' &= \gamma(x - vt) &
+				y' &= y &
+				z' &= z &
+				t' &= \gamma\left(t - x\frac{v}{c^2}\right)	
+		\end{align*}
+		or in matrices
+		\begin{align*}
+			\begin{bmatrix}
+				x' \\
+				y' \\
+				z' \\
+				ct'
+			\end{bmatrix} &=
+					\begin{bmatrix}
+						\gamma & 0 & 0 & -\beta\gamma \\
+						0 & 1 & 0 & 0 \\
+						0 & 0 & 1 & 0 \\
+						-\beta\gamma & 0 & 0 & \gamma
+					\end{bmatrix}
+					\begin{bmatrix}
+						x \\
+						y \\
+						z \\ 
+						ct
+					\end{bmatrix} &
+				\begin{bmatrix}
+					x' \\
+					ct'
+				\end{bmatrix} &=
+					\begin{bmatrix}
+						\gamma & -\beta\gamma \\
+						-\beta\gamma & \gamma
+					\end{bmatrix}
+					\begin{bmatrix}
+						x \\
+						ct
+					\end{bmatrix} &
+				\begin{bmatrix}
+					x \\
+					ct
+				\end{bmatrix} &=
+					\begin{bmatrix}
+						\gamma & \beta\gamma \\
+						\beta\gamma & \gamma
+					\end{bmatrix}
+					\begin{bmatrix}
+						x' \\
+						ct''
+					\end{bmatrix}
+		\end{align*}
+		where
+		\[
+			\beta = \frac{u}{c} \qquad \text{and} \qquad
+				\gamma = \frac{1}{\sqrt{1 - u^2/c^2}}
+		\]
 		It is often useful to write these equation in terms of intervals by replacing each coordinate by their corresponding interval. \\
 		The equations for \(y'\) and \(z'\) are identical to their Galilean counterparts while the first and last equations reduce to theirs when \(u \ll c\). \\
 		The Lorentz transformation can then be used to derive some predictions of special relativity.
@@ -224,15 +288,57 @@
 			so \(O'\) can also conclude that momentum is conserved.
 		\subsectionb{Relativistic Kinetic Energy}
 			Much like classical momentum, classical kinetic energy also fails under relativity. According to \(O'\), the aforementioned collision has kinetic energies
-			\begin{align*}
-				\subt{K}{i}' &= \frac{1}{2}m_1\subt{v}{1,i}^2 + \frac{1}{2}m_2\subt{v}{2,i}^2 
-					\approx 0.281mc^2 &
-					\subt{K}{f}' &= \frac{1}{2}m_1\subt{v}{1,f}^2 + \frac{1}{2}m_2\subt{v}{2,f}^2 
-						\approx 0.281mc^2
-						= \subt{K}{i}'
-			\end{align*}
-			but according to \(O\) is has
-			\[\]
+				\begin{align*}
+					\subt{K}{i}' &= \frac{1}{2}m_1\subt{v}{1,i}'^2 + \frac{1}{2}m_2\subt{v}{2,i}'^2 
+						\approx 0.281mc^2 &
+						\subt{K}{f}' &= \frac{1}{2}m_1\subt{v}{1,f}'^2 + \frac{1}{2}m_2\subt{v}{2,f}'^2 
+							\approx 0.281mc^2
+							= \subt{K}{i}'
+				\end{align*}
+				but according to \(O\) is has
+				\begin{align*}
+					\subt{K}{i} &= \frac{1}{2}m_1\subt{v}{1,i}^2 + \frac{1}{2}m_2\subt{v}{2,i}^2 
+						\approx 0.36mc^2 &
+						\subt{K}{f} &= \frac{1}{2}m_1\subt{v}{1,f}^2 + \frac{1}{2}m_2\subt{v}{2,f}^2 
+							\approx 0.252mc^2
+							\ne \subt{K}{i}
+				\end{align*}
+				so \(O\) concludes that energy is not conserved. \\
+			The relativistic definition of kinetic energy is
+				\[K = \frac{mc^2}{\sqrt{1 - v^2/c^2}} - mc^2 \tag{relativistic kinetic energy}\]
+			There is no limit to the amount of kinetic energy that can be given to a particle. Under the classical definition of kinetic energy, this means that speed must also lack a limit, which violates Einstein's second postulate.
+		\subsectionb{Relativistic Total Energy and Rest Energy}
+			Relativistic kinetic energy can also be expressed as
+				\[K = E - E_0 \tag{relativistic kinetic energy}\]
+				where the \textit{relativistic total energy \(E\)} is defined as
+				\[E = \frac{mc^2}{\sqrt{1 - v^2/c^2}} \tag{relativistic total energy}\]
+				and the \textit{rest energy \(E_0\)} is defined is
+				\[E_0 = mc^2 \tag{rest energy}\]
+				This suggests that mass can be expressed in units of \(\mathrm{MeV}/c^2\). The \(m\) in this equation is sometimes called the \textit{rest mass \(m_0\)}, which is distinguished from the \enquote{relativistic mass} \(m'\), defined as
+				\[m' = \frac{m_0}{\sqrt{1 - v^2/c^2}} \tag{relativistic mass}\]
+				The total energy can be found as the sum of the kinetic and rest energies:
+				\[E = E_0 + K\]
+			Manipulating the equations for relativistic momentum and total energy yields the relationship
+				\[E = \sqrt{(pc)^2 + (mc^2)^2}\]
+				This can be remembered by
+				\[\begin{tikzpicture}[scale = 1.5]
+					\node (a) at (0, 0) {};
+					\node (b) at (4, 0) {};
+					\node (c) at (4, 3) {};
+					\draw (a.center) -- node[below]{\(E_0 = mc^2\)} (b.center);
+					\draw (b.center) -- node[right]{\(pc\)} (c.center);
+					\draw[name path = line] (c.center) -- (a.center);
+					\path pic[draw, <->, angle radius = 1cm, "\(\arcsin(v/c)\)", angle eccentricity = 1.5, anchor = west, inner sep = 1 pt] {angle = b--a--c};
+					\draw[name path = arc, dashed] (4, 0) arc (0:{atan(3/4)}:4);
+					\node[name intersections = {of = line and arc}] (d) {};
+					\draw[|<->|] (-0.12, 0.16) to (3.88, 3.16);
+				\end{tikzpicture}\]
+			A particle traveling close to the speed of light (\(v > 0.99c\)), \(K \gg E_0\). IN this case,
+				\[E \cong pc\]
+				This is the \textit{extreme relativistic approximation} and can often simplify calculations. For massless particles (such as photons),
+				\[E = pc\]
+				All massless particles travel at \(c\); otherwise, their kinetic and total energies would be zero.
+	\section{Conservation Laws in Relativistic Decays and Collisions}
 	\section{Extra}
 		The \textbf{Epstein Cosmic Speedometer} is a plot of proper time (on the vertical axis) against space (on the horizontal axis). A body in motion will move through both space and time, making it an angle line. A stationary body will move only in time, making it  a vertical line. The only thing able to move through space but not time is light, making it a horizontal line. \\
 		A spacetime diagram maintains the length of all vectors, plotting space on the horizontal axis and time on the vertical axis. The vertical component of a vector is the \enquote{proper} while its horizontal component is the speed through space. \\
