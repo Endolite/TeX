@@ -82,7 +82,7 @@
 				\[v\Delta t_1 = L + u\Delta t_1\]
 				In the interval \(\Delta t_2\), the light beam traverses distance \(c\Delta t_2\) equal to length \(L\) minus the distance \(u\Delta t_2\) traveled by \(O'\):
 				\[c\Delta t_2 = L - u\Delta t_2\]
-				Solving the above two equation for \(\Delta t_1\) and \(t_2\) and adding them yields the total interval \(\Delta t\) between the emission of the particle and the arrival of the beam at the detector according to \(O\). Applying the time dilation formula to relate this result to \(\Delta t_0\) and using the length contraction formula to relate \(L\) to \(L_0\) yields the result
+				Solving the above two equation for \(\Delta t_1\) and \(\Delta t_2\) and adding them yields the total interval \(\Delta t\) between the emission of the particle and the arrival of the beam at the detector according to \(O\). Applying the time dilation formula to relate this result to \(\Delta t_0\) and using the length contraction formula to relate \(L\) to \(L_0\) yields the result
 				\[v = \frac{v' + u}{1 + v'/uc^2} \tag{relativistic velocity addition}\]
 				Note that when \(v' = c\) (a beam of light being observed),
 				\[
@@ -94,7 +94,7 @@
 				regardless of the value of \(u\). All observers measure the same speed of light \(c\) regardless of their reference frame. \\
 		\subsectionb{The Relativistic Doppler Effect}
 			The classical Doppler effect states that an observer \(O\) moving relative to the source of waves detects a frequency \(f'\) different from the true frequency \(f\) being emitted by the source \(S\):
-				\[f' = f\frac{v \pm v_0}{v \mp v_S} \tag{classical Doppler effect}\]
+				\[f' = f\frac{v \pm v_O}{v \mp v_S} \tag{classical Doppler effect}\]
 				where \(v\) is the speed of the waves through some medium, \(v_S\) is the speed of the source \textit{relative to the medium}, and \(O\) is that of the observer \textit{relative to the medium}. The upper signs are chosen when \(S\) and \(O\) are moving towards each other while the lower ones are chosen when they are moving away from each other. \\
 			Consider a source of electromagnetic waves at rest in the reference frame of observer \(O\). An observer \(O'\) moving relative to the source at speed \(u\) will observe a different frequency. Suppose \(O\) observes \(N\) waves emitted at frequency \(f\). It takes an interval \(\Delta t_0 = N/f\) for these \(N\) waves to be emitted from the point of view of \(O\). This is the proper time interval in the frame of reference of \(O\). The corresponding interval to \(O'\) is \(\Delta t'\), during which \(O\) moves a distance \(u\Delta t'\). The wavelength \(\lambda'\) according to \(O'\) is the total length occupied by the waves divided by the number of waves:
 				\[
@@ -112,6 +112,12 @@
 						= f\sqrt{\frac{1 - u/c}{1 + u/c}} \tag{relativistic Doppler shift}
 				\]
 				This is the formula for the \textit{relativistic Doppler shift} where the waves are observed parallel to \(\vec{u}\). It should be noted that unlike the classical formula, this formula does \textit{not} distinguish between the source and observer motion; it is only dependent on the relative speed \(u\) between the source and observer. \\
+				Restated,
+				\begin{align*}
+					\lambda' &= \lambda\sqrt{\frac{1 + u/c}{1 - u/c}} &
+						\frac{u}{c} &= \frac{(\lambda'/\lambda)^2 - 1}{(\lambda'/\lambda)^2 + 1}	
+				\end{align*}
+
 	\section{The Lorentz Transformation}
 		While the Galilean transformation holds for the \enquote{common-sense} experience observed at low speeds, it does not agree with experiments performed at high speeds. A new set of transformations is therefore required that is capable of reproducing relativistic effects such as time dilation, length contraction, velocity addition, and the Doppler shift. \\
 		A transformation that enables observers \(O\) and \(O'\) moving relative to each other to compare their measurements in space and time coordinates of the same event. Teh transformation equations relate the measurements \(x\), \(y\), \(z\), \(t\) in \(O\) to \(x'\), \(y'\), \(z\), and \(t'\) in \(O'\). This transformation must be linear (depending only on the first powers of each coordinate, following the homogeneity of space and time), consistent with Einstein's postulates, and it must reduce to the Galilean transformation when the relative speed between the observers is small. It is again assumed that the relative speed is only in the positive \(xx'\) direction. \\
@@ -339,8 +345,19 @@
 				\[E = pc\]
 				All massless particles travel at \(c\); otherwise, their kinetic and total energies would be zero.
 	\section{Conservation Laws in Relativistic Decays and Collisions}
+		The law of conservation of momentum can be applied to all collisions. The only difference for high speeds is that the relativistic definition of momentum must be used. It can be stated the same:
+			\callout{14}{\textit{In an isolated system of particles, the total linear momentum remains constant.}}
+		Classically, the only form of energy present in an elastic collision is kinetic, so the conservation of energy is simply that of kinetic energy. In inelastic collisions or decay processes, kinetic energy is not conserved. The total energy does indeed remain constant, though; the other forms of energy are simply unaccounted for. This missing energy is usually stored in particles as atomic or nuclear energy. \\
+		Relativistically, the internal stored energy is accounted for by the rest energy. In atomic and nuclear processes, the only forms of energy generally accounted for are kinetic and rest (though radiation will be considered later). A loss of kinetic energy then implies an increase in rest energy, as the total relativistic energy does not change. \\
+			Consider a reaction in which new particles are produced. The loss of kinetic energy in the original particles is what provides the rest energy of the new particle. In a nuclear decay process, on the other hand, the initial nucleus loses some rest energy in the form of the kinetic energy given to the decay products. \\
+			The relativistic law of conservation of energy is as follows:
+			\callout{10.2}{\textit{In an isolated system of particles, the relativistic total energy (kinetic energy plus rest energy) remains constant.}}
+			When applying this law to relativistic collisions, it does not matter whether a collision is elastic or inelastic, as the inclusion of rest energy accounts for any potential loss of kinetic energy.
 	\section{Extra}
 		The \textbf{Epstein Cosmic Speedometer} is a plot of proper time (on the vertical axis) against space (on the horizontal axis). A body in motion will move through both space and time, making it an angle line. A stationary body will move only in time, making it  a vertical line. The only thing able to move through space but not time is light, making it a horizontal line. \\
 		A spacetime diagram maintains the length of all vectors, plotting space on the horizontal axis and time on the vertical axis. The vertical component of a vector is the \enquote{proper} while its horizontal component is the speed through space. \\
-		Moving through space means moving slower through time; that is, moving objects effectively have slower clocks.
+		Moving through space means moving slower through time; that is, moving objects effectively have slower clocks. \\
+		Graphs can be made in Lorentz/Minkowski Space. The axes are \(x\) and \(ct\). The new axes can be found as lines with direct variation of slopes \(x'\) and \(ct'\). Note that \(ct'\) and \(x'\) are not perpendicular. To graph with them, then, one must first go along one axis and then parallel along the other. The greater \(\beta\), is, the closer together the \(ct'\) and \(x'\) axes; that is, the slower a reference frame is traveling, the less it skews spacetime. The graph can be used to plot a point in one reference frame and see its coordinates in the other. \\
+		It should be noted that
+			\[(ct)^2 - x^2 = (ct')^2 - x'^2 \tag{invariant}\]
 \end{document}

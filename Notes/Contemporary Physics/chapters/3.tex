@@ -1,0 +1,28 @@
+\documentclass{subfiles}
+
+\begin{document}
+	\textit{Wave mechanics} is the second theory on which modern physics is based. One of its consequences is the breakdown of the classically made distinction between particles and waves. Light, which is usually treated as a wave, can have properties associated with particles. Rather than spreading energy smoothly over a wave, it is delivered in discrete packets (\textit{quantum}) known as \textit{photons}.
+	\section{Review of Electromagnetic Waves}
+		An electromagnetic field is characterized by its electric field \(\vec{E}\) and magnetic field \(\vec{B}\). The electric field at distance \(r\) from a point charge \(q\) is
+			\[\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\vr \tag{electric field}\]
+			where \(\vr\) is a unit vector in the radial direction. The magnetic field at distance \(r\) from a long, straight wire carrying a current \(i\) along the \(z\)-axis is
+			\[\vec{B} = \frac{\mu_0i}{2\pi r}\vphi \tag{magnetic field}\]
+			where \(\vphi\) is a unit vector in the azimuthal direction (in the \(xy\)-plane) in cylindrical coordinates. (Note this definition is different than its mathematical definition, where the azimuthal angle is in the \(yz\)-plane.) \\
+			If the charges are accelerated or the current is varied with time, an electromagnetic wave is produced, in which the electric and magnetic fields vary not only with \(\vec{r}\) but also with \(t\). The mathematical expression used to describe this can take several forms depending on the properties of the source wave and the medium that is being traversed. A special form is the \textit{plane wave}, for which the wave fronts are planes. (A point source produces spherical waves, having spherical wave fronts.) A plane electromagnetic wave traveling in the positive \(z\) direction is described by
+			\begin{align*}
+				\vec{E} &= \vec{E}_0\sin(kz - \omega t) &
+					\vec{B} &= \vec{B}_0\sin(kz - \omega t)
+						\tag{planar wave}	
+			\end{align*}
+			where the \textit{wave number \(k\)} is found as
+			\[k = \frac{2\pi}{\lambda} \tag{wave number}\]
+			where \(\lambda\) is the wavelength and the \textit{angular frequency \(\omega\)} is found as
+			\[\omega = 2\pi f \tag{angular frequency}\]
+			where \(f\) is the frequency. As \(c = \lambda f\),
+			\[c = \frac{\omega}{k}\]
+			The wave's polarization is represented by \(\vec{E}_0\), the plane of polarization being determined by the direction of \(\vec{E}_0\) and the direction of propagation (in this case \(+z\)). The direction of \(\vec{B}_0\) is then fixed by the requirement that \(\vec{B}\) be perpendicular to \(\vec{E}\) and the direction of travel and that \(\vec{E} \times \vec{B}\) must point in the direction of travel. \\
+			The magnitude of \(\vec{B}_0\) is determined by
+			\[B_0 = \frac{E_0}{c}\]
+			An electromagnetic wave transfers energy, the flux of which is determined by the \textit{Poynting vector \(\vec{S}\)}:
+			\[\vec{S} = \frac{1}{\mu_0}\vec{E} \times \vec{B} \tag{Ponyting vector}\]
+\end{document}
