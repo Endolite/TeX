@@ -1,28 +1,195 @@
 \documentclass{subfiles}
 
 \begin{document}
-	\textit{Wave mechanics} is the second theory on which modern physics is based. One of its consequences is the breakdown of the classically made distinction between particles and waves. Light, which is usually treated as a wave, can have properties associated with particles. Rather than spreading energy smoothly over a wave, it is delivered in discrete packets (\textit{quantum}) known as \textit{photons}.
-	\section{Review of Electromagnetic Waves}
-		An electromagnetic field is characterized by its electric field \(\vec{E}\) and magnetic field \(\vec{B}\). The electric field at distance \(r\) from a point charge \(q\) is
-			\[\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\vr \tag{electric field}\]
-			where \(\vr\) is a unit vector in the radial direction. The magnetic field at distance \(r\) from a long, straight wire carrying a current \(i\) along the \(z\)-axis is
-			\[\vec{B} = \frac{\mu_0i}{2\pi r}\vphi \tag{magnetic field}\]
-			where \(\vphi\) is a unit vector in the azimuthal direction (in the \(xy\)-plane) in cylindrical coordinates. (Note this definition is different than its mathematical definition, where the azimuthal angle is in the \(yz\)-plane.) \\
-			If the charges are accelerated or the current is varied with time, an electromagnetic wave is produced, in which the electric and magnetic fields vary not only with \(\vec{r}\) but also with \(t\). The mathematical expression used to describe this can take several forms depending on the properties of the source wave and the medium that is being traversed. A special form is the \textit{plane wave}, for which the wave fronts are planes. (A point source produces spherical waves, having spherical wave fronts.) A plane electromagnetic wave traveling in the positive \(z\) direction is described by
+	\textit{Wave mechanics} is the second theory on which modern physics is based. One of its consequences is the breakdown of the classically made distinction between particles and waves. Light, which is usually treated as a wave, can have properties associated with particles. Rather than spreading energy smoothly over a wave, it is delivered in discrete packets (\textit{quantum}) known as \textit{photons}.\
+		\section{Review of Electromagnetic Waves}
+			An electromagnetic field is characterized by its electric field \(\vec{E}\) and magnetic field \(\vec{B}\). The electric field at distance \(r\) from a point charge \(q\) is
+				\[\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\vr \tag{electric field}\]
+				where \(\vr\) is a unit vector in the radial direction. The magnetic field at distance \(r\) from a long, straight wire carrying a current \(i\) along the \(z\)-axis is
+				\[\vec{B} = \frac{\mu_0i}{2\pi r}\vphi \tag{magnetic field}\]
+				where \(\vphi\) is a unit vector in the azimuthal direction (in the \(xy\)-plane) in cylindrical coordinates. (Note this definition is different than its mathematical definition, where the azimuthal angle is in the \(yz\)-plane.) \\
+				If the charges are accelerated or the current is varied with time, an electromagnetic wave is produced, in which the electric and magnetic fields vary not only with \(\vec{r}\) but also with \(t\). The mathematical expression used to describe this can take several forms depending on the properties of the source wave and the medium that is being traversed. A special form is the \textit{plane wave}, for which the wave fronts are planes. (A point source produces spherical waves, having spherical wave fronts.) A plane electromagnetic wave traveling in the positive \(z\) direction is described by
+				\begin{align*}
+					\vec{E} &= \vec{E}_0\sin(kz - \omega t) &
+						\vec{B} &= \vec{B}_0\sin(kz - \omega t)
+							\tag{planar wave}	
+				\end{align*}
+				where the \textit{wave number \(k\)} is found as
+				\[k = \frac{2\pi}{\lambda} \tag{wave number}\]
+				where \(\lambda\) is the wavelength and the \textit{angular frequency \(\omega\)} is found as
+				\[\omega = 2\pi f \tag{angular frequency}\]
+				where \(f\) is the frequency. As \(c = \lambda f\),
+				\[c = \frac{\omega}{k}\]
+				The wave's polarization is represented by \(\vec{E}_0\), the plane of polarization being determined by the direction of \(\vec{E}_0\) and the direction of propagation (in this case \(+z\)). The direction of \(\vec{B}_0\) is then fixed by the requirement that \(\vec{B}\) be perpendicular to \(\vec{E}\) and the direction of travel and that \(\vec{E} \times \vec{B}\) must point in the direction of travel. \\
+				The magnitude of \(\vec{B}_0\) is determined by
+				\[B_0 = \frac{E_0}{c}\]
+				An electromagnetic wave transfers energy, the flux of which is determined by the \textit{Poynting vector \(\vec{S}\)}:
+				\[\vec{S} = \frac{1}{\mu_0}\vec{E} \times \vec{B} \tag{Poynting vector}\]
+				For a plane wave, this reduces to
+				\[\vec{S} = \frac{1}{\mu_0}E_0B_0\sin^2(kz - \omega t)\vk\]
+				The units of the Poynting vector are that of power per unit area, such as \SI{}{W/m^2}. \\
+				An electromagnetic wave with \(\vec{E}\) oscillating about the \(x\)-axis and \(\vec{B}\) about the \(y\), \(\vec{P}\) points in the \(+z\) direction. \\
+				Consider a detector of electromagnetic radiation with area \(A\) placed perpendicular to the \(z\) axis. The power entering the receiver is
+				\[
+					P = SA
+						= \frac{1}{\mu_0}E_0B_0A\sin^2(kz-\omega t)
+				\]
+				which can be rewritten as
+				\[P = \frac{1}{\mu_0c}E_0^2A\sin^2(kz - \omega t)\]
+				Note that the intensity (the average power per unit area) is proportional to \(E_0^2\). In general, \textit{the intensity of a wave is proportional to the square of its amplitude}. \\
+				It should also be noted that the intensity fluctuates with time with frequency
+				\[f = \frac{\omega}{2\pi}\] 
+				This rapid fluctuation is typically not observed. The average power can be found from the observation time \(T\) as
+				\[\subt{P}{avg} = \frac{1}{T}\int_0^T P \dd{t}\]
+				The intensity \(I\) can be obtained as
+				\[
+					I = \frac{\subt{P}{avg}}{A}
+						= \frac{1}{2\mu_0 c}E_0^2
+				\]
+				as the average value of \(\sin^2\theta\) is \(0.5\).
+			\subsectionb{Interference and Diffraction}
+				The most unique property of waves as physical phenomena is the \textit{principle of superposition}, which allows two waves meeting at a point to have a combined disturbance on that point that may be greater or less than that provided each wave individually. \\
+				This property leads to \textit{interference} and \textit{diffraction}. \\
+				The simplest example of the former is \textit{Young's double-slit experiment}. A monochromatic plane wave is given two narrow slits. The slits \textit{diffract} the plane wave, resulting in the area covered by the light passing through each slit being far greater than the areas of the slits. This causes the light from each slit to overlap, resulting in an interference pattern. \\
+				A bright region in the interference pattern is from \textit{constructive interference}, where the peaks of each beam align, resulting in their amplitudes being added. It occurs at point where the distance from one slit is exactly one wavelength greater than that from the other. \\
+				If \(X_1\) and \(X_2\) are distances from the point to the two slits, then in order for maximum interference to occur
+					\[|X_1 - X_2| = n\lambda, \quad n \in \Z^+ \tag{constructive interference}\]
+				When the two waves cancel, there is a dark region, created by \textit{destructive interference}. (The existence of destructive interference shows that the powers are not added, as power is always positive, but rather the electric fields.) This occurs when the distances are such that the phases of the waves differ by an integer number of half-cycles:
+					\[|X_1 - X_2| = \frac{2n + 1}{2}, \quad n \in \N \tag{destructive interference}\]
+			\subsectionb{Crystal Diffraction of X Rays}
+	\section{The Photoelectric Effect}
+		When a light is shone on a metal surface, electrons may be emitted. This is know as the \textit{photoelectric effect}. The emitted electrons are called \textit{photoelectrons}. \\
+			The rate of electron emission from the surface can be measured as an electric current by an ammeter. The maximum kinetic energy of the electrons can then be measured by applying a negative potential \(\subt{V}{S}\) (called the \textit{stopping potential} to a collector for the electrons that is just enough to repel the most energetic electrons (the ammeter dropping to 0). This means that
+			\[
+				\subt{K}{max} = -\Delta U
+					= e\subt{V}{s}
+			\]
+			Classically, the metal's surface is illuminated by en electromagnetic wave of intensity \(I\). The surface absorbs the energy until that energy exceeds the binding energy of the electron, at which point the electron is released. This minimum energy is called the metal's \textit{work function \(\varphi\)}.
+		\subsectionb{The Classical Theory of the Photoelectric Effect}
+			Classical wave theory makes 3 key predictions regarding the emitted photoelectrons:
+				\begin{enumerate}
+					\item \textit{The maximum kinetic energy of the electrons should be proportional to the intensity of the radiation.}
+						As the brightness increases, so does the energy carried by the radiation, meaning that more energy is transferred to the surface (the electric field is greater), so the kinetic energy of the electrons should also be greater.
+					\item \textit{The photoelectric effect should occur	for light of any frequency or wavelength.}
+						So long as the light is intense enough to release electrons, the photoelectric effect should occur regardless of the frequency or wavelength.
+					\item \textit{The first electrons should be emitted on the order of a few seconds from the radiation beginning to strike the surface.}
+						The energy of the wave is uniformly distributed over the wave front. If the energy is absorbed directly from the wave, the amount of energy emitted to an electron is dependent on how much radiant energy is incident on the area in which the electron is confined. Assuming this area to be about the size of an atom, the time lag should be on the order of seconds.
+				\end{enumerate}
+		\subsectionb{The Quantum Theory of the Photoelectric Effect}
+			Einstein proposed that the energy of electromagnetic radiation is not continuously distributed but rather in discrete packets called \textit{quanta} (or \textit{photons}. A photon's energy is associated with the wavelength and frequency as
+				\[
+					E = hf
+						= \frac{hc}{\lambda}
+						\tag{energy of a photon}
+				\]
+				Photons are often treated as particles. Like electromagnetic waves, they travel at the speed of light. They must also obey the relativistic relationship \(p = E/c\), which means that
+				\[p = \frac{h}{\lambda}\]
+				In addition to energy, photons carry linear momentum. \\
+				Because a proton travels at the speed of light, its mass must be 0; otherwise, it would have infinite energy and momentum. Its rest energy is also 0. \\
+			According to Einstein, a photoelectron is released as a result of an encounter with a \textit{single photon}, the entire energy of which is delivered instantaneously to a \textit{single photoelectron}. If the photon energy is greater than the work function of the material, the photoelectron will be released. Otherwise, the photoelectric effect will not occur. This explanation accounts for two failures of classical wave theory: the existence of a cutoff frequency and the lack of a measurable time delay. \\
+			If the photon's energy exceeds the work function, the excess energy becomes kinetic energy for the electron:
+				\[\subt{K}{max} = hf - \varphi\]
+				The intensity of the light is not factored into this equation. Increasing the intensity while maintaining the frequency and wavelength simply means that the number of photoelectrons released is increased; their maximum kinetic energies are unchanged. \\
+			A photon with energy equal to the work function corresponds with light of frequency \(\subt{f}{c}\), called the cutoff frequency:
+				\[\subt{f}{c} = \frac{\varphi}{h} \tag{cutoff frequency}\]
+				The corresponding cutoff wavelength is
+				\[\subt{\lambda}{c} = \frac{hc}{\varphi} \tag{cutoff wavelength}\]
+				This is the \textit{largest} wavelength for which the cutoff frequency can be observed.
+	\section{Thermal Radiation}
+		\textit{Thermal radiation}, the radiation released by all objects due to their temperature, is not explained by classical wave theory. \\
+		Experiments yield two key characteristics regarding radiation:
+			\begin{enumerate}
+				\item
+					The total intensity radiated over all wavelengths (the area under each curve) increases with temperature as
+						\[I = \sigma T^4 \tag{Stefan's law}\]
+						where proportionality constant \(\sigma\) is
+						\[\sigma \approx \SI{5.67E-8}{\frac{W}{m^2}.K^4} \tag{Stefan-Boltzmann constant}\]
+						as determined experimentally.
+				\item
+					The wavelength \(\subt{\lambda}{max}\) at which the intensity peaks decreases as the temperature increases:
+					\[\subt{\lambda}{max}T \approx \SI{2.9E-3}{m.K} \tag{Wien's displacement law}\]
+			\end{enumerate}
+		To simplify analysis of thermal radiation, a \textit{blackbody} is considered, which absorbs all radiation incident on it, reflecting none of it. To further simplify, a special type is considered: a hole in a hollow metal box with walls that are in thermal equilibrium at temperature \(T\). The box is filled with electromagnetic radiation that is emitted and reflected by the walls. A small hole in one of the walls allows some radiation to escape. \textit{It is the hole, not the box itself, that is the blackbody.} Radiation from outside that is incident on the hole enters the box, having a negligible change of reemerging from the hole; hence no reflections occur from the blackbody. The radiation that emerges from the hold is a sample of the radiation inside the box, so understanding the radiation inside the box enables an understanding of the radiation leaving through the hole. \\
+			Consider the radiation inside the box. It has energy density per unit wavelength interval \(u(\lambda)\); that is, the energy density of the electromagnetic radiation with wavelengths between \(\lambda\) and \(\lambda + \dd{\lambda}\) in a small volume element is \(u(\lambda)\dd{\lambda}\). At a given instant, half of the radiation within the box is moving away from the hole. The other half is moving towards it with velocity of magnitude \(c\) directed in a range of angles. Averaging over this range to evaluate the energy flowing perpendicular to the hole's surface introduces another factor of \(1/2\), making the contribution of the radiation in this wavelength interval to the intensity passing through the hole
+			\[I(\lambda) = \frac{c}{4}u(\lambda)\]
+			The quantity \(I(\lambda)\dd{\lambda}\) is the radiant intensity over the interval \(\dd{\lambda}\). To find the total intensity emitted, one must integrate this quantity over all wavelengths:
+				\[I = \int_0^\infty I(\lambda)\dd{\lambda}\]
+		\subsectionb{Classical Theory of Thermal Radiation}
+			The following predictions are made by classical theories of electromagnetism and thermodynamics regarding the relationship between \(I\) and \(\lambda\).
+			\begin{enumerate}
+				\item \textit{The box is filled with electromagnetic standing waves.}
+					As the box's walls are metal, the radiation is reflected back and forth with a node of the electric field at each wall (the electric field within a conductor being 0). This same condition applies to other standing waves.
+				\item \textit{The number of standing waves with wavelengths between \(\lambda\) and \(\lambda + \dd{\lambda}\) is}
+					\[N(\lambda)\dd{\lambda} = \frac{8\pi V}{\lambda^4}\dd{\lambda}\]
+					where \(V\) is the volume of the box. For one-dimensional standing waves, as on a string of length \(L\), the allowed wavelengths are
+					\[\lambda = \frac{2L}{n} \quad \text{for} \quad n \in \Z^+\]
+					The number of possible standing waves with wavelengths between \(\lambda_1\) and \(\lambda_2\) is
+					\[n_2 - n_1 = 2L\left(\frac{1}{\lambda_2} - \frac{1}{\lambda_1}\right)\]
+					In the interval from \(\lambda\) to \(\dd{\lambda}\), the number of standing waves is
+					\[
+						N(\lambda)\dd{\lambda} = \left|\dv{n}{\lambda}\right|\dd{\lambda}
+							= \frac{2L}{\lambda^2}\dd{\lambda}
+					\]
+					Extending this approach to three dimensions yields the number of standing waves between \(\lambda\) and \(\lambda + \dd{\lambda}\) as stated above.
+				\item \textit{Each individual waves contributes an average energy \(kT\) to the radiation in the box.} 
+			\end{enumerate}
+		\subsectionb{Quantum Theory of Thermal Radiation}
+	\section{The Compton Effect}
+		The Compton effect describes the phenomenon of radiation scattering from loosely bound, nearly free electrons. Part of the energy of the radiation is given to the electron while the remainder is reradiated as electromagnetic radiation. Under classical wave theory, the scattered radiation is less energetic than the incident radiation (as some energy must go into the kinetic energy of the electron). The concept of photons, however, gives rise to a much different prediction. \\
+			The scattering process is analyzed as an interaction between a single photon and electron, which is assumed to be at rest. Initially, the photon has energy \(E\) and linear momentum \(p\) given by
+			\[E = hf = \frac{hc}{\lambda} \qquad \text{and} \qquad p = \frac{E}{c}\]
+			The electron has rest energy \(\subt{m}{e}c^2\). After the scattering, the photon has energy and momentum 
+			\[E' = \frac{hc}{\lambda'} \qquad \text{and} p' = \frac{E'}{c}\]
+			and is moving in a direction at angle \(\theta\) with respect to that of the incident photon. The electron has total final energy \(\subt{E}{e}\) and momentum \(\subt{p}{e}\) and moves in a direction at angle \(\varphi\) with respect to the initial photon. (To account for high-energy incident photons given energetic scattering electrons, relativistic kinematics are used for the electron.) Applying the relativistic conservation laws,
 			\begin{align*}
-				\vec{E} &= \vec{E}_0\sin(kz - \omega t) &
-					\vec{B} &= \vec{B}_0\sin(kz - \omega t)
-						\tag{planar wave}	
+				E_i = E_f &: &
+					E + \subt{m}{e}c^2 &= E' + \subt{E}{e} \\
+				p_{x, i} = p_{x, f} &: &
+					p &= \subt{p}{e}\cos\varphi + p'\cos\theta \\
+				p_{y, i} = p_{y, f} &: &
+					0 &= \subt{p}{e}\sin\varphi + p'\sin\theta	
 			\end{align*}
-			where the \textit{wave number \(k\)} is found as
-			\[k = \frac{2\pi}{\lambda} \tag{wave number}\]
-			where \(\lambda\) is the wavelength and the \textit{angular frequency \(\omega\)} is found as
-			\[\omega = 2\pi f \tag{angular frequency}\]
-			where \(f\) is the frequency. As \(c = \lambda f\),
-			\[c = \frac{\omega}{k}\]
-			The wave's polarization is represented by \(\vec{E}_0\), the plane of polarization being determined by the direction of \(\vec{E}_0\) and the direction of propagation (in this case \(+z\)). The direction of \(\vec{B}_0\) is then fixed by the requirement that \(\vec{B}\) be perpendicular to \(\vec{E}\) and the direction of travel and that \(\vec{E} \times \vec{B}\) must point in the direction of travel. \\
-			The magnitude of \(\vec{B}_0\) is determined by
-			\[B_0 = \frac{E_0}{c}\]
-			An electromagnetic wave transfers energy, the flux of which is determined by the \textit{Poynting vector \(\vec{S}\)}:
-			\[\vec{S} = \frac{1}{\mu_0}\vec{E} \times \vec{B} \tag{Ponyting vector}\]
+			This provides three equations with four unknowns (\(\theta\), \(\varphi\), \(\subt{E}{e}\), \(E'\); \(\subt{p}{e}\) and \(p'\) are not independent unknowns) that cannot be solved uniquely. Any two of them can be eliminated by solving the equations simultaneously. Choosing to measure the energy and direction of the scattered photons, eliminates \(\subt{E}{e}\) and \(\varphi\). The latter is eliminated by first rewriting the momentum equations as
+				\[
+					\subt{p}{e}\cos\varphi = p - p'\cos\theta \qquad \text{and} \qquad
+					\subt{p}{e}\sin\varphi = p'\sin\theta
+				\]
+				Squaring and adding yields
+				\[\subt{p}{e}^2 = p^2 - 2pp'\cos\theta + p'^2\]
+				The relativistic relationship between energy and momentum is
+				\[\subt{E}{e}^2 = c^2\subt{p}{e}^2 + \subt{m}{e}^2c^4\]
+				Substituting this into the equation for \(\subt{E}{e}\) obtained by the conservation of energy and for \(\subt{p}{e}^2\) from the above equation yields
+				\[(E + \subt{m}{e}c^2 - E')^2 = c^2(p^2 - 2pp'\cos\theta + p'^2) + \subt{m}{e}^2c^4\]
+				Rewriting,
+				\[\frac{1}{E'} - \frac{1}{E} = \frac{1}{\subt{m}{e}c^2}(1 - \cos\theta)\]
+				In terms of wavelengths,
+				\[\lambda' - \lambda = \frac{h}{\subt{m}{e}c}(1 - \cos\theta)\]
+				where \(\lambda\) is the wavelength of the incident photon and \(\lambda'\) is that of the scattered photon, and the quantity
+				\[
+					\lambda_c = \frac{h}{\subt{m}{e}c}
+						\approx \SI{0.00242}{nm}
+						\tag{Compton wavelength of the electron}
+				\]
+				is the \textit{Compton wavelength of the electron}. It should be noted that this is a \textit{change} of wavelength rather than a wavelength in and of itself. \\
+				The above equations give the change in energy or wavelength as a function of the \textit{scattering angle \(\theta\)}. As the quantity on the right side is always positive, \(E'\) is always less than \(E\), so the scattered photon has less energy than the original incident photon; the difference is simply the kinetic energy given to the electron, \(\subt{E}{e} - \subt{m}{e}c^2\). Similarly, \(\lambda'\) is greater than \(\lambda\), meaning that the wavelength of the scattered photon is always longer than that of the incident photon, the change in wavelength ranging from 0 at \(\theta = 0^\circ\) to \(2\lambda_c\) at \(\theta = 180^\circ\). These two descriptions are of course equivalent, the choice of which to use being simply a matter of convenience. \\
+				Using
+				\[\subt{E}{e} = \subt{K}{e} + \subt{m}{e}c^2\]
+				conservation of energy can also be written as
+				\[E = \subt{m}{e}c^2 = E' + \subt{K}{e} + \subt{m}{e}c^2\]
+				Solving for \(\subt{K}{e}\) yields
+				\[\subt{K}{e} = E - E'\]
+				That is, the kinetic energy of the electron is equal to the difference in the energies of the initial and final photon energies. \\
+				The direction of the electron's motion can be found by dividing the momentum relationships:
+				\[
+					\tan\varphi = \frac{\subt{p}{e}\sin\varphi}{\subt{p}{e}\cos\varphi}
+						= \frac{p'\sin\theta}{p - p'\cos\theta}
+						= \frac{E'\sin\theta}{E - E'\cos\theta}
+				\]
+				the final result coming from
+				\[
+					p = \frac{E}{c} \qquad \text{and} \qquad
+						p' = \frac{E'}{c}
+				\]
+	\section{Other Photon Processes}
+		
 \end{document}

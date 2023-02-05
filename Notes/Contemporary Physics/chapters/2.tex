@@ -4,7 +4,7 @@
 	\section{Classical Relativity}
 		A \enquote{theory of relativity} is simply a way for observers in different reference frames to compare their observations. \\
 		The mathematical basis for converting between reference frames is called a \textit{transformation}. \\
-		Consider two observes \(O\) and \(O'\) observing the same event, \(O'\) moving relative \(O\) with constant velocity \(\vec{u}\). In their own reference frames \(O\) and \(O'\) are both at rest, but they move relative to one another with constant velocity \(\vec{u}\). According to \(O\), the space and time coordinates are \(x\), \(y\), \(z\), and \(t\), while according to \(O'\), those of the \textit{same event} are \(x'\), \(y'\), \(z'\), and \(t'\). If the relative velocity is only in the common \(xx'\) direction, \(\vec{u}\) can represent the velocity of \(O'\) as measured by \(O\). \\
+		Consider two observers \(O\) and \(O'\) observing the same event, \(O'\) moving relative \(O\) with constant velocity \(\vec{u}\). In their own reference frames \(O\) and \(O'\) are both at rest, but they move relative to one another with constant velocity \(\vec{u}\). According to \(O\), the space and time coordinates are \(x\), \(y\), \(z\), and \(t\), while according to \(O'\), those of the \textit{same event} are \(x'\), \(y'\), \(z'\), and \(t'\). If the relative velocity is only in the common \(xx'\) direction, \(\vec{u}\) can represent the velocity of \(O'\) as measured by \(O\). \\
 		It is assumed that each observer is able to test and verify Newton's laws in their reference frames. A reference frame that follows Newton's first law (the law of inertia) is said to be an \textit{inertial frame}. In order for a frame to be inertial, it must not be accelerating. \\
 		The classical \textit{Galilean} transformation relating the coordinates assumes as a postulate of classical physics that \(t = t'\); that is, time is the same for all observers. It is also assumed for simplicity that the coordinate systems are chosen such that their origins overlap at \(t = 0\). Consider an object in \(O'\) at coordinates \((x', y', z')\). According to \(O\), the \(y\) and \(z\) coordinates are the same as those observed in \(O'\). Along the \(x\) direction, though, \(O\) would observe the object at \(x = x' + ut\). This yields the \textit{Galilean coordinate transformation}
 			\begin{align*}
@@ -219,7 +219,7 @@
 				\end{align*}
 				Solving the above equations for \(v_x\), it can be shown that this is identical to the equation for relativistic velocity addition. It should be noted that for \(u \ll c\), the Lorentz velocity transformation reduces to its Galilean counterpart. Note also that despite \(y' = y\), \(v_y' \ne v_y\). This is due to the Lorentz transformation's handling of \(t\). \\
 				These transformation can be derived from the coordinate transformation. 
-				Differentiating the velocity transformation for \(x'\) yields
+				Differentiating the coordinate transformation for \(x'\) yields
 				\[\dd{x'} = \frac{\dd{x} - u\dd{t}}{1 - u^2/c^2}\]
 				Differentiating the time coordinate transformation yields
 				\[\dd{t'} = \frac{\dd{t} - \left(u/c^2\right)\dd{x}}{1 - u^2/c^2}\]
@@ -320,6 +320,8 @@
 				\[E = \frac{mc^2}{\sqrt{1 - v^2/c^2}} \tag{relativistic total energy}\]
 				and the \textit{rest energy \(E_0\)} is defined is
 				\[E_0 = mc^2 \tag{rest energy}\]
+				That of en electron is
+				\[\subt{E}{e} \approx \SI{0.511}{MeV}\]
 				This suggests that mass can be expressed in units of \(\mathrm{MeV}/c^2\). The \(m\) in this equation is sometimes called the \textit{rest mass \(m_0\)}, which is distinguished from the \enquote{relativistic mass} \(m'\), defined as
 				\[m' = \frac{m_0}{\sqrt{1 - v^2/c^2}} \tag{relativistic mass}\]
 				The total energy can be found as the sum of the kinetic and rest energies:
