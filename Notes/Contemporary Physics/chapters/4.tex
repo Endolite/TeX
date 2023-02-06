@@ -1,0 +1,201 @@
+\documentclass{subfiles}
+
+\begin{document}
+	\section{De Broglie's Hypothesis}
+		De Broglie hypothesized that the wave-particle duality of light applies also to material objects in general. Lacking any experimental evidence, he suggested that for any material particle with momentum \(p\), there is a \textit{de Broglie wavelength}
+			\[\lambda = \frac{h}{p} \tag{de Broglie wavelength}\]
+		Whenever a particle moves, there is an associated de Broglie wave, which shows itself \textit{when a wave-type experiment (such as diffraction) is performed on it}.
+	\setcounter{section}{2}
+	\section{Uncertainty Relationships for Classical Waves}
+		In quantum mechanics, the amplitude of the de Broglie wave yields information regarding the particle's location. \\
+		For a quantum particle, the better its momentum (or wavelength) is known, the less is known about its location. \\
+		Classical waves also show this effect. All real waves can be represented as \textit{wave packets}, disturbances localized to a finite region of space. \\
+		Consider a very small wave packet. The disturbance is localized to a region of length \(\Delta x\). In attempting to measure the wavelength of this wave packet by placing a measuring stick along the wave, it is difficult to determine where exactly the wave begins and ends. The measurement is therefore subject to a small \textit{uncertainty} \(\Delta\lambda\). This uncertainty can be represented as a fraction \(\varepsilon\) of the wavelength \(\lambda\) such that
+			\[\Delta\lambda \sim \varepsilon\lambda\]
+			The fraction \(\varepsilon\) is less than 1 but likely greater than 0.01, so it may be estimated that
+			\[\varepsilon \sim 0.1\]
+			within an order of magnitude. (The \(\sim\) symbol is used to indicate a rough order-of-magnitude estimate.) That is, the uncertainty in the measurement is roughly a tenth of the wavelength. \\
+			The size of this wave disturbance is approximately one wavelength, so
+			\[\Delta x \approx \lambda\]
+			Multiplying this by the uncertainty expression for wavelength yields
+			\[\Delta x\Delta\lambda \sim \varepsilon\lambda^2 \tag{classical position-wavelength uncertainty relationship}\]
+			For a given wavelength, the smaller the size of the wave packet, the greater the uncertainty in the measurement of its wavelength.
+		\subsectionb{The Frequency-Time Uncertainty Relationship}
+			Consider the measurement of a period rather than the wavelength of the wave comprising the wave packet. Suppose there is a timing device used to measure the wave packet's duration. The wave disturbance is then a function of time rather than location. The \enquote{size} of the wave packet is not its duration in time, which is approximately one period \(T\), so
+				\[\Delta t \approx T\]
+				As before, it is assumed that the uncertainty is some small fraction of the period, so
+				\[\Delta T \sim \varepsilon T\]
+				This yields
+				\[\Delta t \Delta T \sim \varepsilon T^2 \tag{classical time-period uncertainty relationship}\]
+				For a wave of a given period, the smaller the wave packet's duration, the larger the uncertainty in the measurement of its period. \\
+			As frequency and period are related as
+				\[f = \frac{1}{T}\]
+				one might assume that
+				\[\Delta f = \frac{1}{\Delta T} \tag{incorrect time-frequency relationship}\]
+				This, however, is \textit{not} the case, as this would imply that a small uncertainty in the period implies a very large uncertainty in the frequency, which is the inverse of the expected relationship, where more knowledge of one leads to less uncertainty regarding the other. Beginning with the relationship between frequency and time, taking differentials on both sides yields
+				\[\dd{f} = -\frac{1}{T^2}\dd{T}\]
+				The infinitesimal differentials can then be converted to finite intervals. As only the magnitude of the measurements is of import, the negative may be dropped, yielding
+				\[\Delta f = \frac{1}{T^2}\Delta T\]
+				Combining this result with the time-period uncertainty relationship yields
+				\[\Delta f \Delta t \sim \varepsilon \tag{classical time-frequency uncertainty relationship}\]
+				The longer the duration of the wave packet, the more precisely its frequency can be measured.
+	\section{Heisenberg Uncertainty Relationships}
+		The uncertainty relationships discussed prior apply to \textit{all} waves, so they should also apply to de Broglie waves. The basic de Broglie relationship
+			\[p = \frac{h}{\lambda}\]
+			can be used to relate the uncertainty in the momentum \(\Delta p\) and in the wavelength \(\Delta\lambda\) first by taking differentials on both sides to yield
+			\[\dd{p} = -\frac{h}{\lambda^2}\dd{\lambda}\]
+			and then substituting finite differences for the differentials and removing the negation:
+			\[\Delta p = \frac{h}{\lambda^2}\Delta\lambda\]
+			Combining this equation with the time-wavelength uncertainty relationship yields
+			\[\Delta p \Delta x \sim \varepsilon h\]
+			The smaller the size of the wave packet, the greater the uncertainty in its momentum (and by proxy its velocity). \\
+		Quantum mechanics has a formal procedure for calculating the uncertainties corresponding to different physical situations. One outcome of these calculations yields the wave packet with the smallest possible value of the product, which is \(h/4\pi\), meaning that \(\varepsilon = 1/4\pi\). In all other cases, then, the product must be greater than this. \\
+			The combination \(h/2\pi\) is abbreviated as \(\hbar\), called \textit{the reduced Planck's constant}:
+			\[
+				\hbar = \frac{h}{2\pi}
+					\approx \SI{1.05E-34}{J.s}
+					\approx \SI{6.58 E-16}{eV.s}
+					\tag{reduced Planck's constant}
+			\]
+			In terms of this constant, the uncertainty relationship can be rewritten as
+			\[\Delta x \Delta p_x \ge \frac{1}{2}\hbar \tag{Heisenberg position-momentum uncertainty relationship}\]
+			This is the first of the \textit{Heisenberg uncertainty relationships}. It identifies the limits of \textit{simultaneous} measurements. The more a particle is confined, the more uncertain its momentum is. \\
+			As \(\hbar/2\) is the minimum value of the product, it is generally acceptable to estimate the uncertainty relationship as
+			\[\Delta x \Delta p_x \sim \hbar\]
+		The time-period uncertainty relationship can also be applied to de Broglie waves. If it is assumed that the time-frequency relationship for light can also be applied to particles, then the uncertainty relationship becomes
+			\[\Delta E = h\Delta f\]
+			Combining this with the time-frequency uncertainty relationship yields
+			\[\Delta E \Delta t \sim \varepsilon h\]
+			The minimum uncertainty wave packet gives \(\varepsilon = 1/4\pi\), so
+			\[\Delta E \Delta t \ge \frac{1}{2}\hbar \tag{Heisenberg energy-time uncertainty relationship}\]
+			The more is known about the time coordinate of a particle, the less is known about its energy. For example, a particle with a very short lifetime will have much uncertainty regarding its rest energy. Inversely, the rest energy of a stable particle (one with infinite lifetime) can be measured with effectively infinite precision. \\
+			As with the first Heisenberg uncertainty relationship, the second can be reasonable approximated for most wave packets as
+			\[\Delta E \Delta t \sim \hbar\]
+		The Heisenberg uncertainty relationships are mathematical representations of the \textit{Heisenberg uncertainty principal}, which states the following:
+			\begin{enumerate}
+				\item 
+					\textit{It is not possible to make a simultaneous determination of the position and momentum of a particle with unlimited precision.}
+				\item
+					\textit{It is not possible to make a simultaneous determination of the energy and time coordinate of a particle with unlimited precision.}
+			\end{enumerate}
+			These relationships estimate the minimum uncertainty from any experiment. The uncertainty may be worse, but it \textit{may be no better}.
+	\section{Wave Packets}
+		A \textit{traveling wave} is one that moves in a direction with uniform speed. As the wave packet moves, individual locations oscillate with the frequency or wavelength that characterizes the packet. The displacement of an individual point at a specific time does not matter so much as the locations in space where the overall wave has a large or small oscillation amplitude. \\
+		A wave packet can be build by adding waves together. A pure sinusoidal wave is not terribly helpful in representing a particle; as the wave extends over \(\R\), the particle could be found anywhere. The particle being represented by the wave packet should be \textit{localized} to a particular region of space. \\
+		The key to building a wave packet involves adding waves of different wavelengths. Waves are represented by
+			\[A\cos(kx)\]
+			where \(k\) is the wave number
+			\[k = \frac{2\pi}{\lambda}\]
+			and \(A\) is the amplitude. Adding two waves yields
+			\[
+				y(x) = A_1\cos(k_1x) + A_2\cos(k_2x)
+					= A_1\cos(\frac{2\pi x}{\lambda_1}) + A_2\cos(\frac{2\pi x}{\lambda_2})
+			\]
+			Adding two different waves yields a reduced amplitude of the wave packet in some locations. This patten repeats over \(\R\), though, so the wave is still not localized. \\
+		Adding more waves of a greater range of wavelengths helps restrict the size of the wave packet. \\
+		The above equation can be rewritten using trigonometric identities as
+			\[y(x) = 2A\cos(\frac{\pi x}{\lambda_1} - \frac{\pi x}{\lambda_2})\cos(\frac{\pi x}{\lambda_1} + \frac{\pi x}{\lambda_2}) \tag{combined static wave}\]
+			If \(\lambda_1\) and \(\lambda_2\) are close (that is, if \(\Delta\lambda = \lambda_2 - \lambda_1 \ll \lambda_1, \lambda_2\)), this can be approximated as
+			\[y(x) \approx 2A\cos(\frac{\Delta\lambda\pi x}{\subt{\lambda}{avg}^2})\cos(\frac{2\pi x}{\subt{\lambda}{avg}^2})\]
+			where
+			\[
+				\subt{\lambda}{avg} = \frac{\lambda_1 + \lambda_2}{2}
+					\approx \lambda_1 
+					\approx \lambda_2
+			\]
+			Any finite combination of waves with discrete wavelengths produces patterns that repeat over \(\R\), so adding waves does not work in constructing a finite wave packet. To make a finite wave packet, the first cosine term in the above equation must be replaced with a function that is large in the region where the particle is to be confined but falls to 0 elsewhere. The simplest such function is \(1/x\), so a wave packet could be
+			\[y(x) = \frac{2A}{x}\sin(\frac{\Delta\lambda\pi x}{\lambda_0^2})\cos(\frac{2\pi x}{\lambda_0})\]
+			where \(\lambda_0\) is the central wavelength, replacing \(\subt{\lambda}{avg}\). (The first cosine being replaced with a sine is to prevent an infinite discontinuity at \(x = 0\).) \\
+			Another function with this property is the \textit{Gaussian} modulating function
+			\[y(x) = A\en^{-2(\Delta\lambda\pi/\lambda_0^2)^2}\cos(\frac{2\pi x}{\lambda_0}) \tag{Gaussian modulating function}\]
+			Both of these functions display the characteristic inverse relationship between the arbitrarily defined size of the wave packet \(\Delta x\) and the wavelength range parameter \(\Delta\lambda\) used in constructing the wave packet. \\
+			Wave packets can also be constructed by adding waves of differing amplitudes and wavelengths, but the wavelengths form a continuous set rather than a discrete one. It is easier to see this working with the wave number rather than the wavelength. Adding discrete waves,
+			\[y(x) = \sum A_i\cos(k_ix) \tag{discrete wave packet}\]
+			Turning the sum into an integral over a continuous set of wave numbers yields
+			\[y(x) = \int A(k)\cos(kx) \dd{k} \tag{continuous wave packet}\]
+			A better approximation of a wave packet's shape comes from letting \(A(k)\) vary according to the Gaussian distribution
+			\[A(k) = A_0\en^{-(k - k_0)^2/2(\Delta k)^2} \tag{Gaussian distribution}\]
+			This yields a range of wave numbers with its largest contribution at the central wave number \(k_0\) that falls to 0 for larger or smaller wave numbers with characteristic width \(\Delta k\). Applying the integral equation to this case, integrating over \(\R\), yields
+			\[y(x) = A_0\Delta\sqrt{2\pi}\en^{(-\Delta kx)^2/2}\cos(k_0x)\]
+			Specifying the distribution of wavelengths enables the construction of a wave packet of any desired shape. A wave packet restricting a particle to a region in space of width \(\Delta x\) will have a distribution of wavelengths characterized by width \(\Delta\lambda\). As \(\Delta x\) gets smaller, the spread of \(\Delta\lambda\) gets larger. This is consistent with the position-wavelength uncertainty relationship for classical waves.
+	\section{The Motion of a Wave Packet}
+		To turn a static wave
+			\[y(x) = A\cos(kx) \tag{static wave}\]
+			into a traveling wave moving in the positive \(x\) direction, \(kx\) is replaced by \(kx - \omega t\), so the traveling wave is written as
+			\[y(x, t) = A\cos(kx - \omega t) \tag{traveling wave}\]
+			where \(\omega\) is the \textit{circular frequency} of the wave:
+			\[\omega = 2\pi f \tag{circular frequency}\]
+			The combined traveling wave is then represented as
+			\[y(x, t) = A_1\cos(k_1x - \omega_1 t) + A_2\cos(k_2x - \omega_2 t)\]
+			The speed of a wave is related to its frequency and wavelength and its circular frequency and wave number as
+			\[
+				v = \lambda f 
+					= \frac{\omega}{k}
+					\tag{wave speed}
+			\]
+			This is also sometimes called the \textit{phase speed} and represents the speed of a particular phase or component of the wave packet. In general, each individual component may have its own speed. As a result, the shape of the wave packet may change over time. \\
+			Trigonometric identities can be used to rewrite the combined traveling wave as
+			\[y(x, t) = 2A\cos(\frac{\Delta k}{2}x - \frac{\Delta\omega}{2}t)\cos(\frac{k_1 + k_2}{2}x - \frac{\omega_1 + \omega_2}{2}t) \tag{combined traveling wave}\]
+			The second term represents the rapid variation of the wave within the envelope determined by the first term. The first term is what dictates the overall shape of the wave, so it is this term that determines its speed of travel as well. For a wave written as
+			\[y(x, t) = \cos(kx - \omega t)\]
+			the speed is
+			\[v = \frac{\omega}{k}\]
+			For the wave envelope, the speed is
+			\[
+				\subt{v}{group} = \frac{\Delta\omega/2}{\Delta k/2}
+					= \frac{\Delta\omega}{\Delta k}
+			\]
+			This is called the \textit{group speed} of the wave packet. It can be quite different from the phase speeds of the component waves. For more complicated situations, the group speed can be generalized as the derivative
+			\[\subt{v}{group} = \dv{\omega}{k} \tag{group speed}\]
+			The group speed is dependent on the relationship between frequency and wavelength for the component waves. If the phase speeds of all component waves are the same and is independent of frequency or wavelength (such as light waves in empty space) then the group speed is the same as the phase speed and the wave packet maintains its original shape as it travels. In general, a component wave's propagation of a component wave depends on the properties of the medium. De Broglie waves generally have different phase speeds, so their wave packets expand as they travel.
+		\subsectionb{The Group Speed of de Broglie Waves}
+			Consider a localized particle represented by a group of de Broglie waves. The energy of the particle for each component wave is related to the de Broglie frequency by
+				\[
+					E = hf 
+						= \hbar\omega
+				\]
+				so
+				\[\dd{E} = \hbar\dd{\omega}\]
+				The momentum of the particle is similarly related to the wavelength by
+				\[
+					p = \frac{h}{\lambda}
+						= \hbar k
+				\]
+				so
+				\[\dd{p} = \hbar\dd{k}\]
+				The group speed of the de Broglie wave can then be written as
+				\[
+					\subt{v}{group} = \dv{\omega}{k}
+						= \frac{\dd{E}/\hbar}{\dd{p}/\hbar}
+						= \dv{E}{p}
+				\]
+				For a classical particle with only kinetic energy
+				\[E = K = p^2/2m\]
+				this can be found to be
+				\[
+					\dv{E}{p} = \dv{p}\left(\frac{p^2}{2m}\right)
+						= \frac{p}{m}
+						= v
+				\]
+				which is simply the particle's velocity. Combining this with the prior equation yields an important result:
+				\[\subt{v}{group} = \subt{v}{particle}\]
+				\textit{The speed of a particle is equal to the group speed of the corresponding wave packet.} The wave packet and particle move together.
+		\subsectionb{The Spreading of a Moving Wave Packet}
+			Consider a wave packet that represents a confined particle at \(t = 0\). The initial uncertainty in its position is \(\Delta x_0\) and that in its momentum is \(\Delta p_{x,0}\). It moves in the \(x\) direction with a velocity \(v_x\) with initial uncertainty
+				\[\Delta v_{x, 0} = \frac{\Delta p_{x, 0}}{m}\]
+				This uncertainty means that its location at time \(t\) cannot be precisely known; that is, 
+				\[
+					x = v_xt \qquad \text{with} \qquad
+						v_x = v_{x, 0} \pm \Delta v_{x, 0}
+				\]
+				There are therefore two contributions to the uncertainty in the wave packet's location at time \(t\): the initial uncertainty \(\Delta x_0\) and the additional uncertainty due to the momentum \(t\Delta v_{x,0}\) that represents the spreading of the wave packet. It is assumed that this two contributions add quadratically, like experimental uncertainties, making the total uncertainty
+				\[
+					\Delta x = \sqrt{(\Delta x_0)^2 + (t\Delta v_{x, 0})^2}
+						= \sqrt{(\Delta x_0)^2 + \left(\frac{t\Delta p_{x, 0}}{m}\right)^2}
+				\]
+				Taking
+				\[\Delta p_{x, 0} = \frac{\hbar}{\Delta x_0}\]
+				from the uncertainty principle yields
+				\[\Delta x = \sqrt{(\Delta x_0)^2 + \left(\frac{\hbar t}{m\Delta x_0}\right)^2}\]
+				Making \(\Delta x_0\) very small means that the second term in the square root makes the wave packet expand rapidly. \textit{The more a wave packet is confined, the more quickly it spreads.} Consider the single-slit experiment: the narrower the slit, the more the waves diverge upon passage through it.
+\end{document}
