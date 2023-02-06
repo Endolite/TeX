@@ -66,7 +66,7 @@
 			\]
 			Classically, the metal's surface is illuminated by en electromagnetic wave of intensity \(I\). The surface absorbs the energy until that energy exceeds the binding energy of the electron, at which point the electron is released. This minimum energy is called the metal's \textit{work function \(\varphi\)}.
 		\subsectionb{The Classical Theory of the Photoelectric Effect}
-			Classical wave theory makes 3 key predictions regarding the emitted photoelectrons:
+			Classical wave theory makes three key predictions regarding the emitted photoelectrons:
 				\begin{enumerate}
 					\item \textit{The maximum kinetic energy of the electrons should be proportional to the intensity of the radiation.}
 						As the brightness increases, so does the energy carried by the radiation, meaning that more energy is transferred to the surface (the electric field is greater), so the kinetic energy of the electrons should also be greater.
@@ -139,14 +139,14 @@
 			The scattering process is analyzed as an interaction between a single photon and electron, which is assumed to be at rest. Initially, the photon has energy \(E\) and linear momentum \(p\) given by
 			\[E = hf = \frac{hc}{\lambda} \qquad \text{and} \qquad p = \frac{E}{c}\]
 			The electron has rest energy \(\subt{m}{e}c^2\). After the scattering, the photon has energy and momentum 
-			\[E' = \frac{hc}{\lambda'} \qquad \text{and} p' = \frac{E'}{c}\]
+			\[E' = \frac{hc}{\lambda'} \qquad \text{and} \qquad p' = \frac{E'}{c}\]
 			and is moving in a direction at angle \(\theta\) with respect to that of the incident photon. The electron has total final energy \(\subt{E}{e}\) and momentum \(\subt{p}{e}\) and moves in a direction at angle \(\varphi\) with respect to the initial photon. (To account for high-energy incident photons given energetic scattering electrons, relativistic kinematics are used for the electron.) Applying the relativistic conservation laws,
 			\begin{align*}
-				E_i = E_f &: &
+				\subt{E}{i} = \subt{E}{f} &: &
 					E + \subt{m}{e}c^2 &= E' + \subt{E}{e} \\
-				p_{x, i} = p_{x, f} &: &
+				p_{x, \text{i}} = p_{x, \text{f}} &: &
 					p &= \subt{p}{e}\cos\varphi + p'\cos\theta \\
-				p_{y, i} = p_{y, f} &: &
+				p_{y, \text{i}} = p_{y, \text{f}} &: &
 					0 &= \subt{p}{e}\sin\varphi + p'\sin\theta	
 			\end{align*}
 			This provides three equations with four unknowns (\(\theta\), \(\varphi\), \(\subt{E}{e}\), \(E'\); \(\subt{p}{e}\) and \(p'\) are not independent unknowns) that cannot be solved uniquely. Any two of them can be eliminated by solving the equations simultaneously. Choosing to measure the energy and direction of the scattered photons, eliminates \(\subt{E}{e}\) and \(\varphi\). The latter is eliminated by first rewriting the momentum equations as
@@ -191,5 +191,51 @@
 						p' = \frac{E'}{c}
 				\]
 	\section{Other Photon Processes}
-		
+		\subsectionb{Interactions of Photons with Atoms}
+			Electromagnetic radiation is emitted from atoms in discrete amounts characterized by on or more photons. When a photon of energy \(E\) is emitted, the atom loses that amount of energy. Consider an atom at rest with initial energy \(\subt{E}{i}\) that emits a photon of energy \(E\). Following this, the energy left with the atom is \(\subt{E}{f}\), taken to be that associated with its internal structure. Due to the conservation of momentum, the final atom must have a momentum equal and opposite to that of the emitted photon, giving it a \enquote{recoil} kinetic energy \(K\) (which is typically quite small). Conservation of energy then gives
+				\[
+					\subt{E}{i} = \subt{E}{f} + K + E \qquad \text{or} \qquad
+						E = (\subt{E}{i} - \subt{E}{f}) - K
+				\]
+				The energy of the emitted photon is equal to that lost by the atom plus the negligible recoil kinetic energy of the atom. \\
+				An atom can also \textit{absorb} a photon of energy \(E\). If the atom begins at rest, it must acquire a small recoil energy to conserve momentum. Conservation of energy now gives
+				\[
+					\subt{E}{i} + E = \subt{E}{f} + K \qquad \text{or} \qquad
+						\subt{E}{f} - \subt{E}{i} = E - K
+				\]
+				The energy available to add to the atom's internal energy is that of the photon minus the typically negligible recoil energy. \\
+				Photon emission and absorption provide much insight as to the internal structure of atoms. \\
+		\subsectionb{Bremsstrahlung and X-ray Production}
+			When a charge, such as an electron, undergoes an acceleration (or deceleration), it radiates electromagnetic energy. According to the quantum interpretation, it emits photons. Suppose there is a beam of electrons that has been accelerated through potential difference \(\Delta V\), so that the electrons have a loss of potential energy of \(-e\Delta V\), making them gain a kinetic energy of \(K = e\Delta V\). When the electrons strike a target, they are slowed and eventually come to a rest, as they collide with the atoms of the target material. In such a collision, momentum is transferred to the atom, the electron slowing down and photons being emitted. The recoil kinetic energy of the atom is negligible (due to the relative mass of the atom) and can be neglected. If the electron has kinetic energy \(K\) prior to the collision and leaves with kinetic energy \(K' < K\), then the energy of the photon is
+				\[
+					hf = \frac{hc}{\lambda}
+						= K - K'
+				\]
+				The amount of energy lost, and therefore the energy and wavelength of the emitted photon, are not uniquely determined, as the only known energy is \(K\). An electron usually makes many collisions, therefore emitting many different photons, before it is brought to rest. The photons range from very small energies (large wavelengths) corresponding to small losses of kinetic energy to a maximum photon energy of \(h\subt{f}{max}\) equal to \(K\), corresponding to an electron losing all of its kinetic energy \(K\) in a single collision (\(K' = 0\)). The smallest emitted wavelength \(\subt{\lambda}{min}\) is therefore determined by the maximum possible energy loss:
+				\[
+					\subt{\lambda}{min} = \frac{hc}{K}
+						= \frac{hc}{e\Delta V}
+				\]
+				For typical accelerating voltages in the range of \SI{10E5}{V}, \(\subt{\lambda}{min}\) is on the order of a few tenths of a nanometer, corresponding to the X-ray region of the spectrum. This \textit{continuous} distribution of X-rays (which is different from the \textit{discrete} distribution of X-ray energies emitted in atomic transitions) is called \textit{bremsstrahlung}, which is German for braking/decelerating radiation. \\
+				Symbolically the bremsstrahlung process can be written as
+				\[\mathrm{electron \to electron + photon} \tag{bremsstrahlung process}\]
+				The reverse process is simply the photoelectric effect, which is
+				\[\mathrm{electron + photon \to electron} \tag{photoelectric effect}\]
+				Neither of these processes occur for free electrons. In both cases, there must be a heavy atom to account for the recoil momentum.
+		\subsectionb{Pair Production and Annihilation}
+			When a photon encounters an atom, \textit{pair production} may occur, in which a photon loses all of its energy, in the process creating an electron and a positron. (A positron is an anti-electron, having an identical mass but a positive charge.) This is an example of the creation of rest energy. The electron did not exist prior to the interaction between the photon an the atom. (It was \textit{not} part of the atom.) The photon energy is converted into the relativistic total energies \(E_+\) and \(E_-\) of the positron and electron:
+				\[
+					hf = E_+ + E_-
+						= (\subt{m}{e}c^2 + K_+) + (\subt{m}{e}c^2 + K_-)
+						\tag{pair production}
+				\]
+				As \(K_+\) and \(K_-\) are always positive, the photon's energy must be at least \(2\subt{m}{e}c^2 = \SI{1.02}{MeV}\) in order for pair production to occur. Such high-energy photons are in the region of \textit{nuclear gamma rays}. \\
+				Symbolically, this pair production can be represented as
+				\[\mathrm{photon \to electron + positron} \tag{pair production}\]
+				This process, like bremsstrahlung, can only occur in the presence of a nearby atom to supply the necessary recoil momentum. \\
+				The reverse process, \textit{electron-positron annihilation}, can also occur for free electrons and positrons so long as at least to photons are created (as momentum must be conserved, so the momenta of the photons must cancel). In this process, the electron and positron are replaced by two photons. Symbolically,
+				\[\mathrm{electron + positron \to photon + photon} \tag{electron-positron annihilation}\]
+				Conservation of energy mandates that
+				\[(\subt{m}{e}c^2 + K_+) + (\subt{m}{e}c^2 + K_-) = E_1 + E_2\]
+				where \(E_1\) and \(E_2\) are the energies of the resultant photons. The kinetic energies \(K_+\) and \(K_-\) are usually negligibly small, so the electron and positron can be treated as essentially at rest. The conservation of momentum then means that the two photons must have equal and opposite momenta, so their energies must be equal. The energies must be \(\SI{0.511}{MeV} = \subt{m}{e}c^2\).
 \end{document}
