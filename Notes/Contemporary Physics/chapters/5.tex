@@ -1,0 +1,134 @@
+\documentclass{subfiles}
+
+\begin{document}
+	\setcounter{section}{1}
+	\section{Confining a Particle}
+		A free particle, one with no forces acting on it, is by definition not confined, so it may be located anywhere. It has a definite wavelength, momentum, and energy. A confined particle, on the other hand, is represented by a wave packet that makes it likely to be found only in a region of space of size \(\Delta x\). This wave packet is constructed through the addition of sines and cosines to obtain the desired mathematical shape. \\
+		Consider an electron moving in one dimension confined by a series of electric fields; specifically, consider a \textit{potential energy well}, within which the potential energy is 0 and outside of which it is \(U_0 = eV\). To confine this electron, it should be moving in the well with kinetic energy \(K\) that is less than \(U_0\). \\
+			onsider an infinitely high potential energy barrier between points \(A\) and \(B\). This is a good analog to the prior situation. In this case, penetration into the forbidden region cannot occur. The probability of finding the electron anywhere outside the region in which the potential energy is 0 (including at \(A\) and \(B\)) is therefore 0, as is the amplitude of the wave function at those locations. In order for the wave function to be continuous, the wave function in the 0 potential section must have values of 0 at the boundaries. \\
+			Of all possible waves that may describe this particle, the continuity restricts the options to those that are 0 at the boundaries. Note that the function need not be differentiable, only continuous, at the infinite barriers. \\
+		Unlike free particles, which may have any wavelength, \textit{only certain values of the wavelength are allowed}. The de Broglie relationship then means that only certain momenta are allowed and consequently only certain energies. The energy is not continuous, instead being discrete. This is known as \textit{quantization of energy}. \\
+			The allowed wavelengths are
+			\[\lambda_n = \frac{2L}{n} \text{ for } n \in \Z^+\]
+			where \(L\) is the length of the section of 0 potential. This set of wavelengths is identical to those of the classical problem of standing waves on a string stretched between two points. The de Broglie relationship yields
+			\[p_n = n\frac{h}{2L}\]
+			The particle's energy is only kinetic, so
+			\[E_n = n^2\frac{h^2}{8mL^2}\]
+	\section{The Schr\"odinger Equation}
+		The differential equation whose solution yields the wave behavior of particles is the \textit{Schr\"odinger equation}. This cannot be derived from any prior equations or postulates; they are fundamental. For nonrelativistic motion, ti provides results that correctly account for atomic and subatomic observations. \\
+		The form of the Schr\"odinger equation can be justified by examining the expected solution for a free particle, which should be a wave whose shape at any particular time, as specified by \textit{wave function \(\psi(x)\)}, is that of a de Broglie wave, such as
+			\[\psi(x) = A\sin(kx)\]
+			Differentiating this yields
+			\begin{align*}
+				\dv{\psi}{x} &= kA\cos(kx) &
+					\dv[2]{\psi}{x} &= -k^2A\sin(kx)
+						= -k^2\psi(x)
+			\end{align*}
+			Note that the second derivative can be written in terms of the original function. With the kinetic energy
+			\[
+				K = \frac{p^2}{2m} \\
+					= \frac{(h/\lambda)^2}{2m}
+					= \frac{\hbar^2k^2}{2m}	
+			\]
+			this can be rewritten as
+			\[
+				\dv[2]{\psi}{x}
+					= -k^2\psi(x)
+					= -\frac{2m}{\hbar^2}K\psi(x)
+					= -\frac{2m}{\hbar^2}(E - U)\psi(x)
+			\]
+			where \(E = K + U\) is the particle's nonrelativistic total energy. For a free particle, \(U = 0\), so \(E = K\), but as a free particle is being used to find a particular solution to extend to more general cases with potential energy \(U(x)\), the equation becomes
+			\[-\frac{\hbar^2}{2m}\dv[2]{\psi}{x} + U(x)\psi(x) = E\psi(x) \tag{time-independent Schr\"odinger equation}\]
+			This is the \textit{time-independent Schr\"odinger equation} for one-dimensional motion. \\
+		The solution to the above equation gives the shape of the wave at time \(t = 0\). The description of a one-dimensional \textit{traveling} wave must involve both \(x\) and \(t\). This is represented by function \(\Psi(x, t)\):
+			\[\Psi(x, t) = \psi(x)\en^{-i\omega t} \tag{general time-dependent wave function}\]
+			The time dependence is given by the complex exponential term \(\en^{-i\omega t}\) where
+			\[\omega = \frac{E}{\hbar}\]
+		It is assumed that the potential energy \(U(x)\) is known, the goal being to solve for the wave function \(\psi(x)\) and energy \(E\) \textit{for that particular potential energy}. This is a general example of an \textit{eigenvalue} problem; it is possible to obtain solutions to the equation only for particular values of \(E\), known as the \textit{energy eigenvalues}. \\
+		The general procedure for solving the Schr\"odinger equation is as follows:
+			\begin{enumerate}
+				\item
+					Write the one-dimensional time-independent	Schr\"odinger equation with the appropriate \(U(x)\). If it changes discontinuously (\(U(x)\) may be discontinuous but \(\psi(x)\) may not), different equation may need to be written for different regions of space.
+				\item
+					Find a solution \(\psi(x)\) to the differential equation. 
+				\item
+					Apply boundary conditions to eliminate extraneous solutions and identify constants. If the potential energy changes discontinuously, apply the conditions on \(\psi(x)\) (and usually \(\dv*{\psi}{x}\) at the boundary between regions.
+			\end{enumerate}
+		As the Schr\"odinger equation is linear, any constant multiple of a solution is a solution in and of itself.
+		\subsectionb{Probabilities and Normalization}
+			The original goal for solving the Schr\"odinger equation is to obtain the wave properties of the particle. \textit{The wave function \(\psi(x)\) is a wave whose squared absolute amplitude gives the probability of finding the particle in a given region of space.} \\
+			Let \(P(x)\) be the \textit{probability density} (probability per unit length in one dimension). According to the Schr\"odinger procedure, then according to the interpretation of the wave function,
+				\[P(x)\dd{x} = |\psi(x)|^2\dd{x}\]
+				\(|\psi(x)|^2\dd{x}\) gives the probability of finding the particle in interval \(\dd{x}\) and \(x\) (the probability that it lies between \(x\) and \(x + \dd{x}\)).\footnote{The probability of finding the particle at a given point \(x\) is 0, as a single point is a mathematical abstraction without physical dimension.} As the wave function may be complex, it is necessary to square its absolute value to ensure that the probability is a positive real number. \\
+			The squared magnitude of the general time-dependent wave function is
+				\[
+					|\Psi(x, t)|^2 = |\psi(x)|^2|\en^{-i\omega t}|^2
+						= |\psi(x)|^2
+				\]
+				as applying Euler's formula yields
+				\[
+					|\en^{-i\omega t}|^2 = |\cos(-\omega t) + i\sin(-\omega(t))|^2
+						= |\cos(\omega t) - i\sin(\omega t)|^2
+						= \cos^2(\omega t) + \sin^2(\omega t)
+						= 1
+				\]
+				For this reason, the probability density associated with a solution to the Schr\"odinger equation (for any energy eigenvalue) is independent of time. Such quantum states are called \textit{stationary states}. \\
+			This interpretation of \(|\psi(x)|^2\) clarifies the continuity condition of \(\psi(x)\). The probability cannot change discontinuously. \\
+			This interpretation of \(\psi(x)\) enables the completion of the procedure for solving the Schr\"odinger equation:
+			\begin{enumerate}
+				\setcounter{enumi}{4}
+				\item
+					For a wave function describing a single particle, the probability summed over all locations must be 1; that is, the particle must be \textit{somewhere} between \(-\infty\) and \(\infty\):
+					\[\int_{\infty}^\infty |\psi(x)|^2 \dd{x} = 1\]
+					The constant multiple of the solution used must fulfill this condition. A wave function with its multiplicative constant chosen in this way is said to be \textit{normalized}, the above equation being known as the \textit{normalization condition}.
+				\item
+					As the Schr\"odinger equation represents a probability, any solution that goes to infinity must be discarded (its multiplicative constant set to 0). If the solution is
+						\[\psi(x) = A\en^{kx} + B\en^{-kx}\]
+						for the \textit{entire} region \(x > 0\), then \(A\) must be 0 for the solution to be physically meaningful. If this solution is valid for the \textit{entire} region \(x < 0\), though, then \(B\) must be 0. If the solution is valid only over a small range (say \(0 < x < L\), then neither can be 0.
+				\item
+					Suppose the interval between two points \(x_1\) and \(x_1\) is divided into infinitesimal intervals of width \(\dd{x}\). The total probability of the particle being located within the interval, notated \(P(x_1:x_2)\), is 
+						\[
+							P(x_1:x_2) = \int_{x_1}^{x_2} P(x) \dd{x}
+								= \int_{x_1}^{x_2} |\psi(x)|^2 \dd{x}
+						\]
+						If the wave function has been properly normalized, this will always yield a probability between 0 and 1.
+				\item
+					The outcome of a single measurement cannot be deterministically predicted. Instead, the \textit{average} outcome of a large number of measurements an be predicted:
+						\[\subt{x}{avg} = \frac{\sum n_ix_i}{\sum n_i}\]
+						where \(n_i\) is the number of times each \(x_i\) is observed, proportional to the probability \(P(x_i)\dd{x}\) of finding that particle in the interval \(\dd{x}\) at \(i\). Making this substitution and replacing the sums with integrals yields
+						\[
+							\subt{x}{avg} = \frac{\int_{-\infty}^\infty P(x)x \dd{x}}{\int_{-\infty}^\infty P(x) \dd{x}}
+								= \int_{-\infty}^\infty |\psi(x)|^2x \dd{x}
+						\]
+						as the denominator is 1 due to the normalization. By analogy, the average value of any function \(f\) of \(x\) can be found as
+						\[
+							[f(x)]_{avg} = \int_{-\infty}^\infty P(x)f(x) \dd{x}
+								= \int_{-\infty}^\infty |\psi(x)|^2f(x) \dd{x}
+						\]
+						Average values calculated according to the above equations are \textit{expectation values}.
+			\end{enumerate}
+	\section{Applications of the Schr\"odinger Equation}
+		Consider the Schr\"odinger equation for the case with constant potential energy \(U_0\), which is
+			\[-\frac{\hbar^2}{2m}\dv[2]{\psi}{x} + U_0\psi(x) = E\psi(x)\]
+			or (assuming that \(E > U_0\)
+			\[
+				\dv[2]{\psi}{x} = -k^2\psi(x) \qquad \text{where} \qquad
+					k = \sqrt{\frac{2m(E - U_0)}{\hbar^2}}
+			\]
+			The parameter \(k\) is simply wave number \(2\pi/\lambda\). The auxiliary equation for this differential equation is
+			\[m^2 + k^2m = 0\]
+			which has solutions \(m = \pm ki\), making the solution to the differential equation
+			\[\psi(x) = A\sin(kx) + B\cos(kx)\]
+			The values of the constants can be determined by applying the continuity and normalization requirements. \\
+			To analyze the penetration of a particle into a forbidden region, the energy \(E\) of the energy should be smaller than the potential energy \(U_0\). For this case, the differential equation becomes
+			\[
+				\dv[2]{\psi}{x} = k'^2\psi(x) \qquad \text{where} \qquad
+					k' = \sqrt{\frac{2m(U_0 - E)}{\hbar^2}}
+			\]
+			The auxiliary equation for this is
+			\[m^2 - k'^2 = 1\]
+			which has solutions \(m = \pm k\), making the solution to the differential equation
+			\[\psi(x) = A\en^{k'x} + B\en^{-k'x}\]
+		\subsectionb{The Free Particle}
+			
+\end{document}

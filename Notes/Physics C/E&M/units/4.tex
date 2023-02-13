@@ -24,5 +24,65 @@
 		is the thickness of the strip. \\
 	A conductor moving through a uniform magnetic field \(\vec{B}\) at speed \(v\) has a Hall-effect potential difference is
 		\[V = vBD \tag{Hall-effect potential difference}\]
-		where \(d\) is the width orthogonal to both \(\vec{v}\) and \(\vec{B}\). 
+		where \(d\) is the width orthogonal to both \(\vec{v}\) and \(\vec{B}\). \\
+	Consider a beam of electrons projected into a chamber. They enter with speed \(v\), moving into a region with uniform magnetic field \(\vec{B}\) directed out of the plane. A magnetic force continuously deflects the electrons, as the velocity and magnetic field are always perpendicular. This deflection results in the electrons following a circular path. Applying Newton's second law to the circular motion yields
+		\[|q|vB = \frac{mv^2}{r}\]
+		Therefore
+		\[r = \frac{mv}{|q|B}\]
+		The period is
+		\[
+			T = \frac{2\pi r}{v}
+				= \frac{2\pi mv}{|q|Bv}
+			 	= \frac{2\pi m}{|q|B}
+		\]
+	A cyclotron is comprised of two hollow conducting D-shaped shells. These shells are part of an electric oscillator that alternates the potential difference across the gap between the shells. The electric polarities of the shells are alternated so that the electric field in the gap alternates in direction between the shells. The shells are immersed in a uniform magnetic field in the direction of the rectangular cross section (in the plane of the gap). Protons circulate within the cyclotron. \\
+		The key to operating a cyclotron \(f\) at which the proton circulates in the magnetic field must be equal to the fixed frequency \(\subt{f}{osc}\) of the oscillator.
+		\[f = \subt{f}{osc} \tag{resonance condition}\]
+		The resonance condition means that if the energy of a circulating proton increases, energy must be fed to it at a frequency \(\subt{f}{osc}\) that is equal to the frequency \(f\) at which the proton naturally circulates in the magnetic field. \\
+	A synchrotron is like a cyclotron except that the magnetic field and oscillating frequency vary with time during the accelerating cycle. When done properly, the frequency of the circulating protons remains in step with the oscillator at all times, and the protons follow a circular path rather than a spiraling one. As such, the magnet need only extend over said circular path. If high energies are to be achieved, though, the path must still be large. \\
+	A straight wire carrying a current \(i\) in a uniform magnetic field experiences a force
+		\[\vec{F}_B = i\vec{\ell} \times \vec{B} \tag{magnetic force on a current}\]
+		where \(\vec{\ell}\) is a length vector with magnitude \(\ell\) and direction following the conventional direction of current. \\
+		If a wire is not straight or a magnetic field not uniform, the wire can be broken into differentials. The force on the wire is then the vector sum of all the forces on the differential elements:
+		\[\vec{F}_B = \int i \times \dd{\vec{\ell}} \times \vec{B} \tag{magnetic force on a current}\]
+		where \(\dd{\vec{\ell}}\) is in the direction of \(i\). \\
+	Consider a rectangular loop of current-carrying wire in the plane of a uniform magnetic field that is free to rotate in the plane. The magnetic forces on the wire produce a torque that rotates it. A commutator can reverse the direction of the magnetic field every half-revolution so that the torque always acts in the same direction. \\
+		The net force on the loop is the vector sum of the forces on each of its four sides and is equal to 0. The net torque on the coil has magnitude
+		\[\tau = NiAB\sin\theta\]
+		where \(N\) is the number of turns of the coil, \(A\) is the area of each turn, \(i\) is the current, and \(B\) is the magnitude of the magnetic field, and \(\theta\) is the angle between the vector normal to the coil in the plane of the magnetic field and the magnetic field. \\
+	A coil in a uniform magnetic field will experience a torque given by
+		\[\vec{\tau} = \vec{\mu} \times \vec{B}\]
+		where \(\vec{\mu}\) is the \textbf{magnetic dipole moment} of the coil, with magnitude
+		\[\mu = NiA \tag{magnetic dipole moment}\]
+		and direction is given by the right-hand rule. \\
+		The orientation energy of a magnetic dipole in a magnetic field is
+		\[U(\theta) = -\vec{\mu} \cdot \vec{B}\]
+		The magnetic moment vector wants to be aligned with the magnetic field. \\
+	The magnitude of a magnetic field \(\dd{\vec{B}}\) produced at a point at distance \(r\) from a current-length element \(\dd{\vec{s}}\) is
+		\[|\dd{B}| = \frac{\mu_0}{4\pi}\frac{i\dd{s}\sin\theta}{r^2} \tag{law of Biot and Savart}\]
+		where \(\theta\) is the angle between \(\dd{\vec{s}}\) and \(\vr\), a unit vector pointing from the \(\dd{\vec{s}}\) to the point. \(\mu_0\) is the vacuum permeability constant:
+		\[
+			\mu_0 \approx \SI{4\pi E-7}{T.\frac{m}{A}}
+				\approx \SI{1.26 E-6}{T.\frac{m}{A}}
+				\tag{vacuum permeability constant}
+		\]
+		The vector form of the law of Biot and Savart is
+		\[\dd{\vec{B}} = \frac{\mu_0}{4\pi}\frac{i\dd{\vec{s}} \times \vec{r}}{r^3} \tag{law of Biot and Savart}\]
+	The magnitude of the magnetic field \textit{at the center of a circular arc} of radius \(R\) and central angle \(\varphi\) (in radians) carrying current \(i\) is
+		\[B = \frac{\mu_0i\varphi}{4\pi R}\]
+	The magnitude of the magnetic field at a perpendicular distance \(R\) from a \textit{long-straight wire} carrying a current \(i\) is
+		\[B = \frac{\mu_0 i}{2\pi r}\]
+	To find the force on one current-carrying wire due to another, the field due to the second wire at the first wire should be found before the force on the first wire due to that field. \\
+	Parallel wires carrying currents \textit{in the same direction} attract each other, while those carrying currents \textit{in opposite direction} repel. The magnitude of the force on either wire of length \(\ell\) is
+		\[
+			F_{ba} = \frac{\mu_0 Li_ab_a}{2\pi d}
+		\]
+		where \(d\) is the separation of the wires and \(i_a\) and \(i_b\) are the currents in each wire.
+	\textbf{Ampere's law} states that
+		\[
+			\oint \vec{B} \cdot \dd{\vec{s}}
+				= \mu_0\subt{i}{enc}
+				\tag{Ampere's law}
+		\]
+		
 \end{document}
