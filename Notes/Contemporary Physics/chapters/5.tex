@@ -79,7 +79,7 @@
 				\setcounter{enumi}{4}
 				\item
 					For a wave function describing a single particle, the probability summed over all locations must be 1; that is, the particle must be \textit{somewhere} between \(-\infty\) and \(\infty\):
-					\[\int_{\infty}^\infty |\psi(x)|^2 \dd{x} = 1\]
+					\[\int_{-\infty}^\infty |\psi(x)|^2 \dd{x} = 1\]
 					The constant multiple of the solution used must fulfill this condition. A wave function with its multiplicative constant chosen in this way is said to be \textit{normalized}, the above equation being known as the \textit{normalization condition}.
 				\item
 					As the Schr\"odinger equation represents a probability, any solution that goes to infinity must be discarded (its multiplicative constant set to 0). If the solution is
@@ -108,27 +108,50 @@
 						Average values calculated according to the above equations are \textit{expectation values}.
 			\end{enumerate}
 	\section{Applications of the Schr\"odinger Equation}
-		Consider the Schr\"odinger equation for the case with constant potential energy \(U_0\), which is
-			\[-\frac{\hbar^2}{2m}\dv[2]{\psi}{x} + U_0\psi(x) = E\psi(x)\]
-			or (assuming that \(E > U_0\)
-			\[
-				\dv[2]{\psi}{x} = -k^2\psi(x) \qquad \text{where} \qquad
-					k = \sqrt{\frac{2m(E - U_0)}{\hbar^2}}
-			\]
-			The parameter \(k\) is simply wave number \(2\pi/\lambda\). The auxiliary equation for this differential equation is
-			\[m^2 + k^2m = 0\]
-			which has solutions \(m = \pm ki\), making the solution to the differential equation
-			\[\psi(x) = A\sin(kx) + B\cos(kx)\]
-			The values of the constants can be determined by applying the continuity and normalization requirements. \\
-			To analyze the penetration of a particle into a forbidden region, the energy \(E\) of the energy should be smaller than the potential energy \(U_0\). For this case, the differential equation becomes
-			\[
-				\dv[2]{\psi}{x} = k'^2\psi(x) \qquad \text{where} \qquad
-					k' = \sqrt{\frac{2m(U_0 - E)}{\hbar^2}}
-			\]
-			The auxiliary equation for this is
-			\[m^2 - k'^2 = 1\]
-			which has solutions \(m = \pm k\), making the solution to the differential equation
-			\[\psi(x) = A\en^{k'x} + B\en^{-k'x}\]
+		\subsectionb{Solutions for Constant Potential Energy}
+			Consider the Schr\"odinger equation for the case with constant potential energy \(U_0\), which is
+				\[-\frac{\hbar^2}{2m}\dv[2]{\psi}{x} + U_0\psi(x) = E\psi(x)\]
+				or (assuming that \(E > U_0\))
+				\[
+					\dv[2]{\psi}{x} = -k^2\psi(x) \qquad \text{where} \qquad
+						k = \sqrt{\frac{2m(E - U_0)}{\hbar^2}}
+				\]
+				The parameter \(k\) is simply wave number \(2\pi/\lambda\). The auxiliary equation for this differential equation is
+				\[m^2 + k^2m = 0\]
+				which has solutions \(m = \pm ki\), making the solution to the differential equation
+				\[\psi(x) = A\sin(kx) + B\cos(kx)\]
+				The values of the constants can be determined by applying the continuity and normalization requirements. \\
+				To analyze the penetration of a particle into a forbidden region, the energy \(E\) of the energy should be smaller than the potential energy \(U_0\). For this case, the differential equation becomes
+				\[
+					\dv[2]{\psi}{x} = k'^2\psi(x) \qquad \text{where} \qquad
+						k' = \sqrt{\frac{2m(U_0 - E)}{\hbar^2}}
+				\]
+				The auxiliary equation for this is
+				\[m^2 - k'^2 = 1\]
+				which has solutions \(m = \pm k\), making the solution to the differential equation
+				\[\psi(x) = A\en^{k'x} + B\en^{-k'x}\]
 		\subsectionb{The Free Particle}
-			
+			The net force on a free particle is 0, making its potential energy constant. Any value for this constant can be used, so for convenience, \(U_0 = 0\). The solution is therefore
+				\[\psi(x) = A\sin(kx) + B\cos(kx)\]
+				The particle's energy is
+				\[E = \frac{\hbar^2k^2}{2m}\]
+				No restrictions are placed on \(k\), meaning that it (and by proxy \(E\)) can take on any value, making it \textit{not} quantized. Note that this kinetic energy is that of a particle with momentum
+				\[p = \hbar k = \frac{h}{\lambda}\]
+				This is as expected, as the free particle can be replaced by any de Broglie wave. \\
+				The normalization integral cannot be evaluated over \(\R\), meaning that the probabilities cannot be determined from the wave function. \\
+				Writing the wave function in terms of complex exponentials,
+				\[
+					\psi(x) = A\left(\frac{\en^{ikx} - \en^{-ikx}}{2i}\right) + B\left(\frac{\en^{ikx} + \en^{-ikx}}{2i}\right)
+						= A'\en^{ikx} + B'\en^{ikx}
+				\]
+				where
+				\[
+					A' = \frac{A}{2i} + \frac{B}{2} \qquad \text{and} \qquad
+						B' = -\frac{A}{2i} + \frac{B}{2}
+				\]
+				The time-dependent wave function can then be written
+				\[
+					\Psi(x, t) = (A'\en^{ikx} + B'\en^{-ikx})\en^{-i\omega t}
+						= A'\en^{i(kx - \omega t)} + B'\en^{-i(kx + \omega t)}
+				\]
 \end{document}
