@@ -1,0 +1,165 @@
+\documentclass{subfiles}
+
+\begin{document}
+	\section{A One-Dimensional Atom}
+		Quantum mechanics yields a very different view of the atom than the Bohr model. Rather than the electron traveling in a circular orbit about the proton, a fixed radius or orbital plane is not allowed by quantum mechanics. Instead, it describes the electron in terms of a probability density, leading to uncertainty in locating the electron. \\
+		In order to analyze the hydrogen atom quantum mechanically, the Schr\"odinger equation must be solved for the Coulomb potential energy of the proton and electron:
+			\[U(r) = -\frac{e^2}{4\pi\varepsilon_0r}\]
+			Consider a one-dimensional atom, the proton being fixed at the origin and the electron moving along the positive \(x\)-axis. In one dimension, the Schr\"odinger equation for the electron becomes
+			\[-\frac{\hbar^2}{2m}\dv[2]{\psi}{x} - \frac{e^2}{4\pi\varepsilon_0x}\psi(x) = E(x)\]
+			For a bound state, the wave function must fall to 0 as \(x\) approaches infinity. Additionally, for the second term on the left side to remain finite at the origin, the wave function must be 0 at the origin. The simplest function satisfying both of these requirements is
+			\[\psi(x) = Ax\en^{-bx}\]
+			Substituting this trial wave function into the Schr\"odinger equation yields a solution when
+			\[
+				b = \frac{me^2}{4\pi\varepsilon_0\hbar^2}
+					= \frac{1}{a_0}
+			\]
+			The corresponding energy is
+			\[
+				E = -\frac{\hbar^2b^2}{2m}
+					= -\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2}
+			\]
+			which is identical to the ground state energy in the Bohr model. \\
+			The most probably region for the electron to be in is around \(x = a_0\), but there is a nonzero probability of the electron being found energy on the positive \(x\)-axis. This differs greatly from the Bohr model, which fixes the distance between the proton and electron at \(a_0\). \\
+			Higher excited states have more peaks in the probability density and the region of maximum probability moves further along the \(x\)-axis.
+	\section{Angular Momentum in the Hydrogen Atom}
+		\subsectionb{Angular Momentum of Classical Orbits}
+			Classically, the angular momentum of a particle is
+				\[
+					\vec{L} = \vec{r} \times \vec{p}
+						\tag{classical angular momentum}
+				\]
+				where \(\vec{r}\) is the position vector and \(\vec{p}\) is its linear momentum. The angular momentum is perpendicular to the plane of the orbit. Along with the energy, the angular momentum remains constant in orbit. \\
+			The total energy of the orbital motion is what determines the average distance from the center of the orbit. For a given total energy, many orbits are possible, from nearly circular to highly elliptical ones. The complete specification of the orbit requires knowledge of the direction of the angular momentum in addition to its magnitude. The direction is what determines the plane of the orbit. To completely describe the angular momentum vector, three numbers are required, regardless of whether Cartesian or spherical coordinates are being used.
+		\subsectionb{Angular Momentum in Quantum Mechanics}
+			Quantum mechanics has quite a different view of angular momentum. The angular momentum properties of a three-dimensional wave function are described by two quantum numbers, the first of which is the \textit{angular momentum} or \textit{azimuthal quantum number \(\ell\)}, which determines the length of the angular momentum vector:
+				\[
+					L = \hbar\sqrt{\ell(\ell + 1)}
+						\quant{\ell}{\N}
+				\]
+				This differs significantly from the Bohr condition, allowing the angular momentum to be 0. \\
+				The second number is the \textit{magnetic quantum number \(m_\ell\)}, which determines one component of the angular momentum vector, typically chosen to be the \(z\) component:
+				\[
+					L_z = m_\ell\hbar, \quad
+						m_\ell = 0, \pm 1, \pm 2, \ldots, \pm \ell
+				\]
+				Note that each value of \(\ell\) has \(2\ell + 1\) possible values of \(m_\ell\). \\
+				Unlike the classical angular momentum vector, which must be specified by three numbers, \textit{only two} are required for the quantum angular momentum vector. These two numbers cannot completely identify a vector in three-dimensional space, so they must signify something else. \\
+				The polar angle\footnote{
+					In mathematics, the convention is for the polar angle to be in the \(xy\)-plane and for the azimuthal angle to be from the \(z\)-axis:
+						\begin{align*}
+							\begin{tikzpicture}[xscale = 4, yscale = 4]
+								\draw[thick, ->] (0,0,0) coordinate(O) node[anchor = east]{$O$} -- (1, 0, 0) coordinate(Y) node[anchor = north east]{$y$};
+								\draw[thick, ->] (0, 0, 0) -- (0, 1, 0) coordinate(Z) node[anchor = north west]{$z$};
+								\draw[thick, ->] (0, 0, 0) -- (0, 0, 1) coordinate(X) node[anchor = south east]{$x$};
+								\draw[-] (0, 0, 0) -- (1, 1.3, 1) coordinate(P) node[anchor = west] {$(\rho, \theta, \varphi)$};
+								\filldraw (1, 1.3, 1) circle (0.05mm);
+									\draw[decoration = {brace, raise = 5pt}, decorate] (0, 0, 0) -- node[anchor = south east, inner sep = 5pt]{$\rho$}(1, 1.3, 1);
+								\draw[dashed] (1, 1.3, 1) -- (1, 0, 1) coordinate(PJ);
+								\draw[dashed] (1, 0, 1) -- (0, 0, 0);
+								\path pic[draw, angle radius = 5mm, "$\theta$", angle eccentricity = 1.5, anchor = south, inner sep = -5pt]{angle = X--O--PJ};
+								\path pic[draw, angle radius = 13mm, "$\varphi$", angle eccentricity = 1.5, anchor = north, inner sep = 5pt]{angle = P--O--Z};
+								\node at (0.3, -0.6, 0) {mathematical convention};
+							\end{tikzpicture} &&
+							\begin{tikzpicture}[xscale = 4, yscale = 4]
+								\draw[thick, ->] (0,0,0) coordinate(O) node[anchor = east]{$O$} -- (1, 0, 0) coordinate(Y) node[anchor = north east]{$y$};
+								\draw[thick, ->] (0, 0, 0) -- (0, 1, 0) coordinate(Z) node[anchor = north west]{$z$};
+								\draw[thick, ->] (0, 0, 0) -- (0, 0, 1) coordinate(X) node[anchor = south east]{$x$};
+								\draw[-] (0, 0, 0) -- (1, 1.3, 1) coordinate(P) node[anchor = west] {$(\rho, \theta, \varphi)$};
+								\filldraw (1, 1.3, 1) circle (0.05mm);
+									\draw[decoration = {brace, raise = 5pt}, decorate] (0, 0, 0) -- node[anchor = south east, inner sep = 5pt]{$\rho$}(1, 1.3, 1);
+								\draw[dashed] (1, 1.3, 1) -- (1, 0, 1) coordinate(PJ);
+								\draw[dashed] (1, 0, 1) -- (0, 0, 0);
+								\path pic[draw, angle radius = 5mm, "$\varphi$", angle eccentricity = 1.5, anchor = south, inner sep = -5pt]{angle = X--O--PJ};
+								\path pic[draw, angle radius = 13mm, "$\theta$", angle eccentricity = 1.5, anchor = north, inner sep = 5pt]{angle = P--O--Z};
+								\node at (0.3, -0.6, 0) {physics convention};
+							\end{tikzpicture}
+						\end{align*}
+					} made between \(\vec{L}\) and the \(z\)-axis is determined by
+				\[
+					\cos\theta = \frac{L_z}{L}
+						= \frac{m_\ell}{\sqrt{\ell(\ell + 1)}}
+				\]
+				This implies \textit{spatial quantization}, meaning that only certain orientations of the angular momentum vector are allowed. The number of these orientations is equal to the number of possible values of \(m_\ell\) and the magnitudes of their successive \(z\) components always differs by \(\hbar\). Classical angular momentum, of course, can have any orientation.
+	\section{The Hydrogen Atom Wave Functions}
+		To completely describe the electron in the hydrogen atom, a three-dimensional wave function must be obtained. The three dimensional Schr\"odinger equation in Cartesian coordinates has the form
+			\[-\frac{\hbar^2}{2m}\nabla^2\psi(x, y, z) + U(x, y, z)\psi(x, y, z) = E\psi(x, y, z)\]
+			where
+			\[\nabla^2\psi(x, y, z) = \pdv[2]{\psi}{x} + \pdv[2]{\psi}{y} + \pdv[2]{\psi}{z}\]
+			To solve a partial differential equation of this form, the variables are separated by writing the function of three variables as the product of three functions of a single variable, such as
+			\[\psi(x, y, z) = X(x)Y(y)Z(z)\]
+			The Coulomb potential energy written in Cartesian coordinates is
+			\[U(x, y, z) = -\frac{e^2}{4\pi\varepsilon_0\sqrt{x^2 + y^2 + z^2}}\]
+			which does not yield a separable solution. For this calculation, it is more convenient to use spherical coordinates. This simplification of the solution comes at the cost of a more complex Schr\"odinger equation, which is
+			\[-\frac{\hbar^2}{2m}\nabla^2\psi(r, \theta, \varphi) + U(r)\psi(r, \theta, \varphi) = E\psi(r, \theta, \varphi)\]
+			where
+			\[\nabla^2\psi(r, \theta, \varphi) = \pdv[2]{\psi}{r} + \frac{2}{r}\pdv{\psi}{r} + \frac{1}{r^2\sin\theta}\pdv{\theta}\left(\sin\theta\,\pdv{\psi}{\theta}\right) + \frac{1}{r^2\sin^2\theta}\pdv[2]{\psi}{\varphi}\]
+			When the potential energy is only dependent on \(r\), as is the case for the Coulomb potential energy, the solution can be factored as
+			\[\psi(r, \theta, \varphi) = R(r)\Theta(\theta)\Phi(\varphi)\]
+			where \(R(r)\) is the \textit{radial function}, \(\Theta(\theta)\) is the \textit{polar function}, and \(\Phi(\varphi)\) is the \textit{azimuthal function}. \\
+			The quantum state of a particle moving in a potential energy that depends only on \(r\) can be described by the angular momentum quantum numbers \(\ell\) and \(m_\ell\). \\
+			The polar and azimuthal solutions are given by combinations of standard trigonometric functions while the radial function is obtained by solving the radial equation
+			\[-\frac{\hbar^2}{2m}\left(\dv[2]{R}{r} + \frac{2}{r}\dv{R}{r}\right) + \left(-\frac{e^2}{4\pi\varepsilon_0r} + \frac{\ell(\ell + 1)\hbar^2}{2mr^2}\right)R(r) = ER(r)\]
+		\subsectionb{Quantum Numbers and Wave Functions}
+			When solving a three-dimensional equation, such as the Schr\"odigner equation, three parameters emerge as indices for the solutions, just as the single index \(n\) applied from the application of boundary conditions to the wave function for the one-dimensional infinite square well. These indices are the three \textit{quantum numbers} that label the solutions. The three quantum numbers that emerge from the solutions and their allowed values are
+				\[
+					\begin{array}{lll}
+						n & \text{principle quantum number} & 1, 2, 3, \ldots \\
+						\ell & \text{angular momentum/azimuthal quantum number} & 0, 1, 2, \ldots, n - 1 \\
+						m_\ell & \text{magnetic quantum number} & 0, \pm 1, \pm 2, \ldots, \pm \ell
+					\end{array}
+						\tag{quantum numbers}
+				\]
+				The principle quantum number is identical to the quantum number \(n\) obtained from the Bohr model. It determines the quantized energy levels as
+				\[E_n = -\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2}\frac{1}{n^2}\]
+				Note that the energy only depends on \(n\). The permitted values of \(\ell\) are limited by \(n\) and those of \(m_\ell\) are in turn restricted by \(\ell\). \\
+				Complete with quantum numbers, the wave function can be written as
+				\[\psi_{n, \ell, m_\ell}(r, \theta, \varphi) = R_{n, \ell}(r)\Theta_{\ell, m_\ell}(\theta)\Phi_{m_\ell}(\varphi)\]
+			The indices are the three quantum numbers necessary to describe the solutions. Some sample wave functions are
+				\[\renewcommand{\arraystretch}{2}\begin{array}{|c|c|c|c|c|c|}\hline
+					n & \ell & m_\ell & R(r) & \Theta(\theta) & \Phi(\varphi) \\\hline
+					1 & 0 & 0 & \dfrac{2}{a_0^{3/2}}\en^{-r/a_0} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2\pi}} \\
+					2 & 0 & 0 & \dfrac{1}{(2a_0)^{3/2}}\left(2 - \dfrac{r}{a_0}\right)\en^{-r/2a_0} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2\pi}} \\
+					2 & 1 & 0 & \dfrac{1}{\sqrt{3}(2a_0)^{3/2}}\dfrac{r}{a_0}\en^{-r/2a_0} & \sqrt{\dfrac{3}{2}}\cos\theta & \dfrac{1}{\sqrt{2\pi}} \\
+					2 & 1 & \pm 1 & \dfrac{1}{\sqrt{3}(2a_0)^{3/2}}\dfrac{r}{a_0}\en^{-r/2a_0} & \mp\dfrac{\sqrt{3}}{2}\sin\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\
+					3 & 0 & 0 & \dfrac{2}{(3a_0)^{3/2}}\left(1 - \dfrac{2r}{3a_0} + \dfrac{2r^2}{27a_0^2}\right)\en^{-r/3a_0} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2\pi}} \\
+					3 & 1 & 0 & \dfrac{8}{9\sqrt{2}(3a_0)^{3/2}}\left(\dfrac{r}{a_0} - \dfrac{r^2}{6a_0^2}\right)\en^{-r/3a_0} & \sqrt{\dfrac{3}{2}}\cos\theta & \dfrac{1}{\sqrt{2\pi}} \\
+					3 & 1 & \pm 1 & \dfrac{8}{9\sqrt{2}(3a_0)^{3/2}}\left(\dfrac{r}{a_0} - \dfrac{r^2}{6a_0^2}\right)\en^{-r/3a_0} & \mp\dfrac{\sqrt{3}}{2}\sin\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\
+					3 & 2 & 0 & \dfrac{4}{27\sqrt{10}(3a_0)^{3/2}}\dfrac{r^2}{a_0^2}\en^{-r/3a_0} & \sqrt{\dfrac{5}{8}}(3\cos^2\theta - 1) & \dfrac{1}{\sqrt{2\pi}} \\
+					3 & 2 & \pm 1 & \dfrac{4}{27\sqrt{10}(3a_0)^{3/2}}\dfrac{r^2}{a_0^2}\en^{-r/3a_0} & \mp\sqrt{\dfrac{15}{4}}\sin\theta\cos\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\
+					3 & 2 & \pm 2 & \dfrac{4}{27\sqrt{10}(3a_0)^{3/2}}\dfrac{r^2}{a_0^2}\en^{-r/3a_0} & \dfrac{\sqrt{15}{4}}\sin^2\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\[2ex]\hline
+				\end{array}\]
+			For the ground state (\(n = 1\)), only \(\ell = 0\) and \(m_\ell = 0\) are allowed, meaning that the set of quantum numbers for the ground state is \((1, 0, 0)\). The first excited state \((n = 2\)) has 4 possible sets of quantum numbers: \((2, 0, 0)\), \((2, 1, 0)\) and \((2, 1, \pm 1)\). All of their corresponding wave functions describe the same energy, so the \(n = 2\) level is \textit{degenerate}. The \(n = 3\) level is also degenerate, having 9 possible sets of quantum numbers. In general, the level with principal quantum number \(n\) has degeneracy \(n^2\). \\
+				There are several reasons for making the distinction between wave functions that correspond to the same energy. Firstly , the levels are not precisely degenerate, being separated by a small energy of about \SI{10E-5}{eV}. Secondly, in studying the transitions between levels, it has been found that the intensities of individual transitions is dependent on the quantum numbers of the particular level from which the transition originates. Thirdly, and perhaps of most import, \textit{each set of quantum numbers corresponds to a very different wave function, therefore representing a very different state of motion of the electron}. These states have different spatial probability distributions, thusly affecting many atomic properties (take, for instance, the way two atoms can form molecular bonds). \\
+		\subsectionb{Probability Densities}
+			The probability of finding the electron in any spatial interval is determined by the squared amplitude of its wave function. For the hydrogen atom, \(|\psi(r, \theta, \varphi)|^2\) gives the \textit{volume probability density} (probability per unit volume) at \((r, \theta, \varphi)\). To compute the actual probability of finding the electron, this must be multiplied by some volume element \(\dd{V}\) located at \((r, \theta, \varphi)\). In spherical coordinates, this volume element is
+				\[\dd{V} = r^2\sin\theta\dd{r}\dd{\theta}\dd{\varphi}\]
+				making the probability of finding the electron in the volume element
+				\[
+					|\psi_{n, \ell, m_\ell}(r, \theta, \varphi)|^2 = |R_{n, \ell}(r)|^2|\Theta_{\ell, m_\ell}(\theta)|^2|\Phi_{m_\ell}(\varphi)|^2r^2\sin\theta\dd{r}\dd{\theta}\dd{\varphi}
+						\tag{complete probability density}
+				\]
+	\section{Radial Probability Densities}
+		Rather than considering the probability density to locate the electron, it is advantageous to only consider the probability of finding it at a particular distance from the nucleus, regardless of \(\theta\) and \(\varphi\). The \textit{radial probability density \(P(r)\)} can be regarded as the probability of finding the electron within a spherical shell of inner radius \(r\) and thickness \(\dd{r}\) centered at the nucleus. This radial probability can be derived from the complete probability by integrating over the domains of \(\theta\) and \(\varphi\). This effectively sums the probabilities for the volume elements at a given \(r\) for all \(\theta\) and \(\varphi\):
+			\[P(r)\dd{r} = |R_{n, \ell}^2r^2\dd{r}\int_0^\pi|\Theta_{\ell, m_\ell}(\theta)|^2\sin\theta\dd{\theta}\int_0^{2\pi}|\Phi_{m_\ell}(\varphi)|^2\dd{\varphi}\]
+			These two integrals are simply equal to 1, due to each function being individually normalized, so the radial probability density is simply
+			\[
+				P(r) = r^2|R_{n, \ell}(r)|^2
+					\tag{radial probability density}
+			\]
+			Note that due to the \(r^2\) factor, \(P(r)\) must always be 0 at \(r = 0\); that is, the probability of locating the electron in a spherical shell goes to 0 as the shell shrinks to radius 0, but the probability density may be nonzero. Moreover, \(P(r)\) and \(R(r)\) give insight into different aspects of the electron's behavior. For the ground state, for example, the radial wave function is maximized at \(r = 0\), but the radial probability density is maximized at \(r = a_0\). \\
+		Using radial probability densities, the average radial coordinate can be found; that is, the average distance between the proton and the electron. This is simply the \(\supt{50}{th}\) percentile of the probability density; that is,
+			\[
+				\int_0^{\subt{r}{avg}}P(r)\dd{r} = 0.5
+					\tag{average radius}
+			\]
+			As in the Bohr model, this average varies roughly with \(n^2\), meaning that an \(n = 2\) electron is on average about 4 times further from the nucleus than a ground state electron. \\
+		The most probable radius is the location that maximizes \(P(r)\). For each \(n\), \(P(r)\) for \(\ell = n - 1\) has only a single maximum, which occurs at the location of the Bohr orbit:
+			\[
+				r = n^2a_0
+					\tag{most probable radius}
+			\]
+	\setcounter{section}{6}
+	\section{Energy Levels and Spectroscopic Notation}
+		
+\end{document}

@@ -1,0 +1,191 @@
+\documentclass{subfiles}
+
+\begin{document}
+	\section{Basic Properties of Atoms}
+		\begin{enumerate}
+			\item
+				\textit{Atoms are very small}, on the scale of a tenth of a nanometer in radius. Any effort to \enquote{see} an atom using visible light \(\lambda = \SI{500}{nm}\) are thus hopeless owing to diffraction effects. An estimate of the \textit{maximum} size can be made, though, by considering the volume of a mole of an element (calculated from its density) and dividing it by Avogadro's number.
+			\item
+				\textit{Atoms are stable}; that is, they do not spontaneously break into smaller pieces or collapse. Therefore, the internal forces holding atoms together must be in equilibrium. This means that said forces must be opposed in some way, as otherwise, the atoms would collapse.
+			\item
+				\textit{Atoms contain negatively charged electrons, but are electrically neutral.} If an atom or collection of atoms is disturbed with sufficient force, electrons are emitted. This is observed in the Compton and photoelectric effects. While electrons are emitted from atoms' nuclei in certain radioactive decay processes, they don't \enquote{exist} in those nuclei, instead being manufactured by some process. The uncertainty principle forbids emitted electrons of the energies observed from existing in the nucleus. In a volume as large as an atom, though, the uncertainty principle places no such restriction on the existence of electrons. It can also be observed that bulk matter is electrically neutral and it can be reasonably extrapolated that this is a property of atoms themselves.
+			\item
+				\textit{Atoms absorb and emit electromagnetic radiation.} The observation of these emissions is crucial to understanding the atom. It should be noted that emitted and absorbed wavelengths may differ.
+		\end{enumerate}
+	\section{Scattering Experiments and the Thomson Model}
+		The Thomson model incorporated already known properties of atoms, such as their size, mass, number of electrons, and electric neutrality. According to this model, an atom contains \(Z\) electrons within a sphere of positive charge \(Ze\). As the electrons don't contribute significantly to the mass of the atom, the mass of the sphere is essentially that of the atom. The radius of the sphere \(R\) and that of the atom are the same.
+	\section{The Rutherford Nuclear Atom}
+		Rutherford concluded that the most likely way for an alpha particle (\(m = \SI{4}{u}\)) to be deflected through large angles is for it to undergo a single collision with a more massive object. He therefore proposed that an atom's mass and charge are concentrated at a central \textit{nucleus}. The projectile, of charge \(ze\), experiences a deflective Coulomb force due to the nucleus of charge \(Ze\):
+			\[
+				F = \frac{1}{4\pi\varepsilon_0}\frac{(ze)(Ze)}{r^2}
+					= \frac{zZe^2}{4\pi\varepsilon_0r^2}
+					\tag{Rutherford scattering}
+			\]
+			Due to their relatively small masses, the atomic electrons have negligible impact on the path of the particle. It is also assumed that the nucleus is far more massive than the particle, meaning that it does not move through the interaction; as no kinetic energy is given to the nucleus, that of the particle remains unchanged. \\
+		Each impact parameter \(b\) has a certain scattering angle \(\theta\). The particle's path can be shown to be hyperbolic; in polar coordinates \(r\) and \(\varphi\),
+			\[\frac{1}{r} = \frac{1}{b}\sin\varphi + \frac{zZe^2}{8\pi\varepsilon_0b^2K}(\cos\varphi - 1) \tag{Rutherford scattering path}\]
+			The particle's initial position is \(\varphi = 0, r \to \infty\) and its final position is \(\varphi = \pi - \theta, r \to \infty\). Using these final coordinates, the above equation can be reduced to
+			\[
+				b = \frac{zZe^2}{8\pi\varepsilon_0K}\cot(\frac{1}{2}\theta)
+					= \frac{zZ}{2K}\frac{e^2}{4\pi\varepsilon_0}\cot(\frac{1}{2}\theta)
+					\tag{Rutherford scattering path}
+			\]
+			Note that
+			\[\frac{e^2}{4\pi\varepsilon_0} = \SI{1.44}{eV.nm}\]
+		A positively charged projectile slows as it approaches the nucleus, losing kinetic energy but gaining electrostatic potential energy
+			\[U = \frac{1}{4\pi\varepsilon_0}\frac{zZe^2}{r^2}\]
+			Kinetic energy is maximized and potential minimized when the radius is minimized. When the projectile is far from the nucleus, \(U\) is 0, so
+			\[
+				E = K 
+					= \frac{1}{2}mv^2
+			\]
+			As the projectile approaches the nucleus, the total energy remains the same, so at distance \(\subt{r}{min}\) and speed \(\subt{v}{min}\),
+			\[
+				E = \frac{1}{2}m\subt{v}{min}^2 + \frac{1}{4\pi\varepsilon_0}\frac{zZe^2}{\subt{r}{min}^2}
+					= \frac{1}{2}mv^2
+			\]
+			In addition to energy, angular momentum is conserved:
+			\[
+				L = mvb
+					= m\subt{v}{min}\subt{r}{min}
+			\]
+			which yields
+			\[\subt{v}{min} = \frac{bv}{\subt{r}{min}}\]
+			Substituting this into the energy expression,
+			\[\frac{1}{2}mv^2 = \frac{1}{2}m\left(\frac{b^2v^2}{\subt{r}{min}}\right) + \frac{1}{4\pi\varepsilon_0}\frac{zZe^2}{\subt{r}{min}}\]
+			Note that \(K\) is not 0 unless \(b\) is as well, in which case all of the particle's energy becomes potential, the minimum distance to the nucleus being minimized. At this point, the distance from the nucleus is \(d\), the distance of closest approach. This can be found by solving the above equation for \(\subt{r}{min}\) when \(b = 0\):
+			\[d = \frac{1}{4\pi\varepsilon_0}\frac{zZe^2}{K} \tag{distance of closest approach}\]
+	\section{Line Spectra}
+		The radiation emitted by atoms can be classified into continuous or discrete/line spectra. In the former case, all wavelengths within some interval are emitted, but this is not the case for line spectra. \\
+		All groupings of lines in the hydrogen spectrum can be fit by
+			\[
+				\lambda = \subt{\lambda}{limit}\frac{n^2}{n^2 - n_0^2}, \quad 
+				n = n_0, + 1, n_0 + 2, \ldots
+					\tag{hydrogen spectra}	
+			\]
+			where
+			\[\subt{\lambda}{limit} = 91.13n_0^2\]
+			in nm.
+			\(n_0 = 1\) is the Lyman series, 2 is Balmer, 3 is Paschen, 4 is Brackett, and 5 is Pfund.
+	\section{The Bohr Model}
+		Consider an electron orbiting a hydrogen nucleus. The centripetal force is provided by the attractive Coulomb force between it and the nucleus:
+			\[
+				F = \frac{1}{4\pi\varepsilon_0}\frac{e^2}{r^2}
+					= \frac{mv^2}{r}
+			\]
+			Manipulating this equation yields the kinetic energy of the electron to be
+			\[
+				K = \frac{1}{2}mv^2
+					= \frac{1}{8\pi\varepsilon_0}\frac{e^2}{r}
+			\]
+			The potential energy of the electron is the Coulomb potential energy
+			\[
+				U = -\frac{1}{4\pi\varepsilon_0}\frac{e^2}{r}
+					= -2K
+			\]
+			The total energy is simply the sum of the kinetic and potential energies:
+			\[
+				E = K + U
+					= K - 2K
+					= -\frac{1}{8\pi\varepsilon_0}\frac{e^2}{r}
+			\]
+			Classically, an accelerating charge, such as this electron, must continuously emit electromagnetic radiation, meaning that its total energy would decrease, causing it to spiral towards the nucleus. Bohr hypothesized that there exist \textit{stationary states} in which an electron may exist without radiating electromagnetic energy. In these states, its angular momentum takes integer multiples of \(\hbar\). This is known as the \textit{quantization of angular momentum.}:
+			\[
+				L = n\hbar
+					\quant{n}{\Z^+}
+					\tag{quantization of angular momentum}
+			\]
+			For a body in circular motion, the momentum and radial vectors are always perpendicular, so
+			\[
+				L = |\vec{r} \times \vec{p}| = mvr
+			\]
+			Bohr's postulate is thus
+			\[
+				mvr = n\hbar
+					\quant{n}{\Z^+}
+					\tag{Bohr's postulate}
+			\]
+			Solving for \(v\) and substituting into the equation for kinetic energy yields
+			\[
+				K = \frac{1}{2}\left(\frac{n\hbar^2}{mr}\right)
+					= \frac{1}{8\pi\varepsilon_0}\frac{e^2}{r}
+			\]
+			This yields a series of allowed radii:
+			\[
+				r_n = \frac{4\pi\varepsilon_0\hbar^2}{me^2}n^2
+					\quant{n}{\Z^+}
+			\]
+			This can be rewritten as
+			\[
+				r_n = a_0n^2
+					\quant{n}{\Z^+}
+			\]
+			where \(a_0\) is the \textit{Bohr radius}, defined as
+			\[
+				a_0 = \frac{4\pi\varepsilon_0\hbar^2}{me^2}
+					\approx \SI{0.0529}{nm}
+					\tag{Bohr radius}
+			\]
+			Substituting the allowed radii into the equation for total energy yields
+			\[
+				E_n = -\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2}\frac{1}{n^2}
+					\approx -\frac{\SI{13.6}{eV}}{n^2}
+					\quant{n}{\Z^+}
+			\]
+			This means that the electron's energy is \textit{quantized}. \(E_1\) is the \textit{ground state} while the higher states are the \textit{excited states}. (Note that the first excited state is \(n = 2\).) \\
+			The \textit{excitation energy} of an excited state \(n\) is the energy above the ground state:
+			\[
+				\Delta E = E_n - E_1
+					\tag{excitation energy}
+			\]
+			This can be regarded as the amount of energy the atom must absorb in order for the electron to make an upward jump. \\
+			The magnitude of an electron's energy is sometimes called its \textit{binding energy}. Should the atom absorb an amount of energy equal to the binding energy of an electron, said electron will be removed from the atom, becoming a free electron and making the atom an \textit{ion}. The amount of energy required to remove an electron from an atom is also called the \textit{ionization energy}. The ionization energy of an atom typically indicates the energy required to remove an electron from the ground state. Should an atom absorb sufficient energy to free an electron, the excess energy will become the electron's kinetic energy. \\
+			The binding energy can also be regarded as the energy released when an atom is assembled from an electron and nucleus that are initially separated by a large distance. Bringing the electron from a large distance (where \(E = 0\)) and placing it in orbit in state \(n\) results in the change in energy being equal to the negative value of \(E_n\). To compensate for this, energy amounting to \(|E_n|\) is released, usually in the form of photons.
+		\subsectionb{The Hydrogen Wavelengths in the Bohr Model}
+			Bohr postulated that electrons emit radiation only when dropping energy levels. The energy of the emitted photon is equal to the change in energy:
+				\[hf = E_{n_1} - E_{n_2}\]
+				Using the equation for those energies,
+				\[f = \frac{me^4}{64\pi^3\varepsilon_0^2\hbar^3}\left(\frac{1}{n_2^2} - \frac{1}{n_1^2}\right)\]
+				The emitted wavelength is then
+				\[
+					\lambda = \frac{c}{f}
+						= \frac{64\pi^3\varepsilon_0^2\hbar^3c}{me^4}\left(\frac{n_1^2n_2^2}{n_1^2 - n_2^2}\right)
+				\]
+				which can be rewritten as
+				\[f = \frac{1}{R_\infty}\left(\frac{n_1^2n_2^2}{n_1^2 - n_1^2}\right)\]
+				where \(R_\infty\) is the \textit{Rydberg constant}, defined as
+				\[
+					R_\infty = \frac{me^4}{64\pi^3\varepsilon_0^2\hbar^3c}
+						\approx \SI{1.097373E7}{m^{-1}}
+						\tag{Rydberg constant}
+				\]
+			The Bohr formulas are remarkably consistent with the two longest wavelengths of the Balmer series. They also explain the Ritz combination principle, which states that certain frequencies in the emission spectrum can be summed to yield other frequencies. Consider a transition from \(n_3\) to \(n_2\) and then from \(n_2\) to \(n_1\):
+				\begin{align*}
+					f_{n_3 \to n_2} = cR_\infty\left(\frac{1}{n_3^2} - \frac{1}{n_2^2}\right) &
+						f_{n_2 \to n_1} = cR_\infty\left(\frac{1}{n_2^2} - \frac{1}{n_1^2}\right)
+				\end{align*}
+				Thus
+				\[
+					f_{n_3 \to n_2} + f_{n_2 \to n_1} = cR_\infty\left(\frac{1}{n_3^2} - \frac{1}{n_2^2}\right) + cR_\infty\left(\frac{1}{n_2^2} - \frac{1}{n_1^2}\right)
+						= cR_\infty\left(\frac{1}{n_3^2} - \frac{1}{n_1^2}\right)
+				\]			
+				which is simply the frequency of the photon emitted in a direct transition from \(n_3\) to \(n_1\), so
+				\[
+					f_{n_3 \to n_2} + f_{n_2 \to n_1} = f_{n_3 \to n_1}
+						\tag{Ritz transition principle}
+				\]
+				As the frequency of the emitted photon is directly proportional to its energy, the Ritz combination principle can be restated in terms of energy: the energy of a photon emitted in a transition that spans multiple states is equal to the sum of the energies of the individual transitions. \\
+			The Bohr model also helps explain why atoms don't absorb and emit radiation at all the same wavelengths. Isolated atoms are usually only found in the ground state, as the excited states have lifespans shorter than a nanosecond, after which they decay to the ground state. \textit{The absorption spectrum therefore only contains transitions from the ground state.}
+		\subsectionb{Atoms with \(Z > 1\)}
+			The Bohr theory can be extended to any atom with a single electron regardless of its nuclear charge \(Z\). For a nucleus of charge \(Ze\), the Coulomb force is
+				\[F = \frac{1}{4\pi\varepsilon_0}\frac{Ze^2}{r^2}\]
+				That is, \(e^2\) is replaced by \(Ze^2\). Making this substitution, the allowed radii and energies become
+				\[
+					r_n = \frac{4\pi\varepsilon_0\hbar^2}{Ze^2m}n^2
+						= \frac{a_0n^2}{Z} \quad \text{and} \quad
+						E_n = -\frac{m(Ze^2)^2}{32\pi^2\varepsilon_0^2\hbar^2}\frac{1}{n^2}
+							= -(\SI{13.6}{eV})\frac{Z^2}{n^2}
+							\quant{n}{\Z^+}
+				\]
+				It is evident that the orbits in higher-\(Z\) atoms are closer to the nucleus and have higher (negative) energies; that is, the electron is more tightly bound to the nucleus.
+\end{document}

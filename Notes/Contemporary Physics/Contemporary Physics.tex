@@ -38,6 +38,8 @@
 			\newcommand{\N}{\mathbb{N}}
 			\newcommand{\R}{\mathbb{R}}
 			\newcommand{\Z}{\mathbb{Z}}
+			% Quantization
+				\newcommand{\quant}[2]{, \quad #1 \in #2}
 		% Transforms
 			\DeclareMathOperator{\Ell}{\mathscr{L}}
 			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
@@ -51,14 +53,13 @@
 				\newcommand{\vr}{\hat{r}}
 				\newcommand{\vphi}{\hat{\varphi}}
 		% Other
-			\DeclareMathOperator{\avg}{avg}
 			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
-			\renewcommand{\th}{\text{th}}
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
 		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
 		\newcommand{\subt}[2]{#1_{\text{#2}}}
+		\newcommand{\supt}[2]{#1^{\text{#2}}}
 % Configuration
 	\title{Contemporary Physics}
 	\author{Arnav Patri}
@@ -86,4 +87,8 @@
 		\subfile{chapters/4.tex}
 	\chapter{The Schr\"odinger Equation}
 		\subfile{chapters/5.tex}
+	\chapter{The Rutherford-Bohr Model of the Atom}
+		\subfile{chapters/6.tex}
+	\chapter{The Hydrogen Atom in Wave Mechanics}
+		\subfile{chapters/7.tex}
 \end{document}

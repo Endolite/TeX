@@ -9,13 +9,22 @@
 			Of all possible waves that may describe this particle, the continuity restricts the options to those that are 0 at the boundaries. Note that the function need not be differentiable, only continuous, at the infinite barriers. \\
 		Unlike free particles, which may have any wavelength, \textit{only certain values of the wavelength are allowed}. The de Broglie relationship then means that only certain momenta are allowed and consequently only certain energies. The energy is not continuous, instead being discrete. This is known as \textit{quantization of energy}. \\
 			The allowed wavelengths are
-			\[\lambda_n = \frac{2L}{n} \text{ for } n \in \Z^+\]
+			\[
+				\lambda_n = \frac{2L}{n} 
+					\quant{n}{\Z^+}
+			\]
 			where \(L\) is the length of the section of 0 potential. This set of wavelengths is identical to those of the classical problem of standing waves on a string stretched between two points. The de Broglie relationship yields
-			\[p_n = n\frac{h}{2L}\]
+			\[
+				p_n = n\frac{h}{2L} 
+					\quant{n}{\Z^+}
+			\]
 			The particle's energy is only kinetic, so
-			\[E_n = n^2\frac{h^2}{8mL^2}\]
+			\[
+				E_n = n^2\frac{h^2}{8mL^2} 
+					\quant{n}{\Z^+}
+			\]
 	\section{The Schr\"odinger Equation}
-		The differential equation whose solution yields the wave behavior of particles is the \textit{Schr\"odinger equation}. This cannot be derived from any prior equations or postulates; they are fundamental. For nonrelativistic motion, ti provides results that correctly account for atomic and subatomic observations. \\
+		The differential equation whose solution yields the wave behavior of particles is the \textit{Schr\"odinger equation}. This cannot be derived from any prior equations or postulates; they are fundamental. For nonrelativistic motion, it provides results that correctly account for atomic and subatomic observations. \\
 		The form of the Schr\"odinger equation can be justified by examining the expected solution for a free particle, which should be a wave whose shape at any particular time, as specified by \textit{wave function \(\psi(x)\)}, is that of a de Broglie wave, such as
 			\[\psi(x) = A\sin(kx)\]
 			Differentiating this yields
@@ -76,7 +85,7 @@
 			This interpretation of \(|\psi(x)|^2\) clarifies the continuity condition of \(\psi(x)\). The probability cannot change discontinuously. \\
 			This interpretation of \(\psi(x)\) enables the completion of the procedure for solving the Schr\"odinger equation:
 			\begin{enumerate}
-				\setcounter{enumi}{4}
+				\setcounter{enumi}{3}
 				\item
 					For a wave function describing a single particle, the probability summed over all locations must be 1; that is, the particle must be \textit{somewhere} between \(-\infty\) and \(\infty\):
 					\[\int_{-\infty}^\infty |\psi(x)|^2 \dd{x} = 1\]
@@ -84,7 +93,7 @@
 				\item
 					As the Schr\"odinger equation represents a probability, any solution that goes to infinity must be discarded (its multiplicative constant set to 0). If the solution is
 						\[\psi(x) = A\en^{kx} + B\en^{-kx}\]
-						for the \textit{entire} region \(x > 0\), then \(A\) must be 0 for the solution to be physically meaningful. If this solution is valid for the \textit{entire} region \(x < 0\), though, then \(B\) must be 0. If the solution is valid only over a small range (say \(0 < x < L\), then neither can be 0.
+						for the \textit{entire} region \(x > 0\), then \(A\) must be 0 for the solution to be physically meaningful. If this solution is valid for the \textit{entire} region \(x < 0\), though, then \(B\) must be 0. If the solution is valid only over a small range (say \(0 < x < L\), then neither can be 0).
 				\item
 					Suppose the interval between two points \(x_1\) and \(x_1\) is divided into infinitesimal intervals of width \(\dd{x}\). The total probability of the particle being located within the interval, notated \(P(x_1:x_2)\), is 
 						\[
@@ -102,7 +111,7 @@
 						\]
 						as the denominator is 1 due to the normalization. By analogy, the average value of any function \(f\) of \(x\) can be found as
 						\[
-							[f(x)]_{avg} = \int_{-\infty}^\infty P(x)f(x) \dd{x}
+							\subt{[f(x)]}{avg} = \int_{-\infty}^\infty P(x)f(x) \dd{x}
 								= \int_{-\infty}^\infty |\psi(x)|^2f(x) \dd{x}
 						\]
 						Average values calculated according to the above equations are \textit{expectation values}.
@@ -117,13 +126,13 @@
 						k = \sqrt{\frac{2m(E - U_0)}{\hbar^2}}
 				\]
 				The parameter \(k\) is simply wave number \(2\pi/\lambda\). The auxiliary equation for this differential equation is
-				\[m^2 + k^2m = 0\]
+				\[m^2 + k^2 = 0\]
 				which has solutions \(m = \pm ki\), making the solution to the differential equation
 				\[\psi(x) = A\sin(kx) + B\cos(kx)\]
 				The values of the constants can be determined by applying the continuity and normalization requirements. \\
 				To analyze the penetration of a particle into a forbidden region, the energy \(E\) of the energy should be smaller than the potential energy \(U_0\). For this case, the differential equation becomes
 				\[
-					\dv[2]{\psi}{x} = k'^2\psi(x) \qquad \text{where} \qquad
+					\dv[2]{\psi}{x} = k'^2\psi(x) \quad \text{where} \quad
 						k' = \sqrt{\frac{2m(U_0 - E)}{\hbar^2}}
 				\]
 				The auxiliary equation for this is
@@ -141,7 +150,7 @@
 				The normalization integral cannot be evaluated over \(\R\), meaning that the probabilities cannot be determined from the wave function. \\
 				Writing the wave function in terms of complex exponentials,
 				\[
-					\psi(x) = A\left(\frac{\en^{ikx} - \en^{-ikx}}{2i}\right) + B\left(\frac{\en^{ikx} + \en^{-ikx}}{2i}\right)
+					\psi(x) = A\left(\frac{\en^{ikx} - \en^{-ikx}}{2i}\right) + B\left(\frac{\en^{ikx} + \en^{-ikx}}{2}\right)
 						= A'\en^{ikx} + B'\en^{ikx}
 				\]
 				where
@@ -154,4 +163,223 @@
 					\Psi(x, t) = (A'\en^{ikx} + B'\en^{-ikx})\en^{-i\omega t}
 						= A'\en^{i(kx - \omega t)} + B'\en^{-i(kx + \omega t)}
 				\]
+				The first term's dependence on \(kx - \omega t\) means that it represents a wave moving in the positive \(x\) direction with amplitude \(A'\), and the second term's on \(kx + \omega t\) makes it a wave moving in the negative \(x\) direction with magnitude \(B'\). \\
+				To make this wave represent a beam of particles moving in the positive \(x\) direction, \(B'\) must be 0. The probability density associated with this wave is then
+				\[
+					P(x) = |\psi(x)|^2
+						= |A'|^2\en^{ikx}\en^{-ikx}
+						= |A'|^2
+				\]
+				The probability density is constant, meaning that the particles are equally likely to be at any given point on the \(x\) axis. This is consistent with the de Broglie wave: a wave of a precisely defined wavelength extends over \(\R\), thus giving a completely unlocalized particle.
+		\subsectionb{Infinite Potential Energy Well}
+			Consider a particle trapped between \(x = 0\) and \(x = L\) by barriers of infinitely high potential energy. The particle moves freely in this region, making elastic collisions with the perfectly rigid barriers. (This problem is sometimes called \enquote{a particle in a box}.) For now it is assumed that the particle only moves in a single spatial dimension. The potential energy can be expressed as
+				\[
+					U(x) = \begin{cases}
+ 							0 & x \in [0, L] \\
+ 							\infty & x \notin [0, L]
+ 						\end{cases}
+				\]
+				(Between 0 and \(L\), \(U\) may be any constant value, but it is set to 0 for convenience.) As the potential energy differs within and without the well, separate solutions are required for each region. \\
+				Considering the time-independent Schr\"odinger equation outside the well, it can be seen that the only way for \(P(x)\) to be meaningful as \(U \to \infty\) is for \(\psi\) to be 0, so that \(U\psi\) will remain finite. Alternatively, it can be reasoned that should the barriers be perfectly rigid, the particle must always be within the well, so the probability of finding it outside must be 0, meaning that \(\psi\) must be 0. This yields
+				\[\psi(x) = 0 \qquad x \notin [0, L]\]
+				The Schr\"odinger equation for within the well is
+				\[-\frac{\hbar^2}{2m}\dv[2]{\psi}{x} = E\psi(x)\]
+				which is simply that for constant potential with \(U_0 = 0\), making the solution
+				\[
+					\psi(x) = A\sin(kx) + B\cos(kx), \qquad 
+						x \in [0, L]
+				\]
+				where
+				\[k = \sqrt{\frac{2mE}{\hbar^2}}\]
+				As the wave function must be continuous, both cases must have the same values at the boundaries. At \(x = 0\),
+				\[
+					\psi(x) = A\sin(0) + B\cos(0)
+						= B
+				\]
+				Applying the boundary condition \(\psi(0) = 0\) means that \(B = 0\). At \(x = L\),
+				\[
+					\psi(x) = A\sin(kL) + B\cos(kL)
+						= A\sin(kL)
+				\]
+				Applying the second boundary condition \(\psi(L) = 0\) (and placing the restriction that \(A \ne 0\) so that the solution has some meaning) yields
+				\[
+					kL = n\pi
+						\quant{n}{\Z^+}
+				\]
+				Using the definition of the wave number yields
+				\[
+					\lambda_n = \frac{2L}{n}
+						\quant{n}{\Z^+}
+				\]
+				The is identical to the result obtained for standing waves in a string of length \(L\) fixed at both ends. \textit{Thus the solution to the Schr\"odinger equation for a particle trapped in a linear region of fixed length is a series of standing de Broglie waves.} \\
+				As only certain values of \(k\) are allowed, it can be seen that \textit{energy is quantized}:
+				\[
+					E_n = \frac{\hbar^2k^2}{2m}
+						= \frac{\hbar^2\pi^2n^2}{2mL^2}
+						= \frac{h^2n^2}{8mL^2}
+							\quant{n}{\Z^+}
+				\]
+				Let
+				\[
+					E_0 = \frac{\hbar^2\pi^2}{2mL^2}
+						= \frac{h^2}{8mL^2}
+				\]
+				This yields
+				\[
+					E_n = n^2E_0
+						\quant{n}{\Z^+}
+				\]
+				The lowest energy state (\(n = 1\)) is the \textit{ground state} while higher energies (\(n > 1\)) are \textit{excited states}. \\
+				As the only form of energy in this scenario is kinetic, the particle's velocity is quantized. Classically, a particle given any initial velocity would move back and forth at the same speed, but in the quantum case, only certain values yield sustained states of motion; these special conditions represent the \enquote{stationary states}. \\
+				The particle can move between energy states by absorbing energy (to move up) or releasing it (to move down). A similar effect occurs for electrons within atoms, in which the absorbed or released energy is typically a photon. \\
+			Applying the normalization condition,
+				\[
+					\int_{-\infty}^\infty |\psi(x)|^2 \dd{x} = \int_0^L A^2\sin^2\left(\frac{n\pi x}{L}\right) \dd{x}
+				\]
+				which yields
+				\[A = \sqrt{\frac{2}{L}}\]
+				making the complete wave function for \([0, L]\)
+				\[
+					\psi_n(x) = \sqrt{\frac{2}{L}}\sin(\frac{n\pi x}{L}) \qquad
+						\quant{n}{\Z^+}
+				\]
+				Note that \(n\) corresponds directly to the number of peaks in the probability density. \\
+			The normalization condition need not be applied simply to find probabilities:
+				\[
+					P(x_1:x_2) = \int_{x_1}^{x_2}|\psi_n(x)|^2 \dd{x}
+						= \frac{\int_{x_1}^{x_2}\sin^2(n\pi x/L)}{\int_0^L\sin^2(n\pi x/L)}
+				\]
+				This simply the proportion of area of the density function contained within the interval.
+		\subsectionb{Finite Potential Energy Well}
+			Consider a potential energy
+				\[
+					U(x) = \begin{cases}
+							0 & x \in [0, L] \\
+							U_0 & x \notin [0, L]
+						\end{cases}
+				\]
+				In order for the particle to be confined to the well, its energy must be less than \(U_0\). \\
+				Over \([0, L]\), the Schr\"odinger equation and its solution remains the same as that for the infinite potential case:
+				\[
+					\psi(x) = A\sin(kx) + B\cos(kx) \qquad
+						x \in [0, L]
+				\]
+				The previously found values of the constants are not applicable, though, as the boundary conditions are now different. For \(x < 0\), the solution must be of the form
+				\[
+					\psi(x) = C\en^{k'x} + D\en^{-k'x} \qquad
+						x < 0
+				\]
+				due to the fact that \(E < U_0\). As \(x \to -\infty\), the second term goes to \(\infty\), meaning that \(D\) must be 0:
+				\[
+					\psi(x) = C\en^{k'x} \qquad
+						x < 0
+				\]
+				The form of the solution for \(x > L\) must be of the same form for the same reason:
+				\[
+					\psi(x) = F\en^{k'x} + G\en^{-k'x} \qquad
+						x > 0
+				\]
+				As \(x \to \infty\), the first term goes to \(\infty\), meaning that \(F\) must be 0:
+				\[
+					\psi(x) = G\en^{-k'x} \qquad
+						x > L
+				\]
+				These 3 equations, the 2 boundary conditions, and the normalization condition provides 5 equations, which must be used to solve for the unknown constants \(A\), \(B\), \(D\), and \(G\), as well as the energy \(E\). \\
+				The resulting energy values cannot be solved for directly but must instead be found numerically by solving a transcendental equation. \\
+		\subsectionb{Two-Dimensional Infinite Potential Energy Well}
+			The Schr\"odinger equation can be extended to 2 spatial dimensions as
+				\[
+					-\frac{\hbar^2}{2m}\nabla^2\psi + U\psi = E\psi
+						\tag{2D time-independent Schr\"odinger equation}
+				\]
+				where
+				\[
+					\nabla^2\psi = \pdv[2]{\psi}{x} + \pdv[2]{\psi}{y}
+				\]
+				The potential energy is
+				\[
+					U(x, y) = \begin{cases}
+ 							0 & x, y \in [0, L] \\
+ 							\infty & x, y \notin [0, L]
+ 						\end{cases}
+				\]
+				Only \textit{separable} solutions to the Schr\"odinger are considered; that is,
+				\[\psi(x, y) = f(x)g(y)\]
+				where
+				\[
+					f(x) = A\sin(k_xx) + B\cos(k_xy) \qquad \text{and} \qquad
+						g(y) = A\sin(k_yx) + B\cos(k_yy)
+				\]
+	\section{The Simple Harmonic Oscillator}
+		The classical oscillator is a mass \(m\) attached to a spring of spring constant \(k\). The force exerted by the spring on the mass is
+			\[F = -kx \tag{spring force}\] 
+			where \(x\) is the displacement from the equilibrium. Applying Newton's laws, it can be shown that the oscillator has circular/angular frequency
+			\[\omega_0 = \sqrt{\frac{k}{m}} \tag{angular frequency}\]
+			and period
+			\[T = \frac{2\pi}{\omega_0} \tag{period}\]
+			The maximum displacement of the mass from its equilibrium position is the amplitude of the oscillation \(x_0\). The kinetic energy is maximized at \(x = 0\) while it is 0 at the \textit{turning points} \(\pm x_0\). At these turning points, the oscillator comes to a rest for an instant before reversing its direction of motion. The motion is of course confined to \([-x_0, x_0]\). \\
+		Any system in a smoothly varying potential energy well near its minimum acts approximately as a simple harmonic oscillator. A force \(F = -kx\) has an associated potential energy
+			\[U = \frac{1}{2}kx^2\]
+			yielding the Schr\"odinger equation
+			\[-\frac{\hbar^2}{2m}\dv[2]{\psi}{x} + \frac{1}{2}kx^2\psi = E\psi\]
+			There are no boundaries between regions of potential energy, so the only conditions are that the wave function must fall to 0 as \(x\) approaches \(\pm\infty\). The simplest function that satisfies these conditions is
+			\[\psi(x) = A\en^{-ax^2}\]
+			The constants \(a\) and energy \(E\) can be found by substitution this into the Schr\"odinger equation. Differentiating yields
+			\begin{align*}
+				\dv{\psi}{x} &= -2ax\left(A\en^{-ax^2}\right) = -2ax\psi \\
+				\dv[2]{\psi}{x} &= -2a\psi - 2ax(-2ax)\psi = (-2a + 4a^2x^2)\psi
+			\end{align*}
+			Substituting this into the Schr\"odinger equation and cancelling common factor \(\psi\) yields
+			\[\frac{\hbar^2a}{m} - \frac{2a^2\hbar^2}{m}x^2 + \frac{1}{2}kx^2 = E\]
+			The desired solution must be valid for any value of \(x\), so the coefficients of \(x^2\) must cancel and the remaining constants must be equal:
+			\[
+				-\frac{2a^2\hbar^2}{m} + \frac{1}{2} = 0 \qquad \text{and} \qquad
+					\frac{\hbar^2a}{m} = E
+			\]
+			which yield
+			\[
+				a = \frac{\sqrt{km}}{2\hbar} \qquad \text{and} \qquad
+					E = \frac{1}{2}\hbar\sqrt{\frac{k}{m}}
+			\]
+			The energy can be rewritten in terms of the classical frequency \(\omega_0\) as
+			\[E = \frac{1}{2}\hbar\omega_0\]
+			making the wave function
+			\[\psi(x) = A\en^{-x^2\sqrt{km}/2\hbar}\]
+			Applying the normalization condition,
+			\[1 = \int_{-\infty}^\infty |A|^2\en^{-2ax^2}\dd{x}\]
+			Letting \(z = \sqrt{2a}x\),
+			\[
+				1 = \frac{|A|^2}{\sqrt{2a}}\int_{-\infty}^\infty \en^{-z^2} \dd{z}
+			\]
+			Letting \(I\) be equal to the integral and using the fact that a change in variables does not affect the value of the integral,
+			\[I^2 = \int_{-\infty}^\infty\int_{-\infty}^\infty \en^{-(x^2 + y^2)}\dd{y}\dd{x}\]
+			Changing to polar coordinates,
+			\[
+				I^2 = \int_0^{2\pi}\int_0^\infty \en^{-r^2}r\dd{r}\dd{\theta}
+					= 2\pi\int_0^\infty \en^{-r^2}r\dd{r}
+			\]
+			Letting \(u = r^2\),
+			\[
+				I^2 = \pi\int_0^\pi\int_0^\infty \en^{-u}\dd{u}
+					= \pi[-\en^{-u}]_0^\infty = \pi[0 - (-1)] = \pi
+			\]
+			making the final value of the original integral
+			\[I = \sqrt{\pi}\]
+			Substituting this back into the expression for the normalization condition,
+			\[1 = \frac{|A|^2}{\sqrt{2a}}\sqrt{\pi}\]
+			Solving for \(A\),
+			\[
+				A = \left(\frac{2a}{\pi}\right)^{1/4}
+					= \left(\frac{2\sqrt{km}}{2\hbar\pi}\right)^{1/4}
+					= \left(\frac{m\omega_0}{\hbar\pi}\right)^{1/4}
+			\]
+			making the ground state wave function
+			\[\psi(x) = \left(\frac{m\omega_0}{\hbar\pi}\right)^{1/4}\en^{-x^2\sqrt{km}/2\hbar} \tag{simple harmonic oscillator}\]
+			The general solution is of the form
+			\[\psi_n(x) = Af_n(x)\en^{-ax^2}\]
+			where \(f_n(x)\) is a polynomial of degree \(n\). The corresponding energies are
+			\[
+				E_n = \left(n + \frac{1}{2}\right)\hbar\omega \qquad 
+					\quant{n}{\Z^+}
+			\]
 \end{document}
