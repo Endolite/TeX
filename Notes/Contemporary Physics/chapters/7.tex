@@ -46,7 +46,7 @@
 				Note that each value of \(\ell\) has \(2\ell + 1\) possible values of \(m_\ell\). \\
 				Unlike the classical angular momentum vector, which must be specified by three numbers, \textit{only two} are required for the quantum angular momentum vector. These two numbers cannot completely identify a vector in three-dimensional space, so they must signify something else. \\
 				The polar angle\footnote{
-					In mathematics, the convention is for the polar angle to be in the \(xy\)-plane and for the azimuthal angle to be from the \(z\)-axis:
+					In mathematics, the convention is for the polar angle to be in the \(xy\)-plane and for the azimuthal angle to be from the \(z\)-axis, while the conventions for physics swaps the polar and azimuthal angles:
 						\begin{align*}
 							\begin{tikzpicture}[xscale = 4, yscale = 4]
 								\draw[thick, ->] (0,0,0) coordinate(O) node[anchor = east]{$O$} -- (1, 0, 0) coordinate(Y) node[anchor = north east]{$y$};
@@ -116,18 +116,18 @@
 				Complete with quantum numbers, the wave function can be written as
 				\[\psi_{n, \ell, m_\ell}(r, \theta, \varphi) = R_{n, \ell}(r)\Theta_{\ell, m_\ell}(\theta)\Phi_{m_\ell}(\varphi)\]
 			The indices are the three quantum numbers necessary to describe the solutions. Some sample wave functions are
-				\[\renewcommand{\arraystretch}{2}\begin{array}{|c|c|c|c|c|c|}\hline
+				\[\renewcommand{\arraystretch}{3}\begin{array}{|c|c|c|c|c|c|}\hline
 					n & \ell & m_\ell & R(r) & \Theta(\theta) & \Phi(\varphi) \\\hline
-					1 & 0 & 0 & \dfrac{2}{a_0^{3/2}}\en^{-r/a_0} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2\pi}} \\
-					2 & 0 & 0 & \dfrac{1}{(2a_0)^{3/2}}\left(2 - \dfrac{r}{a_0}\right)\en^{-r/2a_0} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2\pi}} \\
-					2 & 1 & 0 & \dfrac{1}{\sqrt{3}(2a_0)^{3/2}}\dfrac{r}{a_0}\en^{-r/2a_0} & \sqrt{\dfrac{3}{2}}\cos\theta & \dfrac{1}{\sqrt{2\pi}} \\
-					2 & 1 & \pm 1 & \dfrac{1}{\sqrt{3}(2a_0)^{3/2}}\dfrac{r}{a_0}\en^{-r/2a_0} & \mp\dfrac{\sqrt{3}}{2}\sin\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\
-					3 & 0 & 0 & \dfrac{2}{(3a_0)^{3/2}}\left(1 - \dfrac{2r}{3a_0} + \dfrac{2r^2}{27a_0^2}\right)\en^{-r/3a_0} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2\pi}} \\
-					3 & 1 & 0 & \dfrac{8}{9\sqrt{2}(3a_0)^{3/2}}\left(\dfrac{r}{a_0} - \dfrac{r^2}{6a_0^2}\right)\en^{-r/3a_0} & \sqrt{\dfrac{3}{2}}\cos\theta & \dfrac{1}{\sqrt{2\pi}} \\
-					3 & 1 & \pm 1 & \dfrac{8}{9\sqrt{2}(3a_0)^{3/2}}\left(\dfrac{r}{a_0} - \dfrac{r^2}{6a_0^2}\right)\en^{-r/3a_0} & \mp\dfrac{\sqrt{3}}{2}\sin\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\
-					3 & 2 & 0 & \dfrac{4}{27\sqrt{10}(3a_0)^{3/2}}\dfrac{r^2}{a_0^2}\en^{-r/3a_0} & \sqrt{\dfrac{5}{8}}(3\cos^2\theta - 1) & \dfrac{1}{\sqrt{2\pi}} \\
-					3 & 2 & \pm 1 & \dfrac{4}{27\sqrt{10}(3a_0)^{3/2}}\dfrac{r^2}{a_0^2}\en^{-r/3a_0} & \mp\sqrt{\dfrac{15}{4}}\sin\theta\cos\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\
-					3 & 2 & \pm 2 & \dfrac{4}{27\sqrt{10}(3a_0)^{3/2}}\dfrac{r^2}{a_0^2}\en^{-r/3a_0} & \dfrac{\sqrt{15}{4}}\sin^2\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\[2ex]\hline
+					1 & 0 & 0 & \dfrac{2}{a_0^{3/2}}\en^{-r/a_0} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2\pi}} \\[2ex]\hline
+					\multirow{3.75}*{2} & 0 & 0 & \dfrac{1}{(2a_0)^{3/2}}\left(2 - \dfrac{r}{a_0}\right)\en^{-r/2a_0} & \dfrac{1}{\sqrt{2}} & \multirow{2.5}*{\(\dfrac{1}{\sqrt{2\pi}}\)} \\[2ex]\cline{2-5}
+					& \multirow{2.5}*{1} & 0 & \multirow{2.5}*{\(\dfrac{1}{\sqrt{3}(2a_0)^{3/2}}\dfrac{r}{a_0}\en^{-r/2a_0}\)} & \sqrt{\dfrac{3}{2}}\cos\theta & \\[2ex]\cline{3-3}\cline{5-6}
+					& & \pm 1 & & \mp\dfrac{\sqrt{3}}{2}\sin\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\[2ex]\hline
+					\multirow{7.5}*{3} & 0 & 0 & \dfrac{2}{(3a_0)^{3/2}}\left(1 - \dfrac{2r}{3a_0} + \dfrac{2r^2}{27a_0^2}\right)\en^{-r/3a_0} & \dfrac{1}{\sqrt{2}} & \multirow{2.5}*{\(\dfrac{1}{\sqrt{2\pi}}\)} \\[2ex]\cline{2-5}
+					& \multirow{2.5}*{1} & 0 & \multirow{2.5}*{\(\dfrac{8}{9\sqrt{2}(3a_0)^{3/2}}\left(\dfrac{r}{a_0} - \dfrac{r^2}{6a_0^2}\right)\en^{-r/3a_0}\)} & \sqrt{\dfrac{3}{2}}\cos\theta & \\[2ex]\cline{3-3}\cline{5-6}
+					& & \pm 1 & & \mp\dfrac{\sqrt{3}}{2}\sin\theta & \dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi} \\[2ex]\cline{2-6}
+					& \multirow{3.75}*{2} & 0 & \multirow{3.75}*{\(\dfrac{4}{27\sqrt{10}(3a_0)^{3/2}}\dfrac{r^2}{a_0^2}\en^{-r/3a_0}\)} & \sqrt{\dfrac{5}{8}}(3\cos^2\theta - 1) & \dfrac{1}{\sqrt{2\pi}} \\[2ex]\cline{3-3}\cline{5-6}
+					& & \pm 1 & & \mp\sqrt{\dfrac{15}{4}}\sin\theta\cos\theta & \multirow{2.5}*{\(\dfrac{1}{\sqrt{2\pi}}\en^{\pm i\varphi}\)} \\[2ex]\cline{3-3}\cline{5-5}
+					& & \pm 2 & & \dfrac{\sqrt{15}}{4}\sin^2\theta & \\[2ex]\hline
 				\end{array}\]
 			For the ground state (\(n = 1\)), only \(\ell = 0\) and \(m_\ell = 0\) are allowed, meaning that the set of quantum numbers for the ground state is \((1, 0, 0)\). The first excited state \((n = 2\)) has 4 possible sets of quantum numbers: \((2, 0, 0)\), \((2, 1, 0)\) and \((2, 1, \pm 1)\). All of their corresponding wave functions describe the same energy, so the \(n = 2\) level is \textit{degenerate}. The \(n = 3\) level is also degenerate, having 9 possible sets of quantum numbers. In general, the level with principal quantum number \(n\) has degeneracy \(n^2\). \\
 				There are several reasons for making the distinction between wave functions that correspond to the same energy. Firstly , the levels are not precisely degenerate, being separated by a small energy of about \SI{10E-5}{eV}. Secondly, in studying the transitions between levels, it has been found that the intensities of individual transitions is dependent on the quantum numbers of the particular level from which the transition originates. Thirdly, and perhaps of most import, \textit{each set of quantum numbers corresponds to a very different wave function, therefore representing a very different state of motion of the electron}. These states have different spatial probability distributions, thusly affecting many atomic properties (take, for instance, the way two atoms can form molecular bonds). \\
@@ -141,7 +141,7 @@
 				\]
 	\section{Radial Probability Densities}
 		Rather than considering the probability density to locate the electron, it is advantageous to only consider the probability of finding it at a particular distance from the nucleus, regardless of \(\theta\) and \(\varphi\). The \textit{radial probability density \(P(r)\)} can be regarded as the probability of finding the electron within a spherical shell of inner radius \(r\) and thickness \(\dd{r}\) centered at the nucleus. This radial probability can be derived from the complete probability by integrating over the domains of \(\theta\) and \(\varphi\). This effectively sums the probabilities for the volume elements at a given \(r\) for all \(\theta\) and \(\varphi\):
-			\[P(r)\dd{r} = |R_{n, \ell}^2r^2\dd{r}\int_0^\pi|\Theta_{\ell, m_\ell}(\theta)|^2\sin\theta\dd{\theta}\int_0^{2\pi}|\Phi_{m_\ell}(\varphi)|^2\dd{\varphi}\]
+			\[P(r)\dd{r} = |R_{n, \ell}|^2r^2\dd{r}\int_0^\pi|\Theta_{\ell, m_\ell}(\theta)|^2\sin\theta\dd{\theta}\int_0^{2\pi}|\Phi_{m_\ell}(\varphi)|^2\dd{\varphi}\]
 			These two integrals are simply equal to 1, due to each function being individually normalized, so the radial probability density is simply
 			\[
 				P(r) = r^2|R_{n, \ell}(r)|^2
@@ -159,7 +159,66 @@
 				r = n^2a_0
 					\tag{most probable radius}
 			\]
-	\setcounter{section}{6}
+	\section{Angular Probability Densities}
+		The angular part of the probability density is obtained by considering only the angular parts of the wave function:
+			\[
+				P(\theta, \varphi) = |\Theta_{\ell, m_\ell}\Phi_{m_\ell}(\varphi)|^2
+					\tag{angular probability density}
+			\]
+			Note that all probability densities are \textit{cylindrically symmetric}, being independent of \(\varphi\). The wave function for \(\ell = 0\) is also \textit{spherically symmetric}, being independent of direction in general. 
+	\section{Intrinsic Spin}
+		Spatial quantization can be observed by placing an atom in an externally applied magnetic field. The interaction that occurs between the field and the atom's \textit{magnetic dipole moment} (which is related to the electron's angular momentum) enables the observation of the separate components of \(\vec{L}\) in addition to \(\ell\) (determined by counting the number of \(z\) components, which is equal to \(2\ell + 1\)). This experiment also yields the electron's unexpected property of \textit{intrinsic spin}.
+		\subsectionb{Orbital Magnetic Dipole Moments}
+			The classical magnetic dipole moment \(\vec{\mu}\) is defined as the vector of magnitude equal to the product of the circulating current and the area enclosed by the orbital loop. Its direction is determined by the right-hand curl rule, the fingers curling in the direction of the conventional (positive) current and the thumb indicating the direction of \(\vec{\mu}\). \\
+			Quantum mechanics forbids precise knowledge of the direction of \(\vec{L}\) and therefore that of \(\vec{\mu}\) as well. Only their \(z\) components can be specified. As the electron is negatively charged, these \(z\) components are in opposite directions. \\
+			The Bohr model used with a circular orbit yields the relationship between \(\vec{L}\) and \(\vec{\mu}\), which is identical to the quantum mechanical result. The circulating electron is regarded as a circular loop of current
+				\[
+					i = \dv{q}{t}
+						= -\frac{e}{T}
+				\]
+				where \(T\) is the period of the orbit. If the electron is moving with speed
+				\[v = \frac{p}{m}\]
+				around a loop of radius \(r\), then
+				\[
+					T = \frac{2\pi r}{v}
+						= \frac{2\pi rm}{p}
+				\]
+				The magnitude of the magnetic dipole moment is
+				\[
+					\mu = iA
+						= -\frac{e}{2\pi rm/p}\pi r^2
+						= -\frac{e}{2m}rp
+						= -\frac{e}{2m}L
+				\]
+				Writing this in terms of vectors yields
+				\[\vec{\mu}_L = -\frac{e}{2m}\vec{L}\]
+				The negative sign indicates that \(\vec{L}\) and \(\vec{\mu}_L\) point in opposite directions. The subscript \(L\) on the dipole moment indicates that it is a result of the \textit{orbital} angular momentum \(\vec{L}\). \\
+				The \(z\) component of the magnetic moment is
+				\[
+					\mu_{L, x} = -\frac{e}{2m}L_x
+						= -\frac{e}{2m}m_\ell\hbar
+						= -\frac{e\hbar}{2m}m_\ell
+						= -m_\ell\mu_B
+				\]
+				where \(\mu_B\) is the \textit{Bohr magneton}
+				\[
+					\mu_B = \frac{e\hbar}{2m} 
+						\approx \SI{9.27E-24}{\frac{J}{T}}
+						\tag{Bohr magneton}
+				\]
+				Atomic magnetic moments are typically on the order of \(\mu_B\), making it a convenient unit for expressing them.
 	\section{Energy Levels and Spectroscopic Notation}
-		
+		The introduction of intrinsic angular momentum, or \textit{spin}, requires that a fourth quantum number be introduced. The spin \(s\) need not be specified, as it is always \(1/2\), being a fundamental property of the electron, but its quantum number \(m_2\) must be specified as \(\pm 1/2\), which identifies the \(z\) component of the spin. The complete description for an electron's state thus requires the four quantum numbers \((n, \ell, m_\ell, m_s)\). \\
+		The ground state of hydrogen is now \((1, 0, 0, \pm 1/2)\), making its degeneracy 2. The first excited state now has degeneracy 8. In general, a level's degeneracy is \(2n^2\). \\
+		The directions (\(z\) component) of the angular momentum vectors is important to know when the atom is subject to a magnetic field, but otherwise is of little significance. As such, \textit{spectroscopic notation} is used to label the levels. This system uses letters for the different values of \(\ell\):
+		\[\begin{array}{|l|cccccccc|}\hline
+			\ell & 0 & 1 & 2 & 3 & 4 & 5 & 6 & \cdots \\\hline
+			\text{Designation} & s & p & d & f & g & h & i & \cdots \\\hline
+		\end{array}\]
+		The first four letters stand for sharp, principal, diffuse, and fundamental respectively, which were terms used to describe atomic spectra prior to the development of this theory. Using this notation, the ground state of hydrogen is \(1s\), where \(n = 1\) is specified before the \(\ell = 1\). \\
+		Solving the Schr\"odinger equation and using the solutions to compute \textit{transition probabilities}, ti can be found that the most likely transitions to occur are those that change \(\ell\) by 1. This restriction is a \textit{selection rule}:
+			\[
+				\Delta \ell = \pm 1
+					\tag{selection rule}
+			\]
 \end{document}
