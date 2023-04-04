@@ -1,0 +1,39 @@
+\documentclass{subfiles}
+
+\begin{document}
+	At an atom's center lies its nucleus, which occupies a mere \(10^{-15}\) of its volume but providing the electric force that holds the atom together. Within the nucleus are positive \(Z\) charges. To prevent these charges from repelling each other to the point that they fly apart, the nuclear force must apply an attractive force. This force is the strongest of any known force, providing nuclear binding energies millions of times stronger than those of atoms. \\
+	Atomic and nuclear structure share many similarities, but there are two key differences. In atomic physics, the electron is acted upon by an external force, but no such force exists in nuclear physics. The mutual interactions of the nuclear components is what yields the nuclear force, meaning that this many-body problem cannot be simplified. The second difference is that the nuclear force, unlike the Coulomb force, cannot be concisely expressed .
+	\section{Nuclear Constituents}
+		The nucleus of an atom of atomic number \(Z\) has charge \(Ze\) and constitutes \(99.9\%\) of the atom's mass. It is also observed that the masses of atoms are, within to about \(0.1\%\), integers. The integer \(A\) that describes the number of atomic mass units of an atom is called its \textit{mass number}. It is therefore reasonable to conclude that nuclei are comprised of more fundamental masses each of mass \SI{1}{u}. \\
+			It was (incorrectly) postulated that the nucleus of an atom of mass number \(A\) contains \(A\) protons. Such a nucleus would have charge \(Ae\) rather than \(Ze\), which overshoots the charges of all atoms apart from hydrogen. This difficulty was resolved by the \textit{proton-electron} model, which postulated (again incorrectly) that the nucleus also contained \(A - Z\) electrons. Under this model, the mass of the atom would be about \(A\) times the mass of the proton, as the masses of the electrons are negligible. This model is not consistent with the uncertainty principle. \\
+			Measuring the \textit{very} small effect that the nuclear magnetic moment has on atomic transitions (called the \textit{hyperfine splitting}) yields the result that the proton has an \textit{intrinsic spin} of \(1/2\). Consider the deuterium nucleus, which under this model contains two protons and one electron, each of which have spin \(1/2\). The rules for angular momenta dictate that the total spin is then either \(1/2\) or \(3/2\). The observed total spin, though, is 1. \\
+			This problem was resolved by the discovery of the neutron, a particle of about the same mass as the proton (about \(0.1\%\) heavier) but without electric charge. According to the \textit{proton-neutron} model, a nucleus is comprised of \(Z\) protons and \(A - Z\) neutrons, which yields a nuclear charge of \(Ze\) and a mass of \(A\) times the mass of the proton (as the proton and neutron have approximately the same mass). \\
+			Apart from their electric charges, the proton and neutron are very similar, so they are given the shared classification of \textit{nucleons}:
+			\[\begin{array}{*{6}{|c}|}\hline
+				\textbf{Name} & \textbf{Symbol} & \textbf{Charge} & \textbf{Mass} & \textbf{Rest Energy} & \textbf{Spin} \\\hline
+				\text{Proton} & \text{p} & +e & \SI{1.007276}{u} & \SI{938.28}{MeV} & 1/2 \\
+				\text{Neutron} & \text{n} & 0 & \SI{1.008665}{u} & \SI{939.57}{MeV} & 1/2 \\\hline
+			\end{array}\]
+		An element's chemical properties are determined by its atomic number \(Z\) but not on its mass number \(A\). Different nuclei can have the same \(Z\) but different values of \(A\), having the same number of protons but different numbers of neutrons. Atoms of said nuclei have identical chemical properties and are called \textit{isotopes}. An isotope is denoted by
+			\[^A_ZX_N\]
+			where \(X\) is the symbol of the element, \(Z\) is the atomic number, \(A\) is the mass number, and \(N = A - Z\) is the \textit{neutron number}. The chemical number and symbol both provide the same information, so only one is necessary. \(A\) and \(N\) also both provide the same information. Often, only \(X\) and \(A\) are given.
+	\section{Nuclear Sizes and Shapes}
+		Like atoms, nuclei lack an easily definable surface or radius. General features of the nuclear density are determined experimentally. As the nuclear force is the strongest force, it may be expected that protons and neutrons are concentrated at the center of the nucleus, but this is not necessarily the case. Instead, the density remains mostly uniform. This gives insight regarding the short range of the nuclear force. \\
+		Interestingly, the density of a nucleus does not depend on \(A\). The nucleons per unit volume is approximately constant over the range of nuclei:
+			\[
+				\frac{\text{number of nucleons}}{\text{volume of nucleus}} = \frac{A}{4\pi R^3/3}
+					\cong \text{constant}
+			\]
+			assuming the nucleus to be a sphere of radius \(R\). This means that \(A \propto R^3\) or \(R \propto A^{1/3}\). Defining a constant of proportionality \(R_0\),
+			\[R = R_0A^{1/3}\]
+			\(R_0\) has been experimentally determined as
+			\[R_0 \approx \SI{1.2E-15}{m}\]
+			though the exact value depends on how the radius is defined, ranging from \SI{1E-15}{m} to \SI{1.5E-15}{m}. \\
+			The length \SI{1E-15}{m} is sometimes referred to as one fermi. \\
+		What physicists call \textit{nuclear matter} is incredibly dense. While nuclear matter is not found in bulk on Earth, it is present in some stars, in which the gravitational force forces the merging of protons and electrons into neutrons, making a neutron star.
+	\section{Nuclear Masses and Binding Energies}
+		Consider a proton and electron at rest separated by a large distance. The total energy of the system is simply the sum of the rest energies of the two particles. Letting the two particles come together to form a ground-state hydrogen atom, several photons are emitted with energy totaling \SI{13.6}{eV}. Conservation of energy dictates that
+			\[\subt{m}{p}c^2 + \subt{m}{e}c^2 = m(H)c^2 + \SI{13.6}{eV}\]
+			which can be rewritten as
+			\[\subt{m}{p}c^2 + \subt{m}{e}c^2 - m(H)c^2 = \SI{13.6}{eV}\]
+\end{document}
