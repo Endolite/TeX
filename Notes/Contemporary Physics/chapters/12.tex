@@ -32,8 +32,30 @@
 			The length \SI{1E-15}{m} is sometimes referred to as one fermi. \\
 		What physicists call \textit{nuclear matter} is incredibly dense. While nuclear matter is not found in bulk on Earth, it is present in some stars, in which the gravitational force forces the merging of protons and electrons into neutrons, making a neutron star.
 	\section{Nuclear Masses and Binding Energies}
-		Consider a proton and electron at rest separated by a large distance. The total energy of the system is simply the sum of the rest energies of the two particles. Letting the two particles come together to form a ground-state hydrogen atom, several photons are emitted with energy totaling \SI{13.6}{eV}. Conservation of energy dictates that
+		Consider a proton and electron at rest separated by a large distance. The total energy of the system is simply the sum of the rest energies of the two particles. Letting the two particles come together to form a ground-state hydrogen atom, several photons are emitted with energy totaling \SI{13.6}{eV}, which is the \textit{binding energy} of the atom. Conservation of energy dictates that
 			\[\subt{m}{p}c^2 + \subt{m}{e}c^2 = m(H)c^2 + \SI{13.6}{eV}\]
 			which can be rewritten as
-			\[\subt{m}{p}c^2 + \subt{m}{e}c^2 - m(H)c^2 = \SI{13.6}{eV}\]
+			\[\subt{m}{p}c^2 + \subt{m}{e}c^2 - m(H)c^2 = \SI{13.6}{eV}\] \\
+			Nuclear binding energy can be similarly formulated. Consider a deuterium nucleus. The nuclear binding energy is
+			\[B = \subt{m}{n}c^2 + \subt{m}{p}c^2 -\subt{m}{D}c^2\]
+			where \(\subt{m}{D}\) is the mass of the deuterium nucleus. The masses of the proton and the nucleus can be replaced by their corresponding \textit{atomic} masses of
+			\[
+				m(^1\mathrm{H})c^2 = \subt{m}{p}c^2 + \subt{m}{e}c^2 - \SI{13.6}{eV} \qquad \text{and} \qquad
+				m(^{2}\mathrm{H})c^2 = \subt{m}{D}c^2 + \subt{m}{e}c^2 - \SI{13.6}{eV}
+			\]
+			yielding
+			\[
+				B = [\subt{m}{n} + m(^1H) + m(^2H)]c^2
+					\approx \SI{2.224}{MeV}
+			\]
+			Replacing the nuclear mass with atomic mass yields
+			\[B = [m_n + m(^1H) - m(^2H)]c^2\]
+			Note that the electrons cancel. More generally,
+			\[
+				B = [Nm_n + Zm(^1_1H_0) - m(^A_ZX_N)]\left(931.5\,\mathrm{\frac{MeV}{u}}\right)
+			\]
+			where the masses are the nuclear masses. The binding energy per nucleon is \(B/A\). \\
+			The separation of nuclei is \textit{fission} while their combination is \textit{fusion}.
+		\subsectionb{Proton and Neutron Separation Energies}
+			
 \end{document}
