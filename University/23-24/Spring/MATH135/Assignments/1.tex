@@ -1,0 +1,74 @@
+\documentclass[../MATH135.tex]{subfiles}
+
+\begin{document}
+	\subsectionb{Assignment 1}
+		\begin{enumerate}
+			\item
+				\begin{tasks}
+					\task
+						The smallest prime number can either be 2 or not 2, making \enquote{The smallest prime number is 2} a valid statement.
+					\task
+						The sum of \(\cos^2\theta\) and \(\sin^2\theta\) could be 1 or not 1, so \enquote{\(\cos^2\theta + \sin^2\theta = 1\)} is a valid statement.
+					\task
+						It is either possible for every integer to be of the form \(2k\) or \(2k + 1\) or there exists at least one exception, so \enquote{Every integer \(x\) is of the form \(2k\) or \(2k + 1\)} is a valid statement.
+					\task
+						0 can either be even or odd or it could not be either, making \enquote{The number 0 is neither even nor odd} a valid statement.
+					\task
+						A question is not true or false; therefore, \enquote{Is \(3 > 2\) true?} is not a valid statement.
+				\end{tasks}
+			\item
+				\begin{tasks}(2)
+					\task
+						\(\forall x \in \Z, x^2 > 0\)
+					\task
+						\(\forall x \in \R, x^3 \in \R\)				
+				\end{tasks}
+			\item
+				\begin{tasks}(2)
+					\task
+						\(\exists x \notin \Z, \forall y \notin \R, x + 2y > 3\sqrt{2}\)
+					\task
+						\(\forall a \notin \N, \exists b \notin \Q, \forall c \notin \Z, a \ne b - c\)
+				\end{tasks}
+			\item
+				\begin{tasks}
+					\task	
+						\(P(2, 4) = \exists y \in \Z, 2(2) + 4y = 4 \implies y = 0 \in \Z \implies \text{true}\) \\
+						\(P(2, 5) = \exists y \in \Z, 2(2) + 4y = 5 \implies y = 0.25 \notin \Z \implies \text{false}\)
+					\task
+						There are no conditions given that \(n\) is not specified, meaning that the truth value of \(P(x, n)\) cannot be determined, so\enquote{\(\exists x \in \Z, P(x, n)\)} is an open sentence depending on \(n\). \\
+					\task
+						As all variables are specified, \enquote{\(\forall n \in \Z, \exists x \in \Z, P(x, n)\)} is a statement.
+				\end{tasks}
+			\item
+				\begin{tasks}
+					\task
+						\begin{align*}
+							\left(8^{k^2}\right)(4^k) &= \left(2^{3k^2}\right)\left(2^{2k}\right)
+									= 2^{3k^2 + 2k}
+									= 2
+									\implies 3k^2 + 2k = 1
+									\implies 3k^2 + 2k - 1 = 0 \\
+								&\implies 0 = (3k - 1)(k + 1)
+								\implies k = -1 \in \Z
+								\implies \text{true}	
+						\end{align*}
+					\task
+						\[
+							x^2 - x + \frac{1}{4} > 0
+								\implies \lnot\exists x = \frac{1 \pm \sqrt{1 - 1}}{2} = \frac{1}{2}\in \R
+								\implies \text{false}
+						\]
+					\task
+						\[
+							\forall x \in \{0, 1, 2, 3\}, \forall y \in \{0, 1, 2, 3\}, 
+								(x + y) \in \Z, 
+								(x^2 + y^2) \in \Z
+								\implies \frac{x + y}{x^2 + y^2} \in \Q
+								\implies \text{true}
+						\]
+					\task
+						
+				\end{tasks}
+		\end{enumerate}
+\end{document}

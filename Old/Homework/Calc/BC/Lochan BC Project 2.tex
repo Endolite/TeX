@@ -1,0 +1,125 @@
+\documentclass{article}
+
+% Packages
+	\usepackage{amsmath}
+	\usepackage[margin = 0.75in]{geometry}
+	\usepackage{physics}
+	\usepackage{tasks}
+
+% Macros
+	\newcommand{\indisp}[1]{\(\displaystyle #1\)}
+
+% Config
+	\title{AP Calc BC Project: Derivatives of \(a^u\) and \(e^u\)}
+	\author{Lochan Akkulugari}
+	\date{1st Hour}
+
+\begin{document}
+	\maketitle
+	\section*{Problems}
+		\begin{tasks}[style = enumerate](3)
+			\task
+				\indisp{\dv{x} e^{3x^2}}
+			\task
+				\indisp{\dv{x} e^{x^3 + 2x}}
+			\task
+				\indisp{\dv{x} e^{\ln(3x)}}
+			\task
+				\indisp{\dv{x} e^{3\sin(2x)}}
+			\task
+				\indisp{\dv{x} \frac{e^{5x^2}}{e^{2x^4 - 1}}}
+			\task
+				\indisp{\dv{x} 2^{\ln x} }
+			\task
+				\indisp{\dv{x} \frac{e^x - e^{-x}}{e^x + e^{-x}}}
+			\task
+				\indisp{\dv{x} 5^{\sin(x^3)}}
+			\task
+				\indisp{\dv{x} 2^{e^{4x}}}
+			\task
+				\indisp{\dv{x} e^x(x^2 + 3)(x^3 + 4)}
+			\task
+				\indisp{\dv{x} 3^{e^{2x}}}
+			\task
+				\indisp{\dv{x} e^{\sin(x^2)\cos^2(x)}}
+			\task
+				\indisp{\dv{x} 6^{14x{e^{3x^2}}}}
+			\task
+				\indisp{e^{\sqrt{{\tan x}}}}
+			\task
+				\indisp{e^{\ln(6\sqrt{x})} + 3^{x^2+4} - \sin^2x}
+		\end{tasks}
+	\newpage
+	\section*{Solutions}
+		\begin{tasks}[style = enumerate]
+			\task
+				\begin{align*}
+					\dv{x} e^{3x^2} &\implies u = 3x^2
+							\implies \dv{u}{x} = 6x \\
+						&= e^u\dv{u}{x}
+							= 6xe^{3x^2}
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} e^{x^3 + 2x}	&\implies u=x^3 + 2x
+							\implies\dv{u}{x}=3x^2 + 2d \\
+						&= e^u\dv{u}{x} = (3x^2 + 2)e^{x^3 + 2x}
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} e^{\ln(3x)} &= \dv{x} 3x
+							= 3	
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} e^{3\sin(2x)} &\implies u = 3\sin(2x)
+							\implies \dv{u}{x} = 6\cos(2x) \\
+						&= e^u\dv{u}{x} = 6e^{3\sin(2x)}\cos(2x)
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} \frac{e^{5x^2}}{e^{2x^4 - 1}} &= \dv{x} e^{-2x^4 + 5x^2 + 1}
+							\implies u = -2x^4 + 5x^2 + 1
+							\implies \dv{u}{x} = -8x^3 + 10x \\
+						&= e^u\dv{u}{x}
+							= e^{-2x^4 + 5x^2 + 1}(-8x^3 + 10x)
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} 2^{\ln x} &\implies a = 2, u = \ln x
+							\implies \dv{u}{x} = \frac{1}{x} \\
+						&= a^u\ln(a)\dv{u}{x}
+							= \frac{2^{\ln x}\ln(2)}{x}
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} \frac{e^x - e^{-x}}{e^x + e^{-x}} &\implies u_1 = x, u_2 = -x
+							\implies \dv{u_1}{x} = 1, \dv{u_2}{x} = -1 \\
+						&= \frac{e^{u_1}\dv{u_1}{x} - e^{u_2}\dv{u_2}{x}}{e^{u_1}\dv{u_1}{x} + e^{u_2}\dv{u_2}{x}}	
+							= \frac{e^x + e^{-x}}{e^x - e^x}
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} 5^{\sin(x^3)} &\implies a = 5, u = \sin(x^3)
+							\implies \dv{u}{x} = 3x^2\sin(x^3) \\
+						&= a^u\ln(a)\dv{u}{x}
+							= 5^{\sin(x^3)}\qty(3x^2\sin(x^3)\ln(5))
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} 2^{e^{4x}} &\implies u_1 = e^{4x}
+						\implies \dv{u_1}{x} \implies u_2 = 4x
+							\implies \dv{u_2}{x} = 4 \\
+					\dv{u_1}{x} &= e^{u_2}\dv{u_2}{x}
+							= 4e^{4x} \\
+					\dv{x} 2^{e^{4x}} &= a^{u_1}\ln(a)\dv{u_1}{x}
+						= 2^{e^{4x}}\qty(4e^{4x}\ln(2))
+						= 2^{e^{4x} + 2}e^{4x}\ln(2)
+				\end{align*}
+			\task
+				\begin{align*}
+					\dv{x} e^x(x^2 + 3)(x^3 + 4) &\implies u = 
+				\end{align*}
+
+		\end{tasks}
+\end{document}

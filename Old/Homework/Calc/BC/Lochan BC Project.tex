@@ -1,0 +1,247 @@
+\documentclass{article}
+
+% Packages
+	\usepackage{amsmath}
+	\usepackage[margin = 0.75in]{geometry}
+	\usepackage{physics}
+	\usepackage{tasks}
+
+% Macros
+	\newcommand{\indisp}[1]{\(\displaystyle #1\)}
+
+% Config
+	\title{AP Calc BC Project: Integration by Parts}
+	\author{Lochan Akkulugari}
+	\date{1st Hour}
+	
+\begin{document}
+	\maketitle
+		\section*{Problems}
+			\begin{tasks}[style = enumerate](3)
+				\task
+					\indisp{\int e^x\cos x \dd{x}}
+				\task
+					\indisp{\int x^2\sin x \dd{x}}
+				\task
+					\indisp{\int \sin^{-1}(3x) \dd{x}}
+				\task
+					\indisp{\int x\sqrt{x + 3} \dd{x}}
+				\task
+					\indisp{\int \frac{1}{x(\ln x)^3} \dd{x}}
+				\task
+					\indisp{\int x^2 \ln x \dd{x}}
+				\task
+					\indisp{\int x^7\sin(2x^4) \dd{x}}
+				\task
+					\indisp{\int x^3e^{-x^2} \dd{x}}
+				\task
+					\indisp{\int_1^2 \frac{\ln x}{x^2} \dd{x}}
+				\task
+					\indisp{\int_1^4 (2 - x)^2\ln(4x) \dd{x}}
+				\task
+					\indisp{\int \sin(\ln x) \dd{x}}
+				\task
+					\indisp{e^{3x}\sin(e^x) \dd{x}}
+				\task
+					\indisp{\int (x + 1)^2 \ln(3x) \dd{x}}
+				\task
+					\indisp{\int x\ln(1 + x) \dd{x}}
+				\task
+					\indisp{\int (4x^3 - 9x^2 + 7x + 3)e^{-x} \dd{x}}
+			\end{tasks}
+		\newpage
+		\section*{Solutions}
+			\begin{tasks}[style = enumerate]
+				\task
+					\begin{align*}
+						\int e^x \cos x \dd{x} &\implies
+								\begin{array}{|c|ccc|}\hline
+									\pm & + & - & + \\\hline
+									u & \cos x & -\sin x & -\cos x \\\hline
+									\dd{v} & e^x & e^x & e^x\\\hline
+								\end{array} \\
+							&= e^x\cos x + e^x\sin x - \int e^x\cos x \dd{x} \\
+						2\int e^x\cos x &= e^x(\cos x + \sin x) \\
+						\int e^x \cos x &= \frac{e^x(\cos x + \sin x)}{2} + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int x^2\sin x \dd{x} &\implies
+								\begin{array}{|c|cccc|}\hline
+									\pm & + & - & + & - \\\hline
+									u & x^2 & 2x & 2 & 0 \\
+									\dd{v} & \sin x & -\cos x & -\sin x & \cos x \\\hline
+								\end{array} \\
+							&= -x^2\cos x + 2x\sin x + 2\cos x + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int \sin^{-1}(3x) &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & \sin^{-1}(3x) & \frac{3}{\sqrt{1 - 9x^2}} \\\hline
+									\dd{v} & 1 & x \\\hline
+								\end{array} \\
+							&= x\sin^{-1}(3x) - \int \frac{3x}{\sqrt{1 - 9x^2}} \dd{x}
+								\implies u = 1 - 9x^2
+								\implies \dd{u} = -18x\dd{x} \\
+							&= x\sin^{-1}(3x) + \frac{1}{6}\int \frac{\dd{u}}{\sqrt{u}}
+								= x\sin^{-1}(3x) + \frac{1}{6}\frac{u^{1/2}}{1/2} + C
+								= x\sin^{-1}(3x) + \frac{1}{3}\sqrt{1 - 9x^2} + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int x \sqrt{x + 3} \dd{x} &\implies
+								\begin{array}{|c|ccc|}\hline
+									\pm & + & - & + \\\hline
+									u &	x & 1 & 0\\\hline
+									\dd{v} & \sqrt{x + 3} & \frac{2(x + 3)^{3/2}}{3} & \frac{4(x + 3)^{5/2}}{15} \\\hline
+								\end{array} \\
+							&= \frac{2}{3}x(x + 3)^{3/2} - \frac{4}{15}(x + 3)^{5/2} + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int \frac{1}{x(\ln x)^3} &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & (\ln x)^{-3} & -3x^{-1}(\ln x)^{-4} \\\hline
+									\dd{v} & x^{-1} & \ln x \\\hline
+								\end{array} \\
+							&= \frac{\ln x}{(\ln x)^3} + 3\int \frac{\ln x}{x(\ln x)^4} \dd{x}
+								= \frac{1}{(\ln x)^2} + 3\int \frac{1}{x(\ln x)^3} \\
+						2\int \frac{1}{x(\ln x)^3} &= -\frac{1}{(\ln x)^2} \\
+						\int \frac{1}{x(\ln x)^3} &= - \frac{1}{2(\ln x)^2} + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int x^2\ln x \dd{x} &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & \ln x & x^{-1} \\\hline
+									\dd{v} & x^2 & x^3/3 \\\hline
+								\end{array} \\
+							&= \frac{1}{3}x^3\ln x - \int \frac{x^3}{3x} \dd{x}
+								= \frac{1}{3}x^3\ln x - \frac{1}{3} \int x^2 \dd{x}
+								= \frac{1}{3}x^3\ln x - \frac{1}{9}x^3 + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int x^7\sin(2x^4) \dd{x} &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & x^4 & 4x^3 \\\hline
+									\dd{v} & x^3\sin(2x^4) & -\cos(2x^4)/8 \\\hline
+								\end{array} \\
+							&= -\frac{1}{8}x^4\cos(2x^4) + \int \frac{4x^3\cos(2x^4)}{8} \dd{x}
+								= -\frac{1}{8}x^4\cos(2x^4) + \frac{1}{16}\sin(2x^4) + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int x^3 e^{-x^2} \dd{x} &\implies w = x^2
+								\implies \dd{w} = 2x\dd{x}  \\
+							&= \frac{1}{2}\int we^{-w} \dd{w}
+								\implies
+									\begin{array}{|c|ccc|}\hline
+										\pm & + & - & + \\\hline
+										u & w & 1 & 0 \\\hline
+										\dd{v} & e^{-w} & -e^{-w} & e^{-w} \\\hline
+									\end{array} \\
+							&= -\frac{e^{-w}}{2}(w + 1)
+								= -\frac{e^{-x^2}}{2}(x^2 + 1)
+					\end{align*}
+				\task
+					\begin{align*}
+						\int_1^2 \frac{\ln(x)}{x^2} \dd{x} &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & \ln x & x^{-1} \\\hline
+									\dd{v} & x^{-2} & -x^{-1} \\\hline
+								\end{array} \\
+							&= -\frac{\ln x}{x} \eval_1^2 + \int_1^2 \frac{1}{x^2} \dd{x}
+								= -\frac{\ln(2)}{2} + \frac{\ln(1)}{(1)} - \frac{1}{x} \eval_1^2
+								= - \frac{\ln(2)}{2} - \frac{1}{2} + \frac{1}{1}
+								= - \frac{\ln(2) - 1}{2}
+					\end{align*}
+				\task
+					\begin{align*}
+						\int_1^4 (2 - x)^2\ln(4x) \dd{x} &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & \ln(4x) & x^{-1} \\\hline
+									\dd{v} & (2 - x)^2 & x^3/3 - 2x^2 + 4x\\\hline
+								\end{array} \\
+							&= \left(\frac{x^3}{3} - 2x^2 + 4x\right)\ln(4x) \eval_1^4 - \int_1^4 \left(\frac{x^2}{2} - 2x + 4\right) \dd{x} \\
+							&= \left(\frac{x^3}{3} - 2x^2 + 4x\right)\ln(4x) - \frac{x^3}{9} + x^2 -4x \eval_1^4 \\
+							&= \left(\frac{64}{3} - 32 + 16\right)\ln(16) - \frac{64}{9} +16 - 16 - \left(\left(\frac{1}{3} - 2 + 4\right)\ln(4) - \frac{1}{9} + 1 - 4\right) \\
+							&= \left(\frac{64}{3} - 16\right)\ln(16) - \left(\frac{1}{3} + 2\right)\ln(4) - \frac{63}{9} + 3
+								= \frac{16\ln(16) - 7\ln(4)}{3} - 4
+					\end{align*}
+				\task
+					\begin{align*}
+						\int \sin(\ln x) \dd{x} &\implies w = \ln x
+								\implies \dd{w} = \frac{1}{x}\dd{x} 
+								\implies \dd{x} = x\dd{w} = e^w\dd{w}\\
+							&= \int e^w\sin w \dd{w}
+								\implies
+									\begin{array}{|c|ccc|}\hline
+										\pm & + & - & + \\\hline
+										u & \sin w & \cos w & -\sin w \\\hline
+										\dd{v} & e^w & e^w & e^w \\\hline
+									\end{array} \\
+							&= e^w(\sin w - \cos w) - \int e^w\sin w \dd{w} \\
+						2\int e^w\sin w \dd{w} &= e^w(\sin w - \cos w) \\
+						\int e^w\sin w &= \frac{e^w(\sin w - \cos w)}{2} + C
+							= \frac{x(\sin(\ln x) - \cos(\ln x))}{2} + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int e^{3x} \sin(e^x) &\implies w = e^x
+								\implies \dd{w} = e^x\dd{x} \\
+							&= \int w^2\sin w \dd{w}
+								\implies
+									\begin{array}{|c|cccc|}\hline
+										\pm & + & - & + & - \\\hline
+										u & w^2 & 2w & 2 & 0 \\
+										\dd{v} & \sin w & -\cos w & -\sin w & \cos w \\\hline
+									\end{array} \\
+							&= -w^2\cos w + 2w\sin w + 2\cos w + C
+								= -e^{2x}\cos(e^x) + 2e^x\sin(e^x) + 2\cos(e^x) + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int (x + 1)^2\ln(3x) \dd{x} &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & \ln(3x) & x^{-1} \\\hline
+									\dd{v} & (x + 1)^2 & x^3/3 + x^2 + x \\\hline
+								\end{array} \\
+							&= \left(\frac{x^3}{3} + x^2 + x\right)\ln(3x) - \int \left(\frac{x^2}{3} + x + 1\right) \dd{x} \\
+							&= \left(\frac{x^3}{3} + x^2 + x\right)\ln(3x) - \frac{x^3}{9} - \frac{x^2}{2} - x + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int x\ln(1 + x) \dd{x} &\implies
+								\begin{array}{|c|cc|}\hline
+									\pm & + & - \\\hline
+									u & \ln(1 + x) & \frac{1}{1 + x} \\\hline
+									\dd{v} & x & x^2/2 \\\hline
+								\end{array} \\
+							&= \frac{x^2\ln(1 + x)}{2} - \int \frac{x^2}{2(1 + x)} \dd{x}
+								= \frac{x^2\ln(1 + x)}{2} - \frac{1}{2} \int \frac{x^2}{x + 1} \dd{x} \\
+							&= \frac{x^2\ln(1 + x)}{2} - \frac{1}{2} \int \left(\frac{1}{x + 1} + x - 1\right) \dd{x}
+								=  \frac{x^2\ln(1 + x)}{2} - \frac{1}{2}\left(\ln(x + 1) + \frac{x^2}{2} - x\right) \\
+							&= \frac{x^2\ln(x + 1)}{2} - \frac{\ln(x + 1)}{2} - \frac{x^2}{4} + \frac{x}{2} + C
+					\end{align*}
+				\task
+					\begin{align*}
+						\int (4x^3 - 9x^2 + 7x + 3)e^{-x} \dd{x} &\implies
+								\begin{array}{|c|ccccc|}\hline
+									\pm & + & - & + & - & + \\\hline
+									u & 4x^3 - 9x^2 + 7x + 3 & 12x^2 - 18x + 7 & 24x - 18 & 24 & 0\\\hline
+									\dd{v} & e^{-x} & -e^{-x} & e^{-x} & -e^{-x} & e^{-x} \\\hline
+								\end{array} \\
+							&= -e^{-x}(4x^3 - 9x^2 + 7x + 3 + 12x^2 - 18x + 7 + 24x - 18 + 24) \\
+							&= -e^{-x}(4x^3 + 3x^3 + 13x + 16) + C
+					\end{align*}
+			\end{tasks}
+\end{document}
