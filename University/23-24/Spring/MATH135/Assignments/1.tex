@@ -26,9 +26,9 @@
 			\item
 				\begin{tasks}(2)
 					\task
-						\(\exists x \notin \Z, \forall y \notin \R, x + 2y > 3\sqrt{2}\)
+						\(\exists x \in Z, \forall y \in \R, x + y \ge 3\sqrt{2}\)
 					\task
-						\(\forall a \notin \N, \exists b \notin \Q, \forall c \notin \Z, a \ne b - c\)
+						\(\forall a \in \N, \exists b \in \Q, \forall c \in \Z, a = b - c\)
 				\end{tasks}
 			\item
 				\begin{tasks}
@@ -36,9 +36,9 @@
 						\(P(2, 4) = \exists y \in \Z, 2(2) + 4y = 4 \implies y = 0 \in \Z \implies \text{true}\) \\
 						\(P(2, 5) = \exists y \in \Z, 2(2) + 4y = 5 \implies y = 0.25 \notin \Z \implies \text{false}\)
 					\task
-						There are no conditions given that \(n\) is not specified, meaning that the truth value of \(P(x, n)\) cannot be determined, so\enquote{\(\exists x \in \Z, P(x, n)\)} is an open sentence depending on \(n\). \\
+						There is no condition given for \(n\), meaning that the truth value of \(P(x, n)\) cannot be determined, so \enquote{\(\exists x \in \Z, P(x, n)\)} is an open sentence depending on \(n\). \\
 					\task
-						As all variables are specified, \enquote{\(\forall n \in \Z, \exists x \in \Z, P(x, n)\)} is a statement.
+						As all variables are specified, \enquote{\(\forall n \in \Z, \exists x \in \Z, P(x, n)\)} is a mathematical statement. As the \(2(x + 2y)\) must be even given that \(x\) and \(y\) are integers, this statement is false for all odd values of \(n\), meaning that the statement as a whole is false.
 				\end{tasks}
 			\item
 				\begin{tasks}
@@ -68,7 +68,30 @@
 								\implies \text{true}
 						\]
 					\task
-						
+						\[
+							4^x + (\ln x)^2 \ge 2x\ln(x^2)
+								= 4x\ln x \\
+						\]
+						As \(4^x\) grows faster than \(x\ln x\), for all \(x \in \N\) and \(4 \ge 0\), the the statement is true.
+					\task
+						\begin{align*}
+							x + 2xy &= 4 \\
+							1 + 2y &= \frac{2}{x} \\
+							y &= \frac{4}{x} - \frac{1}{2} \\
+							x \in \Q &\implies \frac{4}{x} - \frac{1}{2} \in \Q
+									\implies \text{true}
+						\end{align*}
+				\end{tasks}
+			\item
+				\begin{tasks}(2)
+					\task
+						\(\forall x \in \{1, 2, 3\}, \forall y \in \{1, 2, 3\}, \dfrac{4680}{x^2 + y^2} \in \Z\)
+					\task
+						\(\forall x \in \R, \exists y \in \R, x^2 + y^3 = 135\)
+					\task
+						\(\exists x \in \N, \forall y \in \N, x \le y\)
+					\task
+						\(\exists x \in \Q, \exists y \in \Q, x^3y^2 = 108\)
 				\end{tasks}
 		\end{enumerate}
 \end{document}
