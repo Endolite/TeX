@@ -1,0 +1,59 @@
+\documentclass[../MATH137.tex]{subfiles}
+
+\begin{document}
+	\subsectionb{Assignment 1}
+		\textbf{Claim 1.}  textit{If \(b > 2\), then a solution to (1) exists.} \\
+			\textit{Proof.}
+				Let \(b > 2\) and \(x = 1\). Then
+					\[
+						|x + 1| + 2|x - 1| = 1 + 2(0)
+							= 1
+							< 2 \\
+							< b
+					\]
+				Therefore for all \(b > 2\), then \(x = 1\) is a solution to (1). \\
+		\textbf{Claim 2.} \textit{If \(b \le 2\), then a solution to (1) does not exist.} \\
+			\textit{Proof.}
+				Let \(b \le 2\) and \(x \in \R\). \\
+				\begin{description}[leftmargin = \widthof{Case 1: }]
+					\item[\normalfont Case 1:] 
+						Let \(x \le -1\). Then
+							\[
+								|x + 1| \ge 0 \qquad \text{and} \qquad
+								|x - 1| \ge 2
+							\]
+						so
+							\[
+								|x + 1| + 2|x - 1| \ge 0 + 2(2)
+									= 4
+									> 2
+									\ge b
+							\]
+					\item[\normalfont Case 2:]
+						Let \(-1 \le x < 1\). Then
+							\[
+								|x + 1| = x + 1 \qquad \text{and} \qquad
+									|x - 1| = 1 - x 
+							\]
+						so
+							\[
+								|x + 1| + 2|x - 1| = x + 1 + 2 - 2x
+									= 3 - x
+									\ge 2
+									\ge b
+							\]
+					\item[\normalfont Case 3:]
+						Let \(x \ge 1\). Then
+							\[
+								|x + 1| \ge 2 \qquad \text{and} \qquad
+									|x - 1| \ge 0
+							\]
+						so
+							\[
+								|x + 1| + 2|x - 1| = 2 + 2(0)
+									= 2
+									\ge b
+							\]
+				\end{description}
+				Therefore (1) is not true for all \(b \le 2\) for all \(x \in \R\), meaning that (1) is false if and only if \(b \le 2\). \(\square\)
+\end{document}

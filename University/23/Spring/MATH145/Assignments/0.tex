@@ -1,0 +1,113 @@
+\documentclass[../MATH145.tex]{subfiles}
+
+\begin{document}
+	\subsectionb{Assignment 0 F22}
+		\begin{enumerate}
+			\item
+				\textbf{Claim.} \textit{\(S = \{x \in \R \mid x^3 + 2x < 4\}\) bounded above.} \\
+					\textit{Proof.} 
+						It is a fundamental property of the definition of \(S\) that none of its elements exceed or equal 4. Therefore, if \(\alpha = 4 \in \R\), it is true that \(x \le \alpha\) for all \(x \in S\), so \(S\) is bounded above. \\
+				\textbf{Claim.} \textit{\(S\) is not bounded below.} \\
+					\textit{Proof.} The definition of \(S\) provides no limitation regarding a lower bound, and as \(x \to -\infty\), \(x^3\) and \(x \to -\infty\), so \(x^3 + x \to -\infty\). This means that there does not exist any real number \(\beta\) such that \(x \ge \beta\) for all \(x \in S\), as \(x\) decreases infinitely, so \(S\) is unbounded below. \(\square\).
+			\item
+				\textbf{Claim.} \textit{There is no order relation \enquote{\(<\)} on \(\C\).} \\
+					\textit{Proof.} 
+						Assume that \(i > 0\). By axiom 4,
+							\begin{align*}
+								i^2 &> i(0) \\
+								-1 &> 0
+							\end{align*}
+						This is clearly false, so \(i < 0\) by axiom 1. But by axiom 5,
+							\begin{align*}
+								i^4 &< i^3(0) \\
+								1 &< 0
+							\end{align*}
+						which is also false. Therefore, axiom 1 is violated, as \(i\) cannot be less than or greater than 0, meaning that there is no order relation satisfying the 5 axioms on \(\C\). \(\square\).
+			\item
+				\begin{tasks}
+					\task
+						\[
+							f(x, y) = f(x, -y)	
+								= \frac{x + 1}{x^2 + y^2 + 2}
+						\]
+						as \(\forall y \in \Z, y^2 = (-y)^2\). Therefore \(f\) is not injective. \\
+						All \(q \in \Q\) can be written as the ratio of \(p,q  \in \Z\), and all \(p \in \Z\) can be written as \(r + 1\) where \(r \in \Z\), as every integer is exactly 1 more than the prior integer. The denominator goes to \(\infty\) as \(x, y \to \pm\infty\), so possible \(q \in \Q\) can be output by \(f\). Therefore \(f\) is surjective.
+					\task
+						\[
+							f(x, y) = f(-x, -y)
+								= xy
+						\]
+						as the negatives cancel. Therefore \(f\) is not injective. \\
+						Every \(r \in \R\) can be written as \(r \times 1\) and \(1 \in \R\), so \(f\) can output every \(r \in \R\), making \(f\) surjective.
+					\task
+						\[
+							f(x) = f(-x)
+								= \frac{x^2}{1 + x^2}
+						\]
+						as for all \(x \in \R\), \(x^2 = (-x)^2\), so \(f\) is not injective. \\
+						\(f(x)\) is a rational function with a denominator never equal to 0, meaning that it is continuous for all \(x \in \R\). \(f = 0\) and 
+							\[
+								\lim_{x \to \pm\infty} \frac{x^2}{1 + x^2} = \frac{1}{1}
+									= 1
+							\]
+							so by the intermediate value theorem, \(f\) must yield all outputs in \([0, 1)\), making \(f\) surjective.
+				\end{tasks}
+			\item
+				\textbf{Claim.} \textit{There does not exist a surjective function from \(X\) onto its power set.} \\
+					\textit{Proof.}
+						Each element \(x \in X\) can be either present or not present in a given subset of \(X\). The cardinality of the \(P(X)\) is therefore \(2^{|X|}\). As \(|X| \in \N\) and \(2^n > n\) for all \(n \in \N\), there are more elements in \(P(X)\) than there are in \(X\), making a surjective function impossible. \(\square\)
+			\item
+				\begin{tasks}
+					\task
+						\begin{align*}
+							f \cdot g(\alpha) &= f(\alpha) * g(\alpha)
+									= \alpha f(\alpha)g(\alpha)
+									= g(\alpha) \\
+							f(\alpha) &= \frac{1}{\alpha}
+						\end{align*}
+					\task
+						\begin{align*}
+							f \cdot g(\alpha) &= f(\alpha) * g(\alpha)
+									= \alpha f(\alpha)g(\alpha)
+									= \alpha(2 + \alpha^2i)g(\alpha)
+									= (2\alpha + \alpha^3i)g(\alpha)
+									= 1 \\
+							g(\alpha) &=  \frac{1}{2\alpha + \alpha^3i}
+						\end{align*}
+					\task
+						\begin{align*}
+							f \cdot g(\alpha) &= f(\alpha) * g(\alpha)
+									= \alpha f(\alpha)g(\alpha)
+									= \alpha(2 + \alpha^2i)(\alpha - i)
+									= \alpha(2\alpha - 2i + \alpha^3i + \alpha^2) \\
+								&= (\alpha^3 + 2\alpha^2) + (\alpha^4 - 2)i
+						\end{align*}
+				\end{tasks}
+			\item
+				\begin{tasks}
+					\task
+						In order for \(X\) to contain \(x + y\) for all unique \(x, y \in X\), it can be defined as \(X = \{0, n\}\). Then \(0 + n = n \in X\) and \(0 \times n = 0 \in X\), making \(X\) a sticky subset containing \(n\).
+					\task
+						For \(X\) to to meet the criteria that for all \(x, y \in X\), \(x + y \in X\), it can be \(X = \{kn \mid k < \Z\}\). Only one such set exists per number.
+				\end{tasks}
+			\item
+				The induction is not true going from \(n = 1\) to \(n = 2\). For \(n = 1\),
+					\[P(1) \implies x_1 = x_1\]
+					while
+					\[P(2) \implies x_1 = x_2\]
+					Removing \(x_2\) from this yields simply \(x_1\), which is not a statement but rather a number. The transitive property can therefore not be applied, nor can induction.
+			\item
+				\begin{tasks}(2)
+					\task
+						\[
+							a_n = n
+								\implies \lim_{n \to \infty} a_n = \infty
+						\]
+					\task
+						\[
+							a_n = \frac{1}{2^n} 
+								\implies \alpha = \frac{1}{1 - 1/2} = 2
+						\]
+				\end{tasks}
+		\end{enumerate}
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[12pt, A4]{report}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage{fixltx2e}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+		\usepackage{mathtools}
+		\usepackage{multirow}
+		\usepackage{tasks}
+	% Chemistry
+		\usepackage{chemformula}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+			\usepackage{circuitikz} % Circuits
+			\usepackage{tikz-3dplot} % 3D
+			\usetikzlibrary{arrows.meta, angles, calc, quotes, intersections}
+	% Notation
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{chemformula} % Chemical Formulas
+		\usepackage{esint} % Integrals
+		\usepackage{mathrsfs} % Laplace
+		\usepackage{physics} % Differentials/Vectors
+		\usepackage{siunitx} % Units
+% Macros
+	% Notation
+		% Constants
+			\newcommand{\en}{\text{e}}
+		% Functions
+			\DeclareMathOperator{\erfc}{erfc}
+			\DeclareMathOperator{\Uscr}{\mathscr{U}}
+		% Sets
+			\newcommand{\C}{\mathbb{C}}
+			\newcommand{\N}{\mathbb{N}}
+			\newcommand{\Q}{\mathbb{Q}}
+			\newcommand{\R}{\mathbb{R}}
+			\newcommand{\Z}{\mathbb{Z}}
+			% Quantization
+				\newcommand{\quant}[2]{, \quad #1 \in #2}
+		% Transforms
+			\DeclareMathOperator{\Ell}{\mathscr{L}}
+			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
+		% Vectors
+			\newcommand{\vps}{\hspace{0.5mm}}
+			% Unit Vectors
+				\newcommand{\vi}{\text{\^\i}}
+				\newcommand{\vj}{\text{\^\j}}
+				\newcommand{\vk}{\text{
+				\^k}}
+				\newcommand{\vr}{\hat{r}}
+				\newcommand{\vphi}{\hat{\varphi}}
+		% Other
+			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
+		\newcommand{\subt}[2]{#1_{\text{#2}}}
+		\newcommand{\supt}[2]{#1^{\text{#2}}}
+% Configuration
+	\title{MATH 145 Assignments}
+	\author{Arnav Patri}
+	\hypersetup{
+	    colorlinks,
+	    citecolor=black,
+	    filecolor=black,
+	    linkcolor=black,
+	    urlcolor=black
+	}
+	\cellspacetoplimit10pt
+	\cellspacebottomlimit10pt
+
+\usepackage{subfiles}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+		\subfile{Assignments/0.tex} \newpage
+\end{document}
