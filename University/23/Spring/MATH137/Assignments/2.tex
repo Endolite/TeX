@@ -1,0 +1,35 @@
+\documentclass[./MATH137.tex]{subfiles}
+\sectionb{Assignment 2}
+
+\begin{document}
+	\begin{tasks}
+		\task
+			\textbf{Claim.} \(L \ge 0\). \\
+			\textit{Proof.}
+				Assume that \(L < 0\). This means that there is some \(N \in \N\) for which \(n \ge N\) means that for any \(\varepsilon > 0\),
+					\[|a_n - L| < \varepsilon\]
+					As \(a_n > 0\) and \(L < 0\),
+					\[|a_n - L| = a_n - L\]
+					Letting \(\varepsilon = L\),
+					\begin{align*}
+						a_n - L &\le L \\
+						a_n & \le 2L < 0
+					\end{align*}
+					which is a contradiction, so \(L \ge 0\). \(\square\).
+			\task
+				\textbf{Claim.} \[\lim_{n \to \infty} \frac{2}{a_n + 5} = \frac{2}{L + 5}\]
+				\textit{Proof.}
+					Let \(a_n \to L \ge 0\); that is, for any \(\varepsilon > 0\), there is some cutoff \(N \in \N\) for which \(n \ge N\) implies
+						\[|a_n - L| < \varepsilon\]
+						Letting \(n > N\),
+						\begin{align*}
+							\abs{\frac{2}{a_n + 5} - \frac{2}{L + 5}} &= \abs{\frac{2(L + 5) - 2(a_n + 5)}{(a_n + 5)(L + 5)}} \\
+								&\le \frac{2|L - a_0|}{5(L + 5)} \\
+								&< \frac{2\varepsilon}{5L + 25}
+						\end{align*}
+						Defining 
+						\[\varepsilon_1 = \frac{2\varepsilon}{5L + 25}\]
+						it is clear that
+						\[\lim_{n \to \infty} \frac{2}{a_n + 5} = \frac{2}{L + 5} \qquad \square\]
+	\end{tasks}
+\end{document}

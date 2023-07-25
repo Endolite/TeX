@@ -5,6 +5,7 @@
 		\usepackage{amsmath}
 		\usepackage{bm}
 		\usepackage{cellspace}
+		\usepackage{CJKutf8}
 		\usepackage{csquotes}
 		\usepackage[shortlabels]{enumitem}
 		\usepackage{fixltx2e}
@@ -44,6 +45,32 @@
 			\newcommand{\Z}{\mathbb{Z}}
 			% Quantization
 				\newcommand{\quant}[2]{, \quad #1 \in #2}
+		% Operators
+		 	% Logic
+			    \newcommand{\simp}{\Longrightarrow}
+			    \newcommand{\siff}{\Longleftrightarrow}
+		  	% Sets
+			    \newcommand{\cmp}{\complement}
+			    \DeclareMathOperator{\glb}{glb}
+			    \DeclareMathOperator{\lub}{lub}
+			    \renewcommand{\P}{\mathbb{P}}
+			    \newcommand{\sub}{\subset}
+			    \newcommand{\sube}{\subseteq}
+		    	\newcommand{\supe}{\supseteq}
+		    % Relations
+		      	\DeclareMathOperator{\codom}{codom}
+		      	\DeclareMathOperator{\dom}{dom}
+		      	\DeclareMathOperator{\graph}{graph}
+		      	\DeclareMathOperator{\ran}{ran}
+		  	% Sequences
+    			\DeclareMathOperator{\LIM}{LIM}
+    		% Vectors
+    			\DeclareMathOperator{\comp}{comp}
+    			\renewcommand{\curl}{\mathrm{curl}}
+    			\DeclareMathOperator{\divg}{div}
+    			\DeclareMathOperator{\orth}{orth}
+    			\DeclareMathOperator{\proj}{proj}
+    			\renewcommand{\Vec}[1]{\overrightarrow{#1}}
 		% Transforms
 			\DeclareMathOperator{\Ell}{\mathscr{L}}
 			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
@@ -60,6 +87,8 @@
 			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
 	% Utilities
 		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\chapterb}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+		\newcommand{\sectionb}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
 		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
 		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
 		\newcommand{\subt}[2]{#1_{\text{#2}}}
@@ -83,6 +112,8 @@
 	\maketitle
 	\tableofcontents
 	\newpage
+		\chapterb{Fall 2022}
 		\subfile{Assignments/1.tex} \newpage
-		\subfile{Assignments/2.tex}
+		\subfile{Assignments/2.tex} \newpage
+		\subfile{Assignments/4.tex}
 \end{document}

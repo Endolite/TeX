@@ -1,7 +1,7 @@
 \documentclass[../MATH135.tex]{subfiles}
 
 \begin{document}
-	\subsectionb{Assignment 2}
+	\sectionb{Assignment 2}
 		\begin{enumerate}
 			\item
 				\begin{tasks}(2)
@@ -14,9 +14,9 @@
 					\task
 						The contrapositive is \enquote{If \(x \le 0\) or \(y \ge 0\), then \(xy \le 0\)}.
 					\task
-						The negation is \enquote{\(xy \ge 0\) or (\(x > 0\) and \(y < 0\))}.
+						The negation is \enquote{\(xy < 0\) or \(x \le 0\) or \(y \ge 0\)}.
 					\task
-						In order for the product of 2 numbers to be negative, one number must be positive and the other negative. Therefore, \(\forall x \in \R, \forall y \in \R, S(x, y)\) is true.
+						In order for the product of two numbers to be negative, one number must be positive and the other negative. If \(x\) is negative and \(y\) is positive, though, their product is still negative. Therefore, \(\forall x, y \in \R, S(x, y)\) is false. 
 				\end{tasks}
 			\item
 				\begin{tasks}(2)
@@ -24,10 +24,110 @@
 						This fails to restrict the domain of \(x\).
 					\task
 						This fails to consider the case \(n = 0\).
+						\begin{CJK}{UTF8}{min}
+							
+						\end{CJK}
+
 				\end{tasks}
 			\item
 				\begin{tasks}
 					\task
+						The truth table for this is
+							\[\begin{array}{*{7}{|c}|}\hline
+								P & Q & R & P \simp Q & \lnot R & P \land (\lnot R) & (P \simp Q) \lor (P \land (\lnot R) \\\hline
+								T & T & T & T & F & F & T \\
+								T & T & F & T & T & T & T \\
+								T & F & T & F & F & F & F \\
+								T & F & F & F & T & T & T \\
+								F & T & T & T & F & F & T \\
+								F & T & F & T & T & F & T \\
+								F & F & T & T & F & F & T \\
+								F & F & F & T & T & F & T \\\hline
+							\end{array}\]
+						The only cases where the statement is true are when \(P\) and \(Q\) are both true, \(P\) is true and \(R\) is false, or when \(P\) is false.
+					\task
+						The truth table these statements is 
+							\[\begin{array}{*{8}{|c}|}\hline
+								A & B & C & A \simp B & (A \simp B) \simp C & C \lor A & B \simp C & (C \lor A) \land (B \simp C) \\\hline
+								T & T & T & T & T & T & T & T \\
+								T & T & F & T & F & T & F & F \\
+								T & F & T & F & T & T & T & T \\
+								F & T & T & T & T & T & T & T \\
+								F & T & F & T & F & F & F & F \\
+								F & F & T & T & T & T & T & T \\
+								F & F & F & T & F & F & T & F \\\hline
+							\end{array}\]
+						As the columns or \((A \simp B) \simp C)\) and \((C \lor A) \land (B \simp C)\) are identical, they are logically equivalent.
 				\end{tasks}
+			\item
+				\begin{align*}
+					P \lor \lnot\bigl((\lnot Q) \lor R\bigr) &\equiv P \lor \bigl(Q \land (\lnot R)\bigr) \tag{DeM/def. of \(\lnot\)} \\
+						&\equiv (P \lor Q) \land \bigl(P \lor (\lnot R)\bigr) \tag{dist. law} \\
+						&\equiv (R \simp P) \land (P \lor Q) \tag{comm. law/def. of \(\simp\)}
+				\end{align*}
+			\item
+				\textbf{Claim.} \(\forall a \in \Z, 2 \nmid (a^3 - 6a^2 + 5a + 1)\). \\
+					\textit{Proof.} 
+						Let \(a \in \Z\). \(a\) must be either even or odd. \\
+						\textit{Case 1. \(2 \mid a\)}.
+							This means that for some \(k \in \Z\), \(a = 2k\). Substituting with this yields
+								\begin{align*}
+									a^3 - 6a^2 + 5a + 1 &= (2k)^3 - 6(2k)^2 + 5(2k) + 1 \\
+										&= 8k^3 - 24k^2 + 10k + 1 \\
+										&= 2(4k^3 - 12k^2 + 5k) + 1	
+								\end{align*}
+							As \(4k^3 - 12k^2 + 5k \in \Z\), by the definition of divisibility \(2 \nmid \bigl(a^3 - 6a^2 + 5a + 1\bigr)\). \\
+						\textit{Case 2. \(2 \nmid a\)}.
+							This means that for some \(k \in \Z\), \(a = 2k + 1\). Substituting yields
+								\begin{align*}
+									a^3 - 6a^2 + 5a + 1 &= 	(2k + 1)^3 - 6(2k + 1)^2 + 5(2k + 1) + 1 \\
+										&= \bigl((2k)^3 + 3(2k)^2 + 3(2k) + 1\bigr) - 6\bigl((2k)^2 + 2(2k) + 1\bigr) + 10k + 5 + 1 \\
+										&= 8k^3 + 12k^2 + 6k + 1 - 24k^2 - 24k - 6 + 10k + 6 \\
+										&= 8k^3 - 12k^2 - 8k + 1 \\
+										&= 2\bigl(4k^3 - 6k^2 - 4k\bigr) + 1
+								\end{align*}
+							As \(4k^3 - 6k^2 - 4k \in \Z\), by the definition of divisibility \(2 \nmid \bigl(a^3 - 6a^2 + 5a + 1\bigr)\). \\
+						Regardless of whether \(a\) is even or odd, \(2 \nmid \bigl(a^3 - 6a^2 + 5a + 1\bigr)\). \(\square\)
+			\item
+				\textbf{Claim.} \(\forall x \in \R, 1 + 99\sin^2x \ge 10\sin(2x)\). \\
+					\textit{Proof.} 
+						Let \(x \in \R\). Suppose that both sides of the inequality are equal for this \(x\):
+							\[1 + 99\sin^2x = 10\sin(2x)\]
+							The double angle formula and Pythagorean identity yield
+							\begin{align*}
+								\sin^2x + \cos^2x + 99\sin^2x &= 20\sin x\cos x \\
+								0 &= 100\sin^2x - 20\sin x \cos x  + \cos^2x
+							\end{align*}
+							This formula may only have solutions if for some \(x, y \le 1\),
+							\[0 = 100x^2 - 20xy + y^2\]
+							Applying the quadratic formula yields
+							\begin{align*}
+								x &= \frac{20y \pm \sqrt{400y^2 - 400y^2}}{200}	\\
+									&= \frac{y}{10}
+							\end{align*}
+							This means that the equality is only valid when
+							\begin{align*}
+								\sin x &= \frac{\cos x}{10}	\\
+								x &= \arctan(\frac{1}{10})
+							\end{align*}
+							Substituting this into the equality with the double angle formula applied,
+							\begin{align*}
+								1 + 99\sin[2](\arctan(\frac{1}{10})) &= 20\sin(\arctan(\frac{1}{10}))\cos(\arctan(\frac{1}{10})) \\
+								1 + \frac{99}{101} &= 20\frac{100}{101} \\
+								\frac{200}{101} &= \frac{200}{101}
+							\end{align*}
+							Pythagorean theorem was used to obtain the values of \(\sin x\) and \(\cos x\).
+							As this is the only solution in the first period (note that the period of \(\sin(2x)\) is \(\pi\), meaning that \(x = \arctan(1/10) + \pi\) is in the second period), the sign of
+							\[y = 1 + 99\sin^2x - 10\sin(2x)\]
+							must not change at any other point in that period. At \(x = 0\),
+							\[y = 1 + 0 - 0 = 1\]
+							At \(x = \pi\),
+							\[y = 1 + 0 - 0 = 1\]
+							This means that \(y \ge 0\) for \(x \in [0, \pi]\); that is,
+							\begin{align*}
+								1 + 99\sin^2x - 10\sin(2x) &\ge 0 \\
+								1 + 99\sin^2x &\ge 10\sin(2x)
+							\end{align*}
+							As sine is a periodic function, this inequality is true for all \(x \in \R\). \(\square\). 
 		\end{enumerate}
 \end{document}
