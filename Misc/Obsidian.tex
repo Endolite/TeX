@@ -1,13 +1,18 @@
 \documentclass{standalone}
 
 \usepackage{tikz}
-
+\usetikzlibrary{angles, quotes}
 \begin{document}
-	\begin{tikzpicture}[yscale = 0.75]
-		\node[circle, draw, minimum size = 0.5cm] (1) at (0, 0) {};
-		\node[circle, draw, minimum size = 0.5cm] (2) at (2, 0) {};
-		\draw[->] (1) node[anchor = south west, inner sep = 5pt] {\(a_{\mathrm{in}}\)} to (2) node[anchor = south east, inner sep = 5pt] {\(\delta_{\mathrm{out}}\)};
-		\node at (0.93, 0.43) {\(\times\)};
-		\node at (1, 1.25) {\(\frac{\partial{C}}{\partial{w}} = \)};
+	\begin{tikzpicture}[scale = 2]
+		\coordinate (O) at (0, 0);
+		\node at (-0.1, -0.1) {\(O\)};
+		\coordinate (A) at (1, 1);
+		\coordinate (B) at (1, 0);
+		\draw[-] (0, 0) -- (1, 1) node[anchor = south east] {\(r\)} -- (2, 2) node[above] {\(P(r, \theta)\)};
+		\filldraw (2, 2) circle (0.5mm);
+		\node at (0, 2.2) {};
+		\draw[] (0, 0) -- (1.5, 0) node[below] {polar axis};
+		\draw[->] (1.5, 0) -- (3, 0) node[below] {\(x\)};
+		\path pic[draw, "\(\theta\)", angle radius = 5mm, anchor = south west, inner  xsep = 3mm, inner ysep = 0mm] {angle = B--O--A}; 
 	\end{tikzpicture}
 \end{document}

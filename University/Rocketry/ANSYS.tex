@@ -1,0 +1,205 @@
+\documentclass{article}
+
+% Packages
+	% Basics
+		\usepackage{amsmath}
+		\usepackage{amsthm}
+		\usepackage{bm}
+		\usepackage{cellspace}
+		\usepackage{csquotes}
+		\usepackage[shortlabels]{enumitem}
+		\usepackage{fancyhdr}
+		\usepackage{fixltx2e}
+		\usepackage[hang,flushmargin]{footmisc}
+		\usepackage[margin=0.75in]{geometry}
+		\usepackage{hyperref}
+		\usepackage[utf8]{inputenc}
+		\usepackage{mathtools}
+		\usepackage{multirow}
+		\usepackage{polynom}
+		\usepackage{tasks}
+	% Diagrams
+		\usepackage{pgfplots}
+		\usepackage{tikz}
+			\usepackage{circuitikz} % Circuits
+			\usepackage{tikz-3dplot} % 3D
+			\usetikzlibrary{arrows.meta, angles, calc, quotes, intersections}
+	% Notation
+		\usepackage{amssymb} % Miscellaneous
+		\usepackage{chemformula} % Chemical Formulas
+		\usepackage{esint} % Integrals
+		\usepackage{mathrsfs} % Laplace
+		\usepackage{physics} % Differentials/Vectors
+		\usepackage{siunitx} % Units
+% Macros
+	% Notation
+		% Constants
+			\newcommand{\en}{\text{e}}
+		% Functions
+			\DeclareMathOperator{\erfc}{erfc}
+			\DeclareMathOperator{\Uscr}{\mathscr{U}}
+		% Sets
+			\newcommand{\N}{\mathbb{N}}
+			\newcommand{\Q}{\mathbb{Q}}
+			\newcommand{\R}{\mathbb{R}}
+			\newcommand{\Z}{\mathbb{Z}}
+			% Quantization
+				\newcommand{\quant}[2]{, \quad #1 \in #2}
+		% Operators
+		 	% Logic
+			    \newcommand{\simp}{\Longrightarrow}
+			    \newcommand{\siff}{\Longleftrightarrow}
+		  	% Sets
+			    \newcommand{\cmp}{\complement}
+			    \DeclareMathOperator{\glb}{glb}
+			    \DeclareMathOperator{\lub}{lub}
+			    \renewcommand{\P}{\mathbb{P}}
+			    \newcommand{\sub}{\subset}
+			    \newcommand{\sube}{\subseteq}
+		    	\newcommand{\supe}{\supseteq}
+		    % Relations
+		      	\DeclareMathOperator{\codom}{codom}
+		      	\DeclareMathOperator{\dom}{dom}
+		      	\DeclareMathOperator{\graph}{graph}
+		      	\DeclareMathOperator{\ran}{ran}
+		  	% Sequences
+    			\DeclareMathOperator{\LIM}{LIM}
+    		% Vectors
+    			\DeclareMathOperator{\comp}{comp}
+    			\renewcommand{\curl}{\mathrm{curl}}
+    			\DeclareMathOperator{\divg}{div}
+    			\DeclareMathOperator{\orth}{orth}
+    			\DeclareMathOperator{\proj}{proj}
+    			\renewcommand{\Vec}[1]{\overrightarrow{#1}}
+		% Transforms
+			\DeclareMathOperator{\Ell}{\mathscr{L}}
+			\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
+		% Vectors
+			\newcommand{\vps}{\hspace{0.5mm}}
+			% Unit Vectors
+				\newcommand{\vi}{\text{\^\i}}
+				\newcommand{\vj}{\text{\^\j}}
+				\newcommand{\vk}{\text{
+				\^k}}
+				\newcommand{\vr}{\hat{r}}
+				\newcommand{\vphi}{\hat{\varphi}}
+		% Other
+			\renewcommand{\Roman}[1]{\MakeUppercase{\romannumeral #1}}
+	% Utilities
+		\newcommand{\callout}[2]{\begin{center}\fbox{\begin{minipage}{#1cm}#2\end{minipage}}\end{center}}
+		\newcommand{\chapterb}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+		\newcommand{\sectionb}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+		\newcommand{\subsectionb}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+		\newcommand{\subsubsectionb}[1]{\subsubsection*{#1}\addcontentsline{toc}{subsubsection}{#1}}
+		\newcommand{\subt}[2]{#1_{\text{#2}}}
+		\newcommand{\supt}[2]{#1^{\text{#2}}}
+
+% Configuration
+\title{A Hands-on Introduction to Engineering Simulations}
+\author{Cornell ENGR2000X}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	\section{The Blackbox}
+		ANSYS takes user inputs and outputs presentable results, but without knowing how those results are achieved, it is easy for those results to be meaningless, misinterpreted, or both. \\
+		The inputs are determined by the physical problem attempting to be simulated. This problem is converted into a mathematical model, based on physical principles and assumptions, which is then to be solved. The mathematical model, physical principles, and assumptions must be known. \\
+		The black box finds a numerical solution to the model, giving selected variables at selected points. What is being calculated and where they are being calculated must be known. \\
+		Post-processing is the conversion of the numerical solution into more easily interpretable results. \\
+		Estimates of the expected results can be found by simplifying the model to make it solvable or by collecting experimental data. This should then be checked against the output.
+		\subsubsection*{Pre-Analysis}
+			Pre-analysis begins by identifying the model, the physical principles, and the assumptions being made. The method of numerical solution must then be analyzed, considering any potentially introduced error and attempting to minimize it. Finally, approximate calculations or experimental data must be used to check against the output.
+		\subsubsection*{Verification and Validation}
+			Verification involves considering whether the solution to the model is correct. This can be checked by seeing if the outputs and model are consistent. The level of numerical error should also be considered. Manual calculations and can also be compared against. \\
+			Validation considers whether the model itself was correct to begin with; that is, whether the mathematical model is a reasonable representation of the physical problem. Incorrect assumptions or oversimplification can lead to inaccurate models. To this end, results can be compared to experimental data.
+	\section{Finite Element Analysis}
+		Consider the simulation of one-dimensional heat conduction in a bar of length \(L\). The problem is assumed to be steady; that is, the temperature at a given point is time-independent. It is further assumed to be one-dimensional along the direction of \(L\).
+		\subsection*{Constructing the Model}
+			To begin with pre-analysis, the mathematical model must be identified. \\
+			Consider an infinitesimal control volume within the bar of dimensions \(\Delta x\), \(\Delta y\), and \(\Delta z\), where \(x\) is defined to be in the direction of \(L\).  Consider the heat flow in \(q_x\) and the heat out\footnote{As \(\Delta x \to 0\), higher order terms can be dropped.}
+				\[q_x + \dv{q_x}{x}\Delta x\]
+			The net change in heat is
+				\[\dv{q_x}{x}\Delta x\]
+			Fourier's law states that the heat flow through the face parallel to the \(yz\)-plane is
+				\[q_x = -k\dv{T}{x}\Delta y\Delta z\]
+			where \(T\) is temperature and \(k \in \R^+\) is a constant, called the thermoconductivity. This means that the net heat flow out can be rewritten as
+				\[-k\dv[2]{T}{x}\Delta x\Delta y \Delta z\]
+			The assumptions of the model are that the heat flow only varies along the \(x\)-axis, the temperature is time-independent, and that thermoconductivity is constant. \\
+			Let \(Q\) denote the heat generation per unit volume. Taking this into consideration and applying conservation of energy, the net heat out becomes
+				\[-k\dv[2]{T}{x}\Delta x \Delta y \Delta z - Q\Delta x \Delta y \Delta z = 0\]
+			This yields final \textbf{governing equation}
+				\[k\dv[2]{T}{x} + Q = 0\]
+			which is defined over the length of the bar; that is, for \(x \in [0, L]\). \\
+			The mathematical model is comprised of the governing equation in tandem with the boundary conditions \(T(0) = T_0\) and
+				\[q(L) = q_L = -k\qty[\dv{T}{x}]_L\]
+			\(q\) here denotes heat flux.
+		\subsection*{Numerical Solution}
+			Now that the model has been established, the method of numerical solution must be determined. This can be done by simplifying the problem to finding values for \(T\) only at certain values of \(x\), interpolating those calculated values for \(x\)-values between those explicitly solved at using piecewise polynomials. This process is \textbf{descretization}. \\
+			Suppose the bar is split along its length into four nodes. Each interpolating equation will relate the temperature to that of its closest surrounding nodes. Letting \([K]\) be the stiffness matrix, \(\vec{Q}\) be the force vector, \(\vec{T}\) be a vector comprised of the nodal temperatures
+				\[\vec{T} = \mqty[T_1 \\ T_2 \\ T_3 \\ T_4]\]
+			yields a system that can be inverted to solve for each nodal temperature:
+				\[[K]\vec{T} = \vec{Q}\]
+			 Post-processing can be done to convert the solution \(\vec{T}\) into the desired interpolating equations. \\
+			 Simply substituting the piecewise linear approximation for \(T\) into the differential equation does not result in a system of algebraic equations. Instead, the differential equation can be written in weighted integral form as
+			 	\[\int_0^L w\qty(k\dv[2]{T}{x} + Q) \dd{x} = 0\]
+			 where \(w(x)\) is an arbitrary weighting function. Letting \(w^e(x)\) be an arbitrary piecewise polynomial (changing at the nodes),
+			 	\[\int_0^L w^e\qty(k\dv[2]{T}{x} + Q) \dd{x} = 0\]
+			 this yields the system of algebraic equations in nodal temperatures. The solution to this system satisfies the weighted integral form only for this form of \(w\), not in general. It also does not satisfy the original differential equation. \\
+			Applying integration by parts yields
+				\begin{align*}
+					0 &= \int_0^L w^e\qty(k\dv[2]{T}{x} + Q) \dd{x} \\
+						&= \qty[kw^e\dv{T}{x}]_0^L - \int_0^Lk\dv{w^e}{x}\dv{T}{x} \dd{x} + \int_0^L w^eQ \dd{x}
+				\end{align*}
+			As this doesn't involve the second derivative of \(T\), there are fewer restrictions placed on the form of \(w^e\). This is therefore called the \textbf{weak form}, the original weighted integral equation (the original differential equation) being the \textbf{strong form}. \\
+			The integration can be performed over subintervals \((x_i, x_{i + 1})\) of uniform length \(\Delta x\). Performing integration over one such interval yields a result of the form
+				\[w_i\qty[c_{i, i - 1}T_{i - 1} + c_{i, i}T_i + c_{i, i + 1}T_{i + 1} + Q\Delta x]\]
+			where each \(c_{i, j}\) is some constant when \(i\) is not at the boundaries. When \(i\) is a boundary term, only two temperatures are considered. In the case of four nodes, the integrals become
+				\[w_1\qty[c_{1, 1}T_1 + c_{1, 2}T_2 + \frac{Q\Delta x}{2} - k\qty[\dv{T}{x}]_1]\]
+			and
+				\[w_4\qty[c_{4, 3}T_3 + c_{4, 4}T_4 + \frac{Q\Delta x}{2} + k\qty[\dv{T}{x}]_4]\]
+			Note that the gradient term is only included for the boundaries. \\
+			In order for the sum of these terms to be 0 for any arbitrary \(w_i\),
+				\begin{align*}
+					0 &= c_{1, 1}T_1 + c_{1, 2}T_2 + \frac{Q\Delta x}{2} - k\qty[\dv{T}{x}]_1 \\
+						&= c_{i, i - 1}T_{i - 1} + c_{i, i}T_i + c_{i, i + 1}T_{i + 1} + Q\Delta x \tag{\(x \in \{2, 3\}\)}\\
+						&= c_{4, 3}T_3 + c_{4, 4}T_4 + \frac{Q\Delta x}{2} + k\qty[\dv{T}{x}]_4
+				\end{align*}
+			Consider the first term of the weak form
+				\[\qty[kw^e\dv{T}{x}]_0^L = kw_4\qty[\dv{T}{x}]_4 - kw_1\qty[\dv{T}{x}]_1\]
+			applying the boundary condition \(q(L) = q_L\),
+				\[kw_4\qty[\dv{T}{x}]_4 - kw_1\qty[\dv{T}{x}]_1 = -q_Lw_4 - kw_1\qty[\dv{T}{x}]_1\]
+			This is called a \textit{natural boundary condition}, as it involves the gradient. Natural boundary conditions affect only the algebraic equations of the nodes and the force vector, not impacting the stiffness matrix. \\
+			Now consider the heat generation term, called the \textit{source term}, as it is something that is already known. As \(Q\) is a constant, the integral over the first subinterval becomes
+				\begin{align*}
+					Q\int_0^{x_1} w^e \dd{x} &= \frac{Q(w_1 + w_2)x_1}{2} \\
+						&= \frac{Qx_1}{2}(w_1 + w_2)\
+				\end{align*}
+			This can be interpreted as assigning half of the heat generated to each node. \\
+			When performing this integration over the next subinterval, the result is
+				\[Q\int_{x_2}^{x^3} w^e \dd{x} = w_1\qty(\frac{Q\Delta x}{2}) + w_2(Q\Delta x) + cw_3\]
+			where \(c\) is an unknown constant. \\
+			As \(Q\) appears in every term, it affects all equations in the system, not just those of the boundaries. \\
+			Finally, consider the second term of the weak form:
+				\[\int_0^L k\dv{w^e}{x}\dv{T}{x} \dd{x}\]
+			As \(w^3\) and \(T\) are piecewise linear, their derivatives are piecewise constant. For \(x \in (x_i, x_{i + 1})\),
+				\begin{align*}
+					\dv{T}{x} &= \frac{T_{i + 1} - T_i}{\Delta x} \\
+					\dv{w^e}{x} &= \frac{w_{i + 1} - w_i}{\Delta x}
+				\end{align*}
+			The product of these derivatives has terms of the forms \(w_1T_1\), \(w_1T_2\), \(w_2T_1\), and \(w_2T_2\). The coefficients of these terms determine the elements of the stiffness matrix. \\
+			In summary, the nodes yield equations
+				\begin{align}
+					c_{1, 1}T_1 + c_{1, 2}T_2 &= \frac{Q\Delta x}{2} - k\qty[\dv{T}{x}]_1\\
+					c_{2, 1}T_1 + c_{2, 2}T_2 + c_{2, 3}T_3 &= Q\Delta x \\
+					c_{3, 2}T_2 + c_{3, 3}T_3 + c_{3, 4}T_4 &= Q\Delta x \\
+					c_{4, 3}T_3 + c_{4, 4}T_4 &= \frac{Q\Delta x}{2} + k\qty[\dv{T}{x}]_4
+				\end{align}
+			The coefficients \(c_{i, j}\) are the components of the coefficient matrix, while the terms on the right are those of the force vector. \\
+			The temperature boundary condition \(T_1 = T_0\) is an \textit{essential boundary condition}. Applying this to the above system yields a system of three equations in three unknowns, which can be solved by inverting the stiffness matrix. The derivative of temperature at the first node is an unknown quantity, meaning that the system was not previously solvable, but that unknown can now be solved for in terms of the newly found values. \\
+			Recall that
+				\[q_1 = -k\qty[\dv{T}{x}]_1\]
+			is the heat flow in. This can be used to check that energy is conserved; that is, that
+				\[q_1A + QV = q_4\]
+			The quantity \(q_1A\) is called a \textbf{reaction}.
+\end{document}
